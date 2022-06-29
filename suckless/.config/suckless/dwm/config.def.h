@@ -163,7 +163,7 @@ static Key keys[] = {
 
   { MODKEY|ShiftMask,		          XK_d,		spawn,		         {.v = (const char*[]){ "rofi", "-show","drun", "-show-icons", NULL } } },
 
-  { MODKEY,		                    XK_c,		spawn,		         SHCMD("clipmenu -i -h 4 -fn Jetbrains:size=9 -nb '#161320' -nf '#efefef' -sb '#89b4fa' -sf '#efefef'") },
+  { MODKEY,		                    XK_c,		spawn,		         SHCMD("clipmenu -i -h 4 -fn Jetbrains:size=9 -nb '#161320' -nf '#efefef' -sb '#89b4fa' -sf '#161320'") },
   { MODKEY|ShiftMask,		          XK_c,		spawn,		         {.v = (const char*[]){ "rofi", "-show","calc", "-no-show-match", "-no-sort", NULL } } },
   
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },

@@ -107,6 +107,7 @@ abbr yt "yt-dlp --add-metadata -i"
 abbr yta "yt-dlp -x -f bestaudio/best"
 abbr yay "paru"
 abbr vd "nvim -d"
+abbr combinepdf "gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=combine.pdf -dBATCH"
 
 #Custom keybindings vi insert mode
 set -g fish_key_bindings fish_vi_key_bindings
@@ -125,7 +126,7 @@ bind \ck history-search-backward # Up
 bind \cj history-search-forward # Down
 bind \cn 'ncdu'
 
-# neofetch
+neofetch
 # colorscript random
 zoxide init fish | source
 starship init fish | source

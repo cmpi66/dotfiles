@@ -79,7 +79,12 @@ local opts = {
 }
 
 local mappings = {
+   d = {":!opout <c-r>%<CR><CR>", "opout"},
+   c = {":w<CR>:!compiler %:p<CR><CR>","Doc Compiler"},
+   u = {":w<CR>:!pandoc % -f latex -t docx -o %:r.docx<CR><CR>", "Latex to Docx"},
+   o = {":w<CR>:!pandoc % -t beamer -o %:r.pdf<CR><CR>","Beamer Presentation"},
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
+  
   ["b"] = {
     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Buffers",
@@ -87,7 +92,7 @@ local mappings = {
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["q"] = { "<cmd>qa!<CR>", "Quit" },
-  ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+  ["x"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["f"] = {
     "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",

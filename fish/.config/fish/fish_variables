@@ -30,6 +30,7 @@ SETUVAR _fish_abbr_cfz:nvim\x20/home/chris/\x2econfig/zsh/\x2ezshrc
 SETUVAR _fish_abbr_checkout:git\x20checkout
 SETUVAR _fish_abbr_cl:clear
 SETUVAR _fish_abbr_clone:git\x20clone
+SETUVAR _fish_abbr_combinepdf:gs\x20\x2ddNOPAUSE\x20\x2dsDEVICE\x3dpdfwrite\x20\x2dsOUTPUTFILE\x3dcombine\x2epdf\x20\x2ddBATCH
 SETUVAR _fish_abbr_cp:cp\x20\x2div
 SETUVAR _fish_abbr_d:cd\x20/home/chris/docs\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_dm:cd\x20/home/chris/docs/rmd/\x3b\x20and\x20ls\x20\x2da

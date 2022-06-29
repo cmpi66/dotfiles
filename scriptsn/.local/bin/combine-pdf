@@ -1,0 +1,4 @@
+#!/bin/env bash
+
+{ gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=combine.pdf -dBATCH_$(date +'%F_%Hh%M').pdf -f "$@" ;}
+

@@ -39,12 +39,13 @@ keymap ("i", "<Right>", "<Nop>", opts)
 
 -- Groff, latex etc.
 -- keymap("n", "<C-d>", ":! zathura --fork %:t:r.pdf<CR><CR>", opts)
-keymap("n", "<C-p>", ":w<CR>:!pandoc % -f latex -t docx -o %:r.docx<CR><CR>", opts)
-keymap("n", "<C-o>", ":w<CR>:!pandoc % -t beamer -o %:r.pdf<CR><CR>", opts)
-keymap("n", "<C-d>", ":!opout <c-r>%<CR><CR>", opts)
-keymap("n", "<C-w>", ":w<CR>:!compiler %:p<CR><CR>", opts)
+-- keymap("n", "<C-p>", ":w<CR>:!pandoc % -f latex -t docx -o %:r.docx<CR><CR>", opts)
+-- keymap("n", "<leader>o", ":w<CR>:!pandoc % -t beamer -o %:r.pdf<CR><CR>", opts)
+-- keymap("n", "<leader>d", ":!opout <c-r>%<CR><CR>", opts)
+-- keymap("n", "<leader>c", ":w<CR>:!compiler %:p<CR><CR>", opts)
 
 -- keymap("n", "<C-w>", ":w!:<CR>:!compiler <c-r>%<CR>", opts)
+
 -- Normal --
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
