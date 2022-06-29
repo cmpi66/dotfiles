@@ -1,0 +1,39 @@
+sw_volume: 63
+audio_device_state:1:pulse
+audio_device_state:1:Visualizer feed
+state: stop
+current: 0
+random: 0
+repeat: 0
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:audiobooks/industrial-society-and-its-future/01-introduction.opus
+1:audiobooks/industrial-society-and-its-future/02-the-psychology-of-modern-leftism.opus
+2:audiobooks/industrial-society-and-its-future/03-feelings-of-inferiority.opus
+3:audiobooks/industrial-society-and-its-future/04-oversocializaion.opus
+4:audiobooks/industrial-society-and-its-future/05-the-power-process.opus
+5:audiobooks/industrial-society-and-its-future/06-surrogate-activities.opus
+6:audiobooks/industrial-society-and-its-future/07-autonomy.opus
+7:audiobooks/industrial-society-and-its-future/08-sources-of-social-problems.opus
+8:audiobooks/industrial-society-and-its-future/09-disruption-of-the-power-process-in-modern-society.opus
+9:audiobooks/industrial-society-and-its-future/10-how-some-people-adjust.opus
+10:audiobooks/industrial-society-and-its-future/11-the-motive-of-scientist.opus
+11:audiobooks/industrial-society-and-its-future/12-the-nature-of-freedom.opus
+12:audiobooks/industrial-society-and-its-future/13-some-principles-of-history.opus
+13:audiobooks/industrial-society-and-its-future/14-restricion-of-freedom-is-unavoidable-in-industrial-society.opus
+14:audiobooks/industrial-society-and-its-future/15-technology-is-a-more-powerful-force-than-the-aspiration-for-freedom.opus
+15:audiobooks/industrial-society-and-its-future/16-simpler-social-problems-have-proved-intractable.opus
+16:audiobooks/industrial-society-and-its-future/17-revolution-is-easier-than-reform.opus
+17:audiobooks/industrial-society-and-its-future/18-control-of-human-behavior.opus
+18:audiobooks/industrial-society-and-its-future/19-human-race-at-a-crossroads.opus
+19:audiobooks/industrial-society-and-its-future/20-human-suffering.opus
+20:audiobooks/industrial-society-and-its-future/21-the-future.opus
+21:audiobooks/industrial-society-and-its-future/22-strategy.opus
+22:audiobooks/industrial-society-and-its-future/23-two-kinds-of-technology.opus
+23:audiobooks/industrial-society-and-its-future/24-the-danger-of-leftism.opus
+24:audiobooks/industrial-society-and-its-future/25-final-note.opus
+playlist_end

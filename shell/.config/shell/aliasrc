@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# these are from bashrc
+alias ll='ls -lav --ignore=..'   # show long listing of all except ".."
+alias l='ls -lav --ignore=.?*'   # show long listing but no hidden dotfiles except "."
+
+# these are from zshrc
+alias sudo="doas"
+alias ls='exa -al --color=always --icons  --group-directories-first'
+#alias i3lock="i3lock -C -i /home/chris/.local/bin/arch-wallpaper.jpg"
+alias i3="i3lock -C -i /home/chris/.local/bin/arch-wallpaper.jpg"
+alias nv="nvim"
+alias snv="sudo nvim"
+alias ka="killall"
+alias cp="cp -iv"
+alias mv="mv -iv"
+alias rm="rm -v"
+alias cl="clear"
+alias v="vim"

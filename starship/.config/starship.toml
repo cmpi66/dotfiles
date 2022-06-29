@@ -1,0 +1,62 @@
+
+# format = """
+# [$username]\
+# (bold purple)(bold blue)$character$directory$git_branch$git_status$rust$package """
+
+format = "$all"
+
+[line_break]
+disabled = true
+
+# symbol = "rust"
+# style = "bold red"
+# format = "[$symbol$version]($style)"
+
+#Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+# [git_status]
+# conflicted = "🏳"
+# ahead = "🏎💨"
+# behind = "😰"
+# diverged = "😵"
+# up_to_date = "✓"
+# untracked = "🤷"
+# stashed = "📦"
+# modified = "📝"
+# staged = '[++\($count\)](green)'
+# renamed = "👅"
+# deleted = "🗑"
+
+[battery]
+full_symbol = "⚡"
+charging_symbol = ""
+discharging_symbol = ""
+
+[[battery.display]]
+threshold = 20
+style = "bold red"
+
+[character]
+error_symbol = "[](bold red) "
+success_symbol = "[->](bold green) "
+
+[username]
+style_user = "Bold green"
+style_root = "black bold"
+disabled = false
+show_always = true
+
+[sudo]
+style = "bold green"
+symbol = "👩‍💻 "
+disabled = true
+
+
+# [time]
+# disabled = false
+# format = '🕙[\[ $time \]]($style) '
+# time_format = "%T"
+# utc_time_offset = "-5"
+# time_range = "10:00:00-14:00:00" 
