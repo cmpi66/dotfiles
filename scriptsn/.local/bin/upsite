@@ -2,4 +2,4 @@
 
 # update site remotely
 
-rsync -uvrP --delete after ~/.local/src/sites/chris-m/ root@chris-munoz.com:/var/www/site/
+rsync -uvrP --delete-after ~/.local/src/sites/chris-m/ root@chris-munoz.com:/var/www/site/

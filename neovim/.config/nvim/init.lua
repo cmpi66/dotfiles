@@ -33,4 +33,4 @@ require "user.hop"
 require "user.alpha"
 -- require "user.dashboard"
 -- require "user.lsp"
-
+require "user.abbreviations"
