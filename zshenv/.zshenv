@@ -9,6 +9,9 @@ export XDG_DATA_HOME=$HOME/.local/share
 export ZDOTDIR=$HOME/.config/zsh   
 export $EDITOR="nvim" 
 # PATH="$PATH:/$HOME/.local/bin"
+
+PATH="$PATH:/$HOME/.local/appimages"
+
 ## Stole this from luke. Make every sub directory from bin to path. 
 PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')" 
 # PATH="$PATH:/$HOME/.local/bin/statusbar"

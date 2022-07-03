@@ -4326,3 +4326,6 @@ Jul 01 21:44 : player: played "audiobooks/industrial-society-and-its-future/23-t
 Jul 02 06:35 : player: played "audiobooks/industrial-society-and-its-future/23-two-kinds-of-technology.opus"
 Jul 02 08:21 : player: played "audiobooks/industrial-society-and-its-future/24-the-danger-of-leftism.opus"
 Jul 02 08:22 : player: played "audiobooks/industrial-society-and-its-future/25-final-note.opus"
+WARNING: Unhandled message: interface=org.freedesktop.DBus, path=/org/freedesktop/DBus, member=ActivatableServicesChanged
+WARNING: Unhandled message: interface=org.freedesktop.DBus, path=/org/freedesktop/DBus, member=ActivatableServicesChanged
+WARNING: Unhandled message: interface=org.freedesktop.DBus, path=/org/freedesktop/DBus, member=ActivatableServicesChanged
