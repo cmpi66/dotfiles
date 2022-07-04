@@ -14,7 +14,7 @@ rr  $HOME/.local/src
 h   $HOME
 m   ${XDG_MUSIC_DIR:-$HOME/media/Music}
 mn  /mnt
-pp  ${XDG_PICTURES_DIR:-$HOME/media/Pictures}
+pp  ${XDG_PICTURES_DIR:-$HOME/pixs}
 sc  $HOME/.local/bin
 # src $HOME/.local/src
 vv  ${XDG_VIDEOS_DIR:-$HOME/media/Videos}

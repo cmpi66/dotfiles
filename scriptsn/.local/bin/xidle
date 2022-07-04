@@ -15,7 +15,7 @@ xidlehook \
     'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
   `# Undim & lock after 10 more seconds` \
   --timer 10 \
-    'xrandr --output "$PRIMARY_DISPLAY" --brightness 1; i3lock -C -i /home/chris/.local/bin/arch-wallpaper.jpg' \
+    'xrandr --output "$PRIMARY_DISPLAY" --brightness 1; i3lock -C -i /home/chris/.local/bin/2770299.png' \
     '' \
   `# Finally, suspend an hour after it locks` \
   --timer 7200 \

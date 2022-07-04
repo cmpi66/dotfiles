@@ -71,5 +71,7 @@ exec slstatus &
 setbg &
 redshift &
 picom --experimental-backend &
+dbus-launch --sh-syntax --exit-with-session; pulseaudio --kill; pipewire &
+syncthing &
 
 exec dwm

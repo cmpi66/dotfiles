@@ -99,6 +99,5 @@ export DICS="/usr/share/stardict/dic/"
 		&& export LF_ICONS
 }
 
-fish
 
 
