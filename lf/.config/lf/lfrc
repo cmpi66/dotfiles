@@ -19,7 +19,7 @@
 set shellopts '-eu'
 set ifs "\n"
 set scrolloff 10
-# set icons '~/.config/lf/icons'
+set icons '~/.config/lf/icons'
 set icons 
 set period 1
 set ignorecase true

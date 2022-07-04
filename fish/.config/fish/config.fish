@@ -135,4 +135,5 @@ scheme set catppuccin
 
  source ~/.config/fish/shortcuts.fish
 
+source ~/.config/fish/gentoo.fish
 

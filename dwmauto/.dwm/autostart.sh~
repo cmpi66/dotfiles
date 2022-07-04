@@ -1,8 +1,0 @@
-#! /bin/bash
-xrandr --output DP-1 --primary & 
-lxsession &
-picom --experimental-backend &
-exec slstatus&
-~/.fehbg &
-/usr/bin/emacs --daemon &
-dwm

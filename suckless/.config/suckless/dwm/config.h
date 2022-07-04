@@ -168,7 +168,7 @@ static Key keys[] = {
   
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
    // { MODKEY,                      XK_F1,      spawn,          {.v = keyscmd } },
-{ MODKEY,		                     	XK_BackSpace,	spawn,	    {.v = (const char*[]){ "sysact", NULL } } },
+{ MODKEY,		                     	XK_BackSpace,	spawn,	    {.v = (const char*[]){ "rofi-poweroff.sh", NULL } } },
 { MODKEY|ShiftMask,		            XK_BackSpace,	spawn,	   SHCMD("i3lock -C -i /home/chris/.local/bin/arch-wallpaper.jpg")  },
   { MODKEY,		          	        XK_w,		spawn,            {.v = (const char*[]){ BROWSER, NULL } } },
 
