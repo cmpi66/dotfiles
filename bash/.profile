@@ -62,7 +62,7 @@ PATH="$PATH:/$HOME/.local/share/cargo/bin"
 
 export editor="nvim"
 export visual="nvim"
-export browser="firefox"
+export browser="firefox-bin"
 export movplay="mpv"
 export term=xterm-256color
 export picview="sxiv"
@@ -94,4 +94,11 @@ export HISTFILE="$XDG_DATA_HOME/zsh/history"
 export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
 export DICS="/usr/share/stardict/dic/"
 
+[ -f ~/.config/LF_ICONS ] && {
+	LF_ICONS="$(tr '\n' ':' <~/.config/LF_ICONS)" \
+		&& export LF_ICONS
+}
+
 fish
+
+

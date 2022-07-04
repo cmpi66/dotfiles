@@ -88,8 +88,8 @@ autoload edit-command-line; zle -N edit-command-line
 
 # Environment variables set everywhere
 export EDITOR="nvim"
-export TERMINAL="alacritty"
-export BROWSER="firefox"
+export TERMINAL="st"
+export BROWSER="firefox-bin"
 
 
  export NVM_DIR="$HOME/.config//nvm"

@@ -12,8 +12,8 @@ set fish_greeting             #disables help greeting
 set TERM "xterm-256color"
 set EDITOR "nvim"
 set VISUAL "nvim"
-set TERMINAL "alacritty"
-set BROWSER "firefox"
+set TERMINAL "st"
+set BROWSER "firefox-bin"
 
 ### SET MANPAGER
 ### "nvim" as manpager
