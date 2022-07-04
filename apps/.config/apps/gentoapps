@@ -1,3 +1,4 @@
+cargo install xidlehook --bins
 acct-group/locate
 app-admin/entr
 app-admin/stow
