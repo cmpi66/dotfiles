@@ -1,0 +1,14 @@
+#required for nvidia drivers
+
+x11-drivers/nvidia-drivers NVIDIA-r2
+dev-util/nvidia-cuda-toolkit NVIDIA CUDA
+sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE
+# required by x11-base/xorg-x11-7.4-r3::gentoo[fonts]
+# required by x11-base/xorg-x11 (argument)
+>=media-fonts/font-bh-ttf-1.0.3-r2 bh-luxi
+# required by x11-base/xorg-x11-7.4-r3::gentoo[fonts]
+# required by x11-base/xorg-x11 (argument)
+>=media-fonts/font-bh-type1-1.0.3-r2 bh-luxi
+# required by upwork (argument)
+>=app-office/upwork-5.4.5.1-r1 ODESK
+

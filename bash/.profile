@@ -45,7 +45,7 @@ export XDG_CONFIG_HOME=$HOME/.config/
 export XDG_CACHE_HOME=$HOME/.cache/
 export XDG_DATA_HOME=$HOME/.local/share
 export ZDOTDIR=$HOME/.config/zsh   
-# export $EDITOR="/usr/bin/nvim" 
+export $EDITOR="/usr/bin/nvim" 
 # PATH="$PATH:/$HOME/.local/bin"
 
 PATH="$PATH:/$HOME/.local/appimages"
@@ -94,10 +94,10 @@ export HISTFILE="$XDG_DATA_HOME/zsh/history"
 export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
 export DICS="/usr/share/stardict/dic/"
 
-[ -f ~/.config/LF_ICONS ] && {
-	LF_ICONS="$(tr '\n' ':' <~/.config/LF_ICONS)" \
-		&& export LF_ICONS
-}
+# [ -f ~/.config/LF_ICONS ] && {
+# 	LF_ICONS="$(tr '\n' ':' <~/.config/LF_ICONS)" \
+# 		&& export LF_ICONS
+# }
 
 
 

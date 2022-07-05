@@ -1,0 +1,92 @@
+# package.use# required by media-libs/mesa-22.0.5::gentoo
+# required by virtual/opengl-7.0-r2::gentoo
+# required by x11-apps/mesa-progs-8.4.0-r1::gentoo
+# required by x11-apps/mesa-progs (argument)
+>=media-libs/libglvnd-1.4.0 X
+# required by x11-base/xorg-server-21.1.3-r3::gentoo[elogind]
+# required by x11-drivers/xf86-input-libinput-1.2.1::gentoo
+# required by x11-base/xorg-drivers-21.1::gentoo[input_devices_libinput]
+>=sys-auth/pambase-20210201.1 elogind
+# required by fishshell
+>=dev-libs/libpcre2-10.40 pcre32
+# required by kde-apps/okular-21.12.3::gentoo[image-backend]
+# required by okular (argument)
+>=dev-qt/qtgui-5.15.5 jpeg
+# required by kde-apps/okular-21.12.3::gentoo[pdf]
+# required by okular (argument)
+>=app-text/poppler-22.05.0 nss qt5
+# required by x11-misc/xdg-utils-1.1.3_p20200220-r5::gentoo
+# required by kde-frameworks/kf-env-5::gentoo
+# required by kde-plasma/kactivitymanagerd-5.24.5::gentoo
+# required by kde-frameworks/kactivities-5.92.0::gentoo
+# required by kde-apps/okular-21.12.3::gentoo
+# required by okular (argument)
+>=app-text/xmlto-0.0.28-r8 text
+# required by media-libs/phonon-vlc-0.11.3-r1::gentoo
+# required by media-libs/phonon-4.11.1-r1::gentoo[vlc]
+# required by kde-apps/okular-21.12.3::gentoo
+# required by okular (argument)
+>=media-video/vlc-3.0.17.3-r2 dbus ogg
+# required by media-video/vlc-3.0.17.3-r2::gentoo
+# required by media-libs/phonon-vlc-0.11.3-r1::gentoo
+# required by media-libs/phonon-4.11.1-r1::gentoo[vlc]
+# required by kde-apps/okular-21.12.3::gentoo
+# required by okular (argument)
+>=sys-libs/zlib-1.2.12-r2 minizip
+# required by kde-frameworks/kcoreaddons-5.92.0::gentoo
+# required by kde-plasma/kactivitymanagerd-5.24.5::gentoo
+# required by kde-frameworks/kactivities-5.92.0::gentoo
+# required by kde-apps/okular-21.12.3::gentoo
+# required by okular (argument)
+>=dev-qt/qtcore-5.15.5-r1 icu
+# package.use# required by media-sound/pulseaudio-daemon-16.0-r1::gentoo[alsa-plugin,alsa]
+# required by media-sound/pulseaudio-16.0::gentoo[daemon]
+# required by www-client/firefox-bin-102.0::gentoo[pulseaudio]
+# required by www-client/firefox-bin (argument)
+>=media-plugins/alsa-plugins-1.2.6 pulseaudio
+# required by app-text/texlive-core-2021-r1::gentoo
+# required by virtual/tex-base-0::gentoo
+# required by app-text/lcdf-typetools-2.108-r1::gentoo[kpathsea]
+# required by app-text/texlive-2021::gentoo
+# required by texlive (argument)
+>=media-libs/harfbuzz-4.3.0 icu
+# required by app-office/upwork-5.4.5.1-r1::gentoo
+# required by upwork (argument)
+>=x11-libs/gtk+-3.24.34 cups
+# required by net-print/cups-filters-1.28.15::gentoo[postscript]
+# required by net-print/cups-2.3.3_p2-r3::gentoo
+# required by x11-libs/gtk+-3.24.34::gentoo[cups]
+# required by app-office/upwork-5.4.5.1-r1::gentoo
+# required by upwork (argument)
+>=app-text/ghostscript-gpl-9.55.0-r1 cups
+# required by x11-misc/pcmanfm-1.3.2-r1::gentoo
+# required by pcmanfm (argument)
+>=x11-libs/libfm-1.3.2 gtk
+# required by gnome-base/gnome-keyring-42.1::gentoo
+# required by virtual/secret-service-0::gentoo
+# required by app-crypt/libsecret-0.20.5-r3::gentoo
+>=app-crypt/gcr-3.41.0 gtk
+# required by app-office/libreoffice-bin-7.3.3.2-r3::gentoo
+# required by app-office/libreoffice-bin (argument)
+>=dev-libs/xmlsec-1.2.33 nss
+# required by mail-client/mutt-wizard-3.2.1-r1::gentoo
+# required by mutt-wizard (argument)
+>=mail-client/neomutt-20211029-r1 notmuch sasl
+# required by app-admin/pass-1.7.4-r2::gentoo
+# required by mail-client/mutt-wizard-3.2.1-r1::gentoo
+# required by mutt-wizard (argument)
+>=media-gfx/qrencode-4.1.1 png
+# required by media-sound/ncmpcpp-0.9.2-r2::gentoo
+# required by ncmpcpp (argument)
+>=dev-libs/boost-1.79.0 icu
+media-video/pipewire -aac -aptx -bluetooth
+# required by media-gfx/inkscape-1.1.2-r1::gentoo
+# required by inkscape (argument)
+>=app-text/poppler-22.05.0 cairo
+# required by media-gfx/gimp-2.10.30::gentoo
+# required by gimp (argument)
+>=media-libs/gegl-0.4.34 cairo
+# required by x11-libs/xapp-2.2.8::gentoo
+# required by app-backup/timeshift-22.06.1-r1::guru
+# required by timeshift (argument)
+>=dev-libs/libdbusmenu-16.04.0-r1 gtk3
