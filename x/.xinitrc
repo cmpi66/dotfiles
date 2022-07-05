@@ -71,5 +71,6 @@ exec slstatus &
 setbg &
 redshift &
 picom --experimental-backend &
+syncthing &
 
 exec dwm

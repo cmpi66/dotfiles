@@ -1,7 +1,7 @@
 # vim: filetype=sh
 alias cac="cd /home/chris/.cache/ && ls -a" \
 cf="cd /home/chris/.config/ && ls -a" \
-D="cd /home/chris/media/Downloads && ls -a" \
+D="cd /home/chris/dl && ls -a" \
 d="cd /home/chris/docs && ls -a" \
 dt="cd /home/chris/docs/tex/ && ls -a" \
 ds="cd /home/chris/docs/ms/ && ls -a" \
@@ -13,7 +13,7 @@ rr="cd /home/chris/.local/src && ls -a" \
 h="cd /home/chris && ls -a" \
 m="cd /home/chris/media/Music && ls -a" \
 mn="cd /mnt && ls -a" \
-pp="cd /home/chris/media/Pictures && ls -a" \
+pp="cd /home/chris/pixs && ls -a" \
 sc="cd /home/chris/.local/bin && ls -a" \
 vv="cd /home/chris/media/Videos && ls -a" \
 bf="$EDITOR /home/chris/.config//shell/bm-files" \
