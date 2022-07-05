@@ -1,7 +1,7 @@
 # vim: filetype=sh
 abbr cac "cd /home/chris/.cache/; and ls -a"
 abbr cf "cd /home/chris/.config/; and ls -a"
-abbr D "cd /home/chris/media/Downloads; and ls -a"
+abbr D "cd /home/chris/dl; and ls -a"
 abbr d "cd /home/chris/docs; and ls -a"
 abbr dt "cd /home/chris/docs/tex/; and ls -a"
 abbr ds "cd /home/chris/docs/ms/; and ls -a"

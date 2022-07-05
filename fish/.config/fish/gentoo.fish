@@ -1,2 +1,6 @@
-abbr emu "emerge --update --deep --newuse @world"
-# abbr emerge "emerge --ask --autounmask"
+abbr em "sudo emerge --ask"
+abbr ew "sudo emerge-webrsync"
+abbr ems "sudo emerge --sync"
+abbr emu "sudo emerge --ask --update --deep --newuse @world"
+abbr ema "sudo emerge --ask --autounmask"
+abbr emergeall "sudo emerge --ask -uDU --keep-going --with-bdeps=y @world"

@@ -1,6 +1,6 @@
 hash -d cac=/home/chris/.cache/ 
 hash -d cf=/home/chris/.config/ 
-hash -d D=/home/chris/media/Downloads 
+hash -d D=/home/chris/dl 
 hash -d d=/home/chris/docs 
 hash -d dt=/home/chris/docs/tex/ 
 hash -d ds=/home/chris/docs/ms/ 

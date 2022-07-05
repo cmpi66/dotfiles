@@ -50,10 +50,10 @@ abbr f 'zi'
 abbr g 'lazygit'
 
 # get fastest mirrors
-abbr mirror "sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-abbr mirrord "sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
-abbr mirrors "sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
-abbr mirrora "sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
+# abbr mirror "sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+# abbr mirrord "sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
+# abbr mirrors "sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
+# abbr mirrora "sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
@@ -74,7 +74,7 @@ alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
 # System abbreviations 
-abbr archlinx-fix-keys "sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
+# abbr archlinx-fix-keys "sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
 abbr merge "xrdb -merge ~/.Xresources"
 # abbr nvimrc "nvim ~/.config/nvim/"
 # abbr sudo "doas"
@@ -88,12 +88,12 @@ abbr rm "rm -v"
 abbr ln "ln -i"
 abbr cl "clear"
 abbr v "vim"
-abbr p "sudo pacman -Sy"
-abbr rn "sudo pacman -Rns"
+# abbr p "sudo pacman -Sy"
+# abbr rn "sudo pacman -Rns"
 abbr wiki "nvim ~/docs/vimwiki/index.md"
-abbr yup "paru -Syu"
+# abbr yup "paru -Syu"
 # abbr gp "git add . && git commit -m 'autopush' && git push"
-abbr gp "git add . && git commit -m 'autopush' && git remote | xargs -L1 git push --all" ##push to all 3 gits
+abbr gp "git add . && git commit -m 'autopush' && git remote | xargs -L1 git push --all" ##push to all git remotes
 abbr mkdir "mkdir -pv"
 abbr lf "lfub"
 abbr kx "killall sxhkd && sxhkd &"
@@ -127,13 +127,9 @@ bind \cj history-search-forward # Down
 bind \cn 'ncdu'
 
 neofetch
-# colorscript random
 zoxide init fish | source
 starship init fish | source
-# scheme set doom-one
 scheme set catppuccin
 
- source ~/.config/fish/shortcuts.fish
-
+source ~/.config/fish/shortcuts.fish
 source ~/.config/fish/gentoo.fish
-
