@@ -30,4 +30,4 @@ cfmc="$EDITOR /home/chris/.config//ncmpcpp/config" \
 cfl="$EDITOR /home/chris/.config//lf/lfrc" \
 cfL="$EDITOR /home/chris/.config//lf/scope" \
 cfX="$EDITOR /home/chris/.config//sxiv/exec/key-handler" \
-cfd="$EDITOR /home/chris/.config//suckless/dwm/config.def.h" \
+cfd="$EDITOR /home/chris/.config//suckless/dwm/config.h" \

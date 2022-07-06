@@ -29,4 +29,4 @@ hash -d cfmc=/home/chris/.config//ncmpcpp/config
 hash -d cfl=/home/chris/.config//lf/lfrc 
 hash -d cfL=/home/chris/.config//lf/scope 
 hash -d cfX=/home/chris/.config//sxiv/exec/key-handler 
-hash -d cfd=/home/chris/.config//suckless/dwm/config.def.h 
+hash -d cfd=/home/chris/.config//suckless/dwm/config.h 
