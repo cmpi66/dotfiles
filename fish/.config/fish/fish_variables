@@ -69,6 +69,7 @@ SETUVAR _fish_abbr_rr:cd\x20/home/chris/\x2elocal/src\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_sc:cd\x20/home/chris/\x2elocal/bin\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_snv:sudo\x20nvim
 SETUVAR _fish_abbr_src:cd\x20/home/chris/\x2elocal/src\x3b\x20and\x20ls\x20\x2da
+SETUVAR _fish_abbr_update_2D_grub:sudo\x20grub\x2dmkconfig\x20\x2do\x20/boot/grub/grub\x2ecfg
 SETUVAR _fish_abbr_v:vim
 SETUVAR _fish_abbr_v_3D_:vim
 SETUVAR _fish_abbr_vd:nvim\x20\x2dd

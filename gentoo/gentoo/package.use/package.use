@@ -90,3 +90,9 @@ media-video/pipewire -aac -aptx -bluetooth
 # required by app-backup/timeshift-22.06.1-r1::guru
 # required by timeshift (argument)
 >=dev-libs/libdbusmenu-16.04.0-r1 gtk3
+# required for gentoos "AUR"
+app-portage/layman sync-plugin-portage git
+# pulse for mpd
+media-sound/mpd pulseaudio
+
+<app-editors/neovim-0.7.0

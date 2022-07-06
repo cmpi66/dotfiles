@@ -9,7 +9,7 @@ static const struct arg args[] = {
     {uptime,   "^c#c9cbff^ ^b#161320^  %s  ", NULL },
     {cpu_perc, "^c#ddb6f2^ ^b#161320^  %s%%  ", NULL },
     {ram_used, "^c#74c7ec^ ^b#161320^  %s  ", NULL },
-    {temp,     "^c#f28fad^ ^b#161320^  %s  ",    "/sys/class/thermal/thermal_zone8/temp" },
+    // {temp,     "^c#f28fad^ ^b#161320^  %s  ",    "/sys/class/thermal/thermal_zone*/temp" },
     //{run_command,"^c#fae380^  %2s    ",   "pacman -Qu | grep -Fcv '[ignored]'" },
     //{run_command,  "^c#fae380^  %2s",     "sb-pacpackages.sh" },
     //{run_command,  "^c#96cdfb^  %s",      "sb-battery.sh" },

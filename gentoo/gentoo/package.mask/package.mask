@@ -1,1 +1,0 @@
-<app-editors/neovim-0.7.0

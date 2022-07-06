@@ -72,14 +72,14 @@ typedef struct {
 const char *spcmd1[] = {"st", "-n", "spterm", "-g", "70x20", "-e", "pulsemixer", NULL };
 const char *spcmd2[] = {"st", "-n", "spfm", "-g", "60x20", "-e", "notes",  NULL };
 const char *spcmd3[] = {"st", "-n", "spbmks", "-g", "80x25", "-e", "bmks", NULL };
-const char *spcmd4[] = {"st", "-n", "spwiki", "-g", "90x25", "-e", "dmenuwiki", NULL };
+// const char *spcmd4[] = {"st", "-n", "spwiki", "-g", "90x25", "-e", "dmenuwiki", NULL };
 // const char *spcmd3[] = {"keepassxc", NULL };
 static Sp scratchpads[] = {
     /* name          cmd  */
    {"spterm",      spcmd1},
    {"spfm",        spcmd2},
    {"spbmks",   spcmd3},
-   {"spwiki",   spcmd4},
+   // {"spwiki",   spcmd4},
 };
 
 
@@ -104,7 +104,7 @@ static const Rule rules[] = {
     { NULL,       "spterm",     NULL,       SPTAG(0),       1,           -1 },
     { NULL,       "spfm",       NULL,       SPTAG(1),       1,           -1 },
     { NULL,       "spbmks",  NULL,       SPTAG(2),       1,           -1 },
-    { NULL,       "spwiki",  NULL,       SPTAG(3),       1,           -1 },
+    // { NULL,       "spwiki",  NULL,       SPTAG(3),       1,           -1 },
 
 };
 
@@ -249,7 +249,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,           	XK_y,      togglescratch,  {.ui = 0 } },
 	{ MODKEY|ShiftMask,           	XK_n,	     togglescratch,  {.ui = 1 } },
 	{ MODKEY|ShiftMask,            	XK_m,	     togglescratch,  {.ui = 2 } },
-	{ MODKEY|ShiftMask,            	XK_a,	     togglescratch,  {.ui = 3 } },
+	// { MODKEY|ShiftMask,            	XK_a,	     togglescratch,  {.ui = 3 } },
   { MODKEY,                       XK_n,      shiftview,      {.i = +1 } },
   { MODKEY,                       XK_b,      shiftview,      {.i = -1 } },
 
