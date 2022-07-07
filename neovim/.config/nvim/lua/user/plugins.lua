@@ -83,7 +83,7 @@ commit = "fa6876f832ea1b71801c4e481d8feca9a36215ec" } -- Autopairs, integrates w
 	as = "catppuccin"
 })
 -- use "rebelot/kanagawa.nvim"
-  -- use 'Mofiqul/dracula.nvim'
+  use 'Mofiqul/dracula.nvim'
   -- use 'shaunsingh/nord.nvim'
 
   -- cmp plugins

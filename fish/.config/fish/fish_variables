@@ -41,6 +41,7 @@ SETUVAR _fish_abbr_dv:cd\x20/home/chris/docs/vimwiki/\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_dw:cd\x20/home/chris/docs/vimwiki/\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_em:sudo\x20emerge\x20\x2d\x2dask
 SETUVAR _fish_abbr_ema:sudo\x20emerge\x20\x2d\x2dask\x20\x2d\x2dautounmask
+SETUVAR _fish_abbr_emd:sudo\x20emerge\x20\x2d\x2dask\x20\x2d\x2ddepclean
 SETUVAR _fish_abbr_emergall:sudo\x20emerge\x20\x2d\x2dask\x20\x2duDU\x20\x2d\x2dkeep\x2dgoing\x20\x2d\x2dwith\x2dbdeps\x3dy\x20\x40world
 SETUVAR _fish_abbr_emergeall:sudo\x20emerge\x20\x2d\x2dask\x20\x2duDU\x20\x2d\x2dkeep\x2dgoing\x20\x2d\x2dwith\x2dbdeps\x3dy\x20\x40world
 SETUVAR _fish_abbr_ems:sudo\x20emerge\x20\x2d\x2dsync
@@ -52,11 +53,13 @@ SETUVAR _fish_abbr_gp:git\x20add\x20\x2e\x20\x26\x26\x20git\x20commit\x20\x2dm\x
 SETUVAR _fish_abbr_h:cd\x20/home/chris\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_i3:i3lock\x20\x2dC\x20\x2di\x20/home/chris/\x2elocal/bin/arch\x2dwallpaper\x2ejpg
 SETUVAR _fish_abbr_ka:killall
+SETUVAR _fish_abbr_ke:cd\x20/usr/src/linux/\x20\x26\x26\x20sudo\x20make\x20menuconfig
 SETUVAR _fish_abbr_kx:killall\x20sxhkd\x20\x26\x26\x20sxhkd\x20\x26
 SETUVAR _fish_abbr_lf:lfub
 SETUVAR _fish_abbr_ln:ln\x20\x2di
 SETUVAR _fish_abbr_m:cd\x20/home/chris/media/Music\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_merge:xrdb\x20\x2dmerge\x20\x7e/\x2eXresources
+SETUVAR _fish_abbr_mk:sudo\x20/usr/src/linux/rebuild\x2dkernel\x2esh
 SETUVAR _fish_abbr_mkdir:mkdir\x20\x2dpv
 SETUVAR _fish_abbr_mn:cd\x20/mnt\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_mv:mv\x20\x2div

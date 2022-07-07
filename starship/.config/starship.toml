@@ -48,10 +48,17 @@ style_root = "black bold"
 disabled = false
 show_always = true
 
+[hostname]
+ssh_only = false
+format = "[$hostname]($style) "
+trim_at = "-"
+style = "bold purple"
+disabled = false
+
 [sudo]
 style = "bold green"
 symbol = "👩‍💻 "
-disabled = true
+disabled = false
 
 
 # [time]

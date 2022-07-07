@@ -27,7 +27,7 @@ Xft.dpi: 130
 
 
 ! Doom-one colors for Xresources
-!
+
 ! *background: #282c34
 ! *foreground: #bbc2cf
 !
@@ -85,3 +85,24 @@ Xft.dpi: 130
 ! Whites
 *color7: #D9E0EE
 *color15: #D9E0EE
+
+
+! Dracula Xresources palette
+! *foreground: #F8F8F2
+! *background: #282A36
+! *color0:     #000000
+! *color8:     #4D4D4D
+! *color1:     #FF5555
+! *color9:     #FF6E67
+! *color2:     #50FA7B
+! *color10:    #5AF78E
+! *color3:     #F1FA8C
+! *color11:    #F4F99D
+! *color4:     #BD93F9
+! *color12:    #CAA9FA
+! *color5:     #FF79C6
+! *color13:    #FF92D0
+! *color6:     #8BE9FD
+! *color14:    #9AEDFE
+! *color7:     #BFBFBF
+! *color15:    #E6E6E6
