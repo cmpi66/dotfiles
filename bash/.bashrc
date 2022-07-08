@@ -2,7 +2,7 @@
 # ~/.bashrc
 #
 source ~/.profile
-fish
+# fish
 # If not running interactively, don't do anything
 
 
