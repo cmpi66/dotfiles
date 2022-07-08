@@ -43,10 +43,17 @@ error_symbol = "[](bold red) "
 success_symbol = "[->](bold green) "
 
 [username]
-style_user = "Bold green"
+style_user = "Bold yellow"
 style_root = "black bold"
 disabled = false
 show_always = true
+
+[hostname]
+ssh_only = false
+format = "[$hostname]($style) "
+trim_at = "-"
+style = "bold red"
+disabled = false
 
 [sudo]
 style = "bold green"

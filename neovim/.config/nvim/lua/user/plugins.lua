@@ -84,7 +84,7 @@ commit = "fa6876f832ea1b71801c4e481d8feca9a36215ec" } -- Autopairs, integrates w
 })
 -- use "rebelot/kanagawa.nvim"
   -- use 'Mofiqul/dracula.nvim'
-  -- use 'shaunsingh/nord.nvim'
+  use 'shaunsingh/nord.nvim'
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp", commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" } -- The completion plugin
