@@ -100,4 +100,3 @@ export DICS="/usr/share/stardict/dic/"
 # }
 
 
-

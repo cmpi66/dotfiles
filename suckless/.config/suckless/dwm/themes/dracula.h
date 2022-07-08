@@ -7,4 +7,4 @@ static const char col_gray3[]       = "#6272a4";
 //current tag adn current windwo font color
 static const char col_gray4[]       = "#d9e0ee";
 //top bar second color (blue) and active window border color
-static const char col_cyan[]        = "#bd93f9";
+static const char col_cyan[]        = "#8be9fd";

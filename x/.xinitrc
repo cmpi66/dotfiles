@@ -49,17 +49,12 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 
-## Gnome keyring for auto gpg test
-eval $(gnome-keyring-daemon --start)
-export SSH_AUTH_SOCK
 
-# lxsession &
 # Clear caps lock key, no longer using it. Replaced with escape. This command doesnt save in .Xmodmap.
 
 xmodmap -e 'clear lock' &
 # Dont need the xrandr command anymore. Using lukes display script
 # xrandr --output eDP1 --auto --output DP1 --primary --left-of eDP1 &  
-
 xidle &
 # exec ~/.local/bin/xidle &
 xinput set-prop "DLL096D:01 06CB:CDE6 Touchpad" "Coordinate Transformation Matrix" 3.8 0 0 0 3.8 0 0 0 1 &
@@ -70,8 +65,8 @@ mpd ~/.config/mpd/mpd.conf &
 exec slstatus &
 setbg &
 redshift &
-picom --experimental-backend &
-dbus-launch --sh-syntax --exit-with-session; pulseaudio --kill; pipewire &
+# picom --experimental-backend &
+# dbus-launch --sh-syntax --exit-with-session; pulseaudio --kill; pipewire &
 syncthing &
 
 exec dwm

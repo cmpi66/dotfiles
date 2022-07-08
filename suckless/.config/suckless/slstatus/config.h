@@ -9,11 +9,11 @@ static const char unknown_str[] = "n/a";
 /* maximum output string length */
 #define MAXLEN 2048
 
-// #include "themes/dracula.h"
+#include "themes/dracula.h"
 // #include "themes/tokyonight.h"
 // #include "themes/doomone.h"
 // #include "themes/doomone-two.h"
-#include "themes/catppuccin.h"
+// #include "themes/catppuccin.h"
 
 /*
  * function            description                     argument (example)

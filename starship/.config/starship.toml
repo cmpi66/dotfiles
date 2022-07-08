@@ -55,10 +55,10 @@ trim_at = "-"
 style = "bold purple"
 disabled = false
 
-[sudo]
-style = "bold green"
-symbol = "👩‍💻 "
-disabled = false
+# [sudo]
+# style = "bold green"
+# symbol = "👩‍💻 "
+# disabled = false
 
 
 # [time]

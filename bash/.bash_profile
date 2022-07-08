@@ -6,3 +6,5 @@ if shopt -q login_shell; then
 else
     exit 1 # Somehow this is a non-bash or non-login shell.
 fi
+
+
