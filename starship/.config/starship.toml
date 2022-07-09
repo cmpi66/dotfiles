@@ -52,7 +52,7 @@ show_always = true
 ssh_only = false
 format = "[$hostname]($style) "
 trim_at = "-"
-style = "bold yellow"
+style = "bold blue"
 disabled = false
 
 # [sudo]
