@@ -93,6 +93,8 @@ media-video/pipewire -aac -aptx -bluetooth
 # required for gentoos "AUR"
 app-portage/layman sync-plugin-portage git
 # pulse for mpd
-media-sound/mpd pulseaudio
-
-<app-editors/neovim-0.7.0
+media-sound/mpd pulseaudio 
+# required by media-tv/v4l-utils-1.22.1::gentoo
+# required by media-tv/v4l-utils (argument)
+>=media-libs/libv4l-1.22.1 jpeg qt5 opengl
+media-video/ffmpeg libv4l v4l nvenc pulseaudio

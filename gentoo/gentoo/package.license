@@ -11,4 +11,6 @@ sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE
 >=media-fonts/font-bh-type1-1.0.3-r2 bh-luxi
 # required by upwork (argument)
 app-office/upwork ODESK
+# required by media-fonts/joypixels (argument)
+=media-fonts/joypixels-6.5.0-r1 JoyPixels
 

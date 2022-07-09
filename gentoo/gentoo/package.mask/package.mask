@@ -1,0 +1,3 @@
+## dont update neovim
+>app-editors/neovim-0.7.0
+

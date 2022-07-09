@@ -269,19 +269,16 @@ app-office/upwork ~amd64 ~x86
 sys-config/ltoize ~amd64
 app-portage/portage-bashrc-mv ~amd64
 app-shells/runtitles ~amd64
-sys-devel/gcc ~amd64
-## for haskell depency conflict: lets see if it works
-# <dev-haskell/hslua-1.2 ~amd64
-# >=dev-haskell/hslua-1.0.1:0/1.0.3.1 ~amd64
-# <dev-haskell/hslua-1.1:0/1.0.3.1= ~amd64
-# <dev-haskell/hslua-1.1 ~amd64
-# <dev-haskell/skylighting-0.9:0/0.8.5 ~amd64
-# <dev-haskell/skylighting-0.9 ~amd64
-# >=dev-haskell/skylighting-0.8.3.2:0/0.8.5 ~amd64
-# <dev-haskell/skylighting-core-0.9 ~amd64
-# ~dev-haskell/skylighting-core-0.8.5 ~amd64
-# <dev-haskell/skylighting-core-0.9:0/0.8.5 ~amd64
-# >=dev-haskell/skylighting-core-0.8.3.2:0/0.8.5 ~amd64
-#
-
-
+media-sound/mpd ~amd64
+# required by net-mail/urlscan (argument)
+=net-mail/urlscan-0.9.9 ~amd64
+# required by sys-auth/pam-gnupg (argument)
+=sys-auth/pam-gnupg-0.3 ~amd64
+# required by x11-libs/libXft-bgra-patch (argument)
+=x11-libs/libXft-bgra-patch-2.3.4 ~amd64
+# required by media-video/v4l2loopback (argument)
+=media-video/v4l2loopback-0.12.5-r1 ~amd64
+# required by media-tv/v4l-utils-1.22.1::gentoo
+# required by media-tv/v4l-utils (argument)
+>=media-libs/libv4l-1.22.1 qt5 opengl
+# required by app-misc/ani-cli (argument)
