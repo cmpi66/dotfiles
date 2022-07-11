@@ -176,7 +176,7 @@ static Key keys[] = {
   // { MODKEY|ShiftMask,			        XK_w,		spawn,		        {.v = (const char*[]){ TERMINAL,"--class", "Alacritty", "-e","nvim", "~/media/Documents/vimwiki/index.md", NULL } } },
   { MODKEY|ShiftMask,			        XK_w,		spawn,		        SHCMD("st -e nvim -c VimwikiIndex")  },
 
-  { MODKEY,		          	        XK_e,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "neomutt", NULL } } },
+  { MODKEY,		          	        XK_e,		spawn,		         SHCMD(TERMINAL " -e neomutt ; rmdir ~/.abook") },
 
   { MODKEY|ShiftMask,		         	XK_e,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "newsboat", NULL } } },
 
@@ -187,7 +187,7 @@ static Key keys[] = {
   { MODKEY,		          	        XK_p,		spawn,		         {.v = (const char*[]){ "okular", NULL } } },
   { MODKEY|ShiftMask,		          XK_p,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "htop", NULL } } },
 
-  { MODKEY,		          	        XK_a,		spawn,		         {.v = (const char*[]){ "st", "-e", "abook", NULL } } },
+  { MODKEY,		          	        XK_a,		spawn,		         SHCMD(" st -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook") },
 
   // { MODKEY|ShiftMask,		          XK_a,		spawn,		         {.v = (const char*[]){ "dmenuwiki", NULL } } },
 

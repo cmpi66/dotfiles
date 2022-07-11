@@ -1,6 +1,6 @@
 static const struct arg args[] = {
 	/* function format          argument */
-    // {kernel_release, "^c#50fa7b^  %s  ", NULL },
+    {kernel_release, "^c#50fa7b^  %s  ", NULL },
   //{run_command,  "^c#abe9b3^  %s ",      "sb-price.sh" },
     // {run_command,  "^c#50fa7b^  %s ",      "sb-battery.sh" },
     //{run_command,  "^c#e8a2af^  %2s ",     "sb-forecast.sh" },
