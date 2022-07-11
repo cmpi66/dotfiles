@@ -51,7 +51,6 @@ fi
 
 
 # Clear caps lock key, no longer using it. Replaced with escape. This command doesnt save in .Xmodmap.
-
 xmodmap -e 'clear lock' &
 # Dont need the xrandr command anymore. Using lukes display script
 # xrandr --output eDP1 --auto --output DP1 --primary --left-of eDP1 &  
@@ -69,4 +68,5 @@ redshift &
 # dbus-launch --sh-syntax --exit-with-session; pulseaudio --kill; pipewire &
 syncthing &
 
+# exec dbus-launch --exit-with-session dwm
 exec dwm

@@ -39,6 +39,8 @@
 ## Most recent from zshenv
 # typeset -U PATH path
 
+## GENTOO FILE
+
 #XDG
 export XDG_STATE_HOME=$HOME/.local/state
 export XDG_CONFIG_HOME=$HOME/.config/
@@ -70,13 +72,13 @@ export picview="sxiv"
 # export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
 #
-export NVM_DIR="$HOME/.config//nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" --no-use   # This loads nvm bash_completion
-
+# export NVM_DIR="$HOME/.config//nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" --no-use   # This loads nvm bash_completion
+#
 # ~/ Clean up:
 export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/shell/inputrc"
-# export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
+export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 export LYNX_CFG_PATH="$XDG_CONFIG_HOME"/lynx.cfg
 export LESSHISTFILE="-"
 export NOTMUCH_CONFIG=$XDG_CONFIG_HOME/notmuch/default/config
@@ -88,15 +90,8 @@ export GOPATH="$XDG_DATA_HOME/go"
 # export GIT_CONFIG="$XDG_CONFIG_HOME/git/config" ## This breaks aur packages gives "ERROR not a clone of 'x repo'"
 # export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 # export PASSWORD_STORE_DIR="$XDG_DATA_HOME/.password-store"
-# alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 export HISTFILE="$XDG_DATA_HOME/zsh/history"
 # export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 # export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
 export DICS="/usr/share/stardict/dic/"
-
-# [ -f ~/.config/LF_ICONS ] && {
-# 	LF_ICONS="$(tr '\n' ':' <~/.config/LF_ICONS)" \
-# 		&& export LF_ICONS
-# }
-
-

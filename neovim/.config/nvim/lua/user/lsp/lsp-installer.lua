@@ -9,7 +9,7 @@ local servers = {
   "html",
   -- "tsserver",
   "ltex",
-  "texlab",
+  -- "texlab",
   "r_language_server",
   "pyright",
   "bashls",
