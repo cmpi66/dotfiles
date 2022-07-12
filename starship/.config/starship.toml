@@ -17,7 +17,7 @@ disabled = true
 disabled = true
 
 # [git_status]
-# conflicted = "🏳"
+# conflicted = "🏳 "
 # ahead = "🏎💨"
 # behind = "😰"
 # diverged = "😵"
@@ -28,7 +28,7 @@ disabled = true
 # staged = '[++\($count\)](green)'
 # renamed = "👅"
 # deleted = "🗑"
-
+#
 [battery]
 full_symbol = "⚡"
 charging_symbol = ""
