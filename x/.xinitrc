@@ -66,7 +66,7 @@ setbg &
 redshift &
 # picom --experimental-backend &
 # dbus-launch --sh-syntax --exit-with-session; pulseaudio --kill; pipewire &
-syncthing &
+syncthing --no-browser &
 
 # exec dbus-launch --exit-with-session dwm
 exec dwm
