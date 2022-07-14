@@ -72,6 +72,6 @@ setbg &
 redshift &
 picom -b --animations --animation-window-mass 0.5 --animation-for-open-window zoom --animation-stiffness 350 &
 # picom --experimental-backend &
-syncthing &
+syncthing --no-browser &
 
 exec dwm
