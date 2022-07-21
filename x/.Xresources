@@ -1,6 +1,9 @@
 Xcursor.size: 32
 Xft.dpi: 130
 
+!! Set a default font and font size as below:
+*.font: monospace:size=11
+
 ! TokyoNight colors for Xresources
 
 ! *background: #24283b
