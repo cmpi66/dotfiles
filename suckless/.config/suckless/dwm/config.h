@@ -30,6 +30,7 @@ static const char *fonts[]          =
  // "Font Awesome 6 Brands:pixelsize=16",
  // "JetBrainsMono Nerd Font:style=Bold:size=12:antialias=true:autohint=true"
  "Fira Code Mono:style=Bold:size=9:antialias=true:autohint=true",
+ // "Fira Code Mono:style=Bold:size=9:antialias=true:autohint=true",
  "Font Awesome 6 Free Solid:pixelsize=15",
  "Font Awesome 6 Brands:pixelsize=15",
  "Fira Code Nerd Font:style=Bold:size=11:antialias=true:autohint=true"
