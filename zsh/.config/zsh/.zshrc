@@ -1,5 +1,5 @@
 #!/bin/sh
-# fish
+fish
 export ZDOTDIR=$HOME/.config/zsh
 HISTFILE=~/.zsh_history
 setopt appendhistory
