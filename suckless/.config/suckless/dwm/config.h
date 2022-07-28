@@ -43,16 +43,15 @@ static const char *fonts[]          =
  static const char dmenufont[]       = "Jetbrains Mono:style=Bold:size=9:antialias=true:autohint=true";
  // static const char dmenufont[]       = "Fira Code Mono:style=Bold:size=9:antialias=true:autohint=true";
 
-#include "themes/dracula.h"
-//#include "themes/tokyonight.h"
+// #include "themes/dracula.h"
+#include "themes/tokyonight.h"
 //#include "themes/onedark.h"
 // #include "themes/catppuccin.h"
 //#include "themes/nord.h"
 //include "themes/gruvbox.h"
 //#include "themes/gruvboxred.h"
 // #include "themes/doomone.h"
-// #include "/home/chris/.cache/wal/colors-wal-dwm.h"
-//
+
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -163,7 +162,7 @@ static Key keys[] = {
 
   { MODKEY|ShiftMask,		          XK_d,		spawn,		         {.v = (const char*[]){ "rofi", "-show","drun", "-show-icons", NULL } } },
 
-  { MODKEY,		                    XK_c,		spawn,		         SHCMD("clipmenu -i -h 4 -fn Jetbrains:size=9 -nb '#282a36' -nf '#efefef' -sb '#8be9fd' -sf '#282a36'") },
+  { MODKEY,		                    XK_c,		spawn,		         SHCMD("clipmenu -i -h 4 -fn Jetbrains:size=9 -nb '#24283b' -nf '#efefef' -sb '#7aa2f7' -sf '#24283b'") },
   { MODKEY|ShiftMask,		          XK_c,		spawn,		         {.v = (const char*[]){ "rofi", "-show","calc", "-no-show-match", "-no-sort", NULL } } },
   
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },

@@ -129,7 +129,7 @@ bind \cn 'ncdu'
 neofetch
 zoxide init fish | source
 starship init fish | source
-scheme set catppuccin
+scheme set tokyonight
 
 source ~/.config/fish/shortcuts.fish
 source ~/.config/fish/gentoo.fish

@@ -64,7 +64,7 @@ mpd ~/.config/mpd/mpd.conf &
 exec slstatus &
 setbg &
 redshift &
-# picom --experimental-backend &
+picom --experimental-backend &
 # dbus-launch --sh-syntax --exit-with-session; pulseaudio --kill; pipewire &
 syncthing --no-browser &
 
