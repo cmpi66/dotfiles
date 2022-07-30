@@ -16,7 +16,7 @@ configuration{
     sidebar-mode: true;
 }
 
-@theme "tokyonight"
+@theme "tokyonight-purple"
 
 element-text, element-icon , mode-switcher {
     background-color: inherit;
