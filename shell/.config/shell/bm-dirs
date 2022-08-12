@@ -6,10 +6,11 @@ d   ${XDG_DOCUMENTS_DIR:-$HOME/docs}
 # dt  ${XDG_DATA_HOME:-$HOME/.local/share}
 dt  $HOME/docs/tex/
 ds  $HOME/docs/ms/
-dp  $HOME/docs/sprops/
+dp  $HOME/docs/props/
 dw  $HOME/docs/vimwiki/
 dn  $HOME/docs/vimwiki/notes/
-dm  $HOME/docs/rmd/
+dr  $HOME/docs/rmd/
+dm  $HOME/docs/md/
 rr  $HOME/.local/src
 h   $HOME
 m   ${XDG_MUSIC_DIR:-$HOME/media/Music}
