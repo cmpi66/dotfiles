@@ -8,6 +8,7 @@ hash -d dp=/home/chris/docs/props/
 hash -d dw=/home/chris/docs/vimwiki/ 
 hash -d dn=/home/chris/docs/vimwiki/notes/ 
 hash -d dr=/home/chris/docs/rmd/ 
+hash -d dri=/home/chris/docs/rmd/it-projects/ 
 hash -d dm=/home/chris/docs/md/ 
 hash -d rr=/home/chris/.local/src 
 hash -d h=/home/chris 

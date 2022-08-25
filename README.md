@@ -1,10 +1,10 @@
-# dotfiles
+# Dotfiles
 
-These are my personal dotfiles
+These are all my config files. There are two branches. Master and gentoo. Master is my arch config and gentoo is well, gentoo. They're mostly the same, but if you're  not a gentoo user then I recommend you pull from the master branch instead. Its cleaner. 
 
 ## Getting started
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+If youre wondering why my directories look like that its because I use stow. You'll need it if you want to pull from the repo. Stow is a game changer when orgnazing your dotfiles. You never have to worry about updating a file when pushing it to a repo. The way stow works makes that process automatic.  
 
 Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
 

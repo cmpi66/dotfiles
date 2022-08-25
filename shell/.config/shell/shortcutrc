@@ -9,6 +9,7 @@ dp="cd /home/chris/docs/props/ && ls -a" \
 dw="cd /home/chris/docs/vimwiki/ && ls -a" \
 dn="cd /home/chris/docs/vimwiki/notes/ && ls -a" \
 dr="cd /home/chris/docs/rmd/ && ls -a" \
+dri="cd /home/chris/docs/rmd/it-projects/ && ls -a" \
 dm="cd /home/chris/docs/md/ && ls -a" \
 rr="cd /home/chris/.local/src && ls -a" \
 h="cd /home/chris && ls -a" \

@@ -1,5 +1,6 @@
 abbr em "sudo emerge --ask"
 abbr ew "sudo emerge-webrsync"
+abbr ea  "sudo emaint -a sync"
 abbr ems "sudo emerge --sync"
 abbr emn "sudo emerge --ask --update --deep --newuse @world"
 abbr ema "sudo emerge --ask --autounmask"

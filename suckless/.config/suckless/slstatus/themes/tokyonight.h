@@ -1,9 +1,9 @@
 static const struct arg args[] = {
 	/* function format          argument */
-    // {kernel_release, "^c#50fa7b^  %s  ", NULL },
+    {kernel_release, "^c#50fa7b^  %s  ", NULL },
   //{run_command,  "^c#abe9b3^  %s ",      "sb-price.sh" },
     // {run_command,  "^c#9ece6a^  %s ",      "sb-battery.sh" },
-    //{run_command,  "^c#e8a2af^  %2s ",     "sb-forecast.sh" },
+    {run_command,  "^c#e0af68^  %2s ",     "forecast.sh" },
 //    {run_command,  "^c#abe9b3^  %2s ",     "sb-internet.sh" },
     // {run_command,  "^c#ff9e64^  %2s ",     "sb-pacpackages.sh" },
     {uptime,   "^c#c0caf5^    %s  ", NULL },
@@ -20,7 +20,7 @@ static const struct arg args[] = {
 	//{disk_total, "%s   " , "/" },
 	//{battery_state, "^c#96cdfb^ %s " , "BAT0" },
         //{battery_perc,  "%s%%  ",  "BAT0" },
-	{ datetime, "%s",   "^c#c0af68^  %a %b %d   %r   " },
+	{ datetime, "%s",   "^c#c0af68^  %a %b %d   %r  " },
     {run_command,  "^c#2ac3de^  ^b#24283b^ %2s ",      "music.sh" },
 	
 };
