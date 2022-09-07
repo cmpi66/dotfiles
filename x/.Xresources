@@ -85,3 +85,5 @@ Xft.dpi: 130
 ! Whites
 *color7: #D9E0EE
 *color15: #D9E0EE
+
+*.cursorColor: #89dceb

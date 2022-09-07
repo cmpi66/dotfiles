@@ -126,7 +126,7 @@ bind \ck history-search-backward # Up
 bind \cj history-search-forward # Down
 bind \cn 'ncdu'
 
-neofetch
+# neofetch
 # colorscript random
 zoxide init fish | source
 starship init fish | source
