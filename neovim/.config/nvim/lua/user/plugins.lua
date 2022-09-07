@@ -74,6 +74,9 @@ commit = "fa6876f832ea1b71801c4e481d8feca9a36215ec" } -- Autopairs, integrates w
   use { "unblevable/quick-scope", commit = "428e8698347f254d24b248af9f656194a80081e5"}
   -- use "rcarriga/nvim-notify"
   use { "phaazon/hop.nvim", commit = "a3cf6684bcb9fc974609ae81424f285f05280d90"}
+use{	"Pocco81/true-zen.nvim", commit = "98740c76254c65576ec294551028b65081053588"}
+
+
 
   -- Colorschemes
 

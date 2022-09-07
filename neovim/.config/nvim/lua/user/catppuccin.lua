@@ -1,72 +1,38 @@
+vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 
-local catppuccin = require("catppuccin")
-catppuccin.setup{ transparent_background = false,
-term_colors = false,
-styles = {
-	comments = "italic",
-	conditionals = "italic",
-	loops = "NONE",
-	functions = "NONE",
-	keywords = "NONE",
-	strings = "NONE",
-	variables = "NONE",
-	numbers = "NONE",
-	booleans = "NONE",
-	properties = "NONE",
-	types = "NONE",
-	operators = "NONE",
-},
-integrations = {
-	treesitter = true,
-	native_lsp = {
-		enabled = true,
-		virtual_text = {
-			errors = "italic",
-			hints = "italic",
-			warnings = "italic",
-			information = "italic",
-		},
-		underlines = {
-			errors = "underline",
-			hints = "underline",
-			warnings = "underline",
-			information = "underline",
-		},
-	},
-	lsp_trouble = true,
-	cmp = true,
-	lsp_saga = false,
-	gitgutter = false,
-	gitsigns = true,
-	telescope = true,
-	nvimtree = {
+require("catppuccin").setup()
+
+vim.cmd [[colorscheme catppuccin]]
+
+require("catppuccin").setup({
+	transparent_background = false,
+	term_colors = false,
+	compile = {
 		enabled = false,
-		show_root = false,
-		transparent_panel = false,
+		path = vim.fn.stdpath("cache") .. "/catppuccin",
 	},
-	neotree = {
+	dim_inactive = {
 		enabled = false,
-		show_root = false,
-		transparent_panel = false,
+		shade = "dark",
+		percentage = 0.15,
 	},
-	which_key = true,
-	indent_blankline = {
-		enabled = true,
-		colored_indent_levels = true,
+	styles = {
+		comments = { "italic" },
+		conditionals = { "italic" },
+		loops = {},
+		functions = {},
+		keywords = {},
+		strings = {},
+		variables = {},
+		numbers = {},
+		booleans = {},
+		properties = {},
+		types = {},
+		operators = {},
 	},
-	dashboard = true,
-	neogit = false,
-	vim_sneak = false,
-	fern = false,
-	barbar = false,
-	bufferline = true,
-	markdown = true,
-	lightspeed = false,
-	ts_rainbow = true,
-	hop = true,
-	notify = true,
-	telekasten = true,
-	symbols_outline = true,
-}}
-vim.g.catppuccin_flavour = "mocha" --macchiato, mocha, frappe
-vim.cmd[[colorscheme catppuccin]]
+	integrations = {
+		-- For various plugins integrations see https://github.com/catppuccin/nvim#integrations
+	},
+	color_overrides = {},
+	highlight_overrides = {},
+})
