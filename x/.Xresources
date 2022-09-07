@@ -3,7 +3,7 @@ Xft.dpi: 130
 ! *.alpha: 0.9
 
 !! Set a default font and font size as below:
-*.font: monospace:size=11
+*.font: monospace:size=12
 
 ! TokyoNight colors for Xresources
 
