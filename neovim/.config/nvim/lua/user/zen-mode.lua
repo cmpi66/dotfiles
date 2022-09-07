@@ -46,18 +46,4 @@ window = {
   on_close = function()
   end,
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   }

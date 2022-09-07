@@ -75,6 +75,8 @@ commit = "fa6876f832ea1b71801c4e481d8feca9a36215ec" } -- Autopairs, integrates w
   -- use "rcarriga/nvim-notify"
   use { "phaazon/hop.nvim", commit = "a3cf6684bcb9fc974609ae81424f285f05280d90"}
 
+use { "Pocco81/true-zen.nvim", commit = "98740c76254c65576ec294551028b65081053588"}
+
   -- Colorschemes
 
   use { "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" }

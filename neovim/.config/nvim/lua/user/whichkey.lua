@@ -116,6 +116,7 @@ local mappings = {
 	 	s = { "<cmd>SoftPencil<cr>", "Soft pencil" },
 	 	h = { "<cmd>HardPencil<cr>", "Hard pencil" },
 	 	v = { "<cmd>vs<cr>", "Vertical Split" },
+	 	m = { "<cmd>TZMinimalist<cr>", "True Zen Minimalist" },
 
 	-- 	i = { "<cmd>VimwikiDiaryIndex<cr>", "Opens Diary" },
 	-- 	-- u = { "<cmd>PackerUpdate<cr>", "Update" },
