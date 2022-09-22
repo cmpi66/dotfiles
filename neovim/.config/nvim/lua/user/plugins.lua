@@ -80,12 +80,12 @@ use { "Pocco81/true-zen.nvim", commit = "98740c76254c65576ec294551028b6508105358
   -- Colorschemes
 
   use { "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" }
-  use({
-	"catppuccin/nvim",
-	as = "catppuccin"
-})
+--   use({
+-- 	"catppuccin/nvim",
+-- 	as = "catppuccin"
+-- })
   -- use "rebelot/kanagawa.nvim"
-  use 'Mofiqul/dracula.nvim'
+  -- use 'Mofiqul/dracula.nvim'
   -- use 'shaunsingh/nord.nvim'
   -- use 'rmehri01/onenord.nvim'
 
