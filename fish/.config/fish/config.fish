@@ -72,6 +72,7 @@ alias ...='cd ../..'
 alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
+alias sudo='doas'
 
 # System abbreviations 
 # abbr archlinx-fix-keys "sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
@@ -118,7 +119,7 @@ bind -M insert \cj history-search-forward # Down
 bind -M insert \cn 'ncdu'
  # bind -M insert jk "if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char force-repaint; end"
 bind -M insert -m default jk backward-char force-repaint
-bind -M insert -m default kj backward-char force-repaint
+# bind -M insert -m default kj backward-char force-repaint
 
 # Custom keybindings default mode
 bind \co 'lf'
