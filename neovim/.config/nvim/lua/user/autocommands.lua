@@ -1,8 +1,8 @@
 -- deltes latex build files upon leave
 vim.cmd "autocmd VimLeave *.tex !texclear %"
 
--- runs compiler script and creates pdf of any .markdown file
-vim.cmd "autocmd BufWritePost *.md silent !compiler %:p"
+-- runs compiler script and creates pdf of any .markdown file when it's saved
+-- vim.cmd "autocmd BufWritePost *.md silent !compiler %:p"
 vim.cmd "autocmd BufWritePost *.tex silent !compiler %:p"
 
 -- Use 'q' to quit from common plugins
