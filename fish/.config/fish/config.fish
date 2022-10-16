@@ -108,6 +108,8 @@ abbr yta "yt-dlp -x -f bestaudio/best"
 abbr yay "paru"
 abbr vd "nvim -d"
 abbr combinepdf "gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=combine.pdf -dBATCH"
+abbr en "gpg -c --no-symkey-cache --cipher-algo AES256" 
+
 
 #Custom keybindings vi insert mode
 set -g fish_key_bindings fish_vi_key_bindings

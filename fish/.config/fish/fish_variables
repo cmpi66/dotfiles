@@ -44,6 +44,7 @@ SETUVAR _fish_abbr_ds:cd\x20/home/chris/docs/ms/\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_dt:cd\x20/home/chris/docs/tex/\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_dv:cd\x20/home/chris/docs/vimwiki/\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_dw:cd\x20/home/chris/docs/vimwiki/\x3b\x20and\x20ls\x20\x2da
+SETUVAR _fish_abbr_en:gpg\x20\x2dc\x20\x2d\x2dno\x2dsymkey\x2dcache\x20\x2d\x2dcipher\x2dalgo\x20AES256
 SETUVAR _fish_abbr_f:zi
 SETUVAR _fish_abbr_g:lazygit
 SETUVAR _fish_abbr_gp:git\x20add\x20\x2e\x20\x26\x26\x20git\x20commit\x20\x2dm\x20\x27autopush\x27\x20\x26\x26\x20git\x20remote\x20\x7c\x20xargs\x20\x2dL1\x20git\x20push\x20\x2d\x2dall
