@@ -96,8 +96,8 @@ local mappings = {
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["f"] = {
     -- "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-    "<cmd>lua require('telescope.builtin').find_files({hidden=true, layout_config={prompt_position='bottom'}})<cr>",
-    -- "<cmd>Telescope find_files hidden=true <CR>",
+    -- "<cmd>lua require('telescope.builtin').find_files({hidden=true, layout_config={prompt_position='bottom'}})<cr>",
+    "<cmd>Telescope find_files hidden=true <CR>",
     "Find files",
   },
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },

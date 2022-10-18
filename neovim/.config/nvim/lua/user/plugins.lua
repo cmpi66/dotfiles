@@ -108,7 +108,7 @@ use { "Pocco81/true-zen.nvim", commit = "98740c76254c65576ec294551028b6508105358
   use { "RRethy/vim-illuminate", commit = "c82e6d04f27a41d7fdcad9be0bce5bb59fcb78e5" }
 
   -- Telescope
-  use { "nvim-telescope/telescope.nvim", cmd = "Telescope", config = 'require "user.telescope"',
+  use { "nvim-telescope/telescope.nvim",
  commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" }
 
   -- Treesitter
