@@ -7,7 +7,15 @@ local actions = require "telescope.actions"
 
 telescope.setup {
   defaults = {
+    
+    pickers = {
+      find_files = {
+        theme = "dropdown",
+        previewer = "false",
+      }
 
+
+    },
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
