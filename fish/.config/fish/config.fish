@@ -9,7 +9,7 @@ set fish_cursor_replace underscore steady
 set fish_cursor_visual block
 
 set fish_greeting             #disables help greeting
-set TERM "xterm-256color"
+# set TERM "xterm-256color"
 set EDITOR "lvim"
 set VISUAL "lvim"
 set TERMINAL "alacritty"
