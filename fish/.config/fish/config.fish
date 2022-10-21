@@ -9,16 +9,20 @@ set fish_cursor_replace underscore steady
 set fish_cursor_visual block
 
 set fish_greeting             #disables help greeting
-set TERM "xterm-256color"
-set EDITOR "nvim"
-set VISUAL "nvim"
+# set TERM "xterm-256color"
+# set TERM "xterm-st"
+# set TERM "xterm-alacritty"
+# set TERM "xterm-kitty"
+# set TERM "linux"
+set EDITOR "lvim"
+set VISUAL "lvim"
 set TERMINAL "st"
 set BROWSER "firefox-bin"
 
 ### SET MANPAGER
 ### "nvim" as manpager
 # set -x MANPAGER "nvim -c 'set ft=man' -"        # this one dosnt work for me. It does for DT though.
-set -x  MANPAGER "nvim +Man!"
+set -x  MANPAGER "lvim +Man!"
 
 ### "bat" as manpager
 # set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
@@ -73,7 +77,7 @@ alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 alias sudo='doas'
-
+alias nvim='lvim'
 # System abbreviations 
 # abbr archlinx-fix-keys "sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
 abbr merge "xrdb -merge ~/.Xresources"
@@ -136,3 +140,4 @@ scheme set tokyonight
 
 source ~/.config/fish/shortcuts.fish
 source ~/.config/fish/gentoo.fish
+

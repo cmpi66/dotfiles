@@ -79,10 +79,10 @@ local opts = {
 }
 
 local mappings = {
-   d = {":!opout <c-r>%<CR><CR>", "opout"},
+   o = {":!opout <c-r>%<CR><CR>", "opout"},
    c = {":w<CR>:!compiler %:p<CR><CR>","Doc Compiler"},
    u = {":w<CR>:!pandoc % -f latex -t docx -o %:r.docx<CR><CR>", "Latex to Docx"},
-   o = {":w<CR>:!pandoc % -t beamer -o %:r.pdf<CR><CR>","Beamer Presentation"},
+   -- o = {":w<CR>:!pandoc % -t beamer -o %:r.pdf<CR><CR>","Beamer Presentation"},
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
   
   ["b"] = {

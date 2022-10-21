@@ -118,7 +118,8 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Fira Code Nerd Font 
+    # family: Fira Code Nerd Font 
+    family: Comic Code Nerd Font 
     # family: Hack Nerd Font  
     # family: Sauce Code Pro Nerd Font
     # family: Fura Code Nerd Font
@@ -141,7 +142,8 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Fira Code Nerd Font 
+    # family: Fira Code Nerd Font 
+    family: Comic Code Nerd Font 
     # family: Hack Nerd Font  
     # family: Fura Code Nerd Font
     # family: Sauce Code Pro Nerd Font
@@ -171,7 +173,8 @@ font:
     # family: Hack Nerd Font  
     # family: Caskaydia Cove Nerd Font
     # family: DejaVuSansMono Nerd Font
-    family: Roboto Mono Nerd Font
+    # family: Roboto Mono Nerd Font
+    family: Comic Code Nerd Font 
     # family: JetBrainsMono Nerd Font
     # family: UbuntuMono Nerd Font
     # family: Inconsolata 
@@ -192,7 +195,8 @@ font:
     # family: Hack Nerd Font  
     # family: Fura Code Nerd Font
     # family: Sauce Code Pro Nerd Font
-    family: Roboto Mono Nerd Font 
+    # family: Roboto Mono Nerd Font 
+    family: Comic Code Nerd Font 
     # family: Caskaydia Cove Nerd Font
     # family: DejaVuSansMono Nerd Font
     # family: JetBrainsMono Nerd Font

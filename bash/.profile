@@ -47,7 +47,7 @@ export XDG_CONFIG_HOME=$HOME/.config/
 export XDG_CACHE_HOME=$HOME/.cache/
 export XDG_DATA_HOME=$HOME/.local/share
 export ZDOTDIR=$HOME/.config/zsh   
-export $EDITOR="/usr/bin/nvim" 
+export $EDITOR="lvim" 
 # PATH="$PATH:/$HOME/.local/bin"
 
 PATH="$PATH:/$HOME/.local/appimages"
@@ -62,8 +62,8 @@ PATH="$PATH:/$HOME/.local/share/cargo/bin"
 
 ## Since im using fish i have to keep the xdg here. zsh-exports doesnt get read. 
 
-export editor="nvim"
-export visual="nvim"
+export editor="lvim"
+export visual="lvim"
 export browser="firefox-bin"
 export movplay="mpv"
 export term=xterm-256color
@@ -95,3 +95,6 @@ export HISTFILE="$XDG_DATA_HOME/zsh/history"
 # export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 # export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
 export DICS="/usr/share/stardict/dic/"
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
