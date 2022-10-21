@@ -10,8 +10,8 @@ set fish_cursor_visual block
 
 set fish_greeting             #disables help greeting
 set TERM "xterm-256color"
-set EDITOR "nvim"
-set VISUAL "nvim"
+set EDITOR "lvim"
+set VISUAL "lvim"
 set TERMINAL "alacritty"
 set BROWSER "firefox"
 
@@ -73,6 +73,7 @@ alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
+alias nvim='lvim'
 # System abbreviations 
 abbr archlinx-fix-keys "sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
 abbr merge "xrdb -merge ~/.Xresources"

@@ -52,6 +52,7 @@ return packer.startup(function(use)
   use { "JoosepAlviste/nvim-ts-context-commentstring"}
   use { "kyazdani42/nvim-web-devicons"}
   use { "kyazdani42/nvim-tree.lua"}
+  use "christianchiarulli/lir.nvim"
   use { "akinsho/bufferline.nvim"}
   use { "moll/vim-bbye"}
   use { "nvim-lualine/lualine.nvim"}
@@ -92,6 +93,7 @@ use{	"Pocco81/true-zen.nvim"}
   use { "saadparwaiz1/cmp_luasnip"} -- snippet completions
   use { "hrsh7th/cmp-nvim-lsp"}
   use { "hrsh7th/cmp-nvim-lua"}
+  use "hrsh7th/cmp-cmdline" -- cmdline completions
 
   -- snippets
   use { "L3MON4D3/LuaSnip"} --snippet engine
@@ -99,9 +101,17 @@ use{	"Pocco81/true-zen.nvim"}
 
   -- LSP
   use { "neovim/nvim-lspconfig"} -- enable LSP
-  use { "williamboman/nvim-lsp-installer"} -- simple to use language server installer
+  -- use { "williamboman/nvim-lsp-installer"} -- simple to use language server installer
   use { "jose-elias-alvarez/null-ls.nvim"} -- for formatters and linters
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
   use { "RRethy/vim-illuminate"}
+  use "ray-x/lsp_signature.nvim"
+  use "SmiteshP/nvim-navic"
+  use "simrat39/symbols-outline.nvim"
+  use "b0o/SchemaStore.nvim"
+  use "lvimuser/lsp-inlayhints.nvim"
+  use "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
 
   -- Telescope
   use { "nvim-telescope/telescope.nvim"}

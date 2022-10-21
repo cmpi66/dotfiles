@@ -7,7 +7,7 @@ export XDG_CONFIG_HOME=$HOME/.config/
 export XDG_CACHE_HOME=$HOME/.cache/
 export XDG_DATA_HOME=$HOME/.local/share
 export ZDOTDIR=$HOME/.config/zsh   
-export $EDITOR="nvim" 
+export $EDITOR="lvim" 
 # PATH="$PATH:/$HOME/.local/bin"
 
 PATH="$PATH:/$HOME/.local/appimages"
@@ -22,8 +22,8 @@ PATH="$PATH:/$HOME/.local/share/cargo/bin"
 
 ## Since im using fish i have to keep the xdg here. zsh-exports doesnt get read. 
 
-export editor="nvim"
-export visual="nvim"
+export editor="lvim"
+export visual="lvim"
 export browser="firefox"
 export movplay="mpv"
 export term=xterm-256color
