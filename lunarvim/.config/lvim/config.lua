@@ -1,13 +1,19 @@
 require "user.catppuccin"
-require "user.tokyonight"
+-- require "user.tokyonight"
 require "user.abbreviations"
 require "user.colorizer"
 require "user.hop"
+-- require "user.fidget"
 -- require "user.quickscope"
 require "user.true-zen"
+-- require "user.lsp-inlayhints"
+-- require "user.inlayhints"
+-- require "user.lsp"
 require "user.twilight"
 require "user.vimwiki"
 require "user.zen-mode"
+require "user.neoscroll"
+
 --[[
 lvim is the global options object
 
@@ -21,7 +27,7 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = false
-lvim.colorscheme = "tokyonight"
+lvim.colorscheme = "catppuccin-mocha"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -75,7 +81,7 @@ lvim.builtin.which_key.mappings["t"] = {
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.notify.active = true
+-- lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
@@ -144,12 +150,13 @@ lvim.builtin.treesitter.highlight.enable = true
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   { command = "stylua", },
+  { command = "rustfmt", },
   { command = "shfmt", },
   { command = "black", filetypes = { "python" } },
   { command = "isort", filetypes = { "python" } },
   {
     -- each formatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
-    command = "prettier", 
+    command = "prettier",
     ---@usage arguments to pass to the formatter
     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
     extra_args = { "--print-with", "100" },
@@ -190,11 +197,15 @@ lvim.plugins = {
    { "folke/twilight.nvim"},
    { "preservim/vim-pencil"},
    { "vimwiki/vimwiki"},
-   -- { "unblevable/quick-scope"},
    { "phaazon/hop.nvim"},
-   {	"Pocco81/true-zen.nvim"},
+   { "Pocco81/true-zen.nvim"},
    { "p00f/nvim-ts-rainbow"},
-   { "norcalli/nvim-colorizer.lua"}
+   { "norcalli/nvim-colorizer.lua"},
+   { "karb94/neoscroll.nvim"}
+   -- { "unblevable/quick-scope"},
+   -- {"lvimuser/lsp-inlayhints.nvim"},
+   -- {"j-hui/fidget.nvim"},
+   -- {"simrat39/inlay-hints.nvim"},
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
@@ -216,6 +227,12 @@ vim.cmd "autocmd VimLeave *.tex !texclear %"
 -- vim.cmd "autocmd BufWritePost *.md silent !compiler %:p"
 vim.cmd "autocmd BufWritePost *.tex silent !compiler %:p"
 
+-- Highlight Yanked Text
+vim.api.nvim_create_autocmd({ "TextYankPost" }, {
+  callback = function()
+    vim.highlight.on_yank { higroup = "Visual", timeout = 200 }
+  end,
+})
 -- vim.api.nvim_create_autocmd("BufEnter", {
 --   pattern = { "*.json", "*.jsonc" },
 --   -- enable wrap mode for json files only
@@ -240,6 +257,7 @@ local term_opts = { silent = true }
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
+--kill arrrow keys
 
 keymap("n", "<Up>", "<Nop>", opts)
 keymap("n", "<Down>", "<Nop>", opts)
@@ -256,9 +274,19 @@ keymap("i", "<Down>", "<Nop>", opts)
 keymap("i", "<Left>", "<Nop>", opts)
 keymap("i", "<Right>", "<Nop>", opts)
 
+-- j/k escape
 keymap("i", "jk", "<ESC>", opts)
 
+-- Visual Block --
+
+-- Move text up and down
+keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
 -- which-key keymap
+
 
 lvim.builtin.which_key.mappings["o"] = { ":!opout <c-r>%<CR><CR>", "opout"}
 

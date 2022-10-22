@@ -9,7 +9,7 @@ set fish_cursor_replace underscore steady
 set fish_cursor_visual block
 
 set fish_greeting             #disables help greeting
-# set TERM "xterm-256color"
+# set TERM "xterm-256color" # This messes up Lunarvim on gentoobox ssh connection; wrote the effects on gentoo branch.
 set EDITOR "lvim"
 set VISUAL "lvim"
 set TERMINAL "alacritty"

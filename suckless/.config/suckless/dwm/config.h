@@ -175,7 +175,7 @@ static Key keys[] = {
 
 
   // { MODKEY|ShiftMask,			        XK_w,		spawn,		        {.v = (const char*[]){ TERMINAL,"--class", "Alacritty", "-e","nvim", "~/media/Documents/vimwiki/index.md", NULL } } },
-  { MODKEY|ShiftMask,			        XK_w,		spawn,		        SHCMD("st -e nvim -c VimwikiIndex")  },
+  { MODKEY|ShiftMask,			        XK_w,		spawn,		        SHCMD("st -e lvim -c VimwikiIndex")  },
 
   { MODKEY,		          	        XK_e,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "neomutt", NULL } } },
 
@@ -194,6 +194,7 @@ static Key keys[] = {
 
   { MODKEY,		                   XK_m,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "ncmpcpp", NULL } } },
   { MODKEY|ShiftMask,		         XK_m,		spawn,		         SHCMD("bmks") },
+  // { MODKEY1,		         XK_l,		spawn,		         SHCMD("st-urlhandler") },
  { MODKEY,		                   	XK_bracketleft,		spawn,		{.v = (const char*[]){ "mpc", "seek", "-10", NULL } } },
 	{ MODKEY|ShiftMask,	           	XK_bracketleft,		spawn,		{.v = (const char*[]){ "mpc", "seek", "-60", NULL } } },
 	{ MODKEY,		                   	XK_bracketright,	spawn,		{.v = (const char*[]){ "mpc", "seek", "+10", NULL } } },
@@ -214,6 +215,7 @@ static Key keys[] = {
   { ShiftMask,		               XK_Print,	spawn,		{.v = (const char*[]){ "maimpic", NULL } } },
   { MODKEY,		                 	 XK_Print,	spawn,		{.v = (const char*[]){ "dmenurecord", NULL } } },
   { MODKEY,			                 XK_Delete,	spawn,		{.v = (const char*[]){ "dmenurecord", "kill", NULL } } },
+  // { MODKEY1,		                 XK_l,	    spawn,		{.v = (const char*[]){ "st-urlhandler", NULL } } },
 // { MODKEY|ShiftMask,			          XK_y,		spawn,		SHCMD(TERMINAL " -e pulsemixer") },
 { MODKEY,			                       XK_F1,		spawn,		{.v = (const char*[]){ "displayselect", NULL } } },
 { MODKEY,			                       XK_F2,		spawn,		{.v = (const char*[]){ "mw", "-Y", NULL } } },
