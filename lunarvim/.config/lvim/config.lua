@@ -5,9 +5,11 @@ require "user.colorizer"
 require "user.hop"
 -- require "user.quickscope"
 require "user.true-zen"
+-- require "user.lsp-inlayhints"
 require "user.twilight"
 require "user.vimwiki"
 require "user.zen-mode"
+require "user.neoscroll"
 --[[
 lvim is the global options object
 
@@ -75,7 +77,7 @@ lvim.builtin.which_key.mappings["t"] = {
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.notify.active = true
+-- lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
@@ -144,6 +146,7 @@ lvim.builtin.treesitter.highlight.enable = true
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   { command = "stylua", },
+  { command = "rustfmt", },
   { command = "shfmt", },
   { command = "black", filetypes = { "python" } },
   { command = "isort", filetypes = { "python" } },
@@ -182,19 +185,22 @@ lvim.plugins = {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
   },
-  ({
-    "catppuccin/nvim",
-    as = "catppuccin"
-  }),
    { "folke/zen-mode.nvim"},
    { "folke/twilight.nvim"},
    { "preservim/vim-pencil"},
    { "vimwiki/vimwiki"},
-   -- { "unblevable/quick-scope"},
    { "phaazon/hop.nvim"},
    {	"Pocco81/true-zen.nvim"},
    { "p00f/nvim-ts-rainbow"},
-   { "norcalli/nvim-colorizer.lua"}
+   { "norcalli/nvim-colorizer.lua"},
+   {"karb94/neoscroll.nvim"}
+  -- ({
+  --   "catppuccin/nvim",
+  --   as = "catppuccin"
+  -- }),
+   -- {"lvimuser/lsp-inlayhints.nvim"},
+   -- {"Mofiqul/dracula.nvim"},
+   -- { "unblevable/quick-scope"},
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
@@ -216,6 +222,12 @@ vim.cmd "autocmd VimLeave *.tex !texclear %"
 -- vim.cmd "autocmd BufWritePost *.md silent !compiler %:p"
 vim.cmd "autocmd BufWritePost *.tex silent !compiler %:p"
 
+-- Highlight Yanked Text
+vim.api.nvim_create_autocmd({ "TextYankPost" }, {
+  callback = function()
+    vim.highlight.on_yank { higroup = "Visual", timeout = 200 }
+  end,
+})
 -- vim.api.nvim_create_autocmd("BufEnter", {
 --   pattern = { "*.json", "*.jsonc" },
 --   -- enable wrap mode for json files only
@@ -240,6 +252,7 @@ local term_opts = { silent = true }
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
+--kill arrow keys
 
 keymap("n", "<Up>", "<Nop>", opts)
 keymap("n", "<Down>", "<Nop>", opts)
@@ -256,7 +269,15 @@ keymap("i", "<Down>", "<Nop>", opts)
 keymap("i", "<Left>", "<Nop>", opts)
 keymap("i", "<Right>", "<Nop>", opts)
 
+-- j/k esccape
 keymap("i", "jk", "<ESC>", opts)
+
+-- Visual Block --
+-- Move text up and down
+keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- which-key keymap
 

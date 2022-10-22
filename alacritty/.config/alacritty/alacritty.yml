@@ -210,7 +210,7 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 12.0
+  size: 13.5
 
 
   # Offset is the extra space around each character. `offset.y` can be thought
@@ -316,40 +316,40 @@ font:
   #  background: CellForeground
 #
 # # TokyoNight Alacritty Colors
-# colors:
-#   # Default colors
-#   primary:
-#     background: '#24283b'
-#     foreground: '#c0caf5'
-#
-#   # Normal colors
-#   normal:
-#     black:   '#1D202F'
-#     red:     '#f7768e'
-#     green:   '#9ece6a'
-#     yellow:  '#e0af68'
-#     blue:    '#7aa2f7'
-#     magenta: '#bb9af7'
-#     cyan:    '#7dcfff'
-#     white:   '#a9b1d6'
-#
-#   # Bright colors
-#   bright:
-#     black:   '#414868'
-#     red:     '#f7768e'
-#     green:   '#9ece6a'
-#     yellow:  '#e0af68'
-#     blue:    '#7aa2f7'
-#     magenta: '#bb9af7'
-#     cyan:    '#7dcfff'
-#     white:   '#c0caf5'
-#
-#   indexed_colors:
-#     - { index: 16, color: '#ff9e64' }
-#     - { index: 17, color: '#db4b4b' }
+colors:
+  # Default colors
+  primary:
+    background: '#24283b'
+    foreground: '#c0caf5'
+
+  # Normal colors
+  normal:
+    black:   '#1D202F'
+    red:     '#f7768e'
+    green:   '#9ece6a'
+    yellow:  '#e0af68'
+    blue:    '#7aa2f7'
+    magenta: '#bb9af7'
+    cyan:    '#7dcfff'
+    white:   '#a9b1d6'
+
+  # Bright colors
+  bright:
+    black:   '#414868'
+    red:     '#f7768e'
+    green:   '#9ece6a'
+    yellow:  '#e0af68'
+    blue:    '#7aa2f7'
+    magenta: '#bb9af7'
+    cyan:    '#7dcfff'
+    white:   '#c0caf5'
+
+  indexed_colors:
+    - { index: 16, color: '#ff9e64' }
+    - { index: 17, color: '#db4b4b' }
  
 # Doom-one
-colors:
+# colors:
   # Default colors
   # primary:
   #   background: '#282c34'
@@ -376,30 +376,30 @@ colors:
   #   cyan:    '#46d9ff'
   #   white:   '#efefef'
   #
-   primary:
-     background: '#1e1e2e'
-     foreground: '#d9e0ee'
-  # Normal colors  CATPPUCCIN
-   normal:
-     black:   '#6e6c7e'
-     red:     '#f28fad'   
-     green:   '#abe9b3'
-     yellow:  '#fae3b0'
-     blue:    '#96cdfb'
-     magenta: '#f5c2e7'
-     cyan:    '#89dceb'
-     white:   '#d9e0ee'
-  #
-    # Bright colors
-   bright:
-     black:   '#988ba2'
-     red:     '#f28fad'
-     green:   '#abe9b3'
-     yellow:  '#fae3b0'
-     blue:    '#96cdfb'
-     magenta: '#f5c2e7'
-     cyan:    '#89dceb'
-     white:   '#d9e0ee'
+  #  primary:
+  #    background: '#1e1e2e'
+  #    foreground: '#d9e0ee'
+  # # Normal colors  CATPPUCCIN
+  #  normal:
+  #    black:   '#6e6c7e'
+  #    red:     '#f28fad'   
+  #    green:   '#abe9b3'
+  #    yellow:  '#fae3b0'
+  #    blue:    '#96cdfb'
+  #    magenta: '#f5c2e7'
+  #    cyan:    '#89dceb'
+  #    white:   '#d9e0ee'
+  # #
+  #   # Bright colors
+  #  bright:
+  #    black:   '#988ba2'
+  #    red:     '#f28fad'
+  #    green:   '#abe9b3'
+  #    yellow:  '#fae3b0'
+  #    blue:    '#96cdfb'
+  #    magenta: '#f5c2e7'
+  #    cyan:    '#89dceb'
+  #    white:   '#d9e0ee'
 
   # Dim colors
   #

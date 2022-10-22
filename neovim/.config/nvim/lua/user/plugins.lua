@@ -44,12 +44,12 @@ packer.init {
 -- Install your plugins here
 return packer.startup(function(use)
   -- My plugins here
-  use { "wbthomason/packer.nvim", commit = "00ec5adef58c5ff9a07f11f45903b9dbbaa1b422" } -- Have packer manage itself
+  use { "wbthomason/packer.nvim"} -- Have packer manage itself
   use { "lewis6991/impatient.nvim", commit = "969f2c5c90457612c09cf2a13fee1adaa986d350" }
   use { "nvim-lua/plenary.nvim", commit = "968a4b9afec0c633bc369662e78f8c5db0eba249" } -- Useful lua functions used by lots of plugins
   use { "windwp/nvim-autopairs", config = 'require "user.autopairs"', after = "nvim-cmp",
 commit = "fa6876f832ea1b71801c4e481d8feca9a36215ec" } -- Autopairs, integrates with both cmp and treesitter
-  use { "numToStr/Comment.nvim", config = 'require "user.comment"', commit = "2c26a00f32b190390b664e56e32fd5347613b9e2" }
+  use { "numToStr/Comment.nvim"}
   use { "JoosepAlviste/nvim-ts-context-commentstring", commit = "88343753dbe81c227a1c1fd2c8d764afb8d36269" }
   use { "kyazdani42/nvim-web-devicons", commit = "8d2c5337f0a2d0a17de8e751876eeb192b32310e" }
   use { "kyazdani42/nvim-tree.lua", cmd = "NvimTreeToggle", config = 'require "user.nvim-tree"',
@@ -107,20 +107,22 @@ use { "Pocco81/true-zen.nvim", commit = "98740c76254c65576ec294551028b6508105358
   use { "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" } -- for formatters and linters
   use { "RRethy/vim-illuminate", commit = "c82e6d04f27a41d7fdcad9be0bce5bb59fcb78e5" }
 
+  use {"lvimuser/lsp-inlayhints.nvim"}
   -- Telescope
+
   use { "nvim-telescope/telescope.nvim",
  commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" }
+  use{"simrat39/inlay-hints.nvim"}
 
   -- Treesitter
   use {
-    "nvim-treesitter/nvim-treesitter", event = "BufWinEnter", config =  'require "user.treesitter"',
-    commit = "518e27589c0463af15463c9d675c65e464efc2fe",
+    "nvim-treesitter/nvim-treesitter"
   }
 
   -- Git
   use { "lewis6991/gitsigns.nvim", commit = "c18e016864c92ecf9775abea1baaa161c28082c3" }
 
-  use { "p00f/nvim-ts-rainbow", after = "nvim-treesitter", commit = "837167f63445821c55e6eed9dbdac1b0b29afa92"}
+  use { "p00f/nvim-ts-rainbow"}
 
   use { "norcalli/nvim-colorizer.lua",
  commit = "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6"}
