@@ -1,5 +1,5 @@
 -- require "user.catppuccin"
--- require "user.tokyonight"
+require "user.tokyonight"
 require "user.plugins"
 require "user.autocommands"
 require "user.telescope"

@@ -3,6 +3,6 @@ if not status_ok then
 	return
 end
 hop.setup()
-vim.api.nvim_set_keymap("", "S", ":HopChar2<cr>", { silent = true })
-vim.api.nvim_set_keymap("", "s", ":HopWord<cr>", { silent = true })
+vim.api.nvim_set_keymap("", "F", ":HopChar2<cr>", { silent = true })
+vim.api.nvim_set_keymap("", "f", ":HopWord<cr>", { silent = true })
 
