@@ -1,4 +1,4 @@
--- require "user.catppuccin"
+require "user.catppuccin"
 -- require "user.tokyonight"
 require "user.plugins"
 require "user.autocommands"
@@ -15,6 +15,7 @@ require "user.bqf"
 require "user.numb"
 require "user.jaq"
 require "user.surround"
+require "user.fidget"
 -- require "user.treesitter"
 -- require "user.quickscope"
 require "user.true-zen"
@@ -23,33 +24,6 @@ require "user.twilight"
 require "user.vimwiki"
 require "user.zen-mode"
 require "user.neoscroll"
-
-
-
-
-
-
-
---[[
-lvim is the global options object
-
-Linters should be
-filled in as strings with either
-a global executable or a path to
-an executable
-]]
-
--- to disable icons and use a minimalist setup, uncomment the following
--- lvim.use_icons = false
-
--- unmap a default keymapping
--- vim.keymap.del("n", "<C-Up>")
--- override a default keymapping
--- lvim.keys.normal_mode["<C-q>"] = ":q<cr>" -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
-
--- Change theme settings
--- lvim.builtin.theme.options.dim_inactive = true
--- lvim.builtin.theme.options.style = "storm"
 
 -- generic LSP settings
 
@@ -97,5 +71,3 @@ an executable
 --   -- enable wrap mode for json files only
 --   command = "setlocal wrap",
 -- })
-
-

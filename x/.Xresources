@@ -52,7 +52,7 @@ Xft.dpi: 130
 
 ! Catppuccin
 
-*background: #1E1E2E
+*background: #24273a
 *foreground: #D9E0EE
 
 ! Gray

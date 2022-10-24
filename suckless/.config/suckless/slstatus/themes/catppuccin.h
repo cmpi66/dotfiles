@@ -20,8 +20,8 @@ static const struct arg args[] = {
 	//{disk_total, "%s   " , "/" },
 	//{battery_state, "^c#96cdfb^ %s " , "BAT0" },
         //{battery_perc,  "%s%%  ",  "BAT0" },
-	{ datetime, "%s",   "^c#f8bd96^ ^b#161320^  %r   " },
-	// { datetime, "%s",   "^c#f8bd96^  %a %b %d   %r   " },
+	// { datetime, "%s",   "^c#f8bd96^ ^b#161320^  %r   " },
+	{ datetime, "%s",   "^c#f8bd96^  %a %b %d   %r   " },
     {run_command,  "^c#74c7Ec^  ^b#161320^ %2s ",      "music.sh" },
 
 	
