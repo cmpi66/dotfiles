@@ -110,7 +110,7 @@ abbr yay "paru"
 abbr vd "nvim -d"
 abbr combinepdf "gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=combine.pdf -dBATCH"
 abbr en "gpg -c --no-symkey-cache --cipher-algo AES256" 
-
+abbr stow "stow --target=$HOME"
 
 #Custom keybindings vi insert mode
 set -g fish_key_bindings fish_vi_key_bindings
@@ -136,6 +136,6 @@ starship init fish | source
 # scheme set doom-one
 scheme set catppuccin
 
- source ~/.config/fish/shortcuts.fish
+source ~/.config/fish/shortcuts.fish
 
 
