@@ -81,6 +81,7 @@ SETUVAR _fish_abbr_rr:cd\x20/home/chris/\x2elocal/src\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_sc:cd\x20/home/chris/\x2elocal/bin\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_snv:sudo\x20nvim
 SETUVAR _fish_abbr_src:cd\x20/home/chris/\x2elocal/src\x3b\x20and\x20ls\x20\x2da
+SETUVAR _fish_abbr_stow:stow\x20\x2d\x2dtarget\x3d/home/chris
 SETUVAR _fish_abbr_sw:cd\x20/home/chris/copywriting/swipes/\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_swh:cd\x20/home/chris/copywriting/swipes/headlines/\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_update_2D_grub:sudo\x20grub\x2dmkconfig\x20\x2do\x20/boot/grub/grub\x2ecfg
