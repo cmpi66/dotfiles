@@ -47,4 +47,10 @@ Thumbs.db
 
 ### paid fonts: Don't want to take money out of someone elses pocket.
 
-*.otf
+
+/home/chris/repos/dotfiles/scriptsn/.local/share/fonts/Comic Code Bold Nerd Font Complete.otf
+/home/chris/repos/dotfiles/scriptsn/.local/share/fonts/Comic Code Italic Nerd Font Complete.otf
+/home/chris/repos/dotfiles/scriptsn/.local/share/fonts/Comic Code Medium Nerd Font Complete.otf
+/home/chris/repos/dotfiles/scriptsn/.local/share/fonts/Comic Code Regular Nerd Font Complete.otf 
+/home/chris/repos/dotfiles/scriptsn/.local/share/fonts/Comic Code Bold Italic Nerd Font Complete.otf 
+/home/chris/repos/dotfiles/scriptsn/.local/share/fonts/Comic Code Medium Italic Nerd Font Complete.otf
