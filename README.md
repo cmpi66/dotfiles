@@ -30,3 +30,11 @@ Clone into your `$HOME` directory or `~`.
 ``````
 git clone https://github.com/cmpi66/dotfiles.git ~
 ``````
+Run `stow` to symlink everything or select any config files you want. 
+
+``````bash
+stow */ # this gets everything the '/' ignores the README
+``````
+``````bash
+stow fish # Only my fish config
+``````
