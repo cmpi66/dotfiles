@@ -12,7 +12,7 @@ set fish_greeting             #disables help greeting
 # set TERM "xterm-256color" # This messes up Lunarvim on gentoobox ssh connection; wrote the effects on gentoo branch.
 set EDITOR "lvim"
 set VISUAL "lvim"
-set TERMINAL "alacritty"
+set TERMINAL "st"
 set BROWSER "firefox"
 
 ### SET MANPAGER
@@ -129,7 +129,7 @@ bind \ck history-search-backward # Up
 bind \cj history-search-forward # Down
 bind \cn 'ncdu'
 
-neofetch
+# neofetch
 # colorscript random
 zoxide init fish | source
 starship init fish | source
