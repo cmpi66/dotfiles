@@ -4,7 +4,7 @@ These are all my config files. There are two branches; master and gentoo. Master
 
 ## What I use
 
-I use Dwm, fish shell, neovim and most of suckless' tools. Dwm might be the easiest window manager to configure, you don't need to know any C at all. They're a few videos on youtube on how to patch it, and once you're  done you never have to tweak it again. 
+I use Dwm, fish shell, neovim and most of suckless' tools. Dwm might be the easiest window manager to configure, you don't need to know any C at all. They're a few videos on youtube on how to patch it, and once you're  done you never have to tweak it again. There's  a `patches` directory with a list of all the patches. 
 
 The zsh config I took from [Chris the machine](https://github.com/ChristianChiarulli) 
 
@@ -24,5 +24,6 @@ Download `stow` and `git`.
 
 Clone into your `$HOME` directory or `~`.
 
-> git clone https://github.com/cmpi66/dotfiles.git ~
-
+``````
+git clone https://github.com/cmpi66/dotfiles.git ~
+``````
