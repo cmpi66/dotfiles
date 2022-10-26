@@ -17,12 +17,12 @@ lvim.plugins = {
    {"kevinhwang91/nvim-bqf"},
    {"kylechui/nvim-surround"},
    {"nacro90/numb.nvim"},
-   {"is0n/jaq-nvim"}
-  -- ({
-  --   "catppuccin/nvim",
-  --   as = "catppuccin"
-  -- }),
-   -- {"Mofiqul/dracula.nvim"},
+   {"is0n/jaq-nvim"},
+  ({
+    "catppuccin/nvim",
+    as = "catppuccin"
+  }),
+  -- {"Mofiqul/dracula.nvim"},
    -- { "unblevable/quick-scope"},
 }
 

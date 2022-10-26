@@ -1,4 +1,4 @@
--- require "user.catppuccin"
+require "user.catppuccin"
 require "user.tokyonight"
 require "user.plugins"
 require "user.autocommands"

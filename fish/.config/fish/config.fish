@@ -102,7 +102,7 @@ abbr gp "git add . && git commit -m 'autopush' && git remote | xargs -L1 git pus
 abbr mkdir "mkdir -pv"
 abbr lf "lfub"
 abbr kx "killall sxhkd && sxhkd &"
-abbr cat "bat -p"
+# abbr cat "bat -p"
 abbr ncm "ncmpcpp"
 abbr m "mailsync"
 abbr checkout "git checkout"
@@ -134,7 +134,7 @@ bind \ck history-search-backward # Up
 bind \cj history-search-forward # Down
 bind \cn 'ncdu'
 
-# neofetch
+neofetch
 zoxide init fish | source
 starship init fish | source
 scheme set tokyonight
