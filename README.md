@@ -1,3 +1,6 @@
+
+![dotfiles image](./dotfiles.png)
+
 # Dotfiles
 
 These are all my config files. There are two branches; master and gentoo. Master is for my arch machine and gentoo is for my gentoo machine. They're mostly the same, but if you're not a gentoo user then I recommend you pull from the master branch instead.  
