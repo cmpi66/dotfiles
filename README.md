@@ -39,4 +39,4 @@ stow */ # this gets everything; the '/' ignores the README
 ``````bash
 stow fish # Only my fish config
 ``````
-You'll also need a [nerd font](https://github.com/ryanoasis/nerd-fonts) to view icons with my set up. I have a few in the `.local/share/fonts` directory.
+You'll also need a [nerd font](https://github.com/ryanoasis/nerd-fonts) to view icons with my set up. 
