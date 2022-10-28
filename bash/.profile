@@ -48,6 +48,10 @@ export HISTFILE="$XDG_DATA_HOME/zsh/history"
 # export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 # export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
 export DICS="/usr/share/stardict/dic/"
+export HISTFILE="${XDG_STATE_HOME}"/bash/history
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
+export PYTHONSTARTUP="/etc/python/pythonrc"
+export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
