@@ -35,7 +35,7 @@ set fish_color_error '#ff6c6b'
 set fish_color_param brcyan
 
 # Fzf changing default bindings 
-fzf_configure_bindings --directory=\cf --git_status=\cs
+fzf_configure_bindings --directory=\cf --git_status=\cs --git_log=\cl
 
 # Speedy keys
 # xset r rate 210 40
@@ -48,12 +48,6 @@ alias vf="fzf | xargs -r -I % $EDITOR %"
 
 abbr f 'zi'
 abbr g 'lazygit'
-
-# get fastest mirrors
-abbr mirror "sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-abbr mirrord "sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
-abbr mirrors "sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
-abbr mirrora "sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
@@ -138,4 +132,8 @@ scheme set catppuccin
 
 source ~/.config/fish/shortcuts.fish
 
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+eval /home/chris/.local/share/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+# <<< conda initialize <<<
 

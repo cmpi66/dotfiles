@@ -22,7 +22,8 @@ lvim.plugins = {
     "catppuccin/nvim",
     as = "catppuccin"
   }),
-   {"j-hui/fidget.nvim"}
+   {"j-hui/fidget.nvim"},
+   {"lunarvim/templeos.nvim"}
    -- {"Mofiqul/dracula.nvim"},
    -- { "unblevable/quick-scope"},
 }
