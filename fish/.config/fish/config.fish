@@ -39,8 +39,8 @@ fzf_configure_bindings --directory=\cf --git_status=\cs --git_log=\cl
 
 # Speedy keys
 # xset r rate 210 40
-xset r rate 250 40
-# xset r rate 300 50
+# xset r rate 250 40
+xset r rate 300 50
 # xset r rate 400 100
 
 alias j='z'

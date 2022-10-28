@@ -70,6 +70,7 @@ export HISTFILE="$XDG_DATA_HOME/zsh/history"
 # export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
 export DICS="/usr/share/stardict/dic/"
+export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
 # export FZF_DEFAULT_OPTS="--layout=reverse --height 60%"
 # export MOZ_USE_XINPUT2="1"	
 
