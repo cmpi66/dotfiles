@@ -28,6 +28,8 @@ Download `stow` and `git`.
 
 Clone into your `$HOME` directory or `~`.
 
+You'll also need a [nerd font](https://github.com/ryanoasis/nerd-fonts) to view icons with my set up. 
+
 ``````
 git clone https://github.com/cmpi66/dotfiles.git ~
 ``````
@@ -39,4 +41,3 @@ stow */ # this gets everything; the '/' ignores the README
 ``````bash
 stow fish # Only my fish config
 ``````
-You'll also need a [nerd font](https://github.com/ryanoasis/nerd-fonts) to view icons with my set up. 
