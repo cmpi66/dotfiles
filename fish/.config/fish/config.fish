@@ -110,18 +110,18 @@ abbr stow "stow --target=$HOME"
 set -g fish_key_bindings fish_vi_key_bindings
 bind -M insert \co 'lf'
 bind -M insert \ce 'neomutt'
+bind -M insert \cn 'ncdu'
 bind -M insert \ck history-search-backward # Up
 bind -M insert \cj history-search-forward # Down
-bind -M insert \cn 'ncdu'
  # bind -M insert jk "if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char force-repaint; end"
  bind -M insert -m default jk backward-char force-repaint
 
 # Custom keybindings default mode
 bind \co 'lf'
 bind \ce 'neomutt'
+bind \cn 'ncdu'
 bind \ck history-search-backward # Up
 bind \cj history-search-forward # Down
-bind \cn 'ncdu'
 
 # neofetch
 # colorscript random
