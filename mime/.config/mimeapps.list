@@ -2,7 +2,7 @@
 x-scheme-handler/etcher=balena-etcher-electron.desktop
 
 [Added Associations]
-application/x-mswinurl=firefox.desktop;
+application/x-mswinurl=firefox-bin.desktop;
 
 [Default Applications]
 # xdg-open will use these settings to determine how to open filetypes.
@@ -22,4 +22,4 @@ application/rss+xml=rss.desktop
 video/x-matroska=video.desktop
 x-scheme-handler/lbry=lbry.desktop
 inode/directory=file.desktop
-
+text/html=firefox-bin.desktop
