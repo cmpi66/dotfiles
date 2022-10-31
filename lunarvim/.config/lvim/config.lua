@@ -4,6 +4,7 @@ require "user.plugins"
 require "user.autocommands"
 require "user.telescope"
 require "user.keymaps"
+require "user.whichkey"
 require "user.options"
 require "user.builtins"
 require "user.colorscheme"
@@ -15,7 +16,6 @@ require "user.bqf"
 require "user.numb"
 require "user.jaq"
 require "user.surround"
-require "user.fidget"
 -- require "user.treesitter"
 -- require "user.quickscope"
 require "user.true-zen"
@@ -24,6 +24,34 @@ require "user.twilight"
 require "user.vimwiki"
 require "user.zen-mode"
 require "user.neoscroll"
+require "user.auto-session"
+require "user.fidget"
+
+
+
+
+
+
+--[[
+lvim is the global options object
+
+Linters should be
+filled in as strings with either
+a global executable or a path to
+an executable
+]]
+
+-- to disable icons and use a minimalist setup, uncomment the following
+-- lvim.use_icons = false
+
+-- unmap a default keymapping
+-- vim.keymap.del("n", "<C-Up>")
+-- override a default keymapping
+-- lvim.keys.normal_mode["<C-q>"] = ":q<cr>" -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
+
+-- Change theme settings
+-- lvim.builtin.theme.options.dim_inactive = true
+-- lvim.builtin.theme.options.style = "storm"
 
 -- generic LSP settings
 
@@ -71,3 +99,5 @@ require "user.neoscroll"
 --   -- enable wrap mode for json files only
 --   command = "setlocal wrap",
 -- })
+
+
