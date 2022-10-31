@@ -22,6 +22,10 @@ lvim.plugins = {
     "catppuccin/nvim",
     as = "catppuccin"
   }),
+   {"j-hui/fidget.nvim"},
+  -- Session
+   {"rmagatti/auto-session"},
+   {"rmagatti/session-lens"}
   -- {"Mofiqul/dracula.nvim"},
    -- { "unblevable/quick-scope"},
 }

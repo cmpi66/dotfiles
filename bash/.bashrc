@@ -75,7 +75,7 @@ _open_files_for_editing() {
 # alias pacdiff=eos-pacdiff
 ################################################################################
 # neofetch
-eval "$(starship init bash)"
+#eval "$(starship init bash)"
 
 [ -f "$HOME/.config/shell/aliasrc" ] && source "$HOME/.config/shell/aliasrc"
 

@@ -1,3 +1,5 @@
+#!/bin/sh
+
 ## GENTOO FILE
 
 #XDG
@@ -42,11 +44,15 @@ export URLVIEW_CONFIG="$XDG_CONFIG_HOME/urlview/config"
 export GOPATH="$XDG_DATA_HOME/go"
 export GIT_CONFIG="$XDG_CONFIG_HOME/git/config" ## This breaks aur packages gives "ERROR not a clone of 'x repo'"
 # export GNUPGHOME="$XDG_DATA_HOME/gnupg"
-# export PASSWORD_STORE_DIR="$XDG_DATA_HOME/.password-store"
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/.password-store"
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 export HISTFILE="$XDG_DATA_HOME/zsh/history"
 # export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
+
+# none of the mbsyncs work on gentoo, why?
 # export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
+# export MBSYNCRC="$XDG_CONFIG_HOME"/isync/mbsyncrc
+# alias mbsync=mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc
 export DICS="/usr/share/stardict/dic/"
 export HISTFILE="${XDG_STATE_HOME}"/bash/history
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv

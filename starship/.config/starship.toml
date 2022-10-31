@@ -24,14 +24,14 @@ disabled = true
 # renamed = "👅"
 # deleted = "🗑"
 
-[battery]
-full_symbol = "⚡"
-charging_symbol = ""
-discharging_symbol = ""
+# [battery]
+# full_symbol = "⚡"
+# charging_symbol = ""
+# discharging_symbol = ""
 
-[[battery.display]]
-threshold = 20
-style = "bold red"
+# [[battery.display]]
+# threshold = 20
+# style = "bold red"
 
 [character]
 error_symbol = "[](bold red) "

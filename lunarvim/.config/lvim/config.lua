@@ -1,9 +1,10 @@
-require "user.catppuccin"
+-- require "user.catppuccin"
 require "user.tokyonight"
 require "user.plugins"
 require "user.autocommands"
 require "user.telescope"
 require "user.keymaps"
+require "user.whichkey"
 require "user.options"
 require "user.builtins"
 require "user.colorscheme"
@@ -23,6 +24,8 @@ require "user.twilight"
 require "user.vimwiki"
 require "user.zen-mode"
 require "user.neoscroll"
+require "user.fidget"
+require "user.auto-session"
 
 
 
