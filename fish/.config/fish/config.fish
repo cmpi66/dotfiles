@@ -18,7 +18,7 @@ set BROWSER "firefox"
 ### SET MANPAGER
 ### "nvim" as manpager
 # set -x MANPAGER "nvim -c 'set ft=man' -"        # this one dosnt work for me. It does for DT though.
-set -x  MANPAGER "nvim +Man!"
+set -x  MANPAGER "lvim +Man!"
 
 ### "bat" as manpager
 # set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
@@ -35,7 +35,7 @@ set fish_color_error '#ff6c6b'
 set fish_color_param brcyan
 
 # Fzf changing default bindings 
-fzf_configure_bindings --directory=\cf --git_status=\cs --git_log=\cl
+fzf_configure_bindings --git_status=\cs --git_log=\cl
 
 # Speedy keys
 # xset r rate 210 40
@@ -131,6 +131,7 @@ starship init fish | source
 scheme set catppuccin
 
 source ~/.config/fish/shortcuts.fish
+# source ~/.config/fish/fzf_fish_key_bindings.fish
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
