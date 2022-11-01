@@ -58,6 +58,7 @@ export HISTFILE="${XDG_STATE_HOME}"/bash/history
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 export PYTHONSTARTUP="/etc/python/pythonrc"
 export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
+export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel 
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

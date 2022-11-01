@@ -72,14 +72,14 @@ typedef struct {
 const char *spcmd1[] = {"st", "-n", "spterm", "-g", "70x20", "-e", "pulsemixer", NULL };
 const char *spcmd2[] = {"st", "-n", "spfm", "-g", "60x20", "-e", "notes",  NULL };
 const char *spcmd3[] = {"st", "-n", "spbmks", "-g", "80x25", "-e", "bmks", NULL };
-// const char *spcmd4[] = {"st", "-n", "spwiki", "-g", "90x25", "-e", "dmenuwiki", NULL };
+const char *spcmd4[] = {"st", "-n", "spwiki", "-g", "90x25", "-e", "wikiman", "-s", "gentoo", NULL };
 // const char *spcmd3[] = {"keepassxc", NULL };
 static Sp scratchpads[] = {
     /* name          cmd  */
    {"spterm",      spcmd1},
    {"spfm",        spcmd2},
    {"spbmks",   spcmd3},
-   // {"spwiki",   spcmd4},
+   {"spwiki",   spcmd4},
 };
 
 
@@ -104,7 +104,7 @@ static const Rule rules[] = {
     { NULL,       "spterm",     NULL,       SPTAG(0),       1,           -1 },
     { NULL,       "spfm",       NULL,       SPTAG(1),       1,           -1 },
     { NULL,       "spbmks",  NULL,       SPTAG(2),       1,           -1 },
-    // { NULL,       "spwiki",  NULL,       SPTAG(3),       1,           -1 },
+    { NULL,       "spwiki",  NULL,       SPTAG(3),       1,           -1 },
 
 };
 
@@ -141,8 +141,8 @@ static const Layout layouts[] = {
 static const char *termcmd[]  = { TERMINAL, NULL };
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run","-i","-p", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray1, NULL };
-static const char *brdowncmd[] = { "brightnessctl", "set", "5%-", NULL };
-static const char *brupcmd[] = { "brightnessctl", "set", "5%+", NULL };
+// static const char *brdowncmd[] = { "brightnessctl", "set", "5%-", NULL };
+// static const char *brupcmd[] = { "brightnessctl", "set", "5%+", NULL };
 //static const char *dmenucmd[] = { "dmenu_run","-l", "15", "fn", dmenufont, "-p","nb", col_gray1, "nf", col_gray3, "sb", col_cyan, "sf", col_gray4, "Run : ", NULL };
 //static const char *dmenucmd[] = { "dmenu_run","-i","-p", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 //static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
@@ -157,8 +157,8 @@ static Key keys[] = {
      //{ 0,                       XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
 	//{ 0,                       XF86XK_AudioMute, spawn, {.v = mutevol } },
 	//{ 0,                       XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },   
- { 0, XF86XK_MonBrightnessUp,   spawn,                       {.v = brupcmd} },
- { 0, XF86XK_MonBrightnessDown, spawn,                       {.v = brdowncmd} },
+ // { 0, XF86XK_MonBrightnessUp,   spawn,                       {.v = brupcmd} },
+ // { 0, XF86XK_MonBrightnessDown, spawn,                       {.v = brdowncmd} },
   { MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 
   { MODKEY|ShiftMask,		          XK_d,		spawn,		         {.v = (const char*[]){ "rofi", "-show","drun", "-show-icons", NULL } } },
@@ -249,7 +249,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,           	XK_y,      togglescratch,  {.ui = 0 } },
 	{ MODKEY|ShiftMask,           	XK_n,	     togglescratch,  {.ui = 1 } },
 	{ MODKEY|ShiftMask,            	XK_m,	     togglescratch,  {.ui = 2 } },
-	// { MODKEY|ShiftMask,            	XK_a,	     togglescratch,  {.ui = 3 } },
+	{ MODKEY|ShiftMask,            	XK_a,	     togglescratch,  {.ui = 3 } },
   { MODKEY,                       XK_n,      shiftview,      {.i = +1 } },
   { MODKEY,                       XK_b,      shiftview,      {.i = -1 } },
 
