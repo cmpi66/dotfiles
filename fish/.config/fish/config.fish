@@ -39,7 +39,7 @@ set fish_color_error '#ff6c6b'
 set fish_color_param brcyan
 
 # Fzf changing default bindings 
-fzf_configure_bindings --directory=\cf --git_status=\cs
+fzf_configure_bindings --git_status=\cs --git_log=\cl
 
 # Speedy keys
 # xset r rate 210 40
