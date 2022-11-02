@@ -16,7 +16,7 @@ static const int smartgaps          = 0;        /* 1 means no outer gap when the
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int horizpadbar        = 4;        /* horizontal padding for statusbar */
-static const int vertpadbar         = 4;        /* vertical padding for statusbar */
+static const int vertpadbar         = 0;        /* vertical padding for statusbar */
 static const int vertpad            = 11;       /* vertical padding of bar */
 static const int sidepad            = 0;       /* horizontal padding of bar */
 static const char *fonts[]          = 
@@ -29,9 +29,9 @@ static const char *fonts[]          =
  // "Font Awesome 6 Free Solid:pixelsize=16",
  // "Font Awesome 6 Brands:pixelsize=16",
  // "JetBrainsMono Nerd Font:style=Bold:size=12:antialias=true:autohint=true"
- "Fira Code Mono:style=Bold:size=9:antialias=true:autohint=true",
- "Font Awesome 6 Free Solid:pixelsize=15",
- "Font Awesome 6 Brands:pixelsize=15",
+ "Fira Code Mono:style=Bold:size=8:antialias=true:autohint=true",
+ "Font Awesome 6 Free Solid:pixelsize=14",
+ "Font Awesome 6 Brands:pixelsize=14",
  // "Fira Code Nerd Font:style=Bold:size=11:antialias=true:autohint=true"
 "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true"
 
@@ -40,7 +40,7 @@ static const char *fonts[]          =
 
 };
 
- static const char dmenufont[]       = "Jetbrains Mono:style=Bold:size=9:antialias=true:autohint=true";
+ static const char dmenufont[]       = "Jetbrains Mono:style=Bold:size=8:antialias=true:autohint=true";
  // static const char dmenufont[]       = "Fira Code Mono:style=Bold:size=9:antialias=true:autohint=true";
 
 // #include "themes/dracula.h"
