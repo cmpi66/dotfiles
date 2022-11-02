@@ -30,7 +30,7 @@ window:
   # must be at least `2`, while using a value of `0` for columns and lines will
   # fall back to the window manager's recommended size.
   #dimensions:
-    columns: 80
+    columns: 70
     lines: 20
 
   # Window position (changes require restart)
@@ -118,7 +118,8 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Fira Code Nerd Font 
+    # family: Fira Code Nerd Font 
+    family: Comic Code Nerd Font 
     # family: Hack Nerd Font  
     # family: Sauce Code Pro Nerd Font
     # family: Fura Code Nerd Font
@@ -141,8 +142,9 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Fira Code Nerd Font 
+    # family: Fira Code Nerd Font 
     # family: Hack Nerd Font  
+    family: Comic Code Nerd Font 
     # family: Fura Code Nerd Font
     # family: Sauce Code Pro Nerd Font
     # family: Roboto Mono Nerd Font  
@@ -167,11 +169,12 @@ font:
     # value specified for the normal font.
     # family: Fira Code Nerd Font 
     # family: Fura Code Nerd Font
+    family: Comic Code Nerd Font 
     # family: Sauce Code Pro Nerd Font
     # family: Hack Nerd Font  
     # family: Caskaydia Cove Nerd Font
     # family: DejaVuSansMono Nerd Font
-    family: Roboto Mono Nerd Font
+    # family: Roboto Mono Nerd Font
     # family: JetBrainsMono Nerd Font
     # family: UbuntuMono Nerd Font
     # family: Inconsolata 
@@ -189,10 +192,11 @@ font:
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
     # family: Fira Code Nerd Font
+    family: Comic Code Nerd Font 
     # family: Hack Nerd Font  
     # family: Fura Code Nerd Font
     # family: Sauce Code Pro Nerd Font
-    family: Roboto Mono Nerd Font 
+    # family: Roboto Mono Nerd Font 
     # family: Caskaydia Cove Nerd Font
     # family: DejaVuSansMono Nerd Font
     # family: JetBrainsMono Nerd Font

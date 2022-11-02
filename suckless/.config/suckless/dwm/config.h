@@ -8,10 +8,10 @@
 /* appearance */
 static const unsigned int borderpx  = 4;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const unsigned int gappih    = 17;       /* horiz inner gap between windows */
-static const unsigned int gappiv    = 17;       /* vert inner gap between windows */
-static const unsigned int gappoh    = 17;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov    = 17;       /* vert outer gap between windows and screen edge */
+static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
+static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
+static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 10;       /* vert outer gap between windows and screen edge */
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -66,11 +66,11 @@ typedef struct {
  const void *cmd;
 } Sp;
 
-// const char *spcmd1[] = {"alacritty", "--class", "spterm", "--config-file", "/home/chris/.config/alacritty/scratch3.yml","-e", "pulsemixer", NULL };
+const char *spcmd1[] = {"alacritty", "--class", "spterm", "--config-file", "/home/chris/.config/alacritty/scratch3.yml","-e", "pulsemixer", NULL };
 // const char *spcmd2[] = {"alacritty", "--class", "spfm", "--config-file", "/home/chris/.config/alacritty/scratch4.yml", "-e", "notes", NULL };
 // const char *spcmd3[] = {"alacritty", "--class", "spbmks", "--config-file", "/home/chris/.config/alacritty/scratch5.yml", "-e", "bmks", NULL };
 // const char *spcmd3[] = {"alacritty", "--class", "spfm", "--config-file", "/home/chris/.config/alacritty/ranger-pywal.yml", "-e", "ranger", NULL };
-const char *spcmd1[] = {"st", "-n", "spterm", "-g", "70x20", "-e", "pulsemixer", NULL };
+// const char *spcmd1[] = {"st", "-n", "spterm", "-g", "70x20", "-e", "pulsemixer", NULL };
 const char *spcmd2[] = {"st", "-n", "spfm", "-g", "60x20", "-e", "notes",  NULL };
 const char *spcmd3[] = {"st", "-n", "spbmks", "-g", "80x25", "-e", "bmks", NULL };
 const char *spcmd4[] = {"st", "-n", "spwiki", "-g", "90x25", "-e", "dmenuwiki", NULL };
@@ -85,8 +85,8 @@ static Sp scratchpads[] = {
 
 
 /* tagging */
-// static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-static const char *tags[] = { " 1", " 2", " 3", " 4", " 5", " 6", " 7", " 8", " 9" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+// static const char *tags[] = { " 1", " 2", " 3", " 4", " 5", " 6", " 7", " 8", " 9" };
 
 static const unsigned int ulinepad	= 5;	/* horizontal padding between the underline and tag */
 static const unsigned int ulinestroke	= 2;	/* thickness / height of the underline */

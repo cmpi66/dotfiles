@@ -15,7 +15,7 @@ lvim.plugins = {
    {"simrat39/rust-tools.nvim"},
    {"lvimuser/lsp-inlayhints.nvim"},
    {"kevinhwang91/nvim-bqf"},
-   {"kylechui/nvim-surround"},
+   -- {"kylechui/nvim-surround"},
    {"nacro90/numb.nvim"},
    {"is0n/jaq-nvim"},
   ({
@@ -23,7 +23,7 @@ lvim.plugins = {
     as = "catppuccin"
   }),
   -- {"Mofiqul/dracula.nvim"},
-   -- { "unblevable/quick-scope"},
+   { "unblevable/quick-scope"},
    {"lunarvim/templeos.nvim"},
    {"j-hui/fidget.nvim"},
   -- Session
