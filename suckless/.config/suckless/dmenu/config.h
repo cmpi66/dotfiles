@@ -6,7 +6,7 @@ static int fuzzy = 1;                      /* -F  option; if 0, dmenu doesn't us
 /* -fn option overrides fonts[0]; default X11 font or font set */
 static const char *fonts[] = {
 
- "Fira Code Mono:style=Bold:size=9:antialias=true:autohint=true",
+ "Fira Code Mono:style=Bold:size=8:antialias=true:autohint=true",
 	// "monospace:size=10",
   "JoyPixels:pixelsize=8:antialias=true:autohint=true"
 };
