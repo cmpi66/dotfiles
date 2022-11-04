@@ -46,4 +46,8 @@ Thumbs.db
 /home/chris/dotfiles/mpd/.config/mpd/state
 /home/chris/dotfiles/mpd/.config/mpd/database
 
+###
+
+./tmux/.config/tmux/plugins
+./tmux/.config/tmux/resurrect
 

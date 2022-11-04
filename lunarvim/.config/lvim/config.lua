@@ -26,6 +26,7 @@ require "user.zen-mode"
 require "user.neoscroll"
 require "user.auto-session"
 require "user.fidget"
+require "user.harpoon"
 
 
 

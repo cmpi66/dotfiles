@@ -28,6 +28,7 @@ lvim.plugins = {
    {"j-hui/fidget.nvim"},
   -- Session
    {"rmagatti/auto-session"},
-   {"rmagatti/session-lens"}
+   {"rmagatti/session-lens"},
+   {"christianchiarulli/harpoon"}
 }
 
