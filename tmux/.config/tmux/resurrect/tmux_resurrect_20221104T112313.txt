@@ -1,5 +1,0 @@
-pane	0	1	0	:-	1	~/.c/tmux	:/home/chris/repos/dotfiles/tmux/.config/tmux	1	fish	:fish
-pane	0	2	1	:*	1	~/repos/dotfiles/tmux/.config/tmux/tmux.conf                                                         134/167 - nvim	:/home/chris/repos/dotfiles/tmux/.config/tmux	1	sh	:fish
-window	0	1	:fish	0	:-	b03d,136x50,0,0,0	on
-window	0	2	:fish	1	:*	b03e,136x50,0,0,1	on
-state	0	
