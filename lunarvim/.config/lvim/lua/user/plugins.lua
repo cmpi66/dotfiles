@@ -28,5 +28,6 @@ lvim.plugins = {
    {"rmagatti/session-lens"},
   -- {"Mofiqul/dracula.nvim"},
    { "unblevable/quick-scope"},
+   {"christianchiarulli/harpoon"}
 }
 

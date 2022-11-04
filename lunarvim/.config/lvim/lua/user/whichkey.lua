@@ -1,6 +1,7 @@
 
 -- which-key keymap
-
+lvim.builtin.which_key.mappings["a"] = { "<cmd>Alpha<CR>", "Dashboard" }
+lvim.builtin.which_key.mappings["t"] = { "<cmd>Telescope live_grep<CR>", "Find Text"}
 lvim.builtin.which_key.mappings["o"] = { ":!opout <c-r>%<CR><CR>", "opout"}
 lvim.builtin.which_key.mappings["x"] = { "<cmd>BufferKill<CR>", "Close Buffer" }
 
@@ -20,7 +21,7 @@ lvim.builtin.which_key.mappings["v"] = {
 }
 
 
-lvim.builtin.which_key.mappings["t"] = {
+lvim.builtin.which_key.mappings["T"] = {
   name = "+Trouble",
   r = { "<cmd>Trouble lsp_references<cr>", "References" },
   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
@@ -58,4 +59,15 @@ lvim.builtin.which_key.mappings["s"] = {
   x = { "<cmd>DeleteSession<cr>", "Delete" },
   f = { "<cmd>SearchSession<cr>", "Find" },
   d = { "<cmd>Autosession delete<cr>", "Find Delete" },
+}
+
+
+lvim.builtin.which_key.mappings["m"] = {
+  name = "Markings",
+  m = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon" },
+  ["."] = { '<cmd>lua require("harpoon.ui").nav_next()<cr>', "Harpoon Next" },
+  [","] = { '<cmd>lua require("harpoon.ui").nav_prev()<cr>', "Harpoon Prev" },
+  s = { "<cmd>Telescope harpoon marks<cr>", "Search Files" },
+  [";"] = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Harpoon UI" },
+
 }
