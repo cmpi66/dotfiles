@@ -51,3 +51,4 @@ mpd/.config/mpd/database
 tmux/.config/tmux/plugins
 tmux/.config/tmux/resurrect
 
+mpv/.config/mpv/watch_later
