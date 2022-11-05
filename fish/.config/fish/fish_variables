@@ -23,6 +23,7 @@ SETUVAR _fish_abbr_cfmb:lvim\x20/home/chris/\x2econfig//ncmpcpp/bindings
 SETUVAR _fish_abbr_cfmc:lvim\x20/home/chris/\x2econfig//ncmpcpp/config
 SETUVAR _fish_abbr_cfn:lvim\x20/home/chris/\x2econfig//newsboat/config
 SETUVAR _fish_abbr_cfp:nvim\x20/home/chris/\x2ezshenv
+SETUVAR _fish_abbr_cft:lvim\x20/home/chris/\x2econfig//tmux/tmux\x2econf
 SETUVAR _fish_abbr_cfu:lvim\x20/home/chris/\x2econfig//newsboat/urls
 SETUVAR _fish_abbr_cfv:lvim\x20/home/chris/\x2econfig//nvim/init\x2elua
 SETUVAR _fish_abbr_cfx:nvim\x20/home/chris/\x2econfig//x11/xresources

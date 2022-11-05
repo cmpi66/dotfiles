@@ -28,7 +28,7 @@ Xft.dpi: 130
 *color14: #7dcfff
 *color15: #c0caf5
 
-*.cursorColor: #e0af68
+*.cursorColor: #bb9af7
 
 
 ! Doom-one colors for Xresources

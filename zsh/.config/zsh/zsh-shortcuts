@@ -26,6 +26,7 @@ hash -d vv=/home/chris/media/Videos
 hash -d bf=/home/chris/.config//shell/bm-files 
 hash -d bd=/home/chris/.config//shell/bm-dirs 
 hash -d cfv=/home/chris/.config//nvim/init.lua 
+hash -d cft=/home/chris/.config//tmux/tmux.conf 
 hash -d cfz=/home/chris/.config/zsh/.zshrc 
 hash -d cfa=/home/chris/.config//shell/aliasrc 
 hash -d cff=/home/chris/.config//fish/config.fish 
