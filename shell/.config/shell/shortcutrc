@@ -26,6 +26,7 @@ vv="cd /home/chris/media/Videos && ls -a" \
 bf="$EDITOR /home/chris/.config//shell/bm-files" \
 bd="$EDITOR /home/chris/.config//shell/bm-dirs" \
 cfv="$EDITOR /home/chris/.config//nvim/init.lua" \
+cft="$EDITOR /home/chris/.config//tmux/tmux.conf" \
 cfz="$EDITOR /home/chris/.config/zsh/.zshrc" \
 cfa="$EDITOR /home/chris/.config//shell/aliasrc" \
 cff="$EDITOR /home/chris/.config//fish/config.fish" \
