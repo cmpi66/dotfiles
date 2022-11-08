@@ -39,6 +39,8 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
+-- keymap("n", "<CR>", "<cmd>lua require'neuron'.enter_link()<CR>", opts)
+-- keymap("n", "gzn", "<cmd>lua require'neuron/cmd'.new_edit(require'neuron'.config.neuron_dir)<CR>", opts)
 
 
 vim.api.nvim_set_keymap(

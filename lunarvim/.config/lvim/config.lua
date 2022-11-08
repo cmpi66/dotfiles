@@ -21,12 +21,13 @@ require "user.quickscope"
 require "user.true-zen"
 require "user.lsp-inlayhints"
 require "user.twilight"
-require "user.vimwiki"
+-- require "user.vimwiki"
 require "user.zen-mode"
 require "user.neoscroll"
 require "user.auto-session"
 require "user.fidget"
 require "user.harpoon"
+require "user.zk"
 
 
 

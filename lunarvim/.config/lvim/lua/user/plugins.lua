@@ -6,7 +6,7 @@ lvim.plugins = {
    { "folke/zen-mode.nvim"},
    { "folke/twilight.nvim"},
    { "preservim/vim-pencil"},
-   { "vimwiki/vimwiki"},
+   -- { "vimwiki/vimwiki"},
    { "phaazon/hop.nvim"},
    {	"Pocco81/true-zen.nvim"},
    { "p00f/nvim-ts-rainbow"},
@@ -29,6 +29,9 @@ lvim.plugins = {
   -- Session
    {"rmagatti/auto-session"},
    {"rmagatti/session-lens"},
-   {"christianchiarulli/harpoon"}
+   {"christianchiarulli/harpoon"},
+   {"mickael-menu/zk-nvim"}
+  -- {"jghauser/follow-md-links.nvim"}
+   -- {"oberblastmeister/neuron.nvim"}
 }
 
