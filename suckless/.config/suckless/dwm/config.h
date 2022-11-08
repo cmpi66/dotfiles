@@ -174,7 +174,7 @@ static Key keys[] = {
 
 
   // { MODKEY|ShiftMask,			        XK_w,		spawn,		        {.v = (const char*[]){ TERMINAL,"--class", "Alacritty", "-e","nvim", "~/media/Documents/vimwiki/index.md", NULL } } },
-  { MODKEY|ShiftMask,			        XK_w,		spawn,		        SHCMD("st -e nvim -c VimwikiIndex")  },
+  { MODKEY|ShiftMask,			        XK_w,		spawn,		        SHCMD("st -e lvim ~/emanotes/index.md")  },
 
   { MODKEY,		          	        XK_e,		spawn,		         SHCMD(TERMINAL " -e neomutt ; rmdir ~/.abook") },
 
