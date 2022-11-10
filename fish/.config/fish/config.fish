@@ -85,7 +85,7 @@ abbr cl "clear"
 abbr v "vim"
 abbr p "sudo pacman -S"
 abbr rn "sudo pacman -Rns"
-abbr wiki "nvim ~/docs/vimwiki/index.md"
+abbr wiki "nvim ~/emanotes/index.md"
 abbr yup "paru -Syu"
 # abbr gp "git add . && git commit -m 'autopush' && git push"
 abbr gp "git add . && git commit -m 'autopush' && git remote | xargs -L1 git push --all" ##push to all 3 gits
