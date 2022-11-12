@@ -1,8 +1,16 @@
 #!/bin/sh
 fish
 export ZDOTDIR=$HOME/.config/zsh
-HISTFILE=~/.zsh_history
-setopt appendhistory
+# HISTFILE=~/.zsh_history
+# setopt appendhistory
+
+HISTFILE="$XDG_DATA_HOME/zsh/history"
+
+# Load aliases and shortcuts if existent.
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc"
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc"
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc"
+
 
 # some useful options (man zshoptions)
 setopt autocd extendedglob nomatch menucomplete
@@ -41,7 +49,7 @@ zsh_add_file "zsh-exports"
 zsh_add_file "zsh-vim-mode"
 zsh_add_file "zsh-aliases"
 # zsh_add_file "zsh-prompt"
-zsh_add_file "zsh-shortcuts"
+# zsh_add_file "zsh-shortcuts"
 
 # Plugins
 zsh_add_plugin "zsh-users/zsh-autosuggestions"

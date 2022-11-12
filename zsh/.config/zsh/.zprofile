@@ -1,9 +1,3 @@
-
-#auto startx ARCH
-
-# [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
-
-
 ## GENTOO FILE
 
 # typeset -U PATH path
@@ -52,7 +46,7 @@ export GIT_CONFIG="$XDG_CONFIG_HOME/git/config" ## This breaks aur packages give
 # export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/.password-store"
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
-export HISTFILE="$XDG_DATA_HOME/zsh/history"
+# export HISTFILE="$XDG_DATA_HOME/zsh/history"
 # export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 
 # none of the mbsyncs work on gentoo, why?
@@ -87,3 +81,6 @@ unset __conda_setup
 
 if [ -e /home/chris/.nix-profile/etc/profile.d/nix.sh ]; then . /home/chris/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
+#auto startx ARCH
+
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
