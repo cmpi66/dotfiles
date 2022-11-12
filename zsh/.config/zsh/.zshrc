@@ -87,7 +87,7 @@ autoload edit-command-line; zle -N edit-command-line
  xset r rate 210 40
 
 # Environment variables set everywhere
-export EDITOR="nvim"
+export EDITOR="lvim"
 export TERMINAL="st"
 export BROWSER="firefox-bin"
 

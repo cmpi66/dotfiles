@@ -1,8 +1,8 @@
 #
 # ~/.bashrc
 #
-source ~/.profile
-fish
+# source ~/.profile
+# fish
 # If not running interactively, don't do anything
 
 

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# first script from TLC book
+
+echo 'Hello World'

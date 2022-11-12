@@ -52,3 +52,5 @@ tmux/.config/tmux/plugins
 tmux/.config/tmux/ressurect
 
 mpv/.config/mpv/watch_later
+
+lunarvim/.local/share/site
