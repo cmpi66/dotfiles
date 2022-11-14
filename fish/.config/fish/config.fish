@@ -69,7 +69,8 @@ alias diff='diff --color=auto'
 # easier to read disk
 alias df='df -h'     # human-readable sizes
 alias free='free -m' # show sizes in MB
-alias yay='paru'
+# alias yay='paru'
+
 # navigation
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -78,11 +79,11 @@ alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 alias sudo='doas'
 alias nvim='lvim'
+
 # System abbreviations 
-# abbr archlinx-fix-keys "sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
+
 abbr merge "xrdb -merge ~/.Xresources"
 # abbr nvimrc "nvim ~/.config/nvim/"
-# abbr sudo "doas"
 abbr i3 "i3lock -C -i /home/chris/.local/bin/arch-wallpaper.jpg"
 abbr nv "nvim"
 abbr snv "sudo nvim"
@@ -93,10 +94,7 @@ abbr rm "rm -v"
 abbr ln "ln -i"
 abbr cl "clear"
 abbr v "vim"
-# abbr p "sudo pacman -Sy"
-# abbr rn "sudo pacman -Rns"
 abbr wiki "nvim ~/emanotes/index.md"
-# abbr yup "paru -Syu"
 # abbr gp "git add . && git commit -m 'autopush' && git push"
 abbr gp "git add . && git commit -m 'autopush' && git remote | xargs -L1 git push --all" ##push to all git remotes
 abbr mkdir "mkdir -pv"
@@ -114,6 +112,12 @@ abbr vd "nvim -d"
 abbr combinepdf "gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=combine.pdf -dBATCH"
 abbr en  "gpg -c --no-symkey-cache --cipher-algo  AES256"
 abbr stow "stow --target=$HOME"
+
+## zk
+alias perma="zk perma"
+alias flee="zk flee"
+alias nt="zk nt"
+
 
 #Custom keybindings vi insert mode
 set -g fish_key_bindings fish_vi_key_bindings

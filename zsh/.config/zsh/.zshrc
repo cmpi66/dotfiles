@@ -62,9 +62,9 @@ zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 
 # Key-bindings
 bindkey -s '^o' 'lf^M'
-bindkey -s '^e' 'neomutt^M'
+# bindkey -s '^e' 'neomutt^M'
 bindkey -s '^f' 'zi^M'
-bindkey -s '^s' 'ncdu^M'
+bindkey -s '^e' 'ncdu^M'
 # bindkey -s '^n' 'nvim $(fzf)^M'
 # bindkey -s '^v' 'nvim\n'
 bindkey -s '^z' 'zi^M'
@@ -92,7 +92,8 @@ autoload edit-command-line; zle -N edit-command-line
 # bindkey '^e' edit-command-line
 
 # Speedy keys
- xset r rate 210 40
+ # xset r rate 210 40
+xset r rate 300 50
 
 # Environment variables set everywhere
 export EDITOR="lvim"

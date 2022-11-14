@@ -18,4 +18,7 @@ require("zk").setup({
       filetypes = { "markdown" },
     },
   },
+-- require("zk.commands").get("ZkNew")({ dir = "emanotes" }),
+-- require("zk.commands").get("ZkNewFromTitleSelection")()
+
 })

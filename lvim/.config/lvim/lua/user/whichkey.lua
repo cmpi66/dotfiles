@@ -7,6 +7,7 @@ lvim.builtin.which_key.mappings["x"] = { "<cmd>BufferKill<CR>", "Close Buffer" }
 
 lvim.builtin.which_key.mappings["c"] = { ":w<CR>:!compiler %:p<CR><CR>","Doc Compiler"}
 lvim.builtin.which_key.mappings["u"] = { ":w<CR>:!pandoc % -f latex -t docx -o %:r.docx<CR><CR>", "Latex to Docx"}
+lvim.builtin.which_key.mappings["n"] = { "<cmd>ZkNew<CR>", "new note"}
 -- lvim.builtin.which_key.mappings["o"] = { ":w<CR>:!pandoc % -t beamer -o %:r.pdf<CR><CR>","Beamer Presentation"}
 
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
@@ -20,6 +21,15 @@ lvim.builtin.which_key.mappings["v"] = {
  	m = { "<cmd>TZMinimalist<cr>", "True Zen Minimalist" },
 }
 
+-- lvim.builtin.which_key.mappings["z"] = {
+--   name = "+zk",
+--   n = { "<cmd>ZkNew<cr>", "new note" },
+  -- f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
+  -- d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
+  -- q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
+  -- l = { "<cmd>Trouble loclist<cr>", "LocationList" },
+  -- w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
+-- }
 
 lvim.builtin.which_key.mappings["T"] = {
   name = "+Trouble",

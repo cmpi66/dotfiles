@@ -17,3 +17,8 @@ alias mv="mv -iv"
 alias rm="rm -v"
 alias cl="clear"
 alias v="vim"
+
+
+
+  
+ se () { du -a ~/.local/bin/* ~/.config/* | awk '{print$2}' | fzf | xargs -r $EDITOR ;}

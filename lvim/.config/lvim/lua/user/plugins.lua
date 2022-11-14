@@ -30,6 +30,14 @@ lvim.plugins = {
    { "unblevable/quick-scope"},
    {"christianchiarulli/harpoon"},
    {"mickael-menu/zk-nvim"},
+{
+  "andymass/vim-matchup",
+  event = "CursorMoved",
+  config = function()
+    vim.g.matchup_matchparen_offscreen = { method = "popup" }
+  end,
+},
   -- {"christianchiarulli/lualine.nvim"}
+
 }
 
