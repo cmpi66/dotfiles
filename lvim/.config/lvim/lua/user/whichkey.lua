@@ -7,7 +7,7 @@ lvim.builtin.which_key.mappings["x"] = { "<cmd>BufferKill<CR>", "Close Buffer" }
 
 lvim.builtin.which_key.mappings["c"] = { ":w<CR>:!compiler %:p<CR><CR>","Doc Compiler"}
 lvim.builtin.which_key.mappings["u"] = { ":w<CR>:!pandoc % -f latex -t docx -o %:r.docx<CR><CR>", "Latex to Docx"}
-lvim.builtin.which_key.mappings["n"] = { "<cmd>ZkNew<CR>", "new note"}
+lvim.builtin.which_key.mappings["n"] = { "<Cmd>ZkNew { dir = vim.fn.expand('%:p:h'), title = vim.fn.input('Title: ') }<CR>", "new note"}
 -- lvim.builtin.which_key.mappings["o"] = { ":w<CR>:!pandoc % -t beamer -o %:r.pdf<CR><CR>","Beamer Presentation"}
 
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
@@ -21,15 +21,21 @@ lvim.builtin.which_key.mappings["v"] = {
  	m = { "<cmd>TZMinimalist<cr>", "True Zen Minimalist" },
 }
 
--- lvim.builtin.which_key.mappings["z"] = {
---   name = "+zk",
---   n = { "<cmd>ZkNew<cr>", "new note" },
-  -- f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
-  -- d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
-  -- q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
+lvim.builtin.which_key.mappings["z"] = {
+  name = "+zk",
+  -- n = { "<cmd>ZkNew { title = vim.fn.input('Title: ') }<cr>", "New Note" },
+  -- n = { "<Cmd>ZkNew { dir = vim.fn.expand('%:p:h'), title = vim.fn.input('Title: ') }<CR>", "New Note" },
+  f = { "<cmd>ZkNew { dir = 'fleeting', title = vim.fn.input('Title: ') }<cr>", "Fleeting Note" },
+  p = { "<cmd>ZkNew { dir = 'permanent', title = vim.fn.input('Title: ') }<cr>", "Permanent Note" },
+  l = { "<cmd>ZkNew { dir = 'literature', title = vim.fn.input('Title: ') }<cr>", "Literature Note" },
+
+  -- n = { "<cmd>ZkNew<cr>", "new note" },
+  -- l = { "<cmd>ZkNew { dir = 'literature' }<cr>", "literature note" },
+  -- p = { "<cmd>ZkNew { dir = 'permanent' }<cr>", "permanent note" },
+  -- f = { "<cmd>ZkNew { dir = 'fleeting' }<cr>", "fleeting note" },
   -- l = { "<cmd>Trouble loclist<cr>", "LocationList" },
   -- w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
--- }
+}
 
 lvim.builtin.which_key.mappings["T"] = {
   name = "+Trouble",

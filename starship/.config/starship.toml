@@ -50,6 +50,14 @@ trim_at = "-"
 style = "bold blue"
 disabled = false
 
+[python]
+symbol = " "
+style = "bold #e5c07b" #yellow
+
+[nodejs]
+symbol = " "
+style = "bold #e5c07b" #yellow
+
 # [sudo]
 # style = "bold green"
 # symbol = "👩‍💻 "
