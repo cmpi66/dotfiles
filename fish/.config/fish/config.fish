@@ -20,6 +20,8 @@ set BROWSER "firefox"
 # set -x MANPAGER "nvim -c 'set ft=man' -"        # this one dosnt work for me. It does for DT though.
 set -x  MANPAGER "lvim +Man!"
 
+## nix broke manpath on fish; using this now
+set MANPATH /usr/share/man:/usr/local/share/man:$HOME/.nix-profile/share/man
 ### "bat" as manpager
 # set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
@@ -105,6 +107,11 @@ abbr vd "nvim -d"
 abbr combinepdf "gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=combine.pdf -dBATCH"
 abbr en "gpg -c --no-symkey-cache --cipher-algo AES256" 
 abbr stow "stow --target=$HOME"
+
+# zk
+alias perma="zk perma"
+alias flee="zk flee"
+alias nt="zk nt"
 
 #Custom keybindings vi insert mode
 set -g fish_key_bindings fish_vi_key_bindings

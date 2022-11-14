@@ -52,6 +52,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # ~/ Clean up:
+export MANPATH=/usr/share/man:/usr/local/share/man:$HOME/.nix-profile/share/man
 export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/shell/inputrc"
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 export LYNX_CFG_PATH="$XDG_CONFIG_HOME"/lynx.cfg
@@ -74,6 +75,13 @@ export DICS="/usr/share/stardict/dic/"
 export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
 # export FZF_DEFAULT_OPTS="--layout=reverse --height 60%"
 # export MOZ_USE_XINPUT2="1"	
+# if [ "$MANPATH" ]; then
+#   export MANPATH=$HOME/.nix-profile/share/man:$MANPATH
+# fi
+# export MANPATH=$HOME/.nix-profile/share/man
+# MANPATH="$MANPATH:/usr/share/man"
+# MANPATH="$MANPATH:/usr/local/share/man"
+# export MANPATH=/usr/local/share/man:$MANPATH
 
 export LF_ICONS="di=📁:\
 fi=📃:\

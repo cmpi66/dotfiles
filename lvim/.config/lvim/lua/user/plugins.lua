@@ -31,6 +31,14 @@ lvim.plugins = {
    {"rmagatti/session-lens"},
    {"christianchiarulli/harpoon"},
    {"mickael-menu/zk-nvim"},
+ {
+  "andymass/vim-matchup",
+  event = "CursorMoved",
+  config = function()
+    vim.g.matchup_matchparen_offscreen = { method = "popup" }
+  end,
+},
+
   -- {"jghauser/follow-md-links.nvim"}
    -- {"oberblastmeister/neuron.nvim"}
 }
