@@ -112,6 +112,7 @@ abbr stow "stow --target=$HOME"
 alias perma="zk perma"
 alias flee="zk flee"
 alias nt="zk nt"
+alias lit="zk lit"
 
 #Custom keybindings vi insert mode
 set -g fish_key_bindings fish_vi_key_bindings
