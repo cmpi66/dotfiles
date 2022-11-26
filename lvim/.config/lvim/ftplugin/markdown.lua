@@ -17,14 +17,14 @@ if require("zk.util").notebook_root(vim.fn.expand('%:p')) ~= nil then
   map("v", "<leader>znc", ":'<,'>ZkNewFromContentSelection { dir = vim.fn.expand('%:p:h'), title = vim.fn.input('Title: ') }<CR>", opts)
 
   -- Open notes linking to the current buffer.
-  map("n", "<leader>zb", "<Cmd>ZkBacklinks<CR>", opts)
+  -- map("n", "<leader>zb", "<Cmd>ZkBacklinks<CR>", opts)
   -- Alternative for backlinks using pure LSP and showing the source context.
-  --map('n', '<leader>zb', '<Cmd>lua vim.lsp.buf.references()<CR>', opts)
+  map('n', '<leader>zb', '<Cmd>lua vim.lsp.buf.references()<CR>', opts)
   -- Open notes linked by the current buffer.
   -- map("n", "<leader>zl", "<Cmd>ZkLinks<CR>", opts)
   
   -- Preview a linked note.
   map("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
   -- Open the code actions for a visual selection.
-  map("v", "<leader>za", ":'<,'>lua vim.lsp.buf.range_code_action()<CR>", opts)
+  -- map("v", "<leader>za", ":'<,'>lua vim.lsp.buf.range_code_action()<CR>", opts)
 end

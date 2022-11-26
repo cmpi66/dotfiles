@@ -22,8 +22,9 @@ local opts = {
   auto_restore_enabled = nil,
   auto_session_suppress_dirs = {
     -- vim.fn.glob(vim.fn.stdpath "config" .. "/*"),
-    os.getenv "HOME",
+    -- os.getenv "HOME",
     -- os.getenv "HOME" .. "/Machfiles",
+    "~/", "~/repos/dotfiles", "~/dl", "/"
   },
   auto_session_use_git_branch = nil,
   -- the configs below are lua only
@@ -35,7 +36,7 @@ vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,
 telescope.load_extension "session-lens"
 
 session_lens.setup {
-  path_display = { "shorten" },
+  -- path_display = { "shorten" },
   -- theme_conf = { border = false },
   previewer = false,
   prompt_title = "Sessions",

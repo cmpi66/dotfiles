@@ -113,6 +113,11 @@ abbr combinepdf "gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=combine.pdf -dBATCH
 abbr en  "gpg -c --no-symkey-cache --cipher-algo  AES256"
 abbr stow "stow --target=$HOME"
 
+abbr vpnup "sudo wg-quick up gentoobox"
+abbr vpndown "sudo wg-quick down gentoobox"
+
+abbr cmpiup "rsync -uvrP --delete-after ~/.local/src/sites/cmpi4/website/public/ root@cmpi4.com:/var/www/cmpi4/"
+
 ## zk
 alias perma="zk perma"
 alias flee="zk flee"
