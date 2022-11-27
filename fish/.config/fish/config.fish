@@ -67,7 +67,7 @@ alias ls='exa -al --color=always --icons --group-directories-first'
 alias sl='exa -al --color=always --icons --group-directories-first'
 alias diff='diff --color=auto'
 # easier to read disk
-alias df='df -h'     # human-readable sizes
+alias df='pydf'     # human-readable sizes
 alias free='free -m' # show sizes in MB
 # alias yay='paru'
 
@@ -88,7 +88,7 @@ abbr i3 "i3lock -C -i /home/chris/.local/bin/arch-wallpaper.jpg"
 abbr nv "nvim"
 abbr snv "sudo nvim"
 abbr ka "killall"
-abbr cp "cp -iv"
+abbr cp "cp -irv"
 abbr mv "mv -iv"
 abbr rm "rm -v"
 abbr ln "ln -i"

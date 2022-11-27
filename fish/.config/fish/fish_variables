@@ -34,7 +34,7 @@ SETUVAR _fish_abbr_cl:clear
 SETUVAR _fish_abbr_clone:git\x20clone
 SETUVAR _fish_abbr_cmpiup:rsync\x20\x2duvrP\x20\x2d\x2ddelete\x2dafter\x20\x7e/\x2elocal/src/sites/cmpi4/website/public/\x20root\x40cmpi4\x2ecom\x3a/var/www/cmpi4/
 SETUVAR _fish_abbr_combinepdf:gs\x20\x2ddNOPAUSE\x20\x2dsDEVICE\x3dpdfwrite\x20\x2dsOUTPUTFILE\x3dcombine\x2epdf\x20\x2ddBATCH
-SETUVAR _fish_abbr_cp:cp\x20\x2div
+SETUVAR _fish_abbr_cp:cp\x20\x2dirv
 SETUVAR _fish_abbr_cw:cd\x20/home/chris/copywriting/copying\x2dwriters/\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_d:cd\x20/home/chris/docs\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_dm:cd\x20/home/chris/docs/md/\x3b\x20and\x20ls\x20\x2da

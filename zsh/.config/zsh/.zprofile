@@ -86,4 +86,11 @@ if [ -e /home/chris/.nix-profile/etc/profile.d/nix.sh ]; then . /home/chris/.nix
 
 #auto startx ARCH
 
+# Show contents of the directory after changing to it
+function cd () {
+    builtin cd "$1"
+    ls -ACF
+}
+
+
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
