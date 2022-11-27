@@ -59,7 +59,7 @@ alias ls='exa -al --color=always --icons --group-directories-first'
 alias sl='exa -al --color=always --icons --group-directories-first'
 alias diff='diff --color=auto'
 # easier to read disk
-alias df='df -h'     # human-readable sizes
+alias df='pydf'     # human-readable sizes
 alias free='free -m' # show sizes in MB
 alias yay='paru'
 # navigation
@@ -70,6 +70,7 @@ alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
 alias nvim='lvim'
+alias sudo='doas'
 # System abbreviations 
 abbr archlinx-fix-keys "sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
 abbr merge "xrdb -merge ~/.Xresources"
@@ -79,7 +80,7 @@ abbr i3 "i3lock -C -i /home/chris/.local/bin/arch-wallpaper.jpg"
 abbr nv "nvim"
 abbr snv "sudo nvim"
 abbr ka "killall"
-abbr cp "cp -iv"
+abbr cp "cp -irv"
 abbr mv "mv -iv"
 abbr rm "rm -v"
 abbr ln "ln -i"
@@ -107,6 +108,11 @@ abbr vd "nvim -d"
 abbr combinepdf "gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=combine.pdf -dBATCH"
 abbr en "gpg -c --no-symkey-cache --cipher-algo AES256" 
 abbr stow "stow --target=$HOME"
+
+abbr vpnup "sudo wg-quick up archbox"
+abbr vpndown "sudo wg-quick down archbox"
+
+abbr upcmpi "rsync -uvrP --delete-after ~/.local/src/sites/cmpi4/website/public/ root@cmpi4.com:/var/www/cmpi4/"
 
 # zk
 alias perma="zk perma"

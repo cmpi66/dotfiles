@@ -34,7 +34,7 @@ SETUVAR _fish_abbr_checkout:git\x20checkout
 SETUVAR _fish_abbr_cl:clear
 SETUVAR _fish_abbr_clone:git\x20clone
 SETUVAR _fish_abbr_combinepdf:gs\x20\x2ddNOPAUSE\x20\x2dsDEVICE\x3dpdfwrite\x20\x2dsOUTPUTFILE\x3dcombine\x2epdf\x20\x2ddBATCH
-SETUVAR _fish_abbr_cp:cp\x20\x2div
+SETUVAR _fish_abbr_cp:cp\x20\x2dirv
 SETUVAR _fish_abbr_d:cd\x20/home/chris/docs\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_dm:cd\x20/home/chris/docs/md/\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_dn:cd\x20/home/chris/docs/vimwiki/notes/\x3b\x20and\x20ls\x20\x2da
@@ -78,9 +78,12 @@ SETUVAR _fish_abbr_src:cd\x20/home/chris/\x2elocal/src\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_stow:stow\x20\x2d\x2dtarget\x3d/home/chris
 SETUVAR _fish_abbr_sw:cd\x20/home/chris/copywriting/swipes/\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_swh:cd\x20/home/chris/copywriting/swipes/headlines/\x3b\x20and\x20ls\x20\x2da
+SETUVAR _fish_abbr_upcmpi:rsync\x20\x2duvrP\x20\x2d\x2ddelete\x2dafter\x20\x7e/\x2elocal/src/sites/cmpi4/website/public/\x20root\x40cmpi4\x2ecom\x3a/var/www/cmpi4/
 SETUVAR _fish_abbr_v:vim
 SETUVAR _fish_abbr_v_3D_:vim
 SETUVAR _fish_abbr_vd:nvim\x20\x2dd
+SETUVAR _fish_abbr_vpndown:sudo\x20wg\x2dquick\x20down\x20archbox
+SETUVAR _fish_abbr_vpnup:sudo\x20wg\x2dquick\x20up\x20archbox
 SETUVAR _fish_abbr_vv:cd\x20/home/chris/media/Videos\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_wiki:nvim\x20\x7e/emanotes/index\x2emd
 SETUVAR _fish_abbr_yay:paru

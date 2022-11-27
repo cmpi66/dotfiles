@@ -346,6 +346,8 @@ _comps=(
 'dmesg' '_dmesg'
 'dmidecode' '_dmidecode'
 'doas' '_doas'
+'docker' '_docker'
+'dockerd' '_docker'
 'domainname' '_yp'
 'dos2unix' '_dos2unix'
 'downgrade' '_downgrade'
@@ -671,7 +673,6 @@ _comps=(
 'hostnamectl' '_hostnamectl'
 'hotjava' '_webbrowser'
 'htop' '_htop'
-'hugo' '_hugo'
 'iceweasel' '_mozilla'
 'icombine' '_ispell'
 'iconv' '_iconv'
@@ -1708,8 +1709,8 @@ bindkey '^[~' _bash_complete-word
 
 autoload -Uz _alacritty _bat _black _blackd _bootctl \
             _busctl _bwrap _calibre _cargo _checkupdates \
-            _coredumpctl _curl _downgrade _email-notmuch _exa \
-            _fd _hostnamectl _hugo _journalctl _kernel-install \
+            _coredumpctl _curl _docker _downgrade _email-notmuch \
+            _exa _fd _hostnamectl _journalctl _kernel-install \
             _kitty _lf _libinput _localectl _loginctl \
             _machinectl _meson _mkinitcpio _mpv _netctl \
             _networkctl _ninja _notmuch _oomctl _paccache \
