@@ -1,31 +1,24 @@
 SHELL := /bin/bash
 .POSIX:
-.PHONY: help install upgrade-hugo serve build start initial updatetheme links
+.PHONY: help install upgrade-hugo serve build start initial clones links site
 
 help: ## Show this help
 	@egrep -h '\s##\s' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
-createrepodir:
-	mkdir -pv ~/repos
+# createrepodir:
+# 	mkdir -pv ~/repos
+MAKESITEDIR:=$(shell mkdir -p ~/.local/test/sites/munozpi/) 
 
-links:
-	python hydra.py https://www.munozpi.com --config ./hydra-config.json > report.yaml
+clones: # clones all my repos to repos dir
+	cp gh-repos.txt ~/repos/ && cd ~/repos/ && <gh-repos.txt xargs -n1 git clone 
+
+site:
+	$(MAKESITEDIR) mv ~/repos/netlify ~/.local/test/sites/munozpi/  
 
 install: ## Install or update dependencies
 	npm i
 	# npm install -g markdownlint-cli
 	# pre-commit install --install-hooks
-
-HUGO_VERSION:=$(shell curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | grep 'tag_name' | cut -d '"' -f 4 | cut -c 2-)
-
-upgrade-hugo: ## Get the latest Hugo
-	mkdir tmp/ && \
-	cd tmp/ && \
-	curl -sSL https://github.com/gohugoio/hugo/releases/download/v$(HUGO_VERSION)/hugo_extended_$(HUGO_VERSION)_Linux-64bit.tar.gz | tar -xvzf- && \
-	sudo mv hugo /usr/local/bin/ && \
-	cd .. && \
-	rm -rf tmp/
-	hugo version
 
 dev: ## Run the local development server
 	hugo serve --noHTTPCache --enableGitInfo --disableFastRender --environment development
@@ -40,4 +33,4 @@ build: ##  build site
 
 start: upgrade-hugo serve ## Update Hugo and start development server
 
-initial: install upgrade-hugo serve ## Install tools and start development server
+initial: clones site ## Install tools and start development server

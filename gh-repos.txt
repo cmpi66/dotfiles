@@ -1,3 +1,2 @@
-git@github.com:cmpi66/newsite.git
-git@github.com:cmpi66/newsboat-gentoo.git
+git@github.com:cmpi66/netlify.git
 git@github.com:cmpi66/newsite.git

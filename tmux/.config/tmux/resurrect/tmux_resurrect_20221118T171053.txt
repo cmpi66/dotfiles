@@ -1,9 +1,0 @@
-pane	zettelkasten	1	0	:	1	emanote run --port=8 ~/zettelkasten	:/home/chris/zettelkasten	1	emanote	:fish
-pane	zettelkasten	2	0	:	1	~/zettelkasten/index.md                                                                                         9/20 - nvim	:/home/chris/zettelkasten	1	lvim	:fish
-pane	zettelkasten	3	0	:-	1	hugo serve ~/.l/s/s/c/website	:/home/chris/.local/src/sites/cmpi4/website	1	hugo	:fish
-pane	zettelkasten	4	1	:*	1	~/.l/s/s/c/website	:/home/chris/.local/src/sites/cmpi4/website	1	fish	:fish
-window	zettelkasten	1	:ema:run	0	:	c1fd,145x45,0,0,0	off
-window	zettelkasten	2	:notes:edit	0	:	c1fe,145x45,0,0,1	off
-window	zettelkasten	3	:cmpi4:run	0	:-	c204,145x45,0,0,7	off
-window	zettelkasten	4	:cmpi4:edit	1	:*	c205,145x45,0,0,8	off
-state	zettelkasten	
