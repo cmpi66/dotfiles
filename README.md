@@ -1,5 +1,5 @@
 
-![dotfiles image](./dotfiles.png)
+![dotfiles image](./dotfiles.png "This is a test title")
 
 # Dotfiles
 
@@ -18,9 +18,6 @@ A lot of my stuff I've forked or borrowed from [Luke Smith.](https://github.com/
 - Lf settings 
 - Sxiv settings
 - [mutt-wizard](https://github.com/lukesmithxyz/mutt-wizard)
-
-
-![Test gif](./test.gif)
 
 You'll notice that my file structure looks different. That's because I'm using GNU stow. Here's a video from [Chris the machine](https://www.youtube.com/watch?v=90xMTKml9O0&t=64s) explaining how to use it. He's also the main developer for [lunarvim.](https://www.lunarvim.org/)
 
