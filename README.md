@@ -1,6 +1,5 @@
 
-![dotfiles image](./dotfiles.png )
-*This is a test title*
+![dotfiles image{caption=Example caption}](./dotfiles.png )
 
 # Dotfiles
 
