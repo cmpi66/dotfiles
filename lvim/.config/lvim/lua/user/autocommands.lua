@@ -29,3 +29,7 @@ vim.api.nvim_create_autocmd("FileType", {
     require("nvim-treesitter.highlight").attach(0, "bash")
   end,
 })
+
+-- start new file in insert mode and start already created empty file in insert mode
+vim.cmd "autocmd Bufnewfile * startinsert"
+vim.cmd "autocmd VimEnter * if getfsize(expand ('%')) == 0 | startinsert | endif"
