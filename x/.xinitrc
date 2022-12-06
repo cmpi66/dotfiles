@@ -51,7 +51,8 @@ fi
 
 
 # Clear caps lock key, no longer using it. Replaced with escape. This command doesnt save in .Xmodmap.
-# sshfs pi@192.168.1.106:/home/pi/backup ~/media/ &
+sshfs pi@192.168.1.106:/home/pi/backup/Music ~/music/ &
+sshfs pi@192.168.1.106:/home/pi/backup/Videos ~/vids/ &
 xmodmap -e 'clear lock' &
 # Dont need the xrandr command anymore. Using lukes display script
 # xrandr --output eDP1 --auto --output DP1 --primary --left-of eDP1 &  
