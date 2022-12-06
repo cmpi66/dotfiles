@@ -20,7 +20,8 @@
 
 
 
-sudo pacman --noconfirm --needed -Sy \
+sudo pacman --noconfirm --needed -S \
+  archlinux-keyring\
   stow \
   opendoas \
   fish \

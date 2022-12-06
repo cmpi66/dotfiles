@@ -113,6 +113,8 @@ abbr vpnup "sudo wg-quick up archbox"
 abbr vpndown "sudo wg-quick down archbox"
 
 abbr upcmpi "rsync -uvrP --delete-after ~/.local/src/sites/cmpi4/website/public/ root@cmpi4.com:/var/www/cmpi4/"
+abbr tabs "xargs -n1 firefox <"
+abbr paste "xclip -selection c -o >"
 
 # zk
 alias perma="zk perma"

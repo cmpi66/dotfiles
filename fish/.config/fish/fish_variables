@@ -55,7 +55,7 @@ SETUVAR _fish_abbr_ka:killall
 SETUVAR _fish_abbr_kx:killall\x20sxhkd\x20\x26\x26\x20sxhkd\x20\x26
 SETUVAR _fish_abbr_lf:lfub
 SETUVAR _fish_abbr_ln:ln\x20\x2di
-SETUVAR _fish_abbr_m:cd\x20/home/chris/media/Music\x3b\x20and\x20ls\x20\x2da
+SETUVAR _fish_abbr_m:cd\x20/home/chris/music\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_merge:xrdb\x20\x2dmerge\x20\x7e/\x2eXresources
 SETUVAR _fish_abbr_mirror:sudo\x20reflector\x20\x2df\x2030\x20\x2dl\x2030\x20\x2d\x2dnumber\x2010\x20\x2d\x2dverbose\x20\x2d\x2dsave\x20/etc/pacman\x2ed/mirrorlist
 SETUVAR _fish_abbr_mirrora:sudo\x20reflector\x20\x2d\x2dlatest\x2050\x20\x2d\x2dnumber\x2020\x20\x2d\x2dsort\x20age\x20\x2d\x2dsave\x20/etc/pacman\x2ed/mirrorlist
@@ -68,6 +68,7 @@ SETUVAR _fish_abbr_ncm:ncmpcpp
 SETUVAR _fish_abbr_nv:nvim
 SETUVAR _fish_abbr_nvimrc:nvim\x20\x7e/\x2econfig/nvim/
 SETUVAR _fish_abbr_p:sudo\x20pacman\x20\x2dS
+SETUVAR _fish_abbr_paste:xclip\x20\x2dselection\x20c\x20\x2do\x20\x3e
 SETUVAR _fish_abbr_pp:cd\x20/home/chris/pixs\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_rm:rm\x20\x2dv
 SETUVAR _fish_abbr_rn:sudo\x20pacman\x20\x2dRns
@@ -78,13 +79,14 @@ SETUVAR _fish_abbr_src:cd\x20/home/chris/\x2elocal/src\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_stow:stow\x20\x2d\x2dtarget\x3d/home/chris
 SETUVAR _fish_abbr_sw:cd\x20/home/chris/copywriting/swipes/\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_swh:cd\x20/home/chris/copywriting/swipes/headlines/\x3b\x20and\x20ls\x20\x2da
+SETUVAR _fish_abbr_tabs:xargs\x20\x2dn1\x20firefox\x20\x3c
 SETUVAR _fish_abbr_upcmpi:rsync\x20\x2duvrP\x20\x2d\x2ddelete\x2dafter\x20\x7e/\x2elocal/src/sites/cmpi4/website/public/\x20root\x40cmpi4\x2ecom\x3a/var/www/cmpi4/
 SETUVAR _fish_abbr_v:vim
 SETUVAR _fish_abbr_v_3D_:vim
 SETUVAR _fish_abbr_vd:nvim\x20\x2dd
 SETUVAR _fish_abbr_vpndown:sudo\x20wg\x2dquick\x20down\x20archbox
 SETUVAR _fish_abbr_vpnup:sudo\x20wg\x2dquick\x20up\x20archbox
-SETUVAR _fish_abbr_vv:cd\x20/home/chris/media/Videos\x3b\x20and\x20ls\x20\x2da
+SETUVAR _fish_abbr_vv:cd\x20/home/chris/vids\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_wiki:nvim\x20\x7e/emanotes/index\x2emd
 SETUVAR _fish_abbr_yay:paru
 SETUVAR _fish_abbr_yt:yt\x2ddlp\x20\x2d\x2dadd\x2dmetadata\x20\x2di
