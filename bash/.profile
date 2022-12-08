@@ -35,3 +35,6 @@ export HISTFILE="$XDG_DATA_HOME/zsh/history"
 export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
 
 export DICS="/usr/share/stardict/dic/"
+
+export NVM_DIR="$HOME/.config//nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

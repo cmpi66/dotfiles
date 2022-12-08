@@ -2,28 +2,35 @@
 
 #aur apps 
 
-yay -S \
+yay --noconfirm --needed -S \
+  7-zip-full \
+  abook-configdir \
+  ani-cli \
+  anki \
+  etcher-bin \
+  hakuneko-desktop \
+  htop-vim \
   i3lock-color \
-  upwork \
-  timeshift \
-  xidlehook \
-  mutt-wizard \
+  kcc \
+  kjv-apocrypha \
   lf \
+  mutt-wizard \
+  noto-color-emoji-fontconfig \
+  opustags \
   rpi-imager-bin \
   sc-im \
-  timeshift \
-  update-grub \
-  urlview-xdg-git \
-  ueberzug \
-  abook \
-  7-zip-full \
-  balena-etcher \
-  task-spooler \
-  nerd-fonts-mononoki \
-  roboto-nerd-fonts \
-  htop-vim \
-  yt-dlp \
   shellcheck-bin \
+  task-spooler \
+  timeshift \
+  ueberzug \
+  update-grub \
+  upwork \
+  urlview-xdg-git \
+  xidlehook \
+  yt-dlp \
+
+
+  
 
 
 

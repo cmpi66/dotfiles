@@ -21,88 +21,94 @@
 
 
 sudo pacman --noconfirm --needed -S \
-  archlinux-keyring\
-  stow \
-  opendoas \
-  fish \
-  xsel \
-  grub-btrfs \
-  rofi \
-  pulsemixer \
-  okular \
-  lxappearance \
-  libreoffice-fresh \
-  brightnessctl \
-  redshift \
-  neofetch \
+  arch-wiki-docs \
   aspell-en \
-  libmythes \
-  mythes-en \
-  languagetool \
-  gimp \
-  inkscape \
-  mpv \
-  sxhkd \
-  xorg-xev \
-  gufw \
+  brightnessctl \
+  calcurse \
+  calibre \
+  cargo \
+  clipnotify \
+  codespell \
   cronie \
+  ctags \
+  cups \
   cutefish-icons \
+  dunst \
+  entr \
+  exa \
+  fd \
+  firefox \
+  fish \
+  fisher \
+  flake8 \
+  fzf \
+  gimp \
+  gimp-plugin-gmic \
+  glow \
+  gnome-keyring \
+  gnucash \
+  gparted \
+  grub-btrfs \
+  gufw \
+  inkscape \
+  languagetool \
+  lazygit \
+  libmythes \
+  libreoffice-fresh \
+  libsecret \
+  luacheck \
+  lxappearance \
+  lynx \
+  maim \
+  moreutils \
+  mpc \
+  mpd \
+  mpv \
+  mtr \
+  mythes-en \
+  ncdu \
+  ncmpcpp \
+  net-tools \
+  newsboat \
+  okular \
+  pandoc \
+  paru \
+  pcmanfm \
+  procs \
+  pulsemixer \
+  pydf \
+  python-black \
+  python-pynvim \
+  qbittorrent \
+  r \
+  redshift \
+  ripgrep \
+  rmlint \
+  rofi \
+  rofi-calc \
+  sdcv \
+  shfmt \
+  stow \
+  sxhkd \
+  sxiv \
+  syncthing \
+  texlive-most \
+  the_silver_searcher \
+  tk \
+  tldr \
+  tree \
+  urlscan \
   vim \
   wireguard-tools \
-  rofi-calc \
-  tree \
-  clipnotify \
-  zoxide \
-  fzf \
-  fd \
-  zsh \
-  the_silver_searcher \
-  xkeycaps \
-  ripgrep \
-  ctags \
-  base-devel \
-  pcmanfm \
-  exa \
-  firefox \
-  linux-lts \
-  linux-lts-headers \
-  pass \
-  lynx \
-  entr \
-  isync \
-  msmtp \
-  notmuch \
-  xorg-xset \
-  zathura \
-  lazygit \
-  gnucash \
-  ncdu \
-  rmlint \
-  mpd \
-  ncmpcpp \
-  mpc \
-  mtr \
-  inconsolata \
-  iosevka \
-  maim \
-  sxiv \
-  sdcv \
-  libfidio2 \
   xclip \
-  dunst \
-  gnome-keyring \
-  libsecret \
-  procs \
-  texlive-most \
-  cargo \
-  cargo install stylua \
-  shfmt \
-  moreutils \
-  pandoc \
-  r \
-  tk \
-
-
+  xkeycaps \
+  xorg-xev \
+  xorg-xset \
+  xsel \
+  zathura \
+  zk \
+  zoxide \
+  zsh \
   
 
 
@@ -111,9 +117,9 @@ sudo pacman --noconfirm --needed -S \
 
 
 
-git clone \
-  https://github.com/cdown/clipmenu.git \
-  https://github.com/AdnanHodzic/auto-cpufreq.git
+#git clone \
+#  https://github.com/cdown/clipmenu.git \
+#  https://github.com/AdnanHodzic/auto-cpufreq.git
 
 
 
