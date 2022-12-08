@@ -23,6 +23,7 @@
 sudo pacman --noconfirm --needed -S \
   arch-wiki-docs \
   aspell-en \
+  bat \
   brightnessctl \
   calcurse \
   calibre \
@@ -46,6 +47,7 @@ sudo pacman --noconfirm --needed -S \
   gimp-plugin-gmic \
   glow \
   gnome-keyring \
+  go \
   gnucash \
   gparted \
   grub-btrfs \
@@ -88,6 +90,7 @@ sudo pacman --noconfirm --needed -S \
   rofi-calc \
   sdcv \
   shfmt \
+  shellcheck \
   stow \
   sxhkd \
   sxiv \
@@ -105,6 +108,7 @@ sudo pacman --noconfirm --needed -S \
   xorg-xev \
   xorg-xset \
   xsel \
+  xwallpaper
   zathura \
   zk \
   zoxide \

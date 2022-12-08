@@ -149,8 +149,8 @@ scheme set catppuccin
 source ~/.config/fish/shortcuts.fish
 # source ~/.config/fish/fzf_fish_key_bindings.fish
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-eval /home/chris/.local/share/miniconda3/bin/conda "shell.fish" "hook" $argv | source
-# <<< conda initialize <<<
+# # >>> conda initialize >>>
+# # !! Contents within this block are managed by 'conda init' !!
+# eval /home/chris/.local/share/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+# # <<< conda initialize <<<
 

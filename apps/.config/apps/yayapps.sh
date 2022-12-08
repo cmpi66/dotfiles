@@ -19,7 +19,6 @@ yay --noconfirm --needed -S \
   opustags \
   rpi-imager-bin \
   sc-im \
-  shellcheck-bin \
   task-spooler \
   timeshift \
   ueberzug \
