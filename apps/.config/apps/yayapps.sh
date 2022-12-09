@@ -7,6 +7,7 @@ yay --noconfirm --needed -S \
   abook-configdir \
   ani-cli \
   anki \
+  catppuccin-gtk-theme-macchiato \
   etcher-bin \
   hakuneko-desktop \
   htop-vim \
