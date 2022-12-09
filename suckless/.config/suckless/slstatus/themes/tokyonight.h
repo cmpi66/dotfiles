@@ -4,7 +4,7 @@ static const struct arg args[] = {
   //{run_command,  "^c#abe9b3^  %s ",      "sb-price.sh" },
     // {run_command,  "^c#9ece6a^  %s ",      "sb-battery.sh" },
     {run_command,  "^c#e0af68^  %2s ",     "forecast.sh" },
-//    {run_command,  "^c#abe9b3^  %2s ",     "sb-internet.sh" },
+   {run_command,  "^c#abe9b3^  %2s ",     "internet.sh" },
     // {run_command,  "^c#ff9e64^  %2s ",     "sb-pacpackages.sh" },
     {uptime,   "^c#c0caf5^    %s  ", NULL },
     {cpu_perc, "^c#bb9af7^   %s%%  ", NULL },
