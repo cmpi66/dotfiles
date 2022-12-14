@@ -3,7 +3,7 @@ cac ${XDG_CACHE_HOME:-$HOME/.cache}
 cf  ${XDG_CONFIG_HOME:-$HOME/.config}
 D   ${XDG_DOWNLOAD_DIR:-$HOME/dl}
 d   ${XDG_DOCUMENTS_DIR:-$HOME/docs}
-# dt  ${XDG_DATA_HOME:-$HOME/.local/share}
+rs  ${XDG_DATA_HOME:-$HOME/.local/share}
 dt  $HOME/docs/tex/
 ds  $HOME/docs/ms/
 dp  $HOME/docs/props/
@@ -13,7 +13,6 @@ dr  $HOME/docs/rmd/
 dri $HOME/docs/rmd/it-projects/
 dm  $HOME/docs/md/
 rr  $HOME/.local/src
-br  $HOME/docs/vimwiki/book-reviews
 M   $HOME/media
 ce  $HOME/copywriting/english-rules/
 cw  $HOME/copywriting/copying-writers/

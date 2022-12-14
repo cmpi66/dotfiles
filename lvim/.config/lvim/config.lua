@@ -28,6 +28,7 @@ require "user.fidget"
 require "user.auto-session"
 require "user.harpoon"
 require "user.zk"
+-- require "user.ltex"
 -- require "user.lualine"
 
 
@@ -77,7 +78,8 @@ an executable
 -- ---see the full default list `:lua print(vim.inspect(lvim.lsp.automatic_configuration.skipped_servers))`
 -- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
 -- local opts = {} -- check the lspconfig documentation for a list of all possible options
--- require("lvim.lsp.manager").setup("pyright", opts)
+-- local opts = {}
+-- require("lvim.lsp.manager").setup("ltex", opts)
 
 -- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. !!Requires `:LvimCacheReset` to take effect!!
 -- ---`:LvimInfo` lists which server(s) are skipped for the current filetype

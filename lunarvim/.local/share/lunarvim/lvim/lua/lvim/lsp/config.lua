@@ -13,7 +13,6 @@ local skipped_servers = {
   "gradle_ls",
   "graphql",
   "jedi_language_server",
-  "ltex",
   "ocamlls",
   "phpactor",
   "psalm",
@@ -42,7 +41,7 @@ local skipped_servers = {
   "prosemd_lsp"
 }
 
-local skipped_filetypes = { "rst", "markdown", "plaintext" }
+local skipped_filetypes = { "rst", "plaintext" }
 
 local join_paths = require("lvim.utils").join_paths
 

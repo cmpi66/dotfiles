@@ -7,7 +7,6 @@ SETUVAR _fish_abbr_D:cd\x20/home/chris/dl\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_M:cd\x20/home/chris/media\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_bd:lvim\x20/home/chris/\x2econfig//shell/bm\x2ddirs
 SETUVAR _fish_abbr_bf:lvim\x20/home/chris/\x2econfig//shell/bm\x2dfiles
-SETUVAR _fish_abbr_br:cd\x20/home/chris/docs/vimwiki/book\x2dreviews\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_branch:git\x20branch
 SETUVAR _fish_abbr_cac:cd\x20/home/chris/\x2ecache/\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_cat:bat\x20\x2dp
@@ -80,8 +79,10 @@ SETUVAR _fish_abbr_nv:nvim
 SETUVAR _fish_abbr_nvimrc:nvim\x20\x7e/\x2econfig/nvim/
 SETUVAR _fish_abbr_paste:xclip\x20\x2dselection\x20c\x20\x2do\x20\x3e
 SETUVAR _fish_abbr_pp:cd\x20/home/chris/pixs\x3b\x20and\x20ls\x20\x2da
+SETUVAR _fish_abbr_rf:cd\x20/home/chris/\x2elocal/share\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_rm:rm\x20\x2dv
 SETUVAR _fish_abbr_rr:cd\x20/home/chris/\x2elocal/src\x3b\x20and\x20ls\x20\x2da
+SETUVAR _fish_abbr_rs:cd\x20/home/chris/\x2elocal/share\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_sc:cd\x20/home/chris/\x2elocal/bin\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_snv:sudo\x20nvim
 SETUVAR _fish_abbr_src:cd\x20/home/chris/\x2elocal/src\x3b\x20and\x20ls\x20\x2da
