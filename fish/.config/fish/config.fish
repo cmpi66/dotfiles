@@ -109,10 +109,12 @@ abbr combinepdf "gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=combine.pdf -dBATCH
 abbr en "gpg -c --no-symkey-cache --cipher-algo AES256" 
 abbr stow "stow --target=$HOME"
 
-abbr vpnup "sudo wg-quick up archbox"
-abbr vpndown "sudo wg-quick down archbox"
+# abbr vpnup "sudo wg-quick up archbox"
+# abbr vpndown "sudo wg-quick down archbox"
+abbr pfvpup "sudo wg-quick up pfwg0"
+abbr pfvpdown "sudo wg-quick down pfwg0"
 
-abbr upcmpi "rsync -uvrP --delete-after ~/.local/src/sites/cmpi4/website/public/ root@cmpi4.com:/var/www/cmpi4/"
+# abbr upcmpi "rsync -uvrP --delete-after ~/.local/src/sites/cmpi4/website/public/ root@cmpi4.com:/var/www/cmpi4/"
 abbr tabs "xargs -n1 firefox <"
 abbr paste "xclip -selection c -o >"
 
