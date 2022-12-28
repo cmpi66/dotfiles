@@ -61,6 +61,7 @@ sudo pacman --noconfirm --needed -S \
   luacheck \
   lxappearance \
   lynx \
+  iperf \
   maim \
   moreutils \
   mpc \
@@ -108,7 +109,7 @@ sudo pacman --noconfirm --needed -S \
   xorg-xev \
   xorg-xset \
   xsel \
-  xwallpaper
+  xwallpaper \
   zathura \
   zk \
   zoxide \
