@@ -3,7 +3,7 @@ cac ${XDG_CACHE_HOME:-$HOME/.cache}
 cf  ${XDG_CONFIG_HOME:-$HOME/.config}
 D   ${XDG_DOWNLOAD_DIR:-$HOME/dl}
 d   ${XDG_DOCUMENTS_DIR:-$HOME/docs}
-# dt  ${XDG_DATA_HOME:-$HOME/.local/share}
+rs  ${XDG_DATA_HOME:-$HOME/.local/share}
 dt  $HOME/docs/tex/
 ds  $HOME/docs/ms/
 dp  $HOME/docs/props/
