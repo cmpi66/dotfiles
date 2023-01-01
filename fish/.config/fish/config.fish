@@ -9,7 +9,12 @@ set fish_cursor_replace underscore steady
 set fish_cursor_visual block
 
 set fish_greeting             #disables help greeting
-# set TERM "xterm-256color" # This messes up LunarVim; gives it some wierd ghosting text and color.
+set TERM "xterm-256color" # This messes up LunarVim; gives it some wierd ghosting text and color.
+# set TERM "screen-256color" 
+# set TERM "tmux-256color" 
+# set TERM "screen-256color-bce" 
+
+## NONE OF THE ABOVE WORK TO FIX TMUX COLORS
 # set TERM "xterm-st"
 # set TERM "xterm-alacritty"
 # set TERM "xterm-kitty"
