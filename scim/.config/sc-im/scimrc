@@ -1,10 +1,10 @@
 # source dracula.sc 
 
-set autocalc
-set numeric
-set numeric_decimal=0
-set overlap
-set xlsx_readformulas
+# set autocalc
+# set numeric
+# set numeric_decimal=0
+# set overlap
+# set xlsx_readformulas
 
 # Dracula theme
 REDEFINE_COLOR "WHITE" 248 248 242
@@ -31,17 +31,55 @@ color "type=ERROR_MSG fg=BLACK bg=RED bold=1"
 color "type=INPUT fg=CYAN bg=BLACK"
 color "type=CELL_ERROR fg=BLACK bg=RED bold=1"
 color "type=HEADINGS fg=comment bg=BLACK bold=0"
-color "type=HEADINGS_ODD fg=comment bg=BLACK bold=0"
+color "type=HEADINGS_ODD fg=comment bg=BLACK bold=1"
 color "type=CELL_SELECTION fg=WHITE bg=altbackground bold=0"
 color "type=CELL_SELECTION_SC fg=WHITE bg=altbackground bold=1"
 color "type=NUMB fg=MAGENTA bg=BLACK bold=0"
 color "type=CELL_NEGATIVE fg=RED bg=BLACK bold=0"
 color "type=EXPRESSION fg=YELLOW bg=BLACK bold=0"
-# color "type=SHEET fg=comment bg=BLACK bold=0"
-# color "type=CURRENT_SHEET fg=CYAN bg=BLACK bold=1"
-# color "type=FILENM fg=YELLOW bg=BLACK bold=0"
-# The 3 above give me an error message at start up
+color "type=SHEET fg=comment bg=BLACK bold=0"
+color "type=CURRENT_SHEET fg=CYAN bg=BLACK bold=1"
+color "type=FILENM fg=YELLOW bg=BLACK bold=0"
+#The 3 above give me an error message at start up
 # To not italicize strings, replace italic=1 with italic=0 on following line
 color "type=STRG fg=CYAN bg=BLACK bold=0 italic=0"
 color "type=DATEF fg=YELLOW bg=BLACK"
 
+# Tokyonight theme
+# REDEFINE_COLOR "WHITE" 36 40 59
+# REDEFINE_COLOR "BLACK" 192 202 245
+# REDEFINE_COLOR "RED" 247 118 142
+# REDEFINE_COLOR "GREEN" 158 206 106
+# REDEFINE_COLOR "YELLOW" 224 175 104
+# REDEFINE_COLOR "BLUE" 122 162 247
+# REDEFINE_COLOR "CYAN" 125 207 255
+# REDEFINE_COLOR "MAGENTA" 187 154 247
+# DEFINE_COLOR "comment" 121 112 169
+# DEFINE_COLOR "altbackground" 63 63 63
+# color "type=DEFAULT fg=BLACK bg=BLACK bold=0 italic=0"
+# color "type=NORMAL fg=YELLOW bg=BLACK bold=0 italic=0"
+# color "type=WELCOME fg=comment bg=BLACK bold=0"
+# color "type=MODE fg=GREEN bg=BLACK bold=0"
+# color "type=GRID_EVEN fg=WHITE bg=BLACK"
+# color "type=GRID_ODD fg=WHITE bg=BLACK"
+# color "type=CELL_ID fg=WHITE bg=BLACK bold=0"
+# color "type=CELL_FORMAT fg=comment bg=BLACK bold=0"
+# color "type=CELL_CONTENT fg=WHITE bg=BLACK bold=0"
+# color "type=INFO_MSG fg=GREEN bg=BLACK bold=0"
+# color "type=ERROR_MSG fg=BLACK bg=RED bold=1"
+# color "type=INPUT fg=CYAN bg=BLACK"
+# color "type=CELL_ERROR fg=BLACK bg=RED bold=1"
+# color "type=HEADINGS fg=comment bg=BLACK bold=0"
+# color "type=HEADINGS_ODD fg=comment bg=BLACK bold=1"
+# color "type=CELL_SELECTION fg=WHITE bg=altbackground bold=0"
+# color "type=CELL_SELECTION_SC fg=WHITE bg=altbackground bold=1"
+# color "type=NUMB fg=MAGENTA bg=BLACK bold=0"
+# color "type=CELL_NEGATIVE fg=RED bg=BLACK bold=0"
+# color "type=EXPRESSION fg=YELLOW bg=BLACK bold=0"
+# color "type=SHEET fg=comment bg=BLACK bold=0"
+# color "type=CURRENT_SHEET fg=CYAN bg=BLACK bold=1"
+# color "type=FILENM fg=YELLOW bg=BLACK bold=0"
+# #The 3 above give me an error message at start up
+# # To not italicize strings, replace italic=1 with italic=0 on following line
+# color "type=STRG fg=CYAN bg=BLACK bold=0 italic=0"
+# color "type=DATEF fg=YELLOW bg=BLACK"

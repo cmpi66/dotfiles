@@ -84,7 +84,7 @@ alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 alias sudo='doas'
 alias nvim='lvim'
-alias scim='sc-im'
+alias scim='sc-im --quiet'
 
 # System abbreviations 
 
@@ -125,6 +125,11 @@ abbr vpndown "sudo wg-quick down gentoobox"
 abbr cmpiup "rsync -uvrP --delete-after ~/.local/src/sites/cmpi4/website/public/ root@cmpi4.com:/var/www/cmpi4/"
 abbr tabs "xargs -n1 firefox-bin <"
 abbr paste "xclip -selection c -o >"
+
+
+### ANSIBLE
+
+
 
 ## zk
 alias perma="zk perma"

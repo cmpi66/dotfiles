@@ -38,6 +38,7 @@ lvim.plugins = {
   end,
 },
   -- {"christianchiarulli/lualine.nvim"}
+  {"cmpi66/languagetool-nvim"}
 
 }
 

@@ -19,6 +19,7 @@ lvim.builtin.which_key.mappings["v"] = {
  	h = { "<cmd>HardPencil<cr>", "Hard pencil" },
  	v = { "<cmd>vs<cr>", "Vertical Split" },
  	m = { "<cmd>TZMinimalist<cr>", "True Zen Minimalist" },
+ 	l = { "<cmd>lua require('languagetool').check_grammar()<CR>", "Language Tool" },
 }
 
 lvim.builtin.which_key.mappings["z"] = {
