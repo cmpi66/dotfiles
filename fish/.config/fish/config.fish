@@ -71,6 +71,7 @@ alias .5='cd ../../../../..'
 
 alias nvim='lvim'
 alias sudo='doas'
+alias scim='sc-im'
 # System abbreviations 
 abbr archlinx-fix-keys "sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
 abbr merge "xrdb -merge ~/.Xresources"
@@ -151,8 +152,10 @@ scheme set catppuccin
 source ~/.config/fish/shortcuts.fish
 # source ~/.config/fish/fzf_fish_key_bindings.fish
 
-# # >>> conda initialize >>>
-# # !! Contents within this block are managed by 'conda init' !!
-# eval /home/chris/.local/share/miniconda3/bin/conda "shell.fish" "hook" $argv | source
-# # <<< conda initialize <<<
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /home/chris/.local/share/miniconda3/bin/conda
+    eval /home/chris/.local/share/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+end
+# <<< conda initialize <<<
 
