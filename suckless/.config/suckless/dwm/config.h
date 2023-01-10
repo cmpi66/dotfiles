@@ -1,8 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
 /* Constants */
-#define TERMINAL "st"
-#define TERMCLASS "St"
+#define TERMINAL "alacritty"
+#define TERMCLASS "Alacritty"
 #define BROWSER "firefox-bin"
 
 /* appearance */
@@ -174,15 +174,16 @@ static Key keys[] = {
 
 
   // { MODKEY|ShiftMask,			        XK_w,		spawn,		        {.v = (const char*[]){ TERMINAL,"--class", "Alacritty", "-e","nvim", "~/media/Documents/vimwiki/index.md", NULL } } },
-  { MODKEY|ShiftMask,			        XK_w,		spawn,		        SHCMD("st -e lvim ~/emanotes/index.md")  },
+  { MODKEY|ShiftMask,			        XK_w,		spawn,		        SHCMD("st -e lvim ~/.local/.src/zettlekasten/index.md")  },
 
-  { MODKEY,		          	        XK_e,		spawn,		         SHCMD(TERMINAL " -e neomutt ; rmdir ~/.abook") },
+  { MODKEY,		          	        XK_e,		spawn,		         SHCMD("st  -e neomutt ; rmdir ~/.abook") },
 
-  { MODKEY|ShiftMask,		         	XK_e,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "newsboat", NULL } } },
+  // { MODKEY|ShiftMask,		         	XK_e,		spawn,		         {.v = (const char*[]){ "st", "-e", "newsboat", NULL } } },
+  { MODKEY|ShiftMask,		         	XK_e,		spawn,		        SHCMD( "st -e newsboat" ) },
 
   { MODKEY,		          	        XK_r,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "lfub", NULL } } },
 
-  { MODKEY|ShiftMask,		          XK_r,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "sc-im", NULL } } },
+  // { MODKEY|ShiftMask,		          XK_r,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "sc-im", NULL } } },
 
   { MODKEY,		          	        XK_p,		spawn,		         {.v = (const char*[]){ "okular", NULL } } },
   { MODKEY|ShiftMask,		          XK_p,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "htop", NULL } } },
