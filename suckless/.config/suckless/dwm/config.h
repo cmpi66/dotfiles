@@ -167,6 +167,7 @@ static Key keys[] = {
   { MODKEY|ShiftMask,		          XK_c,		spawn,		         {.v = (const char*[]){ "rofi", "-show","calc", "-no-show-match", "-no-sort", NULL } } },
   
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = (const char*[]){ "alacritty", "--config-file", "/home/chris/.config/alacritty/tmux.yml", "-e", "tmux", NULL } } },
    // { MODKEY,                      XK_F1,      spawn,          {.v = keyscmd } },
 { MODKEY,		                     	XK_BackSpace,	spawn,	    {.v = (const char*[]){ "rofi-poweroff.sh", NULL } } },
 { MODKEY|ShiftMask,		            XK_BackSpace,	spawn,	   SHCMD("i3lock -C -i /home/chris/.local/bin/2770299.png")  },
