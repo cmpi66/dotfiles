@@ -71,7 +71,7 @@ alias .5='cd ../../../../..'
 
 alias nvim='lvim'
 alias sudo='doas'
-alias scim='sc-im'
+alias scim='sc-im --quiet'
 # System abbreviations 
 abbr archlinx-fix-keys "sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
 abbr merge "xrdb -merge ~/.Xresources"
