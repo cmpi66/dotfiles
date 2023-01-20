@@ -1,3 +1,6 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
 format = "$all"
 
 [line_break]
@@ -33,9 +36,23 @@ disabled = true
 # threshold = 20
 # style = "bold red"
 
+# [character]
+# error_symbol = "[](bold red) "
+# success_symbol = "[->](bold green) "
+
+# [character]
+# success_symbol = '[➜](bold green) '
+# error_symbol = '[✗](bold red) '
+
+
 [character]
-error_symbol = "[](bold red) "
-success_symbol = "[->](bold green) "
+vicmd_symbol = '[N](bold cyan) '
+vimcmd_replace_one_symbol = '[❮](bold yellow)'
+vimcmd_replace_symbol = '[❮](bold red)'
+vimcmd_visual_symbol = '[V](bold purple)'
+
+
+error_symbol = '[✗](bold red) '
 
 [username]
 style_user = "Bold green"
@@ -45,6 +62,7 @@ show_always = true
 
 [hostname]
 ssh_only = false
+ssh_symbol = '🌐 '
 format = "[$hostname]($style) "
 trim_at = "-"
 style = "bold blue"

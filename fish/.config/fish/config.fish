@@ -149,12 +149,16 @@ bind -M insert \cj history-search-forward # Down
 bind -M insert -m default jk backward-char force-repaint
 # bind -M insert -m default kj backward-char force-repaint
 
+# bind -M visual y fish_clipboard_copy
 # Custom keybindings default mode
 bind \co 'lf'
 # bind \ce 'neomutt'
 bind \ce 'ncdu'
 bind \ck history-search-backward # Up
 bind \cj history-search-forward # Down
+bind yy fish_clipboard_copy
+bind Y fish_clipboard_copy
+bind p fish_clipboard_paste
 
 # neofetch
 zoxide init fish | source

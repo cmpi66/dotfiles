@@ -28,10 +28,11 @@ require "user.fidget"
 require "user.auto-session"
 require "user.harpoon"
 require "user.zk"
+require "user.tabline"
 -- require "user.ltex"
 -- require "user.lualine"
 
-
+lvim.builtin.bufferline.active = true
 
 --
 --[[
