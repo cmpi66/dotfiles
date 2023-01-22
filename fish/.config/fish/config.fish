@@ -12,7 +12,7 @@ set fish_greeting             #disables help greeting
 set TERM "xterm-256color" # This messes up Lunarvim on gentoobox ssh connection; wrote the effects on gentoo branch.
 set EDITOR "lvim"
 set VISUAL "lvim"
-set TERMINAL "st"
+set TERMINAL "alacritty"
 set BROWSER "firefox"
 
 ### SET MANPAGER
@@ -141,6 +141,9 @@ bind \co 'lf'
 bind \ce 'ncdu'
 bind \ck history-search-backward # Up
 bind \cj history-search-forward # Down
+bind yy fish_clipboard_copy
+bind Y fish_clipboard_copy
+bind p fish_clipboard_paste
 
 # neofetch
 # colorscript random

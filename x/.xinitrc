@@ -74,5 +74,8 @@ redshift &
 # picom -b --animations --animation-window-mass 0.5 --animation-for-open-window zoom --animation-stiffness 350 &
 picom --experimental-backend &
 syncthing --no-browser &
+trayer --edge top --align right --SetDockType true --SetPartialStrut true --padding 6 --expand true --width 10 --transparent true --alpha 0 --tint 0x292d3e --height 20 &
 
 exec dwm
+#exec qtile
+# exec awesome

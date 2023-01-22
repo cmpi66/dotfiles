@@ -40,9 +40,15 @@ discharging_symbol = ""
 threshold = 20
 style = "bold red"
 
+# [character]
+# error_symbol = "[](bold red) "
+# success_symbol = "[->](bold green) "
+
 [character]
-error_symbol = "[](bold red) "
-success_symbol = "[->](bold green) "
+vicmd_symbol = '[N](bold cyan) '
+vimcmd_replace_one_symbol = '[❮](bold yellow)'
+vimcmd_replace_symbol = '[❮](bold red)'
+vimcmd_visual_symbol = '[V](bold purple)'
 
 [username]
 style_user = "Bold yellow"

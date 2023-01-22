@@ -156,6 +156,7 @@ static const char *brupcmd[] = { "brightnessctl", "set", "5%+", NULL };
 //static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
 
 #include <X11/XF86keysym.h>
+#include "shiftview.c"
 static Key keys[] = {
 //start_keys
   /* modifier                     key        function        argument */
@@ -259,8 +260,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,            	XK_m,	     togglescratch,  {.ui = 2 } },
 	{ MODKEY|ShiftMask,            	XK_a,	     togglescratch,  {.ui = 3 } },
 	{ MODKEY|ShiftMask,            	XK_e,	     togglescratch,  {.ui = 4 } },
-	{ MODKEY,             XK_n,       shiftviewclients, { .i = +1 } },
-	{ MODKEY,             XK_b, shiftviewclients, { .i = -1 } },
+  { MODKEY,                       XK_n,      shiftview,      {.i = +1 } },
+  { MODKEY,                       XK_b,      shiftview,      {.i = -1 } },
 
   TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
