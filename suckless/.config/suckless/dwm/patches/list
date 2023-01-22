@@ -10,7 +10,6 @@ statusallmons
 centeredmaster
 restartsig
 scratchpads
-shiftview c
 underlinetags
 actualfullscreen
 titlecolor
@@ -19,3 +18,4 @@ gridmode
 sticky
 hide-vacant-tags
 preserveonrestart (chadwm github)
+shiftviewclents(better than shiftviewc and fixed scratchpads issue)

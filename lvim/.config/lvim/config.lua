@@ -24,15 +24,13 @@ require "user.twilight"
 -- require "user.vimwiki"
 require "user.zen-mode"
 require "user.neoscroll"
-require "user.fidget"
+-- require "user.fidget"
 require "user.auto-session"
 require "user.harpoon"
 require "user.zk"
 require "user.tabline"
 -- require "user.ltex"
 -- require "user.lualine"
-
-lvim.builtin.bufferline.active = true
 
 --
 --[[
