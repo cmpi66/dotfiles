@@ -1,0 +1,22 @@
+barpadding
+attachaside
+rotatestack
+statuspadding
+status2d
+vanitygaps
+pertag
+autostart
+statusallmons
+centeredmaster
+restartsig
+scratchpads
+underlinetags
+actualfullscreen
+titlecolor
+always center
+gridmode
+sticky
+hide-vacant-tags
+preserveonrestart (chadwm github)
+shiftviewclents(better than shiftviewc and fixed scratchpads issue)
+swallow from flexipatch
