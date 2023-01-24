@@ -20,3 +20,6 @@ hide-vacant-tags
 preserveonrestart (chadwm github)
 shiftviewclents(better than shiftviewc and fixed scratchpads issue)
 swallow from flexipatch
+notitle 
+rainbow tags (colorful tags is not needed)
+alltags

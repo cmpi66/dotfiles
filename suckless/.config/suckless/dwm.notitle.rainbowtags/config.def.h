@@ -17,7 +17,7 @@ static const int smartgaps          = 0;        /* 1 means no outer gap when the
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int horizpadbar        = 4;        /* horizontal padding for statusbar */
-static const int vertpadbar         = 0;        /* vertical padding for statusbar */
+static const int vertpadbar         = 2;        /* vertical padding for statusbar */
 static const int vertpad            = 11;       /* vertical padding of bar */
 static const int sidepad            = 0;       /* horizontal padding of bar */
 static const char *fonts[]          = 
@@ -31,8 +31,9 @@ static const char *fonts[]          =
  // "Font Awesome 6 Brands:pixelsize=16",
  // "JetBrainsMono Nerd Font:style=Bold:size=12:antialias=true:autohint=true"
  "Fira Code Mono:style=Bold:size=8:antialias=true:autohint=true",
- "Font Awesome 6 Free Solid:pixelsize=14",
- "Font Awesome 6 Brands:pixelsize=14",
+ "Font Awesome 6 Free Solid:pixelsize=15",
+ "Font Awesome 6 Brands:pixelsize=15",
+"Material Design Icons Desktop:size=15",
  // "Fira Code Nerd Font:style=Bold:size=11:antialias=true:autohint=true"
 "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true"
 
@@ -88,13 +89,25 @@ static Sp scratchpads[] = {
 
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-// static const char *tags[] = { " 1", " 2", " 3", " 4", " 5", " 6", " 7", " 8", " 9" };
+// static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { " 1", " 2", " 3", " 4", " 5", " 6", " 7", " 8", " 9" };
 
-static const unsigned int ulinepad	= 5;	/* horizontal padding between the underline and tag */
-static const unsigned int ulinestroke	= 2;	/* thickness / height of the underline */
+static const unsigned int ulinepad	= 8;	/* horizontal padding between the underline and tag */
+static const unsigned int ulinestroke	= 3;	/* thickness / height of the underline */
 static const unsigned int ulinevoffset	= 0;	/* how far above the bottom of the bar the line should appear */
 static const int ulineall 		= 0;	/* 1 to show underline on all tags, 0 for just the active ones */
+
+static const char *tagsel[][2] = {
+	{ "#bb9af7", "#24283b" },
+	{ "#f7768e", "#24283b" },
+	{ "#e0af68", "#24283b" },
+	{ "#93ce6a", "#24283b" },
+	{ "#7aa2f7", "#24283b" },
+	{ "#7dcfff", "#24283b" },
+	{ "#c0caf5", "#24283b" },
+	{ "#bb9af7", "#24283b" },
+	{ "#d5d6db", "#24283b" },
+};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -136,9 +149,9 @@ static const Layout layouts[] = {
 	{ "[]=",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
-	{ "|M|",      centeredmaster },
-	{ ">M>",      centeredfloatingmaster },
-	{ "HHH",      grid },
+	// { "|M|",      centeredmaster },
+	// { ">M>",      centeredfloatingmaster },
+	// { "HHH",      grid },
 };
 
 /* key definitions */
@@ -250,9 +263,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
   { MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY|ShiftMask,             XK_u,      setlayout,      {.v = &layouts[3]} },
-	{ MODKEY,                       XK_i,      setlayout,      {.v = &layouts[4]} },
-	{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[5]} },
+	// { MODKEY|ShiftMask,             XK_u,      setlayout,      {.v = &layouts[3]} },
+	// { MODKEY,                       XK_i,      setlayout,      {.v = &layouts[4]} },
+	// { MODKEY,                       XK_g,      setlayout,      {.v = &layouts[5]} },
 	//{ MODKEY,                       XK_space,  setlayout,      {0} },
   { MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_s,      togglesticky,   {0} },
@@ -311,7 +324,6 @@ static Button buttons[] = {
 	/* click                event mask      button          function        argument */
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
-  { ClkWinTitle,          0,              Button2,        zoom,           {0} },
     //{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
