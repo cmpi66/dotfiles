@@ -8,6 +8,7 @@
 /* appearance */
 static const unsigned int borderpx  = 4;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
+static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
 static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
@@ -69,12 +70,12 @@ typedef struct {
 const char *spcmd1[] = {"alacritty", "--class", "spterm", "--config-file", "/home/chris/.config/alacritty/scratch3.yml","-e", "pulsemixer", NULL };
 // const char *spcmd2[] = {"alacritty", "--class", "spfm", "--config-file", "/home/chris/.config/alacritty/scratch4.yml", "-e", "notes", NULL };
 // const char *spcmd3[] = {"alacritty", "--class", "spbmks", "--config-file", "/home/chris/.config/alacritty/scratch5.yml", "-e", "bmks", NULL };
-// const char *spcmd3[] = {"alacritty", "--class", "spfm", "--config-file", "/home/chris/.config/alacritty/ranger-pywal.yml", "-e", "ranger", NULL };
+const char *spcmd5[] = {"alacritty", "--class", "spnews", "--config-file", "/home/chris/.config/alacritty/newsboat.yml", "-e", "newsboat", NULL };
 // const char *spcmd1[] = {"st", "-n", "spterm", "-g", "70x20", "-e", "pulsemixer", NULL };
 const char *spcmd2[] = {"st", "-n", "spfm", "-g", "60x20", "-e", "notes",  NULL };
 const char *spcmd3[] = {"st", "-n", "spbmks", "-g", "80x25", "-e", "bmks", NULL };
 const char *spcmd4[] = {"st", "-n", "spwiki", "-g", "90x25", "-e", "dmenuwiki", NULL };
-const char *spcmd5[] = {"st", "-n", "spnews", "-g", "95x35", "-e", "newsboat", NULL };
+// const char *spcmd5[] = {"st", "-n", "spnews", "-g", "95x35", "-e", "newsboat", NULL };
 // const char *spcmd3[] = {"keepassxc", NULL };
 static Sp scratchpads[] = {
     /* name          cmd  */
@@ -101,17 +102,25 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-    { "Gimp",     NULL,         NULL,       0,             1,           -1 },
-    { "Tor Browser",     NULL,         NULL,       0,             1,           -1 },
-    { "Yad",      NULL,         NULL,       0,             1,           -1 },
-    { "Pam_gnupg",      NULL,         NULL,       0,             1,           -1 },
+    // { "Gimp",     NULL,         NULL,       0,             1,           -1 },
+    // { "Tor Browser",     NULL,         NULL,       0,             1,           -1 },
+    // { "Yad",      NULL,         NULL,       0,             1,           -1 },
+    // { "Pam_gnupg",      NULL,         NULL,       0,             1,           -1 },
+    // { "trayer",   NULL,         NULL,       1 << 8,       False },
+
+	/* class      instance    title            tags mask  isfloating  isterminal  noswallow  monitor */
+	{ "Gimp",     NULL,       NULL,            0,         1,          0,           0,        -1 },
+	{ "Tor Browser",     NULL,       NULL,            0,         1,          0,           0,        -1 },
+	{ "Pam_gnupg",     NULL,       NULL,            0,         1,          0,           0,        -1 },
     { "trayer",   NULL,         NULL,       1 << 8,       False },
+	{ "St",       NULL,       NULL,            0,         0,          1,           0,        -1 },
+	{ "Alacritty",NULL,       NULL,            0,         0,          1,           0,        -1 },
+	{ NULL,       NULL,       "Event Tester",  0,         0,          0,           1,        -1 }, /* xev */
     { NULL,       "spterm",     NULL,       SPTAG(0),       1,           -1 },
     { NULL,       "spfm",       NULL,       SPTAG(1),       1,           -1 },
     { NULL,       "spbmks",  NULL,       SPTAG(2),       1,           -1 },
     { NULL,       "spwiki",  NULL,       SPTAG(3),       1,           -1 },
     { NULL,       "spnews",  NULL,       SPTAG(4),       1,           -1 },
-
 };
 
 /* layout(s) */

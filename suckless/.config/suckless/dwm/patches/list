@@ -19,3 +19,4 @@ sticky
 hide-vacant-tags
 preserveonrestart (chadwm github)
 shiftviewclients (this is from flexipatch with the scratchpads fix in the comments, he still hastn fixed it in the repo)
+swallow from flexipatch
