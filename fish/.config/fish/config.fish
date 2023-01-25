@@ -106,7 +106,7 @@ abbr gp "git add . && git commit -m 'autopush' && git remote | xargs -L1 git pus
 abbr mkdir "mkdir -pv"
 abbr lf "lfub"
 # abbr kx "killall sxhkd && sxhkd &"
-abbr cat "bat -p"
+abbr cat "bat"
 abbr ncm "ncmpcpp"
 abbr m "mailsync"
 abbr checkout "git checkout"

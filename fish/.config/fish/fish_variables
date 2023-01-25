@@ -9,7 +9,7 @@ SETUVAR _fish_abbr_bd:lvim\x20/home/chris/\x2econfig//shell/bm\x2ddirs
 SETUVAR _fish_abbr_bf:lvim\x20/home/chris/\x2econfig//shell/bm\x2dfiles
 SETUVAR _fish_abbr_branch:git\x20branch
 SETUVAR _fish_abbr_cac:cd\x20/home/chris/\x2ecache/\x3b\x20and\x20ls\x20\x2da
-SETUVAR _fish_abbr_cat:bat\x20\x2dp
+SETUVAR _fish_abbr_cat:bat
 SETUVAR _fish_abbr_ce:cd\x20/home/chris/copywriting/english\x2drules/\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_cf:cd\x20/home/chris/\x2econfig/\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_cfL:lvim\x20/home/chris/\x2econfig//lf/scope

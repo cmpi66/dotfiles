@@ -56,9 +56,10 @@ alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 export DICS="/usr/share/stardict/dic/"
 export HISTFILE="${XDG_STATE_HOME}"/bash/history
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
-# export PYTHONSTARTUP="/etc/python/pythonrc"
+export PYTHONSTARTUP="/etc/python/pythonrc"
 export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
 export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel 
+# export $XDG_DATA_HOME/python
 # export $ZK_NOTEBOOK_DIR="/home/chris/repos/brain/docs/emanotes"
 
 # export "$ZK_NOTEBOOK_DIR/home/chris/repos/brain/docs/emanotes/permanent/"
