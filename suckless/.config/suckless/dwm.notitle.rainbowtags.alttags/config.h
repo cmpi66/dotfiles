@@ -26,11 +26,11 @@ static const char *fonts[]          =
  // "Font Awesome 6 Free Solid:pixelsize=16",
  // "Font Awesome 6 Brands:pixelsize=16",
  // "JetBrainsMono Nerd Font:style=Bold:size=13:antialias=true:autohint=true"
- // "Jetbrains Mono:style=Bold:size=9:antialias=true:autohint=true",
  // "Font Awesome 6 Free Solid:pixelsize=16",
  // "Font Awesome 6 Brands:pixelsize=16",
- // "JetBrainsMono Nerd Font:style=Bold:size=12:antialias=true:autohint=true"
- "Fira Code Mono:style=Bold:size=8.5:antialias=true:autohint=true",
+ // "Iosevka:style=medium:size=9:antialias=true:autohint=true"
+ // "Fira Code Mono:style=Bold:size=8.5:antialias=true:autohint=true",
+ "Jetbrains Mono:style=bold:size=9:antialias=true:autohint=true",
  "Font Awesome 6 Free Solid:pixelsize=15",
  "Font Awesome 6 Brands:pixelsize=15",
 "Material Design Icons Desktop:size=15",
@@ -60,6 +60,7 @@ static const char *colors[][3]      = {
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray4, col_gray1, col_cyan  },
 	[SchemeTitle]  = { col_gray1, col_cyan,  col_cyan  },
+  [SchemeLayout]     = { green,   col_gray1,  col_gray1 },
 };
 
 typedef struct {
@@ -148,7 +149,7 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 #include "layouts.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
+	{ "[ ] =",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 	// { "|M|",      centeredmaster },

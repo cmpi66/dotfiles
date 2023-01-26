@@ -18,8 +18,10 @@ PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 # PATH="$PATH:/$HOME/.local/bin/statusbar"
  # . "$HOME/.cargo/env"
 # This is with the new xdg cargo set up, if it doesnt work then ill just switch it back. NO biggie
-PATH="$PATH:/$HOME/.local/share/cargo/bin"
+# PATH="$PATH:/$HOME/.local/share/cargo/bin"
 
+. "$HOME/.cargo/env"
+PATH="$PATH:/$HOME/.cargo/bin"
 
 ## Since im using fish i have to keep the xdg here. zsh-exports doesnt get read. 
 
@@ -38,8 +40,8 @@ export LYNX_CFG_PATH="$XDG_CONFIG_HOME"/lynx.cfg
 export LESSHISTFILE="-"
 export NOTMUCH_CONFIG=$XDG_CONFIG_HOME/notmuch/default/config
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
-export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
-export CARGO_HOME="$XDG_DATA_HOME/cargo"
+# export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+# export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export URLVIEW_CONFIG="$XDG_CONFIG_HOME/urlview/config"
 export GOPATH="$XDG_DATA_HOME/go"
 export GIT_CONFIG="$XDG_CONFIG_HOME/git/config" ## This breaks aur packages gives "ERROR not a clone of 'x repo'"
