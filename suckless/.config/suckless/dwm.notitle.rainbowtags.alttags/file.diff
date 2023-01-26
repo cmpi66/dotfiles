@@ -1,0 +1,149 @@
+6c6
+< #define BROWSER "firefox-bin"
+---
+> #define BROWSER "firefox"
+20c20
+< static const int vertpadbar         = 2;        /* vertical padding for statusbar */
+---
+> static const int vertpadbar         = 0;        /* vertical padding for statusbar */
+33c33,34
+<  "Fira Code Mono:style=Bold:size=8.5:antialias=true:autohint=true",
+---
+>  "Fira Code Mono:style=Bold:size=8:antialias=true:autohint=true",
+>  // "Fira Code Mono:style=Bold:size=9:antialias=true:autohint=true",
+36,37c37
+< "Material Design Icons Desktop:size=15",
+<  // "Fira Code Nerd Font:style=Bold:size=11:antialias=true:autohint=true"
+---
+>  "Fira Code Nerd Font:style=Bold:size=11:antialias=true:autohint=true"
+49,50c49
+< // #include "themes/tokyonight.h"
+< #include "themes/tokyonight-purple.h"
+---
+> //#include "themes/tokyonight.h"
+52c51
+< // #include "themes/catppuccin.h"
+---
+> #include "themes/catppuccin.h"
+57c56,57
+< 
+---
+> // #include "/home/chris/.cache/wal/colors-wal-dwm.h"
+> //
+70c70
+< // const char *spcmd1[] = {"alacritty", "--class", "spterm", "--config-file", "/home/chris/.config/alacritty/scratch3.yml","-e", "pulsemixer", NULL };
+---
+> const char *spcmd1[] = {"alacritty", "--class", "spterm", "--config-file", "/home/chris/.config/alacritty/scratch3.yml","-e", "pulsemixer", NULL };
+73c73,74
+< const char *spcmd1[] = {"st", "-n", "spterm", "-g", "70x20", "-e", "pulsemixer", NULL };
+---
+> // const char *spcmd3[] = {"alacritty", "--class", "spfm", "--config-file", "/home/chris/.config/alacritty/ranger-pywal.yml", "-e", "ranger", NULL };
+> // const char *spcmd1[] = {"st", "-n", "spterm", "-g", "70x20", "-e", "pulsemixer", NULL };
+76,79c77,78
+< const char *spcmd4[] = {"st", "-n", "spwiki", "-g", "90x25", "-e", "wikiman", "-s", "gentoo", NULL };
+< const char *spcmd5[] = {"alacritty", "--class", "spnews", "--config-file", "/home/chris/.config/alacritty/newsboat.yml", "-e", "newsboat", NULL };
+< // const char *spcmd5[] = {"st", "-n", "spnews", "-g", "100x40", "-e", "newsboat", NULL };
+< // const char *spcmd5[] = {"alacritty", "--class", "news", "--config-file", "/home/chris/.config/alacritty/scratch2.yml", "-e", "newsboat", NULL };
+---
+> const char *spcmd4[] = {"st", "-n", "spwiki", "-g", "90x25", "-e", "dmenuwiki", NULL };
+> const char *spcmd5[] = {"st", "-n", "spnews", "-g", "95x35", "-e", "newsboat", NULL };
+92,95c91,92
+< // static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+< static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+< static const char *tagsalt[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+< static const int momentaryalttags = 0; /* 1 means alttags will show only when key is held down*/
+---
+> static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+> // static const char *tags[] = { " 1", " 2", " 3", " 4", " 5", " 6", " 7", " 8", " 9" };
+102,113d98
+< static const char *tagsel[][2] = {
+< 	{ "#bb9af7", "#24283b" },
+< 	{ "#f7768e", "#24283b" },
+< 	{ "#e0af68", "#24283b" },
+< 	{ "#93ce6a", "#24283b" },
+< 	{ "#7aa2f7", "#24283b" },
+< 	{ "#7dcfff", "#24283b" },
+< 	{ "#c0caf5", "#24283b" },
+< 	{ "#bb9af7", "#24283b" },
+< 	{ "#d5d6db", "#24283b" },
+< };
+< 
+123d107
+<     // { "trayer",   NULL,         NULL,       1 << 8,       False },
+124a109,110
+>     // { "trayer",   NULL,         NULL,       1 << 8,       False },
+> 
+127d112
+< 	{ "Pam_gnupg",     NULL,       NULL,            0,         1,          0,           0,        -1 },
+129,131c114
+< 	{ "Yad",     NULL,       NULL,            0,         1,          0,           0,        -1 },
+< 	{ "St",       NULL,       NULL,            0,         0,          1,           0,        -1 },
+< 	{ "Alacritty",       NULL,       NULL,            0,         0,          1,           0,        -1 },
+---
+> 	{ "Pam_gnupg",     NULL,       NULL,            0,         1,          0,           0,        -1 },
+132a116,117
+> 	{ "St",       NULL,       NULL,            0,         0,          1,           0,        -1 },
+> 	{ "Alacritty",NULL,       NULL,            0,         0,          1,           0,        -1 },
+139d123
+< 
+154,156c138,140
+< 	// { "|M|",      centeredmaster },
+< 	// { ">M>",      centeredfloatingmaster },
+< 	// { "HHH",      grid },
+---
+> 	{ "|M|",      centeredmaster },
+> 	{ ">M>",      centeredfloatingmaster },
+> 	{ "HHH",      grid },
+175,176c159,160
+< // static const char *brdowncmd[] = { "brightnessctl", "set", "5%-", NULL };
+< // static const char *brupcmd[] = { "brightnessctl", "set", "5%+", NULL };
+---
+> static const char *brdowncmd[] = { "brightnessctl", "set", "5%-", NULL };
+> static const char *brupcmd[] = { "brightnessctl", "set", "5%+", NULL };
+190,191c174,175
+<  // { 0, XF86XK_MonBrightnessUp,   spawn,                       {.v = brupcmd} },
+<  // { 0, XF86XK_MonBrightnessDown, spawn,                       {.v = brdowncmd} },
+---
+>  { 0, XF86XK_MonBrightnessUp,   spawn,                       {.v = brupcmd} },
+>  { 0, XF86XK_MonBrightnessDown, spawn,                       {.v = brdowncmd} },
+196c180
+<   { MODKEY,		                    XK_c,		spawn,		         SHCMD("clipmenu -i -h 4 -fn Jetbrains:size=9 -nb '#24283b' -nf '#efefef' -sb '#bd9af7' -sf '#24283b'") },
+---
+>   { MODKEY,		                    XK_c,		spawn,		         SHCMD("clipmenu -i -h 4 -fn Jetbrains:size=9 -nb '#161320' -nf '#efefef' -sb '#89b4fa' -sf '#161320'") },
+202,203c186,187
+< { MODKEY,		                     	XK_BackSpace,	spawn,	    {.v = (const char*[]){ "rofi-poweroff.sh", NULL } } },
+< { MODKEY|ShiftMask,		            XK_BackSpace,	spawn,	   SHCMD("i3lock -C -i /home/chris/.local/bin/2770299.png")  },
+---
+> { MODKEY,		                     	XK_BackSpace,	spawn,	    {.v = (const char*[]){ "sysact", NULL } } },
+> { MODKEY|ShiftMask,		            XK_BackSpace,	spawn,	   SHCMD("i3lock -C -i /home/chris/.local/bin/arch-wallpaper.jpg")  },
+208c192
+<   { MODKEY|ShiftMask,			        XK_w,		spawn,		        SHCMD("st -e lvim ~/.local/.src/zettlekasten/index.md")  },
+---
+>   { MODKEY|ShiftMask,			        XK_w,		spawn,		        SHCMD("st -e lvim  ~/.local/.src/zettlekasten/index.md")  },
+210c194
+<   { MODKEY,		          	        XK_e,		spawn,		         SHCMD("st  -e neomutt ; rmdir ~/.abook") },
+---
+>   { MODKEY,		          	        XK_e,		spawn,		         {.v = (const char*[]){ "st", "-e", "neomutt", NULL } } },
+213d196
+<   // { MODKEY|ShiftMask,		         	XK_e,		spawn,		        SHCMD( "st -e newsboat" ) },
+222c205
+<   { MODKEY,		          	        XK_a,		spawn,		         SHCMD(" st -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook") },
+---
+>   { MODKEY,		          	        XK_a,		spawn,		         {.v = (const char*[]){ "st", "-e", "abook", NULL } } },
+227d209
+<   { MODKEY|ShiftMask,		         XK_m,		spawn,		         SHCMD("bmks") },
+268,270c250,252
+< 	// { MODKEY|ShiftMask,             XK_u,      setlayout,      {.v = &layouts[3]} },
+< 	// { MODKEY,                       XK_i,      setlayout,      {.v = &layouts[4]} },
+< 	// { MODKEY,                       XK_g,      setlayout,      {.v = &layouts[5]} },
+---
+> 	{ MODKEY|ShiftMask,             XK_u,      setlayout,      {.v = &layouts[3]} },
+> 	{ MODKEY,                       XK_i,      setlayout,      {.v = &layouts[4]} },
+> 	{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[5]} },
+281d262
+< 	{ MODKEY1,                      XK_n,      togglealttag,   {0} },
+287,288d267
+<   // { MODKEY,                       XK_n,      shiftview,      {.i = +1 } },
+<   // { MODKEY,                       XK_b,      shiftview,      {.i = -1 } },
+339d317
+< 

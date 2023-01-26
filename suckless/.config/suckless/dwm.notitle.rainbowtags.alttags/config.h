@@ -30,11 +30,12 @@ static const char *fonts[]          =
  // "Font Awesome 6 Free Solid:pixelsize=16",
  // "Font Awesome 6 Brands:pixelsize=16",
  // "JetBrainsMono Nerd Font:style=Bold:size=12:antialias=true:autohint=true"
- "Fira Code Mono:style=Bold:size=8:antialias=true:autohint=true",
  // "Fira Code Mono:style=Bold:size=9:antialias=true:autohint=true",
+ "Fira Code Mono:style=Bold:size=8.5:antialias=true:autohint=true",
  "Font Awesome 6 Free Solid:pixelsize=15",
  "Font Awesome 6 Brands:pixelsize=15",
- "Fira Code Nerd Font:style=Bold:size=11:antialias=true:autohint=true"
+ "Material Design Icons:pixelsize=15",
+ // "Fira Code Nerd Font:style=Bold:size=11:antialias=true:autohint=true"
 "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true"
 
 
@@ -57,9 +58,10 @@ static const char *fonts[]          =
 //
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_gray1, col_cyan  },
-	[SchemeTitle]  = { col_gray1, col_cyan,  col_cyan  },
+	[SchemeNorm] = { gray3, black, black },
+	[SchemeSel]  = { blue, black, blue  },
+	[SchemeTitle]  = { black, blue,  blue  },
+  [SchemeLayout]     = { green,   black,  black },
 };
 
 typedef struct {
@@ -88,13 +90,29 @@ static Sp scratchpads[] = {
 
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+// static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+
+static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+static const char *tagsalt[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const int momentaryalttags = 0; /* 1 means alttags will show only when key is held down*/
 // static const char *tags[] = { " 1", " 2", " 3", " 4", " 5", " 6", " 7", " 8", " 9" };
 
 static const unsigned int ulinepad	= 5;	/* horizontal padding between the underline and tag */
 static const unsigned int ulinestroke	= 2;	/* thickness / height of the underline */
 static const unsigned int ulinevoffset	= 0;	/* how far above the bottom of the bar the line should appear */
 static const int ulineall 		= 0;	/* 1 to show underline on all tags, 0 for just the active ones */
+
+static const char *tagsel[][2] = {
+	{ mauve, black2 },
+	{ red, black2 },
+	{ maroon, black2 },
+	{ green, black2 },
+	{ yellow, black2 },
+	{ blue, black2 },
+	{ pink, black2 },
+	{ rosewater, black2 },
+	{ teal, black2 },
+};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -155,7 +173,7 @@ static const Layout layouts[] = {
 /* commands */
 static const char *termcmd[]  = { TERMINAL, NULL };
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run","-i","-p", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray1, NULL };
+static const char *dmenucmd[] = { "dmenu_run","-i","-p", dmenumon, "-fn", dmenufont, "-nb", black, "-nf", gray3, "-sb", blue, "-sf", black, NULL };
 static const char *brdowncmd[] = { "brightnessctl", "set", "5%-", NULL };
 static const char *brupcmd[] = { "brightnessctl", "set", "5%+", NULL };
 //static const char *dmenucmd[] = { "dmenu_run","-l", "15", "fn", dmenufont, "-p","nb", col_gray1, "nf", col_gray3, "sb", col_cyan, "sf", col_gray4, "Run : ", NULL };
@@ -207,8 +225,6 @@ static Key keys[] = {
   // { MODKEY|ShiftMask,		          XK_a,		spawn,		         {.v = (const char*[]){ "dmenuwiki", NULL } } },
 
   { MODKEY,		                   XK_m,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "ncmpcpp", NULL } } },
-  { MODKEY|ShiftMask,		         XK_m,		spawn,		         SHCMD("bmks") },
-  // { MODKEY1,		         XK_l,		spawn,		         SHCMD("st-urlhandler") },
  { MODKEY,		                   	XK_bracketleft,		spawn,		{.v = (const char*[]){ "mpc", "seek", "-10", NULL } } },
 	{ MODKEY|ShiftMask,	           	XK_bracketleft,		spawn,		{.v = (const char*[]){ "mpc", "seek", "-60", NULL } } },
 	{ MODKEY,		                   	XK_bracketright,	spawn,		{.v = (const char*[]){ "mpc", "seek", "+10", NULL } } },
@@ -229,7 +245,6 @@ static Key keys[] = {
   { ShiftMask,		               XK_Print,	spawn,		{.v = (const char*[]){ "maimpic", NULL } } },
   { MODKEY,		                 	 XK_Print,	spawn,		{.v = (const char*[]){ "dmenurecord", NULL } } },
   { MODKEY,			                 XK_Delete,	spawn,		{.v = (const char*[]){ "dmenurecord", "kill", NULL } } },
-  // { MODKEY1,		                 XK_l,	    spawn,		{.v = (const char*[]){ "st-urlhandler", NULL } } },
 // { MODKEY|ShiftMask,			          XK_y,		spawn,		SHCMD(TERMINAL " -e pulsemixer") },
 { MODKEY,			                       XK_F1,		spawn,		{.v = (const char*[]){ "displayselect", NULL } } },
 { MODKEY,			                       XK_F2,		spawn,		{.v = (const char*[]){ "mw", "-Y", NULL } } },
@@ -270,6 +285,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,            	XK_e,	     togglescratch,  {.ui = 4 } },
 	{ MODKEY,             XK_n,       shiftviewclients, { .i = +1 } },
 	{ MODKEY,             XK_b, shiftviewclients, { .i = -1 } },
+	{ MODKEY1,                       XK_n,      togglealttag,   {0} },
 
   TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
