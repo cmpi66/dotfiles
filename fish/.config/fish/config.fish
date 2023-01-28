@@ -118,7 +118,7 @@ abbr pfvpdown "sudo wg-quick down pfwg0"
 # abbr upcmpi "rsync -uvrP --delete-after ~/.local/src/sites/cmpi4/website/public/ root@cmpi4.com:/var/www/cmpi4/"
 abbr tabs "xargs -n1 firefox <"
 abbr paste "xclip -selection c -o >"
-
+abbr chadwm "startx ~/.config/chadwm/scripts/run.sh"
 # zk
 alias perma="zk perma"
 alias flee="zk flee"

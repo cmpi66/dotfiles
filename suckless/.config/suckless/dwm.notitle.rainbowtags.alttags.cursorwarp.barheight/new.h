@@ -3,7 +3,7 @@
 /* Constants */
 #define TERMINAL "alacritty"
 #define TERMCLASS "Alacritty"
-#define BROWSER "firefox"
+#define BROWSER "firefox-bin"
 
 /* appearance */
 static const unsigned int borderpx  = 4;        /* border pixel of windows */
@@ -17,7 +17,7 @@ static const int smartgaps          = 0;        /* 1 means no outer gap when the
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int horizpadbar        = 4;        /* horizontal padding for statusbar */
-static const int vertpadbar         = 0;        /* vertical padding for statusbar */
+static const int vertpadbar         = 2;        /* vertical padding for statusbar */
 static const int vertpad            = 11;       /* vertical padding of bar */
 static const int sidepad            = 0;       /* horizontal padding of bar */
 static const char *fonts[]          = 
@@ -30,11 +30,10 @@ static const char *fonts[]          =
  // "Font Awesome 6 Free Solid:pixelsize=16",
  // "Font Awesome 6 Brands:pixelsize=16",
  // "JetBrainsMono Nerd Font:style=Bold:size=12:antialias=true:autohint=true"
- // "Fira Code Mono:style=Bold:size=9:antialias=true:autohint=true",
  "Fira Code Mono:style=Bold:size=8.5:antialias=true:autohint=true",
  "Font Awesome 6 Free Solid:pixelsize=15",
  "Font Awesome 6 Brands:pixelsize=15",
- "Material Design Icons:pixelsize=15",
+"Material Design Icons Desktop:size=15",
  // "Fira Code Nerd Font:style=Bold:size=11:antialias=true:autohint=true"
 "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true"
 
@@ -47,21 +46,20 @@ static const char *fonts[]          =
  // static const char dmenufont[]       = "Fira Code Mono:style=Bold:size=9:antialias=true:autohint=true";
 
 // #include "themes/dracula.h"
-//#include "themes/tokyonight.h"
+// #include "themes/tokyonight.h"
+#include "themes/tokyonight-purple.h"
 //#include "themes/onedark.h"
-#include "themes/catppuccin.h"
+// #include "themes/catppuccin.h"
 //#include "themes/nord.h"
 //include "themes/gruvbox.h"
 //#include "themes/gruvboxred.h"
 // #include "themes/doomone.h"
-// #include "/home/chris/.cache/wal/colors-wal-dwm.h"
-//
+
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { gray3, black, black },
-	[SchemeSel]  = { blue, black, blue  },
-	[SchemeTitle]  = { black, blue,  blue  },
-  [SchemeLayout]     = { green,   black,  black },
+	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+	[SchemeSel]  = { col_gray4, col_gray1, col_cyan  },
+	[SchemeTitle]  = { col_gray1, col_cyan,  col_cyan  },
 };
 
 typedef struct {
@@ -69,15 +67,16 @@ typedef struct {
  const void *cmd;
 } Sp;
 
-const char *spcmd1[] = {"alacritty", "--class", "spterm", "--config-file", "/home/chris/.config/alacritty/scratch3.yml","-e", "pulsemixer", NULL };
+// const char *spcmd1[] = {"alacritty", "--class", "spterm", "--config-file", "/home/chris/.config/alacritty/scratch3.yml","-e", "pulsemixer", NULL };
 // const char *spcmd2[] = {"alacritty", "--class", "spfm", "--config-file", "/home/chris/.config/alacritty/scratch4.yml", "-e", "notes", NULL };
 // const char *spcmd3[] = {"alacritty", "--class", "spbmks", "--config-file", "/home/chris/.config/alacritty/scratch5.yml", "-e", "bmks", NULL };
-// const char *spcmd3[] = {"alacritty", "--class", "spfm", "--config-file", "/home/chris/.config/alacritty/ranger-pywal.yml", "-e", "ranger", NULL };
-// const char *spcmd1[] = {"st", "-n", "spterm", "-g", "70x20", "-e", "pulsemixer", NULL };
+const char *spcmd1[] = {"st", "-n", "spterm", "-g", "70x20", "-e", "pulsemixer", NULL };
 const char *spcmd2[] = {"st", "-n", "spfm", "-g", "60x20", "-e", "notes",  NULL };
 const char *spcmd3[] = {"st", "-n", "spbmks", "-g", "80x25", "-e", "bmks", NULL };
-const char *spcmd4[] = {"st", "-n", "spwiki", "-g", "90x25", "-e", "dmenuwiki", NULL };
-const char *spcmd5[] = {"st", "-n", "spnews", "-g", "95x35", "-e", "newsboat", NULL };
+const char *spcmd4[] = {"st", "-n", "spwiki", "-g", "90x25", "-e", "wikiman", "-s", "gentoo", NULL };
+const char *spcmd5[] = {"alacritty", "--class", "spnews", "--config-file", "/home/chris/.config/alacritty/newsboat.yml", "-e", "newsboat", NULL };
+// const char *spcmd5[] = {"st", "-n", "spnews", "-g", "100x40", "-e", "newsboat", NULL };
+// const char *spcmd5[] = {"alacritty", "--class", "news", "--config-file", "/home/chris/.config/alacritty/scratch2.yml", "-e", "newsboat", NULL };
 // const char *spcmd3[] = {"keepassxc", NULL };
 static Sp scratchpads[] = {
     /* name          cmd  */
@@ -91,11 +90,9 @@ static Sp scratchpads[] = {
 
 /* tagging */
 // static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-
 static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
 static const char *tagsalt[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 static const int momentaryalttags = 0; /* 1 means alttags will show only when key is held down*/
-// static const char *tags[] = { " 1", " 2", " 3", " 4", " 5", " 6", " 7", " 8", " 9" };
 
 static const unsigned int ulinepad	= 5;	/* horizontal padding between the underline and tag */
 static const unsigned int ulinestroke	= 2;	/* thickness / height of the underline */
@@ -103,15 +100,15 @@ static const unsigned int ulinevoffset	= 0;	/* how far above the bottom of the b
 static const int ulineall 		= 0;	/* 1 to show underline on all tags, 0 for just the active ones */
 
 static const char *tagsel[][2] = {
-	{ mauve, black },
-	{ red, black },
-	{ maroon, black },
-	{ green, black },
-	{ yellow, black },
-	{ blue, black },
-	{ pink, black },
-	{ rosewater, black },
-	{ white, black },
+	{ "#bb9af7", "#24283b" },
+	{ "#f7768e", "#24283b" },
+	{ "#e0af68", "#24283b" },
+	{ "#93ce6a", "#24283b" },
+	{ "#7aa2f7", "#24283b" },
+	{ "#7dcfff", "#24283b" },
+	{ "#c0caf5", "#24283b" },
+	{ "#bb9af7", "#24283b" },
+	{ "#d5d6db", "#24283b" },
 };
 
 static const Rule rules[] = {
@@ -123,22 +120,23 @@ static const Rule rules[] = {
     // { "Gimp",     NULL,         NULL,       0,             1,           -1 },
     // { "Tor Browser",     NULL,         NULL,       0,             1,           -1 },
     // { "Yad",      NULL,         NULL,       0,             1,           -1 },
-    // { "Pam_gnupg",      NULL,         NULL,       0,             1,           -1 },
     // { "trayer",   NULL,         NULL,       1 << 8,       False },
-
+    // { "Pam_gnupg",      NULL,         NULL,       0,             1,           -1 },
 	/* class      instance    title            tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",     NULL,       NULL,            0,         1,          0,           0,        -1 },
-	{ "Tor Browser",     NULL,       NULL,            0,         1,          0,           0,        -1 },
 	{ "Pam_gnupg",     NULL,       NULL,            0,         1,          0,           0,        -1 },
-    { "trayer",   NULL,         NULL,       1 << 8,       False },
+	{ "Tor Browser",     NULL,       NULL,            0,         1,          0,           0,        -1 },
+	{ "Yad",     NULL,       NULL,            0,         1,          0,           0,        -1 },
 	{ "St",       NULL,       NULL,            0,         0,          1,           0,        -1 },
-	{ "Alacritty",NULL,       NULL,            0,         0,          1,           0,        -1 },
+	{ "Alacritty",       NULL,       NULL,            0,         0,          1,           0,        -1 },
+    { "trayer",   NULL,         NULL,       1 << 8,       False },
 	{ NULL,       NULL,       "Event Tester",  0,         0,          0,           1,        -1 }, /* xev */
     { NULL,       "spterm",     NULL,       SPTAG(0),       1,           -1 },
     { NULL,       "spfm",       NULL,       SPTAG(1),       1,           -1 },
     { NULL,       "spbmks",  NULL,       SPTAG(2),       1,           -1 },
     { NULL,       "spwiki",  NULL,       SPTAG(3),       1,           -1 },
     { NULL,       "spnews",  NULL,       SPTAG(4),       1,           -1 },
+
 };
 
 /* layout(s) */
@@ -150,12 +148,12 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 #include "layouts.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[ ] =",      tile },    /* first entry is default */
+	{ "[]=",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
-	{ "|M|",      centeredmaster },
-	{ ">M>",      centeredfloatingmaster },
-	{ "HHH",      grid },
+	// { "|M|",      centeredmaster },
+	// { ">M>",      centeredfloatingmaster },
+	// { "HHH",      grid },
 };
 
 /* key definitions */
@@ -173,9 +171,9 @@ static const Layout layouts[] = {
 /* commands */
 static const char *termcmd[]  = { TERMINAL, NULL };
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run","-i","-p", dmenumon, "-fn", dmenufont, "-nb", black, "-nf", gray3, "-sb", blue, "-sf", black, NULL };
-static const char *brdowncmd[] = { "brightnessctl", "set", "5%-", NULL };
-static const char *brupcmd[] = { "brightnessctl", "set", "5%+", NULL };
+static const char *dmenucmd[] = { "dmenu_run","-i","-p", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray1, NULL };
+// static const char *brdowncmd[] = { "brightnessctl", "set", "5%-", NULL };
+// static const char *brupcmd[] = { "brightnessctl", "set", "5%+", NULL };
 //static const char *dmenucmd[] = { "dmenu_run","-l", "15", "fn", dmenufont, "-p","nb", col_gray1, "nf", col_gray3, "sb", col_cyan, "sf", col_gray4, "Run : ", NULL };
 //static const char *dmenucmd[] = { "dmenu_run","-i","-p", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 //static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
@@ -189,29 +187,30 @@ static Key keys[] = {
      //{ 0,                       XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
 	//{ 0,                       XF86XK_AudioMute, spawn, {.v = mutevol } },
 	//{ 0,                       XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },   
- { 0, XF86XK_MonBrightnessUp,   spawn,                       {.v = brupcmd} },
- { 0, XF86XK_MonBrightnessDown, spawn,                       {.v = brdowncmd} },
+ // { 0, XF86XK_MonBrightnessUp,   spawn,                       {.v = brupcmd} },
+ // { 0, XF86XK_MonBrightnessDown, spawn,                       {.v = brdowncmd} },
   { MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 
   { MODKEY|ShiftMask,		          XK_d,		spawn,		         {.v = (const char*[]){ "rofi", "-show","drun", "-show-icons", NULL } } },
 
-  { MODKEY,		                    XK_c,		spawn,		         SHCMD("clipmenu -i -h 4 -fn Jetbrains:size=9 -nb '#161320' -nf '#efefef' -sb '#89b4fa' -sf '#161320'") },
+  { MODKEY,		                    XK_c,		spawn,		         SHCMD("clipmenu -i -h 4 -fn Jetbrains:size=9 -nb '#24283b' -nf '#efefef' -sb '#bd9af7' -sf '#24283b'") },
   { MODKEY|ShiftMask,		          XK_c,		spawn,		         {.v = (const char*[]){ "rofi", "-show","calc", "-no-show-match", "-no-sort", NULL } } },
   
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = (const char*[]){ "alacritty", "--config-file", "/home/chris/.config/alacritty/tmux.yml", "-e", "tmux", NULL } } },
    // { MODKEY,                      XK_F1,      spawn,          {.v = keyscmd } },
-{ MODKEY,		                     	XK_BackSpace,	spawn,	    {.v = (const char*[]){ "sysact", NULL } } },
-{ MODKEY|ShiftMask,		            XK_BackSpace,	spawn,	   SHCMD("i3lock -C -i /home/chris/.local/bin/arch-wallpaper.jpg")  },
+{ MODKEY,		                     	XK_BackSpace,	spawn,	    {.v = (const char*[]){ "rofi-poweroff.sh", NULL } } },
+{ MODKEY|ShiftMask,		            XK_BackSpace,	spawn,	   SHCMD("i3lock -C -i /home/chris/.local/bin/2770299.png")  },
   { MODKEY,		          	        XK_w,		spawn,            {.v = (const char*[]){ BROWSER, NULL } } },
 
 
   // { MODKEY|ShiftMask,			        XK_w,		spawn,		        {.v = (const char*[]){ TERMINAL,"--class", "Alacritty", "-e","nvim", "~/media/Documents/vimwiki/index.md", NULL } } },
-  { MODKEY|ShiftMask,			        XK_w,		spawn,		        SHCMD("st -e lvim  ~/.local/.src/zettlekasten/index.md")  },
+  { MODKEY|ShiftMask,			        XK_w,		spawn,		        SHCMD("st -e lvim ~/.local/.src/zettlekasten/index.md")  },
 
-  { MODKEY,		          	        XK_e,		spawn,		         {.v = (const char*[]){ "st", "-e", "neomutt", NULL } } },
+  { MODKEY,		          	        XK_e,		spawn,		         SHCMD("st  -e neomutt ; rmdir ~/.abook") },
 
   // { MODKEY|ShiftMask,		         	XK_e,		spawn,		         {.v = (const char*[]){ "st", "-e", "newsboat", NULL } } },
+  // { MODKEY|ShiftMask,		         	XK_e,		spawn,		        SHCMD( "st -e newsboat" ) },
 
   { MODKEY,		          	        XK_r,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "lfub", NULL } } },
 
@@ -220,11 +219,12 @@ static Key keys[] = {
   { MODKEY,		          	        XK_p,		spawn,		         {.v = (const char*[]){ "okular", NULL } } },
   { MODKEY|ShiftMask,		          XK_p,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "htop", NULL } } },
 
-  { MODKEY,		          	        XK_a,		spawn,		         {.v = (const char*[]){ "st", "-e", "abook", NULL } } },
+  { MODKEY,		          	        XK_a,		spawn,		         SHCMD(" st -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook") },
 
   // { MODKEY|ShiftMask,		          XK_a,		spawn,		         {.v = (const char*[]){ "dmenuwiki", NULL } } },
 
   { MODKEY,		                   XK_m,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "ncmpcpp", NULL } } },
+  { MODKEY|ShiftMask,		         XK_m,		spawn,		         SHCMD("bmks") },
  { MODKEY,		                   	XK_bracketleft,		spawn,		{.v = (const char*[]){ "mpc", "seek", "-10", NULL } } },
 	{ MODKEY|ShiftMask,	           	XK_bracketleft,		spawn,		{.v = (const char*[]){ "mpc", "seek", "-60", NULL } } },
 	{ MODKEY,		                   	XK_bracketright,	spawn,		{.v = (const char*[]){ "mpc", "seek", "+10", NULL } } },
@@ -265,9 +265,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
   { MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY|ShiftMask,             XK_u,      setlayout,      {.v = &layouts[3]} },
-	{ MODKEY,                       XK_i,      setlayout,      {.v = &layouts[4]} },
-	{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[5]} },
+	// { MODKEY|ShiftMask,             XK_u,      setlayout,      {.v = &layouts[3]} },
+	// { MODKEY,                       XK_i,      setlayout,      {.v = &layouts[4]} },
+	// { MODKEY,                       XK_g,      setlayout,      {.v = &layouts[5]} },
 	//{ MODKEY,                       XK_space,  setlayout,      {0} },
   { MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_s,      togglesticky,   {0} },
@@ -278,14 +278,16 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY1,                      XK_n,      togglealttag,   {0} },
 	{ MODKEY|ShiftMask,           	XK_y,      togglescratch,  {.ui = 0 } },
 	{ MODKEY|ShiftMask,           	XK_n,	     togglescratch,  {.ui = 1 } },
 	{ MODKEY|ShiftMask,            	XK_m,	     togglescratch,  {.ui = 2 } },
 	{ MODKEY|ShiftMask,            	XK_a,	     togglescratch,  {.ui = 3 } },
 	{ MODKEY|ShiftMask,            	XK_e,	     togglescratch,  {.ui = 4 } },
+  // { MODKEY,                       XK_n,      shiftview,      {.i = +1 } },
+  // { MODKEY,                       XK_b,      shiftview,      {.i = -1 } },
 	{ MODKEY,             XK_n,       shiftviewclients, { .i = +1 } },
 	{ MODKEY,             XK_b, shiftviewclients, { .i = -1 } },
-	{ MODKEY1,                       XK_n,      togglealttag,   {0} },
 
   TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
@@ -334,4 +336,5 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
+
 
