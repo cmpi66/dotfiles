@@ -1,0 +1,7 @@
+#!/bin/sh
+
+## This script copies all my portage files to my gentoo repo
+
+
+
+cp -ir  /etc/portage/* /home/chris/test2/

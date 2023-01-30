@@ -21,6 +21,6 @@ static const struct arg args[] = {
 	//{battery_state, "^c#96cdfb^ %s " , "BAT0" },
         //{battery_perc,  "%s%%  ",  "BAT0" },
 	{ datetime, "%s",   "^c#c0af68^  %a %b %d   %r  " },
-    {run_command,  "^c#2ac3de^  ^b#24283b^ %2s ",      "music.sh" },
+    {run_command,  "^c#2ac3de^  ^b#24283b^ %2s                                               ",      "music.sh" },
 	
 };

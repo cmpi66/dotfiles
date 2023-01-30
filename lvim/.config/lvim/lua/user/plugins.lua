@@ -6,7 +6,6 @@ lvim.plugins = {
    { "folke/zen-mode.nvim"},
    { "folke/twilight.nvim"},
    { "preservim/vim-pencil"},
-   -- { "vimwiki/vimwiki"},
    { "phaazon/hop.nvim"},
    {	"Pocco81/true-zen.nvim"},
    { "p00f/nvim-ts-rainbow"},
@@ -26,7 +25,6 @@ lvim.plugins = {
   -- Session
    {"rmagatti/auto-session"},
    {"rmagatti/session-lens"},
-  -- {"Mofiqul/dracula.nvim"},
    { "unblevable/quick-scope"},
    {"christianchiarulli/harpoon"},
    {"mickael-menu/zk-nvim"},
@@ -37,10 +35,10 @@ lvim.plugins = {
     vim.g.matchup_matchparen_offscreen = { method = "popup" }
   end,
 },
+  {"ThePrimeagen/vim-be-good"}
   -- {"christianchiarulli/lualine.nvim"}
-  {"cmpi66/languagetool-nvim"},
 
-	{'kdheepak/tabline.nvim'}
+	-- {'kdheepak/tabline.nvim'}
 
 }
 
