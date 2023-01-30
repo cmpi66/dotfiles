@@ -37,7 +37,7 @@ static const char *fonts[]          =
  "Font Awesome 6 Brands:pixelsize=15",
  "Material Design Icons:pixelsize=15",
  // "Fira Code Nerd Font:style=Bold:size=11:antialias=true:autohint=true"
-"NotoColorEmoji:pixelsize=10:antialias=true:autohint=true"
+"NotoColorEmoji:pixelsize=20:antialias=true:autohint=true"
 
 
 
@@ -329,7 +329,7 @@ static Button buttons[] = {
     //{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
-	{ ClkClientWin,         MODKEY,         Button1,        resizemouse,    {0} },
+	{ ClkClientWin,         MODKEY|ShiftMask,         Button1,        resizemouse,    {0} },
 	{ ClkTagBar,            0,              Button1,        view,           {0} },
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
