@@ -72,21 +72,25 @@ typedef struct {
 // const char *spcmd1[] = {"alacritty", "--class", "spterm", "--config-file", "/home/chris/.config/alacritty/scratch3.yml","-e", "pulsemixer", NULL };
 // const char *spcmd2[] = {"alacritty", "--class", "spfm", "--config-file", "/home/chris/.config/alacritty/scratch4.yml", "-e", "notes", NULL };
 // const char *spcmd3[] = {"alacritty", "--class", "spbmks", "--config-file", "/home/chris/.config/alacritty/scratch5.yml", "-e", "bmks", NULL };
-const char *spcmd1[] = {"st", "-n", "spterm", "-g", "70x20", "-e", "pulsemixer", NULL };
+const char *spcmd1[] = {"st", "-n", "sppulse", "-g", "70x20", "-e", "pulsemixer", NULL };
 const char *spcmd2[] = {"st", "-n", "spfm", "-g", "60x20", "-e", "notes",  NULL };
 const char *spcmd3[] = {"st", "-n", "spbmks", "-g", "80x25", "-e", "bmks", NULL };
 const char *spcmd4[] = {"st", "-n", "spwiki", "-g", "90x25", "-e", "wikiman", "-s", "gentoo", NULL };
 const char *spcmd5[] = {"alacritty", "--class", "spnews", "--config-file", "/home/chris/.config/alacritty/newsboat.yml", "-e", "newsboat", NULL };
+const char *spcmd6[] = {"alacritty", "--class", "spterm", "--config-file", "/home/chris/.config/alacritty/scratch.yml",  NULL };
+const char *spcmd7[] = {"alacritty", "--class", "sppdf", "--config-file", "/home/chris/.config/alacritty/scratch2.yml", "-e", "openpdf", NULL };
 // const char *spcmd5[] = {"st", "-n", "spnews", "-g", "100x40", "-e", "newsboat", NULL };
 // const char *spcmd5[] = {"alacritty", "--class", "news", "--config-file", "/home/chris/.config/alacritty/scratch2.yml", "-e", "newsboat", NULL };
 // const char *spcmd3[] = {"keepassxc", NULL };
 static Sp scratchpads[] = {
     /* name          cmd  */
-   {"spterm",      spcmd1},
+   {"sppulse",      spcmd1},
    {"spfm",        spcmd2},
    {"spbmks",   spcmd3},
    {"spwiki",   spcmd4},
    {"spnews",   spcmd5},
+   {"spterm",   spcmd6},
+   {"sppdf",   spcmd7},
 };
 
 
@@ -133,12 +137,16 @@ static const Rule rules[] = {
 	{ "St",       NULL,       NULL,            0,         0,          1,           0,        -1 },
 	{ "Alacritty",       NULL,       NULL,            0,         0,          1,           0,        -1 },
     { "trayer",   NULL,         NULL,       1 << 8,       False },
+    // { "okular",   NULL,         NULL,       1 << 1,       False },
+    // { "zathura",   NULL,         NULL,       1 << 1,       False },
 	{ NULL,       NULL,       "Event Tester",  0,         0,          0,           1,        -1 }, /* xev */
-    { NULL,       "spterm",     NULL,       SPTAG(0),       1,           -1 },
+    { NULL,       "sppulse",     NULL,       SPTAG(0),       1,           -1 },
     { NULL,       "spfm",       NULL,       SPTAG(1),       1,           -1 },
     { NULL,       "spbmks",  NULL,       SPTAG(2),       1,           -1 },
     { NULL,       "spwiki",  NULL,       SPTAG(3),       1,           -1 },
     { NULL,       "spnews",  NULL,       SPTAG(4),       1,           -1 },
+    { NULL,       "spterm",  NULL,       SPTAG(5),       1,           -1 },
+    { NULL,       "sppdf",  NULL,       SPTAG(6),       1,           -1 },
 
 };
 
@@ -255,6 +263,7 @@ static Key keys[] = {
 { MODKEY,			                       XK_F2,		spawn,		{.v = (const char*[]){ "mw", "-Y", NULL } } },
 { MODKEY,		                       	 XK_F3,		spawn,		SHCMD("mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
 { MODKEY,			                        XK_F4,		spawn,		SHCMD("groff -ms /home/chris/docs/ms/keys.ms -Tpdf | zathura -") },
+{ MODKEY,			                        XK_F5,		spawn,		SHCMD("alacritty -e openpdf") },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
@@ -289,6 +298,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,            	XK_m,	     togglescratch,  {.ui = 2 } },
 	{ MODKEY|ShiftMask,            	XK_a,	     togglescratch,  {.ui = 3 } },
 	{ MODKEY|ShiftMask,            	XK_e,	     togglescratch,  {.ui = 4 } },
+	{ MODKEY,                      	XK_y,	     togglescratch,  {.ui = 5 } },
+	{ MODKEY|ShiftMask,            	XK_r,	     togglescratch,  {.ui = 6 } },
   // { MODKEY,                       XK_n,      shiftview,      {.i = +1 } },
   // { MODKEY,                       XK_b,      shiftview,      {.i = -1 } },
 	{ MODKEY,             XK_n,       shiftviewclients, { .i = +1 } },
