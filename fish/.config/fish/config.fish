@@ -72,6 +72,15 @@ alias .5='cd ../../../../..'
 alias nvim='lvim'
 alias sudo='doas'
 alias scim='sc-im --quiet'
+
+# zk
+alias perma="zk perma"
+alias flee="zk flee"
+alias nt="zk nt"
+alias lit="zk lit"
+
+alias desk "ssh chris@10.27.27.10"
+
 # System abbreviations 
 abbr archlinx-fix-keys "sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
 abbr merge "xrdb -merge ~/.Xresources"
@@ -119,11 +128,6 @@ abbr pfvpdown "sudo wg-quick down pfwg0"
 abbr tabs "xargs -n1 firefox <"
 abbr paste "xclip -selection c -o >"
 abbr chadwm "startx ~/.config/chadwm/scripts/run.sh"
-# zk
-alias perma="zk perma"
-alias flee="zk flee"
-alias nt="zk nt"
-alias lit="zk lit"
 
 #Custom keybindings vi insert mode
 set -g fish_key_bindings fish_vi_key_bindings

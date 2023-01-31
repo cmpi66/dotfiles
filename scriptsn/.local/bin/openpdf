@@ -1,0 +1,133 @@
+#!/bin/env bash
+
+# do
+# while [ $pdf -z ]
+#   category=$(ls ~/media/books/ | dmenu -i -l 100 -fn Hack-15) && cd ~/media/books/"$category"
+#   [ $category -z ] || pdf=$(ls ~/media/books/"$category" | dmenu -i -l 100 -fn Hack-15)
+#   [ $category -z ] && [ $pdf -z ] && exit
+# done
+
+# zathura ~/media/books/"$category"/"$pdf"
+
+
+
+# #   category=$(ls ~/media/books/ | fzf) && cd ~/media/books/"$category"
+# #   [ $category -z ] || pdf=$(ls ~/media/books/"$category" | fzf)
+# #   [ $pdf -z ] && exit
+# # done
+# #
+# #
+# #
+
+# category=$(ls ~/media/books/ | dmenu -i -l 100 -fn Hack-10)
+# while [ -z "$category" ]
+# do
+#   category=$(ls ~/media/books/ | dmenu -i -l 100 -fn Hack-10)
+# done
+# cd ~/media/books/"$category"
+
+# pdf=$(ls ~/media/books/"$category" | dmenu -i -l 100 -fn Hack-10)
+# while [ -z "$pdf" ]
+# do pdf=$(ls ~/media/books/"$category" | dmenu -i -l 100 -fn Hack-10)
+# done
+
+# zathura ~/media/books/"$category"/"$pdf"
+
+
+# cd ~/media/books/
+# category=$(ls | dmenu -i -l 100 -fn Hack-15)
+# while [ -z "$category" ]
+# do
+#   category=$(ls | dmenu -i -l 100 -fn Hack-15)
+# done
+# cd "$category"
+
+# pdf=$(ls | dmenu -i -l 100 -fn Hack-15)
+# while [ -z "$pdf" ]
+# do
+#   pdf=$(ls | dmenu -i -l 100 -fn Hack-15)
+# done
+
+# pdf=$(ls | dmenu -i -l 100 -fn Hack-15)
+
+# zathura "$pdf"
+#
+#
+#
+#
+# cd ~/media/books/
+# echo "Current directory: $(pwd)"
+
+# category=$(ls | dmenu -i -l 100 -fn Hack-15)
+# echo "Selected category: $category"
+# while [ -z "$category" ]
+# do
+#   category=$(ls | dmenu -i -l 100 -fn Hack-15)
+# done
+# cd "$category"
+# echo "Current directory: $(pwd)"
+
+# pdf=$(ls | dmenu -i -l 100 -fn Hack-15)
+# echo "Selected PDF: $pdf"
+# while [ -z "$pdf" ]
+# do
+#   pdf=$(ls | dmenu -i -l 100 -fn Hack-15)
+# done
+
+# zathura "$pdf"
+
+
+
+
+# cd ~/media/books/
+# echo "Current directory: $(pwd)"
+
+# category=$(ls | dmenu -i -l 100 -fn Hack-15)
+# echo "Selected category: $category"
+# while [ -z "$category" ]
+# do
+#   category=$(ls | dmenu -i -l 100 -fn Hack-15)
+# done
+# cd "$category"
+# echo "Current directory: $(pwd)"
+
+# pdf=$(ls | dmenu -i -l 100 -fn Hack-15)
+# echo "Selected PDF: $pdf"
+# while [ -z "$pdf" ]
+# do
+#   pdf=$(ls | dmenu -i -l 100 -fn Hack-15)
+# done
+
+# zathura "$pdf"
+#
+#
+#
+#
+#
+
+# selected_pdf=$(find ~/media/books -name "*.pdf" -print0 | fzf --print-query --delimiter="\0" --exit-0)
+
+# if [ -n "$selected_pdf" ]; then
+#   zathura "$selected_pdf"
+# fi
+#
+#
+
+# selected_pdfs=($(find ~/media/books -name "*.pdf" -print0 | fzf --print-query --delimiter="\0" --multi --exit-0))
+
+# if [ ${#selected_pdfs[@]} -gt 0 ]; then
+#   for selected_pdf in "${selected_pdfs[@]}"; do
+#     zathura "$selected_pdf"
+#   done
+# fi
+
+
+
+IFS=$'\n' selected_pdfs=($(find ~/media/books -name "*.pdf" | fzf --multi --exit-0))
+
+if [ ${#selected_pdfs[@]} -gt 0 ]; then
+  for selected_pdf in "${selected_pdfs[@]}"; do
+    okular "$selected_pdf"
+  done
+fi
+

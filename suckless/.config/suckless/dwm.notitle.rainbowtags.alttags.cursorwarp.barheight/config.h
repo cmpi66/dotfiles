@@ -70,7 +70,7 @@ typedef struct {
  const void *cmd;
 } Sp;
 
-const char *spcmd1[] = {"alacritty", "--class", "spterm", "--config-file", "/home/chris/.config/alacritty/scratch3.yml","-e", "pulsemixer", NULL };
+const char *spcmd1[] = {"alacritty", "--class", "sppulse", "--config-file", "/home/chris/.config/alacritty/scratch3.yml","-e", "pulsemixer", NULL };
 // const char *spcmd2[] = {"alacritty", "--class", "spfm", "--config-file", "/home/chris/.config/alacritty/scratch4.yml", "-e", "notes", NULL };
 // const char *spcmd3[] = {"alacritty", "--class", "spbmks", "--config-file", "/home/chris/.config/alacritty/scratch5.yml", "-e", "bmks", NULL };
 // const char *spcmd3[] = {"alacritty", "--class", "spfm", "--config-file", "/home/chris/.config/alacritty/ranger-pywal.yml", "-e", "ranger", NULL };
@@ -78,15 +78,20 @@ const char *spcmd1[] = {"alacritty", "--class", "spterm", "--config-file", "/hom
 const char *spcmd2[] = {"st", "-n", "spfm", "-g", "60x20", "-e", "notes",  NULL };
 const char *spcmd3[] = {"st", "-n", "spbmks", "-g", "80x25", "-e", "bmks", NULL };
 const char *spcmd4[] = {"st", "-n", "spwiki", "-g", "90x25", "-e", "dmenuwiki", NULL };
-const char *spcmd5[] = {"st", "-n", "spnews", "-g", "95x35", "-e", "newsboat", NULL };
+// const char *spcmd5[] = {"st", "-n", "spnews", "-g", "95x35", "-e", "newsboat", NULL };
+const char *spcmd5[] = {"alacritty", "--class", "spnews", "--config-file", "/home/chris/.config/alacritty/newsboat.yml", "-e", "newsboat", NULL };
+const char *spcmd6[] = {"alacritty", "--class", "spterm", "--config-file", "/home/chris/.config/alacritty/scratch.yml",  NULL };
+const char *spcmd7[] = {"alacritty", "--class", "sppdf", "--config-file", "/home/chris/.config/alacritty/scratch2.yml", "-e", "openpdf", NULL };
 // const char *spcmd3[] = {"keepassxc", NULL };
 static Sp scratchpads[] = {
     /* name          cmd  */
-   {"spterm",      spcmd1},
+   {"sppulse",      spcmd1},
    {"spfm",        spcmd2},
    {"spbmks",   spcmd3},
    {"spwiki",   spcmd4},
    {"spnews",   spcmd5},
+   {"spterm",   spcmd6},
+   {"sppdf",   spcmd7},
 };
 
 
@@ -135,11 +140,13 @@ static const Rule rules[] = {
 	{ "St",       NULL,       NULL,            0,         0,          1,           0,        -1 },
 	{ "Alacritty",NULL,       NULL,            0,         0,          1,           0,        -1 },
 	{ NULL,       NULL,       "Event Tester",  0,         0,          0,           1,        -1 }, /* xev */
-    { NULL,       "spterm",     NULL,       SPTAG(0),       1,           -1 },
+    { NULL,       "sppulse",     NULL,       SPTAG(0),       1,           -1 },
     { NULL,       "spfm",       NULL,       SPTAG(1),       1,           -1 },
     { NULL,       "spbmks",  NULL,       SPTAG(2),       1,           -1 },
     { NULL,       "spwiki",  NULL,       SPTAG(3),       1,           -1 },
     { NULL,       "spnews",  NULL,       SPTAG(4),       1,           -1 },
+    { NULL,       "spterm",  NULL,       SPTAG(5),       1,           -1 },
+    { NULL,       "sppdf",  NULL,       SPTAG(6),       1,           -1 },
 };
 
 /* layout(s) */
@@ -284,6 +291,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,            	XK_m,	     togglescratch,  {.ui = 2 } },
 	{ MODKEY|ShiftMask,            	XK_a,	     togglescratch,  {.ui = 3 } },
 	{ MODKEY|ShiftMask,            	XK_e,	     togglescratch,  {.ui = 4 } },
+	{ MODKEY,                      	XK_y,	     togglescratch,  {.ui = 5 } },
+	{ MODKEY|ShiftMask,            	XK_r,	     togglescratch,  {.ui = 6 } },
 	{ MODKEY,             XK_n,       shiftviewclients, { .i = +1 } },
 	{ MODKEY,             XK_b, shiftviewclients, { .i = -1 } },
 	{ MODKEY1,                       XK_n,      togglealttag,   {0} },
