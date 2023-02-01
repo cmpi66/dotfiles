@@ -75,5 +75,5 @@ redshift &
 # picom --experimental-backend &
 picom &
 syncthing --no-browser &
-trayer --edge top --align right --SetDockType true --SetPartialStrut true --padding 6 --expand true --width 6 --transparent true --alpha 0 --tint 0x1e1e2e --height 25 --distance 8 &
+# trayer --edge bottom --align bottom --SetDockType true --SetPartialStrut true --padding 6 --expand true --width 10 --transparent true --alpha 0 --tint 0x1e1e2e --height 28 --distance 8 &
 exec dwm
