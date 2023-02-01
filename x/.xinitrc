@@ -69,8 +69,7 @@ redshift &
 picom --experimental-backend &
 # dbus-launch --sh-syntax --exit-with-session; pulseaudio --kill; pipewire &
 syncthing --no-browser &
-# trayer-srg --edge top --align right --SetDockType true --SetPartialStrut true --padding 6 --expand true --width 10 --transparent true --alpha 0 --tint 0x292d3e --height 20 &
-trayer-srg --edge top --align right --SetDockType true --SetPartialStrut true --padding 6 --expand true --width 6 --transparent true --alpha 0 --tint 0x24283b --height 23 --distance 8 &
+# trayer-srg --edge bottom --align center --SetDockType true --SetPartialStrut true --padding 6 --expand true --width 11 --transparent true --alpha 0 --tint 0x24283b --height 30 --distance 8 &
 # exec dbus-launch --exit-with-session dwm
 # exec dwm
 exec dbus-launch --sh-syntax --exit-with-session dwm
