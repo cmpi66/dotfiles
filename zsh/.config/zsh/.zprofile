@@ -95,5 +95,7 @@ function cd () {
     ls -ACF
 }
 
+GPG_TTY=$(tty)
+export GPG_TTY
 
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx

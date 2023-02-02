@@ -48,6 +48,9 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+if [ -x /usr/bin/gpg-agent ]; then
+ eval "$(/usr/bin/gpg-agent --daemon)"
+fi
 
 
 # Clear caps lock key, no longer using it. Replaced with escape. This command doesnt save in .Xmodmap.
