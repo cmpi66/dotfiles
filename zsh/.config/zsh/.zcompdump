@@ -1,4 +1,4 @@
-#files: 843	version: 5.9
+#files: 844	version: 5.9
 
 _comps=(
 '-' '_precommand'
@@ -224,6 +224,7 @@ _comps=(
 'calibre-server' '_calibre'
 'calibre-smtp' '_calibre'
 'calibredb' '_calibre'
+'cargo' '_cargo'
 'cat' '_cat'
 'catchsegv' '_precommand'
 'cc' '_gcc'
@@ -738,7 +739,6 @@ _comps=(
 'killall' '_killall'
 'killall5' '_killall'
 'kioclient' '_kfmclient'
-'kitty' '_kitty'
 'knock' '_knock'
 'konqueror' '_webbrowser'
 'kpartx' '_kpartx'
@@ -1709,9 +1709,9 @@ bindkey '^[~' _bash_complete-word
 
 autoload -Uz _alacritty _bat _bazel _black _blackd \
             _bluetoothctl _bootctl _busctl _bwrap _calibre \
-            _checkupdates _coredumpctl _curl _downgrade _email-notmuch \
-            _exa _fd _firewalld _hostnamectl _journalctl \
-            _kernel-install _kitty _lf _libinput _localectl \
+            _cargo _checkupdates _coredumpctl _curl _downgrade \
+            _email-notmuch _exa _fd _firewalld _hostnamectl \
+            _journalctl _kernel-install _lf _libinput _localectl \
             _loginctl _luarocks _luarocks-admin _machinectl _meson \
             _mkinitcpio _mpv _netctl _networkctl _ninja \
             _notmuch _oomctl _paccache _pacdiff _pacignore \
