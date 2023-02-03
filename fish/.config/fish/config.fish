@@ -128,6 +128,7 @@ abbr pfvpdown "sudo wg-quick down pfwg0"
 abbr tabs "xargs -n1 firefox <"
 abbr paste "xclip -selection c -o >"
 abbr chadwm "startx ~/.config/chadwm/scripts/run.sh"
+abbr search "paru -Ss"
 
 #Custom keybindings vi insert mode
 set -g fish_key_bindings fish_vi_key_bindings
