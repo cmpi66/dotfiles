@@ -166,7 +166,6 @@ static const char *dmenucmd[] = { "dmenu_run","-i","-p", dmenumon, "-fn", dmenuf
 
 #include <X11/XF86keysym.h>
 static Key keys[] = {
-//start_keys
   /* modifier                     key        function        argument */
   { MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
   { MODKEY|ShiftMask,		          XK_d,		spawn,		         {.v = (const char*[]){ "rofi", "-show","drun", "-show-icons", NULL } } },
@@ -174,7 +173,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = (const char*[]){ "alacritty", "--config-file", "/home/chris/.config/alacritty/tmux.yml", "-e", "tmux", NULL } } },
   { MODKEY,		                   	XK_BackSpace,	spawn,	     {.v = (const char*[]){ "rofi-poweroff.sh", NULL } } },
-  { MODKEY|ShiftMask,		          XK_BackSpace,	spawn,	    SHCMD("i3lock -C -i /home/chris/.local/bin/2770299.png")  },
+  { MODKEY|ShiftMask,		          XK_BackSpace,	spawn,	     SHCMD("i3lock -C -i /home/chris/.local/bin/2770299.png")  },
   { MODKEY,		          	        XK_w,		spawn,             {.v = (const char*[]){ BROWSER, NULL } } },
   { MODKEY|ShiftMask,			        XK_w,		spawn,		         SHCMD("st -e lvim ~/.local/.src/zettlekasten/index.md")  },
   { MODKEY,		          	        XK_e,		spawn,		         SHCMD("st  -e neomutt ; rmdir ~/.abook") },
@@ -184,30 +183,25 @@ static Key keys[] = {
   { MODKEY,		          	        XK_a,		spawn,		         SHCMD(" st -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook") },
   { MODKEY,		                   XK_m,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "ncmpcpp", NULL } } },
   { MODKEY|ShiftMask,		         XK_t,		spawn,		         SHCMD("tray.sh") },
+
   { MODKEY,		                 	 XK_bracketleft,		spawn,	 {.v = (const char*[]){ "mpc", "seek", "-10", NULL } } },
 	{ MODKEY|ShiftMask,	         	 XK_bracketleft,		spawn, 	 {.v = (const char*[]){ "mpc", "seek", "-60", NULL } } },
 	{ MODKEY,		                   XK_bracketright,	spawn,	   {.v = (const char*[]){ "mpc", "seek", "+10", NULL } } },
 	{ MODKEY|ShiftMask,		         XK_bracketright,	spawn,	   {.v = (const char*[]){ "mpc", "seek", "+60", NULL } } },
-
-	{ MODKEY,		          XK_semicolon,	spawn,		{.v = (const char*[]){ "mpc", "prev",  NULL } } },
-
-	{ MODKEY,		          XK_apostrophe,	spawn,		{.v = (const char*[]){ "mpc", "next",  NULL } } },
-
-	{ MODKEY,		          XK_equal,	spawn,		{.v = (const char*[]){ "mpc", "volume", "+5",  NULL } } },
-
-	{ MODKEY,		          XK_minus,	spawn,		{.v = (const char*[]){ "mpc", "volume", "-5", NULL } } },
-
-	{ MODKEY,		          XK_z,	spawn,		{.v = (const char*[]){ "mpc", "toggle",  NULL } } },
-
-	{ MODKEY|ShiftMask,	   XK_z,	spawn,		{.v = (const char*[]){ "mpc", "stop",  NULL } } },
-  { 0,				XK_Print,	spawn,		SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") },
-  { ShiftMask,		               XK_Print,	spawn,		{.v = (const char*[]){ "maimpic", NULL } } },
-  { MODKEY,		                 	 XK_Print,	spawn,		{.v = (const char*[]){ "dmenurecord", NULL } } },
-  { MODKEY,			                 XK_Delete,	spawn,		{.v = (const char*[]){ "dmenurecord", "kill", NULL } } },
-{ MODKEY,			                       XK_F1,		spawn,		{.v = (const char*[]){ "displayselect", NULL } } },
-{ MODKEY,			                       XK_F2,		spawn,		{.v = (const char*[]){ "mw", "-Y", NULL } } },
-{ MODKEY,		                       	 XK_F3,		spawn,		SHCMD("mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
-{ MODKEY,			                        XK_F4,		spawn,		SHCMD("groff -ms /home/chris/docs/ms/keys.ms -Tpdf | zathura -") },
+	{ MODKEY,		                   XK_semicolon,	spawn,		{.v = (const char*[]){ "mpc", "prev",  NULL } } },
+	{ MODKEY,		                   XK_apostrophe,	spawn,		{.v = (const char*[]){ "mpc", "next",  NULL } } },
+	{ MODKEY,		                   XK_equal,	spawn,		    {.v = (const char*[]){ "mpc", "volume", "+5",  NULL } } },
+	{ MODKEY,		                   XK_minus,	spawn,		    {.v = (const char*[]){ "mpc", "volume", "-5", NULL } } },
+	{ MODKEY,		                   XK_z,	spawn,		        {.v = (const char*[]){ "mpc", "toggle",  NULL } } },
+	{ MODKEY|ShiftMask,	           XK_z,	spawn,		        {.v = (const char*[]){ "mpc", "stop",  NULL } } },
+  { 0,			                     XK_Print,	spawn,		    SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") },
+  { ShiftMask,		               XK_Print,	spawn,		    {.v = (const char*[]){ "maimpic", NULL } } },
+  { MODKEY,		                 	 XK_Print,	spawn,		    {.v = (const char*[]){ "dmenurecord", NULL } } },
+  { MODKEY,			                 XK_Delete,	spawn,		    {.v = (const char*[]){ "dmenurecord", "kill", NULL } } },
+  { MODKEY,			                       XK_F1,		spawn,		  {.v = (const char*[]){ "displayselect", NULL } } },
+  { MODKEY,			                       XK_F2,		spawn,		  {.v = (const char*[]){ "mw", "-Y", NULL } } },
+  { MODKEY,		                       	 XK_F3,		spawn,		SHCMD("mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
+  { MODKEY,			                        XK_F4,		spawn,		SHCMD("groff -ms /home/chris/docs/ms/keys.ms -Tpdf | zathura -") },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
@@ -275,7 +269,6 @@ static Key keys[] = {
     //{ MODKEY|ShiftMask,             XK_y,      incrovgaps,     {.i = +1 } },
     //{ MODKEY|ShiftMask,             XK_o,      incrovgaps,     {.i = -1 } },
 
-//end_keys
 };
 
 /* button definitions */

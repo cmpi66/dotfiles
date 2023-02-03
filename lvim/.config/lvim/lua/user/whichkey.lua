@@ -26,9 +26,9 @@ lvim.builtin.which_key.mappings["z"] = {
   name = "+zk",
   -- n = { "<cmd>ZkNew { title = vim.fn.input('Title: ') }<cr>", "New Note" },
   n = { "<Cmd>ZkNew { dir = vim.fn.expand('%:p:h'), title = vim.fn.input('Title: ') }<CR>", "New Note" },
-  f = { "<cmd>ZkNew { dir = 'fleeting', title = vim.fn.input('Title: ') }<cr>", "Fleeting Note" },
-  p = { "<cmd>ZkNew { dir = 'permanent', title = vim.fn.input('Title: ') }<cr>", "Permanent Note" },
-  l = { "<cmd>ZkNew { dir = 'literature', title = vim.fn.input('Title: ') }<cr>", "Literature Note" },
+  f = { "<cmd>ZkNew { dir = '/home/chris/.local/.src/zettlekasten/fleeting', title = vim.fn.input('Title: ') }<cr>", "Fleeting Note" },
+  p = { "<cmd>ZkNew { dir = '/home/chris/.local/.src/zettlekasten/permanent', title = vim.fn.input('Title: ') }<cr>", "Permanent Note" },
+  l = { "<cmd>ZkNew { dir = '/home/chris/.local/.src/zettlekasten/literature', title = vim.fn.input('Title: ') }<cr>", "Literature Note" },
   t = { "<cmd>Telescope zk tags<cr>", "Search by Tags" },
 
   -- n = { "<cmd>ZkNew<cr>", "new note" },

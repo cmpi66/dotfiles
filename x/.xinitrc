@@ -48,6 +48,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+## This is to run gpg-agent on non systemd distros. Its needed for pam-gnupg
 if [ -x /usr/bin/gpg-agent ]; then
  eval "$(/usr/bin/gpg-agent --daemon)"
 fi
@@ -60,7 +61,6 @@ xmodmap -e 'clear lock' &
 # Dont need the xrandr command anymore. Using lukes display script
 # xrandr --output eDP1 --auto --output DP1 --primary --left-of eDP1 &  
 xidle &
-# exec ~/.local/bin/xidle &
 xinput set-prop "DLL096D:01 06CB:CDE6 Touchpad" "Coordinate Transformation Matrix" 3.8 0 0 0 3.8 0 0 0 1 &
 clipmenud &
 dunst &

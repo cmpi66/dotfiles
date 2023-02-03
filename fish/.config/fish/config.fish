@@ -58,12 +58,6 @@ alias vf="fzf | xargs -r -I % $EDITOR %"
 abbr f 'zi'
 abbr g 'lazygit'
 
-# get fastest mirrors
-# abbr mirror "sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-# abbr mirrord "sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
-# abbr mirrors "sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
-# abbr mirrora "sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
-
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
@@ -71,10 +65,10 @@ alias fgrep='fgrep --color=auto'
 alias ls='exa -al --color=always --icons --group-directories-first'
 alias sl='exa -al --color=always --icons --group-directories-first'
 alias diff='diff --color=auto'
+
 # easier to read disk
 alias df='pydf'     # human-readable sizes
 alias free='free -m' # show sizes in MB
-# alias yay='paru'
 
 # navigation
 alias ..='cd ..'
@@ -90,7 +84,7 @@ alias scim='sc-im --quiet'
 
 abbr merge "xrdb -merge ~/.Xresources"
 # abbr nvimrc "nvim ~/.config/nvim/"
-abbr i3 "i3lock -C -i /home/chris/.local/bin/arch-wallpaper.jpg"
+# abbr i3 "i3lock -C -i /home/chris/.local/bin/arch-wallpaper.jpg"
 abbr nv "nvim"
 abbr snv "sudo nvim"
 abbr ka "killall"
@@ -100,7 +94,7 @@ abbr rm "rm -v"
 abbr ln "ln -i"
 abbr cl "clear"
 abbr v "vim"
-abbr wiki "nvim ~/zettelkasten/index.md"
+abbr wiki "nvim ~/.local/.src/zettlekasten/index.md"
 # abbr gp "git add . && git commit -m 'autopush' && git push"
 abbr gp "git add . && git commit -m 'autopush' && git remote | xargs -L1 git push --all" ##push to all git remotes
 abbr mkdir "mkdir -pv"

@@ -68,7 +68,7 @@ SETUVAR _fish_abbr_ke:cd\x20/usr/src/linux/\x20\x26\x26\x20sudo\x20make\x20menuc
 SETUVAR _fish_abbr_kx:killall\x20sxhkd\x20\x26\x26\x20sxhkd\x20\x26
 SETUVAR _fish_abbr_lf:lfub
 SETUVAR _fish_abbr_ln:ln\x20\x2di
-SETUVAR _fish_abbr_m:cd\x20/home/chris/media/music\x3b\x20and\x20ls\x20\x2da
+SETUVAR _fish_abbr_m:mailsync
 SETUVAR _fish_abbr_merge:xrdb\x20\x2dmerge\x20\x7e/\x2eXresources
 SETUVAR _fish_abbr_mk:sudo\x20/usr/src/linux/rebuild\x2dkernel\x2esh
 SETUVAR _fish_abbr_mkdir:mkdir\x20\x2dpv
@@ -98,7 +98,7 @@ SETUVAR _fish_abbr_vpdown:sudo\x20wg\x2dquick\x20down\x20gentoobox
 SETUVAR _fish_abbr_vpndown:sudo\x20wg\x2dquick\x20down\x20gentoobox
 SETUVAR _fish_abbr_vpnup:sudo\x20wg\x2dquick\x20up\x20gentoobox
 SETUVAR _fish_abbr_vv:cd\x20/home/chris/vids\x3b\x20and\x20ls\x20\x2da
-SETUVAR _fish_abbr_wiki:nvim\x20\x7e/zettelkasten/index\x2emd
+SETUVAR _fish_abbr_wiki:nvim\x20\x7e/\x2elocal/\x2esrc/zettlekasten/index\x2emd
 SETUVAR _fish_abbr_yay:paru
 SETUVAR _fish_abbr_yt:yt\x2ddlp\x20\x2d\x2dadd\x2dmetadata\x20\x2di
 SETUVAR _fish_abbr_yta:yt\x2ddlp\x20\x2dx\x20\x2df\x20bestaudio/best
