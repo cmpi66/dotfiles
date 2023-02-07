@@ -19,4 +19,4 @@ for PID in $PIDlist; do
 	[ "$cwd" != "$HOME" ] && [ "$cwd" != '/' ] && break
 done
 [ "$PWD" != "$cwd" ] && [ -d "$cwd" ] && { cd "$cwd" || exit 1; }
-"$TERMINAL"
+"alacritty"

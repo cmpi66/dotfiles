@@ -182,7 +182,7 @@ static Key keys[] = {
 { MODKEY,		                     	XK_BackSpace,	spawn,	    {.v = (const char*[]){ "sysact", NULL } } },
 { MODKEY|ShiftMask,		            XK_BackSpace,	spawn,	   SHCMD("i3lock -C -i /home/chris/.local/bin/arch-wallpaper.jpg")  },
   { MODKEY,		          	        XK_w,		spawn,            {.v = (const char*[]){ BROWSER, NULL } } },
-  { MODKEY|ShiftMask,			        XK_w,		spawn,		        SHCMD("st -e lvim  ~/.local/.src/zettlekasten/index.md")  },
+  { MODKEY|ShiftMask,			        XK_w,		spawn,		        SHCMD("zettle-ema")  },
   { MODKEY,		          	        XK_e,		spawn,		         {.v = (const char*[]){ "st", "-e", "neomutt", NULL } } },
   { MODKEY,		          	        XK_r,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "lfub", NULL } } },
   { MODKEY|ShiftMask,			        XK_r,		spawn,		         SHCMD("alacritty -e openpdf") },
