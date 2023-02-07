@@ -1,5 +1,7 @@
 #! /bin/sh
 
+## This is a script that I got online to be able to recieve notificatoins from myself but I haven't gotten it to work.
+
 paster() {
   while read email; do
     [ -z "$email" ] || echo "$1" "$email"

@@ -35,7 +35,8 @@ lvim.plugins = {
     vim.g.matchup_matchparen_offscreen = { method = "popup" }
   end,
 },
-  {"ThePrimeagen/vim-be-good"}
+  {"ThePrimeagen/vim-be-good"},
+  {"rebelot/kanagawa.nvim"}
   -- {"christianchiarulli/lualine.nvim"}
 
 	-- {'kdheepak/tabline.nvim'}

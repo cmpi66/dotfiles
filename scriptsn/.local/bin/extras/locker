@@ -1,5 +1,0 @@
-#!/bin/bash
-
-#exec xautlock -detecsleep -time 5 -locker "/home/chris/.local/bin/lock" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconods' " &
-
-#exec xidlehook --not-when-fullscreen --not-when-audio --timer 2400 "systemctl suspend" -
