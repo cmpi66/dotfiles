@@ -56,6 +56,8 @@ fi
 
 # This Luke script is better than my approach of getting rid of caps lock, since he also makes it a dual key while held down. (super)
 remaps &
+# remapd &
+unclutter &
 xidle &
 xinput set-prop "DLL096D:01 06CB:CDE6 Touchpad" "Coordinate Transformation Matrix" 3.8 0 0 0 3.8 0 0 0 1 &
 clipmenud &

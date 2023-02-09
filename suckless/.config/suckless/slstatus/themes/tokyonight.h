@@ -1,7 +1,8 @@
 static const struct arg args[] = {
 	/* function format          argument */
    {run_command,  "^c#f7768e^  %2s ",     "mail.sh" },
-    {kernel_release, "^c#50fa7b^  %s  ", NULL },
+   {run_command,  "^c#50fa7b^  %2s ",     "torrent.sh" },
+    {kernel_release, "^c#cfc9c2^  %s  ", NULL },
   //{run_command,  "^c#abe9b3^  %s ",      "sb-price.sh" },
     {run_command,  "^c#e0af68^  %2s ",     "forecast.sh" },
    {run_command,  "^c#abe9b3^  %2s ",     "internet.sh" },

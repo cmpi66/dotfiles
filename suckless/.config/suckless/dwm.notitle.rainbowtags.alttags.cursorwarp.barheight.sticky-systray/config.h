@@ -31,7 +31,7 @@ static const char *fonts[]          =
  "Font Awesome 6 Brands:pixelsize=15",
 "Material Design Icons Desktop:size=15",
  // "Fira Code Nerd Font:style=Bold:size=11:antialias=true:autohint=true"
-"NotoColorEmoji:pixelsize=10:antialias=true:autohint=true"
+"NotoColorEmoji:pixelsize=18:antialias=true:autohint=true"
 
 
 
@@ -204,6 +204,9 @@ static Key keys[] = {
   { MODKEY,			                       XK_F2,		spawn,		  {.v = (const char*[]){ "mw", "-Y", NULL } } },
   { MODKEY,		                       	 XK_F3,		spawn,		SHCMD("mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
   { MODKEY,			                        XK_F4,		spawn,		SHCMD("groff -ms /home/chris/docs/ms/keys.ms -Tpdf | zathura -") },
+  { MODKEY,			                  XK_F5,		 spawn,		      SHCMD("torwrap") },
+  { MODKEY,			                  XK_F6,		 spawn,		      SHCMD("td-toggle") },
+  { MODKEY,			                  XK_F12,		 spawn,		      SHCMD("remaps") },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },

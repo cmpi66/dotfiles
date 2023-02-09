@@ -21,7 +21,7 @@ set TERM "xterm-256color" # This messes up LunarVim; gives it some wierd ghostin
 # set TERM "linux"
 set EDITOR "lvim"
 set VISUAL "lvim"
-set TERMINAL "st"
+set TERMINAL "alacritty"
 set BROWSER "firefox-bin"
 
 ### SET MANPAGER

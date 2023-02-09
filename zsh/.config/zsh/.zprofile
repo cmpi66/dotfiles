@@ -31,6 +31,7 @@ export browser="firefox-bin"
 export movplay="mpv"
 export term=xterm-256color
 export picview="sxiv"
+export terminal="alacritty"
 
 
 # ~/ Clean up:

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# * TR_APP_VERION
+# * TR_TORRENT_HASH
+# * TR_TORRENT_DIR
+# * TR_TIME_LOCALTIME
+# * TR_TORRENT_ID
+# * TR_TORRENT_NAME
+
+notfiy-send " transmission-daemon" "$TR_TORRENT_NAME has completely downloaded" 
