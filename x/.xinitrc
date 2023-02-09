@@ -53,16 +53,10 @@ fi
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 
-# lxsession &
-# Clear caps lock key, no longer using it. Replaced with escape. This command doesnt save in .Xmodmap.
-#sshfs pi@192.168.1.105:/home/pi/backup/Music ~/music/ &
-#sshfs pi@192.168.1.105:/home/pi/backup/Videos ~/vids/ &
-xmodmap -e 'clear lock' &
-# Dont need the xrandr command anymore. Using lukes display script
-# xrandr --output eDP1 --auto --output DP1 --primary --left-of eDP1 &  
-
+## Better way of replacing caps lock with escape, by luke
+remaps &
+unclutter &
 xidle &
-# exec ~/.local/bin/xidle &
 xinput set-prop "DLL096D:01 06CB:CDE6 Touchpad" "Coordinate Transformation Matrix" 3.8 0 0 0 3.8 0 0 0 1 &
 clipmenud &
 dunst &

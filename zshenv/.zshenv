@@ -83,6 +83,13 @@ export DICS="/usr/share/stardict/dic/"
 # MANPATH="$MANPATH:/usr/local/share/man"
 # export MANPATH=/usr/local/share/man:$MANPATH
 
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='lvim'
+else
+  export EDITOR='lvim'
+fi
+
+
 export LF_ICONS="di=📁:\
 fi=📃:\
 tw=🤝:\
