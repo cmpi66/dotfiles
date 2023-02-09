@@ -54,12 +54,8 @@ if [ -x /usr/bin/gpg-agent ]; then
 fi
 
 
-# Clear caps lock key, no longer using it. Replaced with escape. This command doesnt save in .Xmodmap.
-# sshfs pi@192.168.1.105:/home/pi/backup/Music ~/music/ &
-# sshfs pi@192.168.1.105:/home/pi/backup/Videos ~/vids/ &
-xmodmap -e 'clear lock' &
-# Dont need the xrandr command anymore. Using lukes display script
-# xrandr --output eDP1 --auto --output DP1 --primary --left-of eDP1 &  
+# This Luke script is better than my approach of getting rid of caps lock, since he also makes it a dual key while held down. (super)
+remaps &
 xidle &
 xinput set-prop "DLL096D:01 06CB:CDE6 Touchpad" "Coordinate Transformation Matrix" 3.8 0 0 0 3.8 0 0 0 1 &
 clipmenud &
@@ -70,10 +66,8 @@ exec slstatus &
 setbg &
 redshift &
 picom --experimental-backend &
-# dbus-launch --sh-syntax --exit-with-session; pulseaudio --kill; pipewire &
 syncthing --no-browser &
 # trayer-srg --edge bottom --align center --SetDockType true --SetPartialStrut true --padding 6 --expand true --width 11 --transparent true --alpha 0 --tint 0x24283b --height 30 --distance 8 &
 # exec dbus-launch --exit-with-session dwm
 # exec dwm
 exec dbus-launch --sh-syntax --exit-with-session dwm
-# exec dbus-launch --sh-syntax --exit-with-session awesome

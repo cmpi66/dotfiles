@@ -1,3 +1,4 @@
+
 /* See LICENSE file for copyright and license details. */
 
 /* Constants */
@@ -171,11 +172,12 @@ static Key keys[] = {
   { MODKEY|ShiftMask,		          XK_d,		spawn,		         {.v = (const char*[]){ "rofi", "-show","drun", "-show-icons", NULL } } },
   { MODKEY,		                    XK_c,		spawn,		         SHCMD("clipmenu -i -h 4 -fn Jetbrains:size=9 -nb '#24283b' -nf '#efefef' -sb '#bd9af7' -sf '#24283b'") },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = (const char*[]){ "alacritty", "--config-file", "/home/chris/.config/alacritty/tmux.yml", "-e", "tmux", NULL } } },
+	{ MODKEY1,                      XK_Return, spawn,          SHCMD("tabbed -r 2 alacritty --embed ''")  },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = (const char*[]){ "alacritty", "--config-file", "/home/chris/.config/alacritty/tmux.yml", "-e", "tmux", "new-session", "-s", "term", NULL } } },
   { MODKEY,		                   	XK_BackSpace,	spawn,	     {.v = (const char*[]){ "rofi-poweroff.sh", NULL } } },
   { MODKEY|ShiftMask,		          XK_BackSpace,	spawn,	     SHCMD("i3lock -C -i /home/chris/.local/bin/2770299.png")  },
   { MODKEY,		          	        XK_w,		spawn,             {.v = (const char*[]){ BROWSER, NULL } } },
-  { MODKEY|ShiftMask,			        XK_w,		spawn,		         SHCMD("st -e lvim ~/.local/.src/zettlekasten/index.md")  },
+  { MODKEY|ShiftMask,			        XK_w,		spawn,		         SHCMD("zettle-ema")  },
   { MODKEY,		          	        XK_e,		spawn,		         SHCMD("st  -e neomutt ; rmdir ~/.abook") },
   { MODKEY,		          	        XK_r,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "lfub", NULL } } },
   { MODKEY|ShiftMask,			        XK_r,		spawn,		         SHCMD("alacritty -e openpdf") },
