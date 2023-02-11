@@ -1,0 +1,9 @@
+#!/bin/env bash
+
+## load and mount gentoo zfs
+
+
+doas zfs load-key -r zpgen/shared && doas zfs mount zpgen/shared && doas zfs set sharenfs="no_root_squash,rw=@10.27.27.0/24" zpgen/shared
+
+
+

@@ -11,7 +11,8 @@ static const struct arg args[] = {
     {ram_used, "^c#7dcfff^   %s  ", NULL },
     // {temp,     "^c#f7768e^   %s  ",    "/sys/class/thermal/thermal_zone8/temp" },
 
-	{disk_free, "^c#9aa5ce^  %s  " , "/" },
+	{disk_free, "^c#9aa5ce^ Local  %s  " , "/" },
+	{disk_free, "^c#ff9e64^ Zfs  %s  " , "/zpgen" },
 	//{disk_total, "%s   " , "/" },
 	{ datetime, "%s",   "^c#c0af68^  %a %b %d   %r  " },
     {run_command,  "^c#2ac3de^  ^b#24283b^ %2s ",      "music.sh" },
