@@ -54,7 +54,10 @@ eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 
 ## Better way of replacing caps lock with escape, by luke
-remaps &
+# remaps &
+# mounting music and vids from gentoobox
+doas mount -t nfs 10.27.27.10:/zpgen/shared /mnt/share/ &
+remapd &
 unclutter &
 xidle &
 xinput set-prop "DLL096D:01 06CB:CDE6 Touchpad" "Coordinate Transformation Matrix" 3.8 0 0 0 3.8 0 0 0 1 &

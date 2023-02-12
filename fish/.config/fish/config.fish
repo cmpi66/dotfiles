@@ -79,13 +79,13 @@ alias flee="zk flee"
 alias nt="zk nt"
 alias lit="zk lit"
 
-alias desk "ssh chris@10.27.27.10"
+abbr desk "ssh chris@10.27.27.10"
 
+abbr deskfs "sudo mount -t nfs 10.27.27.10:/zpgen/shared/ /mnt/share/" 
 # System abbreviations 
 abbr archlinx-fix-keys "sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
 abbr merge "xrdb -merge ~/.Xresources"
 # abbr nvimrc "nvim ~/.config/nvim/"
-# abbr sudo "doas"
 abbr i3 "i3lock -C -i /home/chris/.local/bin/arch-wallpaper.jpg"
 abbr nv "nvim"
 abbr snv "sudo nvim"

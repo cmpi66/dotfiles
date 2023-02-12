@@ -26,19 +26,19 @@ static const char *fonts[]          =
  // "Jetbrains Mono:style=Bold:size=13:antialias=true:autohint=true",
  // "JetBrainsMono Nerd Font:style=Bold:size=12:antialias=true:autohint=true"
  // "Fira Code Mono:style=Bold:size=9:antialias=true:autohint=true",
- "Fira Code Mono:style=Bold:size=8.5:antialias=true:autohint=true",
- "Font Awesome 6 Free Solid:pixelsize=15",
- "Font Awesome 6 Brands:pixelsize=15",
- "Material Design Icons:pixelsize=15",
+ "Fira Code Mono:style=Bold:size=7.5:antialias=true:autohint=true",
+ "Font Awesome 6 Free Solid:pixelsize=13",
+ "Font Awesome 6 Brands:pixelsize=13",
+ "Material Design Icons:pixelsize=13",
  // "Fira Code Nerd Font:style=Bold:size=11:antialias=true:autohint=true"
-"NotoColorEmoji:pixelsize=17:antialias=true:autohint=true"
+"NotoColorEmoji:pixelsize=16:antialias=true:autohint=true"
 
 
 
 
 };
 
- static const char dmenufont[]       = "Jetbrains Mono:style=Bold:size=8:antialias=true:autohint=true";
+ static const char dmenufont[]       = "Jetbrains Mono:style=Bold:size=7.5:antialias=true:autohint=true";
  // static const char dmenufont[]       = "Fira Code Mono:style=Bold:size=9:antialias=true:autohint=true";
 
 // #include "themes/dracula.h"
@@ -117,6 +117,7 @@ static const Rule rules[] = {
 	{ "Tor Browser",     NULL,       NULL,            0,         1,          0,           0,        -1 },
 	{ "Pam_gnupg",     NULL,       NULL,            0,         1,          0,           0,        -1 },
     { "trayer",   NULL,         NULL,       1 << 8,       False },
+    { "firefox",   NULL,         NULL,       1 << 2,       False },
 	{ "St",       NULL,       NULL,            0,         0,          1,           0,        -1 },
 	{ "Alacritty",NULL,       NULL,            0,         0,          1,           0,        -1 },
 	{ NULL,       NULL,       "Event Tester",  0,         0,          0,           1,        -1 }, /* xev */
@@ -140,9 +141,9 @@ static const Layout layouts[] = {
 	{ "[ ] =",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
-	{ "|M|",      centeredmaster },
-	{ ">M>",      centeredfloatingmaster },
-	{ "HHH",      grid },
+	// { "|M|",      centeredmaster },
+	// { ">M>",      centeredfloatingmaster },
+	// { "HHH",      grid },
 };
 
 /* key definitions */
@@ -216,6 +217,7 @@ static Key keys[] = {
 { MODKEY,			                        XK_F4,		spawn,		SHCMD("groff -ms /home/chris/docs/ms/keys.ms -Tpdf | zathura -") },
   { MODKEY,			                  XK_F5,		 spawn,		      SHCMD("torwrap") },
   { MODKEY,			                  XK_F6,		 spawn,		      SHCMD("td-toggle") },
+  { MODKEY,			XK_F11,		spawn,		SHCMD("mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
   { MODKEY,			                  XK_F12,		 spawn,		      SHCMD("remaps") },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
@@ -232,9 +234,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
   { MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY|ShiftMask,             XK_u,      setlayout,      {.v = &layouts[3]} },
-	{ MODKEY,                       XK_i,      setlayout,      {.v = &layouts[4]} },
-	{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[5]} },
+	// { MODKEY|ShiftMask,             XK_u,      setlayout,      {.v = &layouts[3]} },
+	// { MODKEY,                       XK_i,      setlayout,      {.v = &layouts[4]} },
+	// { MODKEY,                       XK_g,      setlayout,      {.v = &layouts[5]} },
 	//{ MODKEY,                       XK_space,  setlayout,      {0} },
   { MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_s,      togglesticky,   {0} },

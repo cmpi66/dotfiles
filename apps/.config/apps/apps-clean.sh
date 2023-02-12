@@ -34,7 +34,9 @@ sudo pacman --noconfirm --needed -S \
   ctags \
   cups \
   cutefish-icons \
+  discord \
   dunst \
+  ebook-tools \
   entr \
   exa \
   fd \
@@ -47,12 +49,13 @@ sudo pacman --noconfirm --needed -S \
   gimp-plugin-gmic \
   glow \
   gnome-keyring \
-  go \
   gnucash \
+  go \
   gparted \
   grub-btrfs \
   gufw \
   inkscape \
+  iperf \
   languagetool \
   lazygit \
   libmythes \
@@ -61,7 +64,6 @@ sudo pacman --noconfirm --needed -S \
   luacheck \
   lxappearance \
   lynx \
-  iperf \
   maim \
   moreutils \
   mpc \
@@ -81,8 +83,8 @@ sudo pacman --noconfirm --needed -S \
   pulsemixer \
   pydf \
   python-black \
+  python-netaddr \
   python-pynvim \
-  qbittorrent \
   r \
   redshift \
   ripgrep \
@@ -90,8 +92,8 @@ sudo pacman --noconfirm --needed -S \
   rofi \
   rofi-calc \
   sdcv \
-  shfmt \
   shellcheck \
+  shfmt \
   stow \
   sxhkd \
   sxiv \
@@ -100,14 +102,18 @@ sudo pacman --noconfirm --needed -S \
   the_silver_searcher \
   tk \
   tldr \
+  transmission-cli \
   tree \
+  unclutter \
   urlscan \
   vim \
   wireguard-tools \
+  xcape \
   xclip \
   xkeycaps \
   xorg-xev \
   xorg-xset \
+  xorg-xsetroot \
   xsel \
   xwallpaper \
   zathura \

@@ -12,16 +12,11 @@ static const struct arg args[] = {
     {cpu_perc, "^c#ddb6f2^ ^b#1e1e2e^  %s%%  ", NULL },
     {ram_used, "^c#74c7ec^ ^b#1e1e2e^  %s  ", NULL },
     {temp,     "^c#f28fad^ ^b#1e1e2e^  %s  ",    "/sys/class/thermal/thermal_zone8/temp" },
-    //{run_command,"^c#fae380^  %2s    ",   "pacman -Qu | grep -Fcv '[ignored]'" },
-    //{run_command,  "^c#fae380^  %2s",     "sb-pacpackages.sh" },
-    //{run_command,  "^c#96cdfb^  %s",      "sb-battery.sh" },
     // { run_command, " %4s  ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
 
 	//{wifi_perc, "  %s%% | ", "wlp0s20f" }
-	{disk_free, "^c#f2cdcd^ ^b#1e1e2e^  %s  " , "/" },
-	//{disk_total, "%s   " , "/" },
-	//{battery_state, "^c#96cdfb^ %s " , "BAT0" },
-        //{battery_perc,  "%s%%  ",  "BAT0" },
+	{disk_free, "^c#f2cdcd^ ^b#1e1e2e^ Local  %s  " , "/" },
+	{disk_free, "^c#91d7e3^ ^b#1e1e2e^ Zfs  %s  " , "/mnt/share/" },
 	// { datetime, "%s",   "^c#f8bd96^ ^b#1e1e2e^  %r   " },
 	{ datetime, "%s",   "^c#f8bd96^  %a %b %d   %r   " },
     {run_command,  "^c#74c7Ec^  ^b#1e1e2e^ %2s ",      "music.sh" },

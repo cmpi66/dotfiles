@@ -7,6 +7,7 @@ yay --noconfirm --needed -S \
   abook-configdir \
   ani-cli \
   anki \
+  aur/trayer-srg \
   catppuccin-gtk-theme-macchiato \
   etcher-bin \
   hakuneko-desktop \
@@ -22,6 +23,7 @@ yay --noconfirm --needed -S \
   sc-im \
   task-spooler \
   timeshift \
+  tremc \
   ueberzug \
   update-grub \
   upwork \
