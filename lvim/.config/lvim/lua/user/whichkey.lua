@@ -4,6 +4,7 @@ lvim.builtin.which_key.mappings["a"] = { "<cmd>Alpha<CR>", "Dashboard" }
 lvim.builtin.which_key.mappings["t"] = { "<cmd>Telescope live_grep<CR>", "Find Text"}
 lvim.builtin.which_key.mappings["o"] = { ":!opout <c-r>%<CR><CR>", "opout"}
 lvim.builtin.which_key.mappings["x"] = { "<cmd>BufferKill<CR>", "Close Buffer" }
+lvim.builtin.which_key.mappings["X"] = { ":!chmod +x %<CR>", "Make script executable" }
 
 lvim.builtin.which_key.mappings["c"] = { ":w<CR>:!compiler %:p<CR><CR>","Doc Compiler"}
 lvim.builtin.which_key.mappings["u"] = { ":w<CR>:!pandoc % -f latex -t docx -o %:r.docx<CR><CR>", "Latex to Docx"}
