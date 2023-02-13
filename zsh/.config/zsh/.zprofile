@@ -62,6 +62,8 @@ export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 export PYTHONSTARTUP="/etc/python/pythonrc"
 export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
 export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel 
+export TERMINFO="$XDG_DATA_HOME"/terminfo
+
 # export $XDG_DATA_HOME/python
 # export $ZK_NOTEBOOK_DIR="/home/chris/repos/brain/docs/emanotes"
 
@@ -95,8 +97,5 @@ function cd () {
     builtin cd "$1"
     ls -ACF
 }
-
-GPG_TTY=$(tty)
-export GPG_TTY
 
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx

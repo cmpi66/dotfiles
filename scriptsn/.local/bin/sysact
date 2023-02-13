@@ -19,8 +19,8 @@ case "$(printf "🔒 lock\n🚪 leave $WM\n♻️ renew $WM\n🐻 hibernate\n�
 	"♻️ renew $WM") kill -HUP "$(wmpid)" ;;
 	'🐻 hibernate') i3lock $ctl hibernate -i ;;
 	'💤 sleep') i3lock $ctl suspend -i ;;
-	'🔃 reboot') $ctl reboot -i ;;
-	'🖥️shutdown') $ctl poweroff -i ;;
+	'🔃 reboot') doas openrc-shutdown -r now ;;
+	'🖥️shutdown') doas openrc-shutdown -p now ;;
 	'📺 display off') xset dpms force off ;;
 	*) exit 1 ;;
 esac

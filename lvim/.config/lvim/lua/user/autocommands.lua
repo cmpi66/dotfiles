@@ -11,6 +11,9 @@ vim.cmd [[
 -- deletes latex build files upon leave
 vim.cmd "autocmd VimLeave *.tex !texclear %"
 
+-- recompiles suckless programs after edits
+vim.cmd "autocmd BufWritePost *.h silent !compiler %:p"
+
 -- runs compiler script and creates pdf of any .markdown and latex file when it's saved
 -- vim.cmd "autocmd BufWritePost *.md silent !compiler %:p"
 vim.cmd "autocmd BufWritePost *.tex silent !compiler %:p"

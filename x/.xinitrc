@@ -48,10 +48,11 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-## This is to run gpg-agent on non systemd distros. Its needed for pam-gnupg
-if [ -x /usr/bin/gpg-agent ]; then
- eval "$(/usr/bin/gpg-agent --daemon)"
-fi
+## This is to run gpg-agent on non systemd distros. Its needed for pam-gnupg UPDATE: when I use this set up, at least on gentoo, I don't get the password prompt. I have to figure out how to make this work with the password prompt. ALSO, I just re-read the post and the guy was talking about RUN-IT not open-rc. open-rc starts up the gpg-agent on boot.
+
+# if [ -x /usr/bin/gpg-agent ]; then
+#  eval "$(/usr/bin/gpg-agent --daemon)"
+# fi
 
 
 # This Luke script is better than my approach of getting rid of caps lock, since he also makes it a dual key while held down. (super)

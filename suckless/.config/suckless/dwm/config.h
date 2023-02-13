@@ -26,10 +26,10 @@ static const char *fonts[]          =
 {  
  // "Iosevka:style=medium:size=9:antialias=true:autohint=true"
  // "Fira Code Mono:style=Bold:size=8.5:antialias=true:autohint=true",
- "Jetbrains Mono:style=bold:size=9:antialias=true:autohint=true",
- "Font Awesome 6 Free Solid:pixelsize=15",
- "Font Awesome 6 Brands:pixelsize=15",
-"Material Design Icons Desktop:size=15",
+ "Jetbrains Mono:style=bold:size=8:antialias=true:autohint=true",
+ "Font Awesome 6 Free Solid:pixelsize=14",
+ "Font Awesome 6 Brands:pixelsize=14",
+"Material Design Icons Desktop:size=14",
  // "Fira Code Nerd Font:style=Bold:size=11:antialias=true:autohint=true"
 "NotoColorEmoji:pixelsize=18:antialias=true:autohint=true"
 
@@ -119,6 +119,8 @@ static const Rule rules[] = {
 	{ "St",       NULL,       NULL,            0,         0,          1,           0,        -1 },
 	{ "Alacritty",       NULL,       NULL,            0,         0,          1,           0,        -1 },
     { "trayer",   NULL,         NULL,       1 << 8,       False },
+    { "firefox",   NULL,         NULL,       1 << 2,       False },
+    // { "tremc",   NULL,         NULL,       1 << 8,       False },
 	{ NULL,       NULL,       "Event Tester",  0,         0,          0,           1,        -1 }, /* xev */
     { NULL,       "sppulse",     NULL,       SPTAG(0),       1,           -1 },
     { NULL,       "spfm",       NULL,       SPTAG(1),       1,           -1 },
@@ -174,7 +176,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY1,                      XK_Return, spawn,          SHCMD("tabbed -r 2 alacritty --embed ''")  },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = (const char*[]){ "alacritty", "--config-file", "/home/chris/.config/alacritty/tmux.yml", "-e", "tmux", "new-session", "-s", "term", NULL } } },
-  { MODKEY,		                   	XK_BackSpace,	spawn,	     {.v = (const char*[]){ "rofi-poweroff.sh", NULL } } },
+  { MODKEY,		                   	XK_BackSpace,	spawn,	     {.v = (const char*[]){ "sysact", NULL } } },
   { MODKEY|ShiftMask,		          XK_BackSpace,	spawn,	     SHCMD("i3lock -C -i /home/chris/.local/bin/2770299.png")  },
   { MODKEY,		          	        XK_w,		spawn,             {.v = (const char*[]){ BROWSER, NULL } } },
   { MODKEY|ShiftMask,			        XK_w,		spawn,		         SHCMD("zettle-ema")  },
@@ -206,6 +208,7 @@ static Key keys[] = {
   { MODKEY,			                        XK_F4,		spawn,		SHCMD("groff -ms /home/chris/docs/ms/keys.ms -Tpdf | zathura -") },
   { MODKEY,			                  XK_F5,		 spawn,		      SHCMD("torwrap") },
   { MODKEY,			                  XK_F6,		 spawn,		      SHCMD("td-toggle") },
+  // { MODKEY,			XK_F11,		spawn,		SHCMD("mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
   { MODKEY,			                  XK_F12,		 spawn,		      SHCMD("remaps") },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },

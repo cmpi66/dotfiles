@@ -54,3 +54,5 @@ tmux/.config/tmux/ressurect
 mpv/.config/mpv/watch_later
 
 lunarvim/.local/share/lunarvim/site
+
+applications/.local/share/applications/start-tor-browser.desktop
