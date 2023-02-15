@@ -35,6 +35,7 @@ export terminal="alacritty"
 
 
 # ~/ Clean up:
+# export _ZO_EXCLUDE_DIRS="/"
 export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/shell/inputrc"
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 export LYNX_CFG_PATH="$XDG_CONFIG_HOME"/lynx.cfg
