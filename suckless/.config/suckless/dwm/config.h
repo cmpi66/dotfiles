@@ -179,7 +179,7 @@ static Key keys[] = {
   { MODKEY|ShiftMask,		          XK_c,		spawn,		         {.v = (const char*[]){ "rofi", "-show","calc", "-no-show-match", "-no-sort", NULL } } },
   
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = (const char*[]){ "alacritty", "--config-file", "/home/chris/.config/alacritty/tmux.yml", "-e", "tmux", "new-session", "-s", "term", NULL } } },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = (const char*[]){ "alacritty", "--config-file", "/home/chris/.config/alacritty/tmux.yml", "-e", "t", NULL } } },
 { MODKEY,		                     	XK_BackSpace,	spawn,	    {.v = (const char*[]){ "sysact", NULL } } },
 { MODKEY|ShiftMask,		            XK_BackSpace,	spawn,	   SHCMD("i3lock -C -i /home/chris/.local/bin/arch-wallpaper.jpg")  },
   { MODKEY,		          	        XK_w,		spawn,            {.v = (const char*[]){ BROWSER, NULL } } },

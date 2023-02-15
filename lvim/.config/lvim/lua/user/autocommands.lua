@@ -32,6 +32,9 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- start new file in insert mode and start already created empty file in insert mode
+-- start new file in insert mode and 
 vim.cmd "autocmd Bufnewfile * startinsert"
-vim.cmd "autocmd VimEnter * if getfsize(expand ('%')) == 0 | startinsert | endif"
+
+-- previously created empty file in insert mode
+-- vim.cmd "autocmd VimEnter * if getfsize(expand ('%')) == 0 | startinsert | endif"
+-- This messes up 'nvim .'

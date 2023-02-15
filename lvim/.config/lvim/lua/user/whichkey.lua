@@ -13,6 +13,17 @@ lvim.builtin.which_key.mappings["u"] = { ":w<CR>:!pandoc % -f latex -t docx -o %
 
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 
+-- Better yanking
+lvim.builtin.which_key.vmappings["y"] = {"'\'+y"}
+lvim.builtin.which_key.mappings["y"] = {"'\'+y"}
+-- lvim.builtin.which_key.mappings["Y"] = {"'\'+Y"}
+-- lvim.builtin.which_key.mappings["Y"] = {'gg"+yG'}
+lvim.keys.normal_mode["<leader>Y"] = 'gg"+yG'
+
+-- lvim.builtin.which_key.mappings["p"] = {"'\'_dP"}
+lvim.builtin.which_key.vmappings["d"] = {"'\'_d"}
+lvim.builtin.which_key.mappings["d"] = {"'\'_d"}
+
 lvim.builtin.which_key.mappings["v"] = {
   name = "Zenmode and Pencil",
 	z = { "<cmd>ZenMode<cr>", "Zenmode" },
