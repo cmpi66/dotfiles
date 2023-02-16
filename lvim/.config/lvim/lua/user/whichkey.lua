@@ -8,10 +8,21 @@ lvim.builtin.which_key.mappings["X"] = { ":!chmod +x %<CR>", "Make script execut
 
 lvim.builtin.which_key.mappings["c"] = { ":w<CR>:!compiler %:p<CR><CR>","Doc Compiler"}
 lvim.builtin.which_key.mappings["u"] = { ":w<CR>:!pandoc % -f latex -t docx -o %:r.docx<CR><CR>", "Latex to Docx"}
--- lvim.builtin.which_key.mappings["n"] = { "<Cmd>ZkNew { dir = vim.fn.expand('%:p:h'), title = vim.fn.input('Title: ') }<CR>", "new note"}
 -- lvim.builtin.which_key.mappings["o"] = { ":w<CR>:!pandoc % -t beamer -o %:r.pdf<CR><CR>","Beamer Presentation"}
 
-lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+lvim.builtin.which_key.mappings["P"] =   { "<cmd>Telescope projects<CR>", "Projects" }
+
+-- Better yanking
+lvim.builtin.which_key.vmappings["y"] = {"'\'+y"}
+lvim.builtin.which_key.mappings["y"] = {"'\'+y"}
+-- lvim.builtin.which_key.mappings["Y"] = {"'\'+Y"}
+-- lvim.builtin.which_key.mappings["Y"] = {'gg"+yG'}
+lvim.keys.normal_mode["<leader>Y"] = 'gg"+yG'
+
+-- lvim.builtin.which_key.mappings["p"] = {"'\'_dP"}
+lvim.builtin.which_key.vmappings["d"] = {"'\'_d"}
+lvim.builtin.which_key.mappings["d"] = {"'\'_d"}
+
 
 lvim.builtin.which_key.mappings["v"] = {
   name = "Zenmode and Pencil",
@@ -20,7 +31,7 @@ lvim.builtin.which_key.mappings["v"] = {
  	h = { "<cmd>HardPencil<cr>", "Hard pencil" },
  	v = { "<cmd>vs<cr>", "Vertical Split" },
  	m = { "<cmd>TZMinimalist<cr>", "True Zen Minimalist" },
- 	l = { "<cmd>lua require('languagetool').check_grammar()<CR>", "Language Tool" },
+ 	-- l = { "<cmd>lua require('languagetool').check_grammar()<CR>", "Language Tool" },
 }
 
 lvim.builtin.which_key.mappings["z"] = {
@@ -32,11 +43,6 @@ lvim.builtin.which_key.mappings["z"] = {
   l = { "<cmd>ZkNew { dir = '/home/chris/.local/.src/zettlekasten/literature', title = vim.fn.input('Title: ') }<cr>", "Literature Note" },
   t = { "<cmd>Telescope zk tags<cr>", "Search by Tags" },
 
-  -- n = { "<cmd>ZkNew<cr>", "new note" },
-  -- l = { "<cmd>ZkNew { dir = 'literature' }<cr>", "literature note" },
-  -- p = { "<cmd>ZkNew { dir = 'permanent' }<cr>", "permanent note" },
-  -- f = { "<cmd>ZkNew { dir = 'fleeting' }<cr>", "fleeting note" },
-  -- w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
 }
 
 lvim.builtin.which_key.mappings["T"] = {
