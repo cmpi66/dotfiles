@@ -123,6 +123,7 @@ static const Rule rules[] = {
     { NULL,   NULL,         "tremc",       1 << 8,       False },
     { NULL,   NULL,         "neomutt",       1 << 5,       False },
     { NULL,   NULL,         "openpdf",       1 << 1,    0,           1,             0,       False },
+    { NULL,   NULL,         "okular",       1 << 1,    0,           1,             0,       False },
     { NULL,   NULL,         "lfub",       1 << 7,       False },
     // { NULL,   NULL,         "zettle:2:notes",       1 << 7,       False },
 	{ NULL,       NULL,       "Event Tester",  0,         0,          0,           1,        -1 }, /* xev */
@@ -186,7 +187,7 @@ static Key keys[] = {
   { MODKEY|ShiftMask,			        XK_w,		spawn,		         SHCMD("zettle-ema")  },
   { MODKEY,		          	        XK_e,		spawn,		         SHCMD("st -t neomutt -e neomutt ; rmdir ~/.abook") },
   { MODKEY,		          	        XK_r,		spawn,		         {.v = (const char*[]){ TERMINAL, "-t", "lfub", "-e", "lfub", NULL } } },
-  { MODKEY|ShiftMask,			        XK_r,		spawn,		         SHCMD("alacritty -t openpdf -e openpdf") },
+  { MODKEY|ShiftMask,			        XK_r,		spawn,		         SHCMD("openpdf") },
   { MODKEY,		                    XK_p,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "htop", NULL } } },
   { MODKEY,		          	        XK_a,		spawn,		         SHCMD(" st -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook") },
   { MODKEY,		                   XK_m,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "ncmpcpp", NULL } } },
