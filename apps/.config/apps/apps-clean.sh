@@ -106,6 +106,7 @@ sudo pacman --noconfirm --needed -S \
   tldr \
   transmission-cli \
   tree \
+  tree-sitter \
   unclutter \
   urlscan \
   vim \
