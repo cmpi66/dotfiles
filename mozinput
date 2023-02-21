@@ -1,0 +1,4 @@
+#!/bin/env bash
+
+[ ! -f /etc/profile.d/use-xinput2.sh ] && printf 'Section "export MOZ_USE_XINPUT2=1"
+EndSection' > /etc/profile.d/use-xinput2.sh
