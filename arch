@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+if [[ -z $STOW_FOLDERS ]]; then
+    STOW_FOLDERS="alacritty,applications,apps,bash,bat,dunst,dwmkeys,fish,fontconfig,icons,iprules,kitty,lf,lunarvim,lvim,mime,mpd,mpv,ncmpcpp,neo,neovim,office,picom,redshift,rofi,rofi-themes,scim,scriptsn,shell,starship,suckless,sxhkd,sxiv,tmux,user-dirs,x,zathura,zk,zsh,zshenv"
+fi
+
+if [[ -z $DOTFILES ]]; then
+    DOTFILES=$HOME/.dotfiles
+fi
+
+STOW_FOLDERS=$STOW_FOLDERS DOTFILES=$DOTFILES $DOTFILES/install
+

@@ -24,6 +24,8 @@ sudo pacman --noconfirm --needed -S \
   arch-wiki-docs \
   aspell-en \
   bat \
+  ninja \
+  cmake \
   brightnessctl \
   calcurse \
   calibre \
