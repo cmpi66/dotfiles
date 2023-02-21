@@ -38,7 +38,8 @@ lvim.plugins = {
   {"ThePrimeagen/vim-be-good"},
   {"rebelot/kanagawa.nvim"},
   {"MunifTanjim/nui.nvim"},
-  {"jackMort/ChatGPT"}
+  {"jackMort/ChatGPT"},
+
   -- {"christianchiarulli/lualine.nvim"}
 
 	-- {'kdheepak/tabline.nvim'}

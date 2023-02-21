@@ -14,8 +14,8 @@
 # if certain things happen, which is a good thing.  Otherwise, we can
 # get hidden bugs that are hard to discover.
 set -euo pipefail
-# DMENU="dmenu -i -l 20 -p"
-DMENU="rofi -dmenu -i -l 20 -p"
+DMENU="dmenu -i -l 20 -p"
+# DMENU="rofi -dmenu -i -l 20 -p"
 DMBROWSER="firefox-bin"
 
 declare -A websearch

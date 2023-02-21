@@ -9,7 +9,6 @@ export XDG_CACHE_HOME=$HOME/.cache/
 export XDG_DATA_HOME=$HOME/.local/share
 export ZDOTDIR=$HOME/.config/zsh   
 export $EDITOR="lvim" 
-# PATH="$PATH:/$HOME/.local/bin"
 
 PATH="$PATH:/$HOME/.local/appimages"
 
@@ -18,7 +17,7 @@ PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 # PATH="$PATH:/$HOME/.local/bin/statusbar"
  # . "$HOME/.cargo/env"
 # This is with the new xdg cargo set up, if it doesnt work then ill just switch it back. NO biggie
-# PATH="$PATH:/$HOME/.local/share/cargo/bin"
+PATH="$PATH:/$HOME/.local/share/cargo/bin"
 
 # . "$HOME/.cargo/env"
 # PATH="$PATH:/$HOME/.cargo/bin"
@@ -66,9 +65,6 @@ export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel
 export TERMINFO="$XDG_DATA_HOME"/terminfo
 
 # export $XDG_DATA_HOME/python
-# export $ZK_NOTEBOOK_DIR="/home/chris/repos/brain/docs/emanotes"
-
-# export "$ZK_NOTEBOOK_DIR/home/chris/repos/brain/docs/emanotes/permanent/"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
