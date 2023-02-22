@@ -1,3 +1,11 @@
 #!/usr/bin/env fish
 
 nix-env -iA nixpkgs.emanote
+nix-env -iA nixpkgs.anki
+nix-env -iA nixpkgs.ani-cli
+nix-env -iA nixpkgs.etcher
+nix-env -iA nixpkgs.hakuneko
+nix-env -iA nixpkgs.htop-vim
+nix-env -iA nixpkgs.kcc
+nix-env -iA nixpkgs.i3lock-color
+nix-env -iA nixpkgs.rpi-imager
