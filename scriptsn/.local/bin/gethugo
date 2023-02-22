@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Hugo install or upgrade
+function gethugo () {
+    wget -q -P tmp/ https://github.com/gohugoio/hugo/releases/download/v"$@"/hugo_extended_"$@"_Linux-64bit.tar.gz
+    tar xf tmp/hugo_extended_"$@"_Linux-64bit.tar.gz -C tmp/
+    sudo mv -f tmp/hugo /usr/local/bin/
+    rm -rf tmp/
+    # hugo version
+}
