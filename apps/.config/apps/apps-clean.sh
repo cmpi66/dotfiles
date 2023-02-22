@@ -21,6 +21,7 @@
 
 
 sudo pacman --noconfirm --needed -S \
+  alacritty \
   arch-wiki-docs \
   aspell-en \
   bat \
