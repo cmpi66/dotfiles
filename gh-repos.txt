@@ -1,4 +1,0 @@
-git@gitlab.com:chris-m/newsite.git
-git@gitlab.com:chris-m/newsboat-repo.git
-git@gitlab.com:chris-m/privatefiles.git
-git@github.com:cmpi66/cmpi66.git

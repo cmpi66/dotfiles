@@ -29,7 +29,6 @@ sudo pacman --noconfirm --needed -S \
   brightnessctl \
   calcurse \
   calibre \
-  cargo \
   clipnotify \
   codespell \
   cronie \
@@ -78,7 +77,7 @@ sudo pacman --noconfirm --needed -S \
   net-tools \
   newsboat \
   okular \
-  pandoc \
+  pandoc-cli \
   paru \
   pcmanfm \
   procs \

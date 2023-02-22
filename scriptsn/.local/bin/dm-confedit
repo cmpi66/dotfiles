@@ -34,6 +34,8 @@ DMEDITOR="${DMTERM} lvim"
 declare -A confedit_list
 # confedit_list[confedit]="$HOME/.config/dmscripts/config"
 confedit_list[alacritty]="$HOME/.config/alacritty/alacritty.yml"
+confedit_list[yayapps]="$HOME/.config/apps/yayapps.sh"
+confedit_list[pacapps]="$HOME/.config/apps/apps-clean.sh"
 confedit_list[bash]="$HOME/.bashrc"
 confedit_list[calcurse]="$HOME/.config/calcurse/conf"
 confedit_list[dunst]="$HOME/.config/dunst/dunstrc"
