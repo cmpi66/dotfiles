@@ -1,0 +1,3 @@
+#!/usr/bin/env fish
+
+nix-env -iA nixpkgs.emanote
