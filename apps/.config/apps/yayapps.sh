@@ -6,7 +6,6 @@ yay --noconfirm --needed -S \
   7-zip-full \
   abook-configdir \
   ani-cli \
-  anki \
   aur/trayer-srg \
   etcher-bin \
   hakuneko-desktop \
@@ -27,6 +26,7 @@ yay --noconfirm --needed -S \
   urlview-xdg-git \
   xidlehook \
   yt-dlp \
+  anki \
 
 
   
