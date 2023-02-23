@@ -12,6 +12,7 @@ yay --noconfirm --needed -S \
   i3lock-color \
   kcc \
   lf \
+  picom-jonaburg-git \
   mutt-wizard \
   noto-color-emoji-fontconfig \
   opustags \
