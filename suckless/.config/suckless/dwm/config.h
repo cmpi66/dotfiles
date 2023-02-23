@@ -213,6 +213,7 @@ static Key keys[] = {
   { MODKEY,			                        XK_F4,		spawn,		SHCMD("groff -ms /home/chris/docs/ms/keys.ms -Tpdf | zathura -") },
   { MODKEY,			                  XK_F5,		 spawn,		      SHCMD("torwrap") },
   { MODKEY,			                  XK_F6,		 spawn,		      SHCMD("td-toggle") },
+  { MODKEY,			                  XK_F7,		 spawn,		      SHCMD("dm-confedit") },
   // { MODKEY,			                  XK_F7,		 spawn,		      SHCMD("dmenu-man") },
   // { MODKEY,			XK_F11,		spawn,		SHCMD("mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
   { MODKEY,			                  XK_F12,		 spawn,		      SHCMD("remaps") },
