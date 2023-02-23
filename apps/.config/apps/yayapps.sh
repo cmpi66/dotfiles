@@ -7,7 +7,6 @@ yay --noconfirm --needed -S \
   abook-configdir \
   ani-cli \
   aur/trayer-srg \
-  etcher-bin \
   hakuneko-desktop \
   htop-vim \
   i3lock-color \
@@ -21,7 +20,6 @@ yay --noconfirm --needed -S \
   task-spooler \
   tremc \
   ueberzug \
-  update-grub \
   upwork \
   urlview-xdg-git \
   xidlehook \
