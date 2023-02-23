@@ -1,6 +1,7 @@
 #!/usr/bin/env fish
 
 nix-env -iA nixpkgs.emanote
+nix-env -iA nixpkgs.librewolf
 # nix-env -iA nixpkgs.anki
 # nix-env -iA nixpkgs.ani-cli
 # nix-env -iA nixpkgs.etcher
