@@ -10,6 +10,8 @@ export XDG_DATA_HOME=$HOME/.local/share
 export ZDOTDIR=$HOME/.config/zsh   
 export $EDITOR="lvim" 
 
+# integrate nix pacakges with desktop
+export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
 PATH="$PATH:/$HOME/.local/appimages"
 
 ## Stole this from luke. Make every sub directory from bin to path. 
