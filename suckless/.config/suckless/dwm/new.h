@@ -216,8 +216,8 @@ static Key keys[] = {
 
   // { MODKEY|ShiftMask,		          XK_r,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "sc-im", NULL } } },
 
-  { MODKEY,		          	        XK_p,		spawn,		         {.v = (const char*[]){ "okular", NULL } } },
-  { MODKEY|ShiftMask,		          XK_p,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "htop", NULL } } },
+  // { MODKEY,		          	        XK_p,		spawn,		         {.v = (const char*[]){ "okular", NULL } } },
+  { MODKEY,		          XK_p,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "htop", NULL } } },
 
   { MODKEY,		          	        XK_a,		spawn,		         SHCMD(" st -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook") },
 

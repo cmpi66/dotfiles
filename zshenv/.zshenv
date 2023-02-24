@@ -10,8 +10,9 @@ export ZDOTDIR=$HOME/.config/zsh
 export $EDITOR="lvim" 
 # PATH="$PATH:/$HOME/.local/bin"
 
-# integrate nix pacakges with desktop
-export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
+# integrate nix pacakges with desktop: THIS KILLS MY ICONS AND WONT LET ME DOWNLOAD OR UPLOAD FILES WITH ANY BROWSER. THIS WAS WHAT KILLED AND MESSED UP OKULAR TOO. WOW, SO MUCH DAMAGE THIS COMMAND. IT works on gentoo though
+# export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
+
 PATH="$PATH:/$HOME/.local/appimages"
 
 ## Stole this from luke. Make every sub directory from bin to path. 

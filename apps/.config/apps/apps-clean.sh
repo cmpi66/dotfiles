@@ -112,7 +112,6 @@ sudo pacman --noconfirm --needed -S \
   vim \
   wireguard-tools \
   xcape \
-  xclip \
   xkeycaps \
   xorg-xev \
   xorg-xset \
