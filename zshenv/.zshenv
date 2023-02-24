@@ -74,6 +74,7 @@ export HISTFILE="$XDG_DATA_HOME/zsh/history"
 # export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
 export MBSYNCRC="$XDG_CONFIG_HOME"/isync/mbsyncrc
 export DICS="/usr/share/stardict/dic/"
+export _JAVA_AWT_WM_NONREPARENTING=1 # Fix for Java applications in dwm
 # export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
 # export FZF_DEFAULT_OPTS="--layout=reverse --height 60%"
 # export MOZ_USE_XINPUT2="1"	
