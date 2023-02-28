@@ -1,3 +1,10 @@
 #!/bin/env bash
 
-[[ -f "$.npmrc" ]] && mv "$.npmrc" ~/.config/npm/npmrc
+
+NPMRC="$HOME/.npmrc"
+
+
+
+if [[ -f "$NPMRC" ]]; then
+  mv "$NPMRC" $HOME/.config/npm/npmrc
+fi

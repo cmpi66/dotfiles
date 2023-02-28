@@ -11,6 +11,7 @@ delete_dirs=(
     "/home/chris/Templates"
     "/home/chris/Videos"
     "/home/chris/Sync"
+    "/home/chris/.cargo"
 )
 
 # Loop through each directory and delete it if it exists

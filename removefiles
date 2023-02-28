@@ -4,7 +4,7 @@
 delete_files=(
     "/home/chris/.bashrc"
     "/home/chris/.bash_history"
-    "/home/chris/.bash_loguout"
+    "/home/chris/.bash_logout"
     "/home/chris/.bash_profile"
     "/home/chris/.profile"
     "/home/chris/.zshenv"
