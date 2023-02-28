@@ -43,4 +43,3 @@ do
     fi
 done
 
-[[ -f $.npmrc ]] && mv $.npmrc ~/.config/npm/npmrc
