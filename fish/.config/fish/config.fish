@@ -160,6 +160,7 @@ starship init fish | source
 scheme set catppuccin
 
 source ~/.config/fish/shortcuts.fish
+source ~/.config/fish/fnm.fish
 # source ~/.config/fish/fzf_fish_key_bindings.fish
 
 # >>> conda initialize >>>

@@ -4,5 +4,4 @@
 
 # nvm install --lts 
 # npm i -g neovim
-
-n 14
+fnm install 14
