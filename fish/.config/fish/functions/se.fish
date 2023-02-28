@@ -1,3 +1,3 @@
-function se 
- du -a ~/.local/bin/* | awk '{print$2}' | fzf | xargs -r $EDITOR
+function se
+    bass source ~/.config/shell/functionsrc ';' se $argv
 end

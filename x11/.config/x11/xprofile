@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# This file runs when a DM logs you into a graphical session.
+# If you use startx/xinit like a Chad, this file will also be sourced.
+
+# xrandr --dpi 96		# Set DPI. User may want to use a larger number for larger screens.
+eval $(gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
+
+# mounting music and vids from gentoobox
+doas mount -t nfs 10.27.27.10:/zpgen/shared /mnt/share/ &
+xidle &
+xinput set-prop "DLL096D:01 06CB:CDE6 Touchpad" "Coordinate Transformation Matrix" 3.8 0 0 0 3.8 0 0 0 1 &
+clipmenud &
+exec slstatus &
+redshift &
+picom &
+syncthing --no-browser &
+setbg &			# set the background with the `setbg` script
+xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!	# Uncomment to use Xresources colors/settings on startup
+
+autostart="mpd dunst unclutter pipewire remapd"
+
+for program in $autostart; do
+	pidof -s "$program" || "$program" &
+done >/dev/null 2>&1
+
+# Ensure that xrdb has finished running before moving on to start the WM/DE.
+[ -n "$xrdbpid" ] && wait "$xrdbpid"
+

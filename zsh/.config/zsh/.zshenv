@@ -1,6 +1,6 @@
 #
 # testing this setting
-typeset -U PATH path
+# typeset -U PATH path
 
 #XDG
 export XDG_STATE_HOME=$HOME/.local/state
@@ -34,20 +34,6 @@ export movplay="mpv"
 export term=xterm-256color
 export picview="sxiv"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/chris/.local/share/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/chris/.local/share/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/chris/.local/share/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/chris/.local/share/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 # ~/ Clean up:
 export MANPATH=/usr/share/man:/usr/local/share/man:$HOME/.nix-profile/share/man
@@ -83,9 +69,6 @@ export W3M_DIR="$XDG_DATA_HOME"/w3m
 export PATH=~/.local/.npm-global/bin:$PATH
 export N_PREFIX="$HOME/.local/n"
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
-# prefix=${XDG_DATA_HOME}/npm
-cache=${XDG_CACHE_HOME}/npm
-init-module=${XDG_CONFIG_HOME}/npm/config/npm-init.js
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
@@ -103,9 +86,9 @@ export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
 # MANPATH="$MANPATH:/usr/local/share/man"
 # export MANPATH=/usr/local/share/man:$MANPATH
 # Use $XINITRC variable if file exists.
-[ -f "$XINITRC" ] && alias startx="startx $XINITRC"
+# [ -f "$XINITRC" ] && alias startx="startx $XINITRC"
 
-[ -f "$MBSYNCRC" ] && alias mbsync="mbsync -c $MBSYNCRC"
+# [ -f "$MBSYNCRC" ] && alias mbsync="mbsync -c $MBSYNCRC"
 
 export LF_ICONS="di=📁:\
 fi=📃:\
@@ -185,5 +168,17 @@ ex=🎯:\
 *.java=♨:\
 "
 
-
-. "/home/chris/.local/share/cargo/env"
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/home/chris/.local/share/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/home/chris/.local/share/miniconda3/etc/profile.d/conda.sh" ]; then
+#         . "/home/chris/.local/share/miniconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/home/chris/.local/share/miniconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# <<< conda initialize <<<

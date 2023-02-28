@@ -1,0 +1,90 @@
+Xcursor.size: 28
+Xft.dpi: 130
+
+
+! TokyoNight colors for Xresources
+
+! *background: #24283b
+! *foreground: #c0caf5
+!
+! *color0: #1D202F
+! *color1: #f7768e
+! *color2: #9ece6a
+! *color3: #e0af68
+! *color4: #7aa2f7
+! *color5: #bb9af7
+! *color6: #7dcfff
+! *color7: #a9b1d6
+!
+! *color8: #414868
+! *color9: #f7768e
+! *color10: #9ece6a
+! *color11: #e0af68
+! *color12: #7aa2f7
+! *color13: #bb9af7
+! *color14: #7dcfff
+! *color15: #c0caf5
+!
+
+
+! Doom-one colors for Xresources
+!
+! *background: #282c34
+! *foreground: #bbc2cf
+!
+! *color0: #282c34
+! *color1: #ff6c6b
+! *color2: #98be65
+! *color3: #ecbe7b
+! *color4: #51afef
+! *color5: #a9a1e1
+! *color6: #46d9ff
+! *color7: #bbc2cf
+!
+! *color8: #3f444a
+! *color9: #ff6c6b
+! *color10: #98be65
+! *color11: #da8548
+! *color12: #51afef
+! *color13: #a9a1e1
+! *color14: #46d9ff
+! *color15: #efefef
+
+! Catppuccin
+
+*background: #24273a
+*foreground: #D9E0EE
+
+! Gray
+*color0: #6E6C7E
+*color8: #988BA2
+
+! Red
+*color1: #F28FAD
+*color9: #F28FAD
+
+! Green
+*color2: #ABE9B3
+*color10: #ABE9B3
+
+! Yellow
+*color3: #FAE3B0
+*color11:  #FAE3B0
+
+! Blue
+*color4: #96CDFB
+*color12: #96CDFB
+
+! Maguve
+*color5: #F5C2E7
+*color13: #F5C2E7
+
+! Pink
+*color6: #89dceb
+*color14: #89dceb
+
+! Whites
+*color7: #D9E0EE
+*color15: #D9E0EE
+
+*.cursorColor: #89dceb
