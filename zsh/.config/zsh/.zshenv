@@ -69,7 +69,7 @@ export W3M_DIR="$XDG_DATA_HOME"/w3m
 export PATH=~/.local/.npm-global/bin:$PATH
 export N_PREFIX="$HOME/.local/n"
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
-export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
+export FZF_DEFAULT_OPTS="--layout=reverse --height 50%"
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
 ## sudo not required for some system commands

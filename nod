@@ -2,5 +2,7 @@
 
 # This is my work around ansible unable to run fish commmands. 
 
-nvm install --lts 
-npm i -g neovim
+# nvm install --lts 
+# npm i -g neovim
+
+n 14
