@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# List of directories to delete
+delete_files=(
+    "/home/chris/.bashrc"
+    "/home/chris/.bash_history"
+    "/home/chris/.bash_loguout"
+    "/home/chris/.bash_profile"
+    "/home/chris/.profile"
+    "/home/chris/.zshenv"
+    "/home/chris/.wget-hsts"
+)
+
+# Loop through each directory and delete it if it exists
+for file in "${delete_files[@]}"
+do
+    if [ -f "$file" ]
+    then
+        rm  "$file"
+    fi
+done
