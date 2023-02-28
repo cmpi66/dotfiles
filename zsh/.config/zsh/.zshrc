@@ -97,13 +97,9 @@ xset r rate 300 50
 
 # Environment variables set everywhere
 export EDITOR="lvim"
-export TERMINAL="st"
+export TERMINAL="alacritty"
 export BROWSER="firefox-bin"
 
-
- export NVM_DIR="$HOME/.config//nvm"
- [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
- [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" --no-use   # This loads nvm bash_completion
  
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
@@ -114,4 +110,3 @@ eval "$(zoxide init zsh)"
 
 # export FZF_DEFAULT_OPTS='--color=bg+:#302D41,bg:#1E1E2E,spinner:#F8BD96,hl:#F28FAD --color=fg:#D9E0EE,header:#F28FAD,info:#DDB6F2,pointer:#F8BD96 --color=marker:#F8BD96,fg+:#F2CDCD,prompt:#DDB6F2,hl+:#F28FAD'
 
-source /home/chris/.config/broot/launcher/bash/br

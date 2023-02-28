@@ -1,5 +1,6 @@
 require "user.lsp.languages.rust"
 require "user.lsp.languages.python"
+-- require "user.lsp.languages.js-ts"
 
 lvim.format_on_save = false
 lvim.lsp.diagnostics.virtual_text = false

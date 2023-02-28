@@ -118,8 +118,12 @@ abbr vpndown "sudo wg-quick down gentoobox"
 
 abbr cmpiup "rsync -uvrP --delete-after ~/.local/src/sites/cmpi4/website/public/ root@cmpi4.com:/var/www/cmpi4/"
 abbr tabs "xargs -n1 firefox-bin <"
-abbr paste "xclip -selection c -o >"
+# abbr paste "xclip -selection c -o >"
+abbr paste "xsel --clipboard --output >" 
 abbr updategrub "sudo grub-mkconfig -o /boot/grub/grub.cfg"
+abbr poweroff "doas openrc-shutdown -p now"
+abbr reboot "doas openrc-shutdown -r now"
+abbr mpv "mpv --fullscreen"
 
 ### ANSIBLE
 
@@ -140,7 +144,7 @@ bind -M insert \ce 'ncdu'
 bind -M insert \ck history-search-backward # Up
 bind -M insert \cj history-search-forward # Down
  # bind -M insert jk "if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char force-repaint; end"
-bind -M insert -m default jk backward-char force-repaint
+# bind -M insert -m default jk backward-char force-repaint
 # bind -M insert -m default kj backward-char force-repaint
 
 # bind -M visual y fish_clipboard_copy

@@ -6,7 +6,7 @@ lvim.plugins = {
    { "folke/zen-mode.nvim"},
    { "folke/twilight.nvim"},
    { "preservim/vim-pencil"},
-   { "phaazon/hop.nvim"},
+   -- { "phaazon/hop.nvim"},
    {	"Pocco81/true-zen.nvim"},
    { "p00f/nvim-ts-rainbow"},
    { "norcalli/nvim-colorizer.lua"},
@@ -14,7 +14,7 @@ lvim.plugins = {
    {"simrat39/rust-tools.nvim"},
    {"lvimuser/lsp-inlayhints.nvim"},
    {"kevinhwang91/nvim-bqf"},
-   -- {"kylechui/nvim-surround"},
+   {"kylechui/nvim-surround"},
    {"nacro90/numb.nvim"},
    {"is0n/jaq-nvim"},
   ({
@@ -37,8 +37,55 @@ lvim.plugins = {
 },
   {"ThePrimeagen/vim-be-good"},
   {"rebelot/kanagawa.nvim"},
+  -- {"MunifTanjim/nui.nvim"},
+
+  {"gelguy/wilder.nvim"},
+  {
+  "tpope/vim-fugitive",
+  cmd = {
+    "G",
+    "Git",
+    "Gdiffsplit",
+    "Gread",
+    "Gwrite",
+    "Ggrep",
+    "GMove",
+    "GDelete",
+    "GBrowse",
+    "GRemove",
+    "GRename",
+    "Glgrep",
+    "Gedit"
+  },
+  ft = {"fugitive"}
+},
+  {
+  "windwp/nvim-ts-autotag",
+  config = function()
+    require("nvim-ts-autotag").setup()
+  end,
+},
+{
+  "turbio/bracey.vim",
+  cmd = {"Bracey", "BracyStop", "BraceyReload", "BraceyEval"},
+  run = "npm install --prefix server",
+},
   {"MunifTanjim/nui.nvim"},
-  {"jackMort/ChatGPT"},
+  {"jackMort/ChatGPT.nvim"},
+
+ {
+    "saecki/crates.nvim",
+    version = "v0.3.0",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("crates").setup {
+        null_ls = {
+          enabled = true,
+          name = "crates.nvim",
+        },
+      }
+    end,
+  },
 
   -- {"christianchiarulli/lualine.nvim"}
 

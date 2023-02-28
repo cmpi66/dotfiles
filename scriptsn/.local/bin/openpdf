@@ -16,7 +16,7 @@ DMENU="dmenu -i -l 15 -p"
 pdfs=$(find "$HOME" -maxdepth 6 ! -path "$HOME/.config/*" -name "*.pdf" | $DMENU "Select PDF:")
 
 if [ -n "$pdfs" ]; then
-  okular "$pdfs"
+  zathura "$pdfs"
 fi
 
 

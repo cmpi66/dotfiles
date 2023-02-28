@@ -1,38 +1,39 @@
--- require "user.catppuccin"
-require "user.tokyonight"
--- require "user.kanagawa"
-require "user.plugins"
-require "user.autocommands"
-require "user.telescope"
-require "user.keymaps"
-require "user.whichkey"
-require "user.options"
-require "user.builtins"
-require "user.colorscheme"
-require "user.lsp"
-require "user.abbreviations"
-require "user.colorizer"
-require "user.hop"
-require "user.bqf"
-require "user.numb"
-require "user.jaq"
--- require "user.surround"
--- require "user.treesitter"
-require "user.quickscope"
-require "user.true-zen"
-require "user.lsp-inlayhints"
-require "user.twilight"
-require "user.zen-mode"
-require "user.neoscroll"
--- require "user.fidget"
-require "user.auto-session"
-require "user.harpoon"
-require "user.zk"
--- require "user.chatgpt"
--- require "user.tabline"
--- require "user.ltex"
--- require "user.lualine"
-
+-- reload "user.catppuccin"
+reload "user.tokyonight"
+-- reload "user.kanagawa"
+reload "user.plugins"
+reload "user.autocommands"
+reload "user.telescope"
+reload "user.keymaps"
+reload "user.whichkey"
+reload "user.options"
+reload "user.builtins"
+reload "user.colorscheme"
+reload "user.lsp"
+reload "user.abbreviations"
+reload "user.colorizer"
+-- reload "user.hop"
+reload "user.bqf"
+reload "user.numb"
+reload "user.jaq"
+reload "user.surround"
+-- reload "user.treesitter"
+reload "user.quickscope"
+reload "user.true-zen"
+reload "user.lsp-inlayhints"
+reload "user.twilight"
+reload "user.zen-mode"
+reload "user.neoscroll"
+-- reload "user.fidget"
+reload "user.auto-session"
+reload "user.harpoon"
+reload "user.zk"
+-- reload "user.wilder"
+-- reload "user.chatgpt"
+-- reload "user.tabline"
+-- reload "user.ltex"
+-- reload "user.lualine"
+lvim.builtin.treesitter.rainbow.enable = true
 --
 --[[
 lvim is the global options object
@@ -74,14 +75,14 @@ an executable
 -- ---@usage disable automatic installation of servers
 -- lvim.lsp.installer.setup.automatic_installation = false
 
--- ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
+-- ---configure a server manually. !!reloads `:LvimCacheReset` to take effect!!
 -- ---see the full default list `:lua print(vim.inspect(lvim.lsp.automatic_configuration.skipped_servers))`
 -- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
 -- local opts = {} -- check the lspconfig documentation for a list of all possible options
 -- local opts = {}
--- require("lvim.lsp.manager").setup("ltex", opts)
+-- reload("lvim.lsp.manager").setup("ltex", opts)
 
--- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. !!Requires `:LvimCacheReset` to take effect!!
+-- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. !!reloads `:LvimCacheReset` to take effect!!
 -- ---`:LvimInfo` lists which server(s) are skipped for the current filetype
 -- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
 --   return server ~= "emmet_ls"

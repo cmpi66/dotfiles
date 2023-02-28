@@ -73,12 +73,15 @@ SETUVAR _fish_abbr_merge:xrdb\x20\x2dmerge\x20\x7e/\x2eXresources
 SETUVAR _fish_abbr_mk:sudo\x20/usr/src/linux/rebuild\x2dkernel\x2esh
 SETUVAR _fish_abbr_mkdir:mkdir\x20\x2dpv
 SETUVAR _fish_abbr_mn:cd\x20/mnt\x3b\x20and\x20ls\x20\x2da
+SETUVAR _fish_abbr_mpv:mpv\x20\x2d\x2dfullscreen
 SETUVAR _fish_abbr_mv:mv\x20\x2div
 SETUVAR _fish_abbr_ncm:ncmpcpp
 SETUVAR _fish_abbr_nv:nvim
 SETUVAR _fish_abbr_nvimrc:nvim\x20\x7e/\x2econfig/nvim/
-SETUVAR _fish_abbr_paste:xclip\x20\x2dselection\x20c\x20\x2do\x20\x3e
+SETUVAR _fish_abbr_paste:xsel\x20\x2d\x2dclipboard\x20\x2d\x2doutput\x20\x3e
+SETUVAR _fish_abbr_poweroff:doas\x20openrc\x2dshutdown\x20\x2dp\x20now
 SETUVAR _fish_abbr_pp:cd\x20/home/chris/pixs\x3b\x20and\x20ls\x20\x2da
+SETUVAR _fish_abbr_reboot:doas\x20openrc\x2dshutdown\x20\x2dr\x20now
 SETUVAR _fish_abbr_rm:rm\x20\x2dv
 SETUVAR _fish_abbr_rr:cd\x20/home/chris/\x2elocal/\x2esrc\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_rs:cd\x20/home/chris/\x2elocal/share\x3b\x20and\x20ls\x20\x2da

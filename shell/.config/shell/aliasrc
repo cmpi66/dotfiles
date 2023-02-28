@@ -21,4 +21,9 @@ alias v="vim"
 
 
   
- se () { du -a ~/.local/bin/* ~/.config/* | awk '{print$2}' | fzf | xargs -r $EDITOR ;}
+ # se () { du -a ~/.local/bin/* ~/.config/* | awk '{print$2}' | fzf | xargs -r $EDITOR ;}
+
+se() {
+	choice="$(find ~/.local/bin -mindepth 1 -printf '%P\n' | fzf)"
+	[ -f "$HOME/.local/bin/$choice" ] && $EDITOR "$HOME/.local/bin/$choice"
+	;}
