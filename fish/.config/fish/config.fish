@@ -181,6 +181,6 @@ complete -c cheat.sh -xa '(curl -s cheat.sh/:list)'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-eval /home/chris/.local/share/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+# eval /home/chris/.local/share/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
 

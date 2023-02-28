@@ -13,14 +13,14 @@ export $EDITOR="lvim"
 # integrate nix pacakges with desktop
 #export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
-PATH="$PATH:/$HOME/.local/appimages"
-
+export PATH="$PATH:/$HOME/.local/appimages"
+export PATH="$PATH:${$(find ~/.local/bin/ -type d -printf %p:)%%:}"
 ## Stole this from luke. Make every sub directory from bin to path. 
-PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')" 
+# export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')" 
 #PATH="$PATH:/$HOME/.local/bin/statusbar"
  # . "$HOME/.cargo/env"
 # This is with the new xdg cargo set up, if it doesnt work then ill just switch it back. NO biggie
-PATH="$PATH:/$HOME/.local/share/cargo/bin"
+export PATH="$PATH:/$HOME/.local/share/cargo/bin"
 
 # . "$HOME/.cargo/env"
 # PATH="$PATH:/$HOME/.cargo/bin"
@@ -77,13 +77,12 @@ export W3M_DIR="$XDG_DATA_HOME"/w3m
 export PATH=~/.local/.npm-global/bin:$PATH
 export N_PREFIX="$HOME/.local/n"
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
-# prefix=${XDG_DATA_HOME}/npm
-cache=${XDG_CACHE_HOME}/npm
-init-module=${XDG_CONFIG_HOME}/npm/config/npm-init.js
 ## Got this from luke, let's see if this makes less better 
 export LESS=-R
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
+export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
+alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 # export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"
 # export LESS_TERMCAP_md="$(printf '%b' '[1;36m')"
 # export LESS_TERMCAP_me="$(printf '%b' '[0m')"
@@ -97,17 +96,17 @@ export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/chris/.local/share/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/chris/.local/share/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/chris/.local/share/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/chris/.local/share/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+# __conda_setup="$('/home/chris/.local/share/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/home/chris/.local/share/miniconda3/etc/profile.d/conda.sh" ]; then
+#         . "/home/chris/.local/share/miniconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/home/chris/.local/share/miniconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
 # <<< conda initialize <<<
 
 
@@ -202,5 +201,4 @@ ex=🎯:\
 *.java=♨:\
 "
 
-
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ~/.config/x11/xinitrc

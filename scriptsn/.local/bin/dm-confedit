@@ -57,7 +57,7 @@ confedit_list[sxhkd]="$HOME/.config/sxhkd/sxhkdrc"
 confedit_list[xinitrc]="$HOME/.xinitrc"
 confedit_list[xresources]="$HOME/.Xresources"
 confedit_list[zshrc]="$HOME/.config/zsh/.zshrc"
-confedit_list[zshenv]="$HOME/.zshenv"
+confedit_list[zshenv]="$HOME/.config/zsh/.zshenv"
 confedit_list[zprofile]="$HOME/.config/zsh/.zprofile"
 
 main() {
