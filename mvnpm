@@ -2,9 +2,22 @@
 
 
 NPMRC="$HOME/.npmrc"
+GNUPGDIR="$HOME/.gnupg"
 
 
-
+nmprc ()
+{
 if [[ -f "$NPMRC" ]]; then
   mv "$NPMRC" $HOME/.config/npm/npmrc
 fi
+} 
+
+gnupgdir()
+{
+if [[ -d "$GNUPGDIR" ]]; then
+  mv "$GNUPGDIR" $HOME/.local/share/gnupg
+fi
+} 
+
+nmprc
+gnupgdir
