@@ -31,6 +31,7 @@ create_dirs=(
     "/home/chris/dl/git-clones"
     "/home/chris/.local"
     "/home/chris/.local/.src"
+    "/home/chris/.config/npm"
 )
 
 # Loop through each directory and create it if it doesn't exist
@@ -41,3 +42,5 @@ do
         mkdir -p "$dir"
     fi
 done
+
+[[ -f $.npmrc ]] && mv $.npmrc ~/.config/npm/npmrc
