@@ -12,9 +12,10 @@
 
 
 pdfs=$(find "$HOME" -maxdepth 6 ! -path "$HOME/.config/*" -name "*.pdf" | dmenu -i -l 15 -p "Select PDF:")
+# pdfs=$(find "$HOME" -maxdepth 6 ! -path "$HOME/.config/*" -name "*.pdf" | fzf --multi --exit-0)
 
 if [ -n "$pdfs" ]; then
-  okular "$pdfs"
+  zathura "$pdfs"
 fi
 
 

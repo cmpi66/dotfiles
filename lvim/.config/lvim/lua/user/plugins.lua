@@ -6,8 +6,7 @@ lvim.plugins = {
    { "folke/zen-mode.nvim"},
    { "folke/twilight.nvim"},
    { "preservim/vim-pencil"},
-   -- { "vimwiki/vimwiki"},
-   { "phaazon/hop.nvim"},
+   -- { "phaazon/hop.nvim"},
    {	"Pocco81/true-zen.nvim"},
    { "p00f/nvim-ts-rainbow"},
    { "norcalli/nvim-colorizer.lua"},
@@ -15,7 +14,7 @@ lvim.plugins = {
    {"simrat39/rust-tools.nvim"},
    {"lvimuser/lsp-inlayhints.nvim"},
    {"kevinhwang91/nvim-bqf"},
-   -- {"kylechui/nvim-surround"},
+   {"kylechui/nvim-surround"},
    {"nacro90/numb.nvim"},
    {"is0n/jaq-nvim"},
   ({
@@ -38,7 +37,37 @@ lvim.plugins = {
     vim.g.matchup_matchparen_offscreen = { method = "popup" }
   end,
 },
-
+  {
+  "tpope/vim-fugitive",
+  cmd = {
+    "G",
+    "Git",
+    "Gdiffsplit",
+    "Gread",
+    "Gwrite",
+    "Ggrep",
+    "GMove",
+    "GDelete",
+    "GBrowse",
+    "GRemove",
+    "GRename",
+    "Glgrep",
+    "Gedit"
+  },
+  ft = {"fugitive"}
+},
+  {
+  "windwp/nvim-ts-autotag",
+  config = function()
+    require("nvim-ts-autotag").setup()
+  end,
+},
+{
+  "turbio/bracey.vim",
+  cmd = {"Bracey", "BracyStop", "BraceyReload", "BraceyEval"},
+  run = "npm install --prefix server",
+},
+  {"folke/todo-comments.nvim"}
   -- {"jghauser/follow-md-links.nvim"}
    -- {"oberblastmeister/neuron.nvim"}
 }

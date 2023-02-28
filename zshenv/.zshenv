@@ -1,3 +1,4 @@
+#
 # testing this setting
 typeset -U PATH path
 
@@ -32,13 +33,6 @@ export movplay="mpv"
 export term=xterm-256color
 export picview="sxiv"
 
-# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
-#
-export NVM_DIR="$HOME/.config//nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" --no-use   # This loads nvm bash_completion
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/chris/.local/share/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -72,13 +66,31 @@ export PASSWORD_STORE_DIR="$XDG_DATA_HOME/.password-store"
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 export HISTFILE="$XDG_DATA_HOME/zsh/history"
 # export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
-# export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
-export MBSYNCRC="$XDG_CONFIG_HOME"/isync/mbsyncrc
+export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
+# export MBSYNCRC="$XDG_CONFIG_HOME"/isync/mbsyncrc
 export DICS="/usr/share/stardict/dic/"
 export _JAVA_AWT_WM_NONREPARENTING=1 # Fix for Java applications in dwm
-# export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
-# export FZF_DEFAULT_OPTS="--layout=reverse --height 60%"
+export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
+export HISTFILE="${XDG_STATE_HOME}"/bash/history
+export QT_QPA_PLATFORMTHEME="gtk2" # Have QT use gtk2 theme.
+export ANSIBLE_HOME="${XDG_CONFIG_HOME}/ansible"
+export ANSIBLE_CONFIG="${XDG_CONFIG_HOME}/ansible.cfg"
+export ANSIBLE_GALAXY_CACHE_DIR="${XDG_CACHE_HOME}/ansible/galaxy_cache"
+export HISTFILE="$XDG_DATA_HOME/history"
+export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
+export W3M_DIR="$XDG_DATA_HOME"/w3m
+export PATH=~/.local/.npm-global/bin:$PATH
+export N_PREFIX="$HOME/.local/n"
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+# prefix=${XDG_DATA_HOME}/npm
+cache=${XDG_CACHE_HOME}/npm
+init-module=${XDG_CONFIG_HOME}/npm/config/npm-init.js
+export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
+export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
+# export XINITRC="$XDG_CONFIG_HOME"/X11/xresources
+export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
 # export MOZ_USE_XINPUT2="1"	
+#
 # if [ "$MANPATH" ]; then
 #   export MANPATH=$HOME/.nix-profile/share/man:$MANPATH
 # fi

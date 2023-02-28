@@ -11,7 +11,7 @@ require "user.colorscheme"
 require "user.lsp"
 require "user.abbreviations"
 require "user.colorizer"
-require "user.hop"
+-- require "user.hop"
 require "user.bqf"
 require "user.numb"
 require "user.jaq"
@@ -25,12 +25,18 @@ require "user.twilight"
 require "user.zen-mode"
 require "user.neoscroll"
 require "user.auto-session"
-require "user.fidget"
+-- require "user.fidget"
 require "user.harpoon"
 require "user.zk"
+-- require "user.icons"
+-- require "user.todo-comments"
 -- require "user.functions"
 
+lvim.builtin.treesitter.rainbow.enable = true
 
+-- TODO 
+-- HACK
+-- FIXME
 
 
 

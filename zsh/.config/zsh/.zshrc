@@ -91,10 +91,6 @@ export EDITOR="nvim"
 export TERMINAL="alacritty"
 export BROWSER="firefox"
 
-
- export NVM_DIR="$HOME/.config//nvm"
- [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
- [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" --no-use   # This loads nvm bash_completion
  
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"

@@ -130,6 +130,7 @@ abbr paste "xclip -selection c -o >"
 # abbr chadwm "startx ~/.config/chadwm/scripts/run.sh"
 abbr search "paru -Ss"
 abbr updategrub "sudo grub-mkconfig -o /boot/grub/grub.cfg"
+abbr mpv "mpv --fullscreen"
 
 #Custom keybindings vi insert mode
 set -g fish_key_bindings fish_vi_key_bindings
@@ -139,7 +140,7 @@ bind -M insert \ce 'ncdu'
 bind -M insert \ck history-search-backward # Up
 bind -M insert \cj history-search-forward # Down
  # bind -M insert jk "if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char force-repaint; end"
- bind -M insert -m default jk backward-char force-repaint
+ # bind -M insert -m default jk backward-char force-repaint
 
 # Custom keybindings default mode
 bind \co 'lf'
