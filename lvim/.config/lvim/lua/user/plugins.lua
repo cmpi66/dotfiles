@@ -67,7 +67,21 @@ lvim.plugins = {
   cmd = {"Bracey", "BracyStop", "BraceyReload", "BraceyEval"},
   run = "npm install --prefix server",
 },
-  {"folke/todo-comments.nvim"}
+  -- {"folke/todo-comments.nvim"}
+ {
+    "saecki/crates.nvim",
+    version = "v0.3.0",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("crates").setup {
+        null_ls = {
+          enabled = true,
+          name = "crates.nvim",
+        },
+      }
+    end,
+  },
+ {"ghillb/cybu.nvim"},
   -- {"jghauser/follow-md-links.nvim"}
    -- {"oberblastmeister/neuron.nvim"}
 }

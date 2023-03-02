@@ -17,9 +17,10 @@ redshift &
 picom &
 syncthing --no-browser &
 setbg &			# set the background with the `setbg` script
+# zettle-ema &			
 xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!	# Uncomment to use Xresources colors/settings on startup
 
-autostart="mpd dunst unclutter pipewire remapd"
+autostart="mpd dunst unclutter remapd"
 
 for program in $autostart; do
 	pidof -s "$program" || "$program" &

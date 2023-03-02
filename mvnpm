@@ -5,7 +5,7 @@ NPMRC="$HOME/.npmrc"
 GNUPGDIR="$HOME/.gnupg"
 
 
-nmprc ()
+nmprc()
 {
 if [[ -f "$NPMRC" ]]; then
   mv "$NPMRC" $HOME/.config/npm/npmrc

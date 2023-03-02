@@ -131,6 +131,7 @@ abbr paste "xclip -selection c -o >"
 abbr search "paru -Ss"
 abbr updategrub "sudo grub-mkconfig -o /boot/grub/grub.cfg"
 abbr mpv "mpv --fullscreen"
+abbr paste "xsel --clipboard --output >" 
 
 #Custom keybindings vi insert mode
 set -g fish_key_bindings fish_vi_key_bindings

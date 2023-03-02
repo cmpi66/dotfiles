@@ -72,6 +72,7 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export FZF_DEFAULT_OPTS="--layout=reverse --height 50%"
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
+export GPG_TTY=$(tty)
 ## sudo not required for some system commands
 # for command in mount umount sv pacman updatedb su shutdown poweroff reboot ; do
 # 	alias $command="sudo $command"
