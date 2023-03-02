@@ -17,11 +17,8 @@ lvim.plugins = {
    {"kylechui/nvim-surround"},
    {"nacro90/numb.nvim"},
    {"is0n/jaq-nvim"},
-  ({
-    "catppuccin/nvim",
-    as = "catppuccin"
-  }),
    {"j-hui/fidget.nvim"},
+
   -- Session
    {"rmagatti/auto-session"},
    {"rmagatti/session-lens"},
@@ -37,9 +34,9 @@ lvim.plugins = {
 },
   {"ThePrimeagen/vim-be-good"},
   {"rebelot/kanagawa.nvim"},
-  -- {"MunifTanjim/nui.nvim"},
+  {"MunifTanjim/nui.nvim"},
 
-  {"gelguy/wilder.nvim"},
+  -- {"gelguy/wilder.nvim"},
   {
   "tpope/vim-fugitive",
   cmd = {
@@ -70,8 +67,8 @@ lvim.plugins = {
   cmd = {"Bracey", "BracyStop", "BraceyReload", "BraceyEval"},
   run = "npm install --prefix server",
 },
-  {"MunifTanjim/nui.nvim"},
-  {"jackMort/ChatGPT.nvim"},
+  -- {"MunifTanjim/nui.nvim"},
+  -- {"jackMort/ChatGPT.nvim"},
 
  {
     "saecki/crates.nvim",
@@ -87,8 +84,16 @@ lvim.plugins = {
     end,
   },
 
-  -- {"christianchiarulli/lualine.nvim"}
+ {"ghillb/cybu.nvim"},
 
+-- Color Schemes
+  ({
+    "catppuccin/nvim",
+    as = "catppuccin"
+  }),
+  {"olimorris/onedarkpro.nvim"},
+ {"NTBBloodbath/doom-one.nvim"},
+  -- {"christianchiarulli/lualine.nvim"}
 	-- {'kdheepak/tabline.nvim'}
 
 }

@@ -24,7 +24,6 @@ ab hed he'd
 ab Hed He'd
 ab hes he's
 ab Hes He's
-ab i I
 ab Id I'd
 ab ill I'll
 ab im I'm
@@ -41,8 +40,6 @@ ab shant shan't
 ab Shant Shan't 
 ab shed she'd 
 ab Shed She'd 
-ab shell she'll 
-ab Shell She'll 
 ab shes she's 
 ab Shes She's 
 ab shouldnt shouldn't 

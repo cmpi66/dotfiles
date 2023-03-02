@@ -10,7 +10,8 @@ lvim.builtin.which_key.mappings["c"] = { ":w<CR>:!compiler %:p<CR><CR>","Doc Com
 lvim.builtin.which_key.mappings["u"] = { ":w<CR>:!pandoc % -f latex -t docx -o %:r.docx<CR><CR>", "Latex to Docx"}
 -- lvim.builtin.which_key.mappings["o"] = { ":w<CR>:!pandoc % -t beamer -o %:r.pdf<CR><CR>","Beamer Presentation"}
 
-lvim.builtin.which_key.mappings["P"] =   { "<cmd>Telescope projects<CR>", "Projects" }
+-- lvim.builtin.which_key.mappings["P"] =   { "<cmd>Telescope projects<CR>", "Projects" }
+-- lvim.builtin.which_key.mappings["P"] =   { "<cmd>Telescope projects<CR>", "Projects" }
 
 -- Better yanking
 lvim.builtin.which_key.vmappings["y"] = {"'\'+y"}
@@ -18,10 +19,11 @@ lvim.builtin.which_key.mappings["y"] = {"'\'+y"}
 -- lvim.builtin.which_key.mappings["Y"] = {"'\'+Y"}
 -- lvim.builtin.which_key.mappings["Y"] = {'gg"+yG'}
 lvim.keys.normal_mode["<leader>Y"] = 'gg"+yG'
+lvim.keys.normal_mode["<leader>P"] = 'o<ESC>Pk'
 
 -- lvim.builtin.which_key.mappings["p"] = {"'\'_dP"}
-lvim.builtin.which_key.vmappings["d"] = {"'\'_d"}
-lvim.builtin.which_key.mappings["d"] = {"'\'_d"}
+lvim.builtin.which_key.vmappings["D"] = {"'\'_d"}
+lvim.builtin.which_key.mappings["D"] = {"'\'_d"}
 
 
 lvim.builtin.which_key.mappings["v"] = {
@@ -56,24 +58,24 @@ lvim.builtin.which_key.mappings["T"] = {
 }
 
 
-lvim.builtin.which_key.mappings["S"] = {
-  name = "Search",
-  b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-  c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-  f = { "<cmd>Telescope find_files<cr>", "Find File" },
-  h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-  H = { "<cmd>Telescope highlights<cr>", "Find highlight groups" },
-  M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-  r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-  R = { "<cmd>Telescope registers<cr>", "Registers" },
-  t = { "<cmd>Telescope live_grep<cr>", "Text" },
-  k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-  C = { "<cmd>Telescope commands<cr>", "Commands" },
-  p = {
-    "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
-    "Colorscheme with Preview",
-  },
-}
+-- lvim.builtin.which_key.mappings["S"] = {
+--   name = "Search",
+--   b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+--   c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+--   f = { "<cmd>Telescope find_files<cr>", "Find File" },
+--   h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
+--   H = { "<cmd>Telescope highlights<cr>", "Find highlight groups" },
+--   M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+--   r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+--   R = { "<cmd>Telescope registers<cr>", "Registers" },
+--   t = { "<cmd>Telescope live_grep<cr>", "Text" },
+--   k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+--   C = { "<cmd>Telescope commands<cr>", "Commands" },
+--   p = {
+--     "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
+--     "Colorscheme with Preview",
+--   },
+-- }
 
 
 lvim.builtin.which_key.mappings["s"] = {
@@ -95,3 +97,29 @@ lvim.builtin.which_key.mappings["m"] = {
   [";"] = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Harpoon UI" },
 
 }
+
+
+-- lvim.builtin.which_key.mappings["P"] = {
+--   name = "Packer",
+--   c = { "<cmd>PackerCompile<cr>", "Compile" },
+--   i = { "<cmd>PackerInstall<cr>", "Install" },
+--   r = { "<cmd>lua require('lvim.plugin-loader').recompile()<cr>", "Re-compile" },
+--   s = { "<cmd>PackerSync<cr>", "Sync" },
+--   S = { "<cmd>PackerStatus<cr>", "Status" },
+--   u = { "<cmd>PackerUpdate<cr>", "Update" },
+-- }
+
+-- P = {
+--     name = "Packer",
+--     c = { "<cmd>PackerCompile<cr>", "Compile" },
+--     i = { "<cmd>PackerInstall<cr>", "Install" },
+--     r = { "<cmd>LvimReload<cr>", "Reload" },
+--     s = { "<cmd>PackerSync<cr>", "Sync" },
+--     u = { "<cmd>PackerUpdate<cr>", "Update" },
+--   }
+lvim.builtin.which_key.mappings["b"] = { "<cmd>Telescope buffers<cr>", "Buffers" }
+lvim.builtin.which_key.mappings[";"] = nil
+-- lvim.builtin.which_key.mappings["c"] = nil
+lvim.builtin.which_key.mappings["L"] = nil
+-- lvim.builtin.which_key.mappings["s"] = nil
+-- lvim.builtin.which_key.mappings["w"] = nil

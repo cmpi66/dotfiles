@@ -24,3 +24,9 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
+
+lvim.builtin.treesitter.rainbow.enable = true
+lvim.builtin.illuminate.active = false
+lvim.builtin.bufferline.active = false
+lvim.builtin.project.active = false
+lvim.builtin.breadcrumbs.active = true

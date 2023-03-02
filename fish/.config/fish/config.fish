@@ -165,6 +165,7 @@ scheme set tokyonight
 
 source ~/.config/fish/shortcuts.fish
 source ~/.config/fish/gentoo.fish
+source ~/.config/fish/fnm.fish
 # add it to your ~/.config/fish/config.fish
 
 # retrieve command cheat sheets from cheat.sh
