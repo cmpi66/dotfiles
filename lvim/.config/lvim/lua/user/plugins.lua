@@ -93,6 +93,7 @@ lvim.plugins = {
   }),
   {"olimorris/onedarkpro.nvim"},
  {"NTBBloodbath/doom-one.nvim"},
+  {"TimUntersberger/neogit"},
   -- {"christianchiarulli/lualine.nvim"}
 	-- {'kdheepak/tabline.nvim'}
 
