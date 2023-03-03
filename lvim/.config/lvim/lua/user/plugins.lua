@@ -36,7 +36,6 @@ lvim.plugins = {
   {"rebelot/kanagawa.nvim"},
   {"MunifTanjim/nui.nvim"},
 
-  -- {"gelguy/wilder.nvim"},
   {
   "tpope/vim-fugitive",
   cmd = {
@@ -85,7 +84,13 @@ lvim.plugins = {
   },
 
  {"ghillb/cybu.nvim"},
-
+{
+  "folke/todo-comments.nvim",
+  event = "BufRead",
+  config = function()
+    require("todo-comments").setup()
+  end,
+},
 -- Color Schemes
   ({
     "catppuccin/nvim",
@@ -93,9 +98,8 @@ lvim.plugins = {
   }),
   {"olimorris/onedarkpro.nvim"},
  {"NTBBloodbath/doom-one.nvim"},
-  {"TimUntersberger/neogit"},
-  -- {"christianchiarulli/lualine.nvim"}
-	-- {'kdheepak/tabline.nvim'}
+
+  {"folke/noice.nvim"},
 
 }
 

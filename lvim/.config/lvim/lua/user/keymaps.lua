@@ -40,6 +40,8 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 keymap("n", "<C-f>", "<cmd>silent !tmux neww t<CR>",opts)
 keymap("n", "-", ":lua require'lir.float'.toggle()<cr>", opts)
+keymap("n", "+", "<cmd>lua require('lf').start()<CR>",opts)
+-- vim.api.nvim_set_keymap("n", "+", "<cmd>lua require('lf').start()<CR>", { noremap = true })
 -- keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
 
 -- Visual --

@@ -154,10 +154,23 @@ lvim.builtin.which_key.mappings["t"] = {
   o = { "<cmd>tabonly<cr>", "Only Tab" },
 }
 
+
+
+lvim.builtin.which_key.mappings["O"] = {
+  name = "Options",
+  c = { "<cmd>lua lvim.builtin.cmp.active = false<cr>", "Completion off" },
+  C = { "<cmd>lua lvim.builtin.cmp.active = true<cr>", "Completion on" },
+  -- w = { '<cmd>lua require("user.functions").toggle_option("wrap")<cr>', "Wrap" },
+  -- r = { '<cmd>lua require("user.functions").toggle_option("relativenumber")<cr>', "Relative" },
+  -- l = { '<cmd>lua require("user.functions").toggle_option("cursorline")<cr>', "Cursorline" },
+  -- s = { '<cmd>lua require("user.functions").toggle_option("spell")<cr>', "Spell" },
+  -- t = { '<cmd>lua require("user.functions").toggle_tabline()<cr>', "Tabline" },
+}
+
 lvim.builtin.which_key.mappings["g"] = {
   name = "Git",
   -- g = { "<cmd>lua require 'lvim.core.terminal'.lazygit_toggle(12000)<cr>", "Lazygit" },
-  g = { "<cmd>Neogit<cr>", "Neogit" },
+  g = { "<cmd>G<cr>", "Fugitive" },
   j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
   k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
   l = { "<cmd>GitBlameToggle<cr>", "Blame" },
@@ -178,18 +191,13 @@ lvim.builtin.which_key.mappings["g"] = {
     "<cmd>Gitsigns diffthis HEAD<cr>",
     "Diff",
   },
-}
-
-
-
-
-lvim.builtin.which_key.mappings["O"] = {
-  name = "Options",
-  c = { "<cmd>lua lvim.builtin.cmp.active = false<cr>", "Completion off" },
-  C = { "<cmd>lua lvim.builtin.cmp.active = true<cr>", "Completion on" },
-  -- w = { '<cmd>lua require("user.functions").toggle_option("wrap")<cr>', "Wrap" },
-  -- r = { '<cmd>lua require("user.functions").toggle_option("relativenumber")<cr>', "Relative" },
-  -- l = { '<cmd>lua require("user.functions").toggle_option("cursorline")<cr>', "Cursorline" },
-  -- s = { '<cmd>lua require("user.functions").toggle_option("spell")<cr>', "Spell" },
-  -- t = { '<cmd>lua require("user.functions").toggle_tabline()<cr>', "Tabline" },
+  -- G = {
+  --   name = "Gist",
+  --   a = { "<cmd>Gist -b -a<cr>", "Create Anon" },
+  --   d = { "<cmd>Gist -d<cr>", "Delete" },
+  --   f = { "<cmd>Gist -f<cr>", "Fork" },
+  --   g = { "<cmd>Gist -b<cr>", "Create" },
+  --   l = { "<cmd>Gist -l<cr>", "List" },
+  --   p = { "<cmd>Gist -b -p<cr>", "Create Private" },
+  -- },
 }
