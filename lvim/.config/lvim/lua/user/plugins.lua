@@ -25,6 +25,7 @@ lvim.plugins = {
    { "unblevable/quick-scope"},
    {"lunarvim/templeos.nvim"},
    {"j-hui/fidget.nvim"},
+
   -- Session
    {"rmagatti/auto-session"},
    {"rmagatti/session-lens"},
@@ -67,7 +68,6 @@ lvim.plugins = {
   cmd = {"Bracey", "BracyStop", "BraceyReload", "BraceyEval"},
   run = "npm install --prefix server",
 },
-  -- {"folke/todo-comments.nvim"}
  {
     "saecki/crates.nvim",
     version = "v0.3.0",
@@ -82,7 +82,14 @@ lvim.plugins = {
     end,
   },
  {"ghillb/cybu.nvim"},
-  -- {"jghauser/follow-md-links.nvim"}
-   -- {"oberblastmeister/neuron.nvim"}
+{
+  "folke/todo-comments.nvim",
+  event = "BufRead",
+  config = function()
+    require("todo-comments").setup()
+  end,
+},
+  {"MunifTanjim/nui.nvim"},
+  {"folke/noice.nvim"},
 }
 

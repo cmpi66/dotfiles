@@ -45,8 +45,8 @@ require("catppuccin").setup({
         which_key = true,
 
           dap = {
-            enabled = false,
-            enable_ui = false,
+            enabled = true,
+            enable_ui = true,
         },
           indent_blankline = {
             enabled = true,

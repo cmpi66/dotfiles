@@ -42,7 +42,8 @@ fzf_configure_bindings --git_status=\cs --git_log=\cl
 # Speedy keys
 # xset r rate 210 40
 # xset r rate 250 40
-xset r rate 300 50
+# xset r rate 300 50
+xset r rate 350 50
 # xset r rate 400 100
 
 alias j='z'
@@ -78,6 +79,7 @@ alias perma="zk perma"
 alias flee="zk flee"
 alias nt="zk nt"
 alias lit="zk lit"
+alias mbsync='mbsync -c $MBSYNCRC'
 
 abbr desk "ssh chris@10.27.27.10"
 
@@ -98,7 +100,7 @@ abbr cl "clear"
 abbr v "vim"
 abbr p "sudo pacman -S"
 abbr rn "sudo pacman -Rns"
-abbr wiki "nvim ~/emanotes/index.md"
+abbr wiki "nvim ~/.local/.src/zettlekasten/index.md"
 abbr yup "paru -Syu"
 # abbr gp "git add . && git commit -m 'autopush' && git push"
 abbr gp "git add . && git commit -m 'autopush' && git remote | xargs -L1 git push --all" ##push to all 3 gits

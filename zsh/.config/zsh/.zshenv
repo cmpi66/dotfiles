@@ -9,7 +9,6 @@ export XDG_CACHE_HOME=$HOME/.cache/
 export XDG_DATA_HOME=$HOME/.local/share
 export ZDOTDIR=$HOME/.config/zsh   
 export $EDITOR="lvim" 
-# PATH="$PATH:/$HOME/.local/bin"
 
 # integrate nix pacakges with desktop: THIS KILLS MY ICONS AND WONT LET ME DOWNLOAD OR UPLOAD FILES WITH ANY BROWSER. THIS WAS WHAT KILLED AND MESSED UP OKULAR TOO. WOW, SO MUCH DAMAGE THIS COMMAND. IT works on gentoo though
 # export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
@@ -19,9 +18,6 @@ export PATH="$PATH:/$HOME/.local/appimages"
 ## Stole this from luke. Make every sub directory from bin to path. 
 # export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')" 
 export PATH="$PATH:${$(find ~/.local/bin/ -type d -printf %p:)%%:}"
-# PATH="$PATH:/$HOME/.local/bin/statusbar"
- # . "$HOME/.cargo/env"
-# This is with the new xdg cargo set up, if it doesnt work then ill just switch it back. NO biggie
 export PATH="$PATH:/$HOME/.local/share/cargo/bin"
 
 
@@ -54,7 +50,6 @@ alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 export HISTFILE="$XDG_DATA_HOME/zsh/history"
 # export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
-# export MBSYNCRC="$XDG_CONFIG_HOME"/isync/mbsyncrc
 export DICS="/usr/share/stardict/dic/"
 export _JAVA_AWT_WM_NONREPARENTING=1 # Fix for Java applications in dwm
 export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
@@ -72,24 +67,11 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export FZF_DEFAULT_OPTS="--layout=reverse --height 50%"
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
-export GPG_TTY=$(tty)
+# export GPG_TTY=$(tty)
 ## sudo not required for some system commands
 # for command in mount umount sv pacman updatedb su shutdown poweroff reboot ; do
 # 	alias $command="sudo $command"
 # done; unset command 
-#export MOZ_USE_XINPUT2="1"	
-#
-# if [ "$MANPATH" ]; then
-#   export MANPATH=$HOME/.nix-profile/share/man:$MANPATH
-# fi
-# export MANPATH=$HOME/.nix-profile/share/man
-# MANPATH="$MANPATH:/usr/share/man"
-# MANPATH="$MANPATH:/usr/local/share/man"
-# export MANPATH=/usr/local/share/man:$MANPATH
-# Use $XINITRC variable if file exists.
-# [ -f "$XINITRC" ] && alias startx="startx $XINITRC"
-
-# [ -f "$MBSYNCRC" ] && alias mbsync="mbsync -c $MBSYNCRC"
 
 export LF_ICONS="di=📁:\
 fi=📃:\
