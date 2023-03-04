@@ -11,19 +11,13 @@ export ZDOTDIR=$HOME/.config/zsh
 export $EDITOR="lvim" 
 
 # integrate nix pacakges with desktop
-#export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
+
 export PATH="$PATH:/$HOME/.local/appimages"
 export PATH="$PATH:${$(find ~/.local/bin/ -type d -printf %p:)%%:}"
 ## Stole this from luke. Make every sub directory from bin to path. 
 # export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')" 
-#PATH="$PATH:/$HOME/.local/bin/statusbar"
- # . "$HOME/.cargo/env"
-# This is with the new xdg cargo set up, if it doesnt work then ill just switch it back. NO biggie
 export PATH="$PATH:/$HOME/.local/share/cargo/bin"
-
-# . "$HOME/.cargo/env"
-# PATH="$PATH:/$HOME/.cargo/bin"
 
 ## Since im using fish i have to keep the xdg here. zsh-exports doesnt get read. 
 
@@ -37,7 +31,6 @@ export terminal="alacritty"
 
 
 # ~/ Clean up:
-# export _ZO_EXCLUDE_DIRS="/"
 export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/shell/inputrc"
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 export LYNX_CFG_PATH="$XDG_CONFIG_HOME"/lynx.cfg
@@ -49,16 +42,13 @@ export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export URLVIEW_CONFIG="$XDG_CONFIG_HOME/urlview/config"
 export GOPATH="$XDG_DATA_HOME/go"
 export GIT_CONFIG="$XDG_CONFIG_HOME/git/config" ## This breaks aur packages gives "ERROR not a clone of 'x repo'"
-# export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/.password-store"
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 export HISTFILE="$XDG_DATA_HOME/zsh/history"
 # export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 
-# none of the mbsyncs work on gentoo, why?
-export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config" # I can get mail but mbsync -a doenst work, mialsync and mw -Y do. I forgot what mbsync -a does. I think it downloads your mail offline.
-# export MBSYNCRC="$XDG_CONFIG_HOME"/isync/mbsyncrc
-# alias mbsync=mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc
+export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config" 
 export DICS="/usr/share/stardict/dic/"
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 export PYTHONSTARTUP="/etc/python/pythonrc"

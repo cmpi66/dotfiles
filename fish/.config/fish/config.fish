@@ -79,6 +79,7 @@ alias .5='cd ../../../../..'
 alias sudo='doas'
 alias nvim='lvim'
 alias scim='sc-im --quiet'
+alias mbsync='mbsync -c $MBSYNCRC'
 
 # System abbreviations 
 

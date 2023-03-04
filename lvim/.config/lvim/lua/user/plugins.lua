@@ -98,8 +98,9 @@ lvim.plugins = {
   }),
   {"olimorris/onedarkpro.nvim"},
  {"NTBBloodbath/doom-one.nvim"},
+{"rose-pine/neovim"},
+    as = 'rose-pine',
 
   {"folke/noice.nvim"},
-
 }
 

@@ -1,5 +1,9 @@
 require("onedarkpro").setup({
-  colors = {}, -- Override default colors or create your own
+  colors = {
+    dark = {
+      -- comment = "#FFFF00" -- yellow
+    },
+  }, -- Override default colors or create your own
   filetypes = { -- Override which filetype highlight groups are loaded
     java = true,
     javascript = true,
@@ -80,3 +84,4 @@ require("onedarkpro").setup({
     highlight_inactive_windows = false, -- When the window is out of focus, change the normal background?
   }
 })
+

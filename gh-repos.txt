@@ -1,2 +1,0 @@
-git@github.com:cmpi66/netlify.git
-git@github.com:cmpi66/newsite.git
