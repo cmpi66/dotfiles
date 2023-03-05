@@ -13,10 +13,10 @@
   # TERM: xterm-256color
 
 import:
-  - ~/.config/alacritty/colors.yml
+  # - ~/.config/alacritty/colors.yml
   - ~/.config/alacritty/fonts.yml
   # - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
-  # - ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
+  - ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
   # - ~/.config/alacritty/catppuccin/catppuccin-frappe.yml
   # - ~/.config/alacritty/catppuccin/catppuccin-latte.yml
 

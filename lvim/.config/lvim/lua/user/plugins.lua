@@ -91,5 +91,9 @@ lvim.plugins = {
 },
   {"MunifTanjim/nui.nvim"},
   {"folke/noice.nvim"},
+  {"windwp/nvim-spectre"},
+  {"rcarriga/nvim-notify"},
+{"christoomey/vim-tmux-navigator"}
+
 }
 

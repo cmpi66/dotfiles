@@ -80,6 +80,8 @@ alias flee="zk flee"
 alias nt="zk nt"
 alias lit="zk lit"
 alias mbsync='mbsync -c $MBSYNCRC'
+# alias duck='?'
+# alias google='??'
 
 abbr desk "ssh chris@10.27.27.10"
 
@@ -106,6 +108,7 @@ abbr yup "paru -Syu"
 abbr gp "git add . && git commit -m 'autopush' && git remote | xargs -L1 git push --all" ##push to all 3 gits
 abbr mkdir "mkdir -pv"
 abbr lf "lfub"
+abbr lynx "lynxub"
 abbr kx "killall sxhkd && sxhkd &"
 abbr cat "bat"
 abbr ncm "ncmpcpp"
