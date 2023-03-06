@@ -93,7 +93,8 @@ lvim.plugins = {
   {"folke/noice.nvim"},
   {"windwp/nvim-spectre"},
   {"rcarriga/nvim-notify"},
-{"christoomey/vim-tmux-navigator"}
+  {"christoomey/vim-tmux-navigator"},
+  {"tpope/vim-repeat"}
 
 }
 

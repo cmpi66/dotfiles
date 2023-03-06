@@ -88,7 +88,7 @@ abbr desk "ssh chris@10.27.27.10"
 abbr deskfs "sudo mount -t nfs 10.27.27.10:/zpgen/shared/ /mnt/share/" 
 # System abbreviations 
 abbr archlinx-fix-keys "sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
-abbr merge "xrdb -merge ~/.Xresources"
+abbr merge "xrdb -merge ~/.config/x11/xresources"
 # abbr nvimrc "nvim ~/.config/nvim/"
 abbr i3 "i3lock -C -i /home/chris/.local/bin/arch-wallpaper.jpg"
 abbr nv "nvim"
