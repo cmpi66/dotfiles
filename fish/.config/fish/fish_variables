@@ -72,7 +72,7 @@ SETUVAR _fish_abbr_lf:lfub
 SETUVAR _fish_abbr_ln:ln\x20\x2di
 SETUVAR _fish_abbr_lynx:lynxub
 SETUVAR _fish_abbr_m:mailsync
-SETUVAR _fish_abbr_merge:xrdb\x20\x2dmerge\x20\x7e/\x2eXresources
+SETUVAR _fish_abbr_merge:xrdb\x20\x2dmerge\x20\x7e/\x2econfig/x11/xresources
 SETUVAR _fish_abbr_mk:sudo\x20/usr/src/linux/rebuild\x2dkernel\x2esh
 SETUVAR _fish_abbr_mkdir:mkdir\x20\x2dpv
 SETUVAR _fish_abbr_mn:cd\x20/mnt\x3b\x20and\x20ls\x20\x2da

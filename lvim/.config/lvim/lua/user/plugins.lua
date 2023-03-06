@@ -33,28 +33,8 @@ lvim.plugins = {
   end,
 },
   {"ThePrimeagen/vim-be-good"},
-  -- {"rebelot/kanagawa.nvim"},
   {"MunifTanjim/nui.nvim"},
 
-  {
-  "tpope/vim-fugitive",
-  cmd = {
-    "G",
-    "Git",
-    "Gdiffsplit",
-    "Gread",
-    "Gwrite",
-    "Ggrep",
-    "GMove",
-    "GDelete",
-    "GBrowse",
-    "GRemove",
-    "GRename",
-    "Glgrep",
-    "Gedit"
-  },
-  ft = {"fugitive"}
-},
   {
   "windwp/nvim-ts-autotag",
   config = function()
@@ -96,16 +76,13 @@ lvim.plugins = {
     "catppuccin/nvim",
     as = "catppuccin"
   }),
-  {"olimorris/onedarkpro.nvim"},
- {"NTBBloodbath/doom-one.nvim"},
--- {"rose-pine/neovim"},
---     as = 'rose-pine',
 
   {"folke/noice.nvim"},
   {"windwp/nvim-spectre"},
   {"rcarriga/nvim-notify"},
 {"echasnovski/mini.surround"},
 {"christoomey/vim-tmux-navigator"},
-  {"tpope/vim-repeat"}
+  {"tpope/vim-repeat"},
+{ "TimUntersberger/neogit" }
 }
 
