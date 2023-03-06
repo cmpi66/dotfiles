@@ -83,7 +83,7 @@ alias mbsync='mbsync -c $MBSYNCRC'
 
 # System abbreviations 
 
-abbr merge "xrdb -merge ~/.Xresources"
+abbr merge "xrdb -merge ~/.config/x11/xresources"
 # abbr nvimrc "nvim ~/.config/nvim/"
 # abbr i3 "i3lock -C -i /home/chris/.local/bin/arch-wallpaper.jpg"
 abbr nv "nvim"
@@ -125,6 +125,7 @@ abbr updategrub "sudo grub-mkconfig -o /boot/grub/grub.cfg"
 abbr poweroff "doas openrc-shutdown -p now"
 abbr reboot "doas openrc-shutdown -r now"
 abbr mpv "mpv --fullscreen"
+abbr lynx "lynxub"
 
 ### ANSIBLE
 

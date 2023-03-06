@@ -33,7 +33,7 @@ lvim.plugins = {
   end,
 },
   {"ThePrimeagen/vim-be-good"},
-  {"rebelot/kanagawa.nvim"},
+  -- {"rebelot/kanagawa.nvim"},
   {"MunifTanjim/nui.nvim"},
 
   {
@@ -98,9 +98,14 @@ lvim.plugins = {
   }),
   {"olimorris/onedarkpro.nvim"},
  {"NTBBloodbath/doom-one.nvim"},
-{"rose-pine/neovim"},
-    as = 'rose-pine',
+-- {"rose-pine/neovim"},
+--     as = 'rose-pine',
 
   {"folke/noice.nvim"},
+  {"windwp/nvim-spectre"},
+  {"rcarriga/nvim-notify"},
+{"echasnovski/mini.surround"},
+{"christoomey/vim-tmux-navigator"},
+  {"tpope/vim-repeat"}
 }
 

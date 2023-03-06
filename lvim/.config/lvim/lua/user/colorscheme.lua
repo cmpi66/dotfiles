@@ -1,9 +1,4 @@
 -- lvim.colorscheme = "tokyonight-moon"
 lvim.colorscheme = "tokyonight-storm" -- main
 -- lvim.colorscheme = "tokyonight-night"
--- lvim.colorscheme = "onedark
--- lvim.colorscheme = "onedark_vivid"
--- lvim.colorscheme = "doom-one"
--- lvim.colorscheme = "kanagawa"
--- lvim.colorscheme = "rose-pine"
 -- lvim.colorscheme = "catppuccin-macchiato"
