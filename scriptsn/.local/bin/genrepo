@@ -5,7 +5,7 @@
 GENREP=/home/chris/repos/gentoo/all/
 # GENREP="/home/chris/test2/"
 
-cd $GENREP && doas rm -rf * && doas cp -ir  /etc/portage/* $GENREP && doas bat -p /var/lib/portage/world  > world && doas rm $GENREP/make.profile && git add . && git commit -m 'updates' && git remote | xargs -L1 git push --all 
+cd $GENREP && doas rm -rf * && doas cp -ir  /etc/portage/* $GENREP && doas bat -p /var/lib/portage/world  > world && doas rm $GENREP/make.profile && git add . && git commit -m 'updates' && git push
 
 # genrepo ()
 # {

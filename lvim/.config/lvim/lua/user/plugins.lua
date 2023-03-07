@@ -83,6 +83,7 @@ lvim.plugins = {
 {"echasnovski/mini.surround"},
 {"christoomey/vim-tmux-navigator"},
   {"tpope/vim-repeat"},
-{ "TimUntersberger/neogit" }
+{ "TimUntersberger/neogit" },
+{ "sindrets/diffview.nvim" }
 }
 

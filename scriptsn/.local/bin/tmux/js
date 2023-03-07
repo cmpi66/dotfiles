@@ -1,0 +1,21 @@
+#!/bin/env bash
+
+## A script to easily open javascript with scim and nvim.
+
+has-session ()
+{
+ tmux has-session -t javascript 2>/dev/null 
+}
+
+
+if has-session ; then
+  tmux attach-session -t javascript 
+else
+
+tmux new-session -s javascript -n js -d 'cd ~/.local/.src/projects/js-basics/; lvim index.html index.js; fish -i' 
+# tmux new-window -t javascript:2 -n search 'cd ~/media/; lvim javascript.csv; fish -i' 
+# tmux new-window -t javascript:3 -n keywords 'cd ~/media/resume/; lvim it-job-keywords.md; fish -i' 
+tmux select-window -t javascript:1 
+tmux attach-session -t javascript
+
+fi
