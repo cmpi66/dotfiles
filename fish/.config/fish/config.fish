@@ -131,7 +131,7 @@ abbr pfvpdown "sudo wg-quick down pfwg0"
 
 # abbr upcmpi "rsync -uvrP --delete-after ~/.local/src/sites/cmpi4/website/public/ root@cmpi4.com:/var/www/cmpi4/"
 abbr tabs "xargs -n1 firefox <"
-abbr paste "xclip -selection c -o >"
+# abbr paste "xclip -selection c -o >"
 # abbr chadwm "startx ~/.config/chadwm/scripts/run.sh"
 abbr search "paru -Ss"
 abbr updategrub "sudo grub-mkconfig -o /boot/grub/grub.cfg"
@@ -167,6 +167,7 @@ scheme set catppuccin
 
 source ~/.config/fish/shortcuts.fish
 source ~/.config/fish/fnm.fish
+# bass source ~/.config/shell/aliasrc
 # source ~/.config/fish/fzf_fish_key_bindings.fish
 
 # >>> conda initialize >>>

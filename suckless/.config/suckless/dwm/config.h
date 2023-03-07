@@ -27,11 +27,11 @@ static const char *fonts[]          =
  // "JetBrainsMono Nerd Font:style=Bold:size=12:antialias=true:autohint=true"
  // "Fira Code Mono:style=Bold:size=9:antialias=true:autohint=true",
  "Fira Code Mono:style=Bold:size=7.5:antialias=true:autohint=true",
- "Font Awesome 6 Free Solid:pixelsize=13",
- "Font Awesome 6 Brands:pixelsize=13",
- "Material Design Icons:pixelsize=13",
+ "Font Awesome 6 Free Solid:pixelsize=12",
+ "Font Awesome 6 Brands:pixelsize=12",
+ "Material Design Icons:pixelsize=12",
  // "Fira Code Nerd Font:style=Bold:size=11:antialias=true:autohint=true"
-"NotoColorEmoji:pixelsize=16:antialias=true:autohint=true"
+"NotoColorEmoji:pixelsize=14:antialias=true:autohint=true"
 
 
 

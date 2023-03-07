@@ -12,7 +12,7 @@ if has-session ; then
   tmux attach-session -t jobapps 
 else
 
-tmux new-session -s jobapps -n ema -d 'cd ~/media/; sc-im --quiet jobapps.csv; fish -i' 
+tmux new-session -s jobapps -n scim -d 'cd ~/media/; sc-im --quiet jobapps.csv; fish -i' 
 tmux new-window -t jobapps:2 -n notes 'cd ~/media/; lvim jobapps.csv; fish -i' 
 tmux new-window -t jobapps:3 -n keywords 'cd ~/media/resume/; lvim it-job-keywords.md; fish -i' 
 tmux select-window -t jobapps:1 
