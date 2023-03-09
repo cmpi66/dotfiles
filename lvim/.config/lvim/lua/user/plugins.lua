@@ -84,6 +84,8 @@ lvim.plugins = {
 {"christoomey/vim-tmux-navigator"},
   {"tpope/vim-repeat"},
 { "TimUntersberger/neogit" },
-{ "sindrets/diffview.nvim" }
+{ "sindrets/diffview.nvim" },
+  { "mxsdev/nvim-dap-vscode-js" },
+  { "ggandor/leap.nvim" }
 }
 
