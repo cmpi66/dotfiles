@@ -83,7 +83,7 @@ alias mbsync='mbsync -c $MBSYNCRC'
 # alias duck='?'
 # alias google='??'
 
-abbr desk "ssh chris@10.27.27.10"
+abbr desk "ssh -t chris@10.27.27.10"
 
 abbr deskfs "sudo mount -t nfs 10.27.27.10:/zpgen/shared/ /mnt/share/" 
 # System abbreviations 

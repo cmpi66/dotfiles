@@ -25,6 +25,7 @@ yay --noconfirm --needed -S \
   urlview-xdg-git \
   xidlehook \
   yt-dlp \
+  librewolf-bin \
   anki \
 
 
