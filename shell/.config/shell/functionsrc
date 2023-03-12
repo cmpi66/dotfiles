@@ -51,6 +51,13 @@ se() {
 	[ -f "$HOME/.local/bin/$choice" ] && $EDITOR "$HOME/.local/bin/$choice"
 }
 
+ # se () { find  ~/.local/bin/ -mindepth 1 -printf '%P\n' | fzf | xargs -r $EDITOR ;}
+
+ # se () { du -a ~/.local/bin/ | awk '{print$2}' | cut -b 24- | fzf | xargs -r $EDITOR ;}
+
+ # se () { du -a ~/.local/bin/* ~/.config/* | awk '{print$2}' | fzf | xargs -r $EDITOR ;}
+ # se () { choice="$(find ~/.local/bin/ - mindepth -printf '%P\n' | fzf)" [ -f "$HOME/.local/bin/$choice" ] && $EDITOR "HOME/.local/bin/$choice"  ;}
+
 # Show contents of the directory after changing to it
 # function cd () {
 #     builtin cd "$1"

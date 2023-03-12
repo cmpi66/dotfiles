@@ -4,7 +4,7 @@
 /* Constants */
 #define TERMINAL "alacritty"
 #define TERMCLASS "Alacritty"
-#define BROWSER "firefox-bin"
+#define BROWSER "librewolf-bin"
 
 /* appearance */
 static const unsigned int borderpx  = 4;        /* border pixel of windows */
@@ -121,9 +121,11 @@ static const Rule rules[] = {
 	// { "Alacritty",       NULL,       NULL,            0,         0,          1,           0,        -1 },
     { "trayer",   NULL,         NULL,       1 << 8,       False },
     { "firefox",   NULL,         NULL,       1 << 2,       False },
+    { "librewolf",   NULL,         NULL,       1 << 2,       False },
     { "discord",   NULL,         NULL,       1 << 4,       False },
     { "ema",   "ema",         NULL,       1 << 3,    0,           1,             0,       False },
     { NULL,   NULL,         "tremc",       1 << 8,       False },
+    { NULL,   NULL,         "stig",       1 << 8,       False },
     { NULL,   NULL,         "neomutt",       1 << 5,       False },
     { NULL,   NULL,         "openpdf",       1 << 1,    0,           1,             0,       False },
     { NULL,   NULL,         "okular",       1 << 1,    0,           1,             0,       False },

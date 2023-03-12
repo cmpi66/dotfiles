@@ -5,7 +5,7 @@
 # if a video or gif, it will view in mpv
 # if a music file or pdf, it will download,
 # otherwise it opens link in browser.
-
+BROWSER="librewolf-bin"
 # If no url given. Opens browser. For using script as $BROWSER.
 [ -z "$1" ] && { "$BROWSER"; exit; }
 

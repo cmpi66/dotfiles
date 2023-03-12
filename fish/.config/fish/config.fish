@@ -22,7 +22,7 @@ set TERM "xterm-256color" # This messes up LunarVim; gives it some wierd ghostin
 set EDITOR "lvim"
 set VISUAL "lvim"
 set TERMINAL "alacritty"
-set BROWSER "firefox-bin"
+set BROWSER "librewolf-bin"
 
 ### SET MANPAGER
 ### "nvim" as manpager
@@ -97,7 +97,7 @@ abbr cl "clear"
 abbr v "vim"
 abbr wiki "nvim ~/.local/.src/zettlekasten/index.md"
 # abbr gp "git add . && git commit -m 'autopush' && git push"
-abbr gp "git add . && git commit -m 'autopush' && git remote | xargs -L1 git push --all" ##push to all git remotes
+abbr gp "git add . && git commit -m 'autopush' && git push"
 abbr mkdir "mkdir -pv"
 abbr lf "lfub"
 # abbr kx "killall sxhkd && sxhkd &"
