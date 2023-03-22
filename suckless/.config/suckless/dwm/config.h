@@ -3,7 +3,7 @@
 /* Constants */
 #define TERMINAL "alacritty"
 #define TERMCLASS "Alacritty"
-#define BROWSER "firefox"
+#define BROWSER "librewolf"
 
 /* appearance */
 static const unsigned int borderpx  = 4;        /* border pixel of windows */
@@ -13,13 +13,13 @@ static const unsigned int gappih    = 10;       /* horiz inner gap between windo
 static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
 static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov    = 10;       /* vert outer gap between windows and screen edge */
-static const int user_bh            = 7;        /* 2 is the default spacing around the bar's font */
+static const int user_bh            = 2;        /* 2 is the default spacing around the bar's font */
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int horizpadbar        = 4;        /* horizontal padding for statusbar */
 static const int vertpadbar         = 0;        /* vertical padding for statusbar */
-static const int vertpad            = 11;       /* vertical padding of bar */
+static const int vertpad            = 4;       /* vertical padding of bar */
 static const int sidepad            = 0;       /* horizontal padding of bar */
 static const char *fonts[]          = 
 {  
@@ -27,9 +27,9 @@ static const char *fonts[]          =
  // "JetBrainsMono Nerd Font:style=Bold:size=12:antialias=true:autohint=true"
  // "Fira Code Mono:style=Bold:size=9:antialias=true:autohint=true",
  "Fira Code Mono:style=Bold:size=7.5:antialias=true:autohint=true",
- "Font Awesome 6 Free Solid:pixelsize=12",
- "Font Awesome 6 Brands:pixelsize=12",
- "Material Design Icons:pixelsize=12",
+ "Font Awesome 6 Free Solid:pixelsize=11",
+ "Font Awesome 6 Brands:pixelsize=11",
+ "Material Design Icons:pixelsize=11",
  // "Fira Code Nerd Font:style=Bold:size=11:antialias=true:autohint=true"
 "NotoColorEmoji:pixelsize=14:antialias=true:autohint=true"
 
@@ -118,13 +118,16 @@ static const Rule rules[] = {
 	{ "Pam_gnupg",     NULL,       NULL,            0,         1,          0,           0,        -1 },
     { "trayer",   NULL,         NULL,       1 << 8,       False },
     { "firefox",   NULL,         NULL,       1 << 2,       False },
+    { "LibreWolf",   NULL,         NULL,       1 << 2,       False },
 	{ "St",       NULL,       NULL,            0,         0,          1,           0,        -1 },
 	{ "Alacritty",NULL,       NULL,            0,         0,          1,           0,        -1 },
     { "discord",   NULL,         NULL,       1 << 4,       False },
 	{ "Pcmanfm",     NULL,       NULL,            0,         1,          0,           0,        -1 },
     { NULL,   NULL,         "zathura",       1 << 1,    0,           1,             0,       False },
+    { NULL,   NULL,         "okular",       1 << 1,    0,           1,             0,       False },
     { "ema",   "ema",         NULL,       1 << 3,    0,           1,             0,       False },
     { NULL,   NULL,         "tremc",       1 << 8,       False },
+    { NULL,   NULL,         "stig",       1 << 8,       False },
     { NULL,   NULL,         "neomutt",       1 << 5,       False },
     { NULL,   NULL,         "openpdf",       1 << 1,    0,          1,          0,       False },
     { NULL,   NULL,         "lfub",       1 << 7,       False },
@@ -195,7 +198,7 @@ static Key keys[] = {
   { MODKEY,		          	        XK_e,		spawn,		         {.v = (const char*[]){ "st", "-t", "neomutt", "-e", "neomutt", NULL } } },
   { MODKEY,		          	        XK_r,		spawn,		         {.v = (const char*[]){ TERMINAL, "-t", "lfub", "-e", "lfub", NULL } } },
   { MODKEY|ShiftMask,			        XK_r,		spawn,		         SHCMD("openpdf") },
-  { MODKEY,		                    XK_p,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "htop", NULL } } },
+  { MODKEY,		                    XK_n,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "htop", NULL } } },
   { MODKEY,		          	        XK_a,		spawn,		         {.v = (const char*[]){ "st", "-e", "abook", NULL } } },
   { MODKEY,		                   XK_m,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "ncmpcpp", NULL } } },
   { MODKEY|ShiftMask,			        XK_t,		spawn,		         SHCMD("tray.sh") },
@@ -204,17 +207,17 @@ static Key keys[] = {
 	{ MODKEY,		                   	XK_bracketright,	spawn,		{.v = (const char*[]){ "mpc", "seek", "+10", NULL } } },
 	{ MODKEY|ShiftMask,		          XK_bracketright,	spawn,		{.v = (const char*[]){ "mpc", "seek", "+60", NULL } } },
 
-	{ MODKEY,		          XK_semicolon,	spawn,		{.v = (const char*[]){ "mpc", "prev",  NULL } } },
+	{ MODKEY,		          XK_comma,	spawn,		{.v = (const char*[]){ "mpc", "prev",  NULL } } },
 
-	{ MODKEY,		          XK_apostrophe,	spawn,		{.v = (const char*[]){ "mpc", "next",  NULL } } },
+	{ MODKEY,		          XK_period,	spawn,		{.v = (const char*[]){ "mpc", "next",  NULL } } },
 
 	{ MODKEY,		          XK_equal,	spawn,		{.v = (const char*[]){ "mpc", "volume", "+5",  NULL } } },
 
 	{ MODKEY,		          XK_minus,	spawn,		{.v = (const char*[]){ "mpc", "volume", "-5", NULL } } },
 
-	{ MODKEY,		          XK_z,	spawn,		{.v = (const char*[]){ "mpc", "toggle",  NULL } } },
+	{ MODKEY,		          XK_p,	spawn,		{.v = (const char*[]){ "mpc", "toggle",  NULL } } },
 
-	{ MODKEY|ShiftMask,	   XK_z,	spawn,		{.v = (const char*[]){ "mpc", "stop",  NULL } } },
+	{ MODKEY|ShiftMask,	   XK_p,	spawn,		{.v = (const char*[]){ "mpc", "stop",  NULL } } },
   { 0,				XK_Print,	spawn,		SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") },
   { ShiftMask,		               XK_Print,	spawn,		{.v = (const char*[]){ "maimpic", NULL } } },
   { MODKEY,		                 	 XK_Print,	spawn,		{.v = (const char*[]){ "dmenurecord", NULL } } },
@@ -229,7 +232,7 @@ static Key keys[] = {
   { MODKEY,			                  XK_F7,		 spawn,		      SHCMD("dm-confedit") },
   // { MODKEY,			                  XK_F7,		 spawn,		      SHCMD("jaybird") },
   { MODKEY,			                  XK_F12,		 spawn,		      SHCMD("remaps") },
-	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
+	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -253,18 +256,18 @@ static Key keys[] = {
 	{ MODKEY,                       XK_f,      togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_Left,  focusmon,       {.i = -1 } },
+	{ MODKEY,                       XK_Right, focusmon,       {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_Left,  tagmon,         {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_Right, tagmon,         {.i = +1 } },
 	{ MODKEY|ShiftMask,           	XK_y,      togglescratch,  {.ui = 0 } },
 	{ MODKEY|ShiftMask,           	XK_n,	     togglescratch,  {.ui = 1 } },
 	{ MODKEY|ShiftMask,            	XK_m,	     togglescratch,  {.ui = 2 } },
 	{ MODKEY|ShiftMask,            	XK_a,	     togglescratch,  {.ui = 3 } },
 	{ MODKEY|ShiftMask,            	XK_e,	     togglescratch,  {.ui = 4 } },
 	{ MODKEY,                      	XK_y,	     togglescratch,  {.ui = 5 } },
-	{ MODKEY,             XK_n,       shiftviewclients, { .i = +1 } },
-	{ MODKEY,             XK_b, shiftviewclients, { .i = -1 } },
+	{ MODKEY,             XK_semicolon,       shiftviewclients, { .i = +1 } },
+	{ MODKEY,             XK_g, shiftviewclients, { .i = -1 } },
 	{ MODKEY1,                       XK_n,      togglealttag,   {0} },
 
   TAGKEYS(                        XK_1,                      0)

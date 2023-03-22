@@ -45,3 +45,8 @@ user_pref("identity.fxaccounts.enabled", false);
 
 // Fix the issue where right mouse button instantly clicks
 user_pref("ui.context_menus.after_mouseup", true);
+
+// change default startpage and have it load on browser open
+user_pref("browser.startup.homepage", "file:///home/chris/.config/homepage/html/homepage.html");
+user_pref("browser.startup.page", 1);
+

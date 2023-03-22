@@ -13,7 +13,7 @@ set TERM "xterm-256color" # This messes up Lunarvim on gentoobox ssh connection;
 set EDITOR "lvim"
 set VISUAL "lvim"
 set TERMINAL "alacritty"
-set BROWSER "firefox"
+set BROWSER "librewolf"
 
 ### SET MANPAGER
 ### "nvim" as manpager
@@ -130,7 +130,7 @@ abbr pfvpup "sudo wg-quick up pfwg0"
 abbr pfvpdown "sudo wg-quick down pfwg0"
 
 # abbr upcmpi "rsync -uvrP --delete-after ~/.local/src/sites/cmpi4/website/public/ root@cmpi4.com:/var/www/cmpi4/"
-abbr tabs "xargs -n1 firefox <"
+abbr tabs "xargs -n1 librewolf <"
 # abbr paste "xclip -selection c -o >"
 # abbr chadwm "startx ~/.config/chadwm/scripts/run.sh"
 abbr search "paru -Ss"

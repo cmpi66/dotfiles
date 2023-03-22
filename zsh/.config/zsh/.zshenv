@@ -25,7 +25,7 @@ export PATH="$PATH:/$HOME/.local/share/cargo/bin"
 
 export editor="lvim"
 export visual="lvim"
-export browser="firefox"
+export browser="librewolf"
 export movplay="mpv"
 export term=xterm-256color
 export picview="sxiv"
