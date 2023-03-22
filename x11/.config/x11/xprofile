@@ -11,7 +11,7 @@ xinput set-prop "DLL096D:01 06CB:CDE6 Touchpad" "Coordinate Transformation Matri
 clipmenud &
 exec slstatus &
 redshift &
-picom --experimental-backend &
+picom &
 syncthing --no-browser &
 
 autostart="mpd dunst unclutter remapd"
