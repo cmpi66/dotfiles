@@ -25,6 +25,7 @@ sudo pacman --noconfirm --needed -S \
   arch-wiki-docs \
   aspell-en \
   picom \
+  ytfzf \
   bat \
   ninja \
   cmake \

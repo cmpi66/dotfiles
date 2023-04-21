@@ -121,3 +121,5 @@ eval "$(zoxide init zsh)"
 # unset __conda_setup
 # <<< conda initialize <<<
 
+
+source /home/chris/.config/broot/launcher/bash/br

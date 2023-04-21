@@ -8,7 +8,6 @@ SETUVAR _fish_abbr_M:cd\x20/home/chris/media\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_archlinx_2D_fix_2D_keys:sudo\x20pacman\x2dkey\x20\x2d\x2dinit\x20\x26\x26\x20sudo\x20pacman\x2dkey\x20\x2d\x2dpopulate\x20archlinux\x20\x26\x26\x20sudo\x20pacman\x2dkey\x20\x2d\x2drefresh\x2dkeys
 SETUVAR _fish_abbr_bd:lvim\x20/home/chris/\x2econfig//shell/bm\x2ddirs
 SETUVAR _fish_abbr_bf:lvim\x20/home/chris/\x2econfig//shell/bm\x2dfiles
-SETUVAR _fish_abbr_br:cd\x20/home/chris/docs/vimwiki/book\x2dreviews\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_branch:git\x20branch
 SETUVAR _fish_abbr_cac:cd\x20/home/chris/\x2ecache/\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_cat:bat\x20\x2dp
@@ -91,7 +90,6 @@ SETUVAR _fish_abbr_vpnup:sudo\x20wg\x2dquick\x20up\x20archbox
 SETUVAR _fish_abbr_vv:cd\x20/home/chris/vids\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_wiki:nvim\x20\x7e/emanotes/index\x2emd
 SETUVAR _fish_abbr_yay:paru
-SETUVAR _fish_abbr_yt:yt\x2ddlp\x20\x2d\x2dadd\x2dmetadata\x20\x2di
 SETUVAR _fish_abbr_yta:yt\x2ddlp\x20\x2dx\x20\x2df\x20bestaudio/best
 SETUVAR _fish_abbr_yup:paru\x20\x2dSyu
 SETUVAR _fisher_Jorgebucaran_2F_autopair_2E_fish_files:\x7e/\x2econfig//fish/functions/_autopair_backspace\x2efish\x1e\x7e/\x2econfig//fish/functions/_autopair_insert_left\x2efish\x1e\x7e/\x2econfig//fish/functions/_autopair_insert_right\x2efish\x1e\x7e/\x2econfig//fish/functions/_autopair_insert_same\x2efish\x1e\x7e/\x2econfig//fish/functions/_autopair_tab\x2efish\x1e\x7e/\x2econfig//fish/conf\x2ed/autopair\x2efish

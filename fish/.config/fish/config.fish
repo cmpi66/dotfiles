@@ -1,6 +1,11 @@
 ## Vim mode
 fish_vi_key_bindings
 
+# if set -q TMUX
+# else
+#   tmux
+# end
+
 #Vim cursor behavior
 set fish_cursor_default block steady
 set fish_cursor_insert line steady
@@ -116,7 +121,7 @@ abbr m "mailsync"
 abbr checkout "git checkout"
 abbr clone "git clone"
 abbr branch "git branch"
-abbr yt "yt-dlp --add-metadata -i"
+abbr ytd "yt-dlp --add-metadata -i"
 abbr yta "yt-dlp -x -f bestaudio/best"
 abbr yay "paru"
 abbr vd "nvim -d"
@@ -162,6 +167,8 @@ bind p fish_clipboard_paste
 # colorscript random
 zoxide init fish | source
 starship init fish | source
+atuin init fish | source
+navi widget fish | source
 # scheme set doom-one
 scheme set catppuccin
 
