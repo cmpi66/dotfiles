@@ -191,7 +191,7 @@ static Key keys[] = {
   { MODKEY|ShiftMask,		          XK_BackSpace,	spawn,	     SHCMD("i3lock -C -i /home/chris/.local/bin/2770299.png")  },
   { MODKEY,		          	        XK_w,		spawn,             {.v = (const char*[]){ BROWSER, NULL } } },
   { MODKEY|ShiftMask,			        XK_w,		spawn,		         SHCMD("zettle-ema")  },
-  { MODKEY,		          	        XK_e,		spawn,		         SHCMD("st -t neomutt -e neomutt ; rmdir ~/.abook") },
+  { MODKEY,		          	        XK_e,		spawn,		         SHCMD("st -t neomutt -e neomutt; rmdir ~/.abook") },
   { MODKEY,		          	        XK_r,		spawn,		         {.v = (const char*[]){ TERMINAL, "-t", "lfub", "-e", "lfub", NULL } } },
   { MODKEY|ShiftMask,			        XK_r,		spawn,		         SHCMD("openpdf") },
   { MODKEY,		                    XK_n,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "htop", NULL } } },

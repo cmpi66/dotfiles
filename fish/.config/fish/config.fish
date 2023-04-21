@@ -107,7 +107,7 @@ abbr m "mailsync"
 abbr checkout "git checkout"
 abbr clone "git clone"
 abbr branch "git branch"
-abbr yt "yt-dlp --add-metadata -i"
+abbr ytd "yt-dlp --add-metadata -i"
 abbr yta "yt-dlp -x -f bestaudio/best"
 abbr vd "nvim -d"
 abbr combinepdf "gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=combine.pdf -dBATCH"
@@ -163,6 +163,8 @@ bind p fish_clipboard_paste
 # neofetch
 zoxide init fish | source
 starship init fish | source
+atuin init fish | source
+navi widget fish | source
 scheme set tokyonight
 
 source ~/.config/fish/shortcuts.fish

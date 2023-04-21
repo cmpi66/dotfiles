@@ -115,3 +115,5 @@ eval "$(zoxide init zsh)"
 # fnm
 export PATH="/home/chris/.local/bin:$PATH"
 eval "`fnm env`"
+
+source /home/chris/.config/broot/launcher/bash/br

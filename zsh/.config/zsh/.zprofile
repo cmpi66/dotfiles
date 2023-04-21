@@ -69,7 +69,7 @@ export N_PREFIX="$HOME/.local/n"
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 ## Got this from luke, let's see if this makes less better 
 export LESS=-R
-export FZF_DEFAULT_OPTS="--layout=reverse --height 50%"
+# export FZF_DEFAULT_OPTS="--layout=reverse --height 50%" # this breaks ytfzf uberzeug thumbnail preview at 50%
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
