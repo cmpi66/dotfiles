@@ -1,4 +1,4 @@
-#files: 847	version: 5.9
+#files: 852	version: 5.9
 
 _comps=(
 '-' '_precommand'
@@ -67,6 +67,7 @@ _comps=(
 'atq' '_at'
 'atrm' '_at'
 'attr' '_attr'
+'atuin' '_atuin'
 'augtool' '_augeas'
 'autoload' '_typeset'
 'avahi-browse' '_avahi'
@@ -463,6 +464,7 @@ _comps=(
 'gln' '_ln'
 'global' '_global'
 'glocate' '_locate'
+'glow' '_glow'
 'gls' '_ls'
 'gm' '_graphicsmagick'
 'gmake' '_make'
@@ -787,6 +789,7 @@ _comps=(
 'mhshow' '_mh'
 'mhstore' '_mh'
 'mii-tool' '_mii-tool'
+'miniserve' '_miniserve'
 'mistral' '_openstack'
 'mkdir' '_mkdir'
 'mkfifo' '_mkfifo'
@@ -980,6 +983,7 @@ _comps=(
 'pinfo' '_texinfo'
 'ping' '_ping'
 'ping6' '_ping'
+'pipenv' '_pipenv'
 'pkgadd' '_pkgadd'
 'pkg-config' '_pkg-config'
 'pkgfile' '_pkgfile'
@@ -1272,6 +1276,8 @@ _comps=(
 'talk' '_other_accounts'
 'tar' '_tar'
 'tardy' '_tardy'
+'task' '_task'
+'taskwarrior-tui' '_taskwarrior-tui'
 'tcpdump' '_tcpdump'
 'tcp_open' '_tcpsys'
 'tcptraceroute' '_tcptraceroute'
@@ -1317,7 +1323,6 @@ _comps=(
 'transmission-remote' '_transmission'
 'trap' '_trap'
 'tree' '_tree'
-'tremc' '_tremc'
 'trial' '_twisted'
 'trove' '_openstack'
 'true' '_nothing'
@@ -1711,21 +1716,22 @@ bindkey '^[,' _history-complete-newer
 bindkey '^[/' _history-complete-older
 bindkey '^[~' _bash_complete-word
 
-autoload -Uz _alacritty _bat _bazel _black _blackd \
-            _bluetoothctl _bootctl _busctl _bwrap _calibre \
-            _cargo _checkupdates _coredumpctl _curl _docker \
-            _downgrade _email-notmuch _exa _fd _firewalld \
-            _hostnamectl _journalctl _kernel-install _lf _libinput \
-            _localectl _loginctl _luarocks _luarocks-admin _machinectl \
-            _meson _mkinitcpio _mpv _netctl _networkctl \
-            _ninja _notmuch _oomctl _paccache _pacdiff \
-            _pacignore _paclist _paclog-pkglist _pacman _pacscripts \
-            _pacsearch _pacsort _pactree _parallel _paru \
-            _pass _pkgfile _procs _pulseaudio _qpdf \
-            _rankmirrors _resolvectl _rg _sd_hosts_or_user_at_host _sd_machines \
-            _sd_outputmodes _sd_unit_files _systemctl _systemd _systemd-analyze \
-            _systemd-delta _systemd-inhibit _systemd-nspawn _systemd-path _systemd-run \
-            _systemd-tmpfiles _the_silver_searcher _timedatectl _tldr _tremc \
+autoload -Uz _alacritty _atuin _bat _bazel _black \
+            _blackd _bluetoothctl _bootctl _busctl _bwrap \
+            _calibre _cargo _checkupdates _coredumpctl _curl \
+            _docker _downgrade _email-notmuch _exa _fd \
+            _firewalld _glow _hostnamectl _journalctl _kernel-install \
+            _lf _libinput _localectl _loginctl _luarocks \
+            _luarocks-admin _machinectl _meson _miniserve _mkinitcpio \
+            _mpv _netctl _networkctl _ninja _notmuch \
+            _oomctl _paccache _pacdiff _pacignore _paclist \
+            _paclog-pkglist _pacman _pacscripts _pacsearch _pacsort \
+            _pactree _parallel _paru _pass _pipenv \
+            _pkgfile _procs _pulseaudio _qpdf _rankmirrors \
+            _resolvectl _rg _sd_hosts_or_user_at_host _sd_machines _sd_outputmodes \
+            _sd_unit_files _systemctl _systemd _systemd-analyze _systemd-delta \
+            _systemd-inhibit _systemd-nspawn _systemd-path _systemd-run _systemd-tmpfiles \
+            _task _taskwarrior-tui _the_silver_searcher _timedatectl _tldr \
             _udevadm _updpkgsums _xwallpaper _yay _yt-dlp \
             _zathura _zoxide _cdr _all_labels _all_matches \
             _alternative _approximate _arg_compile _arguments _bash_completions \
