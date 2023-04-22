@@ -75,6 +75,12 @@ style = "bold #e5c07b" #yellow
 [nodejs]
 symbol = " "
 style = "bold #e5c07b" #yellow
+[custom.task_count_pending]
+command = "task count rc.gc=off rc.verbose=nothing status:pending"
+when = "which task"
+symbol = " "
+description = "Count of pending Taskwarrior tasks"
+
 
 # style = "bold green"
 # symbol = "👩‍💻 "
