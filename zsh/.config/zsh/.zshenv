@@ -67,6 +67,14 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 # export FZF_DEFAULT_OPTS="--layout=reverse --height 50%" # AT 50% it breaks uberzug with ytfzf and it breaks dwm swallow patch. I have to make a tradeoff
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
+
+if [[ -z $VIT_DIR ]]; then
+  export VIT_DIR=$XDG_CONFIG_HOME/vit
+fi
+
+if [[ -z $TIMEWARRIORDB ]]; then
+  export TIMEWARRIORDB=$XDG_DATA_HOME/timew
+fi
 # export GPG_TTY=$(tty)
 ## sudo not required for some system commands
 # for command in mount umount sv pacman updatedb su shutdown poweroff reboot ; do

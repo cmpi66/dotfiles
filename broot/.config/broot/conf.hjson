@@ -79,7 +79,7 @@ show_selection_mark: true
 # (see https://dystroy.org/broot/icons for installation and
 # troubleshooting)
 #
-# icon_theme: vscode
+icon_theme: vscode
 
 ###############################################################
 # Special paths
@@ -236,8 +236,8 @@ verbs: [
     {
         invocation: edit
         key: enter
-        external: "$EDITOR {file}"
-        leave_broot: false
+        external: "$EDITOR +{line} {file}"
+        from_shell: true
         apply_to: file
     }
 ]

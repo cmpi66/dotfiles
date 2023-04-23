@@ -7,6 +7,12 @@
 palette = "catppuccin_macchiato"
 format = "$all"
 
+[custom.task_count_pending]
+command = "task count rc.gc=off rc.verbose=nothing status:pending"
+when = "which task"
+symbol = " "
+description = "Count of pending Taskwarrior tasks"
+
 [line_break]
 disabled = true
 
@@ -103,15 +109,24 @@ surface0 = "#363a4f"
 base = "#24273a"
 mantle = "#1e2030"
 crust = "#181926"
-[custom.task_count_pending]
-command = "task count rc.gc=off rc.verbose=nothing status:pending"
-when = "which task"
-symbol = " "
-description = "Count of pending Taskwarrior tasks"
 # [conda]
 # symbol = " "
 # style = "bold #e5c07b" #yellow
 
+[golang]
+symbol = " "
+
+[directory]
+truncate_to_repo = false
+style = "bold cyan"
+read_only = " "
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+symbol = " "
+
+[hg_branch]
+symbol = " "
 
 # [time]
 # disabled = false
