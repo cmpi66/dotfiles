@@ -1,0 +1,9 @@
+#!/bin/env bash
+
+
+## A script to run as a cronjob backing up my data with rclone 
+
+flock -n /tmp/zfs-drive.lock /usr/bin/rclone sync --transfers 20 --retries 5 /zpgen IdriveEncrypt:gentoozfs
+flock -n /tmp/media-syncthing.lock /usr/bin/rclone sync --transfers 20 --retries 5 /home/chris/media IdriveEncrypt:mediasyncthing
+flock -n /tmp/copywriting.lock /usr/bin/rclone sync --transfers 20 --retries 5 /home/chris/copywriting IdriveEncrypt:copywriting
+flock -n /tmp/mail.lock /usr/bin/rclone sync --transfers 20 --retries 5 /home/chris/.local/share/mail IdriveEncrypt:email

@@ -126,6 +126,7 @@ abbr poweroff "doas openrc-shutdown -p now"
 abbr reboot "doas openrc-shutdown -r now"
 abbr mpv "mpv --fullscreen"
 abbr lynx "lynxub"
+abbr se "br ~/.local/bin/"
 
 ### ANSIBLE
 

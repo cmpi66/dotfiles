@@ -73,6 +73,15 @@ export LESS=-R
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
+
+if [[ -z $VIT_DIR ]]; then
+  export VIT_DIR=$XDG_CONFIG_HOME/vit
+fi
+
+if [[ -z $TIMEWARRIORDB ]]; then
+  export TIMEWARRIORDB=$XDG_DATA_HOME/timew
+fi
+
 # export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"
 # export LESS_TERMCAP_md="$(printf '%b' '[1;36m')"
 # export LESS_TERMCAP_me="$(printf '%b' '[0m')"

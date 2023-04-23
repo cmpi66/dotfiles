@@ -3,6 +3,12 @@
 
 format = "$all"
 
+[custom.task_count_pending]
+command = "task count rc.gc=off rc.verbose=nothing status:pending"
+when = "which task"
+symbol = " "
+description = "Count of pending Taskwarrior tasks"
+
 [line_break]
 disabled = true
 
@@ -75,12 +81,27 @@ style = "bold #e5c07b" #yellow
 [nodejs]
 symbol = " "
 style = "bold #e5c07b" #yellow
-[custom.task_count_pending]
-command = "task count rc.gc=off rc.verbose=nothing status:pending"
-when = "which task"
-symbol = " "
-description = "Count of pending Taskwarrior tasks"
 
+[golang]
+symbol = " "
+
+[directory]
+truncate_to_repo = false
+style = "bold cyan"
+read_only = " "
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+symbol = " "
+
+[hg_branch]
+symbol = " "
+	
+# [git_branch]
+# format = "[$symbol$branch]($style) "
+# symbol = " "
+
+	
 
 # style = "bold green"
 # symbol = "👩‍💻 "
