@@ -1,0 +1,4 @@
+#!/bin/env bash
+
+
+pandoc -f gfm --wrap=none -t docx -o out.docx $1

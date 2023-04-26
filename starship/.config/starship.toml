@@ -1,24 +1,50 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-format = "$all"
+format = """$all"""
 
-[custom.task_count_pending]
+# move the rest of the prompt to the right
+# right_format = """${custom.pending} ${custom.urgent} ${custom.low} $time"""
+right_format = """${custom.pending} $time"""
+
+# Wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 10
+
+# Wait 700 milliseconds for starship command  to check run this way the task command won't time out
+command_timeout = 1000
+
+[custom.pending]
 command = "task count rc.gc=off rc.verbose=nothing status:pending"
+# command = "task count rc.gc=off rc.verbose=nothing status:pending && task count rc.gc=off rc.verbose=nothing priority:H"
 when = "which task"
 symbol = " "
+format = "[$symbol$output]($style)"
 description = "Count of pending Taskwarrior tasks"
+
+# [custom.urgent]
+# command = "task count rc.gc=off rc.verbose=nothing priority:H status:pending"
+# when = "which task"
+# symbol = " "
+# style = "bold red"
+# format = "[$symbol$output]($style)"
+# description = "Count of pending Taskwarrior tasks"
+
+# [custom.low]
+# command = "task count rc.gc=off rc.verbose=nothing priority:L status:pending"
+# when = "which task"
+# symbol = "Q "
+# style = "bold purple"
+# format = "[$symbol$output]($style)"
+# description = "Count of pending Taskwarrior tasks"
 
 [line_break]
 disabled = true
 
-# symbol = "rust"
-# style = "bold red"
-# format = "[$symbol$version]($style)"
 
 #Disable the package module, hiding it from the prompt completely
 [package]
 disabled = true
+
 
 # [git_status]
 # conflicted = "🏳"
@@ -33,42 +59,18 @@ disabled = true
 # renamed = "👅"
 # deleted = "🗑"
 
-# [battery]
-# full_symbol = "⚡"
-# charging_symbol = ""
-# discharging_symbol = ""
-
-# [[battery.display]]
-# threshold = 20
-# style = "bold red"
-
-# [character]
-# error_symbol = "[](bold red) "
-# success_symbol = "[->](bold green) "
-
-# [character]
-# success_symbol = '[➜](bold green) '
-# error_symbol = '[✗](bold red) '
-
 
 [character]
+success_symbol = "[❯](bold green) "
+error_symbol = '[✗](bold red) '
 vicmd_symbol = '[N](bold cyan) '
 vimcmd_replace_one_symbol = '[❮](bold yellow)'
 vimcmd_replace_symbol = '[❮](bold red)'
 vimcmd_visual_symbol = '[V](bold purple)'
 
 
-error_symbol = '[✗](bold red) '
-
-[username]
-style_user = "Bold green"
-style_root = "black bold"
-disabled = false
-show_always = true
-
 [hostname]
 ssh_only = false
-ssh_symbol = '🌐 '
 format = "[$hostname]($style) "
 trim_at = "-"
 style = "bold blue"
@@ -94,23 +96,8 @@ read_only = " "
 format = "[$symbol$branch]($style) "
 symbol = " "
 
-[hg_branch]
-symbol = " "
-	
-# [git_branch]
-# format = "[$symbol$branch]($style) "
-# symbol = " "
-
-	
-
-# style = "bold green"
-# symbol = "👩‍💻 "
-# disabled = false
-
-
-# [time]
-# disabled = false
-# format = '🕙[\[ $time \]]($style) '
-# time_format = "%T"
-# utc_time_offset = "-5"
-# time_range = "10:00:00-14:00:00" 
+[time]
+disabled = false
+style = "bold purple"
+format = '[\[$time\]]($style) '
+time_format = "%r"

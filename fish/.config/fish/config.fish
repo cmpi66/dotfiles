@@ -126,7 +126,7 @@ abbr poweroff "doas openrc-shutdown -p now"
 abbr reboot "doas openrc-shutdown -r now"
 abbr mpv "mpv --fullscreen"
 abbr lynx "lynxub"
-abbr se "br ~/.local/bin/"
+abbr se "br --conf ~/.config/broot/open.hjson ~/.local/bin/"
 
 ### ANSIBLE
 
@@ -171,7 +171,6 @@ scheme set tokyonight
 source ~/.config/fish/shortcuts.fish
 source ~/.config/fish/gentoo.fish
 source ~/.config/fish/fnm.fish
-# add it to your ~/.config/fish/config.fish
 
 # retrieve command cheat sheets from cheat.sh
 # fish version by @tobiasreischmann
