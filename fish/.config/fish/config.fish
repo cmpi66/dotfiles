@@ -110,7 +110,8 @@ abbr rn "sudo pacman -Rns"
 abbr wiki "nvim ~/.local/.src/zettlekasten/index.md"
 abbr yup "paru -Syu"
 # abbr gp "git add . && git commit -m 'autopush' && git push"
-abbr gp "git add . && git commit -m 'autopush' && git remote | xargs -L1 git push --all" ##push to all 3 gits
+# abbr gp "git add . && git commit -m 'autopush' && git remote | xargs -L1 git push --all" ##push to all 3 gits
+abbr gp "git add . && git commit -m 'autopush' && git push" ##push to all 3 gits
 abbr mkdir "mkdir -pv"
 abbr lf "lfub"
 abbr lynx "lynxub"
@@ -137,12 +138,12 @@ abbr pfvpdown "sudo wg-quick down pfwg0"
 # abbr upcmpi "rsync -uvrP --delete-after ~/.local/src/sites/cmpi4/website/public/ root@cmpi4.com:/var/www/cmpi4/"
 abbr tabs "xargs -n1 librewolf <"
 # abbr paste "xclip -selection c -o >"
-# abbr chadwm "startx ~/.config/chadwm/scripts/run.sh"
 abbr search "paru -Ss"
 abbr updategrub "sudo grub-mkconfig -o /boot/grub/grub.cfg"
 abbr mpv "mpv --fullscreen"
 abbr paste "xsel --clipboard --output >" 
-abbr se "br ~/.local/bin/"
+abbr se "br --conf ~/.config/broot/open.hjson ~/.local/bin/"
+abbr yts "ytfzf -t -l --sort"
 
 #Custom keybindings vi insert mode
 set -g fish_key_bindings fish_vi_key_bindings
@@ -156,7 +157,6 @@ bind -M insert \cj history-search-forward # Down
 
 # Custom keybindings default mode
 bind \co 'lf'
-# bind \ce 'neomutt'
 bind \ce 'ncdu'
 bind \ck history-search-backward # Up
 bind \cj history-search-forward # Down

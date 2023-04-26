@@ -233,5 +233,12 @@ verbs: [
         external: "$EDITOR +{line} {file}"
         from_shell: true
     }
+    {
+        invocation: edit
+        key: enter
+        external: "$EDITOR +{line} {file}"
+        from_shell: true
+        apply_to: file
+    }
 ]
 
