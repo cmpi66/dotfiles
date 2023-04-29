@@ -95,7 +95,7 @@ SETUVAR _fish_abbr_src:cd\x20/home/chris/\x2elocal/src\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_stow:stow\x20\x2d\x2dtarget\x3d/home/chris
 SETUVAR _fish_abbr_sw:cd\x20/home/chris/copywriting/swipes/\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_swh:cd\x20/home/chris/copywriting/swipes/headlines/\x3b\x20and\x20ls\x20\x2da
-SETUVAR _fish_abbr_tabs:xargs\x20\x2dn1\x20firefox\x2dbin\x20\x3c
+SETUVAR _fish_abbr_tabs:xargs\x20\x2dn1\x20librewolf\x2dbin\x20\x3c
 SETUVAR _fish_abbr_upcmpi:rsync\x20\x2duvrP\x20\x2d\x2ddelete\x2dafter\x20\x7e/\x2elocal/src/sites/cmpi4/website/public/\x20root\x40cmpi4\x2ecom\x3a/var/www/cmpi4/
 SETUVAR _fish_abbr_update_2D_grub:sudo\x20grub\x2dmkconfig\x20\x2do\x20/boot/grub/grub\x2ecfg
 SETUVAR _fish_abbr_updategrub:sudo\x20grub\x2dmkconfig\x20\x2do\x20/boot/grub/grub\x2ecfg

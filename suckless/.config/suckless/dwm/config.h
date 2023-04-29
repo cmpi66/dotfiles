@@ -208,7 +208,7 @@ static Key keys[] = {
 	{ MODKEY,		                   XK_equal,	spawn,		    {.v = (const char*[]){ "mpc", "volume", "+5",  NULL } } },
 	{ MODKEY,		                   XK_minus,	spawn,		    {.v = (const char*[]){ "mpc", "volume", "-5", NULL } } },
 	{ MODKEY,		                   XK_p,	spawn,		        {.v = (const char*[]){ "mpc", "toggle",  NULL } } },
-	{ MODKEY|ShiftMask,	           XK_p,	spawn,		        {.v = (const char*[]){ "mpc", "stop",  NULL } } },
+	{ MODKEY|ShiftMask,	           XK_p,	spawn,		        SHCMD("mpc pause; pauseallmpv") },
   { 0,			                     XK_Print,	spawn,		    SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") },
   { ShiftMask,		               XK_Print,	spawn,		    {.v = (const char*[]){ "maimpic", NULL } } },
   { MODKEY,		                 	 XK_Print,	spawn,		    {.v = (const char*[]){ "dmenurecord", NULL } } },

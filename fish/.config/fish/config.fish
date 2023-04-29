@@ -118,7 +118,7 @@ abbr vpnup "sudo wg-quick up gentoobox"
 abbr vpndown "sudo wg-quick down gentoobox"
 
 abbr cmpiup "rsync -uvrP --delete-after ~/.local/src/sites/cmpi4/website/public/ root@cmpi4.com:/var/www/cmpi4/"
-abbr tabs "xargs -n1 firefox-bin <"
+abbr tabs "xargs -n1 librewolf-bin <"
 # abbr paste "xclip -selection c -o >"
 abbr paste "xsel --clipboard --output >" 
 abbr updategrub "sudo grub-mkconfig -o /boot/grub/grub.cfg"
