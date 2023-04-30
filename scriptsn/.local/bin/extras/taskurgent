@@ -1,0 +1,15 @@
+#!/bin/env bash
+
+
+# if [ $TASK +READY urgency \> 10 count -gt "0" ]; then
+#   echo "$URGENT"
+# fi
+#
+task +READY urgency \> 10 count 
+
+
+# if [ `$TASK +READY +OVERDUE count` -gt "0"]; then
+#   echo "$OVERDUE"
+# else 
+#   echo "$"
+# fi
