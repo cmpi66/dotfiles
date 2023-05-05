@@ -7,8 +7,8 @@
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 
-# mounting music and vids from gentoobox
-doas mount -t nfs 10.27.27.10:/zpgen/shared /mnt/share/ &
+attachzettle &
+doas mount -t nfs 10.27.27.10:/zpgen/shared /mnt/share/ & # mounting music and vids from gentoobox
 xidle &
 xinput set-prop "DLL096D:01 06CB:CDE6 Touchpad" "Coordinate Transformation Matrix" 3.8 0 0 0 3.8 0 0 0 1 &
 clipmenud &

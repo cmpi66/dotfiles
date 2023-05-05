@@ -230,6 +230,7 @@ static Key keys[] = {
   { MODKEY,			                  XK_F6,		 spawn,		      SHCMD("td-toggle") },
   { MODKEY,			XK_F11,		spawn,		SHCMD("mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
   { MODKEY,			                  XK_F7,		 spawn,		      SHCMD("dm-confedit") },
+  { MODKEY,			                  XK_F8,		 spawn,		      SHCMD("attachzettle") },
   // { MODKEY,			                  XK_F7,		 spawn,		      SHCMD("jaybird") },
   { MODKEY,			                  XK_F12,		 spawn,		      SHCMD("remaps") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
