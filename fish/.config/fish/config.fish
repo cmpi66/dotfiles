@@ -127,7 +127,8 @@ abbr reboot "doas openrc-shutdown -r now"
 abbr mpv "mpv --fullscreen"
 abbr lynx "lynxub"
 abbr se "br --conf ~/.config/broot/open.hjson ~/.local/bin/"
-
+abbr syncartilces "rclone sync -v  --transfers 20 --retries 5 --s3-upload-cutoff=0 --exclude '*.md'  ~/docs/md/cmm-articles/  Idrive:cmmarketer/articles"
+abbr syncsamples "rclone sync -v --transfers 20 --retries 5 --s3-upload-cutoff=0 --exclude '*.md'  ~/copywriting/samples/final/ Idrive:cmmarketer/samples"
 ### ANSIBLE
 
 

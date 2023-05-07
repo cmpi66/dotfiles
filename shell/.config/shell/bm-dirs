@@ -1,26 +1,23 @@
 # You can add comments to these files with #
-cac ${XDG_CACHE_HOME:-$HOME/.cache}
-cf  ${XDG_CONFIG_HOME:-$HOME/.config}
-D   ${XDG_DOWNLOAD_DIR:-$HOME/dl}
-d   ${XDG_DOCUMENTS_DIR:-$HOME/docs}
-rs  ${XDG_DATA_HOME:-$HOME/.local/share}
-dt  $HOME/docs/tex/
-ds  $HOME/docs/ms/
-dp  $HOME/docs/props/
-dr  $HOME/docs/rmd/
-dri $HOME/docs/rmd/it-projects/
-dm  $HOME/docs/md/
-rr  $HOME/.local/.src
-M   $HOME/media
-ce  $HOME/copywriting/english-rules/
-cw  $HOME/copywriting/copying-writers/
-sw  $HOME/copywriting/swipes/
-swh $HOME/copywriting/swipes/headlines/
-h   $HOME
+cac ~/.cache
+cf  ~/.config
+D   ~/dl
+d   ~/docs
+rs  ~/.local/share
+# dt  $HOME/docs/tex/
+# ds  $HOME/docs/ms/
+dp  ~/docs/props/
+# dr  $HOME/docs/rmd/
+# dri $HOME/docs/rmd/it-projects/
+dm  ~/docs/md/
+rr  ~/.local/.src
+M   ~/media
+ce  ~/copywriting/english-rules/
+sw  ~/copywriting/swipes/
+swh ~/copywriting/swipes/headlines/
+h   ~/
 # m   ${XDG_MUSIC_DIR:-$HOME/media/music}
 mn  /mnt
-pp  ${XDG_PICTURES_DIR:-$HOME/pixs}
-sc  $HOME/.local/bin
-# src $HOME/.local/src
+pp  ~/pix
+sc  ~/.local/bin
 vv  /zpgen/shared/vids/
-
