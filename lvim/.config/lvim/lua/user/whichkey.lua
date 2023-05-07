@@ -18,6 +18,7 @@ lvim.builtin.which_key.vmappings["y"] = {"'\'+y"}
 lvim.builtin.which_key.mappings["y"] = {"'\'+y"}
 -- lvim.builtin.which_key.mappings["Y"] = {"'\'+Y"}
 -- lvim.builtin.which_key.mappings["Y"] = {'gg"+yG'}
+-- lvim.keys.normal_mode["<leader>Y"] = ':e ~/media<CR>' -- This was a test to see if it can cd into a dir
 lvim.keys.normal_mode["<leader>Y"] = 'gg"+yG'
 lvim.keys.normal_mode["<leader>P"] = 'o<ESC>Pk'
 
