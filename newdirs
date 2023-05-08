@@ -25,13 +25,10 @@ done
 
 # List of directories to create
 create_dirs=(
-    "/home/chris/copywriting"
     "/home/chris/repos"
-    "/home/chris/media"
     "/home/chris/dl"
     "/home/chris/dl/git-clones"
     "/home/chris/.local"
-    "/home/chris/.local/.src"
     "/home/chris/.config/npm"
 )
 
