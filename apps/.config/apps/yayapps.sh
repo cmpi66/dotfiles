@@ -18,7 +18,7 @@ yay --noconfirm --needed -S \
   rpi-imager-bin \
   sc-im \
   task-spooler \
-  tremc \
+  stig-git \
   ueberzug \
   upwork \
   urlview-xdg-git \
