@@ -144,6 +144,7 @@ abbr mpv "mpv --fullscreen"
 abbr paste "xsel --clipboard --output >" 
 abbr se "br --conf ~/.config/broot/open.hjson ~/.local/bin/"
 abbr yts "ytfzf -t -l --sort"
+abbr sdcv "sdcv -n --utf8-output --color"
 
 #Custom keybindings vi insert mode
 set -g fish_key_bindings fish_vi_key_bindings

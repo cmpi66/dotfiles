@@ -50,7 +50,8 @@ alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 export HISTFILE="$XDG_DATA_HOME/zsh/history"
 # export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
-export DICS="/usr/share/stardict/dic/"
+# export DICS="/usr/share/stardict/dic/"
+export STARDICT_DATA_DIR="$XDG_DATA_HOME"/dic
 export _JAVA_AWT_WM_NONREPARENTING=1 # Fix for Java applications in dwm
 export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
 export HISTFILE="${XDG_STATE_HOME}"/bash/history
@@ -67,7 +68,7 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 # export FZF_DEFAULT_OPTS="--layout=reverse --height 50%" # AT 50% it breaks uberzug with ytfzf and it breaks dwm swallow patch. I have to make a tradeoff
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
-
+SDCV_PAGER='lolcat -f | less --quit-if-one-screen -RX'
 if [[ -z $VIT_DIR ]]; then
   export VIT_DIR=$XDG_CONFIG_HOME/vit
 fi
