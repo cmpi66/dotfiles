@@ -26,6 +26,8 @@ set ignorecase true
 set hidden true
 set cleaner '~/.config/lf/cleaner'
 set previewer '~/.config/lf/scope'
+source '~/.config/lf/shortcutrc'
+
 
 # cmds/functions
 cmd open ${{
