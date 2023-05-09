@@ -49,7 +49,9 @@ export HISTFILE="$XDG_DATA_HOME/zsh/history"
 # export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 
 export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config" 
-export DICS="/usr/share/stardict/dic/"
+# export DICS="/usr/share/stardict/dic/"
+#
+export STARDICT_DATA_DIR="$XDG_DATA_HOME"/dic
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 export PYTHONSTARTUP="/etc/python/pythonrc"
 export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
@@ -73,7 +75,8 @@ export LESS=-R
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
-
+# SDCV_PAGER='lolcat -f | less --quit-if-one-screen -RX'
+# SDCV_PAGER='less --quit-if-one-screen -RX'
 if [[ -z $VIT_DIR ]]; then
   export VIT_DIR=$XDG_CONFIG_HOME/vit
 fi

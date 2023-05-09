@@ -46,10 +46,10 @@ function extract {
 fi
 }
 
-se() {
-	choice="$(find ~/.local/bin/ -mindepth 1 -printf '%P\n' | fzf)"
-	[ -f "$HOME/.local/bin/$choice" ] && $EDITOR "$HOME/.local/bin/$choice"
-}
+# se() {
+# 	choice="$(find ~/.local/bin/ -mindepth 1 -printf '%P\n' | fzf)"
+# 	[ -f "$HOME/.local/bin/$choice" ] && $EDITOR "$HOME/.local/bin/$choice"
+# }
 
  # se () { find  ~/.local/bin/ -mindepth 1 -printf '%P\n' | fzf | xargs -r $EDITOR ;}
 
@@ -63,3 +63,5 @@ se() {
 #     builtin cd "$1"
 #     ls -al
 # }
+#
+
