@@ -17,7 +17,7 @@ static const struct arg args[] = {
 
 	//{wifi_perc, "  %s%% | ", "wlp0s20f" }
 	{disk_free, "^c#f2cdcd^ ^b#1e1e2e^ Local  %s  " , "/" },
-	{disk_free, "^c#91d7e3^ ^b#1e1e2e^ Zfs  %s  " , "/mnt/share/" },
+	// {disk_free, "^c#91d7e3^ ^b#1e1e2e^ E2  %s  " , "/mnt/idrive/" },
 	// { datetime, "%s",   "^c#f8bd96^ ^b#1e1e2e^  %r   " },
 	{ datetime, "%s",   "^c#f8bd96^  %a %b %d   %r   " },
     {run_command,  "^c#74c7Ec^  ^b#1e1e2e^ %2s ",      "music.sh" },

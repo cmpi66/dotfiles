@@ -69,7 +69,7 @@ const char *spcmd3[] = {"st", "-n", "spbmks", "-g", "80x25", "-e", "bmks", NULL 
 const char *spcmd4[] = {"st", "-n", "spwiki", "-g", "90x25", "-e", "dmenuwiki", NULL };
 const char *spcmd5[] = {"alacritty", "--class", "spnews", "--config-file", "/home/chris/.config/alacritty/newsboat.yml", "-e", "newsboat", NULL };
 const char *spcmd6[] = {"alacritty", "--class", "spterm", "--config-file", "/home/chris/.config/alacritty/scratch.yml",  NULL };
-// const char *spcmd3[] = {"keepassxc", NULL };
+const char *spcmd7[] = {"keepassxc", NULL };
 static Sp scratchpads[] = {
     /* name          cmd  */
    {"sppulse",      spcmd1},
@@ -78,6 +78,7 @@ static Sp scratchpads[] = {
    {"spwiki",   spcmd4},
    {"spnews",   spcmd5},
    {"spterm",   spcmd6},
+   {"keepassxc",   spcmd7},
 };
 
 
@@ -115,7 +116,9 @@ static const Rule rules[] = {
 	/* class      instance    title            tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",     NULL,       NULL,            0,         1,          0,           0,        -1 },
 	{ "Tor Browser",     NULL,       NULL,            0,         1,          0,           0,        -1 },
+	// { "keepassxc",     "KeePassXC",       NULL,            0,         1,          0,           0,        -1 },
 	{ "Pam_gnupg",     NULL,       NULL,            0,         1,          0,           0,        -1 },
+	{ "pinentry-gtk-2",     "Pinentry-gtk-2",       NULL,            0,         1,          0,           0,        -1 },
     { "trayer",   NULL,         NULL,       1 << 8,       False },
     { "firefox",   NULL,         NULL,       1 << 2,       False },
     { "LibreWolf",   NULL,         NULL,       1 << 2,       False },
@@ -138,6 +141,7 @@ static const Rule rules[] = {
     { NULL,       "spwiki",  NULL,       SPTAG(3),       1,           -1 },
     { NULL,       "spnews",  NULL,       SPTAG(4),       1,           -1 },
     { NULL,       "spterm",  NULL,       SPTAG(5),       1,           -1 },
+    { NULL,       "keepassxc",  NULL,       SPTAG(6),       1,           -1 },
 };
 
 /* layout(s) */
@@ -231,6 +235,8 @@ static Key keys[] = {
   { MODKEY,			XK_F11,		spawn,		SHCMD("mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
   { MODKEY,			                  XK_F7,		 spawn,		      SHCMD("dm-confedit") },
   { MODKEY,			                  XK_F8,		 spawn,		      SHCMD("attachzettle") },
+  { MODKEY,			                  XK_F9,		 spawn,		      SHCMD("dmenumount") },
+  { MODKEY,			                  XK_F10,		 spawn,		      SHCMD("dmenuunmount") },
   // { MODKEY,			                  XK_F7,		 spawn,		      SHCMD("jaybird") },
   { MODKEY,			                  XK_F12,		 spawn,		      SHCMD("remaps") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
@@ -267,6 +273,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,            	XK_a,	     togglescratch,  {.ui = 3 } },
 	{ MODKEY|ShiftMask,            	XK_e,	     togglescratch,  {.ui = 4 } },
 	{ MODKEY,                      	XK_y,	     togglescratch,  {.ui = 5 } },
+	{ MODKEY|ShiftMask,                      	XK_l,	     togglescratch,  {.ui = 6 } },
 	{ MODKEY,             XK_semicolon,       shiftviewclients, { .i = +1 } },
 	{ MODKEY,             XK_g, shiftviewclients, { .i = -1 } },
 	{ MODKEY1,                       XK_n,      togglealttag,   {0} },

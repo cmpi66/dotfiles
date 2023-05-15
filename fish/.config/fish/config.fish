@@ -51,11 +51,7 @@ fzf_configure_bindings --git_status=\cs --git_log=\cl
 xset r rate 350 50
 # xset r rate 400 100
 
-alias j='z'
-alias vf="fzf | xargs -r -I % $EDITOR %"
 
-abbr f 'zi'
-abbr g 'lazygit'
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
@@ -85,17 +81,18 @@ alias flee="zk flee"
 alias nt="zk nt"
 alias lit="zk lit"
 alias mbsync='mbsync -c $MBSYNCRC'
+alias j='z'
+alias vf="fzf | xargs -r -I % $EDITOR %"
 # alias duck='?'
 # alias google='??'
 
-abbr desk "ssh -t chris@10.27.27.10"
-
-abbr deskfs "sudo mount -t nfs 10.27.27.10:/zpgen/shared/ /mnt/share/" 
 # System abbreviations 
+abbr f 'zi'
+abbr desk "ssh -t chris@10.27.27.10"
+abbr deskfs "sudo mount -t nfs 10.27.27.10:/zpgen/shared/ /mnt/share/" 
 abbr archlinx-fix-keys "sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
 abbr merge "xrdb -merge ~/.config/x11/xresources"
 # abbr nvimrc "nvim ~/.config/nvim/"
-abbr i3 "i3lock -C -i /home/chris/.local/bin/arch-wallpaper.jpg"
 abbr nv "nvim"
 abbr snv "sudo nvim"
 abbr ka "killall"
@@ -109,7 +106,6 @@ abbr p "sudo pacman -S"
 abbr rn "sudo pacman -Rns"
 abbr wiki "nvim ~/.local/.src/zettlekasten/index.md"
 abbr yup "paru -Syu"
-# abbr gp "git add . && git commit -m 'autopush' && git push"
 # abbr gp "git add . && git commit -m 'autopush' && git remote | xargs -L1 git push --all" ##push to all 3 gits
 abbr gp "git add . && git commit -m 'autopush' && git push" ##push to all 3 gits
 abbr mkdir "mkdir -pv"
@@ -145,11 +141,15 @@ abbr paste "xsel --clipboard --output >"
 abbr se "br --conf ~/.config/broot/open.hjson ~/.local/bin/"
 abbr yts "ytfzf -t -l --sort"
 abbr sdcv "sdcv -n --utf8-output --color"
+abbr zfsun "doas umount /mnt/share"
+# abbr idrivemn "rclone mount IdriveEncrypt:/ /mnt/idrive/ --vfs-cache-mode full --daemon"
+
+### TASKWARRIOR 
+abbr ta "task add"
 
 #Custom keybindings vi insert mode
 set -g fish_key_bindings fish_vi_key_bindings
 bind -M insert \co 'lf'
-# bind -M insert \ce 'neomutt'
 bind -M insert \ce 'ncdu'
 bind -M insert \ck history-search-backward # Up
 bind -M insert \cj history-search-forward # Down
@@ -165,19 +165,14 @@ bind yy fish_clipboard_copy
 bind Y fish_clipboard_copy
 bind p fish_clipboard_paste
 
-# neofetch
-# colorscript random
 zoxide init fish | source
 starship init fish | source
 atuin init fish | source
 navi widget fish | source
-# scheme set doom-one
 scheme set catppuccin
 
 source ~/.config/fish/shortcuts.fish
 source ~/.config/fish/fnm.fish
-# bass source ~/.config/shell/aliasrc
-# source ~/.config/fish/fzf_fish_key_bindings.fish
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

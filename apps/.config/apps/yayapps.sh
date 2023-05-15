@@ -8,6 +8,7 @@ yay --noconfirm --needed -S \
   ani-cli \
   aur/trayer-srg \
   hakuneko-desktop \
+  pam-gnupg \
   htop-vim \
   i3lock-color \
   kcc \

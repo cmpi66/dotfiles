@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+rclone mount IdriveEncrypt:/ /mnt/idrive/ --vfs-cache-mode full --daemon
+

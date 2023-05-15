@@ -59,7 +59,7 @@ export QT_QPA_PLATFORMTHEME="gtk2" # Have QT use gtk2 theme.
 export ANSIBLE_HOME="${XDG_CONFIG_HOME}/ansible"
 export ANSIBLE_CONFIG="${XDG_CONFIG_HOME}/ansible.cfg"
 export ANSIBLE_GALAXY_CACHE_DIR="${XDG_CACHE_HOME}/ansible/galaxy_cache"
-export HISTFILE="$XDG_DATA_HOME/history"
+# export HISTFILE="$XDG_DATA_HOME/history"
 # export TMUX_TMPDIR="$XDG_RUNTIME_DIR" # can't attach to tmux ssh sessions, since it looks for the /tmp dir.
 export W3M_DIR="$XDG_DATA_HOME"/w3m
 export PATH=~/.local/.npm-global/bin:$PATH
@@ -68,7 +68,12 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 # export FZF_DEFAULT_OPTS="--layout=reverse --height 50%" # AT 50% it breaks uberzug with ytfzf and it breaks dwm swallow patch. I have to make a tradeoff
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
-SDCV_PAGER='lolcat -f | less --quit-if-one-screen -RX'
+# SDCV_PAGER='lolcat -f | less --quit-if-one-screen -RX'
+export QT_QPA_PLATFORMTHEME="gtk2" # Have QT use gtk2 theme.
+export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
+# export GPG_TTY=$(tty)
+# export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+# gpgconf --launch gpg-agent
 if [[ -z $VIT_DIR ]]; then
   export VIT_DIR=$XDG_CONFIG_HOME/vit
 fi
