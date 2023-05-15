@@ -9,3 +9,4 @@ flock -n /tmp/media-syncthing.lock /usr/bin/rclone sync  --s3-upload-cutoff=0 --
 flock -n /tmp/mail.lock /usr/bin/rclone sync  --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/mail IdriveEncrypt:allmail
 flock -n /tmp/src-syncthing.lock /usr/bin/rclone syn  --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/.src IdriveEncrypt:srcsync
 flock -n /tmp/gen-dl.lock /usr/bin/rclone sync  --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/dl IdriveEncrypt:downloadsgentoo
+flock -n /tmp/pass-drive.lock /usr/bin/rclone sync --s3-upload-cutoff=0 --transfers 20 --retries 5 ~/.local/share/.password-store/ IdriveEncrypt:pass-store

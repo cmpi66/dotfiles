@@ -65,6 +65,7 @@ SETUVAR _fish_abbr_golang:sudo\x20emerge\x20\x40golang\x2drebuild
 SETUVAR _fish_abbr_gp:git\x20add\x20\x2e\x20\x26\x26\x20git\x20commit\x20\x2dm\x20\x27autopush\x27\x20\x26\x26\x20git\x20push
 SETUVAR _fish_abbr_h:cd\x20\x7e/\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_i3:i3lock\x20\x2dC\x20\x2di\x20/home/chris/\x2elocal/bin/arch\x2dwallpaper\x2ejpg
+SETUVAR _fish_abbr_idrivemn:rclone\x20mount\x20IdriveEncrypt\x3a/\x20/mnt/idrive/\x20\x2d\x2dvfs\x2dcache\x2dmode\x20full\x20\x2d\x2ddaemon
 SETUVAR _fish_abbr_ka:killall
 SETUVAR _fish_abbr_ke:cd\x20/usr/src/linux/\x20\x26\x26\x20sudo\x20make\x20menuconfig
 SETUVAR _fish_abbr_kx:killall\x20sxhkd\x20\x26\x26\x20sxhkd\x20\x26
@@ -82,7 +83,16 @@ SETUVAR _fish_abbr_ncm:ncmpcpp
 SETUVAR _fish_abbr_nv:nvim
 SETUVAR _fish_abbr_nvimrc:nvim\x20\x7e/\x2econfig/nvim/
 SETUVAR _fish_abbr_paste:xsel\x20\x2d\x2dclipboard\x20\x2d\x2doutput\x20\x3e
+SETUVAR _fish_abbr_po:pass\x20otp\x20otp/
+SETUVAR _fish_abbr_poa:pass\x20otp\x20otp/amazon\x2dotp
+SETUVAR _fish_abbr_pob:pass\x20otp\x20otp/bitwarden\x2dotp
+SETUVAR _fish_abbr_pogc:pass\x20otp\x20otp/google\x2dmunozchris\x2dotp
+SETUVAR _fish_abbr_pogn:pass\x20otp\x20otp/google\x2dnjc\x2dotp
+SETUVAR _fish_abbr_poi:pass\x20otp\x20otp/idrive\x2dotp
+SETUVAR _fish_abbr_pon:pass\x20otp\x20otp/namecheap\x2dotp
 SETUVAR _fish_abbr_poweroff:doas\x20openrc\x2dshutdown\x20\x2dp\x20now
+SETUVAR _fish_abbr_pozc:pass\x20otp\x20otp/zoho\x2dcmmarketer\x2dotp
+SETUVAR _fish_abbr_pozp:pass\x20otp\x20otp/zoho\x2dmunozpi\x2dotp
 SETUVAR _fish_abbr_pp:cd\x20\x7e/pix\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_reboot:doas\x20openrc\x2dshutdown\x20\x2dr\x20now
 SETUVAR _fish_abbr_rm:rm\x20\x2dv
@@ -98,7 +108,9 @@ SETUVAR _fish_abbr_sw:cd\x20\x7e/copywriting/swipes/\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_swh:cd\x20\x7e/copywriting/swipes/headlines/\x3b\x20and\x20ls\x20\x2da
 SETUVAR _fish_abbr_syncartilces:rclone\x20sync\x20\x2dv\x20\x20\x2d\x2dtransfers\x2020\x20\x2d\x2dretries\x205\x20\x2d\x2ds3\x2dupload\x2dcutoff\x3d0\x20\x2d\x2dexclude\x20\x27\x2a\x2emd\x27\x20\x20\x7e/docs/md/cmm\x2darticles/\x20\x20Idrive\x3acmmarketer/articles
 SETUVAR _fish_abbr_syncsamples:rclone\x20sync\x20\x2dv\x20\x2d\x2dtransfers\x2020\x20\x2d\x2dretries\x205\x20\x2d\x2ds3\x2dupload\x2dcutoff\x3d0\x20\x2d\x2dexclude\x20\x27\x2a\x2emd\x27\x20\x20\x7e/copywriting/samples/final/\x20Idrive\x3acmmarketer/samples
+SETUVAR _fish_abbr_ta:task\x20add
 SETUVAR _fish_abbr_tabs:xargs\x20\x2dn1\x20librewolf\x2dbin\x20\x3c
+SETUVAR _fish_abbr_td:task\x20done
 SETUVAR _fish_abbr_upcmpi:rsync\x20\x2duvrP\x20\x2d\x2ddelete\x2dafter\x20\x7e/\x2elocal/src/sites/cmpi4/website/public/\x20root\x40cmpi4\x2ecom\x3a/var/www/cmpi4/
 SETUVAR _fish_abbr_update_2D_grub:sudo\x20grub\x2dmkconfig\x20\x2do\x20/boot/grub/grub\x2ecfg
 SETUVAR _fish_abbr_updategrub:sudo\x20grub\x2dmkconfig\x20\x2do\x20/boot/grub/grub\x2ecfg

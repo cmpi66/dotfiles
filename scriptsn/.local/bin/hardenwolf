@@ -57,7 +57,7 @@ LIBREWOLF_PID=$!
 # Wait for Librewolf to start up
 # sleep 3
 
-user_js_dir="/home/chris/dl/git-clones/user.js" librewolf_dir="/home/chris/.librewolf.bk"
+user_js_dir="/home/chris/dl/git-clones/user.js" librewolf_dir="/home/chris/.librewolf"
 
 # Loop through directories with names matching '*default-release' in the .librewolf directory
 for dir in "$librewolf_dir"/*default-release/; do

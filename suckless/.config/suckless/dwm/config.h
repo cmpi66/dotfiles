@@ -70,6 +70,7 @@ const char *spcmd3[] = {"st", "-n", "spbmks", "-g", "80x25", "-e", "bmks", NULL 
 const char *spcmd4[] = {"st", "-n", "spwiki", "-g", "90x25", "-e", "wikiman", "-s", "gentoo", NULL };
 const char *spcmd5[] = {"alacritty", "--class", "spnews", "--config-file", "/home/chris/.config/alacritty/newsboat.yml", "-e", "newsboat", NULL };
 const char *spcmd6[] = {"alacritty", "--class", "spterm", "--config-file", "/home/chris/.config/alacritty/scratch.yml",  NULL };
+const char *spcmd7[] = {"keepassxc",  NULL };
 // const char *spcmd3[] = {"keepassxc", NULL };
 static Sp scratchpads[] = {
     /* name          cmd  */
@@ -79,6 +80,7 @@ static Sp scratchpads[] = {
    {"spwiki",   spcmd4},
    {"spnews",   spcmd5},
    {"spterm",   spcmd6},
+   {"keepassxc",   spcmd7},
 };
 
 
@@ -139,6 +141,7 @@ static const Rule rules[] = {
     { NULL,       "spwiki",  NULL,       SPTAG(3),       1,           -1 },
     { NULL,       "spnews",  NULL,       SPTAG(4),       1,           -1 },
     { NULL,       "spterm",  NULL,       SPTAG(5),       1,           -1 },
+    { NULL,       "keepassxc",  NULL,       SPTAG(6),       1,           -1 },
 
 };
 
@@ -222,6 +225,8 @@ static Key keys[] = {
   { MODKEY,			                  XK_F7,		 spawn,		      SHCMD("dm-confedit") },
   // { MODKEY,			                  XK_F7,		 spawn,		      SHCMD("dmenu-man") },
   // { MODKEY,			XK_F11,		spawn,		SHCMD("mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
+  { MODKEY,			                  XK_F9,		 spawn,		      SHCMD("dmenumount") },
+  { MODKEY,			                  XK_F10,		 spawn,		      SHCMD("dmenuunmount") },
   { MODKEY,			                  XK_F12,		 spawn,		      SHCMD("remaps") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
@@ -258,6 +263,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,            	XK_a,	     togglescratch,  {.ui = 3 } },
 	{ MODKEY|ShiftMask,            	XK_e,	     togglescratch,  {.ui = 4 } },
 	{ MODKEY,                      	XK_y,	     togglescratch,  {.ui = 5 } },
+	{ MODKEY|ShiftMask,                      	XK_l,	     togglescratch,  {.ui = 6 } },
 	{ MODKEY,                       XK_semicolon,      shiftviewclients, { .i = +1 } },
 	{ MODKEY,                       XK_g,      shiftviewclients, { .i = -1 } },
 

@@ -1,6 +1,10 @@
 ## Vim mode
 fish_vi_key_bindings
 
+# set -x GPG_TTY (tty)
+# set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+# gpgconf --launch gpg-agent
+
 #Vim cursor behavior
 set fish_cursor_default block steady
 set fish_cursor_insert line steady
@@ -52,11 +56,7 @@ fzf_configure_bindings --git_status=\cs --git_log=\cl
 xset r rate 300 50
 # xset r rate 400 100
 
-alias j='z'
-alias vf="fzf | xargs -r -I % $EDITOR %"
 
-abbr f 'zi'
-abbr g 'lazygit'
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
@@ -76,16 +76,26 @@ alias ...='cd ../..'
 alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
+
+# System
 alias sudo='doas'
 alias nvim='lvim'
 alias scim='sc-im --quiet'
 alias mbsync='mbsync -c $MBSYNCRC'
+alias j='z'
+alias vf="fzf | xargs -r -I % $EDITOR %"
+
+## zk
+alias perma="zk perma"
+alias flee="zk flee"
+alias nt="zk nt"
+alias lit="zk lit"
 
 # System abbreviations 
 
+abbr f 'zi'
 abbr merge "xrdb -merge ~/.config/x11/xresources"
 # abbr nvimrc "nvim ~/.config/nvim/"
-# abbr i3 "i3lock -C -i /home/chris/.local/bin/arch-wallpaper.jpg"
 abbr nv "nvim"
 abbr snv "sudo nvim"
 abbr ka "killall"
@@ -96,7 +106,6 @@ abbr ln "ln -i"
 abbr cl "clear"
 abbr v "vim"
 abbr wiki "nvim ~/.local/.src/zettlekasten/index.md"
-# abbr gp "git add . && git commit -m 'autopush' && git push"
 abbr gp "git add . && git commit -m 'autopush' && git push"
 abbr mkdir "mkdir -pv"
 abbr lf "lfub"
@@ -113,10 +122,8 @@ abbr vd "nvim -d"
 abbr combinepdf "gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=combine.pdf -dBATCH"
 abbr en  "gpg -c --no-symkey-cache --cipher-algo  AES256"
 abbr stow "stow --target=$HOME"
-
 abbr vpnup "sudo wg-quick up gentoobox"
 abbr vpndown "sudo wg-quick down gentoobox"
-
 abbr cmpiup "rsync -uvrP --delete-after ~/.local/src/sites/cmpi4/website/public/ root@cmpi4.com:/var/www/cmpi4/"
 abbr tabs "xargs -n1 librewolf-bin <"
 # abbr paste "xclip -selection c -o >"
@@ -127,24 +134,21 @@ abbr reboot "doas openrc-shutdown -r now"
 abbr mpv "mpv --fullscreen"
 abbr lynx "lynxub"
 abbr se "br --conf ~/.config/broot/open.hjson ~/.local/bin/"
+abbr sdcv "sdcv -n --utf8-output --color"
 abbr syncartilces "rclone sync -v  --transfers 20 --retries 5 --s3-upload-cutoff=0 --exclude '*.md'  ~/docs/md/cmm-articles/  Idrive:cmmarketer/articles"
 abbr syncsamples "rclone sync -v --transfers 20 --retries 5 --s3-upload-cutoff=0 --exclude '*.md'  ~/copywriting/samples/final/ Idrive:cmmarketer/samples"
-abbr sdcv "sdcv -n --utf8-output --color"
+abbr idrivemn "rclone mount IdriveEncrypt:/ /mnt/idrive/ --vfs-cache-mode full --daemon"
+
+### TASKWARRIOR 
+abbr ta "task add"
+abbr td "task done"
+
 ### ANSIBLE
-
-
-
-## zk
-alias perma="zk perma"
-alias flee="zk flee"
-alias nt="zk nt"
-alias lit="zk lit"
 
 
 #Custom keybindings vi insert mode
 set -g fish_key_bindings fish_vi_key_bindings
 bind -M insert \co 'lf'
-# bind -M insert \ce 'neomutt'
 bind -M insert \ce 'ncdu'
 bind -M insert \ck history-search-backward # Up
 bind -M insert \cj history-search-forward # Down
@@ -153,9 +157,9 @@ bind -M insert \cj history-search-forward # Down
 # bind -M insert -m default kj backward-char force-repaint
 
 # bind -M visual y fish_clipboard_copy
+
 # Custom keybindings default mode
-bind \co 'lf'
-# bind \ce 'neomutt'
+bind \co 'lfcd'
 bind \ce 'ncdu'
 bind \ck history-search-backward # Up
 bind \cj history-search-forward # Down
