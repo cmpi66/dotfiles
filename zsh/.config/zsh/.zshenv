@@ -71,9 +71,9 @@ export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
 # SDCV_PAGER='lolcat -f | less --quit-if-one-screen -RX'
 export QT_QPA_PLATFORMTHEME="gtk2" # Have QT use gtk2 theme.
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
-# export GPG_TTY=$(tty)
-# export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-# gpgconf --launch gpg-agent
+export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
 if [[ -z $VIT_DIR ]]; then
   export VIT_DIR=$XDG_CONFIG_HOME/vit
 fi
