@@ -69,11 +69,17 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
 # SDCV_PAGER='lolcat -f | less --quit-if-one-screen -RX'
-export QT_QPA_PLATFORMTHEME="gtk2" # Have QT use gtk2 theme.
+# export QT_QPA_PLATFORMTHEME="gtk2" # Have QT use gtk2 theme.
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
-export GPG_TTY=$(tty)
+# export GPG_TTY=$(tty) # Without this line gpg over ssh with smart card works. Its wierd, all configs have this line. On gento this line could be either commmented or uncommented. 
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+echo "UPDATESTARTUPTTY" | gpg-connect-agent > /dev/null 2>&1 # This line is so pinentry program can work with gpg ssh smartcard if the gpg=tty is exported.
 gpgconf --launch gpg-agent
+
+# if [[ -n "$SSH_CONNECTION" ]] ;then
+#     export PINENTRY_USER_DATA="USE_CURSES=1"
+# fi
+
 if [[ -z $VIT_DIR ]]; then
   export VIT_DIR=$XDG_CONFIG_HOME/vit
 fi
@@ -81,7 +87,6 @@ fi
 if [[ -z $TIMEWARRIORDB ]]; then
   export TIMEWARRIORDB=$XDG_DATA_HOME/timew
 fi
-# export GPG_TTY=$(tty)
 ## sudo not required for some system commands
 # for command in mount umount sv pacman updatedb su shutdown poweroff reboot ; do
 # 	alias $command="sudo $command"
