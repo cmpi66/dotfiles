@@ -3,7 +3,9 @@
 
 ## A script to run as a cronjob backing up my data with rclone 
 
+# flock -n /tmp/zfs-drive.lock /usr/bin/rclone sync  --s3-upload-cutoff=0 --transfers 20 --retries 5 /mnt/nasnfs IdriveEncrypt:zfsgen
 flock -n /tmp/zfs-drive.lock /usr/bin/rclone sync  --s3-upload-cutoff=0 --transfers 20 --retries 5 /zpgen IdriveEncrypt:zfsgen
+# flock -n /tmp/reddit-courses.lock /usr/bin/rclone sync  --s3-upload-cutoff=0 --transfers 20 --retries 5 /mnt/nasnfs/shared/z-reddit IdriveEncrypt:z-reddit
 flock -n /tmp/copywriting.lock /usr/bin/rclone sync --s3-upload-cutoff=0  --transfers 20 --retries 5 /home/chris/copywriting IdriveEncrypt:copywriting
 flock -n /tmp/media-syncthing.lock /usr/bin/rclone sync  --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/media IdriveEncrypt:mediasync
 flock -n /tmp/mail.lock /usr/bin/rclone sync  --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/mail IdriveEncrypt:allmail

@@ -13,7 +13,7 @@ if has-session ; then
   alacritty --class ema,ema --config-file /home/chris/.config/alacritty/tmux.yml -e tmux attach-session -t zettle 
 else
 
-tmux new-session -s zettle -n ema -d 'cd ~/.local/.src/zettlekasten; killall emanote; emanote run --port=8080; fish -i' 
+tmux new-session -s zettle -n ema -d 'cd ~/.local/.src/zettlekasten; killall emanote; emanote run --port=8090; fish -i' 
 tmux new-window -t zettle:2 -n notes 'cd ~/.local/.src/zettlekasten/; lvim index.md; fish -i' 
 # tmux new-window  -t zettle:3 -n ema   'cd ~/.local/.src/zettlekasten; killall emanote; emanote run --port=8080; fish -i' 
 tmux select-window -t zettle:2 
