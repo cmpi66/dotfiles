@@ -4,7 +4,7 @@
 
 yay --noconfirm --needed -S \
   7-zip-full \
-  abook-configdir \
+  abook\
   ani-cli \
   aur/trayer-srg \
   hakuneko-desktop \
@@ -13,18 +13,15 @@ yay --noconfirm --needed -S \
   i3lock-color \
   kcc \
   lf \
-  mutt-wizard \
-  noto-color-emoji-fontconfig \
+  mutt-wizard-git \
   opustags \
   rpi-imager-bin \
   sc-im \
   task-spooler \
   stig-git \
-  ueberzug \
   upwork \
   urlview-xdg-git \
   xidlehook \
-  yt-dlp \
   librewolf-bin \
   anki \
 
