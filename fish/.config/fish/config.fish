@@ -63,7 +63,7 @@ alias diff='diff --color=auto'
 # easier to read disk
 alias df='pydf'     # human-readable sizes
 alias free='free -m' # show sizes in MB
-alias yay='paru'
+# alias yay='paru'
 # navigation
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -105,7 +105,7 @@ abbr v "vim"
 abbr p "sudo pacman -S"
 abbr rn "sudo pacman -Rns"
 abbr wiki "nvim ~/.local/.src/zettlekasten/index.md"
-abbr yup "paru -Syu"
+abbr yup "yay -Syu"
 # abbr gp "git add . && git commit -m 'autopush' && git remote | xargs -L1 git push --all" ##push to all 3 gits
 abbr gp "git add . && git commit -m 'autopush' && git push" ##push to all 3 gits
 abbr mkdir "mkdir -pv"
@@ -120,7 +120,7 @@ abbr clone "git clone"
 abbr branch "git branch"
 abbr ytd "yt-dlp --add-metadata -i"
 abbr yta "yt-dlp -x -f bestaudio/best"
-abbr yay "paru"
+# abbr yay "paru"
 abbr vd "nvim -d"
 abbr combinepdf "gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=combine.pdf -dBATCH"
 abbr en "gpg -c --no-symkey-cache --cipher-algo AES256" 
@@ -134,7 +134,7 @@ abbr pfvpdown "sudo wg-quick down pfwg0"
 # abbr upcmpi "rsync -uvrP --delete-after ~/.local/src/sites/cmpi4/website/public/ root@cmpi4.com:/var/www/cmpi4/"
 abbr tabs "xargs -n1 librewolf <"
 # abbr paste "xclip -selection c -o >"
-abbr search "paru -Ss"
+abbr search "yay -Ss"
 abbr updategrub "sudo grub-mkconfig -o /boot/grub/grub.cfg"
 abbr mpv "mpv --fullscreen"
 abbr paste "xsel --clipboard --output >" 
