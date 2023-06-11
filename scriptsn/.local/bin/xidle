@@ -17,3 +17,7 @@ xidlehook \
   --timer 10 \
     'xrandr --output "$PRIMARY_DISPLAY" --brightness 1; i3lock -C -i /home/chris/.local/bin/arch-wallpaper.jpg' \
     '' \
+  `# Finally, suspend an hour after it locks` \
+  --timer 7200 \
+    'systemctl suspend' \
+    ''
