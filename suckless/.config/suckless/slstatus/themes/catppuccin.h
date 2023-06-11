@@ -2,7 +2,7 @@ static const struct arg args[] = {
 	/* function format          argument */
     // {kernel_release, "^c#abe9b3^  %s  ", NULL },
     //{run_command,  "^c#abe9b3^  %s ",      "sb-price.sh" },
-    {run_command,  " %2s ",     "bluetooth.sh" },
+    // {run_command,  " %2s ",     "bluetooth.sh" },
     {run_command,  "^c#b7bdf8^ ^b#1e1e2e^ %2s ",     "mail.sh" },
     {run_command,  "^c#abe9b3^ ^b#1e1e2e^ %2s ",     "torrent.sh" },
     {run_command,  "^c#e8a2af^ ^b#1e1e2e^ %2s ",     "pacpackages.sh" },
