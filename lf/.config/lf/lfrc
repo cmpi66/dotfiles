@@ -19,13 +19,15 @@
 set shellopts '-eu'
 set ifs "\n"
 set scrolloff 10
-# set icons '~/.config/lf/icons'
 set icons 
+# set icons 
 set period 1
 set ignorecase true
 set hidden true
 set cleaner '~/.config/lf/cleaner'
 set previewer '~/.config/lf/scope'
+source '~/.config/lf/shortcutrc'
+
 
 # cmds/functions
 cmd open ${{
@@ -46,6 +48,7 @@ cmd open ${{
 	video/*) setsid -f mpv --fullscreen $f -quiet >/dev/null 2>&1 ;;
 	application/pdf|application/vnd*|application/epub*) setsid -f zathura $fx >/dev/null 2>&1 ;;
 	application/pgp-encrypted) lvim $fx ;;
+	# application/odt*/docx*) libreoffice $fx ;;
         *) for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1; done;;
     esac
 }}
@@ -119,8 +122,6 @@ cmd fzf_jump ${{
     lf -remote "send $id $cmd \"$res\""
 }}
 
-
-
 # Bindings
 map <c-f> $lf -remote "send $id select \"$(fzf)\""
 map J $lf -remote "send $id cd $(sed -e 's/\s*#.*//' -e '/^$/d' -e 's/^\S*\s*//' ${XDG_CONFIG_HOME:-$HOME/.config}/shell/bm-dirs | fzf)"
@@ -151,9 +152,10 @@ map <c-e> down
 map <c-y> up
 map V push :!lvim<space>
 
-map W $setsid -f alacritty >/dev/null 2>&1
+map W $setsid -f $alacritty >/dev/null 2>&1
 
 map Y $printf "%s" "$fx" | xsel -i --clipboard
-
 map T :fzf_search
 map f :fzf_jump
+
+

@@ -4,6 +4,7 @@
 
 yay --noconfirm --needed -S \
   abook\
+  catppuccin-gtk-theme-macchiato \
   aur/trayer-srg \
   pam-gnupg \
   htop-vim \

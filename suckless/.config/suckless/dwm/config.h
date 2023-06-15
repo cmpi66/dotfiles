@@ -116,7 +116,7 @@ static const Rule rules[] = {
 	/* class      instance    title            tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",     NULL,       NULL,            0,         1,          0,           0,        -1 },
 	{ "Tor Browser",     NULL,       NULL,            0,         1,          0,           0,        -1 },
-	{ "keepassxc",     "KeePassXC",       "these.kdbx [Locked] - KeePassXC",            0,         1,          0,           0,        -1 },
+	// { "keepassxc",     "KeePassXC",       "these.kdbx [Locked] - KeePassXC",            0,         1,          0,           0,        -1 },
 	{ "Pam_gnupg",     NULL,       NULL,            0,         1,          0,           0,        -1 },
 	{ "pinentry-gtk-2",     "Pinentry-gtk-2",       NULL,            0,         1,          0,           0,        -1 },
     { "trayer",   NULL,         NULL,       1 << 8,       False },
