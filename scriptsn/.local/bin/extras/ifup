@@ -7,13 +7,13 @@ is_wireguard_active() {
 
 # Disconnect from the internet
 disconnect_from_internet() {
-    rc-service net.enp0s31f6 stop  # Replace "net.eth0" with your network interface name
+  doas rc-service net.enp0s31f6 stop  # Replace "net.eth0" with your network interface name
     notify-send "Disconnected from the internet."
 }
 
 # Reconnect to the internet
 reconnect_to_internet() {
-    rc-service net.enp0s31f6 start  # Replace "net.eth0" with your network interface name
+  doas rc-service net.enp0s31f6 start  # Replace "net.eth0" with your network interface name
     notify-send "Reconnected to the internet."
 }
 

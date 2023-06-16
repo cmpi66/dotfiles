@@ -79,7 +79,7 @@ lvim.plugins = {
 
   {"folke/noice.nvim"},
   {"windwp/nvim-spectre"},
-  {"rcarriga/nvim-notify"},
+  -- {"rcarriga/nvim-notify"},
 {"echasnovski/mini.surround"},
 {"christoomey/vim-tmux-navigator"},
   {"tpope/vim-repeat"},

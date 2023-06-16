@@ -1,3 +1,3 @@
 #!/bin/sh 
 
-cd /home/chris/dl/git-clones/manual-connections/ && sudo -A VPN_PROTOCOL=wireguard DISABLE_IPV6=yes DIP_TOKEN=no AUTOCONNECT=true PIA_PF=false PIA_DNS=true PIA_USER=xxxxx PIA_PASS=xxxxx ./run_setup.sh
+cd /home/chris/dl/git-clones/manual-connections/ && sudo -A VPN_PROTOCOL=wireguard DISABLE_IPV6=yes DIP_TOKEN=no AUTOCONNECT=true PIA_PF=false PIA_DNS=false PIA_USER=xxxxx PIA_PASS=xxxxx ./run_setup.sh
