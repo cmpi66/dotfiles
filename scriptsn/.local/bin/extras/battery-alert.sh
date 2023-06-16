@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export DISPLAY=:0.0
 # Check the current battery level
 battery_level=$(cat /sys/class/power_supply/BAT0/capacity)
 
