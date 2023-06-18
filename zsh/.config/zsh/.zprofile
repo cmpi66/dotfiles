@@ -71,6 +71,7 @@ export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
 # SDCV_PAGER='lolcat -f | less --quit-if-one-screen -RX'
 # export QT_QPA_PLATFORMTHEME="gtk2" # Have QT use gtk2 theme.
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
+export MOZ_USE_XINPUT2="1" # Mozilla smooth scrolling/touchpads.
 # export GPG_TTY=$(tty) # Without this line gpg over ssh with smart card works. Its wierd, all configs have this line. On gento this line could be either commmented or uncommented. 
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 echo "UPDATESTARTUPTTY" | gpg-connect-agent > /dev/null 2>&1 # This line is so pinentry program can work with gpg ssh smartcard if the gpg=tty is exported.
