@@ -1,5 +1,5 @@
 */20 * * * * /usr/bin/newsboat -x reload
-*/10 * * * * /home/chris/.local/bin/battery-alert.sh
+*/10 * * * * /home/chris/.local/bin/extras/battery-sound.sh
+*/5 * * * * /home/chris/.local/bin/extras/ifblue
+# */5 * * * * /home/chris/.local/bin/extras/ifup
 
-
-0 * * * * pacman -Sy
