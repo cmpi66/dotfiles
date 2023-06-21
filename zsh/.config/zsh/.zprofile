@@ -1,6 +1,3 @@
-#
-#auto startx
-
 export PATH="$PATH:${$(find ~/.local/bin/ -type d -printf %p:)%%:}"
 
 #XDG
@@ -50,7 +47,6 @@ alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 export HISTFILE="$XDG_DATA_HOME/zsh/history"
 # export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
-# export DICS="/usr/share/stardict/dic/"
 export STARDICT_DATA_DIR="$XDG_DATA_HOME"/dic
 export _JAVA_AWT_WM_NONREPARENTING=1 # Fix for Java applications in dwm
 export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
@@ -68,18 +64,11 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 # export FZF_DEFAULT_OPTS="--layout=reverse --height 50%" # AT 50% it breaks uberzug with ytfzf and it breaks dwm swallow patch. I have to make a tradeoff
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
-# SDCV_PAGER='lolcat -f | less --quit-if-one-screen -RX'
-# export QT_QPA_PLATFORMTHEME="gtk2" # Have QT use gtk2 theme.
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 export MOZ_USE_XINPUT2="1" # Mozilla smooth scrolling/touchpads.
-# export GPG_TTY=$(tty) # Without this line gpg over ssh with smart card works. Its wierd, all configs have this line. On gento this line could be either commmented or uncommented. 
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 echo "UPDATESTARTUPTTY" | gpg-connect-agent > /dev/null 2>&1 # This line is so pinentry program can work with gpg ssh smartcard if the gpg=tty is exported.
 gpgconf --launch gpg-agent
-
-# if [[ -n "$SSH_CONNECTION" ]] ;then
-#     export PINENTRY_USER_DATA="USE_CURSES=1"
-# fi
 
 if [[ -z $VIT_DIR ]]; then
   export VIT_DIR=$XDG_CONFIG_HOME/vit
@@ -88,10 +77,6 @@ fi
 if [[ -z $TIMEWARRIORDB ]]; then
   export TIMEWARRIORDB=$XDG_DATA_HOME/timew
 fi
-## sudo not required for some system commands
-# for command in mount umount sv pacman updatedb su shutdown poweroff reboot ; do
-# 	alias $command="sudo $command"
-# done; unset command 
 
 export LF_ICONS="di=📁:\
 fi=📃:\
@@ -172,7 +157,5 @@ ex=🎯:\
 "
 
 #[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx "$XINITRC"
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ~/.config/x11/xinitrc
-
-# Start graphical server on user's current tty if not already running.
-# [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx "$XINITRC"
+# [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ~/.config/x11/xinitrc
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ~/.config/x11/xinitrc /usr/bin/Xephyr :1
