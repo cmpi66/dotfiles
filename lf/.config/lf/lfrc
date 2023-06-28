@@ -146,7 +146,8 @@ map I push A<c-a> # at the very beginning
 map i push A<a-b><a-b><a-f> # before extension
 map a push A<a-b> # after extension
 map B bulkrename
-map b $setbg $f
+map b $setbg $f & # wayland
+# map b $setbg $f # x11
 
 map <c-e> down
 map <c-y> up

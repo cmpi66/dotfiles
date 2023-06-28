@@ -1,0 +1,21 @@
+#!/bin/env bash
+
+##FZF pdf script 
+
+# IFS=$'\n' selected_pdfs=($(find "$HOME" -maxdepth 6 ! -path "$HOME/.config/*" -name "*.pdf" | fzf --multi --exit-0))
+
+# if [ ${#selected_pdfs[@]} -gt 0 ]; then
+#   for selected_pdf in "${selected_pdfs[@]}"; do
+#     okular "$selected_pdf"
+#   done
+# fi
+
+
+pdfs=$(find "$HOME" -maxdepth 6 ! -path "$HOME/.config/*" -name "*.pdf" | dmenu -i -l 15 -p "Select PDF:")
+# pdfs=$(find "$HOME" -maxdepth 6 ! -path "$HOME/.config/*" -name "*.pdf" | fzf --multi --exit-0)
+
+if [ -n "$pdfs" ]; then
+  zathura "$pdfs"
+fi
+
+

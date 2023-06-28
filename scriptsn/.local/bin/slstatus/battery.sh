@@ -3,6 +3,7 @@
 # Prints all batteries, their percentage remaining and an emoji corresponding
 # to charge status (🔌 for plugged up, 🔋 for discharging on battery, etc.).
 
+export DISPLAY=:0.0
 case $BLOCK_BUTTON in
 	3) notify-send " Battery module" ": discharging
 🛑: not charging

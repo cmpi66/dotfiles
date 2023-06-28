@@ -1,0 +1,19 @@
+#!/bin/env bash
+
+#Neomutt alacritty session for urls, st doesn't work well on wayland
+
+
+has-session ()
+{
+ tmux has-session -t mutt 2>/dev/null 
+}
+
+
+if has-session ; then
+  alacritty --class mutt,mutt --config-file /home/chris/.config/alacritty/tmux.yml -e tmux attach-session -t mutt 
+else
+
+tmux new-session -s mutt -n mail -d 'neomutt; fish -i' 
+alacritty --class mutt,mutt --config-file /home/chris/.config/alacritty/tmux.yml -e tmux attach-session -t mutt
+
+fi

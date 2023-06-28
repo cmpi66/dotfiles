@@ -1,0 +1,92 @@
+#!/usr/bin/env bash
+#
+# Script name: dm-confedit
+# Description: Choose from a list of configuration files to edit.
+# Dependencies: dmenu, emacsclient
+# GitLab: https://www.gitlab.com/dwt1/dmscripts
+# License: https://www.gitlab.com/dwt1/dmscripts/LICENSE
+# Contributors: Derek Taylor
+#               Simon Ingelsson
+#               HostGrady
+
+# Set with the flags "-e", "-u","-o pipefail" cause the script to fail
+# if certain things happen, which is a good thing.  Otherwise, we can
+# get hidden bugs that are hard to discover.
+set -euo pipefail
+# _path="$(cd "$(dirname "${BASH_SOURCE[0]}")" && cd "$(dirname "$(readlink "${BASH_SOURCE[0]}" || echo ".")")" && pwd)"
+# if [[  -f "${_path}/_dm-helper.sh" ]]; then
+#   # shellcheck disable=SC1090,SC1091
+#   source "${_path}/_dm-helper.sh"
+# else
+#   # shellcheck disable=SC1090
+#   echo "No helper-script found"
+# fi
+
+# script will not hit this if there is no config-file to load
+# shellcheck disable=SC1090
+# source "$(get_config)"
+
+DMENU="dmenu -i -l 10 -p"
+# DMENU="rofi -dmenu -i -l 10 -p"
+DMTERM="alacritty -e"
+
+DMEDITOR="${DMTERM} lvim"
+declare -A confedit_list
+# confedit_list[confedit]="$HOME/.config/dmscripts/config"
+confedit_list[alacritty]="$HOME/.config/alacritty/alacritty.yml"
+confedit_list[yayapps]="$HOME/.config/apps/yayapps.sh"
+confedit_list[pacapps]="$HOME/.config/apps/apps-clean.sh"
+confedit_list[bash]="$HOME/.bashrc"
+confedit_list[calcurse]="$HOME/.config/calcurse/conf"
+confedit_list[dunst]="$HOME/.config/dunst/dunstrc"
+confedit_list[fontconfig]="$HOME/.config/fontconfig/fonts.conf"
+confedit_list[tmux]="$HOME/.config/tmux/tmux.conf"
+confedit_list[dwm]="$HOME/.config/suckless/dwm/config.h"
+confedit_list[st]="$HOME/.config/suckless/st/config.h"
+confedit_list[dmenu]="$HOME/.config/suckless/dmenu/config.h"
+confedit_list[fish]="$HOME/.config/fish/config.fish"
+confedit_list[lf]="$HOME/.config/lf/lfrc"
+confedit_list[lvim]="$HOME/.config/lvim/config.lua"
+confedit_list[mpv]="$HOME/.config/mpv/mpv.conf"
+confedit_list[ncmpcpp]="$HOME/.config/ncmpcpp/config"
+confedit_list[neomutt]="$HOME/.config/mutt/muttrc"
+confedit_list[newsboat-urls]="$HOME/.config/newsboat/urls"
+confedit_list[rofi]="$HOME/.config/rofi/config.rasi"
+confedit_list[scim]="$HOME/.config/sc-im/scimrc"
+confedit_list[starship]="$HOME/.config/starship.toml"
+confedit_list[picom]="$HOME/.config/picom/picom.conf"
+confedit_list[ssh]="$HOME/.ssh/config"
+confedit_list[st]="$HOME/.config/suckless/st/config.h"
+confedit_list[sxhkd]="$HOME/.config/sxhkd/sxhkdrc"
+confedit_list[xprofile]="$HOME/.config/x11/xprofile"
+confedit_list[xinitrc]="$HOME/.config/x11/xinitrc"
+confedit_list[xresources]="$HOME/.config/x11/xresources"
+confedit_list[zshrc]="$HOME/.config/zsh/.zshrc"
+confedit_list[zshenv]="$HOME/.config/zsh/.zshenv"
+confedit_list[zprofile]="$HOME/.config/zsh/.zprofile"
+
+main() {
+  # Clean options array making sure that the files exist
+  declare -A _clean_list
+  # As this is loaded from other file it is technically not defined
+  # shellcheck disable=SC2154
+  for i in "${!confedit_list[@]}"; do
+    [[ -f ${confedit_list["${i}"]} ]] && _clean_list["${i}"]=${confedit_list["${i}"]}
+  done
+
+  # Piping the above array (cleaned) into dmenu.
+  # We use "printf '%s\n'" to format the array one item to a line.
+  choice=$(printf '%s\n' "${!_clean_list[@]}" | sort | ${DMENU} 'Edit config:' "$@")
+
+  # What to do when/if we choose a file to edit.
+  if [ "$choice" ]; then
+    cfg=$(printf '%s\n' "${_clean_list["${choice}"]}")
+    # shellcheck disable=SC2154
+    $DMEDITOR "$cfg"
+  # What to do if we just escape without choosing anything.
+  else
+      echo "Program terminated." && exit 0
+  fi
+}
+
+[[ "${BASH_SOURCE[0]}" == "${0}" ]] && main "$@"

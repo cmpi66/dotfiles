@@ -1,0 +1,368 @@
+
+@import "macchiato.css";
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, JetBrainsMono Nerd Font, Fira Code Nerd Font, Material Design Icons;
+    font-size: 10px;
+    padding: 0;
+    margin : -1;
+
+}
+
+
+window#waybar {
+    background-color: shade (@base, 0.9);
+    border: 3px solid alpha(@crust, 0.3);
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/*
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+window#waybar.kitty {
+    background-color: @mauve;
+}
+
+window#waybar.chromium {
+    background-color: #000000;
+    border: none;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+/* button:hover { */
+/*     background: inherit; */
+/*     box-shadow: inset 0 -3px @text; */
+/* } */
+
+/* #workspaces button label { */
+/*     padding: 0 5px; */
+/*     background-color: transparent; */
+/* } */
+
+/* #workspaces button:nth-child(1) label { */
+/*   font-size: 15px; */
+/*   color: @mauve; */
+/* } */
+
+/* #workspaces button:nth-child(2) label { */
+/*   color: @red; */
+/* } */
+
+/* #workspaces button:nth-child(3) label { */
+/*   color: @maroon; */
+/* } */
+
+/* #workspaces button:nth-child(4) label { */
+/*   color: @green; */
+/* } */
+
+/* #workspaces button:nth-child(5) label { */
+/*   color: @yellow; */
+/* } */
+
+/* #workspaces button:nth-child(6) label { */
+/*   color: @blue; */
+/* } */
+
+/* #workspaces button:nth-child(7) label { */
+/*   color: @pink; */
+/* } */
+
+/* #workspaces button:nth-child(8) label { */
+/*   color: @rosewater; */
+/* } */
+
+/* #workspaces button:nth-child(9) label { */
+/*   color: #FFFFFF; */
+/* } */
+
+/* #workspaces button:hover { */
+/*     background: @base; */
+/* } */
+
+/* #workspaces button.focused { */
+/*     background-color: @base; */
+/*     box-shadow: inset 0 -3px #ffffff; */
+/* } */
+
+/* #workspaces button.urgent { */
+/*     background-color: #eb4d4b; */
+/* } */
+
+#mode {
+    background-color: #64727D;
+    border-bottom: 3px solid #ffffff;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#workspaces
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#custom-pacman,
+#custom-torrent,
+#custom-internet,
+#custom-music,
+#custom-mail,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#mpd {
+    padding: 0 10px;
+    color: #ffffff;
+}
+
+/* #workspaces { */
+/* #window, */
+/*     margin: 0 4px; */
+/* } */
+
+#workspaces button {
+  color: #585767;
+  box-shadow: inset 0 -3px transparent;
+
+  padding-right: 3px;
+  padding-left: 4px;
+
+  margin-left: 0.1em;
+  margin-right: 0em;
+  transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.68);
+}
+
+#workspaces button.active {
+  color: #fae380;
+  padding-left: 1px;
+  padding-right: 12px;
+  margin-left: 0em;
+  margin-right: 0em;
+  transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.68);
+}
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#clock {
+    color: #f8bd96;
+}
+
+#battery {
+    color: #fae380;
+}
+
+#battery.charging, #battery.plugged {
+    color: #ffffff;
+    background-color: #26A65B;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: @base;
+}
+
+#cpu {
+    color: #ddb6f2;
+}
+
+#memory {
+    color: #74c7ec;
+}
+
+#disk {
+    color: #f2cdcd;
+}
+
+#backlight {
+    background-color: #90b1b1;
+}
+
+#network {
+    background-color: #2980b9;
+}
+
+#network.disconnected {
+    background-color: #f53c3c;
+}
+
+#pulseaudio {
+    background-color: #f1c40f;
+    color: #000000;
+}
+
+#pulseaudio.muted {
+    background-color: #90b1b1;
+    color: #2a5c45;
+}
+
+#wireplumber {
+    background-color: #fff0f5;
+    color: #000000;
+}
+
+#wireplumber.muted {
+    background-color: #f53c3c;
+}
+
+#custom-media {
+    background-color: #66cc99;
+    color: #2a5c45;
+    min-width: 100px;
+}
+
+
+#custom-media.custom-spotify {
+    background-color: #66cc99;
+}
+
+#custom-media.custom-vlc {
+    background-color: #ffa000;
+}
+
+#custom-mail {
+    color: #b7bdf8;
+}
+
+#custom-torrent {
+    color: #abe9b3;
+}
+
+#custom-pacman {
+    color: #e8a2af;
+}
+
+#custom-internet {
+    color: #f5bde6;
+}
+
+#custom-music {
+    color: #74c7Ec;
+}
+
+#temperature {
+    color: #f28fad;
+}
+
+#temperature.critical {
+    background-color: #eb4d4b;
+}
+
+#tray {
+    background-color: #2980b9;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#idle_inhibitor {
+    background-color: #2d3436;
+}
+
+#idle_inhibitor.activated {
+    background-color: #ecf0f1;
+    color: #2d3436;
+}
+
+#mpd {
+    background-color: #66cc99;
+    color: #2a5c45;
+}
+
+#mpd.disconnected {
+    background-color: #f53c3c;
+}
+
+#mpd.stopped {
+    background-color: #90b1b1;
+}
+
+#mpd.paused {
+    background-color: #51a37a;
+}
+
+#language {
+    background: #00b093;
+    color: #740864;
+    padding: 0 5px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state {
+    background: #97e1ad;
+    color: #000000;
+    padding: 0 0px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state > label {
+    padding: 0 5px;
+}
+
+#keyboard-state > label.locked {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad.empty {
+	background-color: transparent;
+}
