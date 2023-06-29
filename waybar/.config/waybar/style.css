@@ -4,7 +4,7 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: FontAwesome, JetBrainsMono Nerd Font, Fira Code Nerd Font, Material Design Icons;
-    font-size: 10px;
+    font-size: 12px;
     padding: 0;
     margin : -1;
 
@@ -13,6 +13,7 @@
 
 window#waybar {
     background-color: shade (@base, 0.9);
+    /* background-color: transparent; */
     border: 3px solid alpha(@crust, 0.3);
     color: #ffffff;
     transition-property: background-color;
@@ -32,14 +33,6 @@ window#waybar.solo {
 }
 */
 
-window#waybar.kitty {
-    background-color: @mauve;
-}
-
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
-}
 
 button {
     /* Use box-shadow instead of border so the text isn't offset */
@@ -132,6 +125,7 @@ button {
 #custom-internet,
 #custom-music,
 #custom-mail,
+#custom-icon,
 #tray,
 #mode,
 #idle_inhibitor,
@@ -146,42 +140,107 @@ button {
 /*     margin: 0 4px; */
 /* } */
 
+/* #workspaces button { */
+/*   color: #585767; */
+/*   box-shadow: inset 0 -3px transparent; */
+
+/*   padding-right: 3px; */
+/*   padding-left: 4px; */
+
+/*   margin-left: 0.1em; */
+/*   margin-right: 0em; */
+/*   transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.68); */
+/* } */
+
+/* #workspaces button.active { */
+/*   color: #fae380; */
+/*   padding-left: 1px; */
+/*   padding-right: 12px; */
+/*   margin-left: 0em; */
+/*   margin-right: 0em; */
+/*   transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.68); */
+/* } */
+
+/* If workspaces is the leftmost module, omit left margin */
+/* .modules-left > widget:first-child > #workspaces { */
+/*     margin-left: 0; */
+/* } */
+
+/* If workspaces is the rightmost module, omit right margin */
+/* .modules-right > widget:last-child > #workspaces { */
+/*     margin-right: 0; */
+/* } */
+
+
+#workspaces {
+	background: @surface1;
+	margin: 5px 5px 5px 5px;
+  padding: 0px 5px 0px 5px;
+	border-radius: 16px;
+  border: solid 0px @yellow;
+  font-weight: normal;
+  font-style: normal;
+}
 #workspaces button {
-  color: #585767;
-  box-shadow: inset 0 -3px transparent;
-
-  padding-right: 3px;
-  padding-left: 4px;
-
-  margin-left: 0.1em;
-  margin-right: 0em;
-  transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.68);
+    padding: 0px 5px;
+    border-radius: 16px;
+    color: @overlay2;
 }
 
 #workspaces button.active {
-  color: #fae380;
-  padding-left: 1px;
-  padding-right: 12px;
-  margin-left: 0em;
-  margin-right: 0em;
-  transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.68);
-}
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
+    color: @red;
+    background-color: transparent;
+    border-radius: 16px;
 }
 
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
+#workspaces button:hover {
+	background-color: #E6B9C6;
+	color: black;
+	border-radius: 16px;
+}
+
+#clock, #battery, #custom-music, #custom-mail, #custom-pacman, #custom-torrent, #custom-internet, #disk, #cpu, #temperature, #memory {
+	background: transparent;
+	padding: 3px 3px 3px 3px;
+	margin: 3px 3px 3px 3px;
+  border-radius: 8px;
+  border: solid 0px #f4d9e1;
+}
+
+#window {
+    color: @base;
+    background: @blue;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 16px;
+    /*border-left: solid 1px #282738;*/
+    /*border-right: solid 1px #282738;*/
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    /* font-size: 10px; */
 }
 
 #clock {
     color: #f8bd96;
+    background-color: @surface1;
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
 }
 
 #battery {
     color: #fae380;
+    background-color: @surface1;
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
 }
 
 #battery.charging, #battery.plugged {
@@ -212,14 +271,35 @@ label:focus {
 
 #cpu {
     color: #ddb6f2;
+    background-color: @surface1;
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
 }
 
 #memory {
     color: #74c7ec;
+    background-color: @surface1;
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
 }
 
 #disk {
     color: #f2cdcd;
+    background-color: @surface1;
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
 }
 
 #backlight {
@@ -270,26 +350,81 @@ label:focus {
 
 #custom-mail {
     color: #b7bdf8;
+    background-color: @surface1;
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
 }
 
 #custom-torrent {
     color: #abe9b3;
+    background-color: @surface1;
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
 }
 
 #custom-pacman {
     color: #e8a2af;
+    background-color: @surface1;
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
 }
 
 #custom-internet {
     color: #f5bde6;
+    background-color: @surface1;
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
 }
 
 #custom-music {
     color: #74c7Ec;
+    background-color: @surface1;
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
+}
+
+#custom-icon {
+
+    color: #74c7Ec;
+    background-color: @surface1;
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-size: 17px;
+    font-weight: bold;
 }
 
 #temperature {
     color: #f28fad;
+    background-color: @surface1;
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
 }
 
 #temperature.critical {

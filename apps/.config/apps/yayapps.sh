@@ -17,7 +17,10 @@ yay --noconfirm --needed -S \
   stig-git \
   urlview-xdg-git \
   xidlehook \
+  evremaps-git \
   librewolf-bin \
+  nwg-look \
+  hyprpicker\
   anki \
 
 

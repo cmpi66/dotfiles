@@ -1,4 +1,4 @@
-#files: 815	version: 5.9
+#files: 820	version: 5.9
 
 _comps=(
 '-' '_precommand'
@@ -1279,6 +1279,9 @@ _comps=(
 'svnliteadmin' '_subversion'
 'swaks' '_swaks'
 'swanctl' '_swanctl'
+'swayidle' '_swayidle'
+'swayimg' '_swayimg'
+'swaylock' '_swaylock'
 'swift' '_swift'
 'swiftc' '_swift'
 'sync' '_nothing'
@@ -1435,6 +1438,8 @@ _comps=(
 'whom' '_mh'
 'wiggle' '_wiggle'
 'wipefs' '_wipefs'
+'wl-copy' '_wl-copy'
+'wl-paste' '_wl-paste'
 'wodim' '_cdrecord'
 'wpa_cli' '_wpa_cli'
 'write' '_users_on'
@@ -1679,8 +1684,9 @@ autoload -Uz _alacritty _atuin _bat _black _blackd \
             _libinput _loginctl _meson _mkinitcpio _mpv \
             _mutt-wizard.zsh _ninja _notmuch _pacman _paru \
             _pass _playerctl _poetry _pulseaudio _qpdf \
-            _rclone _rg _shtab _snapper _task \
-            _the_silver_searcher _tldr _usbguard _xwallpaper _yay \
+            _rclone _rg _shtab _snapper _swayidle \
+            _swayimg _swaylock _task _the_silver_searcher _tldr \
+            _usbguard _wl-copy _wl-paste _xwallpaper _yay \
             _ykman _yt-dlp _zathura _zoxide _cdr \
             _all_labels _all_matches _alternative _approximate _arg_compile \
             _arguments _bash_completions _cache_invalid _call_function _combination \

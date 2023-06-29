@@ -1,6 +1,0 @@
-#!/bin/sh 
-
-file=`date +%Y-%m-%d-%H.%M.%S`
-ffmpeg -f alsa -i pulse -f x11grab -thread_queue_size 64 -i :0.0 -i /dev/video0 \
-       -filter_complex 'overlay=main_w-overlay_w:main_h-overlay_h' \
-    -r 60 -preset ultrafast ~/media/Videos/screencast-${file}.mp4

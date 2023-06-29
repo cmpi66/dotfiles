@@ -66,6 +66,7 @@ export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 export MOZ_USE_XINPUT2="1" # Mozilla smooth scrolling/touchpads.
+export BEMENU_OPTS='-i -l 20 --fb "#1e1e2e" --ff "#94e2d5" --nb "#1e1e2e" --nf "#f5e0dc" --tb "#1e1e2e" --hb "#1e1e2e" --tf "#cba6f7" --hf "#89b4fa" --nf "#f5e0dc" --af "#f5e0dc" --ab "#1e1e2e"'
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 echo "UPDATESTARTUPTTY" | gpg-connect-agent > /dev/null 2>&1 # This line is so pinentry program can work with gpg ssh smartcard if the gpg=tty is exported.
 gpgconf --launch gpg-agent
@@ -158,4 +159,7 @@ ex=🎯:\
 
 #[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx "$XINITRC"
 # [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ~/.config/x11/xinitrc
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ~/.config/x11/xinitrc /usr/bin/Xephyr :1
+# [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ~/.config/x11/xinitrc /usr/bin/Xephyr :1
+# [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startw
+# [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec Hyprland
+# startw
