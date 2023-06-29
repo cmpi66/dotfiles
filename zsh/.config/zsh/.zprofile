@@ -161,5 +161,5 @@ ex=🎯:\
 # [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ~/.config/x11/xinitrc
 # [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ~/.config/x11/xinitrc /usr/bin/Xephyr :1
 # [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startw
-# [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec Hyprland
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec Hyprland
 # startw
