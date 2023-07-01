@@ -1,4 +1,4 @@
-#files: 1022	version: 5.9
+#files: 1027	version: 5.9
 
 _comps=(
 '-' '_precommand'
@@ -1113,6 +1113,7 @@ _comps=(
 'pkgrm' '_pkgrm'
 'pkgtool' '_pkgtool'
 'pkill' '_pgrep'
+'playerctl' '_playerctl'
 'pldd' '_pids'
 'plutil' '_plutil'
 'pmaint' '_pkgcore'
@@ -1429,6 +1430,8 @@ _comps=(
 'svnliteadmin' '_subversion'
 'swaks' '_swaks'
 'swanctl' '_swanctl'
+'swayidle' '_swayidle'
+'swaylock' '_swaylock'
 'swift' '_swift'
 'swiftc' '_swift'
 'sw_vers' '_sw_vers'
@@ -1669,6 +1672,8 @@ _comps=(
 'wiggle' '_wiggle'
 'wikiman' '_wikiman'
 'wipefs' '_wipefs'
+'wl-copy' '_wl-copy'
+'wl-paste' '_wl-paste'
 'wodim' '_cdrecord'
 'wpa_cli' '_wpa_cli'
 'write' '_users_on'
@@ -1919,9 +1924,10 @@ autoload -Uz _alacritty _bat _br _broot _buku \
             _kitty _kubectl _less _lf _libinput \
             _loginctl _meson _mpv _ninja _notmuch \
             _openrc _parallel _pass _pkgcheck _pkgcore \
-            _pkgdev _pulseaudio _qpdf _quoter _rc-service \
-            _rc-status _rc-update _rg _rustup _systemd-tmpfiles \
-            _task _the_silver_searcher _udevadm _wikiman _xwallpaper \
+            _pkgdev _playerctl _pulseaudio _qpdf _quoter \
+            _rc-service _rc-status _rc-update _rg _rustup \
+            _swayidle _swaylock _systemd-tmpfiles _task _the_silver_searcher \
+            _udevadm _wikiman _wl-copy _wl-paste _xwallpaper \
             _yt-dlp _zathura _zoxide _cdr _floppy \
             _logical_volumes _lscfg _lsdev _lslv _lspv \
             _lsvg _object_classes _physical_volumes _smit _volume_groups \
