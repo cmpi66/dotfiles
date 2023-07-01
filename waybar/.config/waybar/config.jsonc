@@ -1,40 +1,53 @@
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
     "height": 14, // Waybar height (to be removed for auto height)
+    "gtk-layer-shell": true,
+    "exclusive": true,
+    "passthrough": false,
     // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
-    // Choose the order of the modules
+    // "spacing": 4, // Gaps between modules (4px)
     "modules-left": ["custom/icon", "wlr/workspaces", "wlr/mode", "wlr/scratchpad"],
     "modules-center": ["hyprland/window"],
-    //"modules-center": ["wlr/window"],
-    "modules-right": ["custom/mail", "custom/torrent", "custom/pacman", "battery", "custom/internet", "cpu", "memory", "temperature", "disk", "wlr/language",  "clock", "tray", "custom/music"],
+    "modules-right": ["custom/mail", "custom/torrent", "custom/pacman", "battery", "custom/internet", "cpu", "memory", "temperature", "backlight", "disk", "wlr/language",  "clock", "tray", "custom/music"],
     // Modules configuration
-     "wlr/workspaces": {
-         "disable-scroll": true,
-         "all-outputs": true,
-         "on-click": "activate",
-         "format": "{icon}",
-         "format-icons": {
-             "urgent": "",
-			       "active": "",
-			      "default": "󰧞",
-           // "default": "",
-         "sort-by-number": true,
-         }
-     },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
+     // "wlr/workspaces": {
+     //     "disable-scroll": true,
+     //     "all-outputs": true,
+     //     "on-click": "activate",
+     //     "format": "{icon}",
+     //     "format-icons": {
+     //         "urgent": "",
+			  //      "active": "",
+			  //     "default": "󰧞",
+     //       // "default": "",
+     //     "sort-by-number": true,
+     //     }
+     // },
+
+    "wlr/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate",
+        //"format": "{icon}",
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": [],
+            "10": []
         }
     },
-    "wlr/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+
+    "hyprland/window": {
+        "format": "{}"
     },
+
     "wlr/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
@@ -108,10 +121,14 @@
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
     },
+
     "backlight": {
-        // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", ""],
+        "on-scroll-up": "brightnessctl set 1%+",
+        "on-scroll-down": "brightnessctl set 1%-",
+        "min-length": 6
     },
     "battery": {
         "states": {
@@ -126,18 +143,6 @@
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float

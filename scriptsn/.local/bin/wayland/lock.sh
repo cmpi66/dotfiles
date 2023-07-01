@@ -1,9 +1,14 @@
-#!/bin/bash
+#!/bin/env bash
 
-nohup swayidle timeout 4 'hyprctl dispatch dpms off' \
-    resume 'hyprctl dispatch dpms on' \
-    &> /dev/null &
+# A simple lockscreen script that even works while closing the lid, on openrc. No extra services.
 
-swaylock -e -F -C /home/chris/.config/swaylock/config -i /home/chris/.local/bin/lock1.jpg
+pkill swayidle 
 
-pkill swayidle
+
+swayidle -w \
+    timeout 300 'swaylock -e -F -C /home/chris/.config/swaylock/config -i /home/chris/.local/bin/lock1.jpg' \
+    timeout 600 'hyprctl dispatch dpms off' \
+         resume 'hyprctl dispatch dpms on"' \
+    before-sleep 'swaylock -e -F -C /home/chris/.config/swaylock/config -i /home/chris/.local/bin/lock1.jpg'
+
+

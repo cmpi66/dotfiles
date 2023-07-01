@@ -1,6 +1,6 @@
 daemonize
 show-failed-attempts
-clock
+ignore-empty-password
 effect-blur=7x3
 color=1f1d2e80
 font="Inter"
@@ -32,4 +32,3 @@ grace-no-mouse
 grace-no-touch
 datestr="%d.%m"
 fade-in="0.1"
-ignore-empty-password
