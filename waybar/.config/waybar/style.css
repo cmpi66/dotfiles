@@ -3,8 +3,9 @@
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, JetBrainsMono Nerd Font, Fira Code Nerd Font, Material Design Icons;
-    font-size: 12px;
+    font-family: monospace;
+    font-size: 10px;
+    font-weight: bold;
     padding: 0;
     margin : -1;
 
@@ -12,9 +13,9 @@
 
 
 window#waybar {
-    background-color: shade (@base, 0.9);
+    background-color: shade (#24283b, 0.9);
     /* background-color: transparent; */
-    border: 3px solid alpha(@crust, 0.3);
+    /* border: 3px solid alpha(@crust, 0.3); */
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -41,20 +42,18 @@ button {
 }
 
 #clock,
-#battery,
 #cpu,
 #memory,
 #disk,
 #temperature,
-#backlight,
-#network,
 #workspaces
 #pulseaudio,
 #wireplumber,
 #custom-media,
-#custom-pacman,
+#custom-emerge,
 #custom-torrent,
 #custom-internet,
+#custom-kern,
 #custom-music,
 #custom-mail,
 #custom-icon,
@@ -69,7 +68,7 @@ button {
 
 
 #workspaces {
-	background: @surface1;
+	background: @surface0;
 	margin: 5px 5px 5px 5px;
   padding: 0px 5px 0px 5px;
 	border-radius: 16px;
@@ -84,7 +83,7 @@ button {
 }
 
 #workspaces button.active {
-    color: @red;
+    color: #f7768e;
     background-color: transparent;
     border-radius: 16px;
 }
@@ -95,7 +94,7 @@ button {
 	border-radius: 16px;
 }
 
-#clock, #battery, #custom-music, #custom-mail, #custom-pacman, #custom-torrent, #custom-internet, #disk, #cpu, #temperature, #memory {
+#clock, #battery, #custom-music,#custom-kern, #custom-mail, #custom-emerge, #custom-torrent, #custom-internet, #disk, #cpu, #temperature, #memory {
 	background: transparent;
 	padding: 3px 3px 3px 3px;
 	margin: 3px 3px 3px 3px;
@@ -104,8 +103,8 @@ button {
 }
 
 #window {
-    color: @base;
-    background: @blue;
+    color: #24283b;
+    background: #bb9af7;
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 16px;
@@ -119,7 +118,7 @@ button {
 
 #clock {
     color: #f8bd96;
-    background-color: @surface1;
+    background-color: @surface0;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -130,7 +129,7 @@ button {
 
 #battery {
     color: #fae380;
-    background-color: @surface1;
+    background-color: @surface0;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -166,8 +165,8 @@ label:focus {
 }
 
 #cpu {
-    color: #ddb6f2;
-    background-color: @surface1;
+    color: #bb9af7;
+    background-color: @surface0;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -177,8 +176,8 @@ label:focus {
 }
 
 #memory {
-    color: #74c7ec;
-    background-color: @surface1;
+    color: #7dcfff;
+    background-color: @surface0;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -188,8 +187,8 @@ label:focus {
 }
 
 #disk {
-    color: #f2cdcd;
-    background-color: @surface1;
+    color: #9aa5ce;
+    background-color: @surface0;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -198,17 +197,6 @@ label:focus {
     font-weight: bold;
 }
 
-#backlight {
-    background-color: #90b1b1;
-}
-
-#network {
-    background-color: #2980b9;
-}
-
-#network.disconnected {
-    background-color: #f53c3c;
-}
 
 #pulseaudio {
     background-color: #f1c40f;
@@ -245,8 +233,8 @@ label:focus {
 }
 
 #custom-mail {
-    color: #b7bdf8;
-    background-color: @surface1;
+    color: #f7768e;
+    background-color: @surface0;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -256,8 +244,8 @@ label:focus {
 }
 
 #custom-torrent {
-    color: #abe9b3;
-    background-color: @surface1;
+    color: #50fa7b;
+    background-color: @surface0;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -266,9 +254,20 @@ label:focus {
     font-weight: bold;
 }
 
-#custom-pacman {
-    color: #e8a2af;
-    background-color: @surface1;
+#custom-kern {
+    color: #cfc9c2;
+    background-color: @surface0;
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
+}
+
+#custom-emerge {
+    color: #ffc777;
+    background-color: @surface0;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -278,8 +277,8 @@ label:focus {
 }
 
 #custom-internet {
-    color: #f5bde6;
-    background-color: @surface1;
+    color: #abe9b3;
+    background-color: @surface0;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -289,8 +288,8 @@ label:focus {
 }
 
 #custom-music {
-    color: #74c7Ec;
-    background-color: @surface1;
+    color: #2ac3de;
+    background-color: @surface0;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -301,8 +300,8 @@ label:focus {
 
 #custom-icon {
 
-    color: #74c7Ec;
-    background-color: @surface1;
+    color: #c099ff;
+    background-color: @surface0;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -314,7 +313,7 @@ label:focus {
 
 #temperature {
     color: #f28fad;
-    background-color: @surface1;
+    background-color: @surface0;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -364,30 +363,6 @@ label:focus {
 
 #mpd.paused {
     background-color: #51a37a;
-}
-
-#language {
-    background: #00b093;
-    color: #740864;
-    padding: 0 5px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state {
-    background: #97e1ad;
-    color: #000000;
-    padding: 0 0px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state > label {
-    padding: 0 5px;
-}
-
-#keyboard-state > label.locked {
-    background: rgba(0, 0, 0, 0.2);
 }
 
 #scratchpad {

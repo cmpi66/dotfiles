@@ -1,39 +1,49 @@
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 14, // Waybar height (to be removed for auto height)
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 10, // Waybar height (to be removed for auto height)
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
     // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
-    // Choose the order of the modules
+    // "spacing": 4, // Gaps between modules (4px)
     "modules-left": ["custom/icon", "wlr/workspaces", "wlr/mode", "wlr/scratchpad"],
     "modules-center": ["hyprland/window"],
-    //"modules-center": ["wlr/window"],
-    "modules-right": ["custom/mail", "custom/torrent", "custom/pacman", "battery", "custom/internet", "cpu", "memory", "temperature", "disk", "wlr/language",  "clock", "tray", "custom/music"],
+    "modules-right": ["custom/mail", "custom/torrent", "custom/kern", "custom/emerge", "custom/internet", "cpu", "memory", "disk", "wlr/language",  "clock", "tray", "custom/music"],
     // Modules configuration
-     "wlr/workspaces": {
-         "disable-scroll": true,
-         "all-outputs": true,
-         "on-click": "activate",
-         "format": "{icon}",
-         "format-icons": {
-             "urgent": "",
-			       "active": "",
-			      "default": "󰧞",
-           // "default": "",
-         "sort-by-number": true,
-         }
-     },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
+     // "wlr/workspaces": {
+     //     "disable-scroll": true,
+     //     "all-outputs": true,
+     //     "on-click": "activate",
+     //     "format": "{icon}",
+     //     "format-icons": {
+     //         "urgent": "",
+			  //      "active": "",
+			  //     "default": "󰧞",
+     //       // "default": "",
+     //     "sort-by-number": true,
+     //     }
+     // },
+    "wlr/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate",
+        //"format": "{icon}",
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": [],
+            "10": []
         }
     },
-    "wlr/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+    "hyprland/window": {
+        "format": "{}"
     },
     "wlr/scratchpad": {
         "format": "{icon} {count}",
@@ -96,7 +106,7 @@
     },
 
     "disk": {
-        "interbal": 30,
+        "interval": 30,
         "format": "{free}G ",
         "path": "/"
     },
@@ -107,37 +117,6 @@
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
-    },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
-    },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -170,9 +149,9 @@
       "interval": 5,
       "exec": "~/.local/bin/slstatus/music.sh",
     },   
-    "custom/pacman": {
-      "interval": 300,
-      "exec": "~/.local/bin/slstatus/pacpackages.sh",
+    "custom/emerge": {
+      "interval": 30,
+      "exec": "~/.local/bin/slstatus/gentoopacks.sh",
     },   
 
     "custom/torrent": {
@@ -181,6 +160,19 @@
     },   
     "custom/icon": {
       "format": ""
+    },   
+
+    "custom/kern": {
+      "format": "{icon} {}",
+      "interval": 30,
+      "format-icons": "",
+      "exec": " uname -r"
+    },   
+    "custom/zfs": {
+      "format": "{icon} {}",
+      "interval": 30,
+      "format-icons": "",
+      "exec": "du -sh /zpgen/*"
     },   
     "custom/media": {
         "format": "{icon} {}",

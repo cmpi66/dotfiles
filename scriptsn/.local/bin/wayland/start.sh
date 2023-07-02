@@ -20,4 +20,4 @@ export OZONE_PLATFORM=wayland
 export GDK_BACKEND=wayland
 mkdir -p $XDG_RUNTIME_DIR
 chmod 0700 $XDG_RUNTIME_DIR
-exec dbus-launch Hyprland
+exec Hyprland

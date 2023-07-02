@@ -78,6 +78,7 @@ alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 export PASSWORD_STORE_EXTENSIONS_DIR="$XDG_DATA_HOME/.password-store/.extensions"
 export PASSWORD_STORE_ENABLE_EXTENSIONS="true"
 export QT_QPA_PLATFORMTHEME="gtk2" # Have QT use gtk2 theme.
+export BEMENU_OPTS='-i -l 20 --fb "#1e1e2e" --ff "#94e2d5" --nb "#1e1e2e" --nf "#f5e0dc" --tb "#1e1e2e" --hb "#1e1e2e" --tf "#cba6f7" --hf "#89b4fa" --nf "#f5e0dc" --af "#f5e0dc" --ab "#1e1e2e"'
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 # SDCV_PAGER='lolcat -f | less --quit-if-one-screen -RX'
 # SDCV_PAGER='less --quit-if-one-screen -RX'
@@ -207,4 +208,5 @@ ex=🎯:\
 *.java=♨:\
 "
 
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ~/.config/x11/xinitrc
+# [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ~/.config/x11/xinitrc
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec start.sh
