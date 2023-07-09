@@ -3,7 +3,7 @@
 #aur apps 
 
 yay --noconfirm --needed -S \
-  abook\
+  aur/abook\
   catppuccin-gtk-theme-macchiato \
   aur/trayer-srg \
   pam-gnupg \

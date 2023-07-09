@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+set -euo pipefail
+(
+    exec bwrap \
+     --ro-bind /usr/bin /usr/bin \
+     --ro-bind /usr/share /usr/share \
+     --ro-bind /usr/lib /usr/lib \
+     --ro-bind /usr/lib64 /usr/lib64 \
+     --symlink /usr/lib64 /lib64 \
+     --symlink /usr/bin /bin \
+     --symlink /usr/lib /lib \
+     --dev /dev \
+     --proc /proc \
+     --ro-bind /run/user/"$(id -u)"/"$WAYLAND_DISPLAY" /run/user/"$(id -u)"/"$WAYLAND_DISPLAY" \
+     --ro-bind-try /run/user/"$(id -u)"/pipewire-0 /run/user/"$(id -u)"/pipewire-0 \
+     --ro-bind /etc /etc \
+     --ro-bind-try ~/.config/mpv ~/.config/mpv \
+     --ro-bind-try "${@: -1}" "$(realpath "${@: -1}")" \
+     --unsetenv DBUS_SESSION_BUS_ADDRESS \
+     --unshare-all \
+     --seccomp 10 \
+     10< ~/.local/bin/bubblewrap/seccomp_default_filter.bpf \
+     /usr/bin/mpv  "$@"
+)
+
+## remove --no-session and --no-terminal if you want terminal control in mpv

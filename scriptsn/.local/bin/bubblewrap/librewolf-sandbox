@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-if [ ! -z "$(pgrep --uid "$(id -u)" firefox)" ]
+if [ ! -z "$(pgrep --uid "$(id -u)" librewolf)" ]
 then
-    echo "firefox already running"
+    echo "librewolf already running"
     exit
 fi
 
@@ -55,18 +55,21 @@ fi
      --ro-bind /run/user/"$(id -u)"/"$WAYLAND_DISPLAY" /run/user/"$(id -u)"/"$WAYLAND_DISPLAY" \
      --ro-bind-try /run/user/"$(id -u)"/pipewire-0 /run/user/"$(id -u)"/pipewire-0 \
      --ro-bind-try /run/user/"$(id -u)"/pulse /run/user/"$(id -u)"/pulse \
+     --ro-bind /usr/bin/keepassxc-proxy /usr/bin/keepassxc-proxy \
+     --ro-bind-try /run/user/"$(id -u)"/org.keepassxc.KeepassXC.BrowserServer /run/user/"$(id -u)"/org.keepassxc.KeepassXC.BrowserServer \
      --bind-try ~/dl ~/dl \
-     --bind-try ~/.mozilla ~/.mozilla \
-     --bind-try ~/.cache/mozilla ~/.cache/mozilla \
+     --bind-try ~/Downloads ~/Downloads \
+     --bind-try ~/.librewolf ~/.librewolf \
+     --bind-try ~/.cache/librewolf ~/.cache/librewolf \
      --unsetenv DBUS_SESSION_BUS_ADDRESS \
      --setenv MOZ_ENABLE_WAYLAND 1 \
      --unshare-all \
      --share-net \
      --hostname local \
-     --new-session \
+	   --new-session --die-with-parent --cap-drop ALL \
      --seccomp 10 \
-     10< /usr/local/bin/seccomp_default_filter.bpf \
-     /usr/lib/firefox/firefox
+     10< ~/.local/bin/bubblewrap/seccomp_default_filter.bpf \
+     /usr/lib/librewolf/librewolf
 )
 
 # todo: block abstract sockets

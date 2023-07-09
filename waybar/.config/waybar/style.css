@@ -178,7 +178,7 @@ label:focus {
     padding: 0px 10px 0px 10px;
     font-weight: bold;
 }
-#bluetooth.disabled {
+#bluetooth.off {
     color: @mantle;
     background-color: @surface0;
     border-radius: 16px;

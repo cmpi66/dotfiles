@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+set -euo pipefail
+(
+    exec bwrap \
+     --ro-bind /usr/bin/zathura /usr/bin/zathura \
+     --ro-bind /usr/share /usr/share \
+     --ro-bind /usr/lib /usr/lib \
+     --symlink /usr/lib /lib \
+     --ro-bind /usr/lib64 /usr/lib64 \
+     --symlink /usr/lib64 /lib64 \
+     --proc /proc \
+     --ro-bind /run/user/"$(id -u)"/"$WAYLAND_DISPLAY" /run/user/"$(id -u)"/"$WAYLAND_DISPLAY" \
+     --ro-bind /etc/fonts /etc/fonts \
+     --bind-try ~/.local/share/zathura ~/.local/share/zathura \
+     --ro-bind-try ~/.config/zathura ~/.config/zathura \
+     --ro-bind-try ~/docs ~/docs \
+     --ro-bind-try ~/media ~/media \
+     --ro-bind-try ~/.cache/fontconfig ~/.cache/fontconfig \
+     --ro-bind-try "${@: -1}" "$(realpath "${@: -1}")" \
+     --unsetenv DBUS_SESSION_BUS_ADDRESS \
+     --unshare-all \
+     --new-session \
+     --seccomp 10 \
+     10< ~/.local/bin/bubblewrap/seccomp_default_filter.bpf \
+     /usr/bin/zathura "$@"
+)
+
+
+## zathura also supports a native sandbox via seccomp filter
+## To use the internal sandbox in addition, add this to ~/.config/zathura/zathurarc :
+## set sandbox strict
