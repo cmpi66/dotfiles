@@ -107,7 +107,7 @@
 
     "disk": {
         "interval": 30,
-        "format": "{free}G ",
+        "format": "{free} ",
         "path": "/"
     },
     "temperature": {

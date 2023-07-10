@@ -6,7 +6,7 @@ export __GLX_VENDOR_LIBRARY_NAME=nvidia
 export WLR_NO_HARDWARE_CURSORS=1
 export XDG_RUNTIME_DIR="/tmp/hyprland"
 export SDL_VIDEODRIVER=wayland
-export QT_SCREEN_SCALE_FACTORS="1;1"
+# export QT_SCREEN_SCALE_FACTORS="1;1"
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export QT_QPA_PLATFORM=wayland
 export XCURSOR_SIZE=18
@@ -20,4 +20,4 @@ export OZONE_PLATFORM=wayland
 export GDK_BACKEND=wayland
 mkdir -p $XDG_RUNTIME_DIR
 chmod 0700 $XDG_RUNTIME_DIR
-exec Hyprland
+exec dbus-run-session Hyprland
