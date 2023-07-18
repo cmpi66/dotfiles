@@ -1,0 +1,98 @@
+#!/bin/env bash
+
+# A script to harden firefox arkenfox js
+
+
+# i want this script to run firefox command then grep for the process id and kill it 
+# then i want to run the commands and check if default-default exists or default-release exits 
+# then copy the user.js to the appropriate folder 
+# finally run the user.js updater script 
+
+# if defalut 
+# else release
+#   command
+# fi
+
+
+
+
+
+# Loop through directories with names matching '*default-release' in the .firefox directory
+# for dir in /home/chris/.firefox.bk/*default-release/; do
+#     if [ -d "$dir" ]; then
+#         # Copy user.js and updater.sh to the current directory
+#         cp /home/chris/dl/git-clones/user.js/user.js "$dir"
+#         cp /home/chris/dl/git-clones/user.js/updater.sh "$dir"
+#         echo "Copied user.js and updater.sh to $dir"
+
+#         # Create a symbolic link to the copied user.js file
+#         ln -s /home/chris/.config/firefox/user-overrides.js "$dir" 
+
+#         # Run the updater.sh script
+#         "$dir/updater.sh"
+#     fi
+# done
+
+# # Loop through directories with names matching '*default-default' in the .firefox directory
+# for dir in /home/chris/.firefox/*default-default/; do
+#     if [ -d "$dir" ]; then
+#         # Copy user.js and updater.sh to the current directory
+#         cp /home/chris/dl/git-clones/user.js/user.js "$dir"
+#         cp /home/chris/dl/git-clones/user.js/updater.sh "$dir"
+#         echo "Copied user.js and updater.sh to $dir"
+
+#         # Create a symbolic link to the copied user.js file
+#         ln -s /home/chris/.config/firefox/user-overrides.js "$dir" 
+
+#         # Run the updater.sh script
+#         "$dir/updater.sh"
+#     fi
+# done
+#
+
+# Launch firefox in the background and without a GUI
+firefox --headless &
+FIREFOX_PID=$!
+
+# Wait for firefox to start up
+# sleep 3
+
+user_js_dir="/home/chris/dl/git-clones/user.js" firefox_dir="/home/chris/.mozilla/firefox"
+
+# Loop through directories with names matching '*default-release' in the .firefox directory
+for dir in "$firefox_dir"/*default-release/; do
+    if [ -d "$dir" ]; then
+        # Copy user.js and updater.sh to the current directory
+        cp "$user_js_dir/user.js" "$dir"
+        cp "$user_js_dir/updater.sh" "$dir"
+
+        # Create a symbolic link to the copied user.js file
+        ln -s /home/chris/.config/firefox/user-overrides.js "$dir" 
+
+        # Run the updater.sh script
+        cd "$dir"
+        ./updater.sh -su
+        cd -
+    fi
+done
+
+# Loop through directories with names matching '*default-default' in the .firefox directory
+for dir in "$firefox_dir"/*default-default/; do
+    if [ -d "$dir" ]; then
+        # Copy user.js and updater.sh to the current directory
+        cp "$user_js_dir/user.js" "$dir"
+        cp "$user_js_dir/updater.sh" "$dir"
+
+        # Create a symbolic link to the copied user.js file
+        ln -s /home/chris/.config/firefox/user-overrides.js "$dir" 
+
+        # Run the updater.sh script
+        cd "$dir"
+        ./updater.sh -su
+        cd -
+    fi
+done
+
+# Kill the firefox process
+kill "$firefox_PID"
+

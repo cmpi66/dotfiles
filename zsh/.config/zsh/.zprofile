@@ -65,7 +65,8 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 # export FZF_DEFAULT_OPTS="--layout=reverse --height 50%" # AT 50% it breaks uberzug with ytfzf and it breaks dwm swallow patch. I have to make a tradeoff
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
-export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
+export SUDO_ASKPASS="$HOME/.local/bin/dmenupass" #xorg
+# export SUDO_ASKPASS="$HOME/.local/bin/wayland/dmenupass-wayland"
 export MOZ_USE_XINPUT2="1" # Mozilla smooth scrolling/touchpads.
 export BEMENU_OPTS='-i -l 20 --fb "#1e1e2e" --ff "#94e2d5" --nb "#1e1e2e" --nf "#f5e0dc" --tb "#1e1e2e" --hb "#1e1e2e" --tf "#cba6f7" --hf "#89b4fa" --nf "#f5e0dc" --af "#f5e0dc" --ab "#1e1e2e"'
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
