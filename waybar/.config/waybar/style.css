@@ -73,12 +73,12 @@ button {
 #workspaces button {
     padding: 0px 5px;
     border-radius: 16px;
-    color: @overlay2;
+    color: @overlay0;
 }
 
 #workspaces button.active {
-    color: @red;
-    background-color: transparent;
+    color: @base;
+    background-color: @text;
     border-radius: 16px;
 }
 
