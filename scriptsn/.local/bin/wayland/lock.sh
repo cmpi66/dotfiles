@@ -6,7 +6,6 @@ pkill swayidle
 
 
 swayidle -w \
-    timeout 300 'swaylock -e -F -C /home/chris/.config/swaylock/config -i /home/chris/.local/bin/2770299.png' \
-         resume 'hyprctl dispatch dpms on"' \
+    timeout 600 'swaylock -e -F -C /home/chris/.config/swaylock/config -i /home/chris/.local/bin/2770299.png' 
 
 

@@ -83,8 +83,8 @@ button {
 }
 
 #workspaces button.active {
-    color: #f7768e;
-    background-color: transparent;
+    color: @base;
+    background-color: @text;
     border-radius: 16px;
 }
 
