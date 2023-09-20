@@ -22,6 +22,7 @@ yay --noconfirm --needed -S \
   nwg-look \
   hyprpicker\
   anki \
+  downgrade \
 
 
   

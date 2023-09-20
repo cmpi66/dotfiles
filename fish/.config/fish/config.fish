@@ -57,8 +57,8 @@ xset r rate 350 50
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
-alias ls='exa -al --color=always --icons --group-directories-first'
-alias sl='exa -al --color=always --icons --group-directories-first'
+alias ls='eza -al --color=always --icons --group-directories-first'
+alias sl='eza -al --color=always --icons --group-directories-first'
 alias diff='diff --color=auto'
 # easier to read disk
 alias df='pydf'     # human-readable sizes
@@ -88,7 +88,7 @@ alias vf="fzf | xargs -r -I % $EDITOR %"
 
 # System abbreviations 
 abbr f 'zi'
-abbr desk "ssh -t chris@10.27.27.10"
+abbr desk "ssh -t chris@10.27.27.183"
 abbr deskfs "sudo mount -t nfs 10.27.27.10:/zpgen/shared/ /mnt/share/" 
 abbr archlinx-fix-keys "sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
 abbr merge "xrdb -merge ~/.config/x11/xresources"
@@ -144,6 +144,7 @@ abbr se "br --conf ~/.config/broot/open.hjson ~/.local/bin/"
 abbr yts "ytfzf -t -l --sort"
 abbr sdcv "sdcv -n --utf8-output --color"
 abbr zfsun "doas umount /mnt/share"
+abbr batthealth 'upower -i /org/freedesktop/UPower/devices/battery_BAT0'
 # abbr idrivemn "rclone mount IdriveEncrypt:/ /mnt/idrive/ --vfs-cache-mode full --daemon"
 
 ### TASKWARRIOR 
