@@ -62,8 +62,8 @@ xset r rate 300 50
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
-alias ls='exa -al --color=always --icons --group-directories-first'
-alias sl='exa -al --color=always --icons --group-directories-first'
+alias ls='eza -al --color=always --icons --group-directories-first'
+alias sl='eza -al --color=always --icons --group-directories-first'
 alias diff='diff --color=auto'
 
 # easier to read disk
