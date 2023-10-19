@@ -81,7 +81,7 @@ color.project.Algoritma=black on blue
 
 
 # add effort and score in our 'next' report
-report.next.filter=+PENDING -BLOCKING limit:20
+report.next.filter=+PENDING -BLOCKING limit:30
 report.next.labels=ID,Active,Age,Deps,P,💪,Project,Tag,Recur,S,Due,Until,Description,Urg,🏆
 report.next.columns=id,start.age,entry.age,depends,priority,effort,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description,urgency,score
 news.version=2.6.0

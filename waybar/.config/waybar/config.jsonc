@@ -7,11 +7,11 @@
     "passthrough": false,
     // "width": 1280, // Waybar width
     // "spacing": 4, // Gaps between modules (4px)
-    "modules-left": ["custom/icon", "wlr/workspaces", "wlr/mode", "wlr/scratchpad"],
+    "modules-left": ["custom/icon", "hyprland/workspaces", "hyprland/mode", "hyprland/scratchpad"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["custom/mail", "custom/torrent", "custom/pacman", "battery", "custom/internet", "cpu", "memory", "temperature", "backlight", "disk", "wlr/language",  "clock", "tray", "custom/music"],
+    "modules-right": ["custom/mail", "custom/torrent", "custom/pacman", "battery", "custom/internet", "cpu", "memory", "temperature", "backlight", "disk", "hyprland/language",  "clock", "tray", "custom/music"],
     // Modules configuration
-     // "wlr/workspaces": {
+     // "hyprland/workspaces": {
      //     "disable-scroll": true,
      //     "all-outputs": true,
      //     "on-click": "activate",
@@ -25,12 +25,13 @@
      //     }
      // },
 
-    "wlr/workspaces": {
+    "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "on-click": "activate",
         //"format": "{icon}",
-        "persistent_workspaces": {
+        // "persistent_workspaces": {
+        "format": {
             "1": [],
             "2": [],
             "3": [],
@@ -48,7 +49,7 @@
         "format": "{}"
     },
 
-    "wlr/scratchpad": {
+    "hyprland/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
         "format-icons": ["", ""],
