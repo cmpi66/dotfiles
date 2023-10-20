@@ -88,7 +88,7 @@ alias vf="fzf | xargs -r -I % $EDITOR %"
 
 # System abbreviations 
 abbr f 'zi'
-abbr desk "ssh -t chris@10.27.27.183"
+abbr desk "ssh -t chris@10.27.27.10"
 abbr deskfs "sudo mount -t nfs 10.27.27.10:/zpgen/shared/ /mnt/share/" 
 abbr archlinx-fix-keys "sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
 abbr merge "xrdb -merge ~/.config/x11/xresources"

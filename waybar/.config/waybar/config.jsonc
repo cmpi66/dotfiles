@@ -9,7 +9,7 @@
     // "spacing": 4, // Gaps between modules (4px)
     "modules-left": ["custom/icon", "hyprland/workspaces", "hyprland/mode", "hyprland/scratchpad"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["custom/mail", "custom/torrent", "custom/pacman", "battery", "custom/internet", "cpu", "memory", "temperature", "backlight", "disk", "hyprland/language",  "clock", "tray", "custom/music"],
+    "modules-right": ["custom/mail", "custom/torrent", "custom/pacman", "battery", "custom/internet", "cpu", "memory", "temperature", "backlight", "disk", "clock", "tray", "custom/music"],
     // Modules configuration
      // "hyprland/workspaces": {
      //     "disable-scroll": true,
