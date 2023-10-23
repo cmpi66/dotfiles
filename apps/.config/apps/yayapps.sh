@@ -23,6 +23,7 @@ yay --noconfirm --needed -S \
   hyprpicker\
   anki \
   downgrade \
+  ueberzugpp \
 
 
   

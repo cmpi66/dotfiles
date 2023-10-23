@@ -1,4 +1,4 @@
 #!/bin/env bash
 
 
-doas mount -t nfs 10.27.27.183:/zpgen/shared /mnt/share/ 
+doas mount -t nfs 10.27.27.10:/zpgen/shared /mnt/share/ 
