@@ -37,6 +37,35 @@ if [ -n "$FIFO_UEBERZUG" ]; then
       ffmpegthumbnailer -i "$file" -o "$cache" -s 0
       draw "$cache" "$@"
       ;;
+   text/html) 
+     lynx -display_charset=utf-8 -dump "$file"
+     ;;
+   text/troff) 
+     man ./ "$file" | col -b 
+     ;;
+    text/* | */xml | application/json)
+     bat --color=always "$file"
+     ;;
+   application/zip)
+     atool --list -- "$file"
+     ;;
+   audio/* | application/octet-stream)
+     mediainfo "$file" || exit 1
+     ;;
+   *opendocument*)
+     odt2txt "$file"
+     ;;
+   application/pgp-encrypted)
+     gpg -d -- "$file"
+     ;;
+   pdf*/) # Figure this one out
+     cache="$(hash "$file").jpg"
+     cache "$cache" "$@"
+     pdftoppm -jpeg -f 1 -singlefile "$file" "$cache" 0
+     draw "$cache" "$@"
+     ;;
+
+      
   esac
 fi
 
