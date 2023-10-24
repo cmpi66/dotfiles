@@ -25,8 +25,8 @@ set sixel true
 set period 1
 set ignorecase true
 set hidden true
-set previewer ~/.config/lf/previewer.sh
-set cleaner ~/.config/lf/clear_img.sh
+set cleaner '~/.config/lf/cleaner'
+set previewer '~/.config/lf/scope'
 source '~/.config/lf/shortcutrc'
 
 
