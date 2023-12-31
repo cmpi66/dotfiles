@@ -1,5 +1,5 @@
 reload "user.plugins"
-reload "user.catppuccin"
+-- reload "user.catppuccin"
 reload "user.colorscheme"
 -- reload "user.tokyonight"
 reload "user.autocommands"

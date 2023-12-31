@@ -173,6 +173,7 @@ starship init fish | source
 atuin init fish | source
 navi widget fish | source
 scheme set catppuccin
+# fish_config theme save "Catppuccin-Macchiato"
 
 source ~/.config/fish/shortcuts.fish
 source ~/.config/fish/fnm.fish
