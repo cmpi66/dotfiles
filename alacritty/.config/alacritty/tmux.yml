@@ -13,9 +13,8 @@ env:
   TERM: xterm-256color
 
 import:
-  - ~/.config/alacritty/colors.yml
+  - ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
   - ~/.config/alacritty/fonts.yml
-   
 
 window:
   # Window dimensions (changes require restart)
@@ -90,10 +89,10 @@ window:
   # Set this to `None` to use the default theme variant.
   #gtk_theme_variant: None
 
-  scrolling:
+scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
-    history: 50000
+  history: 5000
 
   # Number of lines the viewport will move for every line scrolled when
   # scrollback is enabled (history > 0).
@@ -129,7 +128,6 @@ window:
   # effect.
   #use_thin_strokes: true
 
-# If `true`, bold text is drawn using the bright color variants.
 
 # Visual Bell
 #
@@ -180,6 +178,7 @@ cursor:
     shape: Beam
   unfocused_hollow: false
   thickness: 0.30
+
 
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
@@ -424,10 +423,9 @@ live_config_reload: true
 key_bindings:
 
   # (Windows, Linux, and BSD only)
-  - { key: V,              mods: Control|Shift,                   action: Paste            }
+  - { key: V,              mods: Alt,                   action: Paste            }
   - { key: J,              mods: Alt,                   action: ScrollLineDown            }
   - { key: K,              mods: Alt,                   action: ScrollLineUp            }
-  - { key: V,              mods: Alt,                   action: Paste            }
   - { key: C,              mods: Alt,                   action: Copy             }
   - { key: F,              mods: Control|Shift,                   action: SearchForward    }
   - { key: B,              mods: Control|Shift,                   action: SearchBackward   }

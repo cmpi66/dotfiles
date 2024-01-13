@@ -13,7 +13,7 @@
   # TERM: xterm-256color
 
 import:
-  - ~/.config/alacritty/colors.yml
+  - ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
   - ~/.config/alacritty/fonts.yml
   # - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
   # - ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
@@ -427,10 +427,9 @@ live_config_reload: true
 key_bindings:
 
   # (Windows, Linux, and BSD only)
-  - { key: V,              mods: Control|Shift,                   action: Paste            }
+  - { key: V,              mods: Alt,                   action: Paste            }
   - { key: J,              mods: Alt,                   action: ScrollLineDown            }
   - { key: K,              mods: Alt,                   action: ScrollLineUp            }
-  - { key: V,              mods: Alt,                   action: Paste            }
   - { key: C,              mods: Alt,                   action: Copy             }
   - { key: F,              mods: Control|Shift,                   action: SearchForward    }
   - { key: B,              mods: Control|Shift,                   action: SearchBackward   }

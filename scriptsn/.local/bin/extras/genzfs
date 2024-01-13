@@ -4,5 +4,5 @@
 
 ## IF switching distros run zfs import to get name of pool then run the same commannd with the disvered pool name
 
-doas zfs load-key -r zpgen/shared && doas zfs mount zpgen/shared && doas zfs set sharenfs="no_root_squash,rw=@10.27.27.0/24 10.70.70.0/24" zpgen/shared 
+doas zfs load-key -r zpgen/shared && doas zfs mount zpgen/shared && doas zfs set sharenfs="no_root_squash,rw=@10.27.27.0/24 10.70.70.0/24" zpgen/shared && doas mount -o nolock -t nfs 10.27.27.14:/mnt/truepool/share /mnt/truenas/
 

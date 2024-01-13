@@ -12,3 +12,6 @@ flock -n /tmp/mail.lock /usr/bin/rclone copy  --s3-upload-cutoff=0 --transfers 2
 flock -n /tmp/src-syncthing.lock /usr/bin/rclone copy  --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/.src IdriveEncrypt:srcsync
 flock -n /tmp/gen-dl.lock /usr/bin/rclone copy  --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/dl IdriveEncrypt:downloadsgentoo
 flock -n /tmp/kdb.lock /usr/bin/rclone copy -v  --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/kdb/ IdriveEncrypt:kdb
+
+
+flock -n /tmp/android.lock /usr/bin/rclone copy -v  --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/android-backup/ IdriveEncrypt:grapheneos-backup

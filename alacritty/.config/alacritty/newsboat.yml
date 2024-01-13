@@ -3,14 +3,14 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-env:
+# env:
   # TERM variable
   #
   # This value is used to set the `$TERM` environment variable for
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  TERM: xterm-256color
+  # TERM: xterm-256color
 
 import:
   # - ~/.config/alacritty/colors.yml
@@ -93,10 +93,10 @@ window:
   # Set this to `None` to use the default theme variant.
   #gtk_theme_variant: None
 
-  scrolling:
+scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
-    history: 50000
+  history: 5000
 
   # Number of lines the viewport will move for every line scrolled when
   # scrollback is enabled (history > 0).
@@ -132,7 +132,6 @@ window:
   # effect.
   #use_thin_strokes: true
 
-# If `true`, bold text is drawn using the bright color variants.
 
 # Visual Bell
 #
@@ -183,6 +182,7 @@ cursor:
     shape: Beam
   unfocused_hollow: false
   thickness: 0.30
+
 
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
@@ -427,7 +427,6 @@ live_config_reload: true
 key_bindings:
 
   # (Windows, Linux, and BSD only)
-  - { key: V,              mods: Control|Shift,                   action: Paste            }
   - { key: J,              mods: Alt,                   action: ScrollLineDown            }
   - { key: K,              mods: Alt,                   action: ScrollLineUp            }
   - { key: V,              mods: Alt,                   action: Paste            }
