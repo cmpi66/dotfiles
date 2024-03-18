@@ -326,6 +326,8 @@ _comps=(
 'dnf-2' '_dnf'
 'dnf-3' '_dnf'
 'doas' '_doas'
+'docker' '_docker'
+'dockerd' '_docker'
 'domainname' '_yp'
 'dos2unix' '_dos2unix'
 'dosdel' '_floppy'
@@ -1218,7 +1220,6 @@ _comps=(
 'pyhtmlizer' '_twisted'
 'qdbus' '_qdbus'
 'qiv' '_qiv'
-'qpdf' '_qpdf'
 'qtplay' '_qtplay'
 'querybts' '_bug'
 'quilt' '_quilt'
@@ -1935,14 +1936,14 @@ bindkey '^[/' _history-complete-older
 bindkey '^[~' _bash_complete-word
 
 autoload -Uz _alacritty _atuin _bat _br _broot \
-            _bwrap _calibre _curl _dunst _dunstctl \
-            _eix _eix-header _eix-installed _eix-installed-after _eix-layman \
-            _eix-remote _eix-sync _eix-test-obsolete _email-notmuch _eza \
-            _fd _foot _footclient _highlight _img2sixel \
-            _kitty _kubectl _less _lf _libinput \
-            _loginctl _maturin _meson _mpv _ninja \
-            _notmuch _openrc _parallel _pass _pkgcheck \
-            _pkgcore _pkgdev _playerctl _pulseaudio _qpdf \
+            _bwrap _calibre _curl _docker _dunst \
+            _dunstctl _eix _eix-header _eix-installed _eix-installed-after \
+            _eix-layman _eix-remote _eix-sync _eix-test-obsolete _email-notmuch \
+            _eza _fd _foot _footclient _highlight \
+            _img2sixel _kitty _kubectl _less _lf \
+            _libinput _loginctl _maturin _meson _mpv \
+            _ninja _notmuch _openrc _parallel _pass \
+            _pkgcheck _pkgcore _pkgdev _playerctl _pulseaudio \
             _quoter _rclone _rc-service _rc-status _rc-update \
             _rg _rustup _swayidle _swaylock _systemd-tmpfiles \
             _task _the_silver_searcher _udevadm _wl-copy _wl-paste \

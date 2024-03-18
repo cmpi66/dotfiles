@@ -41,7 +41,7 @@ set -x  MANPAGER "lvim +Man!"
 
 ### AUTOCOMPLETE AND HIGHLIGHT COLORS ###
 
-set fish_color_normal brcyan
+set fish_color_normal --bold brcyan
 set fish_color_autosuggestion '#7d7d7d'
 set fish_color_command brcyan
 set fish_color_error '#ff6c6b'
@@ -174,6 +174,7 @@ starship init fish | source
 atuin init fish | source
 navi widget fish | source
 scheme set tokyonight
+# fish_config theme save "Catppuccin-Latte"
 
 source ~/.config/fish/shortcuts.fish
 source ~/.config/fish/gentoo.fish
