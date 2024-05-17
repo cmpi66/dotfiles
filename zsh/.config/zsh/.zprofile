@@ -26,7 +26,7 @@ export VISUAL="lvim"
 export BROWSER="librewolf"
 export MOVPLAY="mpv"
 export TERM=xterm-256color
-export PICVIEW="sxiv"
+export PICVIEW="swiv"
 
 
 # ~/ Clean up:

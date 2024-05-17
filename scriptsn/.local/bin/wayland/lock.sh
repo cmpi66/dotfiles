@@ -2,6 +2,8 @@
 
 # A simple lockscreen script that even works while closing the lid, on openrc. No extra services.
 
+export DISPLAY=:0
+
 pkill swayidle 
 
 
