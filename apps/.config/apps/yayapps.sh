@@ -3,27 +3,31 @@
 #aur apps 
 
 yay --noconfirm --needed -S \
+  anki-bin \
+  apparmor.d-git \
   aur/abook\
   catppuccin-gtk-theme-macchiato \
-  aur/trayer-srg \
-  pam-gnupg \
+  downgrade \
+  evremaps-git \
   htop-vim \
+  hyprpicker\
   i3lock-color \
   lf \
+  librewolf-bin \
+  lsix-git \
   mutt-wizard-git \
+  nwg-look \
   opustags \
+  pam-gnupg \
   sc-im \
-  task-spooler \
   stig-git \
+  task-spooler \
+  ueberzugpp \
+  ungoogled-chromium-bin \
   urlview-xdg-git \
   xidlehook \
-  evremaps-git \
-  librewolf-bin \
-  nwg-look \
-  hyprpicker\
-  anki \
-  downgrade \
-  ueberzugpp \
+  zoom \
+
 
 
   
