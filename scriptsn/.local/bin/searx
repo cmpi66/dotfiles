@@ -1,6 +1,6 @@
 #!/bin/sh
 #exec w3m "duckduckgo.com/lite?kd=-1&kp=-1&q=$*"
-exec lynxub "https://searxng.labcm.xyz/search?q=\$s "
+exec lynxub "https://searx.labcm.xyz/search?q=\$s "
 #exec lynx "duckduckgo.com/lite?q=$*" # 🦆
 #exec lynx "duckduckgo.com/lite?q=$*"
 
