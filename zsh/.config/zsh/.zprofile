@@ -209,7 +209,8 @@ ex=🎯:\
 "
 
 # [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ~/.config/x11/xinitrc
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec Hyprland
+# [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec Hyprland
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && dbus-run-session Hyprland
 # if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
 #     dbus-run-session Hyprland
 # fi
