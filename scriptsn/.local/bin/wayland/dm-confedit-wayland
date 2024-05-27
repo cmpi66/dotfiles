@@ -28,7 +28,7 @@ set -euo pipefail
 
 DMENU="bemenu -p"
 # DMENU="rofi -dmenu -i -l 10 -p"
-DMTERM="alacritty -e"
+DMTERM="foot -e"
 
 DMEDITOR="${DMTERM} lvim"
 declare -A confedit_list
@@ -40,6 +40,7 @@ confedit_list[bash]="$HOME/.bashrc"
 confedit_list[calcurse]="$HOME/.config/calcurse/conf"
 confedit_list[dunst]="$HOME/.config/dunst/dunstrc"
 confedit_list[fontconfig]="$HOME/.config/fontconfig/fonts.conf"
+confedit_list[foot]="$HOME/.config/foot/foot.ini"
 confedit_list[tmux]="$HOME/.config/tmux/tmux.conf"
 confedit_list[dwm]="$HOME/.config/suckless/dwm/config.h"
 confedit_list[st]="$HOME/.config/suckless/st/config.h"
