@@ -1,0 +1,47 @@
+[pyprland]
+plugins = ["scratchpads" ]
+
+[scratchpads.term]
+animation = "fromTop"
+command = "foot -a spterm"
+class = "spterm"
+size = "55% 40%"
+# max_size = "1920px 100%"
+margin = 50
+
+[scratchpads.pulse]
+animation = "fromTop"
+command = "foot -a pulse -e pulsemixer"
+class = "pulse"
+size = "40% 30%"
+# max_size = "1920px 100%"
+margin = 50
+
+
+[scratchpads.keepass]
+animation = "fromBottom"
+command = "keepassxc"
+class = "org.keepassxc.KeePassXC"
+size = "50% 50%"
+unfocus = "hide"
+lazy = true
+# max_size = "1920px 100%"
+margin = 50
+
+
+[scratchpads.bmks]
+animation = "fromTop"
+command = "foot -a bmks -e bmks"
+class = "bmks"
+size = "55% 40%"
+# max_size = "1920px 100%"
+margin = 50
+
+[scratchpads.news]
+animation = "fromTop"
+command = "foot -a news -e newsboat"
+class = "news"
+size = "30% 40%"
+# max_size = "1920px 100%"
+margin = 50
+
