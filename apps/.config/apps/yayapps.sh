@@ -19,6 +19,7 @@ yay --noconfirm --needed -S \
   nwg-look \
   opustags \
   pam-gnupg \
+  pyprland \
   sc-im \
   stig-git \
   task-spooler \
