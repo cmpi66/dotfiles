@@ -23,7 +23,7 @@ animation = "fromBottom"
 command = "keepassxc"
 class = "org.keepassxc.KeePassXC"
 size = "50% 50%"
-unfocus = "hide"
+# unfocus = "hide"
 lazy = true
 # max_size = "1920px 100%"
 margin = 50
@@ -44,4 +44,15 @@ class = "news"
 size = "30% 40%"
 # max_size = "1920px 100%"
 margin = 50
+
+[scratchpads.eq]
+animation = "fromRight"
+command = "easyeffects"
+class = "com.github.wwmm.easyeffects"
+size = "70% 70%"
+# unfocus = "hide"
+lazy = true
+# max_size = "1920px 100%"
+margin = 50
+
 
