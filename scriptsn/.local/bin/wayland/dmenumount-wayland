@@ -99,7 +99,7 @@ case "$chosen" in
 		test -b "/dev/mapper/usb$num"
 
 		attemptmount || getmount
-		sudo -A mount "/dev/mapper/usb$num" "$mp" -o uid="$(id -u)",gid="$(id -g)"
+    doas mount "/dev/mapper/usb$num" "$mp" -o uid="$(id -u)",gid="$(id -g)"
 		notify-send "🔓Decrypted drive Mounted." "$chosen decrypted and mounted to $mp."
 		;;
 

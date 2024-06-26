@@ -4,4 +4,4 @@ ifinstalled stig transmission-cli || exit
 
 ! pidof transmission-daemon >/dev/null && transmission-daemon && notify-send "Starting torrent daemon..."
 
-alacritty -t "stig" -e stig 
+foot --title "stig" -e stig 
