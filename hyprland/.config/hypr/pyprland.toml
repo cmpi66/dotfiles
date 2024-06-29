@@ -13,7 +13,7 @@ margin = 50
 animation = "fromTop"
 command = "foot -a pulse -e pulsemixer"
 class = "pulse"
-size = "40% 30%"
+size = "50% 40%"
 # max_size = "1920px 100%"
 margin = 50
 
