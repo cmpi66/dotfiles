@@ -14,7 +14,7 @@ cmap ;h ~/
 cmap ;mn /mnt
 cmap ;pp ~/pix
 cmap ;sc ~/.local/bin
-cmap ;vv /zpgen/shared/vids/
+cmap ;vv /mnt/truenas/vids/
 cmap ;bf /home/chris/.config//shell/bm-files
 cmap ;bd /home/chris/.config//shell/bm-dirs
 cmap ;cfv /home/chris/.config//nvim/init.lua
