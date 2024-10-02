@@ -3,3 +3,4 @@ export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 echo "UPDATESTARTUPTTY" | gpg-connect-agent > /dev/null 2>&1 # This line is so pinentry program can work with gpg ssh smartcard if the gpg=tty is exported.
 gpgconf --launch gpg-agent
 
+#. "$HOME/.cargo/env"
