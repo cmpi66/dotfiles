@@ -1,0 +1,26 @@
+#!/bin/env bash
+
+# Checks if battery is charging or discharing and changes power profile to either balanced or powersave 
+
+
+
+# BATT=$("cat /sys/class/power_supply/BAT1/status*")
+
+# if [[ $BATT == "Discharing" ]]; then
+#    powerprofilesctl set power-saver
+
+# fi
+
+
+BATT_FILE="/sys/class/power_supply/BAT1/status"
+
+if [ -f "$BATT_FILE" ]; then
+    BATT=$(cat "$BATT_FILE")
+    
+    if [[ "$BATT" == "Discharging" ]]; then
+        powerprofilesctl set power-saver
+    fi
+else
+    echo "Battery status file not found: $BATT_FILE"
+fi
+

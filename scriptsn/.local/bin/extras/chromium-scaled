@@ -1,0 +1,5 @@
+#!/bin/env bash
+
+# scaled chromium command 
+
+chromium --force-device-scale-factor=1.175

@@ -4,7 +4,7 @@
 # fi
 
 if [[ -z $STOW_FOLDERS ]]; then
-    STOW_FOLDERS="alacritty,applications,apps,bat,broot,dunst,dwmkeys,fish,firefox,fonts,fontconfig,icons,iprules,gtk-2.0,gtk-3.0,kitty,lf,lynx,lvim,mime,mpd,mpv,ncmpcpp,neo,neovim,office,picom,pulse,pipewire,redshift,rofi,rofi-themes,scim,scriptsn,shell,starship,suckless,sxhkd,sxiv,task,tmux,user-dirs,x11,zathura,zk,zsh,hyprland,waybar,gammastep,evremap,swaylock"
+    STOW_FOLDERS="alacritty,applications,apps,bat,broot,dunst,dwmkeys,fish,firefox,fonts,fontconfig,icons,iprules,gtk-2.0,gtk-3.0,kitty,lf,lynx,lvim,mime,mpd,mpv,ncmpcpp,neo,neovim,office,picom,pulse,pipewire,redshift,rofi,rofi-themes,scim,scriptsn,shell,starship,suckless,sxhkd,sxiv,task,tmux,user-dirs,x11,zathura,zk,zsh,hyprland,waybar,gammastep,evremap,swaylock,foot"
 fi
 
 if [[ -z $DOTFILES ]]; then
