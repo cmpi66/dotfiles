@@ -144,7 +144,7 @@ abbr se "br --conf ~/.config/broot/open.hjson ~/.local/bin/"
 abbr yts "ytfzf -t -l --sort"
 abbr sdcv "sdcv -n --utf8-output --color"
 abbr zfsun "doas umount /mnt/share"
-abbr batthealth 'upower -i /org/freedesktop/UPower/devices/battery_BAT0'
+abbr batthealth 'upower -i /org/freedesktop/UPower/devices/battery_BAT1'
 # abbr idrivemn "rclone mount IdriveEncrypt:/ /mnt/idrive/ --vfs-cache-mode full --daemon"
 
 ### TASKWARRIOR 

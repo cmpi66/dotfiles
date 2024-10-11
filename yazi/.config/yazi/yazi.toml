@@ -46,10 +46,14 @@ extract = [
 	{ run = 'unar "%1"', desc = "Extract here", for = "windows" },
 ]
 play = [
-	{ run = 'mpv "$@"', orphan = true, for = "unix" },
+	{ run = 'mpv --fullscreen -quiet "$@"', orphan = true, for = "unix" },
 	{ run = 'mpv "%1"', orphan = true, for = "windows" },
 	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
 ]
+
+# playaudio = [
+# 	{ run = 'mpv --audio "$@"', orphan = true, for = "unix" },
+# ]
 
 [open]
 rules = [
@@ -57,7 +61,8 @@ rules = [
 
 	{ mime = "text/*",          use = [ "edit", "reveal" ] },
 	{ mime = "image/*",         use = [ "open", "reveal" ] },
-	{ mime = "{audio,video}/*", use = [ "play", "reveal" ] },
+	{ mime = "{video,audio}/*", use = [ "play", "reveal" ] },
+	# { mime = "{audio}/*", use = [ "playaudio", "reveal" ] },
 	{ mime = "inode/x-empty",   use = [ "edit", "reveal" ] },
 
 	{ mime = "application/*zip", use = [ "extract", "reveal" ] },
@@ -79,8 +84,12 @@ suppress_preload = false
 
 [plugin]
 
+fetchers = [
+	# Mimetype
+	{ id = "mime", name = "*", run = "mime", if = "!mime", prio = "high" },
+]
 preloaders = [
-	{ name = "*", cond = "!mime", run = "mime", multi = true, prio = "high" },
+	# { name = "*", cond = "!mime", run = "mime", multi = true, prio = "high" },
 	# Image
 	{ mime = "image/*", run = "image" },
 	# Video

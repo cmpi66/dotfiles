@@ -11,14 +11,17 @@
 
 # fi
 
-
-BATT_FILE="/sys/class/power_supply/BAT1/status"
+BATT_FILE="/sys/class/power_supply/BAT0/status"
 
 if [ -f "$BATT_FILE" ]; then
     BATT=$(cat "$BATT_FILE")
     
     if [[ "$BATT" == "Discharging" ]]; then
-        powerprofilesctl set power-saver
+        powerprofilesctl set balanced
+        notify-send "Power Profile Changed" "Switched to Power Saver mode."
+    elif [[ "$BATT" == "Charging" ]]; then
+        powerprofilesctl set performance
+        notify-send "Power Profile Changed" "Switched to Performance mode."
     fi
 else
     echo "Battery status file not found: $BATT_FILE"
