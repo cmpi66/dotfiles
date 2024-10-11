@@ -11,7 +11,7 @@
 
 # fi
 
-BATT_FILE="/sys/class/power_supply/BAT0/status"
+BATT_FILE="/sys/class/power_supply/BAT1/status"
 
 if [ -f "$BATT_FILE" ]; then
     BATT=$(cat "$BATT_FILE")
