@@ -51,9 +51,9 @@ play = [
 	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
 ]
 
-# playaudio = [
-# 	{ run = 'mpv --audio "$@"', orphan = true, for = "unix" },
-# ]
+playaudio = [
+	{ run = 'mpv --audio-display=no "$@"', block = true, for = "unix" },
+]
 
 [open]
 rules = [
@@ -61,8 +61,8 @@ rules = [
 
 	{ mime = "text/*",          use = [ "edit", "reveal" ] },
 	{ mime = "image/*",         use = [ "open", "reveal" ] },
-	{ mime = "{video,audio}/*", use = [ "play", "reveal" ] },
-	# { mime = "{audio}/*", use = [ "playaudio", "reveal" ] },
+	{ mime = "{video}/*", use = [ "play", "reveal" ] },
+	{ mime = "{audio}/*", use = [ "playaudio", "reveal" ] },
 	{ mime = "inode/x-empty",   use = [ "edit", "reveal" ] },
 
 	{ mime = "application/*zip", use = [ "extract", "reveal" ] },

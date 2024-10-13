@@ -41,7 +41,7 @@ margin = 50
 animation = "fromTop"
 command = "foot -a news -e newsboat"
 class = "news"
-size = "30% 40%"
+size = "40% 50%"
 # max_size = "1920px 100%"
 margin = 50
 

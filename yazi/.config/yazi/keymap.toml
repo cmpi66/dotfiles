@@ -6,6 +6,8 @@
 prepend_keymap = [
 
 { on = [ "l" ], run = "plugin --sync smart-enter", desc = "Enter the child directory, or open the file" },
+{ on = [ "T" ], run = "plugin --sync max-preview", desc = "Maximize or restore preview" },
+{ on = [ "!" ], run = 'shell "$SHELL" --block --confirm', desc = "Maximize or restore preview" },
 ]
 
 keymap = [
@@ -148,7 +150,8 @@ keymap = [
 	# Goto
 	{ on = [ "g", "h" ],       run = "cd ~",             desc = "Go to the home directory" },
 	{ on = [ "g", "c" ],       run = "cd ~/.config",     desc = "Go to the config directory" },
-	{ on = [ "g", "d" ],       run = "cd ~/Downloads",   desc = "Go to the downloads directory" },
+	{ on = [ "g", "d" ],       run = "cd ~/dl",          desc = "Go to the downloads directory" },
+	{ on = [ "g", "m" ],       run = "cd ~/media",          desc = "Go to the media directory" },
 	{ on = [ "g", "t" ],       run = "cd /tmp",          desc = "Go to the temporary directory" },
 	{ on = [ "g", "<Space>" ], run = "cd --interactive", desc = "Go to a directory interactively" },
 
@@ -204,7 +207,7 @@ keymap = [
 keymap = [
 	{ on = [ "<C-q>" ],   run = "close",          desc = "Cancel input" },
 	{ on = [ "<Enter>" ], run = "close --submit", desc = "Submit the input" },
-	{ on = [ "<Esc>" ],   run = "escape",         desc = "Go back the normal mode, or cancel input" },
+	{ on = [ "<Esc>" ],   run = "close",         desc = "Go back the normal mode, or cancel input" }, # changed to closed, let's see if I like it better than vim mode in search box
 	{ on = [ "<C-[>" ],   run = "escape",         desc = "Go back the normal mode, or cancel input" },
 
 	# Mode
