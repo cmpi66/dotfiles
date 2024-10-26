@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+notify-send -t 4500 "$(date '+%a %b %e %l:%M %p')"
+

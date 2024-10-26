@@ -7,10 +7,10 @@ if [ -f "$BATT_FILE" ]; then
     BATT=$(cat "$BATT_FILE")
     
     if [[ "$BATT" == "Discharging" ]]; then
-        /usr/bin/powerprofilesctl set balanced
+    doas /usr/bin/powerprofilesctl set balanced
         notify-send "Power Profile Changed" "Switched to Balanced mode."
     elif [[ "$BATT" == "Charging" ]]; then
-        /usr/bin/powerprofilesctl set performance
+    doas /usr/bin/powerprofilesctl set performance
         notify-send "Power Profile Changed" "Switched to Performance mode."
     fi
 else
