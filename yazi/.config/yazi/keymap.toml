@@ -5,9 +5,9 @@
 [manager]
 prepend_keymap = [
 
-{ on = [ "l" ], run = "plugin --sync smart-enter", desc = "Enter the child directory, or open the file" },
-{ on = [ "T" ], run = "plugin --sync max-preview", desc = "Maximize or restore preview" },
-{ on = [ "!" ], run = 'shell "$SHELL" --block --confirm', desc = "Maximize or restore preview" },
+{ on = [ "l" ], run = "plugin smart-enter", desc = "Enter the child directory, or open the file" },
+{ on = [ "T" ], run = "plugin max-preview", desc = "Maximize or restore preview" },
+{ on = [ "!" ], run = 'shell "$SHELL" --block', desc = "Maximize or restore preview" },
 ]
 
 keymap = [
@@ -58,11 +58,11 @@ keymap = [
 	{ on = [ "G" ],      run = "arrow 99999999",  desc = "Move cursor to the bottom" },
 
 	# Selection
-	{ on = [ "<Space>" ], run = [ "select --state=none", "arrow 1" ], desc = "Toggle the current selection state" },
+	{ on = [ "<Space>" ], run = [ "toggle", "arrow 1" ], desc = "Toggle the current selection state" },
 	{ on = [ "v" ],       run = "visual_mode",                        desc = "Enter visual mode (selection mode)" },
 	{ on = [ "V" ],       run = "visual_mode --unset",                desc = "Enter visual mode (unset mode)" },
-	{ on = [ "<C-a>" ],   run = "select_all --state=true",            desc = "Select all files" },
-	{ on = [ "<C-r>" ],   run = "select_all --state=none",            desc = "Inverse selection of all files" },
+	{ on = [ "<C-a>" ],   run = "toggle_all --state=on",            desc = "Select all files" },
+	# { on = [ "<C-r>" ],   run = "toggle_all --state=on",            desc = "Inverse selection of all files" },
 
 	# Operation
 	{ on = [ "o" ],         run = "open",                       desc = "Open the selected files" },

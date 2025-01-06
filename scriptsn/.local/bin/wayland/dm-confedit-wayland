@@ -67,6 +67,7 @@ confedit_list[xresources]="$HOME/.config/x11/xresources"
 confedit_list[zshrc]="$HOME/.config/zsh/.zshrc"
 confedit_list[zshenv]="$HOME/.config/zsh/.zshenv"
 confedit_list[zprofile]="$HOME/.config/zsh/.zprofile"
+confedit_list[yazi]="$HOME/.config/yazi/yazi.toml"
 
 main() {
   # Clean options array making sure that the files exist
