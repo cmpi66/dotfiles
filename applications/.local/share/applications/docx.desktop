@@ -1,4 +1,4 @@
 [Desktop Entry]
 Type=Application
-Name=PDF reader
+Name=Docx reader
 Exec=/usr/bin/libreoffice %u
