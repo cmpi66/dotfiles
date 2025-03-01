@@ -188,4 +188,5 @@ source ~/.config/fish/fnm.fish
 #     eval /home/chris/.local/share/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 # end
 # <<< conda initialize <<<
+fastfetch
 
