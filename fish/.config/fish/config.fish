@@ -197,3 +197,4 @@ complete -c cheat.sh -xa '(curl -s cheat.sh/:list)'
 # eval /home/chris/.local/share/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
 
+fastfetch
