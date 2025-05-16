@@ -1,19 +1,20 @@
 #!/usr/bin/env bash
 
-CPUTemp=$(sensors | grep 'edge:' | awk '{ print substr ($0, 16 ) }')
+# fix this for gentoo amd temp
+# CPUTemp=$(sensors | grep 'edge:' | awk '{ print substr ($0, 32 ) }')
+# CPUTemp=$(sensors | awk '/Tdie|Tctl|edge/ {print $2}')
+CPUTemp=$(sensors | awk '/Tctl|Tdie|edge/ {print $2; exit}')
+echo "CPU Temp: $CPUTemp"
 
-# Read battery information from sysfs
-BatteryPath="/sys/class/power_supply/BAT1"
-BatteryCapacity=$(cat "$BatteryPath/capacity")
-BatteryStatus=$(cat "$BatteryPath/status")
 
 # Count available upgrades
-UpgradeCount=$(pacman -Qu | grep -Fcv "[ignored]")
+# UpgradeCount=$(pacman -Qu | grep -Fcv "[ignored]")
+# UpgradeCount=$(PORTAGE_QUIET=1 emerge -avqpuND @world | grep "ebuild" | wc -l) 
 
 notify-send -t 8000 "$(
-printf "🚨 Upgrades: %d\n" "$UpgradeCount"
+# printf "🚨 Upgrades: %d\n" "$UpgradeCount"
 free -m | awk 'NR==2{printf "🐏 Usage: %s/%sMB (%.2f%%)\n", $3,$2,$3*100/$2 }'
 top -bn1 | grep load | awk '{printf "🧠 Load: %.2f\n", $(NF-2)}'
+printf "🐧 Kernel: %s\n" "$(uname -r)"
 printf "🌡️ CPU: $CPUTemp\n"
-printf "🔋 Battery: $BatteryCapacity%% ($BatteryStatus)"
 )"
