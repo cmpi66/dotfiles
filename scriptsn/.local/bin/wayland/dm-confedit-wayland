@@ -30,7 +30,7 @@ DMENU="bemenu -p"
 # DMENU="rofi -dmenu -i -l 10 -p"
 DMTERM="foot -e"
 
-DMEDITOR="${DMTERM} lvim"
+DMEDITOR="${DMTERM} nvim"
 declare -A confedit_list
 # confedit_list[confedit]="$HOME/.config/dmscripts/config"
 confedit_list[alacritty]="$HOME/.config/alacritty/alacritty.toml"
@@ -53,7 +53,7 @@ confedit_list[ncmpcpp]="$HOME/.config/ncmpcpp/config"
 confedit_list[hyprland]="$HOME/.config/hypr/hyprland.conf"
 confedit_list[waybar]="$HOME/.config/waybar/config.jsonc"
 confedit_list[neomutt]="$HOME/.config/mutt/muttrc"
-confedit_list[newsboat-urls]="$HOME/.config/newsboat/urls"
+confedit_list[newsboat - urls]="$HOME/.config/newsboat/urls"
 confedit_list[rofi]="$HOME/.config/rofi/config.rasi"
 confedit_list[scim]="$HOME/.config/sc-im/scimrc"
 confedit_list[starship]="$HOME/.config/starship.toml"
@@ -88,7 +88,7 @@ main() {
     $DMEDITOR "$cfg"
   # What to do if we just escape without choosing anything.
   else
-      echo "Program terminated." && exit 0
+    echo "Program terminated." && exit 0
   fi
 }
 
