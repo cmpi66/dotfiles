@@ -1,22 +1,19 @@
 #!/bin/env bash
 
-# this is a script replaces my old zettlekasten command. It cd's into my zettlekasten and runs emanote just in case I want to read the notes on firefox. 
+# this is a script replaces my old zettlekasten command. It cd's into my zettlekasten and runs emanote just in case I want to read the notes on firefox.
 
-
-has-session ()
-{
- tmux has-session -t zettle 2>/dev/null 
+has-session() {
+  tmux has-session -t zettle 2>/dev/null
 }
 
-
-if has-session ; then
-  foot --title ema -e tmux attach-session -t zettle 
+if has-session; then
+  foot --title ema -e tmux attach-session -t zettle
 else
 
-tmux new-session -s zettle -n ema -d 'cd ~/.local/.src/zettlekasten; killall emanote || emanote run --port=8080; fish -i' 
-tmux new-window -t zettle:2 -n notes 'cd ~/.local/.src/zettlekasten/; lvim index.md; fish -i' 
-# tmux new-window  -t zettle:3 -n ema   'cd ~/.local/.src/zettlekasten; killall emanote; emanote run --port=8080; fish -i' 
-tmux select-window -t zettle:2 
-foot --title ema -e tmux attach-session -t zettle
+  tmux new-session -s zettle -n ema -d 'cd ~/.local/.src/zettlekasten; killall emanote || emanote run --port=8080; fish -i'
+  tmux new-window -t zettle:2 -n notes 'cd ~/.local/.src/zettlekasten/; nvim index.md; fish -i'
+  # tmux new-window  -t zettle:3 -n ema   'cd ~/.local/.src/zettlekasten; killall emanote; emanote run --port=8080; fish -i'
+  tmux select-window -t zettle:2
+  foot --title ema -e tmux attach-session -t zettle
 
 fi

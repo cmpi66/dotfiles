@@ -23,15 +23,15 @@ set TERM "xterm-256color" # This messes up LunarVim; gives it some wierd ghostin
 # set TERM "xterm-alacritty"
 # set TERM "xterm-kitty"
 # set TERM "linux"
-set EDITOR "lvim"
-set VISUAL "lvim"
+set EDITOR "nvim"
+set VISUAL "nvim"
 set TERMINAL "alacritty"
 set BROWSER "librewolf-bin"
 
 ### SET MANPAGER
 ### "nvim" as manpager
 # set -x MANPAGER "nvim -c 'set ft=man' -"        # this one dosnt work for me. It does for DT though.
-set -x  MANPAGER "lvim +Man!"
+set -x  MANPAGER "nvim +Man!"
 
 ### "bat" as manpager
 # set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
@@ -79,7 +79,7 @@ alias .5='cd ../../../../..'
 
 # System
 alias sudo='doas'
-alias nvim='lvim'
+# alias nvim='lvim'
 alias scim='sc-im --quiet'
 alias mbsync='mbsync -c $MBSYNCRC'
 alias j='z'

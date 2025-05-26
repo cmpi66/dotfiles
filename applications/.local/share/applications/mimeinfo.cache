@@ -14,3 +14,5 @@ text/x-moc=lvim.desktop;
 text/x-pascal=lvim.desktop;
 text/x-tcl=lvim.desktop;
 text/x-tex=lvim.desktop;
+x-scheme-handler/monero=monero-gui.desktop;
+x-scheme-handler/moneroseed=monero-gui.desktop;
