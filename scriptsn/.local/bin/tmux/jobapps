@@ -2,20 +2,18 @@
 
 ## A script to easily open jobapps with scim and nvim.
 
-has-session ()
-{
- tmux has-session -t jobapps 2>/dev/null 
+has-session() {
+  tmux has-session -t jobapps 2>/dev/null
 }
 
-
-if has-session ; then
-  tmux attach-session -t jobapps 
+if has-session; then
+  tmux attach-session -t jobapps
 else
 
-tmux new-session -s jobapps -n scim -d 'cd ~/media/; sc-im --quiet jobapps.csv; fish -i' 
-tmux new-window -t jobapps:2 -n notes 'cd ~/media/; lvim jobapps.csv; fish -i' 
-tmux new-window -t jobapps:3 -n keywords 'cd ~/media/resume/; lvim it-job-keywords.md; fish -i' 
-tmux select-window -t jobapps:1 
-tmux attach-session -t jobapps
+  tmux new-session -s jobapps -n scim -d 'cd ~/media/; sc-im --quiet jobapps.csv; fish -i'
+  tmux new-window -t jobapps:2 -n notes 'cd ~/media/; nvim jobapps.csv; fish -i'
+  tmux new-window -t jobapps:3 -n keywords 'cd ~/media/resume/; nvim it-job-keywords.md; fish -i'
+  tmux select-window -t jobapps:1
+  tmux attach-session -t jobapps
 
 fi
