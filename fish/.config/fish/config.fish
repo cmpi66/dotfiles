@@ -15,15 +15,15 @@ set fish_cursor_visual block
 
 set fish_greeting             #disables help greeting
 set TERM "xterm-256color" # This messes up Lunarvim on gentoobox ssh connection; wrote the effects on gentoo branch.
-set EDITOR "lvim"
-set VISUAL "lvim"
+set EDITOR "nvim"
+set VISUAL "nvim"
 set TERMINAL "alacritty"
 set BROWSER "librewolf"
 
 ### SET MANPAGER
 ### "nvim" as manpager
 # set -x MANPAGER "nvim -c 'set ft=man' -"        # this one dosnt work for me. It does for DT though.
-set -x  MANPAGER "lvim +Man!"
+set -x  MANPAGER "nvim +Man!"
 
 ## nix broke manpath on fish; using this now
 set MANPATH /usr/share/man:/usr/local/share/man:$HOME/.nix-profile/share/man
@@ -71,7 +71,7 @@ alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
-alias nvim='lvim'
+# alias nvim='lvim'
 alias sudo='doas'
 alias scim='sc-im --quiet'
 
