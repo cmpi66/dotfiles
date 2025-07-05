@@ -3,25 +3,24 @@
 # A dmenu wrapper script for system functions.
 export WM="hyprland"
 case "$(readlink -f /sbin/init)" in
-	*systemd*) ctl='systemctl' ;;
-	*) ctl='loginctl' ;;
+*systemd*) ctl='systemctl' ;;
+*) ctl='loginctl' ;;
 esac
 
-wmpid(){ # This function is needed if there are multiple instances of the window manager.
-	tree="$(pstree -ps $$)"
-	tree="${tree#*$WM(}"
-	echo "${tree%%)*}"
+wmpid() { # This function is needed if there are multiple instances of the window manager.
+  tree="$(pstree -ps $$)"
+  tree="${tree#*$WM(}"
+  echo "${tree%%)*}"
 }
 
 case "$(printf "🔒 lock\n🚪 leave $WM\n♻️ renew $WM\n🐻 hibernate\n🔃 reboot\n🖥️shutdown\n💤 sleep\n📺 display off" | bemenu -i -p 'Action: ')" in
-	'🔒 lock') i3lock -C -i /home/chris/.local/bin/arch-wallpaper.jpg ;;
-	"🚪 leave $WM") kill -TERM "$(wmpid)" ;;
-	"♻️ renew $WM") kill -HUP "$(wmpid)" ;;
-	'🐻 hibernate') i3lock $ctl hibernate -i ;;
-	'💤 sleep') i3lock $ctl suspend -i ;;
-	'🔃 reboot') doas openrc-shutdown -r now ;;
-	'🖥️shutdown') doas openrc-shutdown -p now ;;
-	'📺 display off') xset dpms force off ;;
-	*) exit 1 ;;
+'🔒 lock') i3lock -C -i /home/chris/.local/bin/arch-wallpaper.jpg ;;
+"🚪 leave $WM") kill -TERM "$(wmpid)" ;;
+"♻️ renew $WM") kill -HUP "$(wmpid)" ;;
+'🐻 hibernate') i3lock $ctl hibernate -i ;;
+'💤 sleep') i3lock $ctl suspend -i ;;
+'🔃 reboot') doas sh -c "sync && openrc-shutdown -r now" ;;
+'🖥️shutdown') doas sh -c "sync && openrc-shutdown -p now" ;;
+'📺 display off') xset dpms force off ;;
+*) exit 1 ;;
 esac
-
