@@ -1,17 +1,14 @@
 #!/bin/env bash
 
-#aur apps 
+#aur apps
 
 yay --noconfirm --needed -S \
   anki-bin \
-  apparmor.d-git \
-  aur/abook\
-  catppuccin-gtk-theme-macchiato \
+  aur/abook catppuccin-gtk-theme-macchiato \
   downgrade \
   evremaps-git \
   htop-vim \
-  hyprpicker\
-  i3lock-color \
+  hyprpicker i3lock-color \
   lf \
   librewolf-bin \
   lsix-git \
@@ -28,11 +25,5 @@ yay --noconfirm --needed -S \
   urlview-xdg-git \
   xidlehook \
   zoom \
-
-
-
-  
-
-
-
-
+  espanso-wayland \
+  remmina-plugin-rdesktop

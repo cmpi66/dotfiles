@@ -130,4 +130,53 @@ function M.insert_link()
   })
 end
 
+function M.launch_top7()
+  local dirs = {
+    permanent = "~/.local/.src/zettlekasten/permanent",
+    fleeting = "~/.local/.src/zettlekasten/fleeting",
+    literature = "~/.local/.src/zettlekasten/literature",
+  }
+
+  local tmp = {}
+  for label, path in pairs(dirs) do
+    local expanded = vim.fn.expand(path)
+    local cmd = "find "
+      .. expanded
+      .. " -maxdepth 1 -name '*.md' -exec stat -c '%Y "
+      .. label
+      .. ":%n' {} \\; 2>/dev/null"
+    local handle = io.popen(cmd)
+    if handle then
+      for line in handle:lines() do
+        table.insert(tmp, line)
+      end
+      handle:close()
+    end
+  end
+
+  -- Sort entries by timestamp descending
+  table.sort(tmp, function(a, b)
+    local a_ts = tonumber(a:match("^(%d+)"))
+    local b_ts = tonumber(b:match("^(%d+)"))
+    return a_ts > b_ts
+  end)
+
+  -- Extract Top 7
+  local entries = {}
+  for i = 1, math.min(7, #tmp) do
+    local _, rest = tmp[i]:match("^(%d+)%s+(.+)$")
+    table.insert(entries, rest)
+  end
+
+  vim.ui.select(entries, { prompt = "Top 7 Recent Notes:" }, function(choice)
+    if not choice then
+      return
+    end
+    local label, fullpath = choice:match("^(%w+):(.+)$")
+    if label and fullpath then
+      vim.cmd("edit " .. fullpath)
+    end
+  end)
+end
+
 return M

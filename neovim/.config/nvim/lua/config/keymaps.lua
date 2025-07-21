@@ -37,6 +37,7 @@ end, { desc = "Recent Notes" })
 vim.keymap.set("v", "<leader>zg", notes.search_visual, { desc = "Grep Visual Selection" })
 
 vim.keymap.set("n", "<leader>zi", notes.insert_link, { desc = "Insert Wikilink" })
+vim.keymap.set("n", "<leader>zn", require("config.notes").launch_top7, { desc = "Zettel: Top 7 across all dirs" })
 
 -- Visual mode: move selected lines up/down
 vim.keymap.set("x", "J", ":move '>+1<CR>gv-gv", opts)
