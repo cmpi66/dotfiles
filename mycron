@@ -1,4 +1,3 @@
-*/20 * * * * /usr/bin/newsboat -x reload
 */10 * * * * /home/chris/.local/bin/extras/battery-sound.sh
 */10 * * * * /home/chris/.local/bin/extras/power-modifier
 */5 * * * * /home/chris/.local/bin/extras/ifblue
