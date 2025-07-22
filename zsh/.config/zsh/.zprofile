@@ -18,11 +18,10 @@ export PATH="$PATH:/$HOME/.local/appimages"
 # export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')" 
 export PATH="$PATH:/$HOME/.local/share/cargo/bin"
 
-
 ## Since im using fish i have to keep the xdg here. zsh-exports doesnt get read. 
 
-export EDITOR="lvim"
-export VISUAL="lvim"
+export EDITOR="nvim"
+export VISUAL="nvim"
 export BROWSER="librewolf"
 export MOVPLAY="mpv"
 export TERM=xterm-256color
@@ -69,9 +68,14 @@ export SUDO_ASKPASS="$HOME/.local/bin/dmenupass" #xorg
 # export SUDO_ASKPASS="$HOME/.local/bin/wayland/dmenupass-wayland"
 export MOZ_USE_XINPUT2="1" # Mozilla smooth scrolling/touchpads.
 export BEMENU_OPTS='-i -l 20 --fb "#1e1e2e" --ff "#94e2d5" --nb "#1e1e2e" --nf "#f5e0dc" --tb "#1e1e2e" --hb "#1e1e2e" --tf "#cba6f7" --hf "#89b4fa" --nf "#f5e0dc" --af "#f5e0dc" --ab "#1e1e2e"'
+# export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+# echo "UPDATESTARTUPTTY" | gpg-connect-agent > /dev/null 2>&1 # This line is so pinentry program can work with gpg ssh smartcard if the gpg=tty is exported.
+# gpgconf --launch gpg-agent
+export GPG_TTY=$(tty)
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-echo "UPDATESTARTUPTTY" | gpg-connect-agent > /dev/null 2>&1 # This line is so pinentry program can work with gpg ssh smartcard if the gpg=tty is exported.
 gpgconf --launch gpg-agent
+echo "UPDATESTARTUPTTY" | gpg-connect-agent > /dev/null
+
 
 if [[ -z $VIT_DIR ]]; then
   export VIT_DIR=$XDG_CONFIG_HOME/vit
