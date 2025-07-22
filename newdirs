@@ -2,42 +2,37 @@
 
 # List of directories to delete
 delete_dirs=(
-    "/home/chris/Desktop"
-    "/home/chris/Documents"
-    "/home/chris/Downloads"
-    "/home/chris/Music"
-    "/home/chris/Pictures"
-    "/home/chris/Public"
-    "/home/chris/Templates"
-    "/home/chris/Videos"
-    "/home/chris/Sync"
-    # "/home/chris/.cargo"
+  "/home/chris/Desktop"
+  "/home/chris/Documents"
+  "/home/chris/Downloads"
+  "/home/chris/Music"
+  "/home/chris/Pictures"
+  "/home/chris/Public"
+  "/home/chris/Templates"
+  "/home/chris/Videos"
+  # "/home/chris/Sync"
+  # "/home/chris/.cargo"
 )
 
 # Loop through each directory and delete it if it exists
-for dir in "${delete_dirs[@]}"
-do
-    if [ -d "$dir" ]
-    then
-        rm -r "$dir"
-    fi
+for dir in "${delete_dirs[@]}"; do
+  if [ -d "$dir" ]; then
+    rm -r "$dir"
+  fi
 done
 
 # List of directories to create
 create_dirs=(
-    "/home/chris/repos"
-    "/home/chris/dl"
-    "/home/chris/dl/git-clones"
-    "/home/chris/.local"
-    "/home/chris/.config/npm"
+  "/home/chris/repos"
+  "/home/chris/dl"
+  "/home/chris/dl/git-clones"
+  "/home/chris/.local"
+  "/home/chris/.config/npm"
 )
 
 # Loop through each directory and create it if it doesn't exist
-for dir in "${create_dirs[@]}"
-do
-    if [ ! -d "$dir" ]
-    then
-        mkdir -p "$dir"
-    fi
+for dir in "${create_dirs[@]}"; do
+  if [ ! -d "$dir" ]; then
+    mkdir -p "$dir"
+  fi
 done
-

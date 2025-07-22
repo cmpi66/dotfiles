@@ -37,13 +37,13 @@ size = "55% 40%"
 # max_size = "1920px 100%"
 margin = 50
 
-[scratchpads.news]
-animation = "fromTop"
-command = "foot -a news -e newsboat"
-class = "news"
-size = "40% 50%"
-# max_size = "1920px 100%"
-margin = 50
+# [scratchpads.news]
+# animation = "fromTop"
+# command = "foot -a news -e newsboat"
+# class = "news"
+# size = "40% 50%"
+# # max_size = "1920px 100%"
+# margin = 50
 
 # [scratchpads.eq]
 # animation = "fromRight"
@@ -54,4 +54,3 @@ margin = 50
 # lazy = true
 # # max_size = "1920px 100%"
 # margin = 50
-

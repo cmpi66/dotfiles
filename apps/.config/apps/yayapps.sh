@@ -6,7 +6,7 @@ yay --noconfirm --needed -S \
   anki-bin \
   aur/abook catppuccin-gtk-theme-macchiato \
   downgrade \
-  evremaps-git \
+  evremap-git \
   htop-vim \
   hyprpicker i3lock-color \
   lf \
