@@ -21,8 +21,8 @@ export PATH="$PATH:/$HOME/.local/share/cargo/bin"
 
 ## Since im using fish i have to keep the xdg here. zsh-exports doesnt get read. 
 
-export editor="lvim"
-export visual="lvim"
+export editor="nvim"
+export visual="nvim"
 export browser="librewolf-bin"
 export movplay="mpv"
 export term=xterm-256color
