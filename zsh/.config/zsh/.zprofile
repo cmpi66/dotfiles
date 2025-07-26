@@ -80,15 +80,16 @@ export PASSWORD_STORE_ENABLE_EXTENSIONS="true"
 export QT_QPA_PLATFORMTHEME="gtk2" # Have QT use gtk2 theme.
 export BEMENU_OPTS='-i -l 20 --fb "#1e1e2e" --ff "#94e2d5" --nb "#1e1e2e" --nf "#f5e0dc" --tb "#1e1e2e" --hb "#1e1e2e" --tf "#cba6f7" --hf "#89b4fa" --nf "#f5e0dc" --af "#f5e0dc" --ab "#1e1e2e"'
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
+export OLLAMA_MODELS=$XDG_DATA_HOME/ollama/models
 # SDCV_PAGER='lolcat -f | less --quit-if-one-screen -RX'
 # SDCV_PAGER='less --quit-if-one-screen -RX'
-if [[ -z $VIT_DIR ]]; then
-  export VIT_DIR=$XDG_CONFIG_HOME/vit
-fi
-
-if [[ -z $TIMEWARRIORDB ]]; then
-  export TIMEWARRIORDB=$XDG_DATA_HOME/timew
-fi
+# if [[ -z $VIT_DIR ]]; then
+#   export VIT_DIR=$XDG_CONFIG_HOME/vit
+# fi
+#
+# if [[ -z $TIMEWARRIORDB ]]; then
+#   export TIMEWARRIORDB=$XDG_DATA_HOME/timew
+# fi
 
 # export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"
 # export LESS_TERMCAP_md="$(printf '%b' '[1;36m')"
@@ -120,7 +121,6 @@ fi
 # export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-if [ -e /home/chris/.nix-profile/etc/profile.d/nix.sh ]; then . /home/chris/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 #auto startx ARCH
 
