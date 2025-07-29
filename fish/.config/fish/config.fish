@@ -12,8 +12,8 @@ set fish_cursor_replace_one underscore steady
 set fish_cursor_replace underscore steady
 set fish_cursor_visual block
 
-set fish_greeting             #disables help greeting
-set TERM "xterm-256color" # This messes up LunarVim; gives it some wierd ghosting text and color.
+set fish_greeting #disables help greeting
+set TERM xterm-256color # This messes up LunarVim; gives it some wierd ghosting text and color.
 # set TERM "screen-256color" 
 # set TERM "tmux-256color" 
 # set TERM "screen-256color-bce" 
@@ -23,15 +23,15 @@ set TERM "xterm-256color" # This messes up LunarVim; gives it some wierd ghostin
 # set TERM "xterm-alacritty"
 # set TERM "xterm-kitty"
 # set TERM "linux"
-set EDITOR "nvim"
-set VISUAL "nvim"
-set TERMINAL "alacritty"
-set BROWSER "librewolf-bin"
+set EDITOR nvim
+set VISUAL nvim
+set TERMINAL alacritty
+set BROWSER librewolf-bin
 
 ### SET MANPAGER
 ### "nvim" as manpager
 # set -x MANPAGER "nvim -c 'set ft=man' -"        # this one dosnt work for me. It does for DT though.
-set -x  MANPAGER "nvim +Man!"
+set -x MANPAGER "nvim +Man!"
 
 ### "bat" as manpager
 # set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
@@ -67,7 +67,7 @@ alias sl='eza -al --color=always --icons --group-directories-first'
 alias diff='diff --color=auto'
 
 # easier to read disk
-alias df='pydf'     # human-readable sizes
+alias df='pydf' # human-readable sizes
 alias free='free -m' # show sizes in MB
 
 # navigation
@@ -86,33 +86,33 @@ alias j='z'
 alias vf="fzf | xargs -r -I % $EDITOR %"
 
 ## zk
-alias perma="zk perma"
-alias flee="zk flee"
-alias nt="zk nt"
-alias lit="zk lit"
+# alias perma="zk perma"
+# alias flee="zk flee"
+# alias nt="zk nt"
+# alias lit="zk lit"
 
 # System abbreviations 
 
-abbr f 'zi'
+abbr f zi
 abbr merge "xrdb -merge ~/.config/x11/xresources"
 # abbr nvimrc "nvim ~/.config/nvim/"
-abbr nv "nvim"
+abbr nv nvim
 abbr snv "sudo nvim"
-abbr ka "killall"
+abbr ka killall
 abbr cp "cp -irv"
 abbr mv "mv -iv"
 abbr rm "rm -v"
 abbr ln "ln -i"
-abbr cl "clear"
-abbr v "vim"
+abbr cl clear
+abbr v vim
 abbr wiki "nvim ~/.local/.src/zettlekasten/index.md"
 abbr gp "git add . && git commit -m 'autopush' && git push"
 abbr mkdir "mkdir -pv"
-abbr lf "lfub"
+abbr lf lfub
 # abbr kx "killall sxhkd && sxhkd &"
-abbr cat "bat"
-abbr ncm "ncmpcpp"
-abbr m "mailsync"
+abbr cat bat
+abbr ncm ncmpcpp
+abbr m mailsync
 abbr checkout "git checkout"
 abbr clone "git clone"
 abbr branch "git branch"
@@ -120,7 +120,7 @@ abbr ytd "yt-dlp --add-metadata -i"
 abbr yta "yt-dlp -x -f bestaudio/best"
 abbr vd "nvim -d"
 abbr combinepdf "gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=combine.pdf -dBATCH"
-abbr en  "gpg -c --no-symkey-cache --cipher-algo  AES256"
+abbr en "gpg -c --no-symkey-cache --cipher-algo  AES256"
 abbr stow "stow --target=$HOME"
 abbr vpnup "sudo wg-quick up gentoobox"
 abbr vpndown "sudo wg-quick down gentoobox"
@@ -133,7 +133,7 @@ abbr updategrub "sudo grub-mkconfig -o /boot/grub/grub.cfg"
 abbr poweroff "doas openrc-shutdown -p now"
 abbr reboot "doas openrc-shutdown -r now"
 abbr mpv "mpv --fullscreen"
-abbr lynx "lynxub"
+abbr lynx lynxub
 abbr se "br --conf ~/.config/broot/open.hjson ~/.local/bin/"
 abbr sdcv "sdcv -n --utf8-output --color"
 abbr syncartilces "rclone sync -v  --transfers 20 --retries 5 --s3-upload-cutoff=0 --exclude '*.md'  ~/docs/md/cmm-articles/  Idrive:cmmarketer/articles"
@@ -149,19 +149,19 @@ abbr td "task done"
 
 #Custom keybindings vi insert mode
 set -g fish_key_bindings fish_vi_key_bindings
-bind -M insert \co 'lf'
-bind -M insert \ce 'ncdu'
+bind -M insert \co lf
+bind -M insert \ce ncdu
 bind -M insert \ck history-search-backward # Up
 bind -M insert \cj history-search-forward # Down
- # bind -M insert jk "if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char force-repaint; end"
+# bind -M insert jk "if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char force-repaint; end"
 # bind -M insert -m default jk backward-char force-repaint
 # bind -M insert -m default kj backward-char force-repaint
 
 # bind -M visual y fish_clipboard_copy
 
 # Custom keybindings default mode
-bind \co 'lfcd'
-bind \ce 'ncdu'
+bind \co lfcd
+bind \ce ncdu
 bind \ck history-search-backward # Up
 bind \cj history-search-forward # Down
 bind yy fish_clipboard_copy
@@ -197,4 +197,4 @@ complete -c cheat.sh -xa '(curl -s cheat.sh/:list)'
 # eval /home/chris/.local/share/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
 
-fastfetch
+# fastfetch
