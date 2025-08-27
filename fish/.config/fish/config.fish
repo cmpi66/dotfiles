@@ -78,13 +78,14 @@ alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
 # System
-alias sudo='doas'
+abbr sudo doas
 # alias nvim='lvim'
 alias scim='sc-im --quiet'
 alias mbsync='mbsync -c $MBSYNCRC'
 alias j='z'
 alias vf="fzf | xargs -r -I % $EDITOR %"
 
+alias exegol="sudo -E $(echo ~/.local/bin/exegol)"
 ## zk
 # alias perma="zk perma"
 # alias flee="zk flee"

@@ -1,0 +1,264 @@
+#!/bin/sh
+# capture.sh — Webcam + Screen recorder for Wayland (Gentoo)
+# Requires: wf-recorder (>=0.50), ffmpeg, bemenu, pactl, dunst (optional)
+# Optional: hyprctl/swaymsg + jq for focused monitor detection, slurp for region
+
+# ---- Config ----
+FPS="${FPS:-60}"
+MAIN_OUT="${MAIN_OUT:-DP-1}"
+OUTDIR="${OUTDIR:-$HOME}"
+PID="/tmp/recordingpid"
+AUDIO_CFG="${XDG_CACHE_HOME:-$HOME/.cache}/capture-audio-source" # remembers your pick
+
+notify() { command -v notify-send >/dev/null && notify-send "🎥 Capture" "$1"; }
+stamp() { date '+%Y-%m-%d_%H-%M-%S'; }
+
+# ---- Audio helpers ----
+
+# Default system/desktop audio (monitor of default sink)
+detect_system_monitor() {
+  sink="$(pactl get-default-sink 2>/dev/null)"
+  [ -z "$sink" ] && sink="$(pactl info | awk -F': ' '/Default Sink/{print $2}')"
+  [ -z "$sink" ] && {
+    notify "No default sink detected"
+    exit 1
+  }
+  echo "${sink}.monitor"
+}
+
+# Interactive mic picker (excludes .monitor taps and the Insta360 mic)
+pick_mic() {
+  pactl list short sources |
+    awk '!/\.monitor/ {print $2}' |
+    grep -vi insta360 |
+    bemenu -i -p "Pick mic source:"
+}
+
+save_audio_choice() {
+  mkdir -p "$(dirname "$AUDIO_CFG")"
+  printf "%s\n" "$1" >"$AUDIO_CFG"
+}
+load_audio_choice() { [ -f "$AUDIO_CFG" ] && cat "$AUDIO_CFG"; }
+
+choose_audio_source() {
+  choice=$(printf "System (desktop audio)\nMic (pick)\nCancel" | bemenu -i -p "Audio source:")
+  case "$choice" in
+  "System (desktop audio)")
+    src="$(detect_system_monitor)"
+    save_audio_choice "$src"
+    notify "Audio: $src"
+    ;;
+  "Mic (pick)")
+    src="$(pick_mic)"
+    [ -z "$src" ] && exit 1
+    save_audio_choice "$src"
+    notify "Audio: $src"
+    ;;
+  *) : ;;
+  esac
+}
+
+get_audio_source() {
+  # ENV override wins (AUDIO_DEV="name" ./capture.sh ...)
+  [ -n "$AUDIO_DEV" ] && {
+    echo "$AUDIO_DEV"
+    return
+  }
+  src="$(load_audio_choice)"
+  if [ -z "$src" ]; then
+    src="$(detect_system_monitor)"
+    save_audio_choice "$src"
+  fi
+  echo "$src"
+}
+
+# ---- Monitor helpers ----
+get_focused_output() {
+  if command -v hyprctl >/dev/null 2>&1; then
+    hyprctl monitors -j | jq -r '.[]|select(.focused==true).name' 2>/dev/null && return
+  fi
+  if command -v swaymsg >/dev/null 2>&1; then
+    swaymsg -t get_outputs | jq -r '.[]|select(.focused==true or .focused==1).name' 2>/dev/null && return
+  fi
+  echo "$MAIN_OUT"
+}
+
+# ---- Kill (make this gentle so trailers get written) ----
+killrecording() {
+  if [ -f "$PID" ]; then
+    recpid="$(cat "$PID")"
+    # Ask recorder to finish & write trailer (SIGINT)
+    kill -INT "$recpid" 2>/dev/null
+    # wait up to ~10s
+    for _ in $(seq 1 10); do
+      sleep 1
+      kill -0 "$recpid" 2>/dev/null || break
+    done
+    # nudge, then last-resort
+    kill -TERM "$recpid" 2>/dev/null
+    sleep 2
+    kill -KILL "$recpid" 2>/dev/null
+    rm -f "$PID"
+    notify "Recording stopped"
+  else
+    notify "No recording in progress"
+  fi
+  exit
+}
+
+# ---- Screen (wf-recorder) ----
+wf_vopts="--codec=libx264 --pixel-format=yuv420p --framerate=$FPS"
+
+screen_main() {
+  wf-recorder --output="$MAIN_OUT" \
+    --file "$OUTDIR/screencast-$(stamp).mkv" \
+    $wf_vopts &
+  echo $! >"$PID"
+  notify "Screen ($MAIN_OUT) ${FPS}fps started"
+}
+
+screen_main_audio() {
+  src="$(get_audio_source)"
+  PULSE_SOURCE="$src" wf-recorder --output="$MAIN_OUT" --audio="$src" \
+    --file "$OUTDIR/screencast-$(stamp).mkv" \
+    $wf_vopts &
+  echo $! >"$PID"
+  notify "Screen+Audio ($MAIN_OUT, $src) ${FPS}fps started"
+}
+
+screen_focused() {
+  out="$(get_focused_output)"
+  wf-recorder --output="$out" \
+    --file "$OUTDIR/screencast-$(stamp).mkv" \
+    $wf_vopts &
+  echo $! >"$PID"
+  notify "Screen (focused: $out) ${FPS}fps started"
+}
+
+screen_focused_audio() {
+  out="$(get_focused_output)"
+  src="$(get_audio_source)"
+  PULSE_SOURCE="$src" wf-recorder --output="$out" --audio="$src" \
+    --file "$OUTDIR/screencast-$(stamp).mkv" \
+    $wf_vopts &
+  echo $! >"$PID"
+  notify "Screen+Audio (focused: $out, $src) ${FPS}fps started"
+}
+
+screen_region() {
+  command -v slurp >/dev/null 2>&1 || {
+    notify "slurp not found"
+    exit 1
+  }
+  wf-recorder --geometry="$(slurp)" \
+    --file "$OUTDIR/screencast-$(stamp).mkv" \
+    $wf_vopts &
+  echo $! >"$PID"
+  notify "Screen (region) ${FPS}fps started"
+}
+
+screen_region_audio() {
+  command -v slurp >/dev/null 2>&1 || {
+    notify "slurp not found"
+    exit 1
+  }
+  src="$(get_audio_source)"
+  PULSE_SOURCE="$src" wf-recorder --geometry="$(slurp)" --audio="$src" \
+    --file "$OUTDIR/screencast-$(stamp).mkv" \
+    $wf_vopts &
+  echo $! >"$PID"
+  notify "Screen+Audio (region, $src) ${FPS}fps started"
+}
+
+# ---- Webcam (ffmpeg) ----
+# YT: add timestamp hygiene so MPV/NLEs show proper length
+webcam_yt() {
+  src="$(get_audio_source)"
+  ffmpeg -v info -fflags +genpts \
+    -f v4l2 -thread_queue_size 512 -use_wallclock_as_timestamps 1 \
+    -framerate 30 -input_format mjpeg -video_size 3840x2160 -i /dev/video0 \
+    -f pulse -thread_queue_size 512 -i "$src" \
+    -r 30 -g 30 \
+    -map 0:v -map 1:a \
+    -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p \
+    -c:a aac -b:a 192k \
+    "$OUTDIR/webcam-$(stamp)-yt.mkv" &
+  echo $! >"$PID"
+  notify "Webcam+Audio (H.264 CRF18, $src) started"
+}
+
+# DIRECT: keep minimal & fast (no retiming)
+webcam_direct() {
+  src="$(get_audio_source)"
+  ffmpeg -v info \
+    -f v4l2 -thread_queue_size 512 \
+    -framerate 30 -input_format h264 -video_size 3840x2160 -i /dev/video0 \
+    -f pulse -thread_queue_size 512 -i "$src" \
+    -map 0:v -map 1:a \
+    -c:v copy -reset_timestamps 1 \
+    -c:a aac -b:a 192k \
+    "$OUTDIR/webcam-$(stamp)-direct.mkv" &
+  echo $! >"$PID"
+  notify "Webcam Direct+Audio ($src) started"
+}
+
+webcam_hevc() {
+  src="$(get_audio_source)"
+  ffmpeg -v info -fflags +genpts \
+    -f v4l2 -thread_queue_size 512 -use_wallclock_as_timestamps 1 \
+    -framerate 30 -input_format mjpeg -video_size 3840x2160 -i /dev/video0 \
+    -f pulse -thread_queue_size 512 -i "$src" \
+    -r 30 -g 30 \
+    -map 0:v -map 1:a \
+    -c:v libx265 -preset slow -crf 20 -pix_fmt yuv420p \
+    -c:a aac -b:a 192k \
+    "$OUTDIR/webcam-$(stamp)-hevc.mp4" &
+  echo $! >"$PID"
+  notify "Webcam HEVC+Audio ($src) started"
+}
+
+# ---- Menu ----
+menu() {
+  choice=$(printf "%s\n" \
+    "Audio: Pick/Change…" \
+    "Screen (Main)" \
+    "Screen+Audio (Main)" \
+    "Screen (Focused)" \
+    "Screen+Audio (Focused)" \
+    "Screen (Region)" \
+    "Screen+Audio (Region)" \
+    "Webcam (YouTube H.264)" \
+    "Webcam (Direct H.264 copy)" \
+    "Webcam (HEVC)" \
+    "Kill Recording" |
+    bemenu -i -p "Select mode:")
+
+  case "$choice" in
+  "Audio: Pick/Change…") choose_audio_source ;;
+  "Screen (Main)") screen_main ;;
+  "Screen+Audio (Main)") screen_main_audio ;;
+  "Screen (Focused)") screen_focused ;;
+  "Screen+Audio (Focused)") screen_focused_audio ;;
+  "Screen (Region)") screen_region ;;
+  "Screen+Audio (Region)") screen_region_audio ;;
+  "Webcam (YouTube H.264)") webcam_yt ;;
+  "Webcam (Direct H.264 copy)") webcam_direct ;;
+  "Webcam (HEVC)") webcam_hevc ;;
+  "Kill Recording") killrecording ;;
+  esac
+}
+
+case "$1" in
+audio) choose_audio_source ;;
+screen) screen_main ;;
+screen-audio) screen_main_audio ;;
+focused) screen_focused ;;
+focused-audio) screen_focused_audio ;;
+region) screen_region ;;
+region-audio) screen_region_audio ;;
+yt) webcam_yt ;;
+direct) webcam_direct ;;
+hevc) webcam_hevc ;;
+kill) killrecording ;;
+*) menu ;;
+esac

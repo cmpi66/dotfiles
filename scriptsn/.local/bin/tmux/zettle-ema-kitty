@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+has-session() {
+  tmux has-session -t zettle 2>/dev/null
+}
+
+launch_kitty_tmux() {
+  # --title sets the window title; --class is optional if you want a distinct WM_CLASS
+  kitty --title ema --class ema tmux attach-session -t zettle
+}
+
+if has-session; then
+  launch_kitty_tmux
+else
+  tmux new-session -s zettle -n notes -d 'cd ~/.local/.src/zettlekasten/; nvim index.md; fish -i'
+  # If you later want to auto-run emanote in another tmux window:
+  # tmux new-window  -t zettle:2 -n ema 'cd ~/.local/.src/zettlekasten; killall emanote; emanote run --port=8080; fish -i'
+  tmux select-window -t zettle:1
+  launch_kitty_tmux
+fi
+

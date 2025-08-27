@@ -90,3 +90,13 @@ vim.api.nvim_create_autocmd("InsertLeave", {
     end
   end,
 })
+
+-- In your Neovim config:
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "markdown" },
+  callback = function()
+    vim.keymap.set("n", "<CR>", function()
+      require("config.notes").open_link_under_cursor()
+    end, { buffer = true, silent = true, desc = "Open link under cursor" })
+  end,
+})
