@@ -1,8 +1,19 @@
 -- ~/.config/nvim/lua/config/notes.lua
-
+-- Flexible ZK helpers for a whole tree (supports subdirs, wikilinks, md links)
 local M = {}
 
--- Generate random ID prefix (e.g., ab12cd)
+-- ----- CONFIG -----
+local ROOT = vim.fn.expand("~/.local/.src/zettlekasten")
+
+-- normalize dir to have exactly one trailing slash
+local function norm_dir(p)
+  p = vim.fn.fnamemodify(p, ":p")
+  return (p:gsub("/+$", "")) .. "/"
+end
+
+local ROOTP = norm_dir(ROOT)
+
+-- random 4-char id
 local function random_id()
   local charset = "abcdefghijklmnopqrstuvwxyz0123456789"
   local id = {}
@@ -13,34 +24,66 @@ local function random_id()
   return table.concat(id)
 end
 
--- Append note link to a section in a landing file
+local function path_join(a, b)
+  if b:match("^/") then
+    return b
+  end
+  if a:sub(-1) == "/" then
+    return a .. b
+  end
+  return a .. "/" .. b
+end
+
+-- patched: correctly strips ROOT prefix without chopping first char
+local function rel_to_root(abs)
+  abs = vim.fn.fnamemodify(abs, ":p")
+  abs = abs:gsub("/+$", "")
+  -- compare against ROOTP without the trailing slash
+  if abs:sub(1, #ROOTP - 1) == ROOTP:sub(1, -2) then
+    local rel = abs:sub(#ROOTP + 1)
+    return rel
+  end
+  return abs
+end
+
+local function top_level(relpath)
+  local first = relpath:match("([^/]+)")
+  return first or relpath
+end
+
+local function ensure_file(path)
+  if vim.fn.filereadable(path) == 0 then
+    local f = io.open(path, "w")
+    if f then
+      f:write("# " .. vim.fn.fnamemodify(path, ":t:r") .. "\n\n")
+      f:close()
+    end
+  end
+end
+
+-- Append a link line under a "## <section_header>" in some landing file
 local function append_link_to_section(filepath, section_header, link_line)
-  local lines = {}
-  local file = io.open(filepath, "r")
-  local found = false
-  local inserted = false
-
-  if file then
-    for line in file:lines() do
+  local lines, found, inserted = {}, false, false
+  local f = io.open(filepath, "r")
+  if f then
+    for line in f:lines() do
       table.insert(lines, line)
-
-      if found and not inserted and line:match("^%[%[.*%]%]") == nil and line:match("^%s*$") then
+      if line:lower():match("^##%s+" .. section_header:lower() .. "%s*$") then
+        found = true
+      elseif found and not inserted and (line:match("^%s*$")) then
         table.insert(lines, link_line)
         inserted = true
       end
-
-      if line:lower():match("^##%s+" .. section_header:lower()) then
-        found = true
-      end
     end
-    file:close()
+    f:close()
   end
-
+  if not found then
+    table.insert(lines, "")
+    table.insert(lines, "## " .. section_header)
+  end
   if not inserted then
-    table.insert(lines, "\n## " .. section_header)
     table.insert(lines, link_line)
   end
-
   local out = io.open(filepath, "w")
   for _, l in ipairs(lines) do
     out:write(l .. "\n")
@@ -48,76 +91,99 @@ local function append_link_to_section(filepath, section_header, link_line)
   out:close()
 end
 
--- Create a new note with random ID and optional indexing
+-- Recursively find a note by basename stem (e.g., "ab12-my-note")
+local function find_note_by_stem(stem)
+  if vim.fn.executable("rg") == 1 then
+    local cmd = ("rg -l -g '**/%s.md' -m1 '' %s"):format(vim.fn.shellescape(stem), vim.fn.shellescape(ROOT))
+    local h = io.popen(cmd)
+    if h then
+      local path = h:read("*l")
+      h:close()
+      if path and vim.fn.filereadable(path) == 1 then
+        return path
+      end
+    end
+  end
+  local cmd = ("find %s -type f -name %s.md 2>/dev/null"):format(vim.fn.shellescape(ROOT), vim.fn.shellescape(stem))
+  local h = io.popen(cmd)
+  if h then
+    local path = h:read("*l")
+    h:close()
+    if path then
+      return path
+    end
+  end
+  return nil
+end
+
+-- ----- PUBLIC API -----
+
 function M.new_note(dir)
+  dir = dir or ROOT
+  dir = vim.fn.expand(dir)
+  if dir:sub(1, #ROOT) ~= ROOT then
+    vim.notify("new_note dir must be under " .. ROOT, vim.log.levels.ERROR)
+    return
+  end
+
   local title = vim.fn.input("Title: ")
   if title == "" then
     return
   end
 
   local id = random_id()
-  local safe_title = title:gsub("[^%w%s%-]", ""):gsub("%s+", "-"):lower()
-  local filename = id .. "-" .. safe_title .. ".md"
-  local path = vim.fn.expand(dir .. "/" .. filename)
+  local safe = title:gsub("[^%w%s%-]", ""):gsub("%s+", "-"):lower()
+  local filename = ("%s-%s.md"):format(id, safe)
+  local path = path_join(dir, filename)
 
-  -- Create file and open it
   vim.cmd("e " .. path)
 
-  -- Optional: insert tag frontmatter
-  local tag = vim.fn.fnamemodify(dir, ":t")
-  local lines = {
+  local rel_dir = rel_to_root(dir)
+  local toplev = top_level(rel_dir)
+
+  local tags = { toplev }
+  if rel_dir and rel_dir ~= "" and rel_dir ~= toplev then
+    table.insert(tags, rel_dir)
+  end
+
+  local header = {
     "---",
-    "tags: [" .. tag .. "]",
+    "tags: [" .. table.concat(tags, ", ") .. "]",
     "---",
     "",
     "# " .. title,
     "",
   }
-  vim.api.nvim_buf_set_lines(0, 0, 0, false, lines)
+  vim.api.nvim_buf_set_lines(0, 0, 0, false, header)
 
-  -- Determine section file for indexing
-  local section_file = ""
-  local section_header = "links"
-  if tag == "fleeting" then
-    section_file = "~/.local/.src/zettlekasten/fleeting.md"
-  elseif tag == "permanent" then
-    section_file = "~/.local/.src/zettlekasten/permanent.md"
-  elseif tag == "literature" then
-    section_file = "~/.local/.src/zettlekasten/literature.md"
-  end
+  local landing = path_join(ROOT, toplev .. ".md")
+  ensure_file(landing)
 
-  if section_file ~= "" then
-    local fname = filename:gsub("%.md$", "")
-    local line = string.format("[[%s]]", fname)
-    append_link_to_section(vim.fn.expand(section_file), section_header, line)
-  end
+  local section = (rel_dir == toplev) and "links" or rel_dir
+  local stem = filename:gsub("%.md$", "")
+  local link_line = string.format("[[%s]]", stem)
+  append_link_to_section(landing, section, link_line)
+
+  vim.notify("Created: " .. rel_to_root(path), vim.log.levels.INFO)
 end
 
--- Backlink search using snacks.nvim instead of Telescope
 function M.search_backlinks()
-  local filename = vim.fn.expand("%:t")
-  local stem = filename:gsub("%.md$", "")
-  local query = "[[" .. stem .. "]]"
-
+  local stem = vim.fn.expand("%:t:r")
+  local query = "%[%[" .. stem:gsub("(%W)", "%%%1") .. "%]%]"
   require("snacks").picker("grep", {
     default_text = query,
-    cwd = "~/.local/.src/zettlekasten",
+    cwd = ROOT,
   })
 end
 
--- Grep selected visual text
 function M.search_visual()
   local selected = vim.fn.getreg("v")
-  require("snacks").picker("grep", {
-    default_text = selected,
-    cwd = "~/.local/.src/zettlekasten",
-  })
+  require("snacks").picker("grep", { default_text = selected, cwd = ROOT })
 end
 
--- Insert wikilink via fuzzy picker
 function M.insert_link()
   require("snacks").picker("files", {
-    cwd = "~/.local/.src/zettlekasten",
+    cwd = ROOT,
     attach_mappings = function(_, map)
       map("i", "<CR>", function(prompt_bufnr)
         local entry = require("snacks").get_selected_entry(prompt_bufnr)
@@ -130,52 +196,107 @@ function M.insert_link()
   })
 end
 
-function M.launch_top7()
-  local dirs = {
-    permanent = "~/.local/.src/zettlekasten/permanent",
-    fleeting = "~/.local/.src/zettlekasten/fleeting",
-    literature = "~/.local/.src/zettlekasten/literature",
-  }
+function M.open_link_under_cursor()
+  local line = vim.api.nvim_get_current_line()
+  local col = vim.api.nvim_win_get_cursor(0)[2] + 1
 
-  local tmp = {}
-  for label, path in pairs(dirs) do
-    local expanded = vim.fn.expand(path)
-    local cmd = "find "
-      .. expanded
-      .. " -maxdepth 1 -name '*.md' -exec stat -c '%Y "
-      .. label
-      .. ":%n' {} \\; 2>/dev/null"
-    local handle = io.popen(cmd)
-    if handle then
-      for line in handle:lines() do
-        table.insert(tmp, line)
+  -- Wikilink [[...]]
+  local wi_s, wi_e = line:find("%[%[[^%]]+%]%]")
+  if wi_s and col >= wi_s and col <= wi_e then
+    local stem = line:sub(wi_s + 2, wi_e - 2)
+    local f = find_note_by_stem(stem)
+    if f then
+      vim.cmd("edit " .. f)
+      return
+    end
+    vim.notify("Not found: " .. stem .. ".md", vim.log.levels.WARN)
+    return
+  end
+
+  -- Markdown link [text](url)
+  local idx, s, e = 1, nil, nil
+  while true do
+    local ps, pe = line:find("%b()", idx)
+    if not ps then
+      break
+    end
+    if col >= ps and col <= pe then
+      s, e = ps, pe
+      break
+    end
+    idx = pe + 1
+  end
+  if s and e then
+    local url = line:sub(s + 1, e - 1):gsub("^%s*<", ""):gsub(">%s*$", "")
+    url = url:gsub("#.+$", "")
+    if url == "" then
+      return
+    end
+
+    -- Delegate non-.md targets (e.g., images) to zimg viewer; else open file
+    if not url:match("%.md$") then
+      local ok, zimg = pcall(require, "config.zimg")
+      if ok then
+        local abs = url:match("^/") and url or path_join(vim.fn.expand("%:p:h"), url)
+        zimg.open_file(abs)
+      else
+        local abs = path_join(vim.fn.expand("%:p:h"), url)
+        if vim.fn.filereadable(abs) == 1 then
+          vim.cmd("edit " .. abs)
+        else
+          vim.notify("File not found: " .. rel_to_root(abs), vim.log.levels.WARN)
+        end
       end
-      handle:close()
+      return
+    end
+
+    -- .md targets: try relative, then search by stem under ROOT
+    local base = vim.fn.expand("%:p:h")
+    local abs = url:match("^/") and url or path_join(base, url)
+    if vim.fn.filereadable(abs) == 0 then
+      local stem = vim.fn.fnamemodify(url, ":t:r")
+      local f = find_note_by_stem(stem)
+      abs = f or abs
+    end
+    if abs and vim.fn.filereadable(abs) == 1 then
+      vim.cmd("edit " .. abs)
+      return
+    else
+      vim.notify("File not found: " .. url, vim.log.levels.WARN)
+      return
     end
   end
 
-  -- Sort entries by timestamp descending
+  -- Fallback to gf
+  vim.cmd("normal! gf")
+end
+
+function M.launch_top7()
+  local tmp = {}
+  local cmd = "bash -lc "
+    .. vim.fn.shellescape(([[find %s -type f -name '*.md' -exec stat -c '%%Y %%n' {} \; 2>/dev/null]]):format(ROOT))
+  local h = io.popen(cmd)
+  if h then
+    for line in h:lines() do
+      table.insert(tmp, line)
+    end
+    h:close()
+  end
   table.sort(tmp, function(a, b)
-    local a_ts = tonumber(a:match("^(%d+)"))
-    local b_ts = tonumber(b:match("^(%d+)"))
+    local a_ts = tonumber(a:match("^(%d+)")) or 0
+    local b_ts = tonumber(b:match("^(%d+)")) or 0
     return a_ts > b_ts
   end)
-
-  -- Extract Top 7
   local entries = {}
   for i = 1, math.min(7, #tmp) do
-    local _, rest = tmp[i]:match("^(%d+)%s+(.+)$")
-    table.insert(entries, rest)
+    local _, path = tmp[i]:match("^(%d+)%s+(.+)$")
+    table.insert(entries, rel_to_root(path))
   end
-
   vim.ui.select(entries, { prompt = "Top 7 Recent Notes:" }, function(choice)
     if not choice then
       return
     end
-    local label, fullpath = choice:match("^(%w+):(.+)$")
-    if label and fullpath then
-      vim.cmd("edit " .. fullpath)
-    end
+    vim.cmd("edit " .. path_join(ROOT, choice))
   end)
 end
 
