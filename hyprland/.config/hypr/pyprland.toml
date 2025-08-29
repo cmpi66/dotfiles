@@ -3,7 +3,7 @@ plugins = ["scratchpads"]
 
 [scratchpads.term]
 animation = "fromTop"
-command = "foot -a spterm"
+command = "kitty --app-id spterm"
 class = "spterm"
 size = "55% 40%"
 # max_size = "1920px 100%"
@@ -11,7 +11,7 @@ margin = 50
 
 [scratchpads.pulse]
 animation = "fromTop"
-command = "foot -a pulse -e pulsemixer"
+command = "kitty --app-id pulse pulsemixer"
 class = "pulse"
 size = "40% 30%"
 # max_size = "1920px 100%"
@@ -31,7 +31,7 @@ margin = 50
 
 [scratchpads.bmks]
 animation = "fromTop"
-command = "foot -a bmks -e bmks"
+command = "kitty --app-id bmks bmks"
 class = "bmks"
 size = "55% 40%"
 # max_size = "1920px 100%"
