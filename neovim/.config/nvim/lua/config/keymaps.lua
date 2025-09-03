@@ -65,6 +65,24 @@ vim.keymap.set("n", "<leader>im", zimg.open_image_under_cursor, { desc = "Image:
 --   image.reload()
 -- end, { desc = "Images: Reload inline images" })
 
+-- Toggle Markdown checkbox under cursor
+vim.keymap.set("n", "<leader>tt", function()
+  local line = vim.api.nvim_get_current_line()
+  if line:match("%[ %]") then
+    line = line:gsub("%[ %]", "[x]", 1)
+  elseif line:match("%[x%]") then
+    line = line:gsub("%[x%]", "[ ]", 1)
+  end
+  vim.api.nvim_set_current_line(line)
+end, { desc = "Toggle Markdown checkbox" })
+
+vim.keymap.set("n", "<leader>tq", function()
+  local cwd = vim.fn.expand("~/.local/.src/zettlekasten")
+  local out = vim.fn.systemlist({ "rg", "--vimgrep", "-n", "-S", "--fixed-strings", "[ ]", cwd })
+  vim.fn.setqflist({}, " ", { title = "Unchecked tasks", lines = out })
+  vim.cmd("copen")
+end, { desc = "Tasks: Unchecked (quickfix)" })
+
 -- Visual mode: move selected lines up/down
 vim.keymap.set("x", "J", ":move '>+1<CR>gv-gv", opts)
 vim.keymap.set("x", "K", ":move '<-2<CR>gv-gv", opts)
