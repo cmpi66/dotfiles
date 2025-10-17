@@ -85,7 +85,6 @@ alias mbsync='mbsync -c $MBSYNCRC'
 alias j='z'
 alias vf="fzf | xargs -r -I % $EDITOR %"
 
-alias exegol="sudo -E $(echo ~/.local/bin/exegol)"
 ## zk
 # alias perma="zk perma"
 # alias flee="zk flee"
@@ -130,7 +129,7 @@ abbr tabs "xargs -n1 librewolf-bin <"
 # abbr paste "xclip -selection c -o >"
 # abbr paste "xsel --clipboard --output >" 
 abbr paste "wl-paste >"
-abbr updategrub "sudo grub-mkconfig -o /boot/grub/grub.cfg"
+abbr updategrub "doas grub-mkconfig -o /boot/grub/grub.cfg"
 abbr poweroff "doas openrc-shutdown -p now"
 abbr reboot "doas openrc-shutdown -r now"
 abbr mpv "mpv --fullscreen"
