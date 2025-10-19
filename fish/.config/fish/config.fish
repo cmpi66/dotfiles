@@ -56,8 +56,6 @@ fzf_configure_bindings --git_status=\cs --git_log=\cl
 xset r rate 300 50
 # xset r rate 400 100
 
-
-
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
@@ -146,7 +144,6 @@ abbr td "task done"
 
 ### ANSIBLE
 
-
 #Custom keybindings vi insert mode
 set -g fish_key_bindings fish_vi_key_bindings
 bind -M insert \co lf
@@ -188,8 +185,6 @@ end
 
 # register completions (on-the-fly, non-cached, because the actual command won't be cached anyway
 complete -c cheat.sh -xa '(curl -s cheat.sh/:list)'
-
-
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
