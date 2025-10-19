@@ -8,7 +8,7 @@ export XDG_CONFIG_HOME=$HOME/.config/
 export XDG_CACHE_HOME=$HOME/.cache/
 export XDG_DATA_HOME=$HOME/.local/share
 export ZDOTDIR=$HOME/.config/zsh   
-export $EDITOR="lvim" 
+export $EDITOR="nvim" 
 
 # integrate nix pacakges with desktop
 export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
@@ -27,7 +27,7 @@ export browser="librewolf-bin"
 export movplay="mpv"
 export term=xterm-256color
 export picview="sxiv"
-export terminal="alacritty"
+export terminal="kitty"
 
 
 # ~/ Clean up:
@@ -81,132 +81,6 @@ export QT_QPA_PLATFORMTHEME="gtk2" # Have QT use gtk2 theme.
 export BEMENU_OPTS='-i -l 20 --fb "#1e1e2e" --ff "#94e2d5" --nb "#1e1e2e" --nf "#f5e0dc" --tb "#1e1e2e" --hb "#1e1e2e" --tf "#cba6f7" --hf "#89b4fa" --nf "#f5e0dc" --af "#f5e0dc" --ab "#1e1e2e"'
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 export OLLAMA_MODELS=$XDG_DATA_HOME/ollama/models
-# SDCV_PAGER='lolcat -f | less --quit-if-one-screen -RX'
-# SDCV_PAGER='less --quit-if-one-screen -RX'
-# if [[ -z $VIT_DIR ]]; then
-#   export VIT_DIR=$XDG_CONFIG_HOME/vit
-# fi
-#
-# if [[ -z $TIMEWARRIORDB ]]; then
-#   export TIMEWARRIORDB=$XDG_DATA_HOME/timew
-# fi
-
-# export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"
-# export LESS_TERMCAP_md="$(printf '%b' '[1;36m')"
-# export LESS_TERMCAP_me="$(printf '%b' '[0m')"
-# export LESS_TERMCAP_so="$(printf '%b' '[01;44;33m')"
-# export LESS_TERMCAP_se="$(printf '%b' '[0m')"
-# export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"
-# export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
-# export LESSOPEN="| /usr/bin/highlight -O ansi %s 2>/dev/null"
-
-# export $XDG_DATA_HOME/python
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/home/chris/.local/share/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "/home/chris/.local/share/miniconda3/etc/profile.d/conda.sh" ]; then
-#         . "/home/chris/.local/share/miniconda3/etc/profile.d/conda.sh"
-#     else
-#         export PATH="/home/chris/.local/share/miniconda3/bin:$PATH"
-#     fi
-# fi
-# unset __conda_setup
-# <<< conda initialize <<<
-
-
-# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-
-#auto startx ARCH
-
-# Show contents of the directory after changing to it. IT doenst seem to work, maybe because I initiate fish?
-function cd () {
-    builtin cd "$1"
-    ls 
-}
-
-export LF_ICONS="di=📁:\
-fi=📃:\
-tw=🤝:\
-ow=📂:\
-ln=⛓:\
-or=❌:\
-ex=🎯:\
-*.txt=✍:\
-*.mom=✍:\
-*.me=✍:\
-*.ms=✍:\
-*.png=🖼:\
-*.webp=🖼:\
-*.ico=🖼:\
-*.jpg=📸:\
-*.jpe=📸:\
-*.jpeg=📸:\
-*.gif=🖼:\
-*.svg=🗺:\
-*.tif=🖼:\
-*.tiff=🖼:\
-*.xcf=🖌:\
-*.html=🌎:\
-*.xml=📰:\
-*.gpg=🔒:\
-*.css=🎨:\
-*.pdf=📚:\
-*.djvu=📚:\
-*.epub=📚:\
-*.csv=📓:\
-*.xlsx=📓:\
-*.tex=📜:\
-*.md=📘:\
-*.r=📊:\
-*.R=📊:\
-*.rmd=📊:\
-*.Rmd=📊:\
-*.m=📊:\
-*.mp3=🎵:\
-*.opus=🎵:\
-*.ogg=🎵:\
-*.m4a=🎵:\
-*.flac=🎼:\
-*.wav=🎼:\
-*.mkv=🎥:\
-*.mp4=🎥:\
-*.webm=🎥:\
-*.mpeg=🎥:\
-*.avi=🎥:\
-*.mov=🎥:\
-*.mpg=🎥:\
-*.wmv=🎥:\
-*.m4b=🎥:\
-*.flv=🎥:\
-*.zip=📦:\
-*.rar=📦:\
-*.7z=📦:\
-*.tar.gz=📦:\
-*.z64=🎮:\
-*.v64=🎮:\
-*.n64=🎮:\
-*.gba=🎮:\
-*.nes=🎮:\
-*.gdi=🎮:\
-*.1=ℹ:\
-*.nfo=ℹ:\
-*.info=ℹ:\
-*.log=📙:\
-*.iso=📀:\
-*.img=📀:\
-*.bib=🎓:\
-*.ged=👪:\
-*.part=💔:\
-*.torrent=🔽:\
-*.jar=♨:\
-*.java=♨:\
-"
 
 # [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ~/.config/x11/xinitrc
 # [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec Hyprland

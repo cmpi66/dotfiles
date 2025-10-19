@@ -172,7 +172,6 @@ bind p fish_clipboard_paste
 zoxide init fish | source
 starship init fish | source
 atuin init fish | source
-navi widget fish | source
 scheme set tokyonight
 # fish_config theme save "Catppuccin-Latte"
 
