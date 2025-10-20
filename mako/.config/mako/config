@@ -1,0 +1,28 @@
+# Appearance
+font=monospace 10
+background-color=#1E1E2E
+text-color=#CDD6F4
+border-color=#89B4FA
+border-size=2
+padding=8
+margin=10
+default-timeout=5000
+max-icon-size=64
+anchor=top-right
+width=300
+height=100
+layer=overlay
+
+# Urgency-specific overrides
+[urgency=low]
+background-color=#1E1E2E
+text-color=#CDD6F4
+
+[urgency=normal]
+background-color=#1E1E2E
+text-color=#CDD6F4
+
+[urgency=high]
+background-color=#1E1E2E
+text-color=#CDD6F4
+border-color=#FAB387

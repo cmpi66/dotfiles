@@ -25,7 +25,7 @@ set TERM xterm-256color # This messes up LunarVim; gives it some wierd ghosting 
 # set TERM "linux"
 set EDITOR nvim
 set VISUAL nvim
-set TERMINAL alacritty
+set TERMINAL kitty
 set BROWSER librewolf-bin
 
 ### SET MANPAGER
@@ -53,7 +53,7 @@ fzf_configure_bindings --git_status=\cs --git_log=\cl
 # Speedy keys
 # xset r rate 210 40
 # xset r rate 250 40
-xset r rate 300 50
+# xset r rate 300 50
 # xset r rate 400 100
 
 # Colorize grep output (good for log files)

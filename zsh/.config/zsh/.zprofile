@@ -84,7 +84,13 @@ export OLLAMA_MODELS=$XDG_DATA_HOME/ollama/models
 
 # [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ~/.config/x11/xinitrc
 # [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec Hyprland
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && dbus-run-session Hyprland
+# [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && dbus-run-session Hyprland
 # if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
 #     dbus-run-session Hyprland
 # fi
+
+# with X removed this was needed or else tmux would launch hyprland within itself, weird behavior.
+if [ -z "$WAYLAND_DISPLAY" ] && [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
+  exec dbus-run-session Hyprland
+fi
+
