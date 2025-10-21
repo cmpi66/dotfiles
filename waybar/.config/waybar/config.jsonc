@@ -20,7 +20,7 @@
     "custom/mail",
     "custom/torrent",
     "custom/kern",
-    "custom/emerge",
+    // "custom/emerge",
     "custom/internet",
     "cpu",
     "memory",

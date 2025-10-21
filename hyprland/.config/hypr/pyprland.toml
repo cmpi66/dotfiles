@@ -29,13 +29,13 @@ lazy = true
 margin = 50
 
 
-[scratchpads.bmks]
-animation = "fromTop"
-command = "kitty --app-id bmks bmks"
-class = "bmks"
-size = "55% 40%"
-# max_size = "1920px 100%"
-margin = 50
+# [scratchpads.bmks]
+# animation = "fromTop"
+# command = "kitty --app-id bmks bmks"
+# class = "bmks"
+# size = "55% 40%"
+# # max_size = "1920px 100%"
+# margin = 50
 
 # [scratchpads.news]
 # animation = "fromTop"
@@ -45,12 +45,12 @@ margin = 50
 # # max_size = "1920px 100%"
 # margin = 50
 
-[scratchpads.eq]
-animation = "fromRight"
-command = "easyeffects"
-class = "com.github.wwmm.easyeffects"
-size = "70% 70%"
-# unfocus = "hide"
-lazy = true
-# max_size = "1920px 100%"
-margin = 50
+# [scratchpads.eq]
+# animation = "fromRight"
+# command = "easyeffects"
+# class = "com.github.wwmm.easyeffects"
+# size = "70% 70%"
+# # unfocus = "hide"
+# lazy = true
+# # max_size = "1920px 100%"
+# margin = 50
