@@ -169,9 +169,9 @@ bind p fish_clipboard_paste
 zoxide init fish | source
 starship init fish | source
 atuin init fish | source
-scheme set tokyonight
-# fish_config theme save "Catppuccin-Latte"
-
+# scheme set tokyonight
+# fish_config theme save tokyonight
+source ~/.config/fish/themes/tokyonight.fish
 source ~/.config/fish/shortcuts.fish
 source ~/.config/fish/gentoo.fish
 source ~/.config/fish/fnm.fish
