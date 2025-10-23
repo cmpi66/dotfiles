@@ -146,8 +146,8 @@ abbr td "task done"
 
 #Custom keybindings vi insert mode
 set -g fish_key_bindings fish_vi_key_bindings
-bind -M insert \co lf
-bind -M insert \ce ncdu
+# bind -M insert \co lf
+# bind -M insert \ce ncdu
 bind -M insert \ck history-search-backward # Up
 bind -M insert \cj history-search-forward # Down
 # bind -M insert jk "if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char force-repaint; end"
@@ -157,8 +157,8 @@ bind -M insert \cj history-search-forward # Down
 # bind -M visual y fish_clipboard_copy
 
 # Custom keybindings default mode
-bind \co lfcd
-bind \ce ncdu
+# bind \co lfcd
+# bind \ce ncdu
 bind \ck history-search-backward # Up
 bind \cj history-search-forward # Down
 bind yy fish_clipboard_copy

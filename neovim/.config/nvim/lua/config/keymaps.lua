@@ -1,7 +1,7 @@
 local opts = { noremap = true, silent = false }
 
 local notes = require("config.notes")
-local zimg = require("config.zimg")
+-- local zimg = require("config.zimg")
 
 -- local image = require("image")
 -- ── Create notes ────────────────────────────────────────────────────────────────
@@ -48,7 +48,7 @@ vim.keymap.set("n", "<leader>z7", notes.launch_top7, { desc = "Notes: Top 7 rece
 -- end, { desc = "Notes: Recent (oldfiles)" })
 
 -- Open the markdown image under cursor in viewer (imv/swayimg)
-vim.keymap.set("n", "<leader>im", zimg.open_image_under_cursor, { desc = "Image: Open markdown image under cursor" })
+-- vim.keymap.set("n", "<leader>im", zimg.open_image_under_cursor, { desc = "Image: Open markdown image under cursor" })
 
 -- Take region screenshot -> (optional) annotate -> insert link
 -- vim.keymap.set("n", "<leader>is", function()

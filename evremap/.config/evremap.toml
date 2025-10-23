@@ -13,5 +13,5 @@ device_name = "UBEST 87 TKL"
 # Both `tap` and `hold` can expand to multiple output keys.
 [[dual_role]]
 input = "KEY_CAPSLOCK"
-hold = ["KEY_LEFTMETA"]
+hold = ["KEY_LEFTCTRL"]
 tap = ["KEY_ESC"]
