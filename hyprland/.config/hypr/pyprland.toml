@@ -1,32 +1,32 @@
-[pyprland]
-plugins = ["scratchpads"]
-
-[scratchpads.term]
-animation = "fromTop"
-command = "kitty --app-id spterm"
-class = "spterm"
-size = "55% 40%"
-# max_size = "1920px 100%"
-margin = 50
-
-[scratchpads.pulse]
-animation = "fromTop"
-command = "kitty --app-id pulse pulsemixer"
-class = "pulse"
-size = "40% 30%"
-# max_size = "1920px 100%"
-margin = 50
-
-
-[scratchpads.keepass]
-animation = "fromBottom"
-command = "keepassxc"
-class = "org.keepassxc.KeePassXC"
-size = "50% 50%"
-# unfocus = "hide"
-lazy = true
-# max_size = "1920px 100%"
-margin = 50
+# [pyprland]
+# plugins = ["scratchpads"]
+#
+# [scratchpads.term]
+# animation = "fromTop"
+# command = "kitty --app-id spterm"
+# class = "spterm"
+# size = "55% 40%"
+# # max_size = "1920px 100%"
+# margin = 50
+#
+# [scratchpads.pulse]
+# animation = "fromTop"
+# command = "kitty --app-id pulse pulsemixer"
+# class = "pulse"
+# size = "40% 30%"
+# # max_size = "1920px 100%"
+# margin = 50
+#
+#
+# [scratchpads.keepass]
+# animation = "fromBottom"
+# command = "keepassxc"
+# class = "org.keepassxc.KeePassXC"
+# size = "50% 50%"
+# # unfocus = "hide"
+# lazy = true
+# # max_size = "1920px 100%"
+# margin = 50
 
 
 # [scratchpads.bmks]

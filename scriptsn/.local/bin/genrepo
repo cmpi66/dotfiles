@@ -5,10 +5,10 @@
 GENREP=/home/chris/repos/gentoo/all/
 # GENREP="/home/chris/test2/"
 
-cd $GENREP && doas rm -rf * && doas cp -ir  /etc/portage/* $GENREP && doas bat -p /var/lib/portage/world  > world && doas rm $GENREP/make.profile && doas chown -R chris:chris $GENREP && git add . && git commit -m 'updates' && git push
+cd $GENREP && doas rm -rf * && doas cp -ir /etc/portage/* $GENREP && doas bat -p /var/lib/portage/world >world && doas rm $GENREP/make.profile && doas chown -R chris:chris $GENREP && git add . && git commit -m 'updates' && git push
 
 # genrepo ()
 # {
-#   
+#
 
 # }

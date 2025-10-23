@@ -13,14 +13,9 @@ wmpid() { # This function is needed if there are multiple instances of the windo
   echo "${tree%%)*}"
 }
 
-case "$(printf "🔒 lock\n🚪 leave $WM\n♻️ renew $WM\n🐻 hibernate\n🔃 reboot\n🖥️shutdown\n💤 sleep\n📺 display off" | bemenu -i -p 'Action: ')" in
-'🔒 lock') i3lock -C -i /home/chris/.local/bin/arch-wallpaper.jpg ;;
-"🚪 leave $WM") kill -TERM "$(wmpid)" ;;
-"♻️ renew $WM") kill -HUP "$(wmpid)" ;;
-'🐻 hibernate') i3lock $ctl hibernate -i ;;
-'💤 sleep') i3lock $ctl suspend -i ;;
+case "$(printf "🔒 lock\n🔃 reboot\n🖥️shutdown" | bemenu -i -p 'Action: ')" in
+'🔒 lock') swaylock -e -F -i /home/chris/.local/bin/lock.jpg ;;
 '🔃 reboot') doas sh -c "sync && openrc-shutdown -r now" ;;
 '🖥️shutdown') doas sh -c "sync && openrc-shutdown -p now" ;;
-'📺 display off') xset dpms force off ;;
 *) exit 1 ;;
 esac

@@ -57,6 +57,7 @@ button {
 #custom-music,
 #custom-mail,
 #custom-icon,
+#custom-power,
 #tray,
 #mode,
 #idle_inhibitor,
@@ -199,8 +200,14 @@ label:focus {
 
 
 #pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
+  background-color: @surface0;
+  color: #fab387; /* or whatever fits your IEM aesthetic */
+  border-radius: 16px;
+  margin: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 0px 10px 0px 10px;
+  font-weight: bold;
 }
 
 #pulseaudio.muted {
@@ -321,13 +328,30 @@ label:focus {
     padding: 0px 10px 0px 10px;
     font-weight: bold;
 }
+#custom-power {
+    color: #2ac3de;
+    background-color: @surface0;
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
+}
 
 #temperature.critical {
     background-color: #eb4d4b;
 }
 
 #tray {
-    background-color: #2980b9;
+    /* color: #2ac3de; */
+    background-color: @surface0;
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
 }
 
 #tray > .passive {

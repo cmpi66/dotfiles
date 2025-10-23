@@ -17,6 +17,8 @@
     "hyprland/window"
   ],
   "modules-right": [
+    "tray",
+    "pulseaudio",
     "custom/mail",
     "custom/torrent",
     "custom/kern",
@@ -27,8 +29,8 @@
     "temperature",
     "disk",
     "clock",
-    "tray",
-    "custom/music"
+    "custom/music",
+    "custom/power"
   ],
   // Modules configuration
   // "hyprland/workspaces": {
@@ -36,8 +38,7 @@
   //     "all-outputs": true,
   //     "on-click": "activate",
   //     "format": "{icon}",
-  //     "format-icons": {
-  //         "urgent": "",
+  //     "format-icons": { "urgent": "",
   //      "active": "",
   //     "default": "󰧞",
   //       // "default": "",
@@ -172,27 +173,22 @@
     ]
   },
   "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
-    "format": "{volume}% {icon} {format_source}",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
+    "format": "{icon} {volume}%",
+    "format-bluetooth": " {icon} {volume}%",
+    "format-muted": " Muted",
     "format-icons": {
       "headphone": "",
-      "hands-free": "",
       "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
       "default": [
-        "",
-        "",
-        ""
+        "", // 0–33%
+        "", // 34–66%
+        "" // 67–100%
       ]
     },
-    "on-click": "pavucontrol"
+    "scroll-step": 5,
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
   },
   "custom/mail": {
     "interval": 30,
@@ -223,11 +219,10 @@
     "format-icons": "",
     "exec": " uname -r"
   },
-  "custom/zfs": {
-    "format": "{icon} {}",
-    "interval": 30,
-    "format-icons": "",
-    "exec": "du -sh /zpgen/*"
+  "custom/power": {
+    "format": "{icon}",
+    "format-icons": "⏻ ",
+    "on-click": "~/.local/bin/wayland/sysact-wayland"
   },
   "custom/media": {
     "format": "{icon} {}",
