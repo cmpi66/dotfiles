@@ -1,4 +1,4 @@
-#files: 854	version: 5.9
+#files: 859	version: 5.9
 
 _comps=(
 '-' '_precommand'
@@ -94,6 +94,7 @@ _comps=(
 '_arguments' '__arguments'
 '_dunst' '_dunst'
 '_dunstctl' '_dunstctl'
+'_vagrant' '_vagrant'
 'a2ps' '_a2ps'
 'aaaa' '_hosts'
 'aap' '_aap'
@@ -206,6 +207,7 @@ _comps=(
 'bunzip2' '_bzip2'
 'burst' '_mh'
 'busctl' '_busctl'
+'bwrap' '_bwrap'
 'bzcat' '_bzip2'
 'bzegrep' '_grep'
 'bzfgrep' '_grep'
@@ -963,6 +965,7 @@ _comps=(
 'opusdec' '_opustools'
 'opusenc' '_opustools'
 'opusinfo' '_opustools'
+'p11-kit' '_p11-kit'
 'p4' '_perforce'
 'p4d' '_perforce'
 'pacat' '_pulseaudio'
@@ -970,6 +973,7 @@ _comps=(
 'pacdiff' '_pacdiff'
 'pacignore' '_pacignore'
 'pack' '_pack'
+'packer' '_packer'
 'packf' '_mh'
 'paclist' '_paclist'
 'paclog-pkglist' '_paclog-pkglist'
@@ -1356,6 +1360,7 @@ _comps=(
 'true' '_nothing'
 'truncate' '_truncate'
 'truss' '_truss'
+'trust' '_trust'
 'tryaffix' '_ispell'
 'tty' '_tty'
 'ttyctl' '_ttyctl'
@@ -1414,6 +1419,7 @@ _comps=(
 'userdel' '_users'
 'usermod' '_user_admin'
 'vacuumdb' '_postgresql'
+'vagrant' '_vagrant'
 'val' '_sccs'
 'valgrind' '_valgrind'
 'vared' '_vared'
@@ -1698,21 +1704,22 @@ bindkey '^[/' _history-complete-older
 bindkey '^[~' _bash_complete-word
 
 autoload -Uz _alacritty _atuin _bat _bluetoothctl _busctl \
-            _cargo _chafa _checkupdates _ctr _curl \
-            _docker _dog _downgrade _dunst _dunstctl \
-            _elogind-inhibit _email-notmuch _eza _fastfetch _fd \
-            _foot _footclient _glow _hyprctl _hyprpm \
-            _img2sixel _insmod _keyring _kitty _lf \
-            _libinput _loginctl _lsmod _luarocks _luarocks-admin \
-            _meson _mkinitcpio _mpv _mutt-wizard.zsh _ninja \
-            _notmuch _openrc _paccache _pacdiff _pacignore \
-            _paclist _paclog-pkglist _pacman _pacscripts _pacsearch \
-            _pacsort _pactree _paru _pass _playerctl \
-            _poetry _powerprofilesctl _pulseaudio _pypr _qpdf \
-            _rankmirrors _rc-service _rc-status _rc-update _rclone \
-            _rg _rmmod _sensors _sensors-detect _shtab \
-            _swayidle _swaylock _texdoc _the_silver_searcher _tldr \
-            _udevadm _updpkgsums _upower _usbguard _wl-copy \
+            _bwrap _cargo _chafa _checkupdates _ctr \
+            _curl _docker _dog _downgrade _dunst \
+            _dunstctl _elogind-inhibit _email-notmuch _eza _fastfetch \
+            _fd _foot _footclient _glow _hyprctl \
+            _hyprpm _img2sixel _insmod _keyring _kitty \
+            _lf _libinput _loginctl _lsmod _luarocks \
+            _luarocks-admin _meson _mkinitcpio _mpv _mutt-wizard.zsh \
+            _ninja _notmuch _openrc _p11-kit _paccache \
+            _pacdiff _pacignore _packer _paclist _paclog-pkglist \
+            _pacman _pacscripts _pacsearch _pacsort _pactree \
+            _paru _pass _playerctl _poetry _powerprofilesctl \
+            _pulseaudio _pypr _qpdf _rankmirrors _rc-service \
+            _rc-status _rc-update _rclone _rg _rmmod \
+            _sensors _sensors-detect _shtab _swayidle _swaylock \
+            _texdoc _the_silver_searcher _tldr _trust _udevadm \
+            _updpkgsums _upower _usbguard _vagrant _wl-copy \
             _wl-paste _wpctl _xwallpaper _yay _yazi \
             _ykman _yt-dlp _zathura _zoxide _cdr \
             _all_labels _all_matches _alternative _approximate _arg_compile \

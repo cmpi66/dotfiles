@@ -47,7 +47,7 @@ fzf_configure_bindings --git_status=\cs --git_log=\cl
 # xset r rate 210 40
 # xset r rate 250 40
 # xset r rate 300 50
-xset r rate 350 50
+# xset r rate 350 50
 # xset r rate 400 100
 
 # Colorize grep output (good for log files)
@@ -150,18 +150,12 @@ abbr ta "task add"
 
 #Custom keybindings vi insert mode
 set -g fish_key_bindings fish_vi_key_bindings
-bind -M insert \co lf
-bind -M insert \ce ncdu
-bind -M insert \ck history-search-backward # Up
-bind -M insert \cj history-search-forward # Down
-# bind -M insert jk "if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char force-repaint; end"
-# bind -M insert -m default jk backward-char force-repaint
+# bind -M insert \ck history-search-backward # Up
+# bind -M insert \cj history-search-forward # Down
 
 # Custom keybindings default mode
-bind \co lf
-bind \ce ncdu
-bind \ck history-search-backward # Up
-bind \cj history-search-forward # Down
+# bind \ck history-search-backward # Up
+# bind \cj history-search-forward # Down
 bind yy fish_clipboard_copy
 bind Y fish_clipboard_copy
 bind p fish_clipboard_paste

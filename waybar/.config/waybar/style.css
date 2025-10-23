@@ -54,6 +54,7 @@ button {
 #custom-music,
 #custom-mail,
 #custom-icon,
+#custom-power
 #tray,
 #mode,
 #idle_inhibitor,
@@ -88,7 +89,7 @@ button {
 	border-radius: 16px;
 }
 
-#clock, #battery, #bluetooth, #custom-music, #custom-mail, #custom-pacman, #custom-torrent, #custom-internet, #disk, #cpu, #temperature, #memory {
+#clock, #battery, #bluetooth, #custom-music, #custom-mail, #custom-pacman, #custom-torrent, #custom-internet, #disk, #cpu, #temperature, #memory #pulseaudio #custom-power {
 	background: transparent;
 	padding: 3px 3px 3px 3px;
 	margin: 3px 3px 3px 3px;
@@ -122,6 +123,17 @@ button {
 }
 
 #battery {
+    color: #fae380;
+    background-color: @surface0;
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
+}
+
+#pulseaudio {
     color: #fae380;
     background-color: @surface0;
     border-radius: 16px;
@@ -231,6 +243,17 @@ label:focus {
     font-weight: bold;
 }
 
+#custom-power {
+    color: #2ac3de;
+    background-color: @surface0;
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
+}
+
 
 
 #custom-mail {
@@ -317,7 +340,14 @@ label:focus {
 }
 
 #tray {
-    background-color: #2980b9;
+    /* color: #2ac3de; */
+    background-color: @surface0;
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
 }
 
 #tray > .passive {

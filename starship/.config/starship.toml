@@ -8,7 +8,7 @@ format = """$all"""
 # move the rest of the prompt to the right
 # right_format = "${custom.pending} ${custom.urgent} ${custom.low} $time $battery"
 # right_format = "${custom.urgent} ${custom.overdue} ${custom.duetoday} ${custom.duetomorrow} $time $battery"
-right_format = "$time $battery"
+right_format = "$battery"
 
 # Wait 10 milliseconds for starship to check files under the current directory.
 scan_timeout = 10
@@ -164,8 +164,8 @@ read_only = " "
 format = "[$symbol$branch]($style) "
 symbol = " "
 
-[time]
-disabled = false
-style = "bold purple"
-format = '[\[$time\]]($style) '
-time_format = "%r"
+# [time]
+# disabled = false
+# style = "bold purple"
+# format = '[\[$time\]]($style) '
+# time_format = "%r"

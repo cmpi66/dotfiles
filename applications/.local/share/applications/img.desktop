@@ -1,4 +1,4 @@
 [Desktop Entry]
 Type=Application
 Name=Image viewer
-Exec=/usr/local/bin/swiv -a %f
+Exec=/usr/bin/imv %f
