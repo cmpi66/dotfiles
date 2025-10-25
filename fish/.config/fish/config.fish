@@ -26,7 +26,7 @@ set TERM xterm-256color # This messes up LunarVim; gives it some wierd ghosting 
 set EDITOR nvim
 set VISUAL nvim
 set TERMINAL kitty
-set BROWSER librewolf-bin
+set BROWSER librewolf
 
 ### SET MANPAGER
 ### "nvim" as manpager
@@ -95,7 +95,7 @@ abbr f zi
 abbr merge "xrdb -merge ~/.config/x11/xresources"
 # abbr nvimrc "nvim ~/.config/nvim/"
 abbr nv nvim
-abbr snv "sudo nvim"
+abbr snv "doas nvim"
 abbr ka killall
 abbr cp "cp -irv"
 abbr mv "mv -iv"
@@ -103,14 +103,14 @@ abbr rm "rm -v"
 abbr ln "ln -i"
 abbr cl clear
 abbr v vim
-abbr wiki "nvim ~/.local/.src/zettlekasten/index.md"
+# abbr wiki "nvim ~/.local/.src/zettlekasten/index.md"
 abbr gp "git add . && git commit -m 'autopush' && git push"
 abbr mkdir "mkdir -pv"
-abbr lf lfub
+# abbr lf lfub
 # abbr kx "killall sxhkd && sxhkd &"
 abbr cat bat
-abbr ncm ncmpcpp
-abbr m mailsync
+# abbr ncm ncmpcpp
+# abbr m mailsync
 abbr checkout "git checkout"
 abbr clone "git clone"
 abbr branch "git branch"
@@ -133,16 +133,9 @@ abbr reboot "doas openrc-shutdown -r now"
 abbr mpv "mpv --fullscreen"
 abbr lynx lynxub
 abbr se "br --conf ~/.config/broot/open.hjson ~/.local/bin/"
-abbr sdcv "sdcv -n --utf8-output --color"
 abbr syncartilces "rclone sync -v  --transfers 20 --retries 5 --s3-upload-cutoff=0 --exclude '*.md'  ~/docs/md/cmm-articles/  Idrive:cmmarketer/articles"
 abbr syncsamples "rclone sync -v --transfers 20 --retries 5 --s3-upload-cutoff=0 --exclude '*.md'  ~/copywriting/samples/final/ Idrive:cmmarketer/samples"
 abbr idrivemn "rclone mount IdriveEncrypt:/ /mnt/idrive/ --vfs-cache-mode full --daemon"
-
-### TASKWARRIOR 
-abbr ta "task add"
-abbr td "task done"
-
-### ANSIBLE
 
 #Custom keybindings vi insert mode
 set -g fish_key_bindings fish_vi_key_bindings
@@ -178,13 +171,6 @@ source ~/.config/fish/fnm.fish
 
 # retrieve command cheat sheets from cheat.sh
 # fish version by @tobiasreischmann
-
-function cheat.sh
-    curl cheat.sh/$argv
-end
-
-# register completions (on-the-fly, non-cached, because the actual command won't be cached anyway
-complete -c cheat.sh -xa '(curl -s cheat.sh/:list)'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

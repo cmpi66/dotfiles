@@ -23,11 +23,12 @@ export PATH="$PATH:/$HOME/.local/share/cargo/bin"
 
 export editor="nvim"
 export visual="nvim"
-export browser="librewolf-bin"
+export browser="librewolf"
 export movplay="mpv"
 export term=xterm-256color
 export picview="sxiv"
 export terminal="kitty"
+
 
 
 # ~/ Clean up:
@@ -78,7 +79,7 @@ alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 export PASSWORD_STORE_EXTENSIONS_DIR="$XDG_DATA_HOME/.password-store/.extensions"
 export PASSWORD_STORE_ENABLE_EXTENSIONS="true"
 export QT_QPA_PLATFORMTHEME="gtk2" # Have QT use gtk2 theme.
-export BEMENU_OPTS='-i -l 20 --fb "#1e1e2e" --ff "#94e2d5" --nb "#1e1e2e" --nf "#f5e0dc" --tb "#1e1e2e" --hb "#1e1e2e" --tf "#cba6f7" --hf "#89b4fa" --nf "#f5e0dc" --af "#f5e0dc" --ab "#1e1e2e"'
+export BEMENU_OPTS='-i --center --width-factor 0.3.5 --line-height 40 --list 10 --border 2 --border-radius 8 --bdr "#7dcfff" --fb "#1e1e2e" --ff "#94e2d5" --nb "#1e1e2e" --nf "#f5e0dc" --tb "#1e1e2e" --hb "#1e1e2e" --tf "#cba6f7" --hf "#89b4fa" --nf "#f5e0dc" --af "#f5e0dc" --ab "#1e1e2e"'
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 export OLLAMA_MODELS=$XDG_DATA_HOME/ollama/models
 
