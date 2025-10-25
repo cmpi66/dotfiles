@@ -67,14 +67,17 @@ export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass" #xorg
 # export SUDO_ASKPASS="$HOME/.local/bin/wayland/dmenupass-wayland"
 export MOZ_USE_XINPUT2="1" # Mozilla smooth scrolling/touchpads.
-export BEMENU_OPTS='-i -l 20 --fb "#1e1e2e" --ff "#94e2d5" --nb "#1e1e2e" --nf "#f5e0dc" --tb "#1e1e2e" --hb "#1e1e2e" --tf "#cba6f7" --hf "#89b4fa" --nf "#f5e0dc" --af "#f5e0dc" --ab "#1e1e2e"'
+# export BEMENU_OPTS='-i -l 20 --fb "#1e1e2e" --ff "#94e2d5" --nb "#1e1e2e" --nf "#f5e0dc" --tb "#1e1e2e" --hb "#1e1e2e" --tf "#cba6f7" --hf "#89b4fa" --nf "#f5e0dc" --af "#f5e0dc" --ab "#1e1e2e"'
+export BEMENU_OPTS='-i --center --width-factor 0.3.5 --line-height 40 --list 10 --border 2 --border-radius 8 --bdr "#8aadf4" --fb "#1e1e2e" --ff "#94e2d5" --nb "#1e1e2e" --nf "#f5e0dc" --tb "#1e1e2e" --hb "#1e1e2e" --tf "#cba6f7" --hf "#89b4fa" --nf "#f5e0dc" --af "#f5e0dc" --ab "#1e1e2e"'
+
 # export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 # echo "UPDATESTARTUPTTY" | gpg-connect-agent > /dev/null 2>&1 # This line is so pinentry program can work with gpg ssh smartcard if the gpg=tty is exported.
 # gpgconf --launch gpg-agent
-export GPG_TTY=$(tty)
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent
-echo "UPDATESTARTUPTTY" | gpg-connect-agent > /dev/null
+
+# export GPG_TTY=$(tty)
+# export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+# gpgconf --launch gpg-agent
+# echo "UPDATESTARTUPTTY" | gpg-connect-agent > /dev/null
 
 
 
@@ -84,6 +87,6 @@ echo "UPDATESTARTUPTTY" | gpg-connect-agent > /dev/null
 # [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startw
 # [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec Hyprland
 if [ -z "$WAYLAND_DISPLAY" ] && [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
-  exec Hyprland
+  exec dbus-run-session Hyprland
 fi
 

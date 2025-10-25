@@ -1,0 +1,15 @@
+#!/bin/env bash
+
+# script to attach to zettlekasten on desktop if it's on otherwise open it up on this pc
+
+ZETTLE="kitty --title ema --class ema  ssh -t chris@10.27.27.10 tmux attach-session -t zettle"
+
+net-up() {
+  ping -c1 10.27.27.10 >/dev/null 2>&1
+}
+
+if net-up; then
+  $ZETTLE
+else
+  zettle-ema-kitty
+fi

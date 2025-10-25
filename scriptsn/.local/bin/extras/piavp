@@ -1,3 +1,0 @@
-#!/bin/sh 
-
-cd /home/chris/dl/git-clones/manual-connections/ &&  nmcli networking on && sudo -A VPN_PROTOCOL=wireguard DISABLE_IPV6=yes DIP_TOKEN=no AUTOCONNECT=true PIA_PF=false PIA_DNS=false PIA_USER=xxxx PIA_PASS=xxxx ./run_setup.sh

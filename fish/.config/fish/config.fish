@@ -16,7 +16,7 @@ set fish_greeting #disables help greeting
 set TERM xterm-256color # This messes up Lunarvim on gentoobox ssh connection; wrote the effects on gentoo branch.
 set EDITOR nvim
 set VISUAL nvim
-set TERMINAL alacritty
+set TERMINAL kitty
 set BROWSER librewolf
 
 ### SET MANPAGER
@@ -73,10 +73,6 @@ abbr sudo doas
 alias scim='sc-im --quiet'
 
 # zk
-alias perma="zk perma"
-alias flee="zk flee"
-alias nt="zk nt"
-alias lit="zk lit"
 alias mbsync='mbsync -c $MBSYNCRC'
 alias j='z'
 alias vf="fzf | xargs -r -I % $EDITOR %"
@@ -87,12 +83,11 @@ alias exegol="sudo -E $(echo ~/.local/bin/exegol)"
 # System abbreviations 
 abbr f zi
 abbr desk "ssh -t chris@10.27.27.10"
-abbr deskfs "sudo mount -t nfs 10.27.27.10:/zpgen/shared/ /mnt/share/"
 abbr archlinx-fix-keys "sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
-abbr merge "xrdb -merge ~/.config/x11/xresources"
+# abbr merge "xrdb -merge ~/.config/x11/xresources"
 # abbr nvimrc "nvim ~/.config/nvim/"
 abbr nv nvim
-abbr snv "sudo nvim"
+abbr snv "doas nvim"
 abbr ka killall
 abbr cp "cp -irv"
 abbr mv "mv -iv"
@@ -100,20 +95,15 @@ abbr rm "rm -v"
 abbr ln "ln -i"
 abbr cl clear
 abbr v vim
-abbr p "sudo pacman -S"
-abbr rn "sudo pacman -Rns"
-abbr wiki "nvim ~/.local/.src/zettlekasten/index.md"
+abbr p "doas pacman -S"
+abbr rn "doas pacman -Rns"
 abbr yup "paru -Syu"
 # abbr yup "yay -Syu"
 # abbr gp "git add . && git commit -m 'autopush' && git remote | xargs -L1 git push --all" ##push to all 3 gits
 abbr gp "git add . && git commit -m 'autopush' && git push" ##push to all 3 gits
 abbr mkdir "mkdir -pv"
-abbr lf lfub
 abbr lynx lynxub
-abbr kx "killall sxhkd && sxhkd &"
 abbr cat bat
-abbr ncm ncmpcpp
-abbr m mailsync
 abbr checkout "git checkout"
 abbr clone "git clone"
 abbr branch "git branch"
@@ -125,28 +115,19 @@ abbr combinepdf "gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=combine.pdf -dBATCH
 abbr en "gpg -c --no-symkey-cache --cipher-algo AES256"
 abbr stow "stow --target=$HOME"
 
-# abbr vpnup "sudo wg-quick up archbox"
-# abbr vpndown "sudo wg-quick down archbox"
-abbr pfvpup "sudo wg-quick up pfwg0"
-abbr pfvpdown "sudo wg-quick down pfwg0"
+abbr pfvpup "doas wg-quick up pfwg0"
+abbr pfvpdown "doas wg-quick down pfwg0"
 
 # abbr upcmpi "rsync -uvrP --delete-after ~/.local/src/sites/cmpi4/website/public/ root@cmpi4.com:/var/www/cmpi4/"
 abbr tabs "xargs -n1 librewolf <"
 # abbr paste "xclip -selection c -o >"
-abbr search "yay -Ss"
-abbr updategrub "sudo grub-mkconfig -o /boot/grub/grub.cfg"
+abbr updategrub "doas grub-mkconfig -o /boot/grub/grub.cfg"
 abbr mpv "mpv --fullscreen"
 # abbr paste "xsel --clipboard --output >" 
 abbr paste "wl-paste >"
 abbr se "br --conf ~/.config/broot/open.hjson ~/.local/bin/"
-abbr yts "ytfzf -t -l --sort"
-# abbr sdcv "sdcv -n --utf8-output --color"
-abbr zfsun "doas umount /mnt/share"
 abbr batthealth 'upower -i /org/freedesktop/UPower/devices/battery_BAT1'
 # abbr idrivemn "rclone mount IdriveEncrypt:/ /mnt/idrive/ --vfs-cache-mode full --daemon"
-
-### TASKWARRIOR 
-abbr ta "task add"
 
 #Custom keybindings vi insert mode
 set -g fish_key_bindings fish_vi_key_bindings
@@ -163,7 +144,6 @@ bind p fish_clipboard_paste
 zoxide init fish | source
 starship init fish | source
 atuin init fish | source
-navi widget fish | source
 scheme set catppuccin
 # scheme set Catppuccin-Macchiato ## Doesn't work
 
