@@ -1,8 +1,5 @@
 # Appearance
 font=monospace 10
-background-color=#1E1E2E
-text-color=#CDD6F4
-border-color=#89B4FA
 border-size=2
 border-radius=12
 padding=0,15,25
@@ -15,16 +12,13 @@ height=100
 layer=overlay
 icons=1
 
-# Urgency-specific overrides
-[urgency=low]
-background-color=#1E1E2E
-text-color=#CDD6F4
 
-[urgency=normal]
-background-color=#1E1E2E
-text-color=#CDD6F4
+# Colors
+
+background-color=#24273a
+text-color=#cad3f5
+border-color=#8aadf4
+progress-color=over #363a4f
 
 [urgency=high]
-background-color=#1E1E2E
-text-color=#CDD6F4
-border-color=#FAB387
+border-color=#f5a97f

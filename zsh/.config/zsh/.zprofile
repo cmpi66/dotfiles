@@ -26,7 +26,7 @@ export visual="nvim"
 export browser="librewolf"
 export movplay="mpv"
 export term=xterm-256color
-export picview="sxiv"
+export picview="imv"
 export terminal="kitty"
 
 
@@ -42,7 +42,7 @@ export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export URLVIEW_CONFIG="$XDG_CONFIG_HOME/urlview/config"
 export GOPATH="$XDG_DATA_HOME/go"
-export GIT_CONFIG="$XDG_CONFIG_HOME/git/config" ## This breaks aur packages gives "ERROR not a clone of 'x repo'"
+export GIT_CONFIG="$XDG_CONFIG_HOME/git/config" ## This breaks aur packages gives "ERROR not a clone of 'x repo'" # well as of 10-25-25 it works so renabled this. On new systems make sure to move .gitconfig to config, automate it.
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/.password-store"
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
@@ -79,9 +79,19 @@ alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 export PASSWORD_STORE_EXTENSIONS_DIR="$XDG_DATA_HOME/.password-store/.extensions"
 export PASSWORD_STORE_ENABLE_EXTENSIONS="true"
 export QT_QPA_PLATFORMTHEME="gtk2" # Have QT use gtk2 theme.
-export BEMENU_OPTS='-i --center --width-factor 0.3.5 --line-height 40 --list 10 --border 2 --border-radius 8 --bdr "#7dcfff" --fb "#1e1e2e" --ff "#94e2d5" --nb "#1e1e2e" --nf "#f5e0dc" --tb "#1e1e2e" --hb "#1e1e2e" --tf "#cba6f7" --hf "#89b4fa" --nf "#f5e0dc" --af "#f5e0dc" --ab "#1e1e2e"'
+# export BEMENU_OPTS='-i --center --width-factor 0.3.5 --line-height 40 --list 10 --border 2 --border-radius 8 --bdr "#7dcfff" --fb "#1e1e2e" --ff "#94e2d5" --nb "#1e1e2e" --nf "#f5e0dc" --tb "#1e1e2e" --hb "#1e1e2e" --tf "#cba6f7" --hf "#89b4fa" --nf "#f5e0dc" --af "#f5e0dc" --ab "#1e1e2e"'
+# Macchiato
+export BEMENU_OPTS='-i --center --width-factor 0.3.5. --line-height 40 --list 10 --border 2 --border-radius 8 --bdr "#8aadf4" --fb "#24273a" --ff "#cad3f5" --nb "#24273a" --nf "#cad3f5" --tb "#24273a" --hb "#24273a" --tf "#ed8796" --hf "#eed49f" --af "#cad3f5" --ab "#24273a"'
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 export OLLAMA_MODELS=$XDG_DATA_HOME/ollama/models
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#363A4F,bg:#24273A,spinner:#F4DBD6,hl:#ED8796 \
+--color=fg:#CAD3F5,header:#ED8796,info:#C6A0F6,pointer:#F4DBD6 \
+--color=marker:#B7BDF8,fg+:#CAD3F5,prompt:#C6A0F6,hl+:#ED8796 \
+--color=selected-bg:#494D64 \
+--color=border:#6E738D,label:#CAD3F5"
+export BAT_THEME="Catppuccin Macchiato"
+
 
 # [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ~/.config/x11/xinitrc
 # [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec Hyprland

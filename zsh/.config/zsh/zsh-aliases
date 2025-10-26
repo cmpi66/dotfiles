@@ -5,7 +5,7 @@ alias g='lazygit'
 alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 alias nvimrc='lvim ~/.config/lvim/config.lua'
 
-alias nvim='lvim' 
+alias nvim='nvim' 
 
 alias vf="fzf | xargs -r -I % $EDITOR %"
 
@@ -54,10 +54,10 @@ alias ll='ls -lav --ignore=..'   # show long listing of all except ".."
 alias l='ls -lav --ignore=.?*'   # show long listing but no hidden dotfiles except "."
 
 alias sudo="doas"
-alias ls='exa -al --color=always --icons --group-directories-first'
+alias ls='eza -al --color=always --icons --group-directories-first'
 alias i3="i3lock -C -i /home/chris/.local/bin/arch-wallpaper.jpg"
-alias nv="lvim"
-alias snv="sudo lvim"
+alias nv="nvim"
+alias snv="sudo nvim"
 alias ka="killall"
 alias cp="cp -iv"
 alias mv="mv -iv"
@@ -65,7 +65,7 @@ alias rm="rm -v"
 alias ln="ln -i"
 alias cl="clear"
 alias v="vim"
-alias wiki="lvim ~/emanotes/index.md"
+alias wiki="nvim ~/emanotes/index.md"
 alias gp="git add . && git commit -m 'autopush' && git push"
 alias mkdir="mkdir -pv"
 alias lf="lfub"

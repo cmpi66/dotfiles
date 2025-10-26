@@ -13,7 +13,7 @@
 
 
 window#waybar {
-    background-color: shade (#24283b, 0.9);
+    background-color: shade (@base, 0.9);
     /* background-color: transparent; */
     /* border: 3px solid alpha(@crust, 0.3); */
     color: #ffffff;
@@ -22,7 +22,7 @@ window#waybar {
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
+    opacity: 0;
 }
 
 
@@ -37,7 +37,7 @@ button {
 
 
 #mode {
-    background-color: #64727D;
+    background-color: @base;
     border-bottom: 3px solid #ffffff;
 }
 
@@ -69,7 +69,7 @@ button {
 
 
 #workspaces {
-	background: @surface0;
+	background: @base;
 	margin: 5px 5px 5px 5px;
   padding: 0px 5px 0px 5px;
 	border-radius: 16px;
@@ -104,8 +104,9 @@ button {
 }
 
 #window {
-    color: #24283b;
-    background: #7aa2f7;
+    color: @text;
+    background: @base;
+    /* background: #7aa2f7;  */
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 16px;
@@ -118,8 +119,8 @@ button {
 }
 
 #clock {
-    color: #f8bd96;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -166,8 +167,8 @@ label:focus {
 }
 
 #cpu {
-    color: #bb9af7;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -177,8 +178,8 @@ label:focus {
 }
 
 #memory {
-    color: #7dcfff;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -188,8 +189,8 @@ label:focus {
 }
 
 #disk {
-    color: #9aa5ce;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -200,8 +201,8 @@ label:focus {
 
 
 #pulseaudio {
-  background-color: @surface0;
-  color: #fab387; /* or whatever fits your IEM aesthetic */
+  background-color: @base;
+  color: @text; /* or whatever fits your IEM aesthetic */
   border-radius: 16px;
   margin: 5px;
   margin-left: 5px;
@@ -240,8 +241,8 @@ label:focus {
 }
 
 #custom-mail {
-    color: #f7768e;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -251,8 +252,8 @@ label:focus {
 }
 
 #custom-torrent {
-    color: #50fa7b;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -262,8 +263,8 @@ label:focus {
 }
 
 #custom-kern {
-    color: #cfc9c2;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -273,8 +274,8 @@ label:focus {
 }
 
 #custom-emerge {
-    color: #ffc777;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -284,8 +285,8 @@ label:focus {
 }
 
 #custom-internet {
-    color: #abe9b3;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -295,8 +296,8 @@ label:focus {
 }
 
 #custom-music {
-    color: #2ac3de;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -307,8 +308,8 @@ label:focus {
 
 #custom-icon {
 
-    color: #c099ff;
-    background-color: @surface0;
+    color: @mauve;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -319,8 +320,8 @@ label:focus {
 }
 
 #temperature {
-    color: #f28fad;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -329,8 +330,8 @@ label:focus {
     font-weight: bold;
 }
 #custom-power {
-    color: #2ac3de;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -344,8 +345,8 @@ label:focus {
 }
 
 #tray {
-    /* color: #2ac3de; */
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;

@@ -2,22 +2,22 @@
 size = 10.5
 
 [font.bold]
-family = "Comic Code Nerd Font"
+family = "monospace"
 # family = "Hack Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "Comic Code Nerd Font"
+family = "monospace"
 # family = "Hack Nerd Font"
 style = "Bold Italic"
 
 [font.italic]
-family = "Comic Code Nerd Font"
+family = "monospace"
 # family = "Hack Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "Comic Code Nerd Font"
+family = "monospace"
 # family = "Hack Nerd Font"
 style = "Regular"
 
