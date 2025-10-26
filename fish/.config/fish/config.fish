@@ -144,13 +144,13 @@ bind p fish_clipboard_paste
 zoxide init fish | source
 starship init fish | source
 atuin init fish | source
-scheme set catppuccin
 # scheme set Catppuccin-Macchiato ## Doesn't work
 
 ## THese give me that stupid 'overwrite color' prompt and it messues up the starship tasks rightside prompt
 # fish_config theme save "Catppuccin-Latte"
 # fish_config theme save "Catppuccin-Macchiato"
 
+source ~/.config/fish/themes/catppuccin-macchiato.fish
 source ~/.config/fish/shortcuts.fish
 source ~/.config/fish/fnm.fish
 

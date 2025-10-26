@@ -8,7 +8,7 @@
   // "width": 1280, // Waybar width
   // "spacing": 4, // Gaps between modules (4px)
   "modules-left": [
-    "custom/icon",
+    // "custom/icon",
     "hyprland/workspaces",
     "hyprland/mode",
     "hyprland/scratchpad"
@@ -23,15 +23,15 @@
     "custom/torrent",
     "custom/pacman",
     "battery",
-    "custom/internet",
+    // "custom/internet",
     "cpu",
     "memory",
     "temperature",
     "backlight",
     "disk",
     "clock",
-    "custom/music",
-    "custom/power"
+    "custom/music"
+    // "custom/power"
   ],
   // Modules configuration
   // "hyprland/workspaces": {
@@ -212,7 +212,7 @@
     "format-muted": " Muted",
     "format-icons": {
       "headphone": "",
-      "headset": "",
+      // "headset": "",
       "default": [
         "", // 0–33%
         "", // 34–66%

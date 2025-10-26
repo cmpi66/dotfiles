@@ -98,8 +98,8 @@ button {
 }
 
 #window {
-    color: @base;
-    background: @blue;
+    color: @text;
+    background: @base;
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 16px;
@@ -112,8 +112,8 @@ button {
 }
 
 #clock {
-    color: #f8bd96;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -123,8 +123,8 @@ button {
 }
 
 #battery {
-    color: #fae380;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -134,8 +134,8 @@ button {
 }
 
 #pulseaudio {
-    color: #fae380;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -145,8 +145,8 @@ button {
 }
 
 #battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
+    color: @text;
+    background-color: @base;
 }
 
 @keyframes blink {
@@ -171,8 +171,8 @@ label:focus {
 }
 
 #cpu {
-    color: #ddb6f2;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -182,7 +182,7 @@ label:focus {
 }
 #bluetooth {
     color: @text;
-    background-color: @surface0;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -191,8 +191,8 @@ label:focus {
     font-weight: bold;
 }
 #bluetooth.off {
-    color: @mantle;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -201,8 +201,8 @@ label:focus {
     font-weight: bold;
 }
 #bluetooth.connected {
-    color: #c6a0f6;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -212,8 +212,8 @@ label:focus {
 }
 
 #memory {
-    color: #74c7ec;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -223,8 +223,8 @@ label:focus {
 }
 
 #disk {
-    color: #f2cdcd;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -234,7 +234,7 @@ label:focus {
 }
 
 #backlight {
-    background-color: @surface0;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -244,8 +244,8 @@ label:focus {
 }
 
 #custom-power {
-    color: #2ac3de;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -257,8 +257,8 @@ label:focus {
 
 
 #custom-mail {
-    color: #b7bdf8;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -268,8 +268,8 @@ label:focus {
 }
 
 #custom-torrent {
-    color: #abe9b3;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -279,8 +279,8 @@ label:focus {
 }
 
 #custom-pacman {
-    color: #e8a2af;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -290,8 +290,8 @@ label:focus {
 }
 
 #custom-internet {
-    color: #f5bde6;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -301,8 +301,8 @@ label:focus {
 }
 
 #custom-music {
-    color: #74c7Ec;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -313,8 +313,8 @@ label:focus {
 
 #custom-icon {
 
-    color: #74c7Ec;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -325,8 +325,8 @@ label:focus {
 }
 
 #temperature {
-    color: #f28fad;
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -340,8 +340,8 @@ label:focus {
 }
 
 #tray {
-    /* color: #2ac3de; */
-    background-color: @surface0;
+    color: @text;
+    background-color: @base;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;

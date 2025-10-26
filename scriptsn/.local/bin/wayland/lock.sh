@@ -4,13 +4,10 @@
 
 export DISPLAY=:0
 
-pkill swayidle 
-
+pkill swayidle
 
 swayidle -w \
-    timeout 300 'swaylock -e -F -C /home/chris/.config/swaylock/config -i /home/chris/.local/bin/lock1.jpg' \
-    timeout 600 'hyprctl dispatch dpms off' \
-         resume 'hyprctl dispatch dpms on' \
-    before-sleep 'swaylock -e -F -C /home/chris/.config/swaylock/config -i /home/chris/.local/bin/lock1.jpg'
-
-
+  timeout 300 'hyprlock' \
+  timeout 600 'hyprctl dispatch dpms off' \
+  resume 'hyprctl dispatch dpms on' \
+  before-sleep 'hyprlock'

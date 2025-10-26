@@ -6,60 +6,19 @@
 # set overlap
 # set xlsx_readformulas
 
-# Dracula theme
-# REDEFINE_COLOR "WHITE" 248 248 242
-# REDEFINE_COLOR "BLACK" 34 33 34
-# REDEFINE_COLOR "RED" 255 149 128
-# REDEFINE_COLOR "GREEN" 138 255 128
-# REDEFINE_COLOR "YELLOW" 255 255 128
-# REDEFINE_COLOR "BLUE" 128 255 234
-# REDEFINE_COLOR "CYAN" 128 255 234
-# REDEFINE_COLOR "MAGENTA" 255 128 191
-# DEFINE_COLOR "comment" 121 112 169
-# DEFINE_COLOR "altbackground" 63 63 63
-# color "type=DEFAULT fg=WHITE bg=BLACK bold=0 italic=0"
-# color "type=NORMAL fg=YELLOW bg=BLACK bold=0 italic=0"
-# color "type=WELCOME fg=comment bg=BLACK bold=0"
-# color "type=MODE fg=GREEN bg=BLACK bold=0"
-# color "type=GRID_EVEN fg=WHITE bg=BLACK"
-# color "type=GRID_ODD fg=WHITE bg=BLACK"
-# color "type=CELL_ID fg=WHITE bg=BLACK bold=0"
-# color "type=CELL_FORMAT fg=comment bg=BLACK bold=0"
-# color "type=CELL_CONTENT fg=WHITE bg=BLACK bold=0"
-# color "type=INFO_MSG fg=GREEN bg=BLACK bold=0"
-# color "type=ERROR_MSG fg=BLACK bg=RED bold=1"
-# color "type=INPUT fg=CYAN bg=BLACK"
-# color "type=CELL_ERROR fg=BLACK bg=RED bold=1"
-# color "type=HEADINGS fg=comment bg=BLACK bold=0"
-# color "type=HEADINGS_ODD fg=comment bg=BLACK bold=1"
-# color "type=CELL_SELECTION fg=WHITE bg=altbackground bold=0"
-# color "type=CELL_SELECTION_SC fg=WHITE bg=altbackground bold=1"
-# color "type=NUMB fg=MAGENTA bg=BLACK bold=0"
-# color "type=CELL_NEGATIVE fg=RED bg=BLACK bold=0"
-# color "type=EXPRESSION fg=YELLOW bg=BLACK bold=0"
-# color "type=SHEET fg=comment bg=BLACK bold=0"
-# color "type=CURRENT_SHEET fg=CYAN bg=BLACK bold=1"
-# color "type=FILENM fg=YELLOW bg=BLACK bold=0"
-# #The 3 above give me an error message at start up
-# # To not italicize strings, replace italic=1 with italic=0 on following line
-# color "type=STRG fg=CYAN bg=BLACK bold=0 italic=0"
-# color "type=DATEF fg=YELLOW bg=BLACK"
-# 
-##catppuccin theme
-REDEFINE_COLOR "BLACK"      36  39  58
-REDEFINE_COLOR "RED"       237 135 150
-REDEFINE_COLOR "YELLOW"    238 212 159
-REDEFINE_COLOR "GREEN"     166 218 149
-REDEFINE_COLOR "BLUE"      138 173 244
 DEFINE_COLOR   "ROSEWATER" 244 219 214
 DEFINE_COLOR   "FLAMINGO"  240 198 198
 DEFINE_COLOR   "PINK"      245 189 230
 DEFINE_COLOR   "MAUVE"     198 160 246
+REDEFINE_COLOR "RED"       237 135 150
 DEFINE_COLOR   "MAROON"    238 153 160
 DEFINE_COLOR   "PEACH"     245 169 127
+REDEFINE_COLOR "YELLOW"    238 212 159
+REDEFINE_COLOR "GREEN"     166 218 149
 DEFINE_COLOR   "TEAL"      139 213 202
 DEFINE_COLOR   "SKY"       145 215 227
 DEFINE_COLOR   "SAPPHIRE"  125 196 228
+REDEFINE_COLOR "BLUE"      138 173 244
 DEFINE_COLOR   "LAVENDER"  183 189 248
 DEFINE_COLOR   "TEXT"      202 211 245
 DEFINE_COLOR   "SUBTEXT1"  184 192 224
@@ -70,8 +29,10 @@ DEFINE_COLOR   "OVERLAY0"  110 115 141
 DEFINE_COLOR   "SURFACE2"   91  96 120
 DEFINE_COLOR   "SURFACE1"   73  77 100
 DEFINE_COLOR   "SURFACE0"   54  58  79
+REDEFINE_COLOR "BLACK"      36  39  58
 DEFINE_COLOR   "MANTLE"     30  32  48
 DEFINE_COLOR   "CRUST"      24  25  38
+
 color "type=NORMAL fg=TEXT bg=BLACK"
 color "type=WELCOME fg=MAGENTA bg=BLACK bold=0"
 color "type=HEADINGS fg=TEXT bg=CRUST"
@@ -94,42 +55,4 @@ color "type=INFO_MSG fg=CRUST bg=SKY"
 color "type=ERROR_MSG fg=TEXT bg=BLACK"
 color "type=INPUT fg=SUBTEXT1 bg=MANTLE"
 color "type=HELP_HIGHLIGHT fg=ROSEWATER bg=SURFACE2"
-#
-# Tokyonight theme
-# REDEFINE_COLOR "WHITE" 36 40 59
-# REDEFINE_COLOR "BLACK" 192 202 245
-# REDEFINE_COLOR "RED" 247 118 142
-# REDEFINE_COLOR "GREEN" 158 206 106
-# REDEFINE_COLOR "YELLOW" 224 175 104
-# REDEFINE_COLOR "BLUE" 122 162 247
-# REDEFINE_COLOR "CYAN" 125 207 255
-# REDEFINE_COLOR "MAGENTA" 187 154 247
-# DEFINE_COLOR "comment" 121 112 169
-# DEFINE_COLOR "altbackground" 63 63 63
-# color "type=DEFAULT fg=BLACK bg=BLACK bold=0 italic=0"
-# color "type=NORMAL fg=YELLOW bg=BLACK bold=0 italic=0"
-# color "type=WELCOME fg=comment bg=BLACK bold=0"
-# color "type=MODE fg=GREEN bg=BLACK bold=0"
-# color "type=GRID_EVEN fg=WHITE bg=BLACK"
-# color "type=GRID_ODD fg=WHITE bg=BLACK"
-# color "type=CELL_ID fg=WHITE bg=BLACK bold=0"
-# color "type=CELL_FORMAT fg=comment bg=BLACK bold=0"
-# color "type=CELL_CONTENT fg=WHITE bg=BLACK bold=0"
-# color "type=INFO_MSG fg=GREEN bg=BLACK bold=0"
-# color "type=ERROR_MSG fg=BLACK bg=RED bold=1"
-# color "type=INPUT fg=CYAN bg=BLACK"
-# color "type=CELL_ERROR fg=BLACK bg=RED bold=1"
-# color "type=HEADINGS fg=comment bg=BLACK bold=0"
-# color "type=HEADINGS_ODD fg=comment bg=BLACK bold=1"
-# color "type=CELL_SELECTION fg=WHITE bg=altbackground bold=0"
-# color "type=CELL_SELECTION_SC fg=WHITE bg=altbackground bold=1"
-# color "type=NUMB fg=MAGENTA bg=BLACK bold=0"
-# color "type=CELL_NEGATIVE fg=RED bg=BLACK bold=0"
-# color "type=EXPRESSION fg=YELLOW bg=BLACK bold=0"
-# color "type=SHEET fg=comment bg=BLACK bold=0"
-# color "type=CURRENT_SHEET fg=CYAN bg=BLACK bold=1"
-# color "type=FILENM fg=YELLOW bg=BLACK bold=0"
-# #The 3 above give me an error message at start up
-# # To not italicize strings, replace italic=1 with italic=0 on following line
-# color "type=STRG fg=CYAN bg=BLACK bold=0 italic=0"
-# color "type=DATEF fg=YELLOW bg=BLACK"
+
