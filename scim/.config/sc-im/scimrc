@@ -53,3 +53,58 @@ color "type=INFO_MSG fg=CRUST bg=SKY"
 color "type=ERROR_MSG fg=TEXT bg=BLACK"
 color "type=INPUT fg=SUBTEXT1 bg=MANTLE"
 color "type=HELP_HIGHLIGHT fg=ROSEWATER bg=SURFACE2"
+
+# DEFINE_COLOR   "BG"             36  40  59
+# DEFINE_COLOR   "BG_DARK"        31  35  53
+# DEFINE_COLOR   "BG_DARK1"       27  30  45
+# DEFINE_COLOR   "BG_HIGHLIGHT"   41  46  66
+# DEFINE_COLOR   "BLUE"          122 162 247
+# DEFINE_COLOR   "BLUE0"          61  89 161
+# DEFINE_COLOR   "BLUE1"          42 195 222
+# DEFINE_COLOR   "BLUE2"          13 185 215
+# DEFINE_COLOR   "BLUE5"         137 221 255
+# DEFINE_COLOR   "BLUE6"         180 249 248
+# DEFINE_COLOR   "BLUE7"          57  75 112
+# DEFINE_COLOR   "COMMENT"        86  95 137
+# DEFINE_COLOR   "CYAN"          125 207 255
+# DEFINE_COLOR   "DARK3"          84  92 126
+# DEFINE_COLOR   "DARK5"         115 122 162
+# DEFINE_COLOR   "FG"            192 202 245
+# DEFINE_COLOR   "FG_DARK"       169 177 214
+# DEFINE_COLOR   "FG_GUTTER"      59  66  97
+# DEFINE_COLOR   "GREEN"         158 206 106
+# DEFINE_COLOR   "GREEN1"        115 218 202
+# DEFINE_COLOR   "GREEN2"         65 166 181
+# DEFINE_COLOR   "MAGENTA"       187 154 247
+# DEFINE_COLOR   "MAGENTA2"      255   0 124
+# DEFINE_COLOR   "ORANGE"        255 158 100
+# DEFINE_COLOR   "PURPLE"        157 124 216
+# DEFINE_COLOR   "RED"           247 118 142
+# DEFINE_COLOR   "RED1"          219  75  75
+# DEFINE_COLOR   "TEAL"           26 188 156
+# DEFINE_COLOR   "TERM_BLACK"     65  72 104
+# DEFINE_COLOR   "YELLOW"        224 175 104
+# # DEFINE_COLOR   "GIT_ADD"        68 157 171
+# # DEFINE_COLOR   "GIT_CHANGE"     97 131 187
+# # DEFINE_COLOR   "GIT_DELETE"    145  76  84
+#
+# color "type=NORMAL fg=FG bg=BG"
+# color "type=WELCOME fg=MAGENTA bg=BG_DARK bold=0"
+# color "type=HEADINGS fg=FG bg=BG_DARK1"
+# color "type=HEADINGS_ODD fg=FG bg=BG_HIGHLIGHT"
+# color "type=MODE fg=BG_DARK bg=BLUE"
+# color "type=NUMB fg=ORANGE bg=BG"
+# color "type=STRG fg=GREEN bg=BG"
+# color "type=DATEF fg=YELLOW bg=BG"
+# color "type=CELL_SELECTION fg=FG bg=DARK3"
+# color "type=CELL_SELECTION_SC fg=BG bg=MAGENTA2"
+# color "type=GRID_EVEN fg=FG bg=BG"
+# color "type=GRID_ODD fg=FG bg=BG_DARK"
+# color "type=EXPRESSION fg=CYAN bg=BG"
+# color "type=CELL_ERROR fg=BG bg=RED"
+# color "type=CELL_NEGATIVE fg=RED bg=BG"
+# color "type=INFO_MSG fg=BG bg=BLUE1"
+# color "type=ERROR_MSG fg=FG bg=BG"
+# color "type=INPUT fg=FG_DARK bg=BG_HIGHLIGHT"
+# color "type=HELP_HIGHLIGHT fg=GREEN1 bg=TERM_BLACK"
+#

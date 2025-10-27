@@ -1,0 +1,13 @@
+#!/bin/env bash
+
+export WM="hyprland"
+
+case "$(printf "󰄄 screenshot\n󰍹 screenshotregion\n save to clipboard\n󰙒 anotate" | bemenu -i -p 'Screens: ')" in
+'󰄄 screenshot') sleep 1 && hyprshot -m output -m active ;; # using sleep here so bemenu wont show up in screenshot
+'󰍹 screenshotregion') hyprshot -m region ;;
+' save to clipboard') hyprshot -m region --clipboard-only ;;
+'󰙒 anotate') hyprshot -m region --raw | swappy -f - ;;
+*) exit 0 ;;
+esac
+
+# i could also add screenshot window as well, although i havent used that all, but it could be useful for cyber

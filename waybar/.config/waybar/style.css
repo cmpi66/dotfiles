@@ -1,10 +1,10 @@
 
-@import "macchiato.css";
+@import "tokyonight-storm.css";
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: monospace;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: bold;
     padding: 0;
     margin : -1;
@@ -13,10 +13,10 @@
 
 
 window#waybar {
-    background-color: shade (@base, 0.9);
-    /* background-color: transparent; */
+    /* background-color: shade (@base, 0.9); */
+    background-color: transparent;
     /* border: 3px solid alpha(@crust, 0.3); */
-    color: #ffffff;
+    /* color: #ffffff; */
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -37,7 +37,7 @@ button {
 
 
 #mode {
-    background-color: @base;
+    background-color: @bg;
     border-bottom: 3px solid #ffffff;
 }
 
@@ -69,7 +69,7 @@ button {
 
 
 #workspaces {
-	background: @base;
+	background: @bg_highlight;
 	margin: 5px 5px 5px 5px;
   padding: 0px 5px 0px 5px;
 	border-radius: 16px;
@@ -80,17 +80,17 @@ button {
 #workspaces button {
     padding: 0px 5px;
     border-radius: 16px;
-    color: @overlay2;
+    color: @fg_dark;
 }
 
 #workspaces button.active {
-    color: @base;
-    background-color: @text;
+    color: @bg;
+    background-color: @blue;
     border-radius: 16px;
 }
 
 #workspaces button:hover {
-	background-color: #E6B9C6;
+	background-color: @orange;
 	color: black;
 	border-radius: 16px;
 }
@@ -104,8 +104,8 @@ button {
 }
 
 #window {
-    color: @text;
-    background: @base;
+    color: @bg_highlight;
+    background: @blue;
     /* background: #7aa2f7;  */
     padding-left: 15px;
     padding-right: 15px;
@@ -119,8 +119,8 @@ button {
 }
 
 #clock {
-    color: @text;
-    background-color: @base;
+    color: @blue;
+    background-color: @bg_highlight;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -163,12 +163,12 @@ button {
 }
 
 label:focus {
-    background-color: @base;
+    background-color: @bg;
 }
 
 #cpu {
-    color: @text;
-    background-color: @base;
+    color: @magenta;
+    background-color: @bg_highlight;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -178,8 +178,8 @@ label:focus {
 }
 
 #memory {
-    color: @text;
-    background-color: @base;
+    color: @blue1;
+    background-color: @bg_highlight;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -189,8 +189,8 @@ label:focus {
 }
 
 #disk {
-    color: @text;
-    background-color: @base;
+    color: @yellow;
+    background-color: @bg_highlight;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -201,8 +201,8 @@ label:focus {
 
 
 #pulseaudio {
-  background-color: @base;
-  color: @text; /* or whatever fits your IEM aesthetic */
+  background-color: @bg_highlight;
+  color: @orange; /* or whatever fits your IEM aesthetic */
   border-radius: 16px;
   margin: 5px;
   margin-left: 5px;
@@ -263,13 +263,14 @@ label:focus {
 }
 
 #custom-kern {
-    color: @text;
-    background-color: @base;
+    color: @green;
+    background-color: @bg_highlight;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
     margin-right: 5px;
-    padding: 0px 10px 0px 10px;
+    padding: 7px 10px 7px 10px;
+    /* padding: 0px 10px 0px 10px; if you canhge the padding that are zero itll change for all. */
     font-weight: bold;
 }
 
@@ -296,8 +297,8 @@ label:focus {
 }
 
 #custom-music {
-    color: @text;
-    background-color: @base;
+    color: @cyan;
+    background-color: @bg_highlight;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -308,8 +309,8 @@ label:focus {
 
 #custom-icon {
 
-    color: @mauve;
-    background-color: @base;
+    color: @purple;
+    background-color: @bg_highlight;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -320,8 +321,8 @@ label:focus {
 }
 
 #temperature {
-    color: @text;
-    background-color: @base;
+    color: @red;
+    background-color: @bg_highlight;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -345,8 +346,8 @@ label:focus {
 }
 
 #tray {
-    color: @text;
-    background-color: @base;
+    color: @green;
+    background-color: @bg_highlight;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;

@@ -165,8 +165,8 @@ atuin init fish | source
 # scheme set tokyonight
 # fish_config theme save tokyonight
 
-# source ~/.config/fish/themes/tokyonight.fish
-source ~/.config/fish/themes/catppuccin-macchiato.fish
+source ~/.config/fish/themes/tokyonight.fish
+# source ~/.config/fish/themes/catppuccin-macchiato.fish
 source ~/.config/fish/shortcuts.fish
 source ~/.config/fish/gentoo.fish
 source ~/.config/fish/fnm.fish
