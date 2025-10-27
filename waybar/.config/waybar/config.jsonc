@@ -8,29 +8,29 @@
   // "width": 1280, // Waybar width
   // "spacing": 4, // Gaps between modules (4px)
   "modules-left": [
-    // "custom/icon",
-    "hyprland/workspaces",
-    "hyprland/mode",
-    "hyprland/scratchpad"
+    "custom/icon",
+    // "hyprland/scratchpad"
+    "clock",
+    "battery",
+    "custom/music",
+    "custom/pacman",
+    "backlight"
   ],
   "modules-center": [
-    "hyprland/window"
+    // "hyprland/window",
+    "hyprland/workspaces",
+    "hyprland/mode"
   ],
   "modules-right": [
     "tray",
     "pulseaudio",
-    "custom/mail",
+    // "custom/mail",
     "custom/torrent",
-    "custom/pacman",
-    "battery",
     // "custom/internet",
     "cpu",
     "memory",
     "temperature",
-    "backlight",
-    "disk",
-    "clock",
-    "custom/music"
+    "disk"
     // "custom/power"
   ],
   // Modules configuration
@@ -125,7 +125,7 @@
   //     //"format-alt": "{: %a %b %d   %r}"
   // },
   "clock": {
-    "format": "{:%H:%M}  ",
+    "format": "󰥔 {:%I:%M %p %b %d}  ",
     "format-alt": "{:%A, %B %d, %Y (%R)}  ",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
@@ -155,11 +155,11 @@
     "tooltip": false
   },
   "memory": {
-    "format": "{used}G "
+    "format": "{used}G  "
   },
   "disk": {
     "interbal": 30,
-    "format": "{free} ",
+    "format": "{free}  ",
     "path": "/"
   },
   "temperature": {
@@ -178,9 +178,9 @@
     "device": "intel_backlight",
     "format": "{icon} {percent}%",
     "format-icons": [
-      "",
-      "",
-      ""
+      "󰃞 ",
+      "󰃟 ",
+      "󰃠 "
     ],
     "on-scroll-up": "brightnessctl set 1%+",
     "on-scroll-down": "brightnessctl set 1%-",
@@ -193,17 +193,17 @@
       "critical": 15
     },
     "format": "{capacity}% {icon}",
-    "format-charging": "{capacity}% ",
+    "format-charging": "{capacity}% ",
     "format-plugged": "{capacity}% ",
     "format-alt": "{time} {icon}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
     "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
     ]
   },
   "pulseaudio": {
@@ -214,9 +214,9 @@
       "headphone": "",
       // "headset": "",
       "default": [
-        "", // 0–33%
-        "", // 34–66%
-        "" // 67–100%
+        " ", // 0–33%
+        " ", // 34–66%
+        " " // 67–100%
       ]
     },
     "scroll-step": 5,

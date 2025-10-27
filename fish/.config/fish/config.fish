@@ -149,8 +149,8 @@ atuin init fish | source
 ## THese give me that stupid 'overwrite color' prompt and it messues up the starship tasks rightside prompt
 # fish_config theme save "Catppuccin-Latte"
 # fish_config theme save "Catppuccin-Macchiato"
-
-source ~/.config/fish/themes/catppuccin-macchiato.fish
+source ~/.config/fish/themes/tokyonight.fish
+# source ~/.config/fish/themes/catppuccin-macchiato.fish
 source ~/.config/fish/shortcuts.fish
 source ~/.config/fish/fnm.fish
 

@@ -1,5 +1,5 @@
 
-@import "macchiato.css";
+@import "tokyonight-storm.css";
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
@@ -14,15 +14,15 @@
 
 window#waybar {
     background-color: shade (@base, 0.9);
-    /* background-color: transparent; */
+    background-color: transparent;
     /* border: 3px solid alpha(@crust, 0.3); */
-    color: #ffffff;
+    /* color: #ffffff; */
     transition-property: background-color;
     transition-duration: .5s;
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
+    opacity: 0;
 }
 
 button {
@@ -34,7 +34,7 @@ button {
 }
 
 #mode {
-    background-color: #64727D;
+    background-color: @bg;
     border-bottom: 3px solid #ffffff;
 }
 
@@ -65,7 +65,7 @@ button {
 }
 
 #workspaces {
-	background: @surface0;
+	background: @bg_highlight;
 	margin: 5px 5px 5px 5px;
   padding: 0px 5px 0px 5px;
 	border-radius: 16px;
@@ -74,17 +74,17 @@ button {
 #workspaces button {
     padding: 0px 5px;
     border-radius: 16px;
-    color: @overlay0;
+    color: @fg_dark;
 }
 
 #workspaces button.active {
-    color: @base;
-    background-color: @text;
+    color: @bg;
+    background-color: @blue;
     border-radius: 16px;
 }
 
 #workspaces button:hover {
-	background-color: #E6B9C6;
+	background-color: @orange;
 	color: black;
 	border-radius: 16px;
 }
@@ -98,8 +98,8 @@ button {
 }
 
 #window {
-    color: @text;
-    background: @base;
+    color: @bg_highlight;
+    background: @blue;
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 16px;
@@ -112,8 +112,8 @@ button {
 }
 
 #clock {
-    color: @text;
-    background-color: @base;
+    color: @blue;
+    background-color: @bg_highlight;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -123,8 +123,8 @@ button {
 }
 
 #battery {
-    color: @text;
-    background-color: @base;
+    color: @yellow;
+    background-color: @bg_highlight;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -134,8 +134,8 @@ button {
 }
 
 #pulseaudio {
-    color: @text;
-    background-color: @base;
+    color: @orange;
+    background-color: @bg_highlight;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -145,8 +145,8 @@ button {
 }
 
 #battery.charging, #battery.plugged {
-    color: @text;
-    background-color: @base;
+    color: @green;
+    background-color: @bg_highlight;
 }
 
 @keyframes blink {
@@ -157,8 +157,8 @@ button {
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
+    background-color: @bg_highlight;
+    color: @red;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -171,8 +171,8 @@ label:focus {
 }
 
 #cpu {
-    color: @text;
-    background-color: @base;
+    color: @magenta;
+    background-color: @bg_highlight;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -212,8 +212,8 @@ label:focus {
 }
 
 #memory {
-    color: @text;
-    background-color: @base;
+    color: @blue1;
+    background-color: @bg_highlight;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -223,8 +223,8 @@ label:focus {
 }
 
 #disk {
-    color: @text;
-    background-color: @base;
+    color: @yellow;
+    background-color: @bg_highlight;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -234,7 +234,8 @@ label:focus {
 }
 
 #backlight {
-    background-color: @base;
+    color: @fg;
+    background-color: @bg_highlight;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -279,8 +280,8 @@ label:focus {
 }
 
 #custom-pacman {
-    color: @text;
-    background-color: @base;
+    color: @purple;
+    background-color: @bg_highlight;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -301,8 +302,8 @@ label:focus {
 }
 
 #custom-music {
-    color: @text;
-    background-color: @base;
+    color: @cyan;
+    background-color: @bg_highlight;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -313,8 +314,8 @@ label:focus {
 
 #custom-icon {
 
-    color: @text;
-    background-color: @base;
+    color: @blue2;
+    background-color: @bg_highlight;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -325,13 +326,13 @@ label:focus {
 }
 
 #temperature {
-    color: @text;
-    background-color: @base;
+    color: @red;
+    background-color: @bg_highlight;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
     margin-right: 5px;
-    padding: 0px 10px 0px 10px;
+    padding: 7px 10px 7px 10px;
     font-weight: bold;
 }
 
