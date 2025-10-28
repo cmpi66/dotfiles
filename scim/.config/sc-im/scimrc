@@ -4,6 +4,13 @@
 # set overlap
 # set xlsx_readformulas
 
+# map ^K :!echo "$(cellvalue @curcell)" | wl-copy<CR>
+# map ^K :let @0 = cellvalue @curcell<CR>:!echo "@0" | wl-copy<CR>
+# map ^K :let @0 = cellvalue @curcell<CR>:!echo "@0" > /tmp/scimclip; wl-copy < /tmp/scimclip<CR>
+
+
+
+
 DEFINE_COLOR   "ROSEWATER" 244 219 214
 DEFINE_COLOR   "FLAMINGO"  240 198 198
 DEFINE_COLOR   "PINK"      245 189 230

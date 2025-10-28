@@ -14,6 +14,7 @@
     "clock",
     "custom/kern",
     "custom/music"
+    // "mpd"
   ],
   "modules-center": [
     // "hyprland/window"
@@ -80,23 +81,23 @@
     "tooltip-format": "{app}: {title}"
   },
   "mpd": {
-    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-    "format-disconnected": "Disconnected ",
-    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}%  ",
+    "format-disconnected": "Disconnected  ",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped  ",
     "unknown-tag": "N/A",
     "interval": 2,
     "consume-icons": {
       "on": " "
     },
     "random-icons": {
-      "off": "<span color=\"#f53c3c\"></span> ",
+      "off": "<span color=\"#ff007c\"></span> ",
       "on": " "
     },
     "repeat-icons": {
       "on": " "
     },
     "single-icons": {
-      "on": "1 "
+      "on": " 1 "
     },
     "state-icons": {
       "paused": "",
@@ -108,8 +109,8 @@
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
-      "activated": "",
-      "deactivated": ""
+      "activated": " ",
+      "deactivated": " "
     }
   },
   "tray": {
@@ -218,7 +219,7 @@
   "custom/kern": {
     "format": "{icon} {text}",
     "interval": 30,
-    "format-icons": "",
+    "format-icons": " ",
     "exec": " uname -r"
   },
   "custom/power": {
@@ -231,7 +232,7 @@
     "return-type": "json",
     "max-length": 40,
     "format-icons": {
-      "spotify": "",
+      "spotify": " ",
       "default": "🎜"
     },
     "escape": true,

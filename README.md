@@ -7,6 +7,8 @@ These are all my config files. There are two branches; master and gentoo. Master
 
 ## What I use
 
+**While below is still applicable and Suckless tools are still in my repo in the 'old' dir, I have since moved to Wayland (2023) and am using Hyprland as my window manager. Above is an updated screenshot of my desktop.**
+
 I use Dwm, fish shell, neovim and most of suckless' tools. Dwm might be the easiest window manager to configure, you don't need to know any C at all. They're a few videos on YouTube on how to patch it, and once you're done, you never have to tweak it again. There's a `patches` directory with a list of all the patches. 
 
 The zsh config I took from [Chris the machine.](https://github.com/ChristianChiarulli) 
