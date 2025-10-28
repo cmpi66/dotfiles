@@ -341,8 +341,8 @@ label:focus {
 }
 
 #tray {
-    color: @text;
-    background-color: @base;
+    color: @green;
+    background-color: @bg_highlight;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;

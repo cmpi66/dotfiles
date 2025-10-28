@@ -25,7 +25,7 @@ set BROWSER librewolf
 set -x MANPAGER "nvim +Man!"
 
 ## nix broke manpath on fish; using this now
-set MANPATH /usr/share/man:/usr/local/share/man:$HOME/.nix-profile/share/man
+# set MANPATH /usr/share/man:/usr/local/share/man:$HOME/.nix-profile/share/man
 ### "bat" as manpager
 # set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
