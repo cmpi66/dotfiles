@@ -5,5 +5,5 @@
 pkill swayidle
 
 swayidle -w \
-  timeout 300 'hyprlock'
+  timeout 600 'hyprlock'
 # timeout 600 'swaylock -e -F -C /home/chris/.config/swaylock/config -i /home/chris/.local/bin/lock.jpg'
