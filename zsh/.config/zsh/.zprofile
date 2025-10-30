@@ -21,7 +21,7 @@ export VISUAL="nvim"
 export BROWSER="librewolf"
 export MOVPLAY="mpv"
 export TERM=xterm-256color
-export PICVIEW="swiv"
+export PICVIEW="imv"
 
 
 # ~/ Clean up:
@@ -36,7 +36,7 @@ export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export URLVIEW_CONFIG="$XDG_CONFIG_HOME/urlview/config"
 export GOPATH="$XDG_DATA_HOME/go"
-export GIT_CONFIG="$XDG_CONFIG_HOME/git/config" ## This breaks aur packages gives "ERROR not a clone of 'x repo'"
+# export GIT_CONFIG="$XDG_CONFIG_HOME/git/config" ## This breaks aur packages gives "ERROR not a clone of 'x repo'"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/.password-store"
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
@@ -61,31 +61,31 @@ export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass" #xorg
 export MOZ_USE_XINPUT2="1" # Mozilla smooth scrolling/touchpads.
-export BEMENU_OPTS='-i --center --width-factor 0.3.5 --line-height 40 --list 10 --border 2 --border-radius 8 --bdr "#7aa2f7" --fb "#24283b" --ff "#c0caf5" --nb "#24283b" --nf "#c0caf5" --tb "#24283b" --hb "#24283b" --tf "#f7768e" --hf "#e0af68" --af "#c0caf5" --ab "#24283b"'
-export BAT_THEME="tokyonight-storm"
-export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
-  --highlight-line \
-  --info=inline-right \
-  --ansi \
-  --layout=reverse \
-  --border=none \
-  --color=bg+:#2e3c64 \
-  --color=bg:#1f2335 \
-  --color=border:#29a4bd \
-  --color=fg:#c0caf5 \
-  --color=gutter:#1f2335 \
-  --color=header:#ff9e64 \
-  --color=hl+:#2ac3de \
-  --color=hl:#2ac3de \
-  --color=info:#545c7e \
-  --color=marker:#ff007c \
-  --color=pointer:#ff007c \
-  --color=prompt:#2ac3de \
-  --color=query:#c0caf5:regular \
-  --color=scrollbar:#29a4bd \
-  --color=separator:#ff9e64 \
-  --color=spinner:#ff007c \
-"
+# export BEMENU_OPTS='-i --center --width-factor 0.3.5 --line-height 40 --list 10 --border 2 --border-radius 8 --bdr "#7aa2f7" --fb "#24283b" --ff "#c0caf5" --nb "#24283b" --nf "#c0caf5" --tb "#24283b" --hb "#24283b" --tf "#f7768e" --hf "#e0af68" --af "#c0caf5" --ab "#24283b"'
+# export BAT_THEME="tokyonight-storm"
+# export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
+#   --highlight-line \
+#   --info=inline-right \
+#   --ansi \
+#   --layout=reverse \
+#   --border=none \
+#   --color=bg+:#2e3c64 \
+#   --color=bg:#1f2335 \
+#   --color=border:#29a4bd \
+#   --color=fg:#c0caf5 \
+#   --color=gutter:#1f2335 \
+#   --color=header:#ff9e64 \
+#   --color=hl+:#2ac3de \
+#   --color=hl:#2ac3de \
+#   --color=info:#545c7e \
+#   --color=marker:#ff007c \
+#   --color=pointer:#ff007c \
+#   --color=prompt:#2ac3de \
+#   --color=query:#c0caf5:regular \
+#   --color=scrollbar:#29a4bd \
+#   --color=separator:#ff9e64 \
+#   --color=spinner:#ff007c \
+# "
 
 if [ -z "$WAYLAND_DISPLAY" ] && [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
   exec dbus-run-session Hyprland
