@@ -28,7 +28,7 @@
 
 export WM="hyprland"
 
-case "$(printf "night\nday" | tofi --width 10% --height 10% --prompt-text 'Switch Themes: ')" in
+case "$(printf "night\nday" | tofi --width 15% --height 15% --prompt-text 'Switch Themes: ')" in
 'night') night-theme ;;
 'day') day-theme ;;
 *) exit 0 ;;

@@ -8,17 +8,15 @@
 
 # this is a dynamic script, books will be replaced with most curent reads, i have the open pdf scrip but that traverses the entier dir for over 200+ pdfs.
 
-export WM="hyprland"
-
 blackhatpython="/home/chris/media/books/it-books/hacking/Black Hat Python Python Programming for Hackers and Pentesters, 2e (Justin Seitz Tim Arnold) (Z-Library).pdf"
 blackhatbash="/home/chris/media/books/it-books/hacking/Black Hat Bash Creative Scripting for Hackers and Pentesters (Dolev Farhi, Nick Aleks) (Z-Library).pdf"
 practicalvim="/home/chris/media/books/it-books/linux/practical-vim.pdf"
 bugbounty="/home/chris/media/books/it-books/hacking/Bug Bounty Bootcamp The Guide to Finding and Reporting Web Vulnerabilities (Vickie Li) (Z-Library).pdf"
 
-case "$(printf "󰂺 blackhatpython\n󰂺 blackhatbash\n󰂺 practicalvim\n󰂺 bugbounty" | bemenu --width-factor 0.17 -p 'Choose: ')" in
-'blackhatpython') zathura "$blackhatpython" ;;
-'blackhatbash') zathura "$blackhatbash" ;;
-'practicalvim') zathura "$practicalvim" ;;
-'bugbounty') zathura "$bugbounty" ;;
+case "$(printf "󰂺 blackhatpython\n󰂺 blackhatbash\n󰂺 practicalvim\n󰂺 bugbounty" | tofi --width 15% --height 15% --prompt-text 'Choose: ')" in
+'󰂺 blackhatpython') zathura "$blackhatpython" ;;
+'󰂺 blackhatbash') zathura "$blackhatbash" ;;
+'󰂺 practicalvim') zathura "$practicalvim" ;;
+'󰂺 bugbounty') zathura "$bugbounty" ;;
 *) exit 0 ;;
 esac

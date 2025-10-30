@@ -5,7 +5,7 @@
 
 export WM="hyprland"
 
-case "$(printf " zettle\n jobapps\n pensess\n pythondev\n bashdev" | bemenu -i --width-factor 0.15 --line-height 60 -p 'Sessions: ')" in
+case "$(printf " zettle\n jobapps\n pensess\n pythondev\n bashdev" | tofi --width 15% --height 15% --prompt-text 'Sessions: ')" in
 ' zettle') zettle-ema-kitty ;; # using sleep here so bemenu wont show up in screenshot
 ' jobapps') jobapps ;;
 ' pensess') pensess ;;

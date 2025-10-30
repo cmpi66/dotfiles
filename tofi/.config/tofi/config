@@ -14,5 +14,5 @@ border-width = 4
 outline-width = 0
 result-spacing = 0
 num-results = 20
-font = /home/chris/.local/share/fonts/CaskaydiaMonoNerdFont-Bold.ttf
+font = monospace
 font-size = 12

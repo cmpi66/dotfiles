@@ -31,7 +31,8 @@ pick_mic() {
   pactl list short sources |
     awk '!/\.monitor/ {print $2}' |
     grep -vi insta360 |
-    bemenu -i -p "Pick mic source:"
+    # bemenu -i -p "Pick mic source:"
+    tofi --width 20% --height 20% --prompt-text "Pick mic source:"
 }
 
 save_audio_choice() {
@@ -41,7 +42,11 @@ save_audio_choice() {
 load_audio_choice() { [ -f "$AUDIO_CFG" ] && cat "$AUDIO_CFG"; }
 
 choose_audio_source() {
-  choice=$(printf "System (desktop audio)\nMic (pick)\nCancel" | bemenu -i -p "Audio source:")
+  # choice=$(printf "System (desktop audio)\nMic (pick)\nCancel" | bemenu -i -p "Audio source:")
+  choice=$(
+    printf "System (desktop audio)\nMic (pick)\nCancel" | tofi --width 20% --height 20% --prompt-text "Pick mic source:"
+    "Audio source:"
+  )
   case "$choice" in
   "System (desktop audio)")
     src="$(detect_system_monitor)"
@@ -231,7 +236,8 @@ menu() {
     "Webcam (Direct H.264 copy)" \
     "Webcam (HEVC)" \
     "Kill Recording" |
-    bemenu -i -p "Select mode:")
+    # bemenu -i -p "Select mode:")
+    tofi --width 20% --height 20% --prompt-text "Select mode:")
 
   case "$choice" in
   "Audio: Pick/Change…") choose_audio_source ;;
