@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+# this is going to be a simple theme switcher from tokyonight day and night. Thats it for now (10/30/2025).
+
+# itll be two scripts, one which moves all the files and the other which uses bemenu so i can switch it on the fly. Nothing too convoluted.
+
+# we also need to steal the omarchy reload script which uses uwsm. that way everything is reloaded. Also steal the wallppaer for the light theme and the changebackground as well.
+
+# without symlinks its not too hard its just a force copy of all the files when switching from one theme to the other. And since im ONLY going to be switching from day to night symlinks arent necessary right now.
+
+# make sure you resource tmux as well when changing it, and maybe use a notify-send message.
+
+# fzf and bat theme opts are now in fish config. this makes more sense. No need to reinit zsh and those are shell tools unlike bemenu, which will now be back in hyprland.
+
+# i might also change to rofi instead of bemenu since it has a relaodable conf and bemnu doenst.
+
+# nah i swtiched to tofi instead, way easier to configure, 5-10 mins.
+
+# i have to create two functions one for day theme and another for night theme. then have the porper reload commands as well as the case statement for selecting the theme.
+
+# functions and vars first
+
+# reload commands
+
+# case statement that cass everything, cant have any reloads unless everything is chaged.
+
+# i think this has to be in two seperate files or three for now until i get better at bash, one each for change the theme and then one for calling it with tofi
+
+export WM="hyprland"
+
+case "$(printf "night\nday" | tofi --width 10% --height 10% --prompt-text 'Switch Themes: ')" in
+'night') night-theme ;;
+'day') day-theme ;;
+*) exit 0 ;;
+esac
