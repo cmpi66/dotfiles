@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+# Usage: newt <optional dir>
+# Launches kitty if not in a terminal. Uses zoxide + tmux.
+
+KITTY_CMD="kitty --title tmux-session --class tmux-session"
+
+# Load zoxide
+eval "$(zoxide init bash)"
+
+# If user passed an argument (e.g. `t notes`)
+if [ "$1" ]; then
+  RESULT=$(z "$@" && pwd)
+else
+  # Gather session and dir list
+  TMUX_SESSIONS=$(tmux list-sessions -F "#S: #{session_windows} window(s)#{?session_grouped, (group ,}#{session_group}#{?session_grouped,),}#{?session_attached, (attached),}" 2>/dev/null)
+  ZOX_ENTRIES=$(zoxide query -l)
+
+  # Show in bemenu
+  CHOICE=$(printf "%s\n%s" "$TMUX_SESSIONS" "$ZOX_ENTRIES" | bemenu)
+
+  [ -z "$CHOICE" ] && exit 0
+  RESULT="$CHOICE"
+fi
+
+# Session logic
+if [[ $RESULT == *":"* ]]; then
+  SESSION=$(echo "$RESULT" | awk -F':' '{print $1}')
+else
+  SESSION=$(basename "$RESULT" | tr . _)
+  if ! tmux has-session -t="$SESSION" 2>/dev/null; then
+    tmux new-session -d -s "$SESSION" -c "$RESULT"
+  fi
+fi
+
+# Attach or switch
+if [ -n "$TMUX" ]; then
+  tmux switch-client -t "$SESSION"
+elif [ -t 1 ]; then
+  tmux attach -t "$SESSION"
+else
+  $KITTY_CMD tmux attach -t "$SESSION"
+fi
+

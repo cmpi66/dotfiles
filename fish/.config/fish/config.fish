@@ -124,7 +124,7 @@ abbr tabs "xargs -n1 librewolf <"
 abbr updategrub "doas grub-mkconfig -o /boot/grub/grub.cfg"
 abbr mpv "mpv --fullscreen"
 # abbr paste "xsel --clipboard --output >" 
-abbr paste "wl-paste >"
+abbr p "wl-paste >"
 abbr se "br --conf ~/.config/broot/open.hjson ~/.local/bin/"
 abbr batthealth 'upower -i /org/freedesktop/UPower/devices/battery_BAT1'
 # abbr idrivemn "rclone mount IdriveEncrypt:/ /mnt/idrive/ --vfs-cache-mode full --daemon"
