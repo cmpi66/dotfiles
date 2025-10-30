@@ -16,8 +16,8 @@ else
   TMUX_SESSIONS=$(tmux list-sessions -F "#S: #{session_windows} window(s)#{?session_grouped, (group ,}#{session_group}#{?session_grouped,),}#{?session_attached, (attached),}" 2>/dev/null)
   ZOX_ENTRIES=$(zoxide query -l)
 
-  # Show in bemenu
-  CHOICE=$(printf "%s\n%s" "$TMUX_SESSIONS" "$ZOX_ENTRIES" | bemenu)
+  # Show in tofi
+  CHOICE=$(printf "%s\n%s" "$TMUX_SESSIONS" "$ZOX_ENTRIES" | tofi)
 
   [ -z "$CHOICE" ] && exit 0
   RESULT="$CHOICE"
@@ -41,4 +41,3 @@ elif [ -t 1 ]; then
 else
   $KITTY_CMD tmux attach -t "$SESSION"
 fi
-

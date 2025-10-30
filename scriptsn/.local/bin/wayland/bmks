@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Set preferred launcher: choose between dmenu, fzf, bemenu
-PREFERED_LAUNCHER=bemenu
+# Set preferred launcher: choose between dmenu, fzf, bemenu, tofi
+PREFERED_LAUNCHER=tofi
 
 # Set path where URLs will be stored
 URL_FILE_PATH="$HOME/.config/bmks"
@@ -26,6 +26,8 @@ bmks fzf
   manually choose fzf launcher
 bmks bemenu
   manually choose bemenu launcher
+bmks tofi
+  manually choose tofi launcher
 
 Configuration is done by editing this script. Bookmarks are stored in $URL_FILE_PATH/$URL_FILE_NAME\n"
 }
@@ -48,13 +50,13 @@ bmks_ls() {
 
 bmks_del() {
   bmks_check
-  selection=$(cat "$URL_FILE_PATH/$URL_FILE_NAME" | sort | launch_menu)
+  selection=$(sort "$URL_FILE_PATH/$URL_FILE_NAME" | launch_menu)
   [ -n "$selection" ] && sed -i "\|$selection|d" "$URL_FILE_PATH/$URL_FILE_NAME"
 }
 
 bmks_display() {
   bmks_check
-  selection=$(cat "$URL_FILE_PATH/$URL_FILE_NAME" | sort | launch_menu)
+  selection=$(sort "$URL_FILE_PATH/$URL_FILE_NAME" | launch_menu)
   [ -n "$selection" ] && url=$(echo "$selection" | awk '{print $NF}') && xdg-open "$url" >/dev/null 2>&1 &
 }
 
@@ -73,6 +75,9 @@ launch_menu() {
   bemenu)
     bemenu --list 10
     ;;
+  tofi)
+    tofi --prompt-text "bmks: " --height 30% --width 30%
+    ;;
   *)
     echo "Invalid launcher: $PREFERED_LAUNCHER" && exit 1
     ;;
@@ -85,17 +90,16 @@ touch "$URL_FILE_PATH/$URL_FILE_NAME"
 
 # Command handler
 case "$1" in
-"help") show_usage ;;
-"add")
+help) show_usage ;;
+add)
   url=$2
   bmks_add
   ;;
-"del") bmks_del ;;
-"ls") bmks_ls ;;
-"dmenu" | "fzf" | "bemenu")
+del) bmks_del ;;
+ls) bmks_ls ;;
+dmenu | fzf | bemenu | tofi)
   PREFERED_LAUNCHER=$1
   bmks_display
   ;;
 *) bmks_display ;;
 esac
-

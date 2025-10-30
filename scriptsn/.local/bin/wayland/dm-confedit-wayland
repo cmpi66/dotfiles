@@ -26,7 +26,7 @@ set -euo pipefail
 # shellcheck disable=SC1090
 # source "$(get_config)"
 
-DMENU="bemenu -p"
+DMENU="tofi --width 25% --height 25% --prompt-text"
 # DMENU="rofi -dmenu -i -l 10 -p"
 # DMTERM="foot -e"
 DMTERM="kitty"
