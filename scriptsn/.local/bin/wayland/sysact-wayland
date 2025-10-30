@@ -12,7 +12,7 @@ wmpid() { # This function is needed if there are multiple instances of the windo
 }
 
 case "$(printf "🔒 lock\n🔃 reboot\n🖥️shutdown" | bemenu -i -l 3 --width-factor 0.1 -p 'Action: ')" in
-'🔒 lock') hyprlock ;;
+'🔒 lock') swaylock -e -F -C /home/chris/.config/swaylock/config -i /home/chris/.local/bin/lock2.jpg ;;
 '🔃 reboot') doas sh -c "sync && openrc-shutdown -r now" ;;
 '🖥️shutdown') doas sh -c "sync && openrc-shutdown -p now" ;;
 *) exit 1 ;;

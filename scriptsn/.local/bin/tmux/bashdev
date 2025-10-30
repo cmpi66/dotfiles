@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+## A script to easily obashdev jobapps with scim and nvim.
+
+has-session() {
+  tmux has-session -t bashdev 2>/dev/null
+}
+
+launch_kitty_tmux() {
+  # --title sets the window title; --class is optional if you want a distinct WM_CLASS
+  kitty --title bashdev --class bashdev tmux attach-session -t bashdev
+}
+
+if has-session; then
+  launch_kitty_tmux
+else
+
+  tmux new-session -s bashdev -n blackhat -d 'cd ~/.local/.src/projects/sec/bash/blackhatbash/; nvim .;'
+  tmux new-window -t bashdev:2 -n udemy 'cd ~/.local/.src/projects/sec/bash/udemy-course/; nvim .;'
+  # tmux new-window -t bashdev:3 -n keywords 'cd ~/media/resume/; nvim it-job-keywords.md; fish -i'
+  tmux select-window -t bashdev:1
+  launch_kitty_tmux
+fi

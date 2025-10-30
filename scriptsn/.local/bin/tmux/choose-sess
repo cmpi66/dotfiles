@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# im thinking of creating a demenu prompt to select my most used sessions: zettle-ema, ja, exegol on laptop
+# not sure if this is redundant since i have the sessionizer 't' command but thats slight slower, the above sessions are more involved.
+
+export WM="hyprland"
+
+case "$(printf " zettle\n jobapps\n pensess\n pythondev\n bashdev" | bemenu -i --width-factor 0.15 --line-height 60 -p 'Sessions: ')" in
+' zettle') zettle-ema-kitty ;; # using sleep here so bemenu wont show up in screenshot
+' jobapps') jobapps ;;
+' pensess') pensess ;;
+' pythondev') pythondev ;;
+' bashdev') bashdev ;;
+*) exit 0 ;;
+esac
+
+# jobapps
+# zettle-ema-kitty
+# pensess

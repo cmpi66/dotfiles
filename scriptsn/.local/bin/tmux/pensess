@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+## A script to easily open jobapps with scim and nvim.
+
+has-session() {
+  tmux has-session -t pen 2>/dev/null
+}
+
+launch_kitty_tmux() {
+  # --title sets the window title; --class is optional if you want a distinct WM_CLASS
+  kitty --title pen --class pen tmux attach-session -t pen
+}
+
+if has-session; then
+  launch_kitty_tmux
+else
+
+  tmux new-session -s pen -n port-vnc -d 'ssh -L 34761:localhost:34761 chris@10.27.27.18'
+  sleep 1
+  tmux send-keys -t pen:1 'exegol start academy' C-m
+  tmux new-window -t pen:2 -n win2 'ssh artixframe'
+  sleep 1
+  tmux send-keys -t pen:2 'exegol start academy' C-m
+  # tmux new-window -t pen:3 -n keywords 'cd ~/media/resume/; nvim it-job-keywords.md; fish -i'
+  tmux select-window -t pen:1
+  launch_kitty_tmux
+fi

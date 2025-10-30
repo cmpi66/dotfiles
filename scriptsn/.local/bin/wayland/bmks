@@ -1,0 +1,100 @@
+#!/bin/bash
+
+# Set preferred launcher: choose between dmenu, fzf, bemenu
+PREFERED_LAUNCHER=bemenu
+
+# Set path where URLs will be stored
+URL_FILE_PATH="$HOME/.config/bmks"
+# Name of file URLs will be stored in
+URL_FILE_NAME="urls"
+
+show_usage() {
+  printf "bmks: unix bookmark management that sucks less
+
+usage:
+bmks help
+  show this help message
+bmks add <url>
+  add a new bookmark
+bmks del
+  remove a bookmark
+bmks ls
+  show all bookmarks
+bmks dmenu
+  manually choose dmenu launcher
+bmks fzf
+  manually choose fzf launcher
+bmks bemenu
+  manually choose bemenu launcher
+
+Configuration is done by editing this script. Bookmarks are stored in $URL_FILE_PATH/$URL_FILE_NAME\n"
+}
+
+bmks_add() {
+  [ -z "$url" ] && echo "Error: URL must be provided" && show_usage && exit 1
+  printf "Description: "
+  read -r description
+  if [ -z "$description" ]; then
+    echo "$url" >>"$URL_FILE_PATH/$URL_FILE_NAME"
+  else
+    echo "$description - $url" >>"$URL_FILE_PATH/$URL_FILE_NAME"
+  fi
+}
+
+bmks_ls() {
+  bmks_check
+  sort "$URL_FILE_PATH/$URL_FILE_NAME"
+}
+
+bmks_del() {
+  bmks_check
+  selection=$(cat "$URL_FILE_PATH/$URL_FILE_NAME" | sort | launch_menu)
+  [ -n "$selection" ] && sed -i "\|$selection|d" "$URL_FILE_PATH/$URL_FILE_NAME"
+}
+
+bmks_display() {
+  bmks_check
+  selection=$(cat "$URL_FILE_PATH/$URL_FILE_NAME" | sort | launch_menu)
+  [ -n "$selection" ] && url=$(echo "$selection" | awk '{print $NF}') && xdg-open "$url" >/dev/null 2>&1 &
+}
+
+bmks_check() {
+  [ ! -s "$URL_FILE_PATH/$URL_FILE_NAME" ] && echo "No bookmarks found." && exit 1
+}
+
+launch_menu() {
+  case $PREFERED_LAUNCHER in
+  dmenu)
+    dmenu -l 10
+    ;;
+  fzf)
+    fzf
+    ;;
+  bemenu)
+    bemenu --list 10
+    ;;
+  *)
+    echo "Invalid launcher: $PREFERED_LAUNCHER" && exit 1
+    ;;
+  esac
+}
+
+# Ensure storage location exists
+mkdir -p "$URL_FILE_PATH"
+touch "$URL_FILE_PATH/$URL_FILE_NAME"
+
+# Command handler
+case "$1" in
+"help") show_usage ;;
+"add")
+  url=$2
+  bmks_add
+  ;;
+"del") bmks_del ;;
+"ls") bmks_ls ;;
+"dmenu" | "fzf" | "bemenu")
+  PREFERED_LAUNCHER=$1
+  bmks_display
+  ;;
+*) bmks_display ;;
+esac

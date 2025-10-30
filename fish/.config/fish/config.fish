@@ -126,7 +126,7 @@ abbr cmpiup "rsync -uvrP --delete-after ~/.local/src/sites/cmpi4/website/public/
 abbr tabs "xargs -n1 librewolf-bin <"
 # abbr paste "xclip -selection c -o >"
 # abbr paste "xsel --clipboard --output >" 
-abbr paste "wl-paste >"
+abbr p "wl-paste >"
 abbr updategrub "doas grub-mkconfig -o /boot/grub/grub.cfg"
 abbr poweroff "doas openrc-shutdown -p now"
 abbr reboot "doas openrc-shutdown -r now"
