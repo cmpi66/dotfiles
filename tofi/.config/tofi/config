@@ -16,3 +16,6 @@ result-spacing = 0
 num-results = 20
 font = monospace
 font-size = 12
+hint-font = false
+ascii-input = true
+
