@@ -1,0 +1,18 @@
+prompt-text = "Select "
+
+text-color = #e0def4
+prompt-color = #eb6f92
+selection-color = #f6c177
+background-color = #232136
+border-color = #3e8fb0
+
+width = 25%
+padding-left = 0%
+padding-top = 0%
+height = 30%
+border-width = 4
+outline-width = 0
+result-spacing = 0
+num-results = 20
+font = monospace
+font-size = 12

@@ -1,0 +1,19 @@
+# font-family = ComicCode Nerd Font
+font-family = CaskaydiaMonoNerdFont
+
+font-size = 12
+scrollback-limit = 5000000
+keybind = alt+c=copy_to_clipboard
+keybind = alt+v=paste_from_clipboard
+adjust-cursor-thickness = 5
+
+
+keybind = alt+u=scroll_to_top
+keybind = alt+d=scroll_to_bottom
+keybind = alt+k=scroll_page_up
+keybind = alt+j=scroll_page_down
+
+confirm-close-surface = false
+
+
+theme = Rose Pine Dawn

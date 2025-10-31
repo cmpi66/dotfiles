@@ -28,8 +28,10 @@
 
 export WM="hyprland"
 
-case "$(printf "night\nday" | tofi --width 15% --height 15% --prompt-text 'Switch Themes: ')" in
-'night') night-theme ;;
-'day') day-theme ;;
+case "$(printf "tokyonight-storm\ntokyonight-dawn\nrose-pine-moon\nrose-pine-dawn" | tofi --width 15% --height 15% --prompt-text 'Switch Themes: ')" in
+'tokyonight-storm') night-theme ;;
+'tokyonight-dawn') day-theme ;;
+'rose-pine-moon') rosepine-moon ;;
+'rose-pine-dawn') rosepine-dawn ;;
 *) exit 0 ;;
 esac

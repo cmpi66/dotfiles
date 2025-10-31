@@ -1,0 +1,73 @@
+# set autocalc
+# set numeric
+# set numeric_decimal=0
+# set overlap
+# set xlsx_readformulas
+
+# Rose Pine Dawn – SC-IM Color Definitions
+DEFINE_COLOR   "BG"             250 244 237   # base (#faf4ed)
+DEFINE_COLOR   "BG_DARK"        248 240 231   # _nc (#f8f0e7)
+DEFINE_COLOR   "BG_DARK1"       255 250 243   # surface (#fffaf3)
+DEFINE_COLOR   "BG_HIGHLIGHT"   206 202 205   # highlight_high (#cecacd)
+
+DEFINE_COLOR   "BLUE"           144 122 169   # iris
+DEFINE_COLOR   "BLUE0"          40  105 131   # pine
+DEFINE_COLOR   "BLUE1"          86  148 159   # foam
+DEFINE_COLOR   "BLUE2"          65  135 146   # derived soft blue-green
+DEFINE_COLOR   "BLUE5"          110 175 185   # derived lighter foam
+DEFINE_COLOR   "BLUE6"          160 210 220   # bright foam
+DEFINE_COLOR   "BLUE7"          58  85  95    # derived dark pine
+
+DEFINE_COLOR   "COMMENT"        152 147 165   # muted
+DEFINE_COLOR   "CYAN"           86  148 159   # foam (alias)
+DEFINE_COLOR   "DARK3"          242 233 225   # overlay
+DEFINE_COLOR   "DARK5"          223 218 217   # highlight_med
+
+DEFINE_COLOR   "FG"             70  66  97    # text
+DEFINE_COLOR   "FG_DARK"        121 117 147   # subtle
+DEFINE_COLOR   "FG_GUTTER"      244 237 232   # highlight_low
+
+DEFINE_COLOR   "GREEN"          109 143 137   # leaf
+DEFINE_COLOR   "GREEN1"         90  165 150   # derived green
+DEFINE_COLOR   "GREEN2"         75  140 130   # softer variant
+
+DEFINE_COLOR   "MAGENTA"        144 122 169   # iris (alias)
+DEFINE_COLOR   "MAGENTA2"       255 0   124   # same as original
+
+DEFINE_COLOR   "ORANGE"         234 157 52    # gold
+DEFINE_COLOR   "PURPLE"         144 122 169   # iris (alias)
+
+DEFINE_COLOR   "RED"            180 99  122   # love
+DEFINE_COLOR   "RED1"           145 60  85    # deeper love
+
+DEFINE_COLOR   "TEAL"           40  105 131   # pine
+DEFINE_COLOR   "BLACK"          244 237 232   # highlight_low
+DEFINE_COLOR   "YELLOW"         234 157 52    # gold (alias)
+
+DEFINE_COLOR   "GIT_ADD"        90  165 150   # green1
+DEFINE_COLOR   "GIT_CHANGE"     144 122 169   # iris
+DEFINE_COLOR   "GIT_DELETE"     180 99  122   # love
+
+color "type=NORMAL fg=FG bg=BLACK"
+color "type=WELCOME fg=MAGENTA bg=BLACK bold=0"
+color "type=HEADINGS fg=FG bg=BG_DARK1"
+color "type=HEADINGS_ODD fg=FG bg=BG_DARK"
+color "type=MODE fg=BG_DARK1 bg=BLUE"
+color "type=NUMB fg=ORANGE bg=BLACK"
+color "type=STRG fg=GREEN bg=BLACK"
+color "type=DATEF fg=BLUE2 bg=BLACK"
+color "type=CELL_SELECTION fg=FG bg=BG_HIGHLIGHT"
+color "type=CELL_SELECTION_SC fg=BLACK bg=BLUE5"
+color "type=GRID_EVEN fg=FG bg=BLACK"
+color "type=GRID_ODD fg=FG bg=BG_DARK"
+color "type=EXPRESSION fg=CYAN bg=BLACK"
+color "type=CELL_ERROR fg=BLACK bg=RED"
+color "type=CELL_NEGATIVE fg=RED bg=BLACK"
+color "type=CELL_ID fg=BLUE5 bg=BG_DARK1"
+color "type=CELL_FORMAT fg=MAGENTA bg=BG_DARK1"
+color "type=CELL_CONTENT fg=COMMENT bg=BG_DARK1"
+color "type=INFO_MSG fg=BG_DARK1 bg=CYAN"
+color "type=ERROR_MSG fg=FG bg=BLACK"
+color "type=INPUT fg=FG_DARK bg=BG_DARK"
+color "type=HELP_HIGHLIGHT fg=BLUE6 bg=BLUE7"
+
