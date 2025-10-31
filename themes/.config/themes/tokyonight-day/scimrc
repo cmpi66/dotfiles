@@ -1,0 +1,143 @@
+# set autocalc
+# set numeric
+# set numeric_decimal=0
+# set overlap
+# set xlsx_readformulas
+
+# TokyoNight Day – SC-IM Color Definitions
+DEFINE_COLOR   "BG"             225 226 231   # bg
+DEFINE_COLOR   "BG_DARK"        208 213 227   # bg_dark
+DEFINE_COLOR   "BG_DARK1"       193 201 223   # bg_dark1
+DEFINE_COLOR   "BG_HIGHLIGHT"   196 200 218   # bg_highlight
+
+DEFINE_COLOR   "BLUE"           46  125 233   # blue
+DEFINE_COLOR   "BLUE0"          120 144 221   # blue0
+DEFINE_COLOR   "BLUE1"          24  128 146   # blue1
+DEFINE_COLOR   "BLUE2"          7   135 157   # blue2
+DEFINE_COLOR   "BLUE5"          0   106 131   # blue5
+DEFINE_COLOR   "BLUE6"          46  88  87    # blue6
+DEFINE_COLOR   "BLUE7"          146 166 213   # blue7
+
+DEFINE_COLOR   "COMMENT"        132 140 181   # comment
+DEFINE_COLOR   "CYAN"           0   113 151   # cyan
+DEFINE_COLOR   "DARK3"          137 144 179   # dark3
+DEFINE_COLOR   "DARK5"          104 112 154   # dark5
+
+DEFINE_COLOR   "FG"             55  96  191   # fg
+DEFINE_COLOR   "FG_DARK"        97  114 176   # fg_dark
+DEFINE_COLOR   "FG_GUTTER"      168 174 203   # fg_gutter
+
+DEFINE_COLOR   "GREEN"          88  117 57    # green
+DEFINE_COLOR   "GREEN1"         56  112 104   # green1
+DEFINE_COLOR   "GREEN2"         56  145 159   # green2
+
+DEFINE_COLOR   "MAGENTA"        152 84  241   # magenta
+DEFINE_COLOR   "MAGENTA2"       210 0   101   # magenta2
+
+DEFINE_COLOR   "ORANGE"         177 92  0     # orange
+DEFINE_COLOR   "PURPLE"         120 71  189   # purple
+
+DEFINE_COLOR   "RED"            245 42  101   # red
+DEFINE_COLOR   "RED1"           198 67  67    # red1
+
+DEFINE_COLOR   "TEAL"           17  140 116   # teal
+DEFINE_COLOR   "BLACK"          161 166 197   # terminal_black
+DEFINE_COLOR   "YELLOW"         140 108 62    # yellow
+
+DEFINE_COLOR   "GIT_ADD"        65  151 164   # git_add
+DEFINE_COLOR   "GIT_CHANGE"     80  109 156   # git_change
+DEFINE_COLOR   "GIT_DELETE"     196 121 129   # git_delete
+
+
+color "type=NORMAL fg=FG bg=BLACK"
+color "type=WELCOME fg=MAGENTA bg=BLACK bold=0"
+color "type=HEADINGS fg=FG bg=BG_DARK1"
+color "type=HEADINGS_ODD fg=FG bg=BG_DARK"
+color "type=MODE fg=BG_DARK1 bg=BLUE"
+color "type=NUMB fg=ORANGE bg=BLACK"
+color "type=STRG fg=GREEN bg=BLACK"
+color "type=DATEF fg=BLUE2 bg=BLACK"
+color "type=CELL_SELECTION fg=FG bg=BG_HIGHLIGHT"
+color "type=CELL_SELECTION_SC fg=BLACK bg=BLUE7"
+color "type=GRID_EVEN fg=FG bg=BLACK"
+color "type=GRID_ODD fg=FG bg=BG_DARK"
+color "type=EXPRESSION fg=CYAN bg=BLACK"
+color "type=CELL_ERROR fg=BLACK bg=RED"
+color "type=CELL_NEGATIVE fg=RED bg=BLACK"
+color "type=CELL_ID fg=BLUE7 bg=BG_DARK1"
+color "type=CELL_FORMAT fg=MAGENTA bg=BG_DARK1"
+color "type=CELL_CONTENT fg=COMMENT bg=BG_DARK1"
+color "type=INFO_MSG fg=BG_DARK1 bg=CYAN"
+color "type=ERROR_MSG fg=FG bg=BLACK"
+color "type=INPUT fg=FG_DARK bg=BG_DARK"
+color "type=HELP_HIGHLIGHT fg=BLUE7 bg=BLUE6"
+
+
+# # TokyoNight Storm – SC-IM Color Definitions
+# DEFINE_COLOR   "BG"             36  40  59    # bg (#24283b)
+# DEFINE_COLOR   "BG_DARK"        31  35  53    # bg_dark (#1f2335)
+# DEFINE_COLOR   "BG_DARK1"       27  30  45    # bg_dark1 (#1b1e2d)
+# DEFINE_COLOR   "BG_HIGHLIGHT"   41  46  66    # bg_highlight (#292e42)
+#
+# DEFINE_COLOR   "BLUE"           122 162 247   # blue
+# DEFINE_COLOR   "BLUE0"          61  89  161   # blue0
+# DEFINE_COLOR   "BLUE1"          42  195 222   # blue1
+# DEFINE_COLOR   "BLUE2"          13  185 215   # blue2
+# DEFINE_COLOR   "BLUE5"          137 221 255   # blue5
+# DEFINE_COLOR   "BLUE6"          180 249 248   # blue6
+# DEFINE_COLOR   "BLUE7"          57  75  112   # blue7
+#
+# DEFINE_COLOR   "COMMENT"        86  95  137   # comment
+# DEFINE_COLOR   "CYAN"           125 207 255   # cyan
+# DEFINE_COLOR   "DARK3"          84  92  126   # dark3
+# DEFINE_COLOR   "DARK5"          115 122 162   # dark5
+#
+# DEFINE_COLOR   "FG"             192 202 245   # fg
+# DEFINE_COLOR   "FG_DARK"        169 177 214   # fg_dark
+# DEFINE_COLOR   "FG_GUTTER"      59  66  97    # fg_gutter
+#
+# DEFINE_COLOR   "GREEN"          158 206 106   # green
+# DEFINE_COLOR   "GREEN1"         115 218 202   # green1
+# DEFINE_COLOR   "GREEN2"         65  166 181   # green2
+#
+# DEFINE_COLOR   "MAGENTA"        187 154 247   # magenta
+# DEFINE_COLOR   "MAGENTA2"       255 0   124   # magenta2
+#
+# DEFINE_COLOR   "ORANGE"         255 158 100   # orange
+# DEFINE_COLOR   "PURPLE"         157 124 216   # purple
+#
+# DEFINE_COLOR   "RED"            247 118 142   # red
+# DEFINE_COLOR   "RED1"           219 75  75    # red1
+#
+# DEFINE_COLOR   "TEAL"           26  188 156   # teal
+# DEFINE_COLOR   "BLACK"          65  72  104   # terminal_black
+# DEFINE_COLOR   "YELLOW"         224 175 104   # yellow
+#
+# DEFINE_COLOR   "GIT_ADD"        68  157 171   # git_add
+# DEFINE_COLOR   "GIT_CHANGE"     97  131 187   # git_change
+# DEFINE_COLOR   "GIT_DELETE"     145 76  84    # git_delete
+#
+# color "type=NORMAL fg=FG bg=BLACK"
+# color "type=WELCOME fg=MAGENTA bg=BLACK bold=0"
+# color "type=HEADINGS fg=FG bg=BG_DARK1"
+# color "type=HEADINGS_ODD fg=FG bg=BG_DARK"
+# color "type=MODE fg=BG_DARK1 bg=BLUE"
+# color "type=NUMB fg=ORANGE bg=BLACK"
+# color "type=STRG fg=GREEN bg=BLACK"
+# color "type=DATEF fg=BLUE2 bg=BLACK"
+# color "type=CELL_SELECTION fg=FG bg=BG_HIGHLIGHT"
+# color "type=CELL_SELECTION_SC fg=BLACK bg=BLUE5"
+# color "type=GRID_EVEN fg=FG bg=BLACK"
+# color "type=GRID_ODD fg=FG bg=BG_DARK"
+# color "type=EXPRESSION fg=CYAN bg=BLACK"
+# color "type=CELL_ERROR fg=BLACK bg=RED"
+# color "type=CELL_NEGATIVE fg=RED bg=BLACK"
+# color "type=CELL_ID fg=BLUE5 bg=BG_DARK1"
+# color "type=CELL_FORMAT fg=MAGENTA bg=BG_DARK1"
+# color "type=CELL_CONTENT fg=COMMENT bg=BG_DARK1"
+# color "type=INFO_MSG fg=BG_DARK1 bg=CYAN"
+# color "type=ERROR_MSG fg=FG bg=BLACK"
+# color "type=INPUT fg=FG_DARK bg=BG_DARK"
+# color "type=HELP_HIGHLIGHT fg=BLUE6 bg=BLUE7"
+#
+

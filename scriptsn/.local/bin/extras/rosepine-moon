@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-STORMDIR="$HOME/.config/themes/tokyonight-storm/"
+STORMDIR="$HOME/.config/themes/rosepine-night/"
 
 kitty_conf() {
   cp "$STORMDIR/kitty.conf" "$HOME/.config/kitty"
@@ -48,13 +48,6 @@ fish_config() {
 
 fish_config
 
-tokyo_fish() {
-  cp "$STORMDIR/tokyonight.fish" "$HOME/.config/fish/themes/"
-
-}
-
-tokyo_fish
-
 hypr_conf() {
   cp "$STORMDIR/hyprland.conf" "$HOME/.config/hypr" && hyprctl reload >/dev/null 2>&1
 }
@@ -95,7 +88,7 @@ scim_conf() {
 scim_conf
 
 wall_switch() {
-  hyprctl hyprpaper preload /home/chris/.config/themes/tokyonight-storm/wallpaper.png && hyprctl hyprpaper wallpaper eDP-1, /home/chris/.config/themes/tokyonight-storm/wallpaper.png
+  hyprctl hyprpaper preload /home/chris/.config/themes/rosepine-night/wallpaper.png && hyprctl hyprpaper wallpaper eDP-1, /home/chris/.config/themes/rosepine-night/wallpaper.png
 }
 
 wall_switch
