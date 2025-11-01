@@ -5,7 +5,7 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      flavour = "macchiato", -- change to latte, frappe, macchiato if desired
+      flavour = "latte", -- change to latte, frappe, macchiato if desired
       lsp_styles = {
         underlines = {
           errors = { "undercurl" },

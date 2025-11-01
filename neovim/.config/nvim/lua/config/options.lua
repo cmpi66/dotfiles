@@ -18,7 +18,7 @@ opt.sidescrolloff = 8
 opt.wrap = true
 opt.laststatus = 3 -- global statusline
 opt.showcmd = false
-opt.ruler = false
+opt.ruler = true
 opt.title = true
 opt.titlestring = "%<%F%=%l/%L - nvim"
 opt.colorcolumn = "99999" -- for indent guides
