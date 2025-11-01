@@ -1,10 +1,10 @@
 prompt-text = "Select "
 
-text-color = #b8c0e0
-prompt-color = #ed8796
-selection-color = #eed49f
-background-color = #24273a
-border-color = #8aadf4
+text-color = #4c4f69
+prompt-color = #d20f39
+selection-color = #df18e1d
+background-color = #eff1f5
+border-color = #1e66f5
 
 width = 25%
 padding-left = 0%

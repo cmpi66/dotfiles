@@ -12,7 +12,10 @@ export PATH="$PATH:/$HOME/.local/appimages"
 
 ## Stole this from luke. Make every sub directory from bin to path. 
 # export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')" 
-export PATH="$PATH:/$HOME/.local/share/cargo/bin"
+# export PATH="$PATH:/$HOME/.local/share/cargo/bin"
+
+# this is to fix treesitter cli breakage. old npm install
+export PATH="$HOME/.local/share/cargo/bin:$HOME/.local/.npm-global/bin:$PATH"
 
 ## Since im using fish i have to keep the xdg here. zsh-exports doesnt get read. 
 
@@ -54,7 +57,7 @@ export ANSIBLE_GALAXY_CACHE_DIR="${XDG_CACHE_HOME}/ansible/galaxy_cache"
 # export HISTFILE="$XDG_DATA_HOME/history"
 # export TMUX_TMPDIR="$XDG_RUNTIME_DIR" # can't attach to tmux ssh sessions, since it looks for the /tmp dir.
 export W3M_DIR="$XDG_DATA_HOME"/w3m
-export PATH=~/.local/.npm-global/bin:$PATH
+# export PATH=~/.local/.npm-global/bin:$PATH
 export N_PREFIX="$HOME/.local/n"
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc

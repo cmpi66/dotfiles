@@ -1,7 +1,7 @@
 local opts = { noremap = true, silent = false }
 
 local notes = require("config.notes")
-local zimg = require("config.zimg")
+-- local zimg = require("config.zimg")
 
 -- local image = require("image")
 -- ── Create notes ────────────────────────────────────────────────────────────────
@@ -48,7 +48,7 @@ vim.keymap.set("n", "<leader>z7", notes.launch_top7, { desc = "Notes: Top 7 rece
 -- end, { desc = "Notes: Recent (oldfiles)" })
 
 -- Open the markdown image under cursor in viewer (imv/swayimg)
-vim.keymap.set("n", "<leader>im", zimg.open_image_under_cursor, { desc = "Image: Open markdown image under cursor" })
+-- vim.keymap.set("n", "<leader>im", zimg.open_image_under_cursor, { desc = "Image: Open markdown image under cursor" })
 
 -- Take region screenshot -> (optional) annotate -> insert link
 -- vim.keymap.set("n", "<leader>is", function()
@@ -64,24 +64,6 @@ vim.keymap.set("n", "<leader>im", zimg.open_image_under_cursor, { desc = "Image:
 -- vim.keymap.set("n", "<leader>ir", function()
 --   image.reload()
 -- end, { desc = "Images: Reload inline images" })
-
--- Toggle Markdown checkbox under cursor
-vim.keymap.set("n", "<leader>tt", function()
-  local line = vim.api.nvim_get_current_line()
-  if line:match("%[ %]") then
-    line = line:gsub("%[ %]", "[x]", 1)
-  elseif line:match("%[x%]") then
-    line = line:gsub("%[x%]", "[ ]", 1)
-  end
-  vim.api.nvim_set_current_line(line)
-end, { desc = "Toggle Markdown checkbox" })
-
-vim.keymap.set("n", "<leader>tq", function()
-  local cwd = vim.fn.expand("~/.local/.src/zettlekasten")
-  local out = vim.fn.systemlist({ "rg", "--vimgrep", "-n", "-S", "--fixed-strings", "[ ]", cwd })
-  vim.fn.setqflist({}, " ", { title = "Unchecked tasks", lines = out })
-  vim.cmd("copen")
-end, { desc = "Tasks: Unchecked (quickfix)" })
 
 -- Visual mode: move selected lines up/down
 vim.keymap.set("x", "J", ":move '>+1<CR>gv-gv", opts)

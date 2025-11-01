@@ -30,7 +30,7 @@ vim.cmd("autocmd BufWritePost *.tex silent !compiler %:p")
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "zsh",
   callback = function()
-    require("nvim-treesitter.highlight").attach(0, "bash")
+    vim.treesitter.start(0, "bash")
   end,
 })
 

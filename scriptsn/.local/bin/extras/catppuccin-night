@@ -1,0 +1,94 @@
+#!/usr/bin/env bash
+
+STORMDIR="$HOME/.config/themes/catppuccin-night/"
+
+kitty_conf() {
+  cp "$STORMDIR/kitty.conf" "$HOME/.config/kitty"
+}
+
+kitty_reload() {
+  pkill -SIGUSR1 -u "$USER" -x kitty
+
+}
+
+kitty_conf
+
+kitty_reload
+
+btop_conf() {
+  cp "$STORMDIR/btop.conf" "$HOME/.config/btop" && pkill -SIGUSR2 btop
+}
+
+btop_conf
+
+ghostty_config() {
+  cp "$STORMDIR/config" "$HOME/.config/ghostty" && pkill -SIGUSR1 -u "$USER" -x ghostty
+
+}
+
+ghostty_config
+
+tofi_config() {
+  cp "$STORMDIR/tofi/config" "$HOME/.config/tofi"
+}
+
+tofi_config
+
+mako_config() {
+  cp "$STORMDIR/mako/config" "$HOME/.config/mako" && makoctl reload
+}
+
+mako_config
+
+# fish config, this also has fzf and bat exports
+
+fish_config() {
+  cp "$STORMDIR/config.fish" "$HOME/.config/fish"
+}
+
+fish_config
+
+hypr_conf() {
+  cp "$STORMDIR/hyprland.conf" "$HOME/.config/hypr" && hyprctl reload >/dev/null 2>&1
+}
+
+hypr_conf
+
+# tmux alsways struggles to load at times, figure out a better way to live reload
+tmux_conf() {
+  cp "$STORMDIR/skin.conf" "$HOME/.config/tmux/conf/" && tmux source-file ~/.config/tmux/tmux.conf >/dev/null
+}
+
+tmux_conf
+
+waybar_conf() {
+  cp "$STORMDIR/style.css" "$HOME/.config/waybar" && pkill -x waybar && hyprctl dispatch exec waybar >/dev/null 2>&1
+
+}
+
+waybar_conf
+
+eza_conf() {
+  cp "$STORMDIR/theme.yml" "$HOME/.config/eza"
+
+}
+
+eza_conf
+
+neovim_conf() {
+  cp "$STORMDIR/colorscheme.lua" "$HOME/.config/nvim/lua/plugins"
+}
+
+neovim_conf
+
+scim_conf() {
+  cp "$STORMDIR/scimrc" "$HOME/.config/sc-im/"
+}
+
+scim_conf
+
+wall_switch() {
+  hyprctl hyprpaper preload /home/chris/.config/themes/catppuccin-night/wallpaper.png && hyprctl hyprpaper wallpaper eDP-1, /home/chris/.config/themes/catppuccin-night/wallpaper.png
+}
+
+wall_switch

@@ -15,10 +15,10 @@ icons=1
 
 # Colors
 
-background-color=#24273a
-text-color=#b8c0e0
-border-color=#8aadf4
+background-color=#eff1f5
+text-color=#4c4f69
+border-color=#1e66f5
 # progress-color=over #363a4f
 
 [urgency=high]
-border-color=#ed8796
+border-color=#df8e1d
