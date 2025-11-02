@@ -15,7 +15,7 @@ if has-session; then
   launch_kitty_tmux
 else
 
-  tmux new-session -s pen -n port-vnc -d 'ssh -L 34761:localhost:34761 chris@10.27.27.18'
+  tmux new-session -s pen -n port-vnc -d 'ssh -L 39479:localhost:39479 chris@10.27.27.18'
   sleep 1
   tmux send-keys -t pen:1 'exegol start academy' C-m
   tmux new-window -t pen:2 -n win2 'ssh artixframe'

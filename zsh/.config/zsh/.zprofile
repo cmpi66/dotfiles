@@ -24,7 +24,7 @@ export PATH="$HOME/.local/share/cargo/bin:$HOME/.local/.npm-global/bin:$PATH"
 
 export editor="nvim"
 export visual="nvim"
-export browser="librewolf"
+export browser="qute-launch"
 export movplay="mpv"
 export term=xterm-256color
 export picview="imv"
@@ -74,7 +74,7 @@ export PASSWORD_STORE_EXTENSIONS_DIR="$XDG_DATA_HOME/.password-store/.extensions
 export PASSWORD_STORE_ENABLE_EXTENSIONS="true"
 export QT_QPA_PLATFORMTHEME="gtk2" # Have QT use gtk2 theme.
 # tokyonight-storm
-export BEMENU_OPTS='-i --center --width-factor 0.3.5 --line-height 40 --list 10 --border 2 --border-radius 8 --bdr "#7aa2f7" --fb "#24283b" --ff "#c0caf5" --nb "#24283b" --nf "#c0caf5" --tb "#24283b" --hb "#24283b" --tf "#f7768e" --hf "#e0af68" --af "#c0caf5" --ab "#24283b"'
+# export BEMENU_OPTS='-i --center --width-factor 0.3.5 --line-height 40 --list 10 --border 2 --border-radius 8 --bdr "#7aa2f7" --fb "#24283b" --ff "#c0caf5" --nb "#24283b" --nf "#c0caf5" --tb "#24283b" --hb "#24283b" --tf "#f7768e" --hf "#e0af68" --af "#c0caf5" --ab "#24283b"'
 
 # tokyonight-day
 # export BEMENU_OPTS='-i --center --width-factor 0.3.5 --line-height 40 --list 10 --border 2 --border-radius 8 --bdr "#237de9" --fb "#e1e2e7" --ff "#3760bf" --nb "#e1e2e7" --nf "#3760bf" --tb "#e1e2e7" --hb "#e1e2e7" --tf "#f52a65" --hf "#8c6c3e" --af "#3760bf" --ab "#e1e2e7"'
