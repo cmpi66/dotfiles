@@ -88,7 +88,7 @@ scim_conf() {
 scim_conf
 
 wall_switch() {
-  hyprctl hyprpaper preload /home/chris/.config/themes/catppuccin-night/wallpaper.png && hyprctl hyprpaper wallpaper eDP-1, /home/chris/.config/themes/catppuccin-night/wallpaper.png
+  hyprctl hyprpaper preload /home/chris/.config/themes/catppuccin-night/wallpaper-1.png && hyprctl hyprpaper wallpaper eDP-1, /home/chris/.config/themes/catppuccin-night/wallpaper-1.png
 }
 
 wall_switch

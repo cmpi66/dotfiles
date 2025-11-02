@@ -17,7 +17,7 @@ set TERM xterm-256color # This messes up Lunarvim on gentoobox ssh connection; w
 set EDITOR nvim
 set VISUAL nvim
 set TERMINAL kitty
-set BROWSER librewolf
+set BROWSER qute-launch
 
 ### SET MANPAGER
 ### "nvim" as manpager

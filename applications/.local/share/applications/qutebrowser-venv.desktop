@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Qutebrowser (venv)
+Exec=/home/chris/.local/bin/extras/qute-launch %u
+Terminal=false
+Type=Application
+Icon=qutebrowser
+MimeType=x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/about;text/html;application/xhtml+xml;
+Categories=Network;WebBrowser;
+
