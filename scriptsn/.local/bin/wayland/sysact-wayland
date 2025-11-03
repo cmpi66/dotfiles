@@ -11,7 +11,7 @@ wmpid() { # This function is needed if there are multiple instances of the windo
   echo "${tree%%)*}"
 }
 
-case "$(printf "🔒 lock\n🔃 reboot\n🖥️shutdown" | tofi --width 15% --height 15% --prompt-text 'Action: ')" in
+case "$(printf "🔒 lock\n🔃 reboot\n🖥️shutdown" | rofi -dmenu -p 'Action: ')" in
 '🔒 lock') swaylock -e -F -C /home/chris/.config/swaylock/config -i /home/chris/.local/bin/lock2.jpg ;;
 '🔃 reboot') doas sh -c "sync && openrc-shutdown -r now" ;;
 '🖥️shutdown') doas sh -c "sync && openrc-shutdown -p now" ;;

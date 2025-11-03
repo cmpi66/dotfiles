@@ -2,7 +2,7 @@
 
 export WM="hyprland"
 
-case "$(printf "󰄄 screenshot\n󰍹 screenshotregion\n save to clipboard\n󰙒 anotate" | tofi --width 20% --height 20% --prompt-text 'Screens: ')" in
+case "$(printf "󰄄 screenshot\n󰍹 screenshotregion\n save to clipboard\n󰙒 anotate" | rofi -dmenu -p 'Screens: ')" in
 '󰄄 screenshot') sleep 1 && hyprshot -m output -m active ;; # using sleep here so bemenu wont show up in screenshot
 '󰍹 screenshotregion') hyprshot -m region ;;
 ' save to clipboard') hyprshot -m region --clipboard-only ;;
