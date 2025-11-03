@@ -9,7 +9,12 @@ settings:
   content.javascript.clipboard:
     https://bril.pluralsight.com: access-paste
     https://github.com: access-paste
+  scrolling.smooth:
+    global: true
+  spellcheck.languages:
+    global:
+    - en-US
   statusbar.show:
-    global: never
+    global: always
   tabs.show:
     global: always

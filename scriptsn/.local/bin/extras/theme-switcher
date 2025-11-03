@@ -28,7 +28,7 @@
 
 export WM="hyprland"
 
-case "$(printf "tokyonight-storm\ntokyonight-dawn\nrose-pine-moon\nrose-pine-dawn\ncatppuccin-night\ncatppuccin-day" | tofi --width 15% --height 15% --prompt-text 'Switch Theme: ')" in
+case "$(printf "tokyonight-storm\ntokyonight-dawn\nrose-pine-moon\nrose-pine-dawn\ncatppuccin-night\ncatppuccin-day" | rofi -dmenu -p 'Switch Theme: ')" in
 'tokyonight-storm') night-theme ;;
 'tokyonight-dawn') day-theme ;;
 'rose-pine-moon') rosepine-moon ;;

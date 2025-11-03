@@ -34,6 +34,7 @@ c.tabs.show = "multiple"
 c.tabs.position = "top"
 # c.tabs.favicons.show = "never"
 # c.statusbar.show = "in-mode"
+c.completion.shrink = True
 
 # pfblocker  third party certs error supppresion
 c.content.tls.certificate_errors = 'ask-block-thirdparty'
@@ -44,6 +45,7 @@ c.editor.command = ["nvim", "{}"]
 c.url.default_page = "about:blank"
 c.url.start_pages = ["about:blank"]
 c.url.searchengines = {'DEFAULT': 'https://search.brave.com/search?q={}'}
+c.messages.timeout = 5000
 
 
 config.set("fileselect.handler", "external")
@@ -61,8 +63,9 @@ config.bind('D', 'undo')
 config.bind('xb', 'config-cycle statusbar.show always never')
 config.bind('xt', 'config-cycle tabs.show always never')
 config.bind('xx', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')
-config.bind('M', 'hint links spawn mpv {hint-url}')
-config.bind('Z', 'hint links spawn kitty yt-dlp {hint-url}')
+config.bind('m', 'spawn kitty yt-dlp {url}')
+config.bind('M', 'hint links spawn kitty yt-dlp {hint-url}')
+# config.bind('M', 'hint links spawn mpv {hint-url}')
 
 
 # save session when it closed

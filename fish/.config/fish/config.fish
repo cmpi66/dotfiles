@@ -26,7 +26,7 @@ set TERM xterm-256color # This messes up LunarVim; gives it some wierd ghosting 
 set EDITOR nvim
 set VISUAL nvim
 set TERMINAL kitty
-set BROWSER qute-launch
+set BROWSER quebrowser
 
 ### SET MANPAGER
 ### "nvim" as manpager

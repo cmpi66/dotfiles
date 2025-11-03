@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Set preferred launcher: choose between dmenu, fzf, bemenu, tofi
-PREFERED_LAUNCHER=tofi
+# Set preferred launcher: choose between dmenu, fzf, bemenu, rofi
+PREFERED_LAUNCHER=rofi
 
 # Set path where URLs will be stored
 URL_FILE_PATH="$HOME/.config/bmks"
@@ -26,8 +26,8 @@ bmks fzf
   manually choose fzf launcher
 bmks bemenu
   manually choose bemenu launcher
-bmks tofi
-  manually choose tofi launcher
+bmks rofi
+  manually choose rofi launcher
 
 Configuration is done by editing this script. Bookmarks are stored in $URL_FILE_PATH/$URL_FILE_NAME\n"
 }
@@ -75,8 +75,8 @@ launch_menu() {
   bemenu)
     bemenu --list 10
     ;;
-  tofi)
-    tofi --prompt-text "bmks: " --height 30% --width 30%
+  rofi)
+    rofi -dmenu -p "bmks: "
     ;;
   *)
     echo "Invalid launcher: $PREFERED_LAUNCHER" && exit 1
@@ -97,7 +97,7 @@ add)
   ;;
 del) bmks_del ;;
 ls) bmks_ls ;;
-dmenu | fzf | bemenu | tofi)
+dmenu | fzf | bemenu | rofi)
   PREFERED_LAUNCHER=$1
   bmks_display
   ;;

@@ -14,7 +14,7 @@ practicalvim="/home/chris/media/books/it-books/linux/practical-vim.pdf"
 bugbounty="/home/chris/media/books/it-books/hacking/Bug Bounty Bootcamp The Guide to Finding and Reporting Web Vulnerabilities (Vickie Li) (Z-Library).pdf"
 linuxcommandline="/home/chris/media/books/it-books/linux/TLCL-19.01.pdf"
 
-case "$(printf "󰂺 blackhatpython\n󰂺 blackhatbash\n󰂺 practicalvim\n󰂺 bugbounty\n󰂺 linux-commandline" | tofi --width 15% --height 15% --prompt-text 'Choose: ')" in
+case "$(printf "󰂺 blackhatpython\n󰂺 blackhatbash\n󰂺 practicalvim\n󰂺 bugbounty\n󰂺 linux-commandline" | rofi -dmenu -p 'Choose: ')" in
 '󰂺 blackhatpython') zathura "$blackhatpython" ;;
 '󰂺 blackhatbash') zathura "$blackhatbash" ;;
 '󰂺 practicalvim') zathura "$practicalvim" ;;

@@ -24,7 +24,7 @@ export PATH="$HOME/.local/share/cargo/bin:$HOME/.local/.npm-global/bin:$PATH"
 
 export editor="nvim"
 export visual="nvim"
-export browser="qute-launch"
+export browser="qutebrowser"
 export movplay="mpv"
 export term=xterm-256color
 export picview="imv"

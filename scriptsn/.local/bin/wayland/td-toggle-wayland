@@ -3,8 +3,8 @@
 # If transmission-daemon is running, will ask to kill, else will ask to start.
 
 if pidof transmission-daemon >/dev/null; then
-  [ "$(printf "No\\nYes" | tofi --width 15% --height 15% --prompt-text "Turn off transmission-daemon?")" = "Yes" ] && killall transmission-daemon && notify-send "transmission-daemon disabled."
+  [ "$(printf "No\\nYes" | rofi -dmenu -p "Turn off transmission-daemon?")" = "Yes" ] && killall transmission-daemon && notify-send "transmission-daemon disabled."
 else
   ifinstalled transmission-cli || exit
-  [ "$(printf "No\\nYes" | tofi --width 15% --height 15% --prompt-text "Turn on transmission daemon?")" = "Yes" ] && transmission-daemon && notify-send "transmission-daemon enabled."
+  [ "$(printf "No\\nYes" | rofi -dmenu -p "Turn on transmission daemon?")" = "Yes" ] && transmission-daemon && notify-send "transmission-daemon enabled."
 fi
