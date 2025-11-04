@@ -44,9 +44,20 @@ c.downloads.location.directory = '~/dl'
 c.editor.command = ["nvim", "{}"]
 c.url.default_page = "about:blank"
 c.url.start_pages = ["about:blank"]
-c.url.searchengines = {'DEFAULT': 'https://search.brave.com/search?q={}'}
+# c.url.searchengines = {'DEFAULT': 'https://search.brave.com/search?q={}'}
 c.messages.timeout = 5000
 
+c.url.searchengines = {
+# note - if you use duckduckgo, you can make use of its built in bangs, of which there are many! https://duckduckgo.com/bangs
+        'DEFAULT': 'https://search.brave.com/search?q={}',
+        ',aw': 'https://wiki.archlinux.org/?search={}',
+        ',apkg': 'https://archlinux.org/packages/?sort=&q={}&maintainer=&flagged=',
+        ',gh': 'https://github.com/search?o=desc&q={}&s=stars',
+        ',yt': 'https://www.youtube.com/results?search_query={}',
+        }
+
+
+c.completion.open_categories = ['searchengines', 'quickmarks', 'bookmarks', 'history', 'filesystem']
 
 
 config.set("fileselect.handler", "external")
@@ -87,10 +98,9 @@ c.content.webgl = False
 c.content.webrtc_ip_handling_policy = "default-public-interface-only"
 
 
-config.set("content.cookies.accept", "never", "https://*.doubleclick.net/*")
-config.set("content.cookies.accept", "never", "https://*.facebook.com/*")
-config.set("content.cookies.accept", "never", "https://*.google-analytics.com/*")
-
+# Block known trackers globally
+for tracker in ["*.doubleclick.net", "*.facebook.com", "*.google-analytics.com"]:
+    config.set("content.cookies.accept", "never", f"https://{tracker}/*")
 
 # Adblocking info -->
 # For yt ads: place the greasemonkey script yt-ads.js in your greasemonkey folder (~/.config/qutebrowser/greasemonkey).
@@ -121,7 +131,9 @@ c.content.blocking.adblock.lists = [
 
 
 # SECURITY HEADERS (browser-facing)
-c.content.headers.user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+# c.content.headers.user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+# c.content.headers.user_agent = "Mozilla/5.0 (X11; Linux x86_64 x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+
 
 c.aliases = {'q': 'quit', 'w': 'session-save', 'wq': 'quit --save'}
 

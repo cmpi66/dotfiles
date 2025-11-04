@@ -59,3 +59,6 @@ lunarvim/.local/share/lunarvim/lvim/.gitignore
 lunarvim/.local/share/lunarvim/site
 
 applications/.local/share/applications/start-tor-browser.desktop
+
+## stupid web
+qutebrowser/.config/qutebrowser/stupid-web
