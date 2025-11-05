@@ -89,7 +89,7 @@ element-icon {
 window {
     padding:          5;
     background-color: @background;
-    border:           3;
+    border:           2;
     width:            30%; // screen realestate
     height:            30%; // screen realestate
 
