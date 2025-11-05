@@ -89,7 +89,7 @@ autoload edit-command-line; zle -N edit-command-line
 # bindkey '^e' edit-command-line
 
 # Speedy keys
- xset r rate 210 40
+ # xset r rate 210 40
 
 # Environment variables set everywhere
 export EDITOR="nvim"

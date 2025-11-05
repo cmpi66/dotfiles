@@ -29,12 +29,13 @@ c.fonts.web.family.serif = 'monospace'
 c.fonts.web.family.standard = 'monospace'
 
 # INTERFACE
-# c.tabs.show = "switching"
-c.tabs.show = "multiple"
+c.tabs.show = "switching"
+# c.tabs.show = "multiple"
 c.tabs.position = "top"
 # c.tabs.favicons.show = "never"
 # c.statusbar.show = "in-mode"
 c.completion.shrink = True
+c.scrolling.bar = "never"
 
 # pfblocker  third party certs error supppresion
 c.content.tls.certificate_errors = 'ask-block-thirdparty'
@@ -71,7 +72,9 @@ config.bind('J', 'back')
 config.bind('K', 'forward')
 config.bind('H', 'tab-prev')
 config.bind('L', 'tab-next')
-config.bind('D', 'undo')
+config.bind('=', 'zoom-in')
+config.bind('+', 'zoom')
+# config.bind('D', 'undo')
 config.bind('xb', 'config-cycle statusbar.show always never')
 config.bind('xt', 'config-cycle tabs.show always never')
 config.bind('xx', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')
