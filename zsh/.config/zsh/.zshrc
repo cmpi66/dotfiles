@@ -94,7 +94,7 @@ autoload edit-command-line; zle -N edit-command-line
 
 # Speedy keys
  # xset r rate 210 40
-xset r rate 300 50
+# xset r rate 300 50
 
 # Environment variables set everywhere
 export EDITOR="lvim"

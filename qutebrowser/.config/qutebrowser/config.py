@@ -29,12 +29,13 @@ c.fonts.web.family.serif = 'monospace'
 c.fonts.web.family.standard = 'monospace'
 
 # INTERFACE
-# c.tabs.show = "switching"
-c.tabs.show = "multiple"
+c.tabs.show = "switching"
+# c.tabs.show = "multiple"
 c.tabs.position = "top"
 # c.tabs.favicons.show = "never"
 # c.statusbar.show = "in-mode"
 c.completion.shrink = True
+c.scrolling.bar = "never"
 # pfblocker  third party certs error supppresion
 c.content.tls.certificate_errors = 'ask-block-thirdparty'
 
@@ -71,7 +72,9 @@ config.bind('J', 'back')
 config.bind('K', 'forward')
 config.bind('H', 'tab-prev')
 config.bind('L', 'tab-next')
-config.bind('D', 'undo')
+config.bind('=', 'zoom-in')
+config.bind('+', 'zoom')
+# config.bind('D', 'undo')
 config.bind('xb', 'config-cycle statusbar.show always never')
 config.bind('xt', 'config-cycle tabs.show always never')
 config.bind('xx', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')
@@ -137,3 +140,6 @@ c.aliases = {'q': 'quit', 'w': 'session-save', 'wq': 'quit --save'}
 config.bind('xk>', 'spawn --userscript qute-keepassxc --key FB1A5452C181A3F5 ', mode='insert')
 config.bind('xs', 'spawn --userscript qute-keepassxc --key FB1A5452C181A3F5', mode='normal')
 
+# js error on arch recent version 11-3-25
+c.content.javascript.log_message.excludes = {"userscript:_qute_stylesheet": ["*Refused to apply inline style because it violates the following Content Security Policy directive: *"], 
+                                             "userscript:_qute_js": ["*TrustedHTML*"]}

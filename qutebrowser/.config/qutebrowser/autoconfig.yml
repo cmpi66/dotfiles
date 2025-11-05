@@ -7,14 +7,19 @@
 config_version: 2
 settings:
   content.javascript.clipboard:
+    https://academy.hackthebox.com: access-paste
     https://bril.pluralsight.com: access-paste
     https://github.com: access-paste
   scrolling.smooth:
-    global: true
+    global: false
   spellcheck.languages:
     global:
     - en-US
   statusbar.show:
+    global: never
+  tabs.favicons.show:
     global: always
+  tabs.last_close:
+    global: ignore
   tabs.show:
     global: always

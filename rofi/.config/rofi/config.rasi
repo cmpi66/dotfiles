@@ -5,25 +5,25 @@
 
 * {
   selected-active-foreground:  @background;
-  lightfg:                     @text;
+  lightfg:                     @text; //this changes the bar selection
   separatorcolor:              @foreground;
   urgent-foreground:           @red;
   alternate-urgent-background: @lightbg;
-  lightbg:                     @mantle;
+  lightbg:                     @background; // this is the odd even color
   background-color:            transparent;
-  border-color:                @foreground;
-  normal-background:           @background;
+  border-color:                @blue;
+  normal-background:           @background; // again the odd even color
   selected-urgent-background:  @red;
   alternate-active-background: @lightbg;
   spacing:                     2;
-  alternate-normal-foreground: @foreground;
+  alternate-normal-foreground: @foreground; // odd even but appicable to the text itself
   urgent-background:           @background;
-  selected-normal-foreground:  @lightbg;
+  selected-normal-foreground:  @lightbg; // this is the current selection but foreground, its ugly if blue
   active-foreground:           @blue;
   background:                  @base;
   selected-active-background:  @blue;
   active-background:           @background;
-  selected-normal-background:  @lightfg;
+  selected-normal-background:  @blue;  // this is the current selection background e.g when you select an item color 
   alternate-normal-background: @lightbg;
   foreground:                  @text;
   selected-urgent-foreground:  @background;
@@ -77,7 +77,7 @@ element alternate.active {
 element-text {
     background-color: transparent;
     cursor:           inherit;
-    highlight:        inherit;
+    highlight:        @yellow; // the fuzzy text color
     text-color:       inherit;
 }
 element-icon {
@@ -89,7 +89,9 @@ element-icon {
 window {
     padding:          5;
     background-color: @background;
-    border:           1;
+    border:           3;
+    // width:            30%; // screen realestate
+    // height:            30%; // screen realestate
 }
 mainbox {
     padding: 0;
@@ -155,7 +157,7 @@ case-indicator {
     text-color: @normal-foreground;
 }
 entry {
-    text-color:        @normal-foreground;
+    text-color:        @normal-foreground; 
     cursor:            text;
     spacing:           0;
     placeholder-color: Gray;

@@ -9,12 +9,10 @@ consume: 0
 crossfade: 0
 mixrampdb: 0
 mixrampdelay: -1
-lastloadedplaylist: 
+lastloadedplaylist: Metallica/1984 - Ride The Lightning/Metallica - Ride The Lightning.m3u
 playlist_begin
 0:Metallica/1984 - Ride The Lightning/04. Fade To Black.flac
-1:sorted/temp-before-sorting/Apparat-Goodbye.opus
-2:sorted/temp-before-sorting/Look On Down From The Bridge [p3NZn0mA_XI].opus
+1:sorted/temp-before-sorting/Look On Down From The Bridge [p3NZn0mA_XI].opus
+2:sorted/temp-before-sorting/College & Electric Youth - A Real Hero (Drive Original Movie Soundtrack) [-DSVDcw6iW8].opus
 3:sorted/temp-before-sorting/CHROMATICS ＂INTO THE BLACK＂ (Lyric Video) [uie8ddDqoK8].opus
-4:sorted/temp-before-sorting/Kavinsky - Nightcall (Drive Original Movie Soundtrack) (Official Audio) [MV_3Dpw-BRY].opus
-5:sorted/temp-before-sorting/College & Electric Youth - A Real Hero (Drive Original Movie Soundtrack) [-DSVDcw6iW8].opus
 playlist_end
