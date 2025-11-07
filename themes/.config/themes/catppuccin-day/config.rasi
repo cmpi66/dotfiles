@@ -1,6 +1,6 @@
-// @import "catppuccin-latte"
+@import "catppuccin-latte"
 // @import "catppuccin-frappe"
-@import "catppuccin-macchiato"
+// @import "catppuccin-macchiato"
 // @import "catppuccin-mocha"
 
 * {
@@ -89,7 +89,7 @@ element-icon {
 window {
     padding:          5;
     background-color: @background;
-    border:           3;
+    border:           2;
     border-radius:    5;
     width:            35%; // screen realestate
     // height:            30%; // screen realestate, cant choose number of lines if this is enabled

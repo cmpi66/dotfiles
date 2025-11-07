@@ -89,7 +89,7 @@ element-icon {
 window {
     padding:          5;
     background-color: @background;
-    border:           3;
+    border:           2;
     border-radius:    5;
     width:            35%; // screen realestate
     // height:            30%; // screen realestate, cant choose number of lines if this is enabled

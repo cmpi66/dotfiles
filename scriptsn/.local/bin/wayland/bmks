@@ -76,7 +76,7 @@ launch_menu() {
     bemenu --list 10
     ;;
   rofi)
-    rofi -dmenu -p "bmks: "
+    rofi -dmenu -i -p "bmks: "
     ;;
   *)
     echo "Invalid launcher: $PREFERED_LAUNCHER" && exit 1

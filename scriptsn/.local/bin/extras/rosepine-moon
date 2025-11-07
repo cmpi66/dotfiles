@@ -40,6 +40,12 @@ mako_config() {
 
 mako_config
 
+rofi_config() {
+  cp "$STORMDIR/config.rasi" "$HOME/.config/rofi/config.rasi"
+}
+
+rofi_config
+
 # fish config, this also has fzf and bat exports
 
 fish_config() {

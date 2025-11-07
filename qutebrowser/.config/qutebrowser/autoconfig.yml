@@ -16,7 +16,7 @@ settings:
     global:
     - en-US
   statusbar.show:
-    global: never
+    global: always
   tabs.favicons.show:
     global: always
   tabs.last_close:

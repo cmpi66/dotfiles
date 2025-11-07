@@ -34,6 +34,12 @@ tofi_config() {
 
 tofi_config
 
+rofi_config() {
+  cp "$STORMDIR/config.rasi" "$HOME/.config/rofi/config.rasi"
+}
+
+rofi_config
+
 mako_config() {
   cp "$STORMDIR/mako/config" "$HOME/.config/mako" && makoctl reload
 }
