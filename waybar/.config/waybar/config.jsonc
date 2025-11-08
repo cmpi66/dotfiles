@@ -25,6 +25,7 @@
   "modules-right": [
     "tray",
     "pulseaudio",
+    "custom/recording",
     // "custom/mail",
     "custom/torrent",
     // "custom/emerge",
@@ -213,8 +214,12 @@
     "interval": 30,
     "exec": "~/.local/bin/slstatus/torrent.sh",
   },
+  "custom/recording": {
+    "interval": 5,
+    "exec": "~/.local/bin/slstatus/recording-indicator.sh",
+  },
   "custom/icon": {
-    "format": ""
+    "format": " "
   },
   "custom/kern": {
     "format": "{icon} {text}",

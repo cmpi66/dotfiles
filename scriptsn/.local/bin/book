@@ -1,4 +1,3 @@
-
 #!/usr/bin/sh
 
 # Requires ffmpeg (audio splitting) and my `tag` wrapper script.

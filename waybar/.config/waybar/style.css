@@ -52,6 +52,7 @@ button {
 #custom-media,
 #custom-emerge,
 #custom-torrent,
+#custom-recording,
 #custom-internet,
 #custom-kern,
 #custom-music,
@@ -254,6 +255,16 @@ label:focus {
 #custom-torrent {
     color: @text;
     background-color: @base;
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
+}
+#custom-recording {
+    color: @green;
+    background-color: @surface0;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;

@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+doas ffmpeg \
+  -vaapi_device /dev/dri/renderD128 \
+  -f kmsgrab -framerate 30 -device /dev/dri/card0 -crtc_id 79 -i - \
+  -vf "hwmap=derive_device=vaapi,scale_vaapi=format=nv12,fps=fps=30" \
+  -c:v hevc_vaapi -pix_fmt vaapi -rc_mode CQP -qp 18 \
+  -y out_vid.mkv &
+
+# Record microphone; using a slight delay to line up better with webcam preview window
+ffmpeg -hide_banner -v quiet \
+  -f alsa -sample_rate 48000 -channels 1 -i plughw:5,0 \
+  -af "adelay=150, highpass=f=80, lowpass=f=18000[PASS]; \
+     [PASS]agate=range=0:threshold=0.00125:attack=10:release=100:knee=3[EXP]; \
+     [EXP]volume=volume=14dB:precision=fixed[GAIN]; \
+     [GAIN]equalizer=f=120:t=q:w=1:g=-1, \
+           equalizer=f=250:t=q:w=1:g=-2, \
+           equalizer=f=440:t=q:w=6:g=-5[EQ1]; \
+     [EQ1]acompressor=threshold=0.159:ratio=3:attack=10:release=100:knee=3[COMP]; \
+     [COMP]equalizer=f=1500:t=q:w=1.25:g=1, \
+           equalizer=f=5000:t=q:w=2.75:g=1, \
+           highshelf=g=1:f=9000:t=q:w=1[EQ2]; \
+     [EQ2]deesser=i=0.70:m=0.70:s=o[DS]; \
+     [DS]adeclick" \
+  -acodec pcm_s16le \
+  -y out_mic.wav
+
+# End everything after e.g. ctrl+c
+kill %1
