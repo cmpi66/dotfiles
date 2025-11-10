@@ -15,11 +15,11 @@ if has-session; then
   launch_kitty_tmux
 else
 
-  tmux new-session -s ja -n scim -d 'cd ~/media/sec-future/resume/sec-resume/per-role-resumes/app-tracker/; sc-im --quiet jobapps-2025-new.csv; fish -i'
-  tmux new-window -t ja:2 -n search 'cd ~/media/sec-future/resume/sec-resume/per-role-resumes/app-tracker/; nvim jobapps-2025-new.csv; fish -i' # this is needed becasue sc-im doesnt have search the same as vim, too many keystrokes and case sensitive.
-  tmux new-window -t ja:3 -n resumes 'cd ~/media/sec-future/resume/sec-resume/per-role-resumes/; nvim .; fish -i'
-  tmux new-window -t ja:4 -n copy-bullets 'cd ~/media/sec-future/resume/sec-resume/per-role-resumes/; nvim _iteration-5-baseline-more-meaty-9-8-25.md; fish -i'
-  tmux new-window -t ja:5 -n keywords 'cd ~/media/sec-future/resume/sec-resume/per-role-resumes/; nvim cybersecurity_keywords.md; fish -i'
+  tmux new-session -s ja -n scim -d 'cd ~/media/sec-future/resume/sec-resume/per-role-resumes/app-tracker/; sc-im --quiet jobapps-2025-new.csv; zsh -i'
+  tmux new-window -t ja:2 -n search 'cd ~/media/sec-future/resume/sec-resume/per-role-resumes/app-tracker/; nvim jobapps-2025-new.csv; zsh -i' # this is needed becasue sc-im doesnt have search the same as vim, too many keystrokes and case sensitive.
+  tmux new-window -t ja:3 -n resumes 'cd ~/media/sec-future/resume/sec-resume/per-role-resumes/; nvim .; zsh -i'
+  tmux new-window -t ja:4 -n copy-bullets 'cd ~/media/sec-future/resume/sec-resume/per-role-resumes/; nvim _iteration-5-baseline-more-meaty-9-8-25.md; zsh -i'
+  tmux new-window -t ja:5 -n keywords 'cd ~/media/sec-future/resume/sec-resume/per-role-resumes/; nvim cybersecurity_keywords.md; zsh -i'
   tmux select-window -t ja:1
   launch_kitty_tmux
 fi

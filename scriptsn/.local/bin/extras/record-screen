@@ -2,7 +2,7 @@
 
 doas ffmpeg \
   -vaapi_device /dev/dri/renderD128 \
-  -f kmsgrab -framerate 30 -device /dev/dri/card0 -crtc_id 79 -i - \
+  -f kmsgrab -framerate 30 -device /dev/dri/card1 -crtc_id 79 -i - \
   -vf "hwmap=derive_device=vaapi,scale_vaapi=format=nv12,fps=fps=30" \
   -c:v h264_vaapi -pix_fmt vaapi -rc_mode CQP -qp 18 \
   -y out_vid.mkv &
@@ -27,4 +27,3 @@ ffmpeg -hide_banner -v quiet \
 
 # End everything after e.g. ctrl+c
 kill %1
-

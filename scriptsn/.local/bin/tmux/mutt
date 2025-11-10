@@ -13,7 +13,7 @@ if has-session ; then
   alacritty --class mutt,mutt --config-file /home/chris/.config/alacritty/tmux.toml -e tmux attach-session -t mutt 
 else
 
-tmux new-session -s mutt -n mail -d 'neomutt; fish -i' 
+tmux new-session -s mutt -n mail -d 'neomutt; zsh -i' 
 alacritty --class mutt,mutt --config-file /home/chris/.config/alacritty/tmux.toml -e tmux attach-session -t mutt
 
 fi

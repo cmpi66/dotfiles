@@ -10,9 +10,9 @@ if has-session; then
   tmux attach-session -t javascript
 else
 
-  tmux new-session -s javascript -n js -d 'cd ~/.local/.src/projects/js-basics/; nvim index.html index.js; fish -i'
-  # tmux new-window -t javascript:2 -n notes 'cd ~/media/; lvim javascript.csv; fish -i'
-  # tmux new-window -t javascript:3 -n keywords 'cd ~/media/resume/; lvim it-job-keywords.md; fish -i'
+  tmux new-session -s javascript -n js -d 'cd ~/.local/.src/projects/js-basics/; nvim index.html index.js; zsh -i'
+  # tmux new-window -t javascript:2 -n notes 'cd ~/media/; lvim javascript.csv; zsh -i'
+  # tmux new-window -t javascript:3 -n keywords 'cd ~/media/resume/; lvim it-job-keywords.md; zsh -i'
   tmux select-window -t javascript:1
   tmux attach-session -t javascript
 
