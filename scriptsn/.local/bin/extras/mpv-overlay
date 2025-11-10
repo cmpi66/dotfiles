@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+mpv --video-crop=2740x1800+600+360 --geometry=900x600 --keepaspect=no --vf=hflip,fps=fps=30 \
+  --no-fullscreen --no-audio \
+  --demuxer-lavf-format=video4linux2 av://v4l2:/dev/video0 --profile=low-latency --untimed \
+  --really-quiet --title="mpv-recording"
+

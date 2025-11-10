@@ -1,0 +1,6 @@
+#!/bin/sh
+pkill -9 mpv
+pkill -9 ffmpeg
+
+
+

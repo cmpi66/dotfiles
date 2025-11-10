@@ -1,20 +1,26 @@
 #!/bin/bash
 
 export DISPLAY=:0.0
-BATT_FILE="/sys/class/power_supply/BAT1/status"
+# BATT_FILE="/sys/class/power_supply/BAT1/status"
+#
+# if [ -f "$BATT_FILE" ]; then
+#   BATT=$(cat "$BATT_FILE")
+#
+#   if [[ "$BATT" == "Discharging" ]]; then
+#     /usr/bin/powerprofilesctl set balanced
+#     notify-send "Power Profile Changed" "Switched to Balanced mode."
+#   elif [[ "$BATT" == "Charging" ]]; then
+#     /usr/bin/powerprofilesctl set performance
+#     notify-send "Power Profile Changed" "Switched to Performance mode."
+#   fi
+# else
+#   notify-send "Battery status file not found: $BATT_FILE"
+#   exit 1
+# fi
 
-if [ -f "$BATT_FILE" ]; then
-    BATT=$(cat "$BATT_FILE")
-    
-    if [[ "$BATT" == "Discharging" ]]; then
-    doas /usr/bin/powerprofilesctl set balanced
-        notify-send "Power Profile Changed" "Switched to Balanced mode."
-    elif [[ "$BATT" == "Charging" ]]; then
-    doas /usr/bin/powerprofilesctl set performance
-        notify-send "Power Profile Changed" "Switched to Performance mode."
-    fi
-else
-    notify-send "Battery status file not found: $BATT_FILE"
-    exit 1
-fi
-
+case "$(printf "power-saver\nbalanced\nperformance" | rofi -dmenu -p 'Chnage power profile: ')" in
+'power-saver') powerprofilesctl set power-saver && notify-send "Changed to power-saver" ;;
+'balanced') powerprofilesctl set balanced && notify-send "Changed to balanced" ;;
+'performance') powerprofilesctl set performance && notify-send "Changed to performance" ;;
+*) exit 0 ;;
+esac
