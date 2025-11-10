@@ -13,7 +13,7 @@ if has-session ; then
   foot --title mutt  -e tmux attach-session -t mutt 
 else
 
-tmux new-session -s mutt -n mail -d 'neomutt; fish -i' 
+tmux new-session -s mutt -n mail -d 'neomutt; zsh -i' 
 foot --title mutt -e tmux attach-session -t mutt
 
 fi

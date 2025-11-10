@@ -21,7 +21,7 @@ else
   tmux new-window -t pen:2 -n win2 'ssh artixframe'
   sleep 1
   tmux send-keys -t pen:2 'exegol start academy' C-m
-  # tmux new-window -t pen:3 -n keywords 'cd ~/media/resume/; nvim it-job-keywords.md; fish -i'
+  # tmux new-window -t pen:3 -n keywords 'cd ~/media/resume/; nvim it-job-keywords.md; zsh -i'
   tmux select-window -t pen:1
   launch_kitty_tmux
 fi

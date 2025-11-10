@@ -10,9 +10,9 @@ if has-session; then
   foot --title ema -e tmux attach-session -t zettle
 else
 
-  # tmux new-session -s zettle -n ema -d 'cd ~/.local/.src/zettlekasten; killall emanote || emanote run --port=8080; fish -i'
-  tmux new-session -s zettle -n notes -d 'cd ~/.local/.src/zettlekasten/; nvim index.md; fish -i'
-  # tmux new-window  -t zettle:3 -n ema   'cd ~/.local/.src/zettlekasten; killall emanote; emanote run --port=8080; fish -i'
+  # tmux new-session -s zettle -n ema -d 'cd ~/.local/.src/zettlekasten; killall emanote || emanote run --port=8080; zsh -i'
+  tmux new-session -s zettle -n notes -d 'cd ~/.local/.src/zettlekasten/; nvim index.md; zsh -i'
+  # tmux new-window  -t zettle:3 -n ema   'cd ~/.local/.src/zettlekasten; killall emanote; emanote run --port=8080; zsh -i'
   tmux select-window -t zettle:1
   foot --title ema -e tmux attach-session -t zettle
 

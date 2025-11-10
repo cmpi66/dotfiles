@@ -17,7 +17,7 @@ else
 
   tmux new-session -s bashdev -n blackhat -d 'cd ~/.local/.src/projects/sec/bash/blackhatbash/; nvim .;'
   tmux new-window -t bashdev:2 -n udemy 'cd ~/.local/.src/projects/sec/bash/udemy-course/; nvim .;'
-  # tmux new-window -t bashdev:3 -n keywords 'cd ~/media/resume/; nvim it-job-keywords.md; fish -i'
+  # tmux new-window -t bashdev:3 -n keywords 'cd ~/media/resume/; nvim it-job-keywords.md; zsh -i'
   tmux select-window -t bashdev:1
   launch_kitty_tmux
 fi
