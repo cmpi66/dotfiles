@@ -51,6 +51,9 @@ mpd/.config/mpd/database
 tmux/.config/tmux/plugins
 tmux/.config/tmux/resurrect
 
+zsh/.config/zsh/.zsh_history
+zsh/.config/zsh/.zcompdump
+
 mpv/.config/mpv/watch_later
 
 lunarvim/.local/share/lunarvim/site

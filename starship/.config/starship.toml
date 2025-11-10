@@ -13,7 +13,7 @@ format = """$all"""
 scan_timeout = 10
 
 # Wait 700 milliseconds for starship command  to check run this way the task command won't time out
-command_timeout = 1000
+# command_timeout = 1000
 
 # [custom.pending]
 # command = "task count rc.gc=off rc.verbose=nothing status:pending"

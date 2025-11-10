@@ -1,4 +1,4 @@
-#files: 1037	version: 5.9
+#files: 1038	version: 5.9
 
 _comps=(
 '-' '_precommand'
@@ -1753,6 +1753,7 @@ _comps=(
 'yt-dlp' '_yt-dlp'
 'yum' '_yum'
 'yumdb' '_yum'
+'zap' '_zap'
 'zargs' '_zargs'
 'zathura' '_zathura'
 'zcalc' '_zcalc'
@@ -2125,7 +2126,7 @@ autoload -Uz _arch-chroot _atuin _bat _br _broot \
             _zcalc_line _zcompile _zed _zftp _zle \
             _zmodload _zmv _zparseopts _zpty _zsh-mime-handler \
             _zsocket _zstyle _ztodo _hwinfo _osc \
-            _SUSEconfig _yast _zypper
+            _SUSEconfig _yast _zypper _zap
 autoload -Uz +X _call_program
 
 typeset -gUa _comp_assocs
