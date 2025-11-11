@@ -28,12 +28,6 @@ ghostty_config() {
 
 ghostty_config
 
-tofi_config() {
-  cp "$DAYDIR/tofi/config" "$HOME/.config/tofi"
-}
-
-tofi_config
-
 rofi_config() {
   cp "$DAYDIR/config.rasi" "$HOME/.config/rofi/config.rasi"
 }
@@ -73,13 +67,6 @@ waybar_conf() {
 }
 
 waybar_conf
-
-eza_conf() {
-  cp "$DAYDIR/theme.yml" "$HOME/.config/eza"
-
-}
-
-eza_conf
 
 neovim_conf() {
   cp "$DAYDIR/colorscheme.lua" "$HOME/.config/nvim/lua/plugins"
