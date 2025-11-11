@@ -28,12 +28,6 @@ ghostty_config() {
 
 ghostty_config
 
-tofi_config() {
-  cp "$STORMDIR/tofi/config" "$HOME/.config/tofi"
-}
-
-tofi_config
-
 mako_config() {
   cp "$STORMDIR/mako/config" "$HOME/.config/mako" && makoctl reload
 }
@@ -73,13 +67,6 @@ waybar_conf() {
 }
 
 waybar_conf
-
-eza_conf() {
-  cp "$STORMDIR/theme.yml" "$HOME/.config/eza"
-
-}
-
-eza_conf
 
 neovim_conf() {
   cp "$STORMDIR/colorscheme.lua" "$HOME/.config/nvim/lua/plugins"

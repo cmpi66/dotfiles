@@ -5,7 +5,7 @@ plug "zsh-users/zsh-autosuggestions"
 plug "hlissner/zsh-autopair"
 plug "zap-zsh/supercharge"
 plug "zap-zsh/vim"
-# plug "zap-zsh/zap-prompt"
+plug "cmpi66/zap-prompt"
 plug "zap-zsh/fzf"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "zsh-users/zsh-history-substring-search"
@@ -23,7 +23,6 @@ HISTFILE="$XDG_STATE_HOME"/zsh/history
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc"
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/functionrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/functionrc"
 
-source /home/chris/.config/broot/launcher/bash/br
 source "$HOME/.config/zsh/plugins/catppuccin_macchiato-zsh-syntax-highlighting.zsh"
 source "$HOME/.config/zsh/plugins/fzf-git.sh"
 
@@ -67,7 +66,7 @@ export FZF_DEFAULT_OPTS=" \
 --color=border:#6E738D,label:#CAD3F5"
 
 eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"   
+# eval "$(starship init zsh)"   
 eval "$(fnm env --use-on-cd --shell zsh)"
 eval "$(atuin init zsh)"
 
