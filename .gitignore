@@ -55,7 +55,8 @@ zsh/.config/zsh/.zsh_history
 zsh/.config/zsh/.zcompdump
 
 mpv/.config/mpv/watch_later
-office/*
+office
+scriptsn/.local/bin/extras/keepmenu
 
 lunarvim/.local/share/lunarvim/site
 

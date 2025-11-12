@@ -69,8 +69,12 @@ alias tabs="xargs -n1 librewolf-bin <"
 alias mpv="mpv --fullscreen"
 # alias se="br --conf ~/.config/broot/open.hjson ~/.local/bin/"
 alias idrivemn="rclone mount IdriveEncrypt:/ /mnt/idrive/ --vfs-cache-mode full --daemon"
+alias p="wl-paste >"
 
 se() {
   choice="$(find -L "$HOME/.local/bin" -type f | sed "s|$HOME/.local/bin/||" | fzf)"
   [[ -n "$choice" ]] && $EDITOR "$(readlink -f "$HOME/.local/bin/$choice")"
+}
+checkapp() {
+  rg -i "$1" ~/media/sec-future/resume/sec-resume/per-role-resumes/app-tracker/jobapps-2025-new.csv
 }
