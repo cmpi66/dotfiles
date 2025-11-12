@@ -5,9 +5,6 @@
 
 KITTY_CMD="kitty --title tmux-session --class tmux-session"
 
-# Load zoxide
-eval "$(zoxide init bash)"
-
 # If user passed an argument (e.g. `t notes`)
 if [ "$1" ]; then
   RESULT=$(z "$@" && pwd)

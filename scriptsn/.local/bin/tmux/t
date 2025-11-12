@@ -11,7 +11,6 @@ __fzfcmd() {
 # Parse optional argument
 if [ "$1" ]; then
   # Argument is given
-  eval "$(zoxide init bash)"
   RESULT=$(z $@ && pwd)
 else
   # No argument is given. Use FZF
