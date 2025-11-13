@@ -3,7 +3,6 @@
 export WM="hyprland"
 
 case "$(printf "󰄄 screenshot\n󰍹 screenshotregion\n screenshot-window\n save to clipboard\n󰙒 anotate-screenshot\n󰎁 screencast\n󰖠 mpvoverlay\n killscreencast\ncombine-screencast" | rofi -dmenu -p 'Screens: ')" in
-'󰄄 screenshot') sleep 0.5 && hyprshot -m output -m active ;; # using sleep here so bemenu wont show up in screenshot
 '󰍹 screenshotregion') hyprshot -m region ;;
 ' screenshot-window') hyprshot -m window ;;
 ' save to clipboard') hyprshot -m region --clipboard-only ;;

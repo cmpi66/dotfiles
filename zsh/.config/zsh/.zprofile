@@ -28,7 +28,6 @@ export PATH="$HOME/.local/share/cargo/bin:$HOME/.local/.npm-global/bin:$PATH"
 export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/shell/inputrc"
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 export LYNX_CFG_PATH="$XDG_CONFIG_HOME"/lynx.cfg
-export LESSHISTFILE="-"
 export NOTMUCH_CONFIG=$XDG_CONFIG_HOME/notmuch/default/config
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
@@ -39,7 +38,6 @@ export GIT_CONFIG="$XDG_CONFIG_HOME/git/config" ## This breaks aur packages give
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/.password-store"
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
-# export HISTFILE="$XDG_DATA_HOME/zsh/history"
 export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config" 
 export STARDICT_DATA_DIR="$XDG_DATA_HOME"/dic
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
@@ -62,6 +60,9 @@ export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 # export QT_QPA_PLATFORMTHEME="gtk2" # Have QT use gtk2 theme. # not sure if this is needed anymore for my wayland setup
 export OLLAMA_MODELS=$XDG_DATA_HOME/ollama/models
+
+[ ! -f "$XDG_CONFIG_HOME/shell/shortcutrc" ] && setsid -f shortcuts >/dev/null 2>&1
+
 
 # with X removed this was needed or else tmux would launch hyprland within itself, weird behavior.
 if [ -z "$WAYLAND_DISPLAY" ] && [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then

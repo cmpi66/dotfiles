@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if ! gpg --card-status 2>/dev/null | grep -q 'Yubico'; then
+  notify-send "❌ No YubiKey smartcard detected"
+  exit 1
+fi
+
+# === SELECT ENTRY ===
+entry=$(find ~/.local/share/.password-store -name '*.gpg' |
+  sed 's|.*/||;s/\.gpg$//' |
+  sort |
+  rofi -dmenu -i -p "🔐 Select entry")
+[ -z "$entry" ] && exit 0
+
+# === LOAD ENTRY CONTENT ===
+raw=$(pass show "$entry")
+password=$(echo "$raw" | head -n1)
+fields=$(echo "$raw" | tail -n +2 | grep -E '^[A-Za-z0-9 _-]+:' || true)
+
+# === BUILD MENU OPTIONS ===
+menu_options="password"
+if [[ -n "$fields" ]]; then
+  menu_options+="\n$(echo "$fields" | cut -d: -f1)"
+fi
+
+# === INTERACTIVE FIELD COPY LOOP ===
+while true; do
+  field=$(echo -e "$menu_options" | rofi -dmenu -i -p "📋 Copy field from [$entry]")
+  [[ -z "$field" ]] && break
+
+  if [[ "$field" == "password" ]]; then
+    printf '%s' "$password" | wl-copy
+  else
+    value=$(echo "$fields" | grep -i "^$field:" | cut -d: -f2- | sed 's/^ *//')
+    printf '%s' "$value" | wl-copy
+  fi
+
+  notify-send "📋 '$field' copied to clipboard"
+done

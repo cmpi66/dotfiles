@@ -1,20 +1,16 @@
 #!/usr/bin/env bash
 
-# dmenu theming
-. $HOME/.local/bin/dmenu-theming
-
-prompt="-p Manual:"
+prompt="-p Manual"
 
 # terminal to open manual
-terminal="xfce4-terminal --hide-menubar --hide-scrollbar"
+terminal="kitty"
 
 # list all manuals
-manual="$(man -k . | dmenu $prompt $lines $colors $font | awk '{print $1}')"
+manual="$(man -k . | rofi -dmenu -i $prompt | awk '{print $1}')"
 
 # open selected manual with terminal
 if [[ ! -z "$manual" ]]; then
-    eval "$($terminal -T "Mansearch - Manual Viewer" -e "man $manual")"
+  eval "$($terminal --title "Mansearch - Manual Viewer" man $manual)"
 fi
 
 exit 0
-

@@ -1,9 +1,0 @@
-#!/bin/env bash
-
-export WM="hyprland"
-
-# script to attach to zettlekasten on desktop if it's on otherwise open it up on this pc
-
-ZETTLE="kitty --title ema --class ema  ssh -t artixframe tmux attach-session -t zettle"
-
-$ZETTLE

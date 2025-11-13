@@ -35,7 +35,7 @@ alias .5='cd ../../../../..'
 alias ll='ls -lav --ignore=..' # show long listing of all except ".."
 alias l='ls -lav --ignore=.?*' # show long listing but no hidden dotfiles except "."
 
-alias sudo="doas"
+# alias sudo="doas"
 
 # unalias ls 2>/dev/null
 alias ls="eza -al --color=always --icons --group-directories-first"
@@ -77,4 +77,8 @@ se() {
 }
 checkapp() {
   rg -i "$1" ~/media/sec-future/resume/sec-resume/per-role-resumes/app-tracker/jobapps-2025-new.csv
+}
+
+pw() {
+  pwgen -sync "${1:-48}" -1 | wl-copy
 }
