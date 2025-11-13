@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+ifinstalled ykman || exit 1
+
+if ! ykman list | grep -q .; then
+  notify-send "❌ No YubiKey detected!"
+  exit 1
+elif ! ykman oath accounts list | grep -q .; then
+  notify-send "❌ Wrong YubiKey no accounts listed!"
+  exit 1
+fi
+
+choice=$(ykman oath accounts list | cut -d ":" -f1 | rofi -dmenu -i)
+[ -z "$choice" ] && exit 1
+
+# ykman oath accounts code "$choice" | wl-copy
+ykman oath accounts code "$choice" | awk '{ print $2}' | wl-copy && notify-send "Copied $choice OTP"

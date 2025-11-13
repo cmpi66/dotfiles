@@ -70,6 +70,7 @@ eval "$(zoxide init zsh)"
 # eval "$(starship init zsh)"   
 eval "$(fnm env --use-on-cd --shell zsh)"
 eval "$(atuin init zsh)"
+eval "$(register-python-argcomplete --no-defaults exegol)"
 
 
 # Load and initialise completion system

@@ -80,3 +80,7 @@ se() {
 checkapp() {
   rg -i "$1" ~/media/sec-future/resume/sec-resume/per-role-resumes/app-tracker/jobapps-2025-new.csv
 }
+
+pw() {
+  pwgen -sync "${1:-48}" -1 | wl-copy
+}

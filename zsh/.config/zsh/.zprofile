@@ -25,7 +25,6 @@ export PATH="$HOME/.local/share/cargo/bin:$HOME/.local/.npm-global/bin:$PATH"
 export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/shell/inputrc"
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 export LYNX_CFG_PATH="$XDG_CONFIG_HOME"/lynx.cfg
-export LESSHISTFILE="-"
 export NOTMUCH_CONFIG=$XDG_CONFIG_HOME/notmuch/default/config
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
@@ -58,6 +57,9 @@ export PASSWORD_STORE_EXTENSIONS_DIR="$XDG_DATA_HOME/.password-store/.extensions
 export PASSWORD_STORE_ENABLE_EXTENSIONS="true"
 export LESS=-R
 alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
+
+[ ! -f "$XDG_CONFIG_HOME/shell/shortcutrc" ] && setsid -f shortcuts >/dev/null 2>&1
+
 
 
 if [ -z "$WAYLAND_DISPLAY" ] && [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then

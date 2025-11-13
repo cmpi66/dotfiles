@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# === CONFIGURATION ===
+db="$HOME/.local/share/kdb/Kdb/these.kdbx"
+keyfile="$HOME/.config/kf/file"
+passgpg="$HOME/.local/share/kdb/Kdb/pass.txt.gpg"
+launcher="rofi -dmenu -i -p '🔐 Select entry:'"
+timeout=45
+
+# === CHECKS ===
+[[ ! -e "$db" ]] && notify-send "keepmenu" "❌ Database not found: $db" && exit 1
+[[ ! -e "$keyfile" ]] && notify-send "keepmenu" "❌ Keyfile not found: $keyfile" && exit 1
+[[ ! -e "$passgpg" ]] && notify-send "keepmenu" "❌ GPG password file missing: $passgpg" && exit 1
+
+# === DECRYPT DATABASE PASSWORD ===
+pass=$(gpg -q --decrypt "$passgpg" 2>/dev/null)
+
+# === GET TOP-LEVEL ENTRY OR GROUP ===
+entries=$(echo "$pass" | keepassxc-cli ls --key-file "$keyfile" "$db" 2>/dev/null)
+entry=$(printf "%s\n" "$entries" | $launcher)
+[[ -z "$entry" ]] && exit 0
+
+# === DETERMINE ENTRY TYPE ===
+if [[ "$entry" =~ .*/$ ]]; then
+  # Entry is a group
+  group_entries=$(echo "$pass" | keepassxc-cli ls --key-file "$keyfile" "$db" "$entry" 2>/dev/null)
+  gentry=$(printf "%s\n" "$group_entries" | $launcher)
+  [[ -z "$gentry" ]] && exit 0
+  full_entry="${entry}${gentry}"
+else
+  full_entry="$entry"
+fi
+
+# === FETCH ENTRY DETAILS ===
+details=$(echo "$pass" | keepassxc-cli show --key-file "$keyfile" "$db" "$full_entry" 2>/dev/null)
+[[ -z "$details" ]] && notify-send "keepmenu" "No details found for $full_entry" && exit 0
+
+# === MULTI-SELECTION LOOP ===
+while true; do
+  field=$(printf "%s\n" "$details" | cut -d ':' -f 1 | rofi -dmenu -i -p "Field to copy from $full_entry" -l 10)
+  [[ -z "$field" ]] && break # exit loop when user cancels or presses ESC
+
+  field_value=$(echo "$details" | grep "^$field:" | cut -d ':' -f 2- | sed 's/^[[:space:]]*//')
+
+  if [[ "$field" == "Password" ]]; then
+    echo "$pass" | keepassxc-cli clip --key-file "$keyfile" "$db" "$full_entry" >/dev/null &
+    notify-send "keepmenu" "✅ Password copied to clipboard for ${timeout}s"
+  else
+    printf "%s" "$field_value" | wl-copy
+    notify-send "keepmenu" "✅ $field copied to clipboard"
+  fi
+
+  # Clear clipboard after timeout
+  (sleep "$timeout" && wl-copy --clear) &
+  disown
+done

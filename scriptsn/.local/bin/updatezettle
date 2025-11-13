@@ -1,8 +1,0 @@
-#!/bin/env bash
-
-DIR=/tmp/output
-ZETTLE=/home/chris/.local/.src/zettlekasten/
-SYNC='rsync -urvP --delete-after /tmp/output/  ubuntu@10.27.27.12:/portainer/Files/AppData/Config/Nginx/www'
-GENERATE='emanote gen /tmp/output/'
-
-cd $ZETTLE && [[ -d $DIR ]] || mkdir -p $DIR && $GENERATE && $SYNC

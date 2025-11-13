@@ -26,25 +26,29 @@ set -euo pipefail
 # shellcheck disable=SC1090
 # source "$(get_config)"
 
-DMENU="dmenu -i -l 10 -p"
-# DMENU="rofi -dmenu -i -l 10 -p"
-DMTERM="alacritty -e"
+# DMENU="tofi --width 25% --height 25% --prompt-text"
+DMENU="rofi -dmenu -i -p"
+# DMTERM="foot -e"
+DMTERM="kitty"
 
 DMEDITOR="${DMTERM} nvim"
 declare -A confedit_list
 # confedit_list[confedit]="$HOME/.config/dmscripts/config"
-confedit_list[alacritty]="$HOME/.config/alacritty/alacritty.yml"
+confedit_list[alacritty]="$HOME/.config/alacritty/alacritty.toml"
 confedit_list[yayapps]="$HOME/.config/apps/yayapps.sh"
 confedit_list[pacapps]="$HOME/.config/apps/apps-clean.sh"
 confedit_list[bash]="$HOME/.bashrc"
 confedit_list[calcurse]="$HOME/.config/calcurse/conf"
 confedit_list[dunst]="$HOME/.config/dunst/dunstrc"
 confedit_list[fontconfig]="$HOME/.config/fontconfig/fonts.conf"
+confedit_list[foot]="$HOME/.config/foot/foot.ini"
 confedit_list[tmux]="$HOME/.config/tmux/tmux.conf"
 confedit_list[dwm]="$HOME/.config/suckless/dwm/config.h"
 confedit_list[st]="$HOME/.config/suckless/st/config.h"
 confedit_list[dmenu]="$HOME/.config/suckless/dmenu/config.h"
 confedit_list[fish]="$HOME/.config/fish/config.fish"
+confedit_list[hyprland]="$HOME/.config/hypr/hyprland.conf"
+confedit_list[waybar]="$HOME/.config/waybar/config.jsonc"
 confedit_list[lf]="$HOME/.config/lf/lfrc"
 confedit_list[lvim]="$HOME/.config/lvim/config.lua"
 confedit_list[mpv]="$HOME/.config/mpv/mpv.conf"
@@ -64,6 +68,7 @@ confedit_list[xresources]="$HOME/.config/x11/xresources"
 confedit_list[zshrc]="$HOME/.config/zsh/.zshrc"
 confedit_list[zshenv]="$HOME/.config/zsh/.zshenv"
 confedit_list[zprofile]="$HOME/.config/zsh/.zprofile"
+confedit_list[yazi]="$HOME/.config/yazi/yazi.toml"
 
 main() {
   # Clean options array making sure that the files exist

@@ -1,4 +1,0 @@
-#!/bin/bash
-
-# Force Anki to run on XWayland with scaling since either anki or anki-bin aren't scaling correctly
-QT_QPA_PLATFORM=xcb  QT_FONT_DPI=113 anki
