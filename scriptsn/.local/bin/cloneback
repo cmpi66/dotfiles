@@ -14,3 +14,4 @@ flock -n /tmp/gen-dl.lock /usr/bin/rclone copy --s3-upload-cutoff=0 --transfers 
 flock -n /tmp/kdb.lock /usr/bin/rclone copy -v --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/kdb/ IdriveEncrypt:kdb
 flock -n /tmp/android.lock /usr/bin/rclone copy -v --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/android-backup/ IdriveEncrypt:grapheneos-backup
 flock -n /tmp/anki.lock /usr/bin/rclone copy -v --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/Anki2/ IdriveEncrypt:anki-backup
+# flock -n /tmp/pass.lock /usr/bin/rclone copy -v --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/pass IdriveEncrypt:pass

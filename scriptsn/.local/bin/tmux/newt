@@ -11,7 +11,7 @@ if [ "$1" ]; then
 else
   # Gather session and dir list
   TMUX_SESSIONS=$(tmux list-sessions -F "#S: #{session_windows} window(s)#{?session_grouped, (group ,}#{session_group}#{?session_grouped,),}#{?session_attached, (attached),}" 2>/dev/null)
-  ZOX_ENTRIES=$(zoxide query -l | tail -n 50)
+  ZOX_ENTRIES=$(zoxide query -l | head -n 50)
 
   # Show in tofi
   CHOICE=$(printf "%s\n%s" "$TMUX_SESSIONS" "$ZOX_ENTRIES" | rofi -dmenu -i)
