@@ -140,8 +140,17 @@ c.content.blocking.adblock.lists = [
 
 c.aliases = {'q': 'quit', 'w': 'session-save', 'wq': 'quit --save'}
 
-config.bind('xk>', 'spawn --userscript qute-keepassxc --key FB1A5452C181A3F5 ', mode='insert')
-config.bind('xs', 'spawn --userscript qute-keepassxc --key FB1A5452C181A3F5', mode='normal')
+# config.bind('xk>', 'spawn --userscript qute-keepassxc --key FB1A5452C181A3F5 ', mode='insert')
+# config.bind('xs', 'spawn --userscript qute-keepassxc --key FB1A5452C181A3F5', mode='normal')
+
+# Autofill full login: username + tab + password
+config.bind('xk', 'spawn --userscript qute-pass --username-target secret --username-pattern "login: (.+)"')
+
+# Username only
+config.bind('xj', 'spawn --userscript qute-pass --username-only --username-target secret --username-pattern "login: (.+)"')
+
+# Password only
+config.bind('xs', 'spawn --userscript qute-pass --password-only')
 
 
 # js error on arch recent version 11-3-25

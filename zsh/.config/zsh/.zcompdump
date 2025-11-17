@@ -440,8 +440,6 @@ _comps=(
 'fold' '_fold'
 'folder' '_mh'
 'folders' '_mh'
-'foot' '_foot'
-'footclient' '_footclient'
 'fortune' '_fortune'
 'forw' '_mh'
 'fprev' '_mh'
@@ -986,6 +984,7 @@ _comps=(
 'parecord' '_pulseaudio'
 'paru' '_paru'
 'pass' '_pass'
+'pass-import' '_pass-import'
 'passwd' '_users'
 'paste' '_paste'
 'pasuspender' '_pulseaudio'
@@ -1029,6 +1028,7 @@ _comps=(
 'pidof' '_pidof'
 'pidstat' '_sysstat'
 'pigz' '_gzip'
+'pimport' '_pimport'
 'pine' '_pine'
 'pinef' '_pine'
 'pinfo' '_texinfo'
@@ -1694,14 +1694,14 @@ bindkey '^[~' _bash_complete-word
 autoload -Uz _atuin _bat _bluetoothctl _busctl _bwrap \
             _cargo _checkupdates _ctr _curl _docker \
             _downgrade _elogind-inhibit _email-notmuch _eza _fastfetch \
-            _fd _foot _footclient _ghostty _glow \
-            _hyprctl _hyprpm _img2sixel _insmod _keyring \
-            _kitty _libinput _loginctl _lsmod _luarocks \
-            _luarocks-admin _mako _makoctl _meson _mkinitcpio \
-            _mpv _mutt-wizard.zsh _ninja _notmuch _openrc \
-            _p11-kit _paccache _pacdiff _pacignore _paclist \
-            _paclog-pkglist _pacman _pacscripts _pacsearch _pacsort \
-            _pactree _paru _pass _patchelf _playerctl \
+            _fd _ghostty _glow _hyprctl _hyprpm \
+            _img2sixel _insmod _keyring _kitty _libinput \
+            _loginctl _lsmod _luarocks _luarocks-admin _mako \
+            _makoctl _meson _mkinitcpio _mpv _mutt-wizard.zsh \
+            _ninja _notmuch _openrc _p11-kit _paccache \
+            _pacdiff _pacignore _paclist _paclog-pkglist _pacman \
+            _pacscripts _pacsearch _pacsort _pactree _paru \
+            _pass _pass-import _patchelf _pimport _playerctl \
             _poetry _powerprofilesctl _pulseaudio _qpdf _rankmirrors \
             _rc-service _rc-status _rc-update _rclone _rg \
             _rmmod _rustup _satty _sensors _sensors-detect \

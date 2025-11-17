@@ -33,7 +33,8 @@ export URLVIEW_CONFIG="$XDG_CONFIG_HOME/urlview/config"
 export GOPATH="$XDG_DATA_HOME/go"
 # export GIT_CONFIG="$XDG_CONFIG_HOME/git/config" ## This breaks aur packages gives "ERROR not a clone of 'x repo'"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
-export PASSWORD_STORE_DIR="$XDG_DATA_HOME/.password-store"
+# export PASSWORD_STORE_DIR="$XDG_DATA_HOME/.password-store"
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 # export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
@@ -53,8 +54,8 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
 export MOZ_USE_XINPUT2="1" # Mozilla smooth scrolling/touchpads.
-export PASSWORD_STORE_EXTENSIONS_DIR="$XDG_DATA_HOME/.password-store/.extensions"
-export PASSWORD_STORE_ENABLE_EXTENSIONS="true"
+# export PASSWORD_STORE_EXTENSIONS_DIR="$XDG_DATA_HOME/.password-store/.extensions"
+# export PASSWORD_STORE_ENABLE_EXTENSIONS="true"
 export LESS=-R
 alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 

@@ -17,7 +17,7 @@ choice="$({
   echo "🆕add"
   echo "🕙sync-time"
   ls "$dir"/*-otp.gpg
-} | sed "s/.*\///;s/-otp.gpg//" | tofi --width 25% --height 25% --prompt-text "Pick a 2FA:")"
+} | sed "s/.*\///;s/-otp.gpg//" | rofi -dmenu -p "Pick a 2FA:")"
 
 case $choice in
 🆕add)
