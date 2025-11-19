@@ -11,3 +11,4 @@ map J zoom out
 map i recolor
 map p print
 # include catppuccin
+set selection-clipboard clipboard
