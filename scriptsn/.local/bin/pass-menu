@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# === CHECK YUBIKEY ===
 if ! gpg --card-status 2>/dev/null | grep -q 'Yubico'; then
   notify-send "❌ No YubiKey smartcard detected"
   exit 1
 fi
 
-# === SELECT ENTRY ===
+# === SELECT ENTRY (INCLUDE SUBFOLDERS) ===
 entry=$(find ~/.local/share/pass -name '*.gpg' |
-  sed 's|.*/||;s/\.gpg$//' |
+  sed "s|$HOME/.local/share/pass/||;s/\.gpg$//" |
   sort |
   rofi -dmenu -i -p "🔐 Select entry")
 [ -z "$entry" ] && exit 0
