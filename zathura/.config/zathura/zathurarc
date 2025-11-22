@@ -10,5 +10,5 @@ map K zoom in
 map J zoom out
 map i recolor
 map p print
-# include catppuccin
+include catppuccin
 set selection-clipboard clipboard
