@@ -58,6 +58,10 @@ export MOZ_USE_XINPUT2="1" # Mozilla smooth scrolling/touchpads.
 # export PASSWORD_STORE_ENABLE_EXTENSIONS="true"
 export LESS=-R
 alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
+export PYTHON_HISTORY=$XDG_STATE_HOME/python_history  
+export PYTHONPYCACHEPREFIX=$XDG_CACHE_HOME/python
+export PYTHONUSERBASE=$XDG_DATA_HOME/python
+
 
 [ ! -f "$XDG_CONFIG_HOME/shell/shortcutrc" ] && setsid -f shortcuts >/dev/null 2>&1
 
