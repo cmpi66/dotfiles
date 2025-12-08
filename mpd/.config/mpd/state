@@ -1,7 +1,8 @@
 sw_volume: 100
 audio_device_state:1:PipeWire Sound Server
-state: stop
-current: 2
+state: pause
+current: 0
+time: 35.583
 random: 0
 repeat: 0
 single: 0
@@ -12,13 +13,18 @@ mixrampdelay: -1
 lastloadedplaylist: Metallica/1984 - Ride The Lightning/Metallica - Ride The Lightning.m3u
 playlist_begin
 0:Metallica/1984 - Ride The Lightning/04. Fade To Black.flac
-1:sorted/temp-before-sorting/Look On Down From The Bridge [p3NZn0mA_XI].opus
-2:sorted/temp-before-sorting/The Angry River (feat. Father John Misty and S.I. Istwa) (Theme From the HBO Series True Detective) [SnrXhavK-6M].opus
-3:sorted/temp-before-sorting/Adele - Skyfall (Official Lyric Video) [DeumyOzKqgI].opus
-4:sorted/temp-before-sorting/College & Electric Youth - A Real Hero (Drive Original Movie Soundtrack) [-DSVDcw6iW8].opus
-5:sorted/temp-before-sorting/Lucinda Williams - Are You Alright？ [8E8_utQlJbo].opus
-6:sorted/temp-before-sorting/Kavinsky - Nightcall (Drive Original Movie Soundtrack) (Official Audio) [MV_3Dpw-BRY].opus
-7:sorted/temp-before-sorting/CHROMATICS ＂INTO THE BLACK＂ (Lyric Video) [uie8ddDqoK8].opus
-8:The Departed - Music fron the Motion Picture 320cbr (Big Papi) 2006 Soundtrack/06 Badfinger - Baby Blue.mp3
-9:sorted/temp-before-sorting/Apparat-Goodbye.opus
+1:sorted/temp-before-sorting/CAKE - Frank Sinatra (Official Audio) [rWonYwd5oL8].opus
+2:sorted/temp-before-sorting/Look On Down From The Bridge [p3NZn0mA_XI].opus
+3:sorted/temp-before-sorting/The Angry River (feat. Father John Misty and S.I. Istwa) (Theme From the HBO Series True Detective) [SnrXhavK-6M].opus
+4:sorted/temp-before-sorting/Adele - Skyfall (Official Lyric Video) [DeumyOzKqgI].opus
+5:sorted/temp-before-sorting/College & Electric Youth - A Real Hero (Drive Original Movie Soundtrack) [-DSVDcw6iW8].opus
+6:sorted/temp-before-sorting/Lucinda Williams - Are You Alright？ [8E8_utQlJbo].opus
+7:sorted/temp-before-sorting/Kavinsky - Nightcall (Drive Original Movie Soundtrack) (Official Audio) [MV_3Dpw-BRY].opus
+8:sorted/temp-before-sorting/CHROMATICS ＂INTO THE BLACK＂ (Lyric Video) [uie8ddDqoK8].opus
+9:The Departed - Music fron the Motion Picture 320cbr (Big Papi) 2006 Soundtrack/06 Badfinger - Baby Blue.mp3
+10:sorted/temp-before-sorting/Apparat-Goodbye.opus
+11:sorted/temp-before-sorting/Jefferson Airplane - White Rabbit (Official Audio) [pnJM_jC7j_4].opus
+12:sorted/temp-before-sorting/PJ Harvey - To Bring You My Love ｜ Peaky Blinders OST [tONzm5ZQGjw].opus
+13:sorted/temp-before-sorting/Sia - Chandelier (Official Lyric Video) [8DS-h67qEiY].opus
+14:sorted/temp-before-sorting/Sia- elastic heart (audio only) [T6dUNr5dEbU].opus
 playlist_end

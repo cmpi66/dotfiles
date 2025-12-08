@@ -61,6 +61,9 @@ export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 # export QT_QPA_PLATFORMTHEME="gtk2" # Have QT use gtk2 theme. # not sure if this is needed anymore for my wayland setup
 export OLLAMA_MODELS=$XDG_DATA_HOME/ollama/models
+export PYTHON_HISTORY=$XDG_STATE_HOME/python_history  
+export PYTHONPYCACHEPREFIX=$XDG_CACHE_HOME/python
+export PYTHONUSERBASE=$XDG_DATA_HOME/python
 
 [ ! -f "$XDG_CONFIG_HOME/shell/shortcutrc" ] && setsid -f shortcuts >/dev/null 2>&1
 
