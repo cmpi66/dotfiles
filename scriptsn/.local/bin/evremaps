@@ -1,3 +1,4 @@
 #!/bin/bash
 
-doas evremap remap ~/.config/evremap.toml > /dev/null 2>&1 &
+doas evremap remap ~/.config/evremap/neo75.toml >/dev/null 2>&1 &
+doas evremap remap ~/.config/evremap/zoomtkl.toml >/dev/null 2>&1 &

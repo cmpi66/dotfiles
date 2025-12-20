@@ -1,8 +1,8 @@
 # The name of the device to remap.
 # Run `sudo evremap list-devices` to see the devices available
 # on your system.
-device_name = "NEO Studio NEO75 Wired PCB"
-# device_name = "UBEST 87 TKL"
+# device_name = "NEO Studio NEO75 Wired PCB"
+device_name = "UBEST 87 TKL"
 
 # If you have multiple devices with the same name, you can optionally
 # specify the `phys` value that is printed by the `list-devices` subcommand
@@ -16,3 +16,4 @@ device_name = "NEO Studio NEO75 Wired PCB"
 input = "KEY_CAPSLOCK"
 hold = ["KEY_LEFTCTRL"]
 tap = ["KEY_ESC"]
+
