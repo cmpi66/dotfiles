@@ -29,3 +29,4 @@ phys = "isa0060/serio0/input0"
 input = "KEY_CAPSLOCK"
 hold = ["KEY_LEFTCTRL"]
 tap = ["KEY_ESC"]
+
