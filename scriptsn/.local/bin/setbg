@@ -28,4 +28,4 @@ trueloc="$(readlink -f "$1")" &&
 
 # swaybg -i "$bgloc" & # wayland
 
-hyprctl hyprpaper unload all && hyprctl hyprpaper preload "$bgloc" && hyprctl hyprpaper wallpaper DP-1, "$bgloc" && hyprctl hyprpaper wallpaper DP-2, "$bgloc"
+hyprctl hyprpaper wallpaper eDP-1, "$bgloc"
