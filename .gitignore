@@ -65,4 +65,6 @@ applications/.local/share/applications/start-tor-browser.desktop
 *.env
 
 ## stupid web
-qutebrowser/.config/qutebrowser/stupid-web
+stupidweb/.config/stupidweb/stupid-web/data
+stupidweb/.config/stupidweb/stupid-web/cache
+stupidweb/.config/stupidweb/stupid-web/runtime
