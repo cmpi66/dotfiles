@@ -35,6 +35,7 @@ c.tabs.position = "top"
 # c.tabs.favicons.show = "never"
 # c.statusbar.show = "in-mode"
 c.completion.shrink = True
+c.completion.height = '30%'
 c.scrolling.bar = "never"
 # pfblocker  third party certs error supppresion
 c.content.tls.certificate_errors = 'ask-block-thirdparty'
