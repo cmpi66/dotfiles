@@ -81,9 +81,9 @@ vim.keymap.set("n", "<leader>P", "o<ESC>Pk", { desc = "Paste Line Above" })
 vim.keymap.set("n", "<leader>D", "''_d", { desc = "Delete (No Yank)" })
 vim.keymap.set("v", "<leader>D", "''_d", { desc = "Delete (No Yank)" })
 
-vim.keymap.set("n", "<leader>a", function()
-  require("snacks.dashboard").open()
-end, { desc = "Dashboard" })
+-- vim.keymap.set("n", "<leader>a", function()
+--   require("snacks.dashboard").open()
+-- end, { desc = "Dashboard" })
 
 vim.keymap.set("n", "<leader>X", ":!chmod +x %<CR>", { desc = "Make script executable" })
 vim.keymap.set("n", "<leader>C", ":w<CR>:!compiler %:p<CR><CR>", { desc = "Doc Compiler", silent = true })

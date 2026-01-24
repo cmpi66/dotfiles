@@ -12,7 +12,7 @@ blackhatpython="/home/chris/media/books/it-books/hacking/Black Hat Python Python
 blackhatbash="/home/chris/media/books/it-books/hacking/Black Hat Bash Creative Scripting for Hackers and Pentesters (Dolev Farhi, Nick Aleks) (Z-Library).pdf"
 practicalvim="/home/chris/media/books/it-books/linux/practical-vim.pdf"
 bugbounty="/home/chris/media/books/it-books/hacking/Bug Bounty Bootcamp The Guide to Finding and Reporting Web Vulnerabilities (Vickie Li) (Z-Library).pdf"
-linuxcommandline="/home/chris/media/books/it-books/linux/TLCL-19.01.pdf"
+linuxcommandline="/home/chris/media/books/it-books/linux/Linux Command Line and Shell Scripting Bible (Richard Blum Christine Bresnahan) (z-lib.org).pdf"
 
 case "$(printf "󰂺 blackhatpython\n󰂺 blackhatbash\n󰂺 practicalvim\n󰂺 bugbounty\n󰂺 linux-commandline" | rofi -dmenu -p 'Choose: ')" in
 '󰂺 blackhatpython') zathura "$blackhatpython" ;;
