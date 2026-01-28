@@ -4,10 +4,11 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: monospace;
+    font-size: 11px;
     font-weight: bold;
-    font-size: 12px;
     padding: 0;
-    margin : -1;
+    margin : 0;
+    min-height: 0;
 
 }
 
@@ -17,13 +18,31 @@ window#waybar {
     background-color: transparent;
     /* border: 3px solid alpha(@crust, 0.3); */
     /* color: #ffffff; */
-    transition-property: background-color;
-    transition-duration: .5s;
+    /* transition-property: background-color; */
+    /* transition-duration: .5s; */
 }
 
 window#waybar.hidden {
     opacity: 0;
 }
+
+.modules-center {
+  background: @base;
+  padding: 6px 12px;
+  border-radius: 28px;
+  margin-top: 7px;
+  /* margin-bottom: 5px */
+  /* box-shadow: 0 4px 12px; */
+
+}
+
+tooltip{
+  background: @base;
+  border: 1px solid @blue;
+  border-radius: 13px;
+
+}
+
 
 button {
     /* Use box-shadow instead of border so the text isn't offset */
@@ -33,10 +52,10 @@ button {
     border-radius: 0;
 }
 
-#mode {
-    background-color: @base;
-    border-bottom: 3px solid #ffffff;
-}
+/* #mode { */
+/*     background-color: @base; */
+/*     border-bottom: 3px solid #ffffff; */
+/* } */
 
 #clock,
 #battery,
@@ -60,20 +79,28 @@ button {
 #idle_inhibitor,
 #scratchpad,
 #mpd {
-    padding: 0 10px;
-    color: #ffffff;
+    background-color: @base0;
+    padding: 0 8px;
+    margin: 0 5px;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
 }
 
 #workspaces {
-	background: @surface0;
-	margin: 5px 5px 5px 5px;
-  padding: 0px 5px 0px 5px;
+	background: transparent;
+	margin: 0 10px 0px 10px;
+  padding: 0;
 	border-radius: 16px;
   border: solid 0px @yellow;
+  font-weight: bold;
+  /* font-style: normal; */
 }
 #workspaces button {
     padding: 0px 5px;
+    margin: 0px 5px;
     border-radius: 16px;
+    background: transparent;
     color: @overlay2;
 }
 
@@ -89,13 +116,13 @@ button {
 	border-radius: 16px;
 }
 
-#clock, #battery, #bluetooth, #custom-music, #custom-mail, #custom-pacman, #custom-torrent, #custom-internet, #disk, #cpu, #temperature, #memory #pulseaudio {
-	background: transparent;
-	padding: 3px 3px 3px 3px;
-	margin: 3px 3px 3px 3px;
-  border-radius: 8px;
-  border: solid 0px #f4d9e1;
-}
+/* #clock, #battery, #bluetooth, #custom-music, #custom-mail, #custom-pacman, #custom-torrent, #custom-internet, #disk, #cpu, #temperature, #memory #pulseaudio { */
+/* 	background: transparent; */
+/* 	padding: 3px 3px 3px 3px; */
+/* 	margin: 3px 3px 3px 3px; */
+/*   border-radius: 8px; */
+/*   border: solid 0px #f4d9e1; */
+/* } */
 
 #window {
     color: @surface0;
@@ -113,23 +140,23 @@ button {
 
 #clock {
     color: @blue;
-    background-color: @surface0;
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
+    /* background-color: @surface0; */
+    /* border-radius: 16px; */
+    /* margin: 5px; */
+    /* margin-left: 5px; */
+    /* margin-right: 5px; */
+    /* padding: 0px 10px 0px 10px; */
     font-weight: bold;
 }
 
 #battery {
     color: @yellow;
-    background-color: @surface0;
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
+    /* background-color: @surface0; */
+    /* border-radius: 16px; */
+    /* margin: 5px; */
+    /* margin-left: 5px; */
+    /* margin-right: 5px; */
+    /* padding: 0px 10px 0px 10px; */
     font-weight: bold;
 }
 
@@ -146,7 +173,7 @@ button {
 
 #battery.charging, #battery.plugged {
     color: @green;
-    background-color: @surface0;
+    /* background-color: @surface0; */
 }
 
 @keyframes blink {
@@ -157,7 +184,7 @@ button {
 }
 
 #battery.critical:not(.charging) {
-    background-color: @surface0;
+    /* background-color: @surface0; */
     color: @red;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -172,32 +199,32 @@ label:focus {
 
 #cpu {
     color: @mauve;
-    background-color: @surface0;
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
+    /* background-color: @surface0; */
+    /* border-radius: 16px; */
+    /* margin: 5px; */
+    /* margin-left: 5px; */
+    /* margin-right: 5px; */
+    /* padding: 0px 10px 0px 10px; */
     font-weight: bold;
 }
 #bluetooth {
     color: @text;
-    background-color: @base;
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
+    /* background-color: @base; */
+    /* border-radius: 16px; */
+    /* margin: 5px; */
+    /* margin-left: 5px; */
+    /* margin-right: 5px; */
+    /* padding: 0px 10px 0px 10px; */
     font-weight: bold;
 }
 #bluetooth.off {
     color: @text;
-    background-color: @base;
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
+    /* background-color: @base; */
+    /* border-radius: 16px; */
+    /* margin: 5px; */
+    /* margin-left: 5px; */
+    /* margin-right: 5px; */
+    /* padding: 0px 10px 0px 10px; */
     font-weight: bold;
 }
 #bluetooth.connected {
@@ -213,45 +240,45 @@ label:focus {
 
 #memory {
     color: @sapphire;
-    background-color: @surface0;
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
+    /* background-color: @surface0; */
+    /* border-radius: 16px; */
+    /* margin: 5px; */
+    /* margin-left: 5px; */
+    /* margin-right: 5px; */
+    /* padding: 0px 10px 0px 10px; */
     font-weight: bold;
 }
 
 #disk {
     color: @yellow;
-    background-color: @surface0;
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
+    /* background-color: @surface0; */
+    /* border-radius: 16px; */
+    /* margin: 5px; */
+    /* margin-left: 5px; */
+    /* margin-right: 5px; */
+    /* padding: 0px 10px 0px 10px; */
     font-weight: bold;
 }
 
 #backlight {
     color: @text;
-    background-color: @surface0;
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
+    /* background-color: @surface0; */
+    /* border-radius: 16px; */
+    /* margin: 5px; */
+    /* margin-left: 5px; */
+    /* margin-right: 5px; */
+    /* padding: 0px 10px 0px 10px; */
     font-weight: bold;
 }
 
 #custom-power {
     color: @text;
-    background-color: @base;
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
+    /* background-color: @base; */
+    /* border-radius: 16px; */
+    /* margin: 5px; */
+    /* margin-left: 5px; */
+    /* margin-right: 5px; */
+    /* padding: 0px 10px 0px 10px; */
     font-weight: bold;
 }
 
@@ -281,12 +308,12 @@ label:focus {
 
 #custom-pacman {
     color: @mauve;
-    background-color: @surface0;
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
+    /* background-color: @surface0; */
+    /* border-radius: 16px; */
+    /* margin: 5px; */
+    /* margin-left: 5px; */
+    /* margin-right: 5px; */
+    /* padding: 0px 10px 0px 10px; */
     font-weight: bold;
 }
 
@@ -303,12 +330,12 @@ label:focus {
 
 #custom-music {
     color: @sky;
-    background-color: @surface0;
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
+    /* background-color: @surface0; */
+    /* border-radius: 16px; */
+    /* margin: 5px; */
+    /* margin-left: 5px; */
+    /* margin-right: 5px; */
+    /* padding: 0px 10px 0px 10px; */
     font-weight: bold;
 }
 
@@ -327,12 +354,12 @@ label:focus {
 
 #temperature {
     color: @red;
-    background-color: @surface0;
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 7px 10px 7px 10px;
+    /* background-color: @surface0; */
+    /* border-radius: 16px; */
+    /* margin: 5px; */
+    /* margin-left: 5px; */
+    /* margin-right: 5px; */
+    /* padding: 7px 10px 7px 10px; */
     font-weight: bold;
 }
 
@@ -342,12 +369,12 @@ label:focus {
 
 #tray {
     color: @green;
-    background-color: @surface0;
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
+    /* background-color: @surface0; */
+    /* border-radius: 16px; */
+    /* margin: 5px; */
+    /* margin-left: 5px; */
+    /* margin-right: 5px; */
+    /* padding: 0px 10px 0px 10px; */
     font-weight: bold;
 }
 

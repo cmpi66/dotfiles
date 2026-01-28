@@ -7,32 +7,42 @@
   "passthrough": false,
   // "width": 1280, // Waybar width
   // "spacing": 4, // Gaps between modules (4px)
-  "modules-left": [
-    // "custom/icon",
-    // "hyprland/scratchpad"
+  // "modules-left": [
+  //   // "custom/icon",
+  //   // "hyprland/scratchpad"
+  //   "clock",
+  //   "battery",
+  //   "custom/music",
+  //   "custom/pacman",
+  //   "backlight"
+  // ],
+  "modules-center": [
     "clock",
     "battery",
     "custom/music",
-    "custom/pacman",
-    "backlight"
-  ],
-  "modules-center": [
-    // "hyprland/window",
+    // "custom/kern",
     "hyprland/workspaces",
-    "hyprland/mode"
-  ],
-  "modules-right": [
-    "tray",
-    "pulseaudio",
-    // "custom/mail",
+    "hyprland/mode",
     "custom/torrent",
-    // "custom/internet",
     "cpu",
     "memory",
     "temperature",
-    "disk"
-    // "custom/power"
+    // "pulseaudio",
+    // "disk",
+    "tray",
   ],
+  // "modules-right": [
+  //   "tray",
+  //   "pulseaudio",
+  //   // "custom/mail",
+  //   "custom/torrent",
+  //   // "custom/internet",
+  //   "cpu",
+  //   "memory",
+  //   "temperature",
+  //   "disk"
+  //   // "custom/power"
+  // ],
   // Modules configuration
   // "hyprland/workspaces": {
   //     "disable-scroll": true,
@@ -125,7 +135,8 @@
   //     //"format-alt": "{: %a %b %d   %r}"
   // },
   "clock": {
-    "format": "󰥔 {:%I:%M %p %b %d}  ",
+    // "format": "{:%I:%M %p} ",
+    "format": "󰥔 {:%I:%M %p %b %d}",
     "format-alt": "{:%A, %B %d, %Y (%R)}  ",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
