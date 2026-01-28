@@ -2,9 +2,9 @@
 /* See LICENSE file for copyright and license details. */
 
 /* Constants */
-#define TERMINAL "alacritty"
-#define TERMCLASS "Alacritty"
-#define BROWSER "librewolf-bin"
+#define TERMINAL "kitty"
+#define TERMCLASS "Kitty"
+#define BROWSER "qutebrowser"
 
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
@@ -85,8 +85,8 @@ static Sp scratchpads[] = {
 
 
 /* tagging */
-// static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+// static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
 static const char *tagsalt[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 static const int momentaryalttags = 0; /* 1 means alttags will show only when key is held down*/
 
@@ -117,13 +117,13 @@ static const Rule rules[] = {
 	{ "Pam_gnupg",     NULL,       NULL,            0,         1,          0,           0,        -1 },
 	{ "Tor Browser",     NULL,       NULL,            0,         1,          0,           0,        -1 },
 	{ "newsboat",     NULL,       NULL,            0,         1,          0,           0,        -1 },
-	{ "Pcmanfm",     NULL,       NULL,            0,         1,          0,           0,        -1 },
+	{ "Thunar",     NULL,       NULL,            0,         1,          0,           0,        -1 },
 	{ "ffplay",     NULL,       NULL,            0,         1,          0,           0,        -1 },
 	{ "Yad",     NULL,       NULL,            0,         1,          0,           0,        -1 },
 	// { "St",       NULL,       NULL,            0,         0,          1,           0,        -1 },
 	// { "Alacritty",       NULL,       NULL,            0,         0,          1,           0,        -1 },
     { "trayer",   NULL,         NULL,       1 << 8,       False },
-    { "firefox",   NULL,         NULL,       1 << 2,       False },
+    { "qutebrowser",   NULL,         NULL,       1 << 2,       False },
     { "librewolf",   NULL,         NULL,       1 << 2,       False },
     { "discord",   NULL,         NULL,       1 << 4,       False },
     { "ema",   "ema",         NULL,       1 << 3,    0,           1,             0,       False },
@@ -181,26 +181,28 @@ static const Layout layouts[] = {
 static const char *termcmd[]  = { TERMINAL, NULL };
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run","-i","-p", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray1, NULL };
+static const char *roficmd[] = { "rofi", "-show", "run", NULL };
 
 #include <X11/XF86keysym.h>
 static Key keys[] = {
   /* modifier                     key        function        argument */
-  { MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
+  { MODKEY,                       XK_d,      spawn,          {.v = roficmd } },
   { MODKEY|ShiftMask,		          XK_d,		spawn,		         {.v = (const char*[]){ "rofi", "-show","drun", "-show-icons", NULL } } },
-  { MODKEY,		                    XK_c,		spawn,		         SHCMD("clipmenu -i -h 4 -fn Jetbrains:size=9 -nb '#24283b' -nf '#efefef' -sb '#bd9af7' -sf '#24283b'") },
+  { MODKEY,		                    XK_c,		spawn,		         SHCMD("clipmenu") },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	// { MODKEY1,                      XK_Return, spawn,          SHCMD("tabbed -r 2 alacritty --embed ''")  },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = (const char*[]){ "alacritty", "--config-file", "/home/chris/.config/alacritty/tmux.yml", "-e", "t", NULL } } },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = (const char*[]){ "newt", NULL } } },
   { MODKEY,		                   	XK_BackSpace,	spawn,	     {.v = (const char*[]){ "sysact", NULL } } },
   { MODKEY|ShiftMask,		          XK_BackSpace,	spawn,	     SHCMD("i3lock -C -i /home/chris/.local/bin/2770299.png")  },
   { MODKEY,		          	        XK_w,		spawn,             {.v = (const char*[]){ BROWSER, NULL } } },
-  { MODKEY|ShiftMask,			        XK_w,		spawn,		         SHCMD("zettle-ema")  },
-  { MODKEY,		          	        XK_e,		spawn,		         SHCMD("st -t neomutt -e neomutt; rmdir ~/.abook") },
-  { MODKEY,		          	        XK_r,		spawn,		         {.v = (const char*[]){ TERMINAL, "-t", "lfub", "-e", "lfub", NULL } } },
+  { MODKEY|ShiftMask,			        XK_w,		spawn,		         SHCMD("choose-sess")  },
+  { MODKEY,		          	        XK_e,		spawn,		         SHCMD("kitty --title neomutt neomutt") },
+  { MODKEY,		          	        XK_r,		spawn,		         SHCMD("current-reads") },
   { MODKEY|ShiftMask,			        XK_r,		spawn,		         SHCMD("openpdf") },
-  { MODKEY,		                    XK_n,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "htop", NULL } } },
-  { MODKEY,		          	        XK_a,		spawn,		         SHCMD(" st -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook") },
-  { MODKEY,		                   XK_m,		spawn,		         {.v = (const char*[]){ TERMINAL, "-e", "ncmpcpp", NULL } } },
+  { MODKEY,		                    XK_n,		spawn,		         {.v = (const char*[]){ TERMINAL, "btop", NULL } } },
+  { MODKEY,		          	        XK_a,		spawn,		         SHCMD(" kitty abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook") },
+  { MODKEY,		                   XK_m,		spawn,		         {.v = (const char*[]){ TERMINAL, "ncmpcpp", NULL } } },
+  { MODKEY|ShiftMask,		         XK_m,		spawn,		         SHCMD("bmks") },
   { MODKEY|ShiftMask,		         XK_t,		spawn,		         SHCMD("tray.sh") },
 
   { MODKEY,		                 	 XK_bracketleft,		spawn,	 {.v = (const char*[]){ "mpc", "seek", "-10", NULL } } },
@@ -279,7 +281,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY,                       XK_x,      quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_x,      quit,           {0} },
 	{ MODKEY1,                      XK_r,      quit,           {1} }, 
 
     //{ MODKEY|Mod1Mask,              XK_h,      incrgaps,       {.i = +1 } },

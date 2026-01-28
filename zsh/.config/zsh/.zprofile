@@ -73,3 +73,6 @@ if [ -z "$WAYLAND_DISPLAY" ] && [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
   exec dbus-run-session Hyprland
 fi
 
+# if [ -z "$WAYLAND_DISPLAY" ] && [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
+#   startx ~/.config/x11/xinitrc
+# fi

@@ -91,4 +91,10 @@ else
 	. "$HOME/.xprofile"
 fi
 
-ssh-agent dwm
+# ssh-agent dwm
+
+xrandr \
+  --output DisplayPort-1 --mode 2560x1440 --rate 164.96 --rotate right --scale 1x1 --pos 0x0 \
+  --output DisplayPort-0 --mode 3840x2160 --rate 160.00 --scale 1x1 --pos 1440x0
+
+exec dbus-launch --sh-syntax --exit-with-session dwm

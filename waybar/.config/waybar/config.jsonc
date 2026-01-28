@@ -7,35 +7,34 @@
   "gtk-layer-shell": true,
   // "width": 1280, // Waybar width
   // "spacing": 4, // Gaps between modules (4px)
-  "modules-left": [
+  // "modules-left": [
     // "custom/icon",
     // "hyprland/workspaces",
     // "hyprland/mode"
-    "clock",
-    "custom/kern",
-    "custom/music"
     // "mpd"
-  ],
+  // ],
   "modules-center": [
     // "hyprland/window"
-    // "clock"
+    "clock",
+    "custom/music",
+    // "custom/kern",
     "hyprland/workspaces",
-    "hyprland/mode"
-  ],
-  "modules-right": [
-    "tray",
-    "pulseaudio",
-    // "custom/recording",
-    // "custom/mail",
+    "hyprland/mode",
     "custom/torrent",
-    // "custom/emerge",
-    // "custom/internet",
     "cpu",
     "memory",
     "temperature",
-    "disk"
-    // "custom/power"
+    // "pulseaudio",
+    // "disk",
+    "tray",
   ],
+  // "modules-right": [
+    // "custom/recording",
+    // "custom/mail",
+    // "custom/emerge",
+    // "custom/internet",
+    // "custom/power"
+  // ],
   // Modules configuration
   // "hyprland/workspaces": {
   //     "disable-scroll": true,
@@ -127,7 +126,8 @@
   //     //"format-alt": "{: %a %b %d   %r}"
   // },
   "clock": {
-    "format": "󰥔 {:%I:%M %p %b %d}  ",
+    // "format": "{:%I:%M %p}",
+    "format": "󰥔 {:%I:%M %p %b %d}",
     "format-alt": "{:%A, %B %d, %Y (%R)}  ",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
@@ -177,7 +177,7 @@
     ]
   },
   "pulseaudio": {
-    "format": "{icon} {volume}%",
+    "format": "{icon} {volume}% ",
     "format-bluetooth": " {icon} {volume}%",
     "format-muted": " Muted",
     "format-icons": {
@@ -225,7 +225,7 @@
     "format": "{icon} {text}",
     "interval": 30,
     "format-icons": " ",
-    "exec": " uname -r"
+    "exec": " uname -r | cut -d '-' -f 1"
   },
   "custom/power": {
     "format": "{icon}",

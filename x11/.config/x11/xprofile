@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# This file runs when a DM logs you into a graphical session.
+# If you use startx/xinit like a Chad, this file will also be sourced.
+
+cpu &
+setbg & # set the background with the `setbg` script
+xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources &
+xrdbpid=$! # Uncomment to use Xresources colors/settings on startup
+gentoo-pipewire-launcher &
+# genzfs & # unlocks zfs
+# xidle & # lockscreen script
+xautolock -time 10 -locker slock &
+# xinput set-prop "DLL096D:01 06CB:CDE6 Touchpad" "Coordinate Transformation Matrix" 3.8 0 0 0 3.8 0 0 0 1 &
+clipmenud &
+gammastep &
+syncthing --no-browser &
+dunst &
+exec slstatus &
+
+autostart="mpd unclutter remapd"
+
+for program in $autostart; do
+  pidof -s "$program" || "$program" &
+done >/dev/null 2>&1
+
+# Ensure that xrdb has finished running before moving on to start the WM/DE.
+[ -n "$xrdbpid" ] && wait "$xrdbpid"
