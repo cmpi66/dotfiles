@@ -9,6 +9,7 @@ settings:
   content.javascript.clipboard:
     https://academy.hackthebox.com: access-paste
     https://chatgpt.com: access-paste
+    https://github.com: access-paste
     https://vnc.htb-cloud.com: access-paste
     https://www.browserling.com: access-paste
   spellcheck.languages:
