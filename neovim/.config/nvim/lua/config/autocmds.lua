@@ -100,3 +100,10 @@ vim.api.nvim_create_autocmd("FileType", {
     end, { buffer = true, silent = true, desc = "Open link under cursor" })
   end,
 })
+
+vim.api.nvim_create_autocmd("User", {
+  pattern = "VeryLazy",
+  callback = function()
+    require("config.winbar")
+  end,
+})

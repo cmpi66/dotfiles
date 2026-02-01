@@ -59,3 +59,11 @@ opt.spelllang = { "en" }
 
 -- GUI font (ignored unless using a GUI like Neovide)
 -- opt.guifont = "monospace:h17"
+
+-- need to overide lazyvim winbar
+vim.g.lazyvim_winbar = false
+
+-- Example colors (adjust to your palette)
+vim.api.nvim_set_hl(0, "WinBar1", { fg = "#8aadf4", bg = "NONE" }) -- counters / misc
+vim.api.nvim_set_hl(0, "WinBar2", { fg = "#c6a0f6", bg = "NONE" }) -- buffer count
+vim.api.nvim_set_hl(0, "WinBar3", { fg = "#a6da95", bg = "NONE" }) -- filename
