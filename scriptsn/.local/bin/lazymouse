@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# left click mouse becasue im lazy on qutebrowser
+
+echo click left | dotool && notify-send 'clicked left click'
+

@@ -88,3 +88,6 @@ vim.keymap.set("v", "<leader>D", "''_d", { desc = "Delete (No Yank)" })
 vim.keymap.set("n", "<leader>X", ":!chmod +x %<CR>", { desc = "Make script executable" })
 vim.keymap.set("n", "<leader>C", ":w<CR>:!compiler %:p<CR><CR>", { desc = "Doc Compiler", silent = true })
 vim.keymap.set("n", "<leader>o", ":!opout <c-r>%<CR><CR>", { desc = "opout", silent = true })
+
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "open up oil parent dir" })
+vim.keymap.set("n", "<leader>-", require("oil").toggle_float)
