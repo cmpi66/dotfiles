@@ -64,6 +64,7 @@ export OLLAMA_MODELS=$XDG_DATA_HOME/ollama/models
 export PYTHON_HISTORY=$XDG_STATE_HOME/python_history  
 export PYTHONPYCACHEPREFIX=$XDG_CACHE_HOME/python
 export PYTHONUSERBASE=$XDG_DATA_HOME/python
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 
 [ ! -f "$XDG_CONFIG_HOME/shell/shortcutrc" ] && setsid -f shortcuts >/dev/null 2>&1
 

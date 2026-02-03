@@ -73,6 +73,7 @@ eval "$(fnm env --use-on-cd --shell zsh)"
 eval "$(atuin init zsh)"
 
 # Load and initialise completion system
+fpath=("$HOME/.config/zsh/completions" $fpath)
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
 autoload -Uz compinit
 compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
