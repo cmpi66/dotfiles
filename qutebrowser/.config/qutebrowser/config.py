@@ -18,15 +18,15 @@ config.load_autoconfig()
 # set the flavor you'd like to use
 # valid options are 'mocha', 'macchiato', 'frappe', and 'latte'
 # last argument (optional, default is False): enable the plain look for the menu rows
-catppuccin.setup(c, 'macchiato', True)
+catppuccin.setup(c, "macchiato", True)
 
 # fonts
 c.fonts.default_family = []
-c.fonts.default_size = '12pt'
-c.fonts.web.family.fixed = 'monospace'
-c.fonts.web.family.sans_serif = 'monospace'
-c.fonts.web.family.serif = 'monospace'
-c.fonts.web.family.standard = 'monospace'
+c.fonts.default_size = "12pt"
+c.fonts.web.family.fixed = "monospace"
+c.fonts.web.family.sans_serif = "monospace"
+c.fonts.web.family.serif = "monospace"
+c.fonts.web.family.standard = "monospace"
 
 # INTERFACE
 c.tabs.show = "switching"
@@ -35,52 +35,65 @@ c.tabs.position = "top"
 # c.tabs.favicons.show = "never"
 # c.statusbar.show = "in-mode"
 c.completion.shrink = True
-c.completion.height = '30%'
+c.completion.height = "30%"
 c.scrolling.bar = "never"
 # pfblocker  third party certs error supppresion
-c.content.tls.certificate_errors = 'ask-block-thirdparty'
+c.content.tls.certificate_errors = "ask-block-thirdparty"
 
 # GENERAL
-c.downloads.location.directory = '~/dl'
+c.downloads.location.directory = "~/dl"
 c.editor.command = ["nvim", "{}"]
 c.url.default_page = "about:blank"
 c.url.start_pages = ["about:blank"]
 # c.url.searchengines = {'DEFAULT': 'https://search.brave.com/search?q={}'}
 
 c.url.searchengines = {
-# note - if you use duckduckgo, you can make use of its built in bangs, of which there are many! https://duckduckgo.com/bangs
-        'DEFAULT': 'https://search.brave.com/search?q={}',
-        ',aw': 'https://wiki.archlinux.org/?search={}',
-        ',apkg': 'https://archlinux.org/packages/?sort=&q={}&maintainer=&flagged=',
-        ',gh': 'https://github.com/search?o=desc&q={}&s=stars',
-        ',yt': 'https://www.youtube.com/results?search_query={}',
-        }
+    # note - if you use duckduckgo, you can make use of its built in bangs, of which there are many! https://duckduckgo.com/bangs
+    "DEFAULT": "https://search.brave.com/search?q={}",
+    ",aw": "https://wiki.archlinux.org/?search={}",
+    ",apkg": "https://archlinux.org/packages/?sort=&q={}&maintainer=&flagged=",
+    ",gh": "https://github.com/search?o=desc&q={}&s=stars",
+    ",yt": "https://www.youtube.com/results?search_query={}",
+}
 
-c.completion.open_categories = ['searchengines', 'quickmarks', 'bookmarks', 'history', 'filesystem']
+c.completion.open_categories = [
+    "searchengines",
+    "quickmarks",
+    "bookmarks",
+    "history",
+    "filesystem",
+]
 
 
 c.messages.timeout = 5000
 
 
 config.set("fileselect.handler", "external")
-config.set("fileselect.single_file.command",
-    ["kitty", "--class", "yazi-qute", "yazi", "--chooser-file", "{}"])
-config.set("fileselect.multiple_files.command",
-    ["kitty", "--class", "yazi-qute", "yazi", "--chooser-file", "{}"])
+config.set(
+    "fileselect.single_file.command",
+    ["kitty", "--class", "yazi-qute", "yazi", "--chooser-file", "{}"],
+)
+config.set(
+    "fileselect.multiple_files.command",
+    ["kitty", "--class", "yazi-qute", "yazi", "--chooser-file", "{}"],
+)
 
 
-config.bind('J', 'back')
-config.bind('K', 'forward')
-config.bind('H', 'tab-prev')
-config.bind('L', 'tab-next')
-config.bind('=', 'zoom-in')
-config.bind('+', 'zoom')
+config.bind("J", "back")
+config.bind("K", "forward")
+config.bind("H", "tab-prev")
+config.bind("L", "tab-next")
+config.bind("=", "zoom-in")
+config.bind("+", "zoom")
 # config.bind('D', 'undo')
-config.bind('<space>b', 'config-cycle statusbar.show always never')
-config.bind('<space>t', 'config-cycle tabs.show always never')
-config.bind('<space>x', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')
-config.bind('m', 'spawn kitty yt-dlp {url}')
-config.bind('M', 'hint links spawn kitty yt-dlp {hint-url}')
+config.bind("<space>b", "config-cycle statusbar.show always never")
+config.bind("<space>t", "config-cycle tabs.show always never")
+config.bind(
+    "<space>x",
+    "config-cycle statusbar.show always never;; config-cycle tabs.show always never",
+)
+config.bind("m", "spawn kitty yt-dlp {url}")
+config.bind("M", "hint links spawn kitty yt-dlp {hint-url}")
 # config.bind('M', 'hint links spawn mpv {hint-url}')
 
 
@@ -113,22 +126,26 @@ for tracker in ["*.doubleclick.net", "*.facebook.com", "*.google-analytics.com"]
 # You can also watch yt vids directly in mpv, see qutebrowser FAQ for how to do that.
 # If you want additional blocklists, you can get the python-adblock package, or you can uncomment the ublock lists here.
 c.content.blocking.enabled = True
-c.content.blocking.method = 'adblock' # uncomment this if you install python-adblock
+c.content.blocking.method = "adblock"  # uncomment this if you install python-adblock
 c.content.blocking.adblock.lists = [
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/legacy.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2020.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2021.txt", "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2022.txt", "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2023.txt", "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2024.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/badware.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/privacy.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/badlists.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances-cookies.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances-others.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/badlists.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/quick-fixes.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/resource-abuse.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/unbreak.txt"]
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/legacy.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2020.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2021.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2022.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2023.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2024.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/badware.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/privacy.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/badlists.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances-cookies.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances-others.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/badlists.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/quick-fixes.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/resource-abuse.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/unbreak.txt",
+]
 
 
 # SECURITY HEADERS (browser-facing)
@@ -136,21 +153,31 @@ c.content.blocking.adblock.lists = [
 # c.content.headers.user_agent = "Mozilla/5.0 (X11; Linux x86_64 x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
 
 
-c.aliases = {'q': 'quit', 'w': 'session-save', 'wq': 'quit --save'}
+c.aliases = {"q": "quit", "w": "session-save", "wq": "quit --save"}
 
 # config.bind('xk>', 'spawn --userscript qute-keepassxc --key FB1A5452C181A3F5 ', mode='insert')
 # config.bind('xs', 'spawn --userscript qute-keepassxc --key FB1A5452C181A3F5', mode='normal')
 
 # Autofill full login: username + tab + password
-config.bind('<space>k', 'spawn --userscript qute-pass --username-target secret --username-pattern "login: (.+)"')
+config.bind(
+    "<space>k",
+    'spawn --userscript qute-pass --username-target secret --username-pattern "login: (.+)"',
+)
 
 # Username only
-config.bind('<space>j', 'spawn --userscript qute-pass --username-only --username-target secret --username-pattern "login: (.+)"')
+config.bind(
+    "<space>j",
+    'spawn --userscript qute-pass --username-only --username-target secret --username-pattern "login: (.+)"',
+)
 
 # Password only
-config.bind('<space>s', 'spawn --userscript qute-pass --password-only')
+config.bind("<space>s", "spawn --userscript qute-pass --password-only")
 
 
 # js error on arch recent version 11-3-25
-c.content.javascript.log_message.excludes = {"userscript:_qute_stylesheet": ["*Refused to apply inline style because it violates the following Content Security Policy directive: *"], 
-                                             "userscript:_qute_js": ["*TrustedHTML*"]}
+c.content.javascript.log_message.excludes = {
+    "userscript:_qute_stylesheet": [
+        "*Refused to apply inline style because it violates the following Content Security Policy directive: *"
+    ],
+    "userscript:_qute_js": ["*TrustedHTML*"],
+}
