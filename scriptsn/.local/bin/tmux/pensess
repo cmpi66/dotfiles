@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-## A script to easily open jobapps with scim and nvim.
+## A script to easily open exegol container on other pc
 
 has-session() {
   tmux has-session -t pen 2>/dev/null

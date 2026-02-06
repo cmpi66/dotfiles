@@ -5,12 +5,13 @@
 
 export WM="hyprland"
 
-case "$(printf " zettle\n jobapps\n pensess\n pythondev\n bashdev" | rofi -dmenu -p 'Sessions: ')" in
+case "$(printf " zettle\n jobapps\n pensess\n pythondev\n bashdev\n godev" | rofi -dmenu -p 'Sessions: ')" in
 ' zettle') zettle-ema-kitty ;; # using sleep here so bemenu wont show up in screenshot
 ' jobapps') jobapps ;;
 ' pensess') pensess ;;
 ' pythondev') pythondev ;;
 ' bashdev') bashdev ;;
+' godev') godev ;;
 *) exit 0 ;;
 esac
 
