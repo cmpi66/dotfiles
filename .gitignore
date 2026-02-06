@@ -58,6 +58,10 @@ zsh/.config/zsh/.zcompdump
 mpv/.config/mpv/watch_later
 office/*
 scriptsn/.local/bin/extras/keepmenu
+scriptsn/.local/bin/activate-global-python-argcomplete
+scriptsn/.local/bin/python-argcomplete-check-easy-install-script
+scriptsn/.local/bin/register-python-argcomplete
+scriptsn/.local/bin/exegol
 
 lunarvim/.local/share/lunarvim/lvim/.github
 lunarvim/.local/share/lunarvim/lvim/.git

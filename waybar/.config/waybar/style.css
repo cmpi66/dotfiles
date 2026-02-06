@@ -107,7 +107,8 @@ button {
 
 #workspaces button.active {
     color: @base;
-    background: linear-gradient(135deg, @blue 0%, @mauve 50%, @red 100%);
+    background-color: @sapphire;
+    /* background: linear-gradient(135deg, @blue 0%, @mauve 50%, @red 100%); */
     min-width: 30px;
     transition: all 0.3s ease-in-out;
 }
@@ -141,7 +142,8 @@ button {
 }
 
 #clock {
-    color: @text;
+    /* color: @text; */
+    color: @lavender;
     /* background-color: @surface0; */
     /* border-radius: 16px; */
     /* margin: 5px; */
@@ -152,7 +154,8 @@ button {
 }
 
 #battery {
-    color: @yellow;
+    /* color: @yellow; */
+    color: @lavender;
     /* background-color: @surface0; */
     /* border-radius: 16px; */
     /* margin: 5px; */
@@ -163,7 +166,8 @@ button {
 }
 
 #pulseaudio {
-    color: @peach;
+    /* color: @peach; */
+    color: @lavender;
     background-color: @surface0;
     border-radius: 16px;
     margin: 5px;
@@ -174,7 +178,8 @@ button {
 }
 
 #battery.charging, #battery.plugged {
-    color: @green;
+    /* color: @green; */
+    color: @lavender;
     /* background-color: @surface0; */
 }
 
@@ -200,7 +205,8 @@ label:focus {
 }
 
 #cpu {
-    color: @mauve;
+    /* color: @mauve; */
+    color: @lavender;
     /* background-color: @surface0; */
     /* border-radius: 16px; */
     /* margin: 5px; */
@@ -210,7 +216,8 @@ label:focus {
     font-weight: bold;
 }
 #bluetooth {
-    color: @text;
+    /* color: @text; */
+    color: @lavender;
     /* background-color: @base; */
     /* border-radius: 16px; */
     /* margin: 5px; */
@@ -220,7 +227,8 @@ label:focus {
     font-weight: bold;
 }
 #bluetooth.off {
-    color: @text;
+    /* color: @text; */
+    color: @lavender;
     /* background-color: @base; */
     /* border-radius: 16px; */
     /* margin: 5px; */
@@ -230,7 +238,8 @@ label:focus {
     font-weight: bold;
 }
 #bluetooth.connected {
-    color: @text;
+    /* color: @text; */
+    color: @lavender;
     background-color: @base;
     border-radius: 16px;
     margin: 5px;
@@ -241,7 +250,8 @@ label:focus {
 }
 
 #memory {
-    color: @sapphire;
+    /* color: @sapphire; */
+    color: @lavender;
     /* background-color: @surface0; */
     /* border-radius: 16px; */
     /* margin: 5px; */
@@ -252,7 +262,8 @@ label:focus {
 }
 
 #disk {
-    color: @yellow;
+    /* color: @yellow; */
+    color: @lavender;
     /* background-color: @surface0; */
     /* border-radius: 16px; */
     /* margin: 5px; */
@@ -263,7 +274,8 @@ label:focus {
 }
 
 #backlight {
-    color: @text;
+    /* color: @text; */
+    color: @lavender;
     /* background-color: @surface0; */
     /* border-radius: 16px; */
     /* margin: 5px; */
@@ -274,7 +286,8 @@ label:focus {
 }
 
 #custom-power {
-    color: @text;
+    /* color: @text; */
+    color: @lavender;
     /* background-color: @base; */
     /* border-radius: 16px; */
     /* margin: 5px; */
@@ -287,7 +300,8 @@ label:focus {
 
 
 #custom-mail {
-    color: @text;
+    /* color: @text; */
+    color: @lavender;
     background-color: @base;
     border-radius: 16px;
     margin: 5px;
@@ -298,7 +312,8 @@ label:focus {
 }
 
 #custom-torrent {
-    color: @text;
+    /* color: @text; */
+    color: @lavender;
     background-color: @base;
     border-radius: 16px;
     margin: 5px;
@@ -309,7 +324,8 @@ label:focus {
 }
 
 #custom-pacman {
-    color: @mauve;
+    /* color: @mauve; */
+    color: @lavender;
     /* background-color: @surface0; */
     /* border-radius: 16px; */
     /* margin: 5px; */
@@ -331,7 +347,8 @@ label:focus {
 }
 
 #custom-music {
-    color: @sky;
+    /* color: @sky; */
+    color: @lavender;
     /* background-color: @surface0; */
     /* border-radius: 16px; */
     /* margin: 5px; */
@@ -355,7 +372,8 @@ label:focus {
 }
 
 #temperature {
-    color: @red;
+    /* color: @red; */
+    color: @lavender;
     /* background-color: @surface0; */
     /* border-radius: 16px; */
     /* margin: 5px; */
@@ -366,11 +384,12 @@ label:focus {
 }
 
 #temperature.critical {
-    background-color: #eb4d4b;
+    background-color: @red;
 }
 
 #tray {
-    color: @green;
+    /* color: @green; */
+    color: @lavender;
     /* background-color: @surface0; */
     /* border-radius: 16px; */
     /* margin: 5px; */
@@ -386,7 +405,7 @@ label:focus {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
+    background-color: @red;
 }
 
 #idle_inhibitor {
