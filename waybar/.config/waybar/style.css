@@ -112,8 +112,9 @@ button {
 
 #workspaces button.active {
     color: @base;
-    /* background-color: @blue; */
-    background: linear-gradient(135deg, @blue 0%, @mauve 50%, @red 100%);
+    background-color: @sapphire;
+    /* background: linear-gradient(135deg, @blue 0%, @mauve 50%, @red 100%); */
+    /* background: linear-gradient(135deg, @blue 0%, @sapphire 50%, @lavender 100%); */
     min-width: 30px;
     transition: all 0.3s ease-in-out;
 }
@@ -148,7 +149,8 @@ button {
 }
 
 #clock {
-    color: @text;
+    /* color: @text; */
+    color: @lavender;
     background-color: transparent;
     /* border-radius: 16px; */
     /* margin: 5px; */
@@ -196,7 +198,8 @@ label:focus {
 }
 
 #cpu {
-    color: @mauve;
+    /* color: @mauve; */
+    color: @lavender;
     /* background-color: @surface0; */
     /* border-radius: 16px; */
     /* margin: 5px; */
@@ -207,7 +210,8 @@ label:focus {
 }
 
 #memory {
-    color: @sapphire;
+    /* color: @sapphire; */
+    color: @lavender;
     /* background-color: @surface0; */
     /* border-radius: 16px; */
     /* margin: 5px; */
@@ -218,7 +222,8 @@ label:focus {
 }
 
 #disk {
-    color: @yellow;
+    /* color: @yellow; */
+    color: @lavender;
     /* background-color: @surface0; */
     /* border-radius: 16px; */
     /* margin: 5px; */
@@ -231,7 +236,8 @@ label:focus {
 
 #pulseaudio {
   /* background-color: @surface0; */
-  color: @peach; /* or whatever fits your IEM aesthetic */
+  /* color: @peach; */
+   color: @lavender;
   /* border-radius: 16px; */
   /* margin: 5px; */
   /* margin-left: 5px; */
@@ -281,7 +287,8 @@ label:focus {
 }
 
 #custom-torrent {
-    color: @text;
+    /* color: @text; */
+    color: @lavender;
     /* background-color: @base; */
     /* border-radius: 16px; */
     /* margin: 5px; */
@@ -302,7 +309,8 @@ label:focus {
 }
 
 #custom-kern {
-    color: @green;
+    /* color: @green; */
+    color: @lavender;
     /* background-color: @surface0; */
     /* border-radius: 16px; */
     /* margin: 5px; */
@@ -337,7 +345,8 @@ label:focus {
 }
 
 #custom-music {
-    color: @sky;
+    /* color: @sky; */
+    color: @lavender;
     /* background-color: @surface0; */
     /* border-radius: 16px; */
     /* margin: 5px; */
@@ -361,7 +370,8 @@ label:focus {
 }
 
 #temperature {
-    color: @red;
+    /* color: @red; */
+    color: @lavender;
     /* background-color: @surface0; */
     /* border-radius: 16px; */
     /* margin: 5px; */
@@ -382,11 +392,12 @@ label:focus {
 }
 
 #temperature.critical {
-    background-color: #eb4d4b;
+    background-color: @red;
 }
 
 #tray {
-    color: @green;
+    /* color: @green; */
+    color: @lavender;
     /* background-color: @surface0; */
     /* border-radius: 16px; */
     /* margin: 5px; */
@@ -402,7 +413,7 @@ label:focus {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
+    background-color: @red;
 }
 
 #idle_inhibitor {
