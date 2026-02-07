@@ -79,4 +79,4 @@ autoload -Uz compinit
 compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
 
 # needed for X now
-xset r rate 180 50
+# xset r rate 180 50
