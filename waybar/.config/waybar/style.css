@@ -102,7 +102,7 @@ button {
     border-radius: 16px;
     background: transparent;
     color: @overlay2;
-    transition: all 0.3s ease-in-out;
+    /* transition: all 0.3s ease-in-out; */
 }
 
 #workspaces button.active {
@@ -110,7 +110,7 @@ button {
     background-color: @sapphire;
     /* background: linear-gradient(135deg, @blue 0%, @mauve 50%, @red 100%); */
     min-width: 30px;
-    transition: all 0.3s ease-in-out;
+    /* transition: all 0.3s ease-in-out; */
 }
 
 #workspaces button:hover {
