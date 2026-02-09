@@ -62,6 +62,7 @@ export PYTHONPYCACHEPREFIX=$XDG_CACHE_HOME/python
 export PYTHONUSERBASE=$XDG_DATA_HOME/python
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 export DEVPOD_HOME="$XDG_CONFIG_HOME"/devpod
+export QT_QPA_PLATFORMTHEME=qt6ct
 
 
 [ ! -f "$XDG_CONFIG_HOME/shell/shortcutrc" ] && setsid -f shortcuts >/dev/null 2>&1
