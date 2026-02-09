@@ -14,13 +14,15 @@ practicalvim="/home/chris/media/books/it-books/linux/practical-vim.pdf"
 bugbounty="/home/chris/media/books/it-books/hacking/Bug Bounty Bootcamp The Guide to Finding and Reporting Web Vulnerabilities (Vickie Li) (Z-Library).pdf"
 linuxcommandline="/home/chris/media/books/it-books/linux/Linux Command Line and Shell Scripting Bible (Richard Blum Christine Bresnahan) (z-lib.org).pdf"
 deeperlovego="/home/chris/media/books/it-books/languages/The Deeper Love of Go.pdf"
+caspp="/home/chris/media/books/it-books/Computer Systems A Programmer’s Perspective (Randal E. Bryant, David R. O’Hallaron) (Z-Library).epub"
 
-case "$(printf "󰂺 blackhatpython\n󰂺 blackhatbash\n󰂺 practicalvim\n󰂺 bugbounty\n󰂺 linux-commandline\n󰂺 deeperlovego" | rofi -dmenu -p 'Choose: ')" in
+case "$(printf "󰂺 blackhatpython\n󰂺 blackhatbash\n󰂺 practicalvim\n󰂺 bugbounty\n󰂺 linux-commandline\n󰂺 deeperlovego\n󰂺 caspp" | rofi -dmenu -p 'Choose: ')" in
 '󰂺 blackhatpython') zathura "$blackhatpython" ;;
 '󰂺 blackhatbash') zathura "$blackhatbash" ;;
 '󰂺 practicalvim') zathura "$practicalvim" ;;
 '󰂺 bugbounty') zathura "$bugbounty" ;;
 '󰂺 linux-commandline') zathura "$linuxcommandline" ;;
 '󰂺 deeperlovego') zathura "$deeperlovego" ;;
+'󰂺 caspp') zathura "$caspp" ;;
 *) exit 0 ;;
 esac

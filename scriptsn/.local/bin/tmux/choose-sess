@@ -6,7 +6,7 @@
 export WM="hyprland"
 
 case "$(printf " zettle\n jobapps\n pensess\n pythondev\n bashdev" | rofi -dmenu -p 'Sessions: ')" in
-' zettle') zettle-ema-kitty ;; # using sleep here so bemenu wont show up in screenshot
+' zettle') attachzettle-kitty ;;
 ' jobapps') jobapps ;;
 # ' pensess') pensess ;; # not relevant since this is itself, maybe i can move exegol to a vm on server? its jsut too slow compared to this one, or maybe jsut a regular session with exegol?
 ' pythondev') pythondev ;;
