@@ -73,7 +73,7 @@ export QT_QPA_PLATFORMTHEME=qt6ct
 
 # with X removed this was needed or else tmux would launch hyprland within itself, weird behavior.
 if [ -z "$WAYLAND_DISPLAY" ] && [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
-  exec dbus-run-session Hyprland
+  exec dbus-run-session start-hyprland
 fi
 
 # if [ -z "$WAYLAND_DISPLAY" ] && [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
