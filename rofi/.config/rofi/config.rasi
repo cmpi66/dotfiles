@@ -4,32 +4,39 @@
 // @import "catppuccin-mocha"
 
 * {
-  selected-active-foreground:  @background;
-  lightfg:                     @text; //this changes the bar selection
+  base-alpha-80: rgba(36, 39, 58, 0.80);   // @base @ 80%
+  base-alpha-65: rgba(36, 39, 58, 0.65);
+  surface-alpha: rgba(54, 58, 79, 0.60); // surface0-ish
+}
+
+
+* {
+  selected-active-foreground:  transparent;
+  lightfg:                     @transparent; //this changes the bar selection
   separatorcolor:              @foreground;
   urgent-foreground:           @red;
   alternate-urgent-background: @lightbg;
-  lightbg:                     @background; // this is the odd even color
+  lightbg:                     transparent; // this is the odd even color
   background-color:            transparent;
-  border-color:                @blue;
-  normal-background:           @background; // again the odd even color
+  border-color:                @sapphire;
+  normal-background:           transparent; // again the odd even color
   selected-urgent-background:  @red;
   alternate-active-background: @lightbg;
   spacing:                     2;
   alternate-normal-foreground: @foreground; // odd even but appicable to the text itself
   urgent-background:           @background;
-  selected-normal-foreground:  @lightbg; // this is the current selection but foreground, its ugly if blue
-  active-foreground:           @blue;
+  selected-normal-foreground:  @crust; // this is the current selection but foreground, its ugly if sapphire
+  active-foreground:           @sapphire;
   background:                  @base;
-  selected-active-background:  @blue;
+  selected-active-background:  @sapphire;
   active-background:           @background;
-  selected-normal-background:  @blue;  // this is the current selection background e.g when you select an item color 
-  alternate-normal-background: @lightbg;
-  foreground:                  @text;
+  selected-normal-background:  @sapphire;  // this is the current selection background e.g when you select an item color 
+  alternate-normal-background: transparent;
+  foreground:                  @lavender;
   selected-urgent-foreground:  @background;
-  normal-foreground:           @foreground;
+  normal-foreground:           @lavender;
   alternate-urgent-foreground: @red;
-  alternate-active-foreground: @blue;
+  alternate-active-foreground: @sapphire;
 
 }
 element {
@@ -88,9 +95,9 @@ element-icon {
 }
 window {
     padding:          5;
-    background-color: @background;
-    border:           3;
-    border-radius:    5;
+    background-color: @base-alpha-80;
+    border:           2;
+    border-radius:    0;
     width:            35%; // screen realestate
     // height:            30%; // screen realestate, cant choose number of lines if this is enabled
 }
