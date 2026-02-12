@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+TERMINAL="kitty"
+BROWSER="qutebrowser"
+BROWSER2="stupid-web"
+
+launch_lighter_tools() {
+  hyprctl dispatch exec zathura && hyprctl dispatch exec initial
+}
+
+check_internet() {
+  # wait for default route
+  while ! ip route | grep -q "^default"; do
+    sleep 0.5
+  done
+
+  # wait for internet reachability
+  while ! ping -c1 -W1 1.1.1.1 >/dev/null 2>&1; do
+    sleep 0.5
+  done
+}
+
+launch_browsers() {
+  hyprctl dispatch exec $BROWSER
+  hyprctl dispatch exec $BROWSER2
+  sleep 1
+  hyprctl dispatch fullscreen 1
+}
+
+move_work_spaces() {
+  hyprctl dispatch workspace 1
+}
+
+# and still its slow to launch correctly. It might be waiting on internet? So it obviously launches initial correctly, then goes to move_work_spaces and then it luanches browser
+
+# lets leave browser out of this for now and just keep it light
+# launch_lighter_tools && check_internet && launch_browsers && move_work_spaces
+
+launch_lighter_tools

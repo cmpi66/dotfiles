@@ -10,7 +10,7 @@ map K zoom in
 map J zoom out
 map i recolor
 map p print
-include catppuccin-latte
+# include catppuccin-latte
 set selection-clipboard clipboard
 map [fullscreen] u scroll half-up
 map [fullscreen] d scroll half-down
@@ -21,3 +21,13 @@ map [fullscreen] K zoom in
 map [fullscreen] J zoom out
 map [fullscreen] i recolor
 map [fullscreen] p print
+
+# High Contrast
+# set recolor "true"
+set recolor-lightcolor "#ffffff" # Background
+set recolor-darkcolor "#000000"  # Text
+set default-bg "#ffffff"
+
+set guioptions ""             # Removes the status bar/command bar
+
+
