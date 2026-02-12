@@ -23,7 +23,7 @@
     "custom/torrent",
     "cpu",
     "memory",
-    "temperature",
+    // "temperature",
     // "pulseaudio",
     // "disk",
     "tray",

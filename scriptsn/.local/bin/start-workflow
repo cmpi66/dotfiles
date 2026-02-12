@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+TERMINAL="kitty"
+BROWSER="qutebrowser"
+BROWSER2="stupid-web"
+
+launch_lighter_tools() {
+  hyprctl dispatch exec zettle-ema-kitty && hyprctl dispatch exec zathura && hyprctl dispatch exec initial
+}
+
+check_internet() {
+
+  # wait for default route
+  while ! ip route | grep -q "^default"; do
+    sleep 0.5
+  done
+
+  # wait for internet reachability
+  while ! ping -c1 -W1 1.1.1.1 >/dev/null 2>&1; do
+    sleep 0.5
+  done
+  launch_browsers
+}
+
+launch_browsers() {
+  hyprctl dispatch exec $BROWSER
+  hyprctl dispatch exec $BROWSER2
+  sleep 1
+  hyprctl dispatch fullscreen 1
+
+}
+
+# I'll just put workpace 3 as fullscreen by default
+move_work_spaces() {
+  hyprctl dispatch workspace 1
+}
+
+# launch_lighter_tools && check_internet && move_work_spaces
+
+# jsut keeping it light for now until i figure out th race conditions.
+# check_internet && launch_lighter_tools
+
+launch_lighter_tools
