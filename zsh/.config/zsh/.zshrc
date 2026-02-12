@@ -39,6 +39,12 @@ stty stop undef		# Disable ctrl-s to freeze terminal.
 
 # keybinds
 bindkey '^ ' autosuggest-accept
+bindkey " " magic-space
+
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd '!' edit-command-line
+
 fish_clipboard_copy() {
   print -rn -- "$BUFFER" | wl-copy
 }
