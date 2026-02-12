@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+has-session() {
+  tmux has-session -t zettle 2>/dev/null
+}
+
+launch_foot_tmux() {
+  # --title sets the window title; --class is optional if you want a distinct WM_CLASS
+  footclient --title ema --app-id ema -e tmux attach-session -t zettle
+}
+
+if has-session; then
+  launch_foot_tmux
+else
+  tmux new-session -s zettle -n notes -d 'cd ~/.local/.src/zettlekasten/; nvim index.md; zsh -i'
+  # If you later want to auto-run emanote in another tmux window:
+  # tmux new-window -t zettle:2 -n pentest 'cd ~/.local/.src/pentest-hub/; nvim .; zsh -i'
+  tmux new-window -t zettle:2 -n blue 'cd ~/.local/.src/blueteam-hub/; nvim .; zsh -i'
+  tmux select-window -t zettle:1
+  launch_foot_tmux
+fi

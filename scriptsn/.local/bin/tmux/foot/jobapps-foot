@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+## A script to easily open jobapps with scim and nvim.
+
+has-session() {
+  tmux has-session -t ja 2>/dev/null
+}
+
+launch_foot_tmux() {
+  # --title sets the window title; --app-id is optional if you want a distinct WM_CLASS
+  footclient --title ja --app-id ja -e tmux attach-session -t ja
+}
+
+if has-session; then
+  launch_foot_tmux
+else
+
+  tmux new-session -s ja -n scim -d 'cd ~/media/sec-future/resume/sec-resume/per-role-resumes/app-tracker/; sc-im --quiet jobapps-2025-new.csv; zsh -i'
+  tmux new-window -t ja:2 -n search 'cd ~/media/sec-future/resume/sec-resume/per-role-resumes/app-tracker/;  zsh -i' # using grep now, nvim csv slows down tmux
+  # tmux new-window -t ja:2 -n search 'cd ~/media/sec-future/resume/sec-resume/per-role-resumes/app-tracker/; nvim jobapps-2025-new.csv; zsh -i' # this is needed becasue sc-im doesnt have search the same as vim, too many keystrokes and case sensitive.
+  # tmux new-window -t ja:3 -n resumes 'cd ~/media/sec-future/resume/sec-resume/per-role-resumes/; nvim .; zsh -i'
+  tmux new-window -t ja:4 -n copy-bullets 'cd ~/media/sec-future/resume/sec-resume/per-role-resumes/; nvim _iteration-5-baseline-more-meaty-9-8-25.md; zsh -i'
+  tmux new-window -t ja:5 -n keywords 'cd ~/media/sec-future/resume/sec-resume/per-role-resumes/; nvim cybersecurity_keywords.md; zsh -i'
+  tmux select-window -t ja:1
+  launch_foot_tmux
+fi

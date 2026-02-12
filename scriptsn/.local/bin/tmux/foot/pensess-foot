@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+## A script to easily open exegol container on other pc
+
+has-session() {
+  tmux has-session -t pen 2>/dev/null
+}
+
+launch_foot_tmux() {
+  # --title sets the window title; --app-id is optional if you want a distinct WM_CLASS
+  footclient --title pen --app-id pen -e tmux attach-session -t pen
+}
+
+if has-session; then
+  launch_foot_tmux
+else
+
+  tmux new-session -s pen -n port-vnc -d 'ssh -L 55075:localhost:55075 chris@10.27.27.18'
+  sleep 1
+  tmux send-keys -t pen:1 'exegol start academy' C-m
+  tmux new-window -t pen:2 -n win2 'ssh artixframe'
+  sleep 1
+  tmux send-keys -t pen:2 'exegol start academy' C-m
+  tmux new-window -t pen:3 -n notes 'cd ~/.local/.src/pentest-hub/; nvim .; zsh -i'
+  tmux select-window -t pen:1
+  launch_foot_tmux
+fi

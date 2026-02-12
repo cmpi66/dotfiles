@@ -71,11 +71,11 @@ c.messages.timeout = 5000
 config.set("fileselect.handler", "external")
 config.set(
     "fileselect.single_file.command",
-    ["kitty", "--class", "yazi-qute", "yazi", "--chooser-file", "{}"],
+    ["footclient", "--app-id", "yazi-qute", "yazi", "--chooser-file", "{}"],
 )
 config.set(
     "fileselect.multiple_files.command",
-    ["kitty", "--class", "yazi-qute", "yazi", "--chooser-file", "{}"],
+    ["yazi", "--app-id", "yazi-qute", "yazi", "--chooser-file", "{}"],
 )
 
 

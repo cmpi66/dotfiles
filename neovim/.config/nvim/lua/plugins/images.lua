@@ -3,7 +3,7 @@ return {
   "3rd/image.nvim",
   lazy = false,
   opts = {
-    backend = "kitty",
+    backend = "sixel",
     processor = "magick_cli", -- use magick_cli unless you prefer luarocks
     integrations = {
       markdown = {

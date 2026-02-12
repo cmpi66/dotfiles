@@ -29,7 +29,8 @@ set -euo pipefail
 DMENU="rofi -dmenu -i -p"
 # DMENU="rofi -dmenu -i -l 10 -p"
 # DMTERM="foot -e"
-DMTERM="kitty"
+# DMTERM="kitty"
+DMTERM="foot"
 
 DMEDITOR="${DMTERM} nvim"
 declare -A confedit_list

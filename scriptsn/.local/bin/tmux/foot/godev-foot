@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+## A script to easily ogodev jobapps with scim and nvim.
+
+has-session() {
+  tmux has-session -t godev 2>/dev/null
+}
+
+launch_foot_tmux() {
+  # --title sets the window title; ----app-id is optional if you want a distinct WM_CLASS
+  footclient --title godev --app-id godev tmux attach-session -t godev
+}
+
+if has-session; then
+  launch_foot_tmux
+else
+
+  tmux new-session -s godev -n devpod -d 'devpod ssh go-projects-2026;'
+  # tmux new-window -t godev:2 -n blue 'cd ~/.local/.src/projects/sec/python/python-for-cyber-defense-pluralsight/; nvim .;'
+  tmux select-window -t godev:1
+  launch_foot_tmux
+fi
