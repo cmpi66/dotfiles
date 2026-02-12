@@ -28,8 +28,8 @@ set -euo pipefail
 
 # DMENU="tofi --width 25% --height 25% --prompt-text"
 DMENU="rofi -dmenu -i -p"
-# DMTERM="foot -e"
-DMTERM="kitty"
+DMTERM="foot"
+# DMTERM="kitty"
 
 DMEDITOR="${DMTERM} nvim"
 declare -A confedit_list

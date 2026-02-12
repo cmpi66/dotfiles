@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+has-session() {
+  tmux has-session -t initial 2>/dev/null
+}
+
+launch_foot_tmux() {
+  # --title sets the window title; --app-id is optional if you want a distinct WM_CLASS
+  footclient --title initial --app-id initial -e tmux attach-session -t initial
+}
+
+if has-session; then
+  launch_foot_tmux
+else
+  tmux new-session -s initial -d 'zsh -i'
+  launch_foot_tmux
+fi

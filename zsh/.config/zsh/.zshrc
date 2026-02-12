@@ -4,7 +4,7 @@
 plug "zsh-users/zsh-autosuggestions"
 plug "hlissner/zsh-autopair"
 plug "zap-zsh/supercharge"
-plug "zap-zsh/vim"
+# plug "zap-zsh/vim"
 # plug "cmpi66/zap-prompt"
 plug "zap-zsh/fzf"
 plug "zsh-users/zsh-syntax-highlighting"
@@ -36,6 +36,7 @@ setopt hist_find_no_dups
 
 source "$HOME/.config/zsh/plugins/catppuccin_macchiato-zsh-syntax-highlighting.zsh"
 source "$HOME/.config/zsh/plugins/fzf-git.sh"
+source "$HOME/.config/zsh/plugins/vim-mode.sh"
 
 stty stop undef		# Disable ctrl-s to freeze terminal.
 
@@ -84,11 +85,25 @@ export BAT_THEME="Catppuccin Macchiato"
 export FZF_DEFAULT_OPTS=" \
 --bind tab:down,shift-tab:up \
 --layout=reverse --height 40% \
---color=bg+:#363A4F,bg:#24273A,spinner:#F4DBD6,hl:#ED8796 \
+--color=bg:-1,bg+:-1,spinner:#F4DBD6,hl:#ED8796 \
 --color=fg:#CAD3F5,header:#ED8796,info:#C6A0F6,pointer:#F4DBD6 \
 --color=marker:#B7BDF8,fg+:#CAD3F5,prompt:#C6A0F6,hl+:#ED8796 \
 --color=selected-bg:#494D64 \
 --color=border:#6E738D,label:#CAD3F5"
+
+# Foot shell integration (OSC 133)
+
+function precmd {
+    if ! builtin zle; then
+        print -n "\e]133;D\e\\"
+    fi
+}
+
+function preexec {
+    print -n "\e]133;C\e\\"
+}
+
+
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"   

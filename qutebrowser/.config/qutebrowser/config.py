@@ -71,11 +71,11 @@ c.completion.open_categories = [
 config.set("fileselect.handler", "external")
 config.set(
     "fileselect.single_file.command",
-    ["kitty", "--class", "yazi-qute", "yazi", "--chooser-file", "{}"],
+    ["foot", "--app-id", "yazi-qute", "yazi", "--chooser-file", "{}"],
 )
 config.set(
     "fileselect.multiple_files.command",
-    ["kitty", "--class", "yazi-qute", "yazi", "--chooser-file", "{}"],
+    ["foot", "--app-id", "yazi-qute", "yazi", "--chooser-file", "{}"],
 )
 
 

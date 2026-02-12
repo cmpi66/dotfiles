@@ -10,6 +10,7 @@ export PATH="$PATH:/$HOME/.local/appimages"
 export PATH="$PATH:${$(find ~/.local/bin/ -type d -printf %p:)%%:}"
 
 
+export TERM=xterm-256color
 export EDITOR='nvim'
 export VISUAL='nvim'
 export TERMINAL='kitty'
