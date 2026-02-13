@@ -6,6 +6,8 @@
 
 config_version: 2
 settings:
+  content.javascript.clipboard:
+    https://github.com: access-paste
   scrolling.smooth:
     global: false
   spellcheck.languages:
