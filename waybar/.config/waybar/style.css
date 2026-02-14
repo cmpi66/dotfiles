@@ -27,7 +27,9 @@ window#waybar.hidden {
 }
 
 .modules-center {
-  background: @base;
+  /* background: @base; */
+  background-color: rgba(36, 39, 58, 0.7);
+  /* background-color: rgba(54, 58, 79, 0.80); */
   padding: 6px 12px;
   border-radius: 28px;
   margin-top: 7px;
