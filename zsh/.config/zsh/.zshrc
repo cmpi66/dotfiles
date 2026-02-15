@@ -34,6 +34,13 @@ setopt hist_find_no_dups
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc"
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/functionrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/functionrc"
 
+
+# Load local secrets if present
+if [ -f "$HOME/.config/secrets/env" ]; then
+  source "$HOME/.config/secrets/env"
+fi
+
+
 source "$HOME/.config/zsh/plugins/catppuccin_macchiato-zsh-syntax-highlighting.zsh"
 source "$HOME/.config/zsh/plugins/fzf-git.sh"
 source "$HOME/.config/zsh/plugins/vim-mode.sh"

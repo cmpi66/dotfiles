@@ -1,0 +1,137 @@
+/* ============================= */
+/* PAGE SETUP                    */
+/* ============================= */
+
+@page {
+  size: Letter;
+  margin: 0.5in;
+}
+
+body {
+  font-family: "Calibri", sans-serif;
+  font-size: 10pt;
+  line-height: 1.10;
+  margin: 0;
+  color: #000;
+}
+
+
+/* ============================= */
+/* NAME HEADER                   */
+/* ============================= */
+
+h1 {
+  font-size: 12pt;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* removing spacing between name and personal info */
+h1 + p {
+  margin-top: 0;
+}
+
+
+/* ============================= */
+/* SECTION HEADINGS              */
+/* ============================= */
+
+h2 {
+  font-size: 11.5pt;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  margin-top: 14pt;     /* breathing room before section */
+  margin-bottom: 2pt;   /* tight but readable after header */
+}
+
+h2:first-of-type {
+  margin-top: 0;
+}
+
+h2 + h3 {
+  margin-top: 0;
+}
+
+
+/* ============================= */
+/* JOB TITLE / ROLE LINE         */
+/* ============================= */
+
+h3 {
+  font-size: 11pt;
+  font-weight: 600;
+  margin-top: 6pt;
+  margin-bottom: 0;
+}
+
+h3 + em {
+  display: block;
+  font-style: italic;
+  font-size: 10pt;
+  margin-top: 1pt;
+  margin-bottom: 2pt;
+  font-weight: 400;
+}
+
+
+/* ============================= */
+/* PARAGRAPH CONTROL             */
+/* ============================= */
+
+p {
+  margin-top: 2pt;
+  margin-bottom: 2pt;
+}
+
+
+
+/* ============================= */
+/* INLINE EMPHASIS (Dates etc.)  */
+/* ============================= */
+
+em {
+  font-style: italic;
+  font-size: 10pt;
+}
+
+
+/* ============================= */
+/* OPTIONAL CLEANUPS             */
+/* ============================= */
+
+/* Remove horizontal rule spacing if pandoc inserts it */
+hr {
+  display: none;
+}
+
+/* Prevent extra stacking margin between structural blocks */
+section {
+  margin-bottom: 6pt;
+}
+
+/* ============================= */
+/* BULLET CONTROL                */
+/* ============================= */
+
+li {
+  margin-bottom: 2pt;
+  line-height: 1.10;
+}
+
+
+/* bullet size ONLY not test */
+li::marker { 
+  font-size: 13pt;   /* larger than body (10pt) */
+}
+
+
+ul {
+  list-style-position: outside;
+  padding-left: 18pt;
+  margin-top: 3pt;
+  margin-bottom: 6pt;
+}
+
+
+
