@@ -11,6 +11,7 @@ settings:
     https://bril.pluralsight.com: access-paste
     https://github.com: access-paste
     https://search.brave.com: access-paste
+    https://wiki.hypr.land: access-paste
   content.register_protocol_handler:
     https://outlook.office.com?mailtouri=%25s: false
   scrolling.smooth:

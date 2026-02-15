@@ -24,11 +24,12 @@ go) go run "${file}" ;;
 h) sudo make install ;;
 java) javac -d classes "${file}" && java -cp classes "${base}" ;;
 m) octave "${file}" ;;
-md) [ -x "$(command -v lowdown)" ] &&
-  lowdown --parse-no-intraemph "${file}" -Tms | groff -mpdfmark -ms -kept -T pdf >"${base}.pdf" ||
-  [ -x "$(command -v groffdown)" ] &&
-  groffdown -i "${file}" | groff -T pdf >"${base}.pdf" ||
-  pandoc -t ms --syntax-highlighting="kate" -s -o "${base}.pdf" "${file}" ;;
+md) #[ -x "$(command -v lowdown)" ] &&
+  # lowdown --parse-no-intraemph "${file}" -Tms | groff -mpdfmark -ms -kept -T pdf >"${base}.pdf" ||
+  # [ -x "$(command -v groffdown)" ] &&
+  # groffdown -i "${file}" | groff -T pdf >"${base}.pdf" ||
+  # pandoc -t ms --syntax-highlighting="kate" -s -o "${base}.pdf" "${file}" ;;
+  pandoc -o "${base}.pdf" "${file}" --pdf-engine=weasyprint --css=/home/chris/.local/bin/resume.css ;;
 org) emacs "${file}" --batch -u "${USER}" -f org-latex-export-to-pdf ;;
 py) python "${file}" ;;
 rink) rink -f "${file}" ;;

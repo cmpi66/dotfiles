@@ -75,7 +75,7 @@ config.set(
 )
 config.set(
     "fileselect.multiple_files.command",
-    ["yazi", "--app-id", "yazi-qute", "yazi", "--chooser-file", "{}"],
+    ["footclient", "--app-id", "yazi-qute", "yazi", "--chooser-file", "{}"],
 )
 
 
@@ -92,8 +92,8 @@ config.bind(
     "<space>x",
     "config-cycle statusbar.show always never;; config-cycle tabs.show always never",
 )
-config.bind("m", "spawn kitty yt-dlp {url}")
-config.bind("M", "hint links spawn kitty yt-dlp {hint-url}")
+config.bind("m", "spawn footclient yt-dlp {url}")
+config.bind("M", "hint links spawn footclient yt-dlp {hint-url}")
 # config.bind('M', 'hint links spawn mpv {hint-url}')
 
 
