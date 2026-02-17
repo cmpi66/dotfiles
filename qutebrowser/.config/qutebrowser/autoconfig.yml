@@ -9,6 +9,7 @@ settings:
   content.javascript.clipboard:
     https://academy.hackthebox.com: access-paste
     https://bril.pluralsight.com: access-paste
+    https://docs.exegol.com: access-paste
     https://github.com: access-paste
     https://search.brave.com: access-paste
     https://wiki.hypr.land: access-paste
