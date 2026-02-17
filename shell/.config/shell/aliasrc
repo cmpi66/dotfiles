@@ -72,6 +72,7 @@ alias idrivemn="rclone mount IdriveEncrypt:/ /mnt/idrive/ --vfs-cache-mode full 
 
 alias archlinx-fix-keys="sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
 alias batthealth= "upower -i /org/freedesktop/UPower/devices/battery_BAT1"
+alias gpg-reset='gpgconf --kill scdaemon; gpgconf --kill gpg-agent; gpgconf --launch gpg-agent'
 
 se() {
   choice="$(find -L "$HOME/.local/bin" -type f | sed "s|$HOME/.local/bin/||" | fzf)"
