@@ -71,6 +71,7 @@ alias mpv="mpv --fullscreen"
 alias idrivemn="rclone mount IdriveEncrypt:/ /mnt/idrive/ --vfs-cache-mode full --daemon"
 alias p="wl-paste >"
 alias gpg-reset='gpgconf --kill scdaemon; gpgconf --kill gpg-agent; gpgconf --launch gpg-agent'
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 
 se() {
   choice="$(find -L "$HOME/.local/bin" -type f | sed "s|$HOME/.local/bin/||" | fzf)"

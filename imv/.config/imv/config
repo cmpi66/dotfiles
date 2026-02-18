@@ -18,7 +18,7 @@ overlay_background_color=181926
 [binds]
 # Define some key bindings
 q = quit
-y = exec setbg "$imv_current_file"
+w = exec /home/chris/.local/bin/setbg "$imv_current_file"
 
 # Image navigation
 <Left> = prev

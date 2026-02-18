@@ -2,14 +2,16 @@
 
 wall_dir="$HOME/pix/Wallpapers"
 
-# Get selected image
-selected=$(fd -e jpg -e png -e jpeg . "$wall_dir" -t f | sort | rofi -dmenu -i -l 20 -p "Pick a Wallpaper") || exit 0
+foot --app-id walls yazi $wall_dir
 
-# Get directory of selected file
-dir="$(dirname "$selected")"
-
-# List all images in *that* directory only
-images=$(fd -e jpg -e png -e jpeg . "$dir" -t f | sort)
-
-# Open imv on that subset
-imv -- $images --start-at "$selected"
+# # Get selected image
+# selected=$(fd -e jpg -e png -e jpeg . "$wall_dir" -t f | sort | rofi -dmenu -i -l 20 -p "Pick a Wallpaper") || exit 0
+#
+# # Get directory of selected file
+# dir="$(dirname "$selected")"
+#
+# # List all images in *that* directory only
+# images=$(fd -e jpg -e png -e jpeg . "$dir" -t f | sort)
+#
+# # Open imv on that subset
+# imv -- $images --start-at "$selected"
