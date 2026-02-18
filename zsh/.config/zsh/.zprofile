@@ -35,7 +35,6 @@ export GOPATH="$XDG_DATA_HOME/go"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 # export PASSWORD_STORE_DIR="$XDG_DATA_HOME/.password-store"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
-alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 # export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
 export STARDICT_DATA_DIR="$XDG_DATA_HOME"/dic

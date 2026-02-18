@@ -26,6 +26,4 @@ trueloc="$(readlink -f "$1")" &&
     ;;
   esac
 
-# swaybg -i "$bgloc" & # wayland
-
 hyprctl hyprpaper wallpaper eDP-1, "$bgloc"
