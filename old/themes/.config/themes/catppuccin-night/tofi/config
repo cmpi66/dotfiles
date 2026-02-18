@@ -1,0 +1,22 @@
+prompt-text = "Select "
+
+text-color = #b8c0e0
+prompt-color = #ed8796
+selection-color = #eed49f
+background-color = #24273a
+border-color = #8aadf4
+
+width = 25%
+padding-left = 0%
+padding-top = 0%
+height = 30%
+border-width = 2
+outline-width = 0
+result-spacing = 0
+num-results = 20
+font = CaskaydiaMonoNerdFont
+font-size = 12
+hint-font = false
+ascii-input = true
+
+
