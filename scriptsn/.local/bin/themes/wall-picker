@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-wall_dir="$HOME/pix/Wallpapers"
+wall_dir="$HOME/pix/wallpapers"
 
-foot --app-id walls yazi $wall_dir
+# foot --app-id walls yazi $wall_dir
+swayimg --gallery $wall_dir
 
 # # Get selected image
 # selected=$(fd -e jpg -e png -e jpeg . "$wall_dir" -t f | sort | rofi -dmenu -i -l 20 -p "Pick a Wallpaper") || exit 0
