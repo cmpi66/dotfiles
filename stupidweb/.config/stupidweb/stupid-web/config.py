@@ -75,9 +75,10 @@ config.bind(
     "<space>x",
     "config-cycle statusbar.show always never;; config-cycle tabs.show always never",
 )
-config.bind("m", "spawn kitty yt-dlp {url}")
-config.bind("M", "hint links spawn kitty yt-dlp {hint-url}")
-# config.bind('M', 'hint links spawn mpv {hint-url}')
+config.bind("m", "spawn footclient yt-dlp -o ~/dl/vids/%(title)s.%(ext)s {url}")
+config.bind(
+    "M", "hint links spawn footclient yt-dlp -o ~/dl/vids/%(title)s.%(ext)s {hint-url}"
+)
 
 
 # save session when it closed

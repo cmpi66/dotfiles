@@ -228,6 +228,7 @@ Shift+d = exec rm -f '%' && notify-send "❌ File removed: %"; skip_file
 Ctrl+w = exec /home/chris/.local/bin/setbg '%'
 Ctrl+r = exec magick '%' -rotate 90 '%'
 Ctrl+c = exec echo -n '%' | wl-copy
+Ctrl+g = exec gimp '%';
 Escape = exit
 q = exit
 
@@ -292,6 +293,7 @@ Ctrl+w = exec /home/chris/.local/bin/setbg '%'
 Ctrl+r = exec magick '%' -rotate 90 '%'
 Ctrl+c = exec echo -n '%' | wl-copy
 Shift+d = exec rm -f '%' && notify-send "❌ File removed: %"; skip_file
+Ctrl+g = exec gimp '%';
 Escape = exit
 q = exit
 
