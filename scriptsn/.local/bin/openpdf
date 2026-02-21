@@ -10,8 +10,8 @@
 #   done
 # fi
 
-pdfs=$(find "$HOME" -maxdepth 6 ! -path "$HOME/.config/*" -name "*.pdf" | rofi -dmenu -i -p "Select PDF:")
-# pdfs=$(find "$HOME" -maxdepth 6 ! -path "$HOME/.config/*" -name "*.pdf" | fzf --multi --exit-0)
+# pdfs=$(find "$HOME" -maxdepth 6 ! -path "$HOME/.config/*" -name "*.pdf" | rofi -dmenu -i -p "Select PDF:")
+pdfs=$(fd -e .pdf -e .epub . $HOME | rofi -dmenu -i -theme clipboard.rasi -p "Select PDF")
 
 if [ -n "$pdfs" ]; then
   zathura "$pdfs"

@@ -97,9 +97,13 @@ window {
     padding:          5;
     background-color: @base-alpha-80;
     border:           2;
-    border-radius:    0;
-    width:            35%; // screen realestate
-    // height:            30%; // screen realestate, cant choose number of lines if this is enabled
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       600px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+    // border-radius:               5px;
 }
 mainbox {
     padding: 0;
@@ -114,12 +118,24 @@ textbox {
     text-color: @foreground;
 }
 listview {
-    padding:      2px 0px 0px ;
-    scrollbar:    true;
-    border-color: @separatorcolor;
-    spacing:      2px ;
-    fixed-height: 0;
-    border:       2px dash 0px 0px ;
+    enabled:                     true;
+    columns:                     1;
+    lines:                       10;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     10px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @sapphire;
+    text-color:                  @lavender;
+    cursor:                      "default";
 }
 scrollbar {
     width:        4px ;

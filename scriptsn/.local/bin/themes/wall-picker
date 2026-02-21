@@ -2,17 +2,8 @@
 
 wall_dir="$HOME/pix/wallpapers"
 
-# foot --app-id walls yazi $wall_dir
-swayimg --gallery $wall_dir
+imageviwer="swayimg --gallery"
 
-# # Get selected image
-# selected=$(fd -e jpg -e png -e jpeg . "$wall_dir" -t f | sort | rofi -dmenu -i -l 20 -p "Pick a Wallpaper") || exit 0
-#
-# # Get directory of selected file
-# dir="$(dirname "$selected")"
-#
-# # List all images in *that* directory only
-# images=$(fd -e jpg -e png -e jpeg . "$dir" -t f | sort)
-#
-# # Open imv on that subset
-# imv -- $images --start-at "$selected"
+if [[ ! -z "$wall_dir" ]]; then
+  eval "$($imageviwer $wall_dir)"
+fi

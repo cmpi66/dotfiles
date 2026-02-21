@@ -11,7 +11,7 @@ wmpid() { # This function is needed if there are multiple instances of the windo
   echo "${tree%%)*}"
 }
 
-case "$(printf "🔒 lock\n🔃 reboot\n🖥️shutdown\n❌kill" | rofi -dmenu -i -l 4 -p 'Action: ')" in
+case "$(printf "🔒 lock\n🔃 reboot\n🖥️shutdown\n❌kill" | rofi -dmenu -i -theme power-menu-center.rasi -p 'Action: ')" in
 '🔒 lock') hyprlock ;;
 '🔃 reboot') doas sh -c "sync && openrc-shutdown -r now" ;;
 '🖥️shutdown') doas sh -c "sync && openrc-shutdown -p now" ;;

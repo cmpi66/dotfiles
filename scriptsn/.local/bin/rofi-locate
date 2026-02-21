@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+xdg-open "$(locate home | rofi -threads 0 -width 100 -dmenu -i -theme clipboard.rasi -p "locate")"
+
