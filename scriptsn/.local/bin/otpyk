@@ -10,7 +10,7 @@ elif ! ykman oath accounts list | grep -q .; then
   exit 1
 fi
 
-choice=$(ykman oath accounts list | cut -d ":" -f1 | rofi -dmenu -i)
+choice=$(ykman oath accounts list | cut -d ":" -f1 | rofi -dmenu -i -theme spotlight-menu-center.rasi -p 'Choose OTP')
 [ -z "$choice" ] && exit 1
 
 # ykman oath accounts code "$choice" | wl-copy

@@ -5,7 +5,7 @@
 
 export WM="hyprland"
 
-case "$(printf " zettle\n jobapps\n pensess\n pythondev\n bashdev\n godev" | rofi -dmenu -p 'Sessions: ')" in
+case "$(printf " zettle\n jobapps\n pensess\n pythondev\n bashdev\n godev" | rofi -dmenu -theme smaller-menu-center.rasi -p 'Sessions: ')" in
 ' zettle') zettle-ema-foot ;;
 ' jobapps') jobapps-foot ;;
 ' pensess') pensess-foot ;;

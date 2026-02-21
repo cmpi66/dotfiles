@@ -26,7 +26,8 @@ set -euo pipefail
 # shellcheck disable=SC1090
 # source "$(get_config)"
 
-DMENU="rofi -dmenu -i -p"
+# update the configs to newer current 2026 configs
+DMENU="rofi -dmenu -i -theme spotlight-menu-center.rasi -p"
 # DMENU="rofi -dmenu -i -l 10 -p"
 # DMTERM="foot -e"
 # DMTERM="kitty"
@@ -34,23 +35,11 @@ DMTERM="foot"
 
 DMEDITOR="${DMTERM} nvim"
 declare -A confedit_list
-# confedit_list[confedit]="$HOME/.config/dmscripts/config"
-confedit_list[alacritty]="$HOME/.config/alacritty/alacritty.toml"
-confedit_list[yayapps]="$HOME/.config/apps/yayapps.sh"
-confedit_list[pacapps]="$HOME/.config/apps/apps-clean.sh"
-confedit_list[bash]="$HOME/.bashrc"
-confedit_list[calcurse]="$HOME/.config/calcurse/conf"
-confedit_list[dunst]="$HOME/.config/dunst/dunstrc"
 confedit_list[fontconfig]="$HOME/.config/fontconfig/fonts.conf"
 confedit_list[foot]="$HOME/.config/foot/foot.ini"
 confedit_list[tmux]="$HOME/.config/tmux/tmux.conf"
-confedit_list[dwm]="$HOME/.config/suckless/dwm/config.h"
-confedit_list[st]="$HOME/.config/suckless/st/config.h"
-confedit_list[dmenu]="$HOME/.config/suckless/dmenu/config.h"
 confedit_list[kitty]="$HOME/.config/kitty/kitty.conf"
-confedit_list[fish]="$HOME/.config/fish/config.fish"
-confedit_list[lf]="$HOME/.config/lf/lfrc"
-confedit_list[lvim]="$HOME/.config/lvim/config.lua"
+# confedit_list[neovim]="$HOME/.config/nvim/lua/config/"
 confedit_list[mpv]="$HOME/.config/mpv/mpv.conf"
 confedit_list[ncmpcpp]="$HOME/.config/ncmpcpp/config"
 confedit_list[hyprland]="$HOME/.config/hypr/hyprland.conf"
@@ -60,13 +49,10 @@ confedit_list[newsboat - urls]="$HOME/.config/newsboat/urls"
 confedit_list[rofi]="$HOME/.config/rofi/config.rasi"
 confedit_list[scim]="$HOME/.config/sc-im/scimrc"
 confedit_list[starship]="$HOME/.config/starship.toml"
-confedit_list[picom]="$HOME/.config/picom/picom.conf"
 confedit_list[ssh]="$HOME/.ssh/config"
-confedit_list[st]="$HOME/.config/suckless/st/config.h"
-confedit_list[sxhkd]="$HOME/.config/sxhkd/sxhkdrc"
-confedit_list[xprofile]="$HOME/.config/x11/xprofile"
-confedit_list[xinitrc]="$HOME/.config/x11/xinitrc"
-confedit_list[xresources]="$HOME/.config/x11/xresources"
+confedit_list[swayimg]="$HOME/.config/swayimg/config"
+confedit_list[qutebrowser]="$HOME/.config/qutebrowser/config.py"
+confedit_list[yazi]="$HOME/.config/yazi/yazi.toml"
 confedit_list[zshrc]="$HOME/.config/zsh/.zshrc"
 confedit_list[zshenv]="$HOME/.config/zsh/.zshenv"
 confedit_list[zprofile]="$HOME/.config/zsh/.zprofile"
@@ -82,7 +68,7 @@ main() {
 
   # Piping the above array (cleaned) into dmenu.
   # We use "printf '%s\n'" to format the array one item to a line.
-  choice=$(printf '%s\n' "${!_clean_list[@]}" | sort | ${DMENU} 'Edit config:' "$@")
+  choice=$(printf '%s\n' "${!_clean_list[@]}" | sort | ${DMENU} 'Edit config' "$@")
 
   # What to do when/if we choose a file to edit.
   if [ "$choice" ]; then

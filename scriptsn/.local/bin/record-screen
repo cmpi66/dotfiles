@@ -9,7 +9,7 @@ doas ffmpeg \
 
 # Record microphone; using a slight delay to line up better with webcam preview window
 ffmpeg -hide_banner -v quiet \
-  -f alsa -sample_rate 48000 -channels 1 -i plughw:5,0 \
+  -f alsa -sample_rate 48000 -channels 1 -i plughw:4,0 \
   -af "adelay=150, highpass=f=80, lowpass=f=18000[PASS]; \
      [PASS]agate=range=0:threshold=0.00125:attack=10:release=100:knee=3[EXP]; \
      [EXP]volume=volume=14dB:precision=fixed[GAIN]; \

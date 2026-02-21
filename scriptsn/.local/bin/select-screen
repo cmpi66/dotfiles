@@ -2,12 +2,12 @@
 
 export WM="hyprland"
 
-case "$(printf "󰍹 screenshotregion\n screenshot-window\n save to clipboard\n󰙒 anotate-screenshot\n󰎁 screencast\n󰖠 mpvoverlay\n killscreencast\ncombine-screencast" | rofi -dmenu -p 'Screens: ')" in
+case "$(printf "󰍹 screenshotregion\n screenshot-window\n save to clipboard\n󰙒 anotate-screenshot\n󰎁 screencast\n󰖠 mpvoverlay\n killscreencast\ncombine-screencast" | rofi -dmenu -theme smaller-menu-center.rasi -p 'Screens: ')" in
 '󰍹 screenshotregion') hyprshot -m region ;;
 ' screenshot-window') hyprshot -m window ;;
 ' save to clipboard') hyprshot -m region --clipboard-only ;;
 '󰙒 anotate-screenshot') hyprshot -m region --raw | satty -f - ;;
-'󰎁 screencast') kitty --title recording record-screen ;;
+'󰎁 screencast') footclient --title recording record-screen ;;
 '󰖠 mpvoverlay') mpv-overlay ;;
 ' killscreencast') kill-record ;;
 'combine-screencast') combine-audio-video.sh ;;

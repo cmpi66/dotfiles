@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# a video picker script
+
+file=$(fd -e mp4 -e mkv -e webm -e mov . $HOME -p -t f | sed "s|^/home/chris/||" | rofi -dmenu -i -theme clipboard.rasi -p "select file") || exit 0
+
+notify-send "🎥 Playing $file" && mpv --fullscreen "$HOME/$file"
