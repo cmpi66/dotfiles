@@ -31,3 +31,4 @@ set default-bg "#ffffff"
 set guioptions ""             # Removes the status bar/command bar
 
 
+set window-title-basename true
