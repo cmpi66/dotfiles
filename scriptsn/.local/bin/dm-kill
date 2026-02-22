@@ -19,7 +19,7 @@ main() {
   # In this script we use a variable called $DMENU, in your scripts, you
   # should just write dmenu or rofi or whatever launcher you use.
   selected="$(ps --user "$USER" -F |
-    rofi -dmenu -i -p "Search for process to kill:" |
+    rofi -dmenu -i -theme clipboard.rasi -p "Search for process to kill:" |
     awk '{print $2" "$11}')"
 
   # Nested 'if' statements.  The outer 'if' statement is what to do
