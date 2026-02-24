@@ -63,6 +63,8 @@ config.set(
 )
 
 
+config.bind("<space>h", "home")
+config.unbind("<Ctrl+h>", mode="normal")
 config.bind("J", "back")
 config.bind("K", "forward")
 config.bind("H", "tab-prev")
