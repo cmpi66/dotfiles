@@ -2,7 +2,7 @@
 
 # dont overegineer. Only add scripts and menus of things that i use but not often but still need to access. Things that i access everyday or frequently NEED to have their own keybindings.
 
-CHOICE=$(printf "🔎 Search Files\n📜 Search For a Man Page\n🌐 Search the Web\n📒 Search Qutebrowser History\n🔖 Search Bookmarks\n🖊️ Edit Configs\n🖼️ Set Wallpaper\n🎬 Find Video to Play\n🎶 Find Song to Play\n🚄 Toggle Espanso Completion\n🧮 Calculator\n📹 Webcam Record\n🎨 Color Picker\n" | rofi -dmenu -i -l 14 -p "⚙️ Utils Menu" -theme spotlight-menu-center.rasi)
+CHOICE=$(printf "🔎 Search Files\n📜 Search For a Man Page\n🌐 Search the Web\n📒 Search Qutebrowser History\n🔖 Search Bookmarks\n🖊️ Edit Configs\n🖼️ Set Wallpaper\n🎬 Find Video to Play\n🎶 Find Song to Play\n🚄 Toggle Espanso Completion\n🧮 Calculator\n📹 Webcam Record\n🎨 Color Picker\n💡 System Stats\n⌚ Show Current Time" | rofi -dmenu -i -l 14 -p "⚙️ Utils Menu" -theme spotlight-menu-center.rasi)
 
 case "$CHOICE" in
 "🔎 Search Files")
@@ -43,5 +43,11 @@ case "$CHOICE" in
   ;;
 "🎨 Color Picker")
   hyprpicker | wl-copy
+  ;;
+"💡 System Stats")
+  stats
+  ;;
+"⌚ Show Current Time")
+  show-time
   ;;
 esac

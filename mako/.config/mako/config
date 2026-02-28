@@ -1,14 +1,14 @@
 # Appearance
-font=monospace 10
+font=monospace 12
 border-size=2
-border-radius=12
+border-radius=0
 padding=0,15,25
 margin=15
 default-timeout=5000
 max-icon-size=64
 anchor=top-right
-width=300
-height=100
+width=350
+height=500
 layer=overlay
 icons=1
 
