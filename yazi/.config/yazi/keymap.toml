@@ -403,7 +403,7 @@ keymap = [
   { on = [
     "g",
     "r",
-  ], run = "cd ~/.local/.src", desc = "Go to the media directory" },
+  ], run = "cd ~/.local/.src", desc = "Go to the src directory" },
   { on = [
     "g",
     "t",

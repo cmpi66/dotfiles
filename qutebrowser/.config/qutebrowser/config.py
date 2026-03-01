@@ -71,11 +71,11 @@ c.messages.timeout = 5000
 config.set("fileselect.handler", "external")
 config.set(
     "fileselect.single_file.command",
-    ["footclient", "--app-id", "yazi-qute", "yazi", "--chooser-file", "{}"],
+    ["foot", "--app-id", "yazi-qute", "yazi", "--chooser-file", "{}"],
 )
 config.set(
     "fileselect.multiple_files.command",
-    ["footclient", "--app-id", "yazi-qute", "yazi", "--chooser-file", "{}"],
+    ["foot", "--app-id", "yazi-qute", "yazi", "--chooser-file", "{}"],
 )
 
 
@@ -94,9 +94,9 @@ config.bind(
     "<space>x",
     "config-cycle statusbar.show always never;; config-cycle tabs.show always never",
 )
-config.bind("m", "spawn footclient yt-dlp -o ~/dl/vids/%(title)s.%(ext)s {url}")
+config.bind("m", "spawn foot yt-dlp -o ~/dl/vids/%(title)s.%(ext)s {url}")
 config.bind(
-    "M", "hint links spawn footclient yt-dlp -o ~/dl/vids/%(title)s.%(ext)s {hint-url}"
+    "M", "hint links spawn foot yt-dlp -o ~/dl/vids/%(title)s.%(ext)s {hint-url}"
 )
 # config.bind('M', 'hint links spawn mpv {hint-url}')
 
