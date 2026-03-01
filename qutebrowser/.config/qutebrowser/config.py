@@ -94,9 +94,9 @@ config.bind(
     "<space>x",
     "config-cycle statusbar.show always never;; config-cycle tabs.show always never",
 )
-config.bind("m", "spawn footclient yt-dlp -o ~/dl/vids/%(title)s.%(ext)s {url}")
+config.bind("m", "spawn foot yt-dlp -o ~/dl/vids/%(title)s.%(ext)s {url}")
 config.bind(
-    "M", "hint links spawn footclient yt-dlp -o ~/dl/vids/%(title)s.%(ext)s {hint-url}"
+    "M", "hint links spawn foot yt-dlp -o ~/dl/vids/%(title)s.%(ext)s {hint-url}"
 )
 # config.bind('M', 'hint links spawn mpv {hint-url}')
 
