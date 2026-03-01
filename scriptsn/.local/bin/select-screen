@@ -7,7 +7,7 @@ case "$(printf "󰍹 screenshotregion\n screenshot-window\n save to clipbo
 ' screenshot-window') hyprshot -m window ;;
 ' save to clipboard') hyprshot -m region --clipboard-only ;;
 '󰙒 anotate-screenshot') hyprshot -m region --raw | satty -f - ;;
-'󰎁 screencast') footclient --title recording record-screen ;;
+'󰎁 screencast') foot --title recording record-screen ;;
 '󰖠 mpvoverlay') mpv-overlay ;;
 ' killscreencast') kill-record ;;
 'combine-screencast') combine-audio-video.sh ;;

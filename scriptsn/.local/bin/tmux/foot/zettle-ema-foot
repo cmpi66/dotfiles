@@ -6,7 +6,7 @@ has-session() {
 
 launch_foot_tmux() {
   # --title sets the window title; --class is optional if you want a distinct WM_CLASS
-  footclient --title ema --app-id ema -e tmux attach-session -t zettle
+  foot --title ema --app-id ema -e tmux attach-session -t zettle
 }
 
 if has-session; then

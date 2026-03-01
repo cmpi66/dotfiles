@@ -4,7 +4,7 @@
 # Launches kitty if not in a terminal. Uses zoxide + tmux.
 
 # KITTY_CMD="kitty --title tmux-session --class tmux-session"
-KITTY_CMD="footclient --title tmux-session --app-id tmux-session"
+KITTY_CMD="foot --title tmux-session --app-id tmux-session"
 
 # If user passed an argument (e.g. `t notes`)
 if [ "$1" ]; then
