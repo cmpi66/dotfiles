@@ -12,6 +12,7 @@ settings:
     https://chatgpt.com: access-paste
     https://github.com: access-paste
     https://vnc.htb-cloud.com: access-paste
+    https://www.boot.dev: access-paste
     https://www.browserling.com: access-paste
   spellcheck.languages:
     global: null
