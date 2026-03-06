@@ -62,6 +62,9 @@ download = [
 	{ run = "ya emit download --open %S", desc = "Download and open" },
 	{ run = "ya emit download %S",        desc = "Download" },
 ]
+read = [
+  { run = 'zathura "$@"', block = true, for = "unix" },
+]
 
 [open]
 rules = [
@@ -84,6 +87,7 @@ rules = [
 	{ mime = "vfs/{absent,stale}", use = "download" },
 	# Fallback
 	{ url = "*", use = [ "open", "reveal" ] },
+  { name = "*.epub", use = ["read", "reveal"] },
 ]
 
 [tasks]
