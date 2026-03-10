@@ -2,7 +2,6 @@
 
 ncmpcpp_directory = "~/.config/ncmpcpp"
 lyrics_directory = "~/.local/share/lyrics"
-# mpd_music_dir = "/zpgen/shared/music"
 mpd_music_dir = "~/.local/share/music"
 message_delay_time = "1"
 # visualizer_type = "spectrum"
@@ -21,14 +20,17 @@ progressbar_look = ->
 media_library_primary_tag = album_artist
 media_library_albums_split_by_date = no
 startup_screen = "browser"
-display_volume_level = no
+display_volume_level = yes
 ignore_leading_the = yes
 external_editor = nvim
 use_console_editor = yes
 empty_tag_color = magenta
 main_window_color = white
-progressbar_color = black:b
-progressbar_elapsed_color = blue:b
+progressbar_color = "cyan"
+progressbar_elapsed_color = "white"
 statusbar_color = red
 statusbar_time_color = cyan:b
+user_interface="alternative"
+volume_color = "green"
+header_window_color = "cyan"
 
