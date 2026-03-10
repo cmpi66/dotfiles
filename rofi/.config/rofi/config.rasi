@@ -11,7 +11,7 @@
 
 
 * {
-  selected-active-foreground:  transparent;
+  selected-active-foreground:  @background;
   lightfg:                     @transparent; //this changes the bar selection
   separatorcolor:              @foreground;
   urgent-foreground:           @red;
@@ -29,7 +29,7 @@
   active-foreground:           @sapphire;
   background:                  @base;
   selected-active-background:  @sapphire;
-  active-background:           @background;
+  active-background:           transparent;
   selected-normal-background:  @sapphire;  // this is the current selection background e.g when you select an item color 
   alternate-normal-background: transparent;
   foreground:                  @lavender;

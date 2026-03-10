@@ -1,0 +1,6 @@
+{
+  "leftButton": "toggle",
+  "rightButton": "next",
+  "middleButton": "stop",
+  "shuffleStopsPlayback": true
+}
