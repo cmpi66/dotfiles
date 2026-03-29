@@ -21,33 +21,19 @@
     - name: Install archlinux repos
       shell: ./archkeys_setup.sh
 
-    - name: Git personal setup email
-      become: false
-      git_config:
-        name: user.email
-        scope: global
-        value: "munozchris@posteo.net"
-
-    - name: Git personal setup name
-      become: false
-      git_config:
-        name: user.name
-        scope: global
-        value: "chris"
-
     - name: Change shell to zsh
       ansible.builtin.user:
         name: "{{ remote_regular_user }}"
         shell: /usr/bin/zsh
 
     - name: source zdotdir system wide
-      linefile:
+      lineinfile:
         path: /etc/zsh/zshenv
         line: 'export ZDOTDIR=$HOME/.config/zsh'
         create: yes
 
     - name: Doas conf
-      linefile:
+      lineinfile:
         path: /etc/doas.conf
         line: 'permit nopass :wheel'
         create: yes
@@ -135,7 +121,6 @@
           - pandoc-bin
           - papirus-icon-theme
           - parted
-          - paru
           - pinentry
           - pipewire
           - pipewire-alsa
@@ -188,7 +173,6 @@
           - wl-clipboard
           - xdg-desktop-portal
           - xdg-desktop-portal-hyprland
-          - yay
           - yazi
           - yt-dlp
           - yubikey-manager
@@ -200,13 +184,13 @@
 
 
     - name: add wheel perms to build aur packs without pass prompt
-      linefile:
+      lineinfile:
         path: /etc/sudoers
         line: '%wheel ALL=(ALL) NOPASSWD: ALL'
         create: yes
 
     - name: increase makepakg cores for compilation
-      linefile:
+      lineinfile:
         path: /etc/makepkg.conf
         regexp: '^#?MAKEFLAGS='
         line: 'MAKEFLAGS="-j{{ ansible_processor_nvcpus }}"'
@@ -281,8 +265,8 @@
          - opustags
          - sc-im
          - task-spooler
-      use: paru
-      state: present
+       use: paru
+       state: present
 
     - name: Remove wheel nopasswd
       lineinfile:
