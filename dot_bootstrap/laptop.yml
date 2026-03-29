@@ -18,6 +18,9 @@
       ansible.builtin.set_fact:
         remote_regular_user: "{{ ansible_env.SUDO_USER or ansible_user_id }}"
 
+    - name: Install archlinux repos
+      shell: ./archkeys_setup.sh
+
     - name: Git personal setup email
       become: false
       git_config:
