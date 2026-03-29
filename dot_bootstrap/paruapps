@@ -1,0 +1,19 @@
+#!/bin/env bash
+
+#aur apps
+paru --noconfirm --needed -S \
+  abook \
+  anki-bin \
+  brave-bin \
+  chromium-widevine \
+  dotool-git \
+  downgrade \
+  espanso-wayland \
+  evremap-git \
+  librewolf-bin \
+  localsend \
+  mutt-wizard-git \
+  noctalia-shell \
+  opustags \
+  sc-im \
+  task-spooler

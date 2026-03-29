@@ -54,7 +54,6 @@
           - brightnessctl
           - btop
           - chafa
-          - chezmoi
           - cliphist
           - cmake
           - ctags
@@ -189,12 +188,6 @@
         line: '%wheel ALL=(ALL) NOPASSWD: ALL'
         create: yes
 
-    - name: increase makepakg cores for compilation
-      lineinfile:
-        path: /etc/makepkg.conf
-        regexp: '^#?MAKEFLAGS='
-        line: 'MAKEFLAGS="-j{{ ansible_processor_nvcpus }}"'
-
     - name: clone paru
       become: false
       ansible.builtin.git:
@@ -246,27 +239,9 @@
           special_time: daily
           job: "/usr/bin/newsboat -x reload"
 
-    - name: Install AUR packages
+    - name: Install AUR pacakges
       become: false
-      kewlfft.aur:
-       name:
-         - abook
-         - anki-bin
-         - brave-bin
-         - chromium-widevine
-         - dotool-git
-         - downgrade
-         - espanso-wayland
-         - evremap-git
-         - librewolf-bin
-         - localsend
-         - mutt-wizard-git
-         - noctalia-shell
-         - opustags
-         - sc-im
-         - task-spooler
-       use: paru
-       state: present
+      shell: ./paruapps
 
     - name: Remove wheel nopasswd
       lineinfile:
