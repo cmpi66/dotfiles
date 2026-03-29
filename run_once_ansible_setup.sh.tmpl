@@ -1,6 +1,4 @@
 #!/bin/sh
-
-#!/bin/sh
 {{- if eq .chezmoi.hostname "artixbox" }}
 ansible-playbook ~/.bootstrap/laptop.yml --ask-become-pass
 {{- else }}
