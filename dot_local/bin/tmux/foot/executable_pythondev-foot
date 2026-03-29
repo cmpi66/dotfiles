@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+SESSION="pythondev"
+
+has-session() {
+  tmux has-session -t "$SESSION" 2>/dev/null
+}
+
+if has-session; then
+  exec foot --title pythondev --app-id pythondev -e tmux attach-session -t "$SESSION"
+else
+  tmux new-session -s "$SESSION" -n devpod -d
+
+  foot --title pythondev --app-id pythondev -e tmux attach-session -t "$SESSION" &
+
+  sleep 0.15
+
+  tmux send-keys -t "$SESSION":1 \
+    'devpod ssh python-projects-2026' C-m
+
+  tmux select-window -t "$SESSION":1
+fi

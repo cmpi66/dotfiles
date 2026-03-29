@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+SESSION="zettle"
+
+has-session() {
+  tmux has-session -t "$SESSION" 2>/dev/null
+}
+
+if has-session; then
+  exec foot --title ema --app-id ema -e tmux attach-session -t "$SESSION"
+else
+  tmux new-session -s "$SESSION" -n notes -d
+  tmux new-window -t "$SESSION":2 -n blue
+
+  # Launch foot + attach
+  foot --title ema --app-id ema -e tmux attach-session -t "$SESSION" &
+
+  # Give tmux time to attach to real terminal
+  sleep 0.15
+
+  # NOW start nvim (correct size, no corruption)
+  tmux send-keys -t "$SESSION":1 \
+    'cd ~/.local/share/notes/zettlekasten/ && nvim index.md' C-m
+
+  tmux send-keys -t "$SESSION":2 \
+    'cd ~/.local/share/notes/blueteam-hub/ && nvim .' C-m
+  tmux select-window -t "$SESSION":1
+
+fi

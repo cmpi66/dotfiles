@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+ws_id=$(hyprctl activeworkspace -j | jq -r '.id')
+
+clients=$(hyprctl clients -j | jq --argjson ws "$ws_id" '
+  [.[] | select(.workspace.id == $ws)] | length
+' 2>/dev/null)
+
+clients=${clients:-0}
+
+if [ "$clients" -gt 0 ]; then
+  hyprctl dispatch layoutmsg cyclenext
+fi

@@ -1,0 +1,3 @@
+#!/bin/env bash
+
+doas cpupower frequency-set -g performance >/dev/null

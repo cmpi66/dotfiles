@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Video picker → play or delete
+
+file=$(fd -e mp4 -e mkv -e webm -e mov . "$HOME" -p -t f |
+  sed "s|^$HOME/||" |
+  rofi -dmenu -i -theme clipboard.rasi -p "Select video") || exit 0
+
+[ -z "$file" ] && exit 0
+
+case $(printf '%s\n' "Play" "Delete" | rofi -dmenu -i -theme clipboard.rasi -p "Action?") in
+Play | play | 'Play file')
+  notify-send "🎥 Playing" "$file"
+  mpv --fullscreen "$HOME/$file"
+  ;;
+Delete | delete | 'Delete file')
+  notify-send "🗑 Deleting" "$file"
+  rm -f -- "$HOME/$file"
+  ;;
+esac

@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+SESSION="godev"
+
+has-session() {
+  tmux has-session -t "$SESSION" 2>/dev/null
+}
+
+if has-session; then
+  exec foot --title godev --app-id godev -e tmux attach-session -t "$SESSION"
+else
+  tmux new-session -s "$SESSION" -n devpod -d
+
+  foot --title godev --app-id godev -e tmux attach-session -t "$SESSION" &
+
+  sleep 0.15
+
+  tmux send-keys -t "$SESSION":1 \
+    'devpod ssh go-projects-2026' C-m
+
+  tmux select-window -t "$SESSION":1
+fi

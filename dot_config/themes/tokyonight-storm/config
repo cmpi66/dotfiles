@@ -1,0 +1,40 @@
+# font-family = ComicCode Nerd Font
+font-family = CaskaydiaMonoNerdFont
+
+font-size = 12
+scrollback-limit = 5000000
+keybind = alt+c=copy_to_clipboard
+keybind = alt+v=paste_from_clipboard
+adjust-cursor-thickness = 5
+
+
+keybind = alt+u=scroll_to_top
+keybind = alt+d=scroll_to_bottom
+keybind = alt+k=scroll_page_up
+keybind = alt+j=scroll_page_down
+
+confirm-close-surface = false
+
+
+palette = 0=#1d202f
+palette = 1=#f7768e
+palette = 2=#9ece6a
+palette = 3=#e0af68
+palette = 4=#7aa2f7
+palette = 5=#bb9af7
+palette = 6=#7dcfff
+palette = 7=#a9b1d6
+palette = 8=#414868
+palette = 9=#ff899d
+palette = 10=#9fe044
+palette = 11=#faba4a
+palette = 12=#8db0ff
+palette = 13=#c7a9ff
+palette = 14=#a4daff
+palette = 15=#c0caf5
+
+background = #24283b
+foreground = #c0caf5
+cursor-color = #c0caf5
+selection-background = #2e3c64
+selection-foreground = #c0caf5

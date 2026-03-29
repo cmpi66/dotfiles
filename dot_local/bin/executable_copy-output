@@ -1,0 +1,49 @@
+#!/usr/bin/env zsh
+set -e
+
+tmp=$(mktemp)
+trap 'rm -f "$tmp"' EXIT
+
+# Save scrollback
+cat >"$tmp"
+
+# Strip ANSI color codes
+sed -i 's/\x1b\[[0-9;]*[A-Za-z]//g' "$tmp"
+
+# Extract command blocks based on OSC 133 markers
+blocks=()
+current=""
+
+while IFS= read -r line; do
+  if [[ "$line" == *"]133;C"* ]]; then
+    current=""
+    continue
+  fi
+
+  if [[ "$line" == *"]133;D"* ]]; then
+    blocks+=("$current")
+    current=""
+    continue
+  fi
+
+  current+="$line"$'\n'
+done <"$tmp"
+
+# If nothing found, exit
+((${#blocks[@]} == 0)) && exit 1
+
+# Build picker list using first line of each block
+menu=$(for b in "${blocks[@]}"; do
+  print -r -- "${b%%$'\n'*}"
+done | nl -w1 -s":")
+
+chosen=$(print -r -- "$menu" | tac | rofi -dmenu -i -p "Copy which command's output?" -l 15)
+
+[ -z "$chosen" ] && exit 1
+
+index=$(print -r -- "$chosen" | cut -d: -f1)
+
+# Because we reversed with tac
+real_index=$((${#blocks[@]} - index))
+
+print -r -- "${blocks[$real_index]}" | wl-copy

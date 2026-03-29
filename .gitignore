@@ -1,0 +1,61 @@
+# appimages#
+
+*.Appimage
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+#mpd files
+dot_config/mpd/log
+dot_config/mpd/pid
+dot_config/mpd/state
+dot_config/mpd/database
+
+dot_config/tmux/plugins
+dot_config/tmux/resurrect
+dot_config/zsh/.zsh_history
+dot_config/zsh/.zcompdump
+dot_config/mpv/watch_later
+dot_local/bin/extras/keepmenu
+dot_local/share/applications/start-tor-browser.desktop
+
+*.env
+
+## stupid web
+dot_config/stupidweb/stupid-web/data
+dot_config/stupidweb/stupid-web/cache
+dot_config/stupidweb/stupid-web/runtime

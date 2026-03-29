@@ -1,0 +1,7 @@
+#!/bin/bash
+
+qutebrowser \
+  --temp-basedir \
+  --set content.dns_prefetch false \
+  --set content.javascript.enabled false \
+  "$@"

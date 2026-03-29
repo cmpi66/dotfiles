@@ -1,0 +1,33 @@
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+set page-padding 1
+map u scroll half-up
+map d scroll half-down
+map D toggle_page_mode
+map r reload
+map R rotate
+map K zoom in
+map J zoom out
+map i recolor
+map p print
+# include catppuccin
+set selection-clipboard clipboard
+map [fullscreen] u scroll half-up
+map [fullscreen] d scroll half-down
+map [fullscreen] D toggle_page_mode
+map [fullscreen] r reload
+map [fullscreen] R rotate
+map [fullscreen] K zoom in
+map [fullscreen] J zoom out
+map [fullscreen] i recolor
+map [fullscreen] p print
+
+# High Contrast
+# set recolor "true"
+set recolor-lightcolor "#ffffff" # Background
+set recolor-darkcolor "#000000"  # Text
+set default-bg "#ffffff"
+
+set guioptions ""             # Removes the status bar/command bar
+
+set window-title-basename true

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# A dmenu wrapper script for system functions.
+export WM="hyprland"
+case "$(readlink -f /sbin/init)" in
+esac
+
+wmpid() { # This function is needed if there are multiple instances of the window manager.
+  tree="$(pstree -ps $$)"
+  tree="${tree#*$WM(}"
+  echo "${tree%%)*}"
+}
+
+case "$(printf "🔒 lock\n🔃 reboot\n🖥️shutdown\n❌kill" | rofi -dmenu -i -theme power-menu-center.rasi -p 'Action')" in
+'🔒 lock') hyprlock ;;
+'🔃 reboot') doas sh -c "sync && openrc-shutdown -r now" ;;
+'🖥️shutdown') doas sh -c "sync && openrc-shutdown -p now" ;;
+'❌kill') dm-kill ;;
+*) exit 1 ;;
+esac

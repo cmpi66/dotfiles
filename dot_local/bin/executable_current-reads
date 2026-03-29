@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# this will be a script that will open up the current pdfs im reading on upskilling e.g blackhat python, blackhat bash, bug bounty book and pracical vim. Obviously i wont read all 4 at once but since these books are reference and slow burns you can do 15-30 mins on each and the ROI will still be sufficient.
+
+# I can either do this manually or by modfied date, but does linux detect that on pdf files? last time they were opened?
+
+# the names are extrememly long though, maybe hardcoed them into variables?
+
+# this is a dynamic script, books will be replaced with most curent reads, i have the open pdf scrip but that traverses the entier dir for over 200+ pdfs.
+
+blackhatpython="/home/chris/media/books/it-books/hacking/Black Hat Python Python Programming for Hackers and Pentesters, 2e (Justin Seitz Tim Arnold) (Z-Library).pdf"
+blackhatbash="/home/chris/media/books/it-books/hacking/Black Hat Bash Creative Scripting for Hackers and Pentesters (Dolev Farhi, Nick Aleks) (Z-Library).pdf"
+practicalvim="/home/chris/media/books/it-books/linux/practical-vim.pdf"
+bugbounty="/home/chris/media/books/it-books/hacking/Bug Bounty Bootcamp The Guide to Finding and Reporting Web Vulnerabilities (Vickie Li) (Z-Library).pdf"
+linuxcommandline="/home/chris/media/books/it-books/linux/Linux Command Line and Shell Scripting Bible (Richard Blum Christine Bresnahan) (z-lib.org).pdf"
+deeperlovego="/home/chris/media/books/it-books/languages/The Deeper Love of Go.pdf"
+caspp="/home/chris/media/books/it-books/Computer Systems A Programmer’s Perspective (Randal E. Bryant, David R. O’Hallaron) (Z-Library).epub"
+
+case "$(printf "󰂺 blackhatpython\n󰂺 blackhatbash\n󰂺 practicalvim\n󰂺 bugbounty\n󰂺 linux-commandline\n󰂺 deeperlovego\n󰂺 caspp" | rofi -dmenu -theme smaller-menu-center.rasi -p 'Choose: ')" in
+'󰂺 blackhatpython') zathura "$blackhatpython" ;;
+'󰂺 blackhatbash') zathura "$blackhatbash" ;;
+'󰂺 practicalvim') zathura "$practicalvim" ;;
+'󰂺 bugbounty') zathura "$bugbounty" ;;
+'󰂺 linux-commandline') zathura "$linuxcommandline" ;;
+'󰂺 deeperlovego') zathura "$deeperlovego" ;;
+'󰂺 caspp') zathura "$caspp" ;;
+*) exit 0 ;;
+esac

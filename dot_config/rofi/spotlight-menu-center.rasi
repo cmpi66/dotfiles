@@ -1,0 +1,15 @@
+// @import "catppuccin-latte"
+// @import "catppuccin-frappe"
+@import "catppuccin-macchiato"
+@import "config.rasi"
+// @import "catppuccin-mocha"
+listview {
+    columns:      1;
+    lines:        20;
+}
+
+window {
+    width:                       300px;
+}
+
+

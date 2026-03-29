@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# just a small script so i wont have to waste a keybind on rofi drun for tor
+
+cd ~/dl/tor-browser/ && ./start-tor-browser.desktop

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+wall_dir="$HOME/pix/wallpapers"
+
+imageviwer="swayimg --gallery"
+
+if [[ ! -z "$wall_dir" ]]; then
+  eval "$($imageviwer $wall_dir)"
+fi

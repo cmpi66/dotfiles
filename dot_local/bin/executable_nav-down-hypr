@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+# pull everything once
+active_json=$(hyprctl activewindow -j)
+ws_json=$(hyprctl activeworkspace -j)
+workspaces_json=$(hyprctl workspaces -j)
+
+cur_ws=$(echo "$ws_json" | jq -r '.id')
+
+# --- GROUP MODE ---
+group=$(echo "$active_json" | jq '.grouped')
+len=$(echo "$group" | jq 'length')
+
+if [ "$len" -gt 1 ]; then
+  cur=$(echo "$active_json" | jq -r '.address')
+
+  idx=$(echo "$group" | jq --arg cur "$cur" 'map(. == $cur) | index(true)')
+
+  if [ "$idx" != "null" ] && [ "$idx" -lt $((len - 1)) ]; then
+    next=$((idx + 1))
+    target=$(echo "$group" | jq -r ".[$next]")
+    hyprctl dispatch focuswindow address:$target
+    exit 0
+  fi
+fi
+
+# --- WORKSPACE MODE (skip empty, no wrap) ---
+next_ws=$(echo "$workspaces_json" | jq --argjson cur "$cur_ws" '
+  map(select(.windows > 0)) 
+  | sort_by(.id) 
+  | map(select(.id > $cur)) 
+  | first 
+  | .id
+')
+
+[ "$next_ws" != "null" ] && hyprctl dispatch workspace "$next_ws"

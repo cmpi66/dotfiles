@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+SESSION="pen"
+
+has-session() {
+  tmux has-session -t "$SESSION" 2>/dev/null
+}
+
+if has-session; then
+  exec foot --title pen --app-id pen -e tmux attach-session -t "$SESSION"
+else
+  tmux new-session -s "$SESSION" -n port-vnc -d
+  tmux new-window -t "$SESSION":2 -n win2
+  tmux new-window -t "$SESSION":3 -n notes
+
+  # Launch foot + attach
+  foot --title pen --app-id pen -e tmux attach-session -t "$SESSION" &
+
+  # Wait for attach
+  sleep 0.15
+
+  # Window 1 — SSH tunnel + exegol
+  tmux send-keys -t "$SESSION":1 \
+    'ssh -L 55975:localhost:55975 chris@10.27.27.18' C-m
+
+  sleep 0.5
+
+  tmux send-keys -t "$SESSION":1 \
+    'exegol start academy-new' C-m
+
+  # Window 2 — second host + exegol
+  tmux send-keys -t "$SESSION":2 \
+    'ssh artixframe' C-m
+
+  sleep 0.5
+
+  tmux send-keys -t "$SESSION":2 \
+    'exegol start academy-new' C-m
+
+  # Window 3 — notes
+  tmux send-keys -t "$SESSION":3 \
+    'cd ~/.local/share/notes/pentest-hub/ && nvim .' C-m
+
+  tmux select-window -t "$SESSION":1
+fi

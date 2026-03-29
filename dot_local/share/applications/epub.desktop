@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=EPUB reader
+Exec=/usr/bin/zathura %u

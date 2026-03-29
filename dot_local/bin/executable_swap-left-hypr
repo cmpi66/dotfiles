@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+active_json=$(hyprctl activewindow -j)
+group=$(echo "$active_json" | jq '.grouped')
+
+len=$(echo "$group" | jq 'length')
+
+# --- GROUP MODE ---
+if [ "$len" -gt 1 ]; then
+    hyprctl dispatch movegroupwindow b
+    exit 0
+fi
+
+# --- LAYOUT MODE ---
+hyprctl dispatch layoutmsg swapprev

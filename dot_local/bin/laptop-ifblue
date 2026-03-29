@@ -1,0 +1,20 @@
+#!/bin/bash
+
+export DISPLAY=:0.0
+bluetooth_status=$(rc-status | grep bluetooth)
+
+# Check if Bluetooth service is running
+if [[ "$bluetooth_status" == *"started"* ]]; then
+  bluetooth_connections=$(bluetoothctl info | grep "Connected: yes" | wc -l)
+
+  # Check if there are any active Bluetooth connections
+  if [[ "$bluetooth_connections" -eq 0 ]]; then
+    notify-send "No active Bluetooth connections found. Deactivating Bluetooth service..."
+    doas rc-service bluetoothd stop
+  else
+    notify-send "Bluetooth connections found. Bluetooth service will remain active."
+  fi
+else
+  notify-send "Bluetooth service is not running."
+fi
+

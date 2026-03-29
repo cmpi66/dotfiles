@@ -1,0 +1,5 @@
+#!/bin/env bash 
+
+bluetoothctl -- trust 50:C2:75:69:7C:80 
+bluetoothctl -- connect 50:C2:75:69:7C:80 
+sleep 5

@@ -1,0 +1,47 @@
+#!/bin/env bash
+
+# # convert
+# pandoc -f docx -t gfm --wrap=none -o out.md $1
+
+# # remove stupid underlines
+# sed -i '.bak' 's/<u>//g' "out.md"
+# sed -i '.bak' 's/<\/u>//g' "out.md"
+
+# # remove smart quotes
+# sed -i '.bak' 's/"/"/g' "out.md"
+# sed -i '.bak' 's/"/"/g' "out.md"
+
+# # Fix bullet points
+# sed -i '.bak' 's/- /* /g' "out.md"
+
+# # Fix absolute links
+# sed -i '.bak' 's/(https:\/\/blog.boot.dev/(/g' "out.md"
+
+# # no h1s in the article
+# sed -i '.bak' 's/^# /## /g' "out.md"
+
+# rm out.md.bak
+
+## I removed the '.bak' extension from the script, it wasnt runnning with it. But why is it needed if the script ultimately deletes that file anyway. I don't understand 
+
+# convert
+pandoc -f docx -t gfm --wrap=none -o out.md $1
+
+# remove stupid underlines
+sed -i  's/<u>//g' "out.md"
+sed -i  's/<\/u>//g' "out.md"
+
+# remove smart quotes
+sed -i  's/"/"/g' "out.md"
+sed -i  's/"/"/g' "out.md"
+
+# Fix bullet points
+sed -i  's/- /* /g' "out.md"
+
+# Fix absolute links
+sed -i  's/(https:\/\/blog.boot.dev/(/g' "out.md"
+
+# no h1s in the article
+sed -i  's/^# /## /g' "out.md"
+
+# rm out.md.bak

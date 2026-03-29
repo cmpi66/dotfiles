@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# update script using rofi
+
+# i have to take into account portage one shot updates, either I bake it in or another command sees the output of emaint to check if theres a portage update needed and it updates. Then we do the the whole dance.
+
+# but is this even viable on gentoo when sometimes we might get use/keyword changes?
+#
+
+# maybe we do it in stages? just one command/selection to update?
+

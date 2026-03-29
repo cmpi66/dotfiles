@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+case "$(printf "⏯️ Play or Pause\n⏭️ Next Track\n⏮️ Prev Track\n⏩ Fast Forward 10 Secs\n⏩ Fast Reverse 10 Secs\n⏫ Fast Forward 60 Secs\n⏬ Fast Reverse 60 Secs\n🔉 Lower Music Vol by 5\n🔊 Increase Music Vol by 5" | rofi -dmenu -i -theme smaller-menu-center.rasi -p 'Music Control')" in
+'⏯️ Play or Pause') mpc toggle ;;
+'⏭️ Next Track') mpc next ;;
+'⏮️ Prev Track') mpc prev ;;
+'⏩ Fast Forward 10 Secs') mpc seek +10 ;;
+'⏩ Fast Reverse 10 Secs') mpc seek -10 ;;
+'⏫ Fast Forward 60 Secs') mpc seek +60 ;;
+'⏬ Fast Reverse 60 Secs') mpc seek -60 ;;
+'🔉 Lower Music Vol by 5') mpc volume -5 ;;
+'🔊 Increase Music Vol by 5') mpc volume +5 ;;
+*) exit 0 ;;
+esac

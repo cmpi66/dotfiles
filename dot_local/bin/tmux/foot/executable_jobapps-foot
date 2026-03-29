@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+SESSION="ja"
+
+has-session() {
+  tmux has-session -t "$SESSION" 2>/dev/null
+}
+
+if has-session; then
+  exec foot --title ja --app-id ja -e tmux attach-session -t "$SESSION"
+else
+  tmux new-session -s "$SESSION" -n scim -d
+  tmux new-window -t "$SESSION":2 -n search
+  tmux new-window -t "$SESSION":3 -n copy-bullets
+  tmux new-window -t "$SESSION":4 -n keywords
+
+  # Launch foot + attach
+  foot --title ja --app-id ja -e tmux attach-session -t "$SESSION" &
+
+  # Give tmux time to attach
+  sleep 0.15
+
+  # Window 1 — sc-im (force xterm for compatibility)
+  tmux send-keys -t "$SESSION":1 \
+    'cd ~/media/sec-future/resume/sec-resume/per-role-resumes/app-tracker/ && TERM=xterm-256color sc-im --quiet jobapps-2025-new.csv' C-m
+
+  # Window 2 — search shell
+  tmux send-keys -t "$SESSION":2 \
+    'cd ~/media/sec-future/resume/sec-resume/per-role-resumes/app-tracker/ && zsh -i' C-m
+
+  # Window 3 — copy bullets
+  tmux send-keys -t "$SESSION":3 \
+    'cd ~/media/sec-future/resume/sec-resume/per-role-resumes/ && nvim _iteration-5-baseline-more-meaty-9-8-25-tune-per-job.md' C-m
+
+  # Window 4 — keywords
+  tmux send-keys -t "$SESSION":4 \
+    'cd ~/media/sec-future/resume/sec-resume/per-role-resumes/ && nvim cybersecurity_keywords.md' C-m
+
+  tmux select-window -t "$SESSION":1
+fi

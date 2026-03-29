@@ -1,0 +1,22 @@
+#!/bin/sh
+
+{{- if eq .chezmoi.hostname "artixbox" }}
+refreshkeys() {
+  case "$(readlink -f /sbin/init)" in
+  *systemd*)
+    pacman --noconfirm -S archlinux-keyring >/dev/null 2>&1
+    ;;
+  *)
+    pacman --noconfirm --needed -S \
+      artix-keyring artix-archlinux-support >/dev/null 2>&1
+    grep -q "^\[extra\]" /etc/pacman.conf ||
+      echo "[extra]
+Include = /etc/pacman.d/mirrorlist-arch" >>/etc/pacman.conf
+    pacman -Sy --noconfirm >/dev/null 2>&1
+    pacman-key --populate archlinux >/dev/null 2>&1
+    ;;
+  esac
+}
+
+refreshkeys || error "Error automatically refreshing Arch keyring. Consider doing so manually."
+{{ end }}

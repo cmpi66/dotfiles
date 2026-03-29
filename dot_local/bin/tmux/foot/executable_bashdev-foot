@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+SESSION="bashdev"
+
+has-session() {
+  tmux has-session -t "$SESSION" 2>/dev/null
+}
+
+if has-session; then
+  exec foot --title bashdev --app-id bashdev -e tmux attach-session -t "$SESSION"
+else
+  tmux new-session -s "$SESSION" -n blackhat -d
+  tmux new-window -t "$SESSION":2 -n udemy
+
+  # Launch foot + attach
+  foot --title bashdev --app-id bashdev -e tmux attach-session -t "$SESSION" &
+
+  # Wait for attach (same stable pattern)
+  sleep 0.15
+
+  # Window 1 — blackhat
+  tmux send-keys -t "$SESSION":1 \
+    'cd ~/.local/.src/projects/sec/bash/blackhatbash/ && nvim .' C-m
+
+  # Window 2 — udemy
+  tmux send-keys -t "$SESSION":2 \
+    'cd ~/.local/.src/projects/sec/bash/udemy-course/ && nvim .' C-m
+
+  tmux select-window -t "$SESSION":1
+fi

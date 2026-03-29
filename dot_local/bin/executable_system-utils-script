@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+# dont overegineer. Only add scripts and menus of things that i use but not often but still need to access. Things that i access everyday or frequently NEED to have their own keybindings.
+
+CHOICE=$(printf "🔎 Search Files\n📜 Search For a Man Page\n🌐 Search the Web\n📒 Search Qutebrowser History\n🔖 Search Bookmarks\n🖊️ Edit Configs\n🖼️ Set Wallpaper\n🎬 Find Video to Play\n🎶 Find Song to Play\n🚄 Toggle Espanso Completion\n🧮 Calculator\n📹 Webcam Record\n🎨 Color Picker\n🔑 Launch OTP\n⌨️ Run Keyboard Remap\n📧 Retrieve Email\n🔑 Show Keybinds\n🎵 Control Music Menu" | rofi -dmenu -i -l 18 -p "⚙️ Utils Menu" -theme spotlight-menu-center.rasi)
+
+case "$CHOICE" in
+"🔎 Search Files")
+  rofi-locate
+  ;;
+"📜 Search For a Man Page")
+  dmenu-man
+  ;;
+"🌐 Search the Web")
+  dm-websearch
+  ;;
+"📒 Search Qutebrowser History")
+  dmenu_qutebrowser
+  ;;
+"🔖 Search Bookmarks")
+  bmks
+  ;;
+"🖊️ Edit Configs")
+  dm-confedit
+  ;;
+"🖼️ Set Wallpaper")
+  wall-picker
+  ;;
+"🎬 Find Video to Play")
+  video-picker
+  ;;
+"🎶 Find Song to Play")
+  find-music.sh
+  ;;
+"🚄 Toggle Espanso Completion")
+  start-espanso.sh
+  ;;
+"🧮 Calculator")
+  calculator-rofi
+  ;;
+"📹 Webcam Record")
+  bemenurecord
+  ;;
+"🎨 Color Picker")
+  hyprpicker | wl-copy
+  ;;
+"🔑 Launch OTP")
+  otpyk
+  ;;
+"⌨️ Run Keyboard Remap")
+  remapd
+  ;;
+"📧 Retrieve Email")
+  mw -Y
+  ;;
+"🔑 Show Keybinds")
+  zathura ~/.local/.src/repos/dotfiles-gentoo/keybinds/hypr-workflow.pdf
+  ;;
+"🎵 Control Music Menu")
+  rofi-music-control
+  ;;
+esac
