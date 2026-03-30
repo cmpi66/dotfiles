@@ -1,0 +1,87 @@
+---
+- name: Machine setup
+  hosts: localhost
+  become: true
+  connection: local
+  gather_facts: true
+  pre_tasks:
+
+  tasks:
+    - name: Get my user
+      become: false
+      ansible.builtin.set_fact:
+        remote_regular_user: "{{ ansible_env.SUDO_USER or ansible_user_id }}"
+
+    - name: Change shell to zsh
+      ansible.builtin.user:
+        name: "{{ remote_regular_user }}"
+        shell: /usr/bin/zsh
+
+    - name: source zdotdir system wide
+      lineinfile:
+        path: /etc/zsh/zshenv
+        line: 'export ZDOTDIR=$HOME/.config/zsh'
+        create: yes
+
+    - name: Doas conf
+      lineinfile:
+        path: /etc/doas.conf
+        line: 'permit nopass :wheel'
+        create: yes
+
+    - name: Copy skel bashrc to root
+      copy:
+        src: /etc/skel/.bashrc
+        dest: /root/.bashrc
+        remote_src: yes
+        force: no
+
+    - name: Set EDITOR and VISUAL for root
+      lineinfile:
+        path: /root/.bashrc
+        line: "{{ item }}"
+        create: no
+      loop:
+        - 'export EDITOR=nvim'
+        - 'export VISUAL=nvim'
+
+    - name: clone evremap
+      become: false
+      ansible.builtin.git:
+        repo: 'https://github.com/wez/evremap.git'
+        dest: "/home/chris/dl/git-clones/evremap/"
+
+    - name: Install evremap
+      become: false
+      shell: cd /home/chris/dl/git-clones/evremap/ && cargo build --release
+
+    - name: move evremap
+      shell: cd /home/chris/dl/git-clones/evremap/ && cp /home/chris/dl/git-clones/evremap/target/release/evremap /usr/local/bin/evremap
+
+    - name: clone tpm
+      become: false
+      ansible.builtin.git:
+        repo: 'https://github.com/tmux-plugins/tpm'
+        dest: "/home/chris/.config/tmux/plugins/tpm"
+
+    - name: Set user crontab
+      become: false
+      cron:
+        name: "{{ item.name }}"
+        special_time: "{{ item.special_time | default(omit) }}"
+        minute: "{{ item.minute | default(omit) }}"
+        job: "{{ item.job }}"
+      loop:
+        - name: cloneback
+          special_time: daily
+          job: "/home/chris/.local/bin/cloneback"
+        - name: atuin rclone sync
+          special_time: daily
+          job: "flock -n /tmp/atuin.lock /usr/bin/rclone sync --s3-upload-cutoff=0 --transfers 20 --retries 5 {{ ansible_env.HOME }}/.local/share/atuin IdriveEncrypt:atuin-gentoo"
+        - name: newsboat reload
+          special_time: daily
+          job: "/usr/bin/newsboat -x reload"
+
+    - name: Final cleanup
+      become: false
+      shell: ./executable_cleanup

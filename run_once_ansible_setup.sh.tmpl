@@ -1,6 +1,12 @@
 #!/bin/sh
 {{- if eq .chezmoi.hostname "artixbox" }}
 ansible-playbook ~/.bootstrap/laptop.yml --ask-become-pass
+
+echo "Ansible installation complete."
+
 {{- else }}
 ansible-playbook ~/.bootstrap/desktop.yml --ask-become-pass
+
+echo "Ansible installation complete."
+
 {{- end }}

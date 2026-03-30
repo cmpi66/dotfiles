@@ -19,7 +19,7 @@
         remote_regular_user: "{{ ansible_env.SUDO_USER or ansible_user_id }}"
 
     - name: Install archlinux repos
-      shell: ./archkeys_setup.sh
+      shell: ./executable_archkeys_setup.sh
 
     - name: Change shell to zsh
       ansible.builtin.user:
@@ -45,6 +45,7 @@
           - arch-wiki-docs
           - argyllcms
           - artix-archlinux-support
+          - anki
           - atuin
           - bat
           - bind
@@ -93,7 +94,6 @@
           - linux-zen-headers
           - lshw
           - lsof
-          - lua
           - lynx
           - mako
           - man-db
@@ -158,6 +158,7 @@
           - tk
           - tmux
           - traceroute
+          - tree-sitter-cli
           - transmission-cli
           - typst
           - unzip
@@ -189,19 +190,21 @@
         line: '%wheel ALL=(ALL) NOPASSWD: ALL'
         create: yes
 
-    - name: clone paru
+    - name: clone yay
       become: false
       ansible.builtin.git:
-        repo: 'https://aur.archlinux.org/paru-bin.git'
-        dest: "{{ ansible_env.HOME }}/dl/git-clones/paru"
+        repo: 'https://aur.archlinux.org/yay.git'
+        dest: "/home/chris/dl/git-clones/yay"
 
-    - name: Install paru
-      become: yes
-      become_user: "{{ ansible_user }}"
-      command:
-        cmd: makepkg --noconfirm -si
-        chdir: "{{ ansible_env.HOME }}/dl/git-clones/paru"
-        creates: /usr/bin/paru
+    - name: Install yay
+      become: false
+      shell: cd /home/chris/dl/git-clones/paru/ && makepkg --noconfirm -si  
+
+    - name: clone tpm
+      become: false
+      ansible.builtin.git:
+        repo: 'https://github.com/tmux-plugins/tpm'
+        dest: "/home/chris/.config/tmux/plugins/tpm"
 
     - name: Copy skel bashrc to root
       copy:
@@ -229,10 +232,10 @@
       loop:
         - name: battery sound
           minute: "*/10"
-          job: "{{ ansible_env.HOME }}/.local/bin/extras/laptop-battery-sound.sh"
+          job: "/home/chris/.local/bin/extras/laptop-battery-sound.sh"
         - name: bluetooth check
           minute: "*/5"
-          job: "{{ ansible_env.HOME }}/.local/bin/extras/laptop-ifblue"
+          job: "/home/chris/.local/bin/extras/laptop-ifblue"
         - name: atuin rclone sync
           special_time: daily
           job: "flock -n /tmp/atuin.lock /usr/bin/rclone sync --s3-upload-cutoff=0 --transfers 20 --retries 5 {{ ansible_env.HOME }}/.local/share/atuin IdriveEncrypt:atuin-arch"
@@ -242,7 +245,7 @@
 
     - name: Install AUR pacakges
       become: false
-      shell: ./paruapps
+      shell: ./executable_paruapps
 
     - name: Remove wheel nopasswd
       lineinfile:
@@ -251,3 +254,6 @@
         state: absent
         validate: 'visudo -cf %s'
 
+    - name: Final cleanup
+      become: false
+      shell: ./executable_cleanup
