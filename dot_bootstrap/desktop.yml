@@ -77,10 +77,23 @@
           job: "/home/chris/.local/bin/cloneback"
         - name: atuin rclone sync
           special_time: daily
-          job: "flock -n /tmp/atuin.lock /usr/bin/rclone sync --s3-upload-cutoff=0 --transfers 20 --retries 5 {{ ansible_env.HOME }}/.local/share/atuin IdriveEncrypt:atuin-gentoo"
+          job: "flock -n /tmp/atuin.lock /usr/bin/rclone sync --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/atuin IdriveEncrypt:atuin-gentoo"
         - name: newsboat reload
           special_time: daily
           job: "/usr/bin/newsboat -x reload"
+
+    - name: clone neovim
+      become: false
+      ansible.builtin.git:
+        repo: 'https://github/neovim/neovim.git'
+        dest: "/home/chris/dl/git-clones/neovim"
+
+    - name: Make neovim
+      become: false
+      shell: cd /home/chris/dl/git-clones/neovim/ && git checkout release 0.11 && make CMAKE_BUILD_TYPE=RelWithDebInfo -j$(nproc)
+
+    - name: Install neovim
+      shell: cd /home/chris/dl/git-clones/neovim/ && make install
 
     - name: Final cleanup
       become: false

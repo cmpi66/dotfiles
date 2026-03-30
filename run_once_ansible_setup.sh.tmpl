@@ -1,5 +1,8 @@
 #!/bin/sh
 {{- if eq .chezmoi.hostname "artixbox" }}
+
+sudo ansible-galaxy collection install kewlfft.aur
+
 ansible-playbook ~/.bootstrap/laptop.yml --ask-become-pass
 
 echo "Ansible installation complete."

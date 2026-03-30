@@ -38,6 +38,7 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+*.env
 
 #mpd files
 dot_config/mpd/log
@@ -53,9 +54,14 @@ dot_config/mpv/watch_later
 dot_local/bin/extras/keepmenu
 dot_local/share/applications/start-tor-browser.desktop
 
-*.env
 
 ## stupid web
 dot_config/stupidweb/stupid-web/data
 dot_config/stupidweb/stupid-web/cache
 dot_config/stupidweb/stupid-web/runtime
+
+# exegol
+dot_local/bin/activate-global-python-argcomplete
+dot_local/bin/python-argcomplete-check-easy-install-script
+dot_local/bin/register-python-argcomplete
+dot_local/.local/bin/exegol

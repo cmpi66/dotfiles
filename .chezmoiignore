@@ -1,0 +1,18 @@
+README.md
+gimp
+gpg
+keybinds
+
+{{ if (ne .chezmoi.hostname "artixbox") -}}
+# files to ignore on on desktop
+.local/bin/extras/laptop-battery-sound.sh
+.local/bin/extras/laptop-calibration
+.local/bin/extras/laptop-ifblue
+.local/bin/extras/laptop-jabra
+.local/bin/extras/laptop-power-modifier
+.local/bin/extras/laptop-archwiki
+.config/BOE_CQ_______NE135FBM_N41_03.icm
+.config/pipewire/**
+{{- end }}
+
+

@@ -1,12 +1,46 @@
----
 - name: Machine setup
   hosts: localhost
   become: true
   connection: local
   gather_facts: true
+
   pre_tasks:
-  - name: Install archlinux repos
-    shell: ./archkeys_setup.sh
+    # ---------- PACMAN / KEYRING BOOTSTRAP ----------
+    - name: Ensure Artix + Arch keyring packages are installed
+      pacman:
+        name:
+          - artix-keyring
+          - artix-archlinux-support
+        state: present
+
+    - name: Ensure [extra] repo block exists
+      blockinfile:
+        path: /etc/pacman.conf
+        marker: "# {mark} ANSIBLE MANAGED EXTRA REPO"
+        block: |
+          [extra]
+          Include = /etc/pacman.d/mirrorlist-arch
+
+    - name: Check if pacman keyring is initialized
+      stat:
+        path: /etc/pacman.d/gnupg/pubring.kbx
+      register: keyring_initialized
+
+    - name: Initialize pacman keyring (first-time only)
+      command: pacman-key --init
+      when: not keyring_initialized.stat.exists
+
+    - name: Sync pacman database
+      command: pacman -Sy --noconfirm
+      changed_when: false
+
+    - name: Populate Artix keyring
+      command: pacman-key --populate artix
+      when: not keyring_initialized.stat.exists
+
+    - name: Populate Arch keyring
+      command: pacman-key --populate archlinux
+      when: not keyring_initialized.stat.exists
 
   tasks:
     - name: Get my user
@@ -31,6 +65,11 @@
         line: 'permit nopass :wheel'
         create: yes
 
+    - name: Full system upgrade
+      pacman:
+        update_cache: true
+        upgrade: yes
+
     - name: Install packages
       pacman:
         name:
@@ -48,7 +87,6 @@
           - brightnessctl
           - btop
           - chafa
-          - chezmoi
           - cliphist
           - cmake
           - ctags
@@ -175,9 +213,6 @@
           - zbar
           - zoxide
         state: present
-        update_cache: true
-        upgrade: yes
-
 
     - name: add wheel perms to build aur packs without pass prompt
       lineinfile:
@@ -190,16 +225,21 @@
       ansible.builtin.git:
         repo: 'https://aur.archlinux.org/yay.git'
         dest: "/home/chris/dl/git-clones/yay"
+        update: no
 
     - name: Install yay
       become: false
-      shell: cd /home/chris/dl/git-clones/yay/ && makepkg --noconfirm -si  
+      shell: makepkg --noconfirm -si
+      args:
+        chdir: /home/chris/dl/git-clones/yay/
+        creates: /usr/bin/yay
 
     - name: clone tpm
       become: false
       ansible.builtin.git:
         repo: 'https://github.com/tmux-plugins/tpm'
         dest: "/home/chris/.config/tmux/plugins/tpm"
+        update: no
 
     - name: Copy skel bashrc to root
       copy:
@@ -212,7 +252,6 @@
       lineinfile:
         path: /root/.bashrc
         line: "{{ item }}"
-        create: no
       loop:
         - 'export EDITOR=nvim'
         - 'export VISUAL=nvim'
@@ -233,14 +272,61 @@
           job: "/home/chris/.local/bin/extras/laptop-ifblue"
         - name: atuin rclone sync
           special_time: daily
-          job: "flock -n /tmp/atuin.lock /usr/bin/rclone sync --s3-upload-cutoff=0 --transfers 20 --retries 5 {{ ansible_env.HOME }}/.local/share/atuin IdriveEncrypt:atuin-arch"
+          job: "flock -n /tmp/atuin.lock /usr/bin/rclone sync --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/atuin IdriveEncrypt:atuin-arch"
         - name: newsboat reload
           special_time: daily
           job: "/usr/bin/newsboat -x reload"
 
+    # ---------- NEOVIM ----------
+    - name: Check if nvim exists
+      stat:
+        path: /usr/local/bin/nvim
+      register: nvim_installed
+
+    - name: clone neovim
+      become: false
+      ansible.builtin.git:
+        repo: 'https://github.com/neovim/neovim.git'
+        dest: "/home/chris/dl/git-clones/neovim"
+        update: no
+      when: not nvim_installed.stat.exists
+
+    - name: Build neovim
+      become: false
+      shell: |
+        git checkout stable
+        make CMAKE_BUILD_TYPE=RelWithDebInfo -j$(nproc)
+      args:
+        chdir: /home/chris/dl/git-clones/neovim/
+      when: not nvim_installed.stat.exists
+
+    - name: Install neovim
+      shell: make install
+      args:
+        chdir: /home/chris/dl/git-clones/neovim/
+      when: not nvim_installed.stat.exists
+
+    # ---------- AUR ----------
     - name: Install AUR pacakges
       become: false
-      shell: ./yayapps
+      kewlfft.aur.aur:
+        use: yay
+        state: present
+        name:
+          - abook
+          - brave-bin
+          - chromium-widevine
+          - dotool-git
+          - downgrade
+          - espanso-wayland
+          - evremap-git
+          - librewolf-bin
+          - localsend
+          - mutt-wizard-git
+          - noctalia-shell
+          - opustags
+          - sc-im
+          - task-spooler
 
     - name: Remove wheel nopasswd
       lineinfile:
@@ -252,3 +338,5 @@
     - name: Final cleanup
       become: false
       shell: ./cleanup
+      args:
+        chdir: "{{ playbook_dir }}"
