@@ -5,21 +5,14 @@
   connection: local
   gather_facts: true
   pre_tasks:
-  - name: Update pacman
-    become: true
-    pacman:
-      update_cache: true
-      upgrade: yes
-
+  - name: Install archlinux repos
+    shell: ./archkeys_setup.sh
 
   tasks:
     - name: Get my user
       become: false
       ansible.builtin.set_fact:
         remote_regular_user: "{{ ansible_env.SUDO_USER or ansible_user_id }}"
-
-    - name: Install archlinux repos
-      shell: ./archkeys_setup.sh
 
     - name: Change shell to zsh
       ansible.builtin.user:
@@ -182,6 +175,8 @@
           - zbar
           - zoxide
         state: present
+        update_cache: true
+        upgrade: yes
 
 
     - name: add wheel perms to build aur packs without pass prompt
@@ -198,7 +193,7 @@
 
     - name: Install yay
       become: false
-      shell: cd /home/chris/dl/git-clones/paru/ && makepkg --noconfirm -si  
+      shell: cd /home/chris/dl/git-clones/yay/ && makepkg --noconfirm -si  
 
     - name: clone tpm
       become: false
@@ -245,7 +240,7 @@
 
     - name: Install AUR pacakges
       become: false
-      shell: ./paruapps
+      shell: ./yayapps
 
     - name: Remove wheel nopasswd
       lineinfile:
