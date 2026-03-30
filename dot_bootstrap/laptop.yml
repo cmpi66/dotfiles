@@ -19,7 +19,7 @@
         remote_regular_user: "{{ ansible_env.SUDO_USER or ansible_user_id }}"
 
     - name: Install archlinux repos
-      shell: ./executable_archkeys_setup.sh
+      shell: ./archkeys_setup.sh
 
     - name: Change shell to zsh
       ansible.builtin.user:
@@ -245,7 +245,7 @@
 
     - name: Install AUR pacakges
       become: false
-      shell: ./executable_paruapps
+      shell: ./paruapps
 
     - name: Remove wheel nopasswd
       lineinfile:
@@ -256,4 +256,4 @@
 
     - name: Final cleanup
       become: false
-      shell: ./executable_cleanup
+      shell: ./cleanup
