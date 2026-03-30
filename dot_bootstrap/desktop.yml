@@ -4,7 +4,6 @@
   become: true
   connection: local
   gather_facts: true
-  pre_tasks:
 
   tasks:
     - name: Get my user
@@ -40,30 +39,41 @@
       lineinfile:
         path: /root/.bashrc
         line: "{{ item }}"
-        create: no
       loop:
         - 'export EDITOR=nvim'
         - 'export VISUAL=nvim'
 
+    # ---------- EVREMAP ----------
     - name: clone evremap
       become: false
       ansible.builtin.git:
         repo: 'https://github.com/wez/evremap.git'
-        dest: "/home/chris/dl/git-clones/evremap/"
+        dest: "/home/chris/dl/git-clones/evremap"
+        update: no
+
+    - name: Build evremap
+      become: false
+      shell: cargo build --release
+      args:
+        chdir: /home/chris/dl/git-clones/evremap/
+        creates: /home/chris/dl/git-clones/evremap/target/release/evremap
 
     - name: Install evremap
-      become: false
-      shell: cd /home/chris/dl/git-clones/evremap/ && cargo build --release
+      copy:
+        src: /home/chris/dl/git-clones/evremap/target/release/evremap
+        dest: /usr/local/bin/evremap
+        mode: '0755'
+        remote_src: true
 
-    - name: move evremap
-      shell: cd /home/chris/dl/git-clones/evremap/ && cp /home/chris/dl/git-clones/evremap/target/release/evremap /usr/local/bin/evremap
-
+    # ---------- TPM ----------
     - name: clone tpm
       become: false
       ansible.builtin.git:
         repo: 'https://github.com/tmux-plugins/tpm'
         dest: "/home/chris/.config/tmux/plugins/tpm"
+        update: no
 
+    # ---------- CRON ----------
     - name: Set user crontab
       become: false
       cron:
@@ -82,19 +92,38 @@
           special_time: daily
           job: "/usr/bin/newsboat -x reload"
 
+    # ---------- NEOVIM ----------
+    - name: Check if nvim exists
+      stat:
+        path: /usr/local/bin/nvim
+      register: nvim_installed
+
     - name: clone neovim
       become: false
       ansible.builtin.git:
-        repo: 'https://github/neovim/neovim.git'
+        repo: 'https://github.com/neovim/neovim.git'
         dest: "/home/chris/dl/git-clones/neovim"
+        update: no
+      when: not nvim_installed.stat.exists
 
-    - name: Make neovim
+    - name: Build neovim
       become: false
-      shell: cd /home/chris/dl/git-clones/neovim/ && git checkout release 0.11 && make CMAKE_BUILD_TYPE=RelWithDebInfo -j$(nproc)
+      shell: |
+        git checkout stable
+        make CMAKE_BUILD_TYPE=RelWithDebInfo -j$(nproc)
+      args:
+        chdir: /home/chris/dl/git-clones/neovim/
+      when: not nvim_installed.stat.exists
 
     - name: Install neovim
-      shell: cd /home/chris/dl/git-clones/neovim/ && make install
+      shell: make install
+      args:
+        chdir: /home/chris/dl/git-clones/neovim/
+      when: not nvim_installed.stat.exists
 
+    # ---------- CLEANUP ----------
     - name: Final cleanup
       become: false
       shell: ./executable_cleanup
+      args:
+        chdir: "{{ playbook_dir }}"
