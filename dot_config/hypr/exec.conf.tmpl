@@ -16,7 +16,7 @@ exec-once = qs -c noctalia-shell
 
 {{- if or (eq .chezmoi.hostname "artixbox") (eq .chezmoi.hostname "artixframe") }}
 exec-once = pipewire
-exec-once = calibration
+exec-once = laptop-calibration
 exec-once = brightnessctl set 50%
 {{- else }}
 exec-once = cpu

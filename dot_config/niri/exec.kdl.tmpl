@@ -12,7 +12,7 @@ spawn-at-startup "qs" "-c" "noctalia-shell"
 
 
 {{- if or (eq .chezmoi.hostname "artixbox") (eq .chezmoi.hostname "artixframe") }}
-spawn-at-startup "calibration"
+spawn-at-startup "laptop-calibration"
 spawn-sh-at-startup "brightnessctl set 50%"
 spawn-at-startup "pipewire"
 
