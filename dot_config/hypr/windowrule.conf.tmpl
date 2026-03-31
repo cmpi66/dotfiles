@@ -1,0 +1,75 @@
+windowrule =  match:class (org.keepassxc.KeePassXC|Wiremix|com.gabm.satty|Music|Tor Browser|Thunar|swayimg), float yes, size 800 600, center yes
+windowrule =  match:title ^(Open.*Files?|Open [F|f]older.*|Save.*Files?|Save.*As|Save|All Files), float yes, size 800 600, center yes
+
+windowrule = match:class ^(yazi-qute)$, float yes, size 1000 800, center yes
+windowrule = match:class ^(btop)$, float yes, size 1000 800, center yes
+windowrule = match:title ^(newsboat)$, float yes, size 1000 800, center yes
+
+# Float LocalSend and fzf file picker
+windowrule = match:class (Share|localsend), float yes, size 800 600, center yes
+
+windowrule = match:title mpv-recording, float yes, size 800 600, center yes
+
+windowrule {
+    # Ignore maximize requests from all apps. You'll probably like this.
+    name = suppress-maximize-events
+    match:class = .*
+
+    suppress_event = maximize
+}
+
+
+# Workspace 
+windowrule = workspace 3, match:class ^(librewolf)$
+windowrule = workspace 3, match:class ^(brave-browser)$
+windowrule = workspace 3, match:class ^(firefox)$
+windowrule = workspace 3, match:class ^(firefox-esr)$
+windowrule = workspace 3, match:class ^(org.qutebrowser.qutebrowser)$
+windowrule = workspace 7, match:title ^(neomutt)$
+windowrule = workspace 7, match:class ^(neomutt)$
+windowrule = workspace 2, match:class ^(org.pwmt.zathura)$
+windowrule = workspace 6, match:class ^(libreoffice-writer)$
+windowrule = workspace 6, match:class ^(ema)$
+windowrule = workspace 6, match:class ^(ema)$
+windowrule = workspace 1, match:title ^(initial)$
+windowrule = workspace 6, match:title ^(_iteration-5-baseline-more-meaty-9-8-25-tune-per-job.pdf)$ # change this title whenever i rename or update resume
+windowrule = workspace 1, match:class ^(initial)$
+windowrule = workspace 5, match:class ^(discord)$
+windowrule = workspace 9, match:title ^(stig)$
+windowrule = workspace 9, match:title ^(recording)$
+
+
+windowrule = idle_inhibit focus,match:class ^(mpv)$
+windowrule = idle_inhibit focus,match:class ^(vlc)$
+windowrule = idle_inhibit focus,match:class ^(librewolf)$
+windowrule = idle_inhibit focus,match:class ^(Chromium)$
+windowrule = idle_inhibit focus,match:class ^(firefox)$
+windowrule = idle_inhibit focus,match:class ^(firefox-esr)$
+windowrule = idle_inhibit focus,match:class ^(brave-browser)$
+windowrule = idle_inhibit focus,match:class ^(org.qutebrowser.qutebrowser)$
+
+{{- if or (eq .chezmoi.hostname "artixbox") (eq .chezmoi.hostname "artixframe") }}
+workspace = 1, monitor:eDP-1
+workspace = 2, monitor:DP-11
+workspace = 3, monitor:DP-11
+workspace = 4, monitor:DP-11
+workspace = 5, monitor:DP-11
+workspace = 6, monitor:DP-11
+workspace = 7, monitor:DP-11
+workspace = 8, monitor:DP-11
+workspace = 9, monitor:DP-11
+workspace = 10, monitor:DP-11
+
+{{- else }}
+# workspace rules
+workspace = 1, monitor:DP-1
+workspace = 2, monitor:DP-1
+workspace = 3, monitor:DP-1
+workspace = 4, monitor:DP-1
+workspace = 5, monitor:DP-1
+workspace = 6, monitor:DP-2
+workspace = 7, monitor:DP-2
+workspace = 8, monitor:DP-2
+workspace = 9, monitor:DP-2
+workspace = 10, monitor:DP-2
+{{- end }}
