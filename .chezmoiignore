@@ -3,6 +3,12 @@ gimp
 gpg
 keybinds
 .config/nvim/lazy-lock.json
+.config/stupid-web/config/bookmarks
+.config/stupid-web/config/bookmarks/urls
+.config/stupid-web/config/quickmarks
+.config/qutebrowser/quickmarks
+.config/qutebrowser/bookmarks
+.config/qutebrowser/bookmarks/urls
 
 {{- if and (ne .chezmoi.hostname "artixbox") (ne .chezmoi.hostname "artixframe") }}
 # files to ignore on on desktop
