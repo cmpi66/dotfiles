@@ -1,5 +1,5 @@
 #!/bin/env bash
 
 qutebrowser \
-  --basedir ~/.config/stupidweb/stupid-web/ \
-  --config-py ~/.config/stupidweb/stupid-web/config.py
+  --basedir ~/.config/stupid-web/ \
+  --config-py ~/.config/stupid-web/config.py
