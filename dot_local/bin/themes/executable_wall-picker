@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-wall_dir="$HOME/pix/wallpapers"
+wall_dir="$HOME/.local/share/wallpapers"
 
 imageviwer="swayimg --gallery"
 
