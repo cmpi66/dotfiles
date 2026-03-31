@@ -2,6 +2,7 @@ README.md
 gimp
 gpg
 keybinds
+.config/nvim/lazy-lock.json
 
 {{- if or (ne .chezmoi.hostname "artixbox") (ne .chezmoi.hostname "artixframe") }}
 # files to ignore on on desktop
