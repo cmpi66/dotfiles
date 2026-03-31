@@ -56,9 +56,15 @@ dot_local/share/applications/start-tor-browser.desktop
 
 
 ## stupid web
-dot_config/stupidweb/stupid-web/data
-dot_config/stupidweb/stupid-web/cache
-dot_config/stupidweb/stupid-web/runtime
+dot_config/stupid-web/data
+dot_config/stupid-web/cache
+dot_config/stupid-web/runtime
+dot_config/stupid-web/config/bookmakrs
+dot_config/stupid-web/config/quickmarks
+
+dot_config/stupid-web/config/quickmarks
+dot_config/qutebrowser/quickmarks
+dot_config/qutebrowser/bookmakrs
 
 # exegol
 dot_local/bin/activate-global-python-argcomplete
