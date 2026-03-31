@@ -1,0 +1,55 @@
+// Window rules let you adjust behavior for individual windows.
+
+window-rule {
+    // This app-id regular expression will work for both:
+    // - host Firefox (app-id is "firefox")
+    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
+    match app-id=r#"brave-browser$"#
+    match app-id=r#"gimp$"#
+    match app-id=r#"qutebrowser$"#
+    match app-id=r#"librewolf$"#
+    match app-id=r#"firefox$"#
+    // open-maximized true
+    default-column-width { proportion 1.0; }
+}
+
+window-rule {
+    // This app-id regular expression will work for both:
+    // - host Firefox (app-id is "firefox")
+    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
+    match app-id=r#"Wiremix$"#
+    match app-id=r#"Music$"#
+    match app-id=r#"Tor Browser$"#
+    match app-id=r#"swayimg$"#
+    match app-id=r#"com.gabm.satty$"#
+    match title="^(Open.*Files?|Open [Ff]older.*|Save.*Files?|Save.*As|Save|All Files)"
+    match title="mpv-recording"
+    match app-id="Share|localsend"
+    open-floating true
+    default-column-width { fixed 800; }
+    default-window-height { fixed 600; }
+}
+window-rule {
+    match title="^(Open.*Files?|Open [Ff]older.*|Save.*Files?|Save.*As|Save|All Files)"
+    open-floating true
+    default-column-width { fixed 800; }
+    default-window-height { fixed 600; }
+}
+
+window-rule {
+    match app-id=r#"yazi-qute$"#
+    match app-id=r#"btop$"#
+    match app-id=r#"newsboat$"#
+    open-floating true
+    default-column-width { fixed 1000; }
+    default-window-height { fixed 800; }
+}
+
+
+// Example: enable rounded corners for all windows.
+window-rule {
+    geometry-corner-radius 0
+    clip-to-geometry true
+}
+
+

@@ -294,7 +294,7 @@
     - name: Build neovim
       become: false
       shell: |
-        git checkout stable
+        git checkout release-0.11
         make CMAKE_BUILD_TYPE=RelWithDebInfo -j$(nproc)
       args:
         chdir: /home/chris/dl/git-clones/neovim/

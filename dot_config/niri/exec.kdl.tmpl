@@ -1,0 +1,22 @@
+spawn-at-startup "dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+spawn-at-startup "hypridle"
+spawn-at-startup "remapd"
+spawn-sh-at-startup "syncthing --no-browser"
+spawn-at-startup "mpd"
+spawn-sh-at-startup "wl-paste --watch cliphist store"
+spawn-sh-at-startup "wl-paste --type text --watch cliphist store"
+spawn-sh-at-startup "wl-paste --type image --watch cliphist store"
+spawn-at-startup "gammastep"
+spawn-at-startup "setbg"
+spawn-at-startup "qs" "-c" "noctalia-shell"
+
+
+{{- if or (eq .chezmoi.hostname "artixbox") (eq .chezmoi.hostname "artixframe") }}
+spawn-at-startup "calibration"
+spawn-sh-at-startup "brightnessctl set 50%"
+spawn-at-startup "pipewire"
+
+{{- else }}
+spawn-at-startup "gentoo-pipewire-launcher"
+spawn-at-startup "cpu"
+{{- end }}

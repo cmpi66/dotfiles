@@ -1,5 +1,5 @@
 #!/bin/sh
-{{- if eq .chezmoi.hostname "artixbox" }}
+{{- if or (eq .chezmoi.hostname "artixbox") (eq .chezmoi.hostname "artixframe") }}
 
 ansible-galaxy collection install kewlfft.aur
 

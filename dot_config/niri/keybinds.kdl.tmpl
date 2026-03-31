@@ -1,0 +1,158 @@
+binds {
+    Mod+Shift+Slash hotkey-overlay-title="Show important bindings" { show-hotkey-overlay; }
+
+
+    // bar
+    Mod+b hotkey-overlay-title="toggle bar: noctalia" { spawn-sh "qs -c noctalia-shell ipc call bar toggle"; }
+    Mod+shift+b hotkey-overlay-title="restart bar: restart noctalia" { spawn-sh "pkill -x qs && qs -c noctalia-shell"; }
+
+    // programs
+    Mod+d hotkey-overlay-title="Run launcher: rofi" { spawn-sh "rofi -show run -theme spotlight-menu-center.rasi"; }
+    Mod+shift+s hotkey-overlay-title="Password menu" { spawn-sh "passmenu"; }
+    Mod+Return hotkey-overlay-title="Open terminal: foot" { spawn "foot"; }
+    Mod+Shift+Return hotkey-overlay-title="Run tmux session viewer/opener: newt" { spawn "newt-foot"; }
+    Mod+E hotkey-overlay-title="Open neomutt" { spawn-sh "foot --title neomutt --app-id neomutt -e neomutt"; }
+    Mod+Shift+E hotkey-overlay-title="Open newsboat" { spawn-sh "foot --title newsboat --app-id newsboat -e newsboat"; }
+    Mod+W hotkey-overlay-title="Open browser: qutebrowser" { spawn "qutebrowser"; }
+    Mod+Shift+W hotkey-overlay-title="Open chooses-sess: chooses-sess" { spawn "choose-sess-foot"; }
+    Mod+r hotkey-overlay-title="Open current reads: current reads" { spawn "current-reads"; }
+    Mod+Shift+r hotkey-overlay-title="Open pdfs: open pdfs" { spawn "openpdf"; }
+    Mod+n hotkey-overlay-title="Open btop: btop" { spawn-sh "foot --title btop --app-id btop -e btop"; }
+    Mod+a hotkey-overlay-title="Open abook: abook" { spawn-sh "foot abook"; }
+    Mod+m hotkey-overlay-title="Open music: ncmpcpp" { spawn-sh "foot --app-id Music ncmpcpp"; }
+    Mod+y hotkey-overlay-title="Click mouse: click mouse" { spawn-sh "lazymouse"; }
+    Mod+Shift+y hotkey-overlay-title="Open wiremix: wiremix" { spawn-sh "foot --app-id Wiremix wiremix"; }
+    Mod+t hotkey-overlay-title="Open Stig: stig" { spawn-sh "torwrap"; }
+    Mod+shift+t hotkey-overlay-title="Transmission toggle: transmission toggle" { spawn-sh "td-toggle"; }
+
+    ctrl+semicolon hotkey-overlay-title="move mouse left: move mouse left" { spawn-sh "moveleft"; }
+    ctrl+apostrophe hotkey-overlay-title="move mouse right: move mouse right" { spawn-sh "moveright"; }
+
+    //system
+    Mod+shift+d hotkey-overlay-title="Run system utils: system utils script" { spawn-sh "system-utils-script"; }
+    Mod+c hotkey-overlay-title="Run clipboard: rofi clipboard" { spawn-sh "cliphist list | rofi -dmenu -i -theme clipboard.rasi | cliphist decode | wl-copy"; }
+    Mod+q repeat=false hotkey-overlay-title="Close window" { close-window; }
+    Mod+Shift+x hotkey-overlay-title="Quit out of niri" { quit; }
+    Mod+shift+space       { toggle-window-floating; }
+    Mod+backspace hotkey-overlay-title="Lock screen: hyprlock" { spawn "sysact"; }
+    Mod+shift+backspace hotkey-overlay-title="Lock screen: hyprlock" { spawn "hyprlock"; }
+    ALT+minus hotkey-overlay-title="Increase overall system vol" { spawn-sh "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"; }
+    ALT+equal hotkey-overlay-title="Decrease overall system vol" { spawn-sh "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"; }
+
+    {{- if or (eq .chezmoi.hostname "artixbox") (eq .chezmoi.hostname "artixframe") }}
+    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "5%+"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "5%-"; }
+    {{- end }}
+
+
+    //screenshots and recording
+    Print hotkey-overlay-title="print screen: grim and slurp" { spawn-sh "grim -o \"$(niri msg --json focused-output | jq -r '.name')\" pic-full-\"$(date +'%y%m%d-%H%M-%S')\".png && notify-send '📸 Screenshot Taken'"; }
+    Mod+s hotkey-overlay-title="screenshot menu" { spawn-sh "select-screen"; }
+
+    // Open/close the Overview: a zoomed-out view of workspaces and windows.
+    Mod+O repeat=false hotkey-overlay-title="Toggle overview" { toggle-overview; }
+    
+
+    // Move focus right, down, up, left
+    Mod+H hotkey-overlay-title="Focus column left" { focus-column-left; }
+    Mod+J hotkey-overlay-title="Focus window/workspace down" { focus-window-or-workspace-down; }
+    Mod+K hotkey-overlay-title="Focus window/workspace up" { focus-window-or-workspace-up; }
+    Mod+L hotkey-overlay-title="Focus column right"{ focus-column-right; }
+
+    // Move columns right, down, up, left
+    Mod+Shift+H     { move-column-left-or-to-monitor-left; }
+    Mod+Shift+J     { move-column-to-workspace-down; }
+    Mod+Shift+K     { move-column-to-workspace-up; }
+    Mod+Shift+L     { move-column-right-or-to-monitor-right; }
+    Mod+u { maximize-column; }
+    Mod+F { fullscreen-window; }
+
+    Mod+g hotkey-overlay-title="Toggle tabbed display" { toggle-column-tabbed-display; }
+    // The following binds move the focused window in and out of a column.
+    Mod+Tab  { consume-or-expel-window-left; }
+    Mod+Shift+Tab  { consume-or-expel-window-right; }
+
+
+    Mod+BracketLeft       { focus-column-first; }
+    Mod+BracketRight        { focus-column-last; }
+    Mod+Shift+BracketLeft  { move-column-to-first; }
+    Mod+Shift+BracketRight   { move-column-to-last; }
+
+    // Finer width adjustments.
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+Equal { set-column-width "+10%"; }
+
+    // Finer height adjustments when in column with other windows.
+    Mod+Shift+Minus { set-window-height "-10%"; }
+    Mod+Shift+Equal { set-window-height "+10%"; }
+
+    // Switch focus of multiple monitors
+    Mod+Comma      { focus-monitor-previous; }
+    Mod+Period     { focus-monitor-next; }
+    Mod+Shift+Comma      { move-column-to-monitor-left; }
+    Mod+Shift+Period     { move-column-to-monitor-right; }
+
+
+    // You can refer to workspaces by index. However, keep in mind that
+    // niri is a dynamic workspace system, so these commands are kind of
+    // "best effort". Trying to refer to a workspace index bigger than
+    // the current workspace count will instead refer to the bottommost
+    // (empty) workspace.
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+    Mod+shift+1 { move-column-to-workspace 1; }
+    Mod+shift+2 { move-column-to-workspace 2; }
+    Mod+shift+3 { move-column-to-workspace 3; }
+    Mod+shift+4 { move-column-to-workspace 4; }
+    Mod+shift+5 { move-column-to-workspace 5; }
+    Mod+shift+6 { move-column-to-workspace 6; }
+    Mod+shift+7 { move-column-to-workspace 7; }
+    Mod+shift+8 { move-column-to-workspace 8; }
+    Mod+shift+9 { move-column-to-workspace 9; }
+
+    // these arent useful for my workflow
+    // Mod+R { switch-preset-column-width; }
+    // Cycling through the presets in reverse order is also possible.
+    // Mod+R { switch-preset-column-width-back; }
+    // Mod+Shift+R { switch-preset-window-height; }
+    // Mod+Ctrl+R { reset-window-height; }
+
+    // Applications such as remote-desktop clients and software KVM switches may
+    // request that niri stops processing the keyboard shortcuts defined here
+    // so they may, for example, forward the key presses as-is to a remote machine.
+    // It's a good idea to bind an escape hatch to toggle the inhibitor,
+    // so a buggy application can't hold your session hostage.
+    //
+    // The allow-inhibiting=false property can be applied to other binds as well,
+    // which ensures niri always processes them, even when an inhibitor is active.
+    // Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
+    // Powers off the monitors. To turn them back on, do any input like
+    // moving the mouse or pressing any other key.
+
+    Ctrl+Alt+P { power-off-monitors; }
+
+    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+    Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
+    Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
+
+    Mod+WheelScrollRight      { focus-column-right; }
+    Mod+WheelScrollLeft       { focus-column-left; }
+    Mod+Ctrl+WheelScrollRight { move-column-right; }
+    Mod+Ctrl+WheelScrollLeft  { move-column-left; }
+
+    // Usually scrolling up and down with Shift in applications results in
+    // horizontal scrolling; these binds replicate that.
+    Mod+Shift+WheelScrollDown      { focus-column-right; }
+    Mod+Shift+WheelScrollUp        { focus-column-left; }
+    Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
+    Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
+}

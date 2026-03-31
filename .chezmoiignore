@@ -3,7 +3,7 @@ gimp
 gpg
 keybinds
 
-{{ if (ne .chezmoi.hostname "artixbox") -}}
+{{- if or (ne .chezmoi.hostname "artixbox") (ne .chezmoi.hostname "artixframe") }}
 # files to ignore on on desktop
 .local/bin/extras/laptop-battery-sound.sh
 .local/bin/extras/laptop-calibration
