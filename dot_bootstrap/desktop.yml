@@ -43,6 +43,15 @@
         - 'export EDITOR=nvim'
         - 'export VISUAL=nvim'
 
+    - name: Set Aliases for root
+      lineinfile:
+        path: /root/.bashrc
+        line: "{{ item }}"
+      loop:
+        - 'alias makekern="make -j32 && make -j32 modules_install && make install"'
+        - 'alias ls="eza -al --color=always --icons --group-directories-first"'
+        - 'alias ss="eza -al --color=always --icons --group-directories-first"'
+
     # ---------- EVREMAP ----------
     - name: clone evremap
       become: false
