@@ -53,19 +53,25 @@
         - 'alias ss="eza -al --color=always --icons --group-directories-first"'
 
     # ---------- EVREMAP ----------
+    - name: Check if evremap exists
+      stat:
+        path: /usr/local/bin/evremap
+      register: evremap_installed
+
     - name: clone evremap
       become: false
       ansible.builtin.git:
         repo: 'https://github.com/wez/evremap.git'
         dest: "/home/chris/dl/git-clones/evremap"
         update: no
+      when: not evremap_installed.stat.exists
 
     - name: Build evremap
       become: false
       shell: cargo build --release
       args:
         chdir: /home/chris/dl/git-clones/evremap/
-        creates: /home/chris/dl/git-clones/evremap/target/release/evremap
+      when: not evremap_installed.stat.exists
 
     - name: Install evremap
       copy:
@@ -73,6 +79,7 @@
         dest: /usr/local/bin/evremap
         mode: '0755'
         remote_src: true
+      when: not evremap_installed.stat.exists
 
     # ---------- TPM ----------
     - name: clone tpm
@@ -133,6 +140,6 @@
     # ---------- CLEANUP ----------
     - name: Final cleanup
       become: false
-      shell: ./executable_cleanup
+      shell: ./cleanup
       args:
         chdir: "{{ playbook_dir }}"
