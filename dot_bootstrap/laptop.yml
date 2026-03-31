@@ -266,10 +266,10 @@
       loop:
         - name: battery sound
           minute: "*/10"
-          job: "/home/chris/.local/bin/extras/laptop-battery-sound.sh"
+          job: "/home/chris/.local/bin/laptop-battery-sound.sh"
         - name: bluetooth check
           minute: "*/5"
-          job: "/home/chris/.local/bin/extras/laptop-ifblue"
+          job: "/home/chris/.local/bin/laptop-ifblue"
         - name: atuin rclone sync
           special_time: daily
           job: "flock -n /tmp/atuin.lock /usr/bin/rclone sync --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/atuin IdriveEncrypt:atuin-arch"

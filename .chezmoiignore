@@ -5,12 +5,12 @@ keybinds
 
 {{- if or (ne .chezmoi.hostname "artixbox") (ne .chezmoi.hostname "artixframe") }}
 # files to ignore on on desktop
-.local/bin/extras/laptop-battery-sound.sh
-.local/bin/extras/laptop-calibration
-.local/bin/extras/laptop-ifblue
-.local/bin/extras/laptop-jabra
-.local/bin/extras/laptop-power-modifier
-.local/bin/extras/laptop-archwiki
+.local/bin/laptop-battery-sound.sh
+.local/bin/laptop-calibration
+.local/bin/laptop-ifblue
+.local/bin/laptop-jabra
+.local/bin/laptop-power-modifier
+.local/bin/laptop-archwiki
 .config/BOE_CQ_______NE135FBM_N41_03.icm
 .config/pipewire/**
 {{- end }}
