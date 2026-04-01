@@ -4,11 +4,17 @@ set -euo pipefail
 PASS_DIR="$HOME/.local/share/pass"
 REMOTE="IdriveEncrypt:pass"
 
+error() {
+  # Log to stderr and exit with failure.
+  printf "%s\n" "$1" >&2
+  exit 1
+}
+
 echo "[*] Checking pass restore..."
 
 # 1. Preconditions
-command -v rclone >/dev/null || exit 0
-[ -f "$HOME/.config/rclone/rclone.conf" ] || exit 0
+command -v rclone >/dev/null || error "rclone command not found, please install it"
+[ -f "$HOME/.config/rclone/rclone.conf" ] || error "rclone config not found run chezmoi apply with smartcard"
 
 # 2. Skip if already exists
 if [ -d "$PASS_DIR" ] && [ "$(ls -A "$PASS_DIR")" ]; then

@@ -4,6 +4,16 @@ set -euo pipefail
 Z_DIR="$HOME/.local/share/zoxide"
 A_DIR="$HOME/.local/share/atuin"
 
+error() {
+  # Log to stderr and exit with failure.
+  printf "%s\n" "$1" >&2
+  exit 1
+}
+
+# 1. Preconditions
+command -v rclone >/dev/null || error "rclone command not found, please install it"
+[ -f "$HOME/.config/rclone/rclone.conf" ] || error "rclone config not found run chezmoi apply with smartcard"
+
 {{- if or (eq .chezmoi.hostname "artixbox") (eq .chezmoi.hostname "artixframe") }}
 Z_REMOTE="IdriveEncrypt:zoxide-arch"
 A_REMOTE="IdriveEncrypt:atuin-arch"
