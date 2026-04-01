@@ -65,4 +65,4 @@ dot_config/stupid-web/runtime
 dot_local/bin/activate-global-python-argcomplete
 dot_local/bin/python-argcomplete-check-easy-install-script
 dot_local/bin/register-python-argcomplete
-dot_local/.local/bin/exegol
+dot_local/bin/exegol
