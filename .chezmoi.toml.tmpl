@@ -1,7 +1,10 @@
 {{- $gpgKey := "EF5E09D187CF5CB5A7093043FB1A5452C181A3F5" -}}
-{{- $hasKey := output "gpg" "--list-secret-keys" $gpgKey | trim -}}
+{{- $cardPresent := false -}}
+{{- with output "gpg" "--card-status" -}}
+  {{- $cardPresent = true -}}
+{{- end -}}
 
-{{- if $hasKey -}}
+{{- if $cardPresent -}}
 encryption = "gpg"
 
 [gpg]

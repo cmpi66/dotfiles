@@ -22,10 +22,11 @@ keybinds
 .config/pipewire/**
 {{- end }}
 
-{{- $gpgKey := "EF5E09D187CF5CB5A7093043FB1A5452C181A3F5" -}}
-{{- $hasKey := output "gpg" "--list-secret-keys" $gpgKey | trim -}}
+{{- $cardPresent := false -}}
+{{- with output "gpg" "--card-status" -}}
+  {{- $cardPresent = true -}}
+{{- end -}}
 
-{{- if not $hasKey -}}
-# ignore all encrypted files when GPG key isn't available
+{{- if not $cardPresent -}}
 **/*.asc
 {{- end -}}
