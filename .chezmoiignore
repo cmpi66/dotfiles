@@ -9,6 +9,7 @@ keybinds
 .config/qutebrowser/quickmarks
 .config/qutebrowser/bookmarks
 .config/qutebrowser/bookmarks/urls
+.bootstrap
 
 {{- if and (ne .chezmoi.hostname "artixbox") (ne .chezmoi.hostname "artixframe") }}
 # files to ignore on on desktop
@@ -25,12 +26,12 @@ keybinds
 {{- $ok := (output "sh" "-c" "gpg --card-status >/dev/null 2>&1 && echo ok || echo fail" | trim) }}
 
 {{ if eq $ok "fail" }}
-.abook/*
-.config/bmks/*
-.config/espanso/*
-.config/mutt/*
-.config/newsboat/*
-.config/rclone/*
-.config/secrets/*
+.abook
+.config/bmks
+.config/espanso
+.config/mutt
+.config/newsboat
+.config/rclone
+.config/secrets
 .config/transmission-daemon/*
 {{ end }}

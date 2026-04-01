@@ -1,0 +1,18 @@
+#!/bin/sh
+if command -v ansible-playbook >/dev/null 2>&1; then
+
+{{- if or (eq .chezmoi.hostname "artixbox") (eq .chezmoi.hostname "artixframe") }}
+
+    ansible-galaxy collection install kewlfft.aur
+    ansible-playbook {{ joinPath .chezmoi.sourceDir "dot_bootstrap/laptop.yml" | quote }} --ask-become-pass
+    echo "Laptop bootstrap complete."
+
+{{- else }}
+
+    ansible-playbook {{ joinPath .chezmoi.sourceDir "dot_bootstrap/desktop.yml" | quote }} --ask-become-pass
+    echo "Desktop bootstrap complete."
+
+{{- end }}
+
+fi
+
