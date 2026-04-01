@@ -104,6 +104,9 @@
         - name: atuin rclone sync
           special_time: daily
           job: "flock -n /tmp/atuin.lock /usr/bin/rclone sync --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/atuin IdriveEncrypt:atuin-gentoo"
+        - name: zoxide rclone sync
+          special_time: daily
+          job: "flock -n /tmp/zoxide.lock /usr/bin/rclone sync --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/zoxide IdriveEncrypt:zoxide-gentoo"
         - name: newsboat reload
           special_time: daily
           job: "/usr/bin/newsboat -x reload"
