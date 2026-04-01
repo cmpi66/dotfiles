@@ -1,9 +1,9 @@
-{{- $cardStatus := output "sh" "-c" "gpg --card-status 2>/dev/null || true" -}}
+{{- $ok := (output "sh" "-c" "gpg --card-status >/dev/null 2>&1 && echo ok || echo fail" | trim) }}
 
-{{- if contains $cardStatus "Application ID" }}
+{{ if eq $ok "ok" }}
 encryption = "gpg"
 
 [gpg]
   recipient = "EF5E09D187CF5CB5A7093043FB1A5452C181A3F5"
   args = ["--quiet"]
-{{- end }}
+{{ end }}

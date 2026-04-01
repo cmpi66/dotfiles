@@ -22,14 +22,15 @@ keybinds
 .config/pipewire/**
 {{- end }}
 
-{{- $cardStatus := output "sh" "-c" "gpg --card-status 2>/dev/null || true" -}}
-{{- if not (contains $cardStatus "Application ID") -}}
-.abook/**
-.config/bmks/**
-.config/espanso/**
-.config/mutt/**
-.config/newsboat/**
-.config/rclone/**
-.config/secrets/**
-.config/transmission-daemon/**
-{{- end -}}
+{{- $ok := (output "sh" "-c" "gpg --card-status >/dev/null 2>&1 && echo ok || echo fail" | trim) }}
+
+{{ if eq $ok "fail" }}
+.abook/*
+.config/bmks/*
+.config/espanso/*
+.config/mutt/*
+.config/newsboat/*
+.config/rclone/*
+.config/secrets/*
+.config/transmission-daemon/*
+{{ end }}
