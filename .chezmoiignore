@@ -21,3 +21,11 @@ keybinds
 .config/BOE_CQ_______NE135FBM_N41_03.icm
 .config/pipewire/**
 {{- end }}
+
+{{- $gpgKey := "EF5E09D187CF5CB5A7093043FB1A5452C181A3F5" -}}
+{{- $hasKey := output "gpg" "--list-secret-keys" $gpgKey | trim -}}
+
+{{- if not $hasKey -}}
+# ignore all encrypted files when GPG key isn't available
+**/*.asc
+{{- end -}}

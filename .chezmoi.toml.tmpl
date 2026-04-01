@@ -1,4 +1,10 @@
+{{- $gpgKey := "EF5E09D187CF5CB5A7093043FB1A5452C181A3F5" -}}
+{{- $hasKey := output "gpg" "--list-secret-keys" $gpgKey | trim -}}
+
+{{- if $hasKey -}}
 encryption = "gpg"
+
 [gpg]
-    recipient = "EF5E09D187CF5CB5A7093043FB1A5452C181A3F5"
-    args = ["--quiet"]
+  recipient = {{ $gpgKey | quote }}
+  args = ["--quiet"]
+{{- end -}}
