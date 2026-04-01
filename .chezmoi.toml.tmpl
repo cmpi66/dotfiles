@@ -1,7 +1,7 @@
 {{- $gpgKey := "EF5E09D187CF5CB5A7093043FB1A5452C181A3F5" -}}
 {{- $cardPresent := false -}}
-{{- $result := outputWithExitStatus "gpg" "--card-status" -}}
-{{- if eq $result.ExitStatus 0 -}}
+{{- $cardStatus := output "sh" "-c" "gpg --card-status 2>/dev/null || true" -}}
+{{- if $cardStatus -}}
   {{- $cardPresent = true -}}
 {{- end -}}
 
