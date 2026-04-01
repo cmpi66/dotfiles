@@ -338,6 +338,75 @@
         state: absent
         validate: 'visudo -cf %s'
 
-    - name: Final cleanup
+# ---------- CLEANUP ----------
+    - name: Remove unwanted home directories
+      ansible.builtin.file:
+        path: "{{ item }}"
+        state: absent
+      loop:
+        - /home/chris/.vim
+
+    - name: Create required directories
       become: false
-      ansible.builtin.command: "{{ playbook_dir }}/cleanup"
+      ansible.builtin.file:
+        path: "{{ item }}"
+        state: directory
+        mode: '0755'
+      loop:
+        - /home/chris/dl
+        - /home/chris/dl/git-clones
+        - /home/chris/.local
+
+    - name: Remove unwanted dotfiles
+      ansible.builtin.file:
+        path: "{{ item }}"
+        state: absent
+      loop:
+        - /home/chris/.bashrc
+        - /home/chris/.bash_history
+        - /home/chris/.bash_logout
+        - /home/chris/.bash_profile
+        - /home/chris/.profile
+        - /home/chris/.zshenv
+        - /home/chris/.wget-hsts
+        - /home/chris/.viminfo
+
+    - name: Move .gnupg to XDG location
+      become: false
+      ansible.builtin.command:
+        cmd: mv /home/chris/.gnupg /home/chris/.local/share/gnupg
+      args:
+        removes: /home/chris/.gnupg
+        creates: /home/chris/.local/share/gnupg
+
+    - name: Move .ansible to XDG location
+      become: false
+      ansible.builtin.command:
+        cmd: mv /home/chris/.ansible /home/chris/.config/ansible
+      args:
+        removes: /home/chris/.ansible
+        creates: /home/chris/.config/ansible
+
+    - name: Move .cargo to XDG location
+      become: false
+      ansible.builtin.command:
+        cmd: mv /home/chris/.cargo /home/chris/.local/share/cargo
+      args:
+        removes: /home/chris/.cargo
+        creates: /home/chris/.local/share/cargo
+
+    - name: Move .rustup to XDG location
+      become: false
+      ansible.builtin.command:
+        cmd: mv /home/chris/.rustup /home/chris/.local/share/rustup
+      args:
+        removes: /home/chris/.rustup
+        creates: /home/chris/.local/share/rustup
+
+    - name: Move go dir to XDG location
+      become: false
+      ansible.builtin.command:
+        cmd: mv /home/chris/go /home/chris/.local/share/go
+      args:
+        removes: /home/chris/go
+        creates: /home/chris/.local/share/go
