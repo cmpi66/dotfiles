@@ -24,5 +24,12 @@ keybinds
 
 {{- $cardStatus := output "sh" "-c" "gpg --card-status 2>/dev/null || true" -}}
 {{- if not (contains $cardStatus "Application ID") -}}
-**/*.asc
+.abook/**
+.config/bmks/**
+.config/espanso/**
+.config/mutt/**
+.config/newsboat/**
+.config/rclone/**
+.config/secrets/**
+.config/transmission-daemon/**
 {{- end -}}
