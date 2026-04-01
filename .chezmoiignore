@@ -22,12 +22,7 @@ keybinds
 .config/pipewire/**
 {{- end }}
 
-{{- $cardPresent := false -}}
 {{- $cardStatus := output "sh" "-c" "gpg --card-status 2>/dev/null || true" -}}
-{{- if $cardStatus -}}
-  {{- $cardPresent = true -}}
-{{- end -}}
-
-{{- if not $cardPresent -}}
+{{- if not (contains $cardStatus "Application ID") -}}
 **/*.asc
 {{- end -}}

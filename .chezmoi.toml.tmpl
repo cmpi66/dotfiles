@@ -1,14 +1,4 @@
-{{- $gpgKey := "EF5E09D187CF5CB5A7093043FB1A5452C181A3F5" -}}
-{{- $cardPresent := false -}}
-{{- $cardStatus := output "sh" "-c" "gpg --card-status 2>/dev/null || true" -}}
-{{- if $cardStatus -}}
-  {{- $cardPresent = true -}}
-{{- end -}}
-
-{{- if $cardPresent -}}
 encryption = "gpg"
-
 [gpg]
-  recipient = {{ $gpgKey | quote }}
-  args = ["--quiet"]
-{{- end -}}
+    recipient = "EF5E09D187CF5CB5A7093043FB1A5452C181A3F5"
+    args = ["--quiet"]
