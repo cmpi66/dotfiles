@@ -23,7 +23,8 @@ keybinds
 {{- end }}
 
 {{- $cardPresent := false -}}
-{{- with output "gpg" "--card-status" -}}
+{{- $result := outputWithExitStatus "gpg" "--card-status" -}}
+{{- if eq $result.ExitStatus 0 -}}
   {{- $cardPresent = true -}}
 {{- end -}}
 

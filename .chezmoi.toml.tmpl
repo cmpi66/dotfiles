@@ -1,6 +1,7 @@
 {{- $gpgKey := "EF5E09D187CF5CB5A7093043FB1A5452C181A3F5" -}}
 {{- $cardPresent := false -}}
-{{- with output "gpg" "--card-status" -}}
+{{- $result := outputWithExitStatus "gpg" "--card-status" -}}
+{{- if eq $result.ExitStatus 0 -}}
   {{- $cardPresent = true -}}
 {{- end -}}
 
