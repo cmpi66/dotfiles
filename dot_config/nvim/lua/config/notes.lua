@@ -3,7 +3,7 @@
 local M = {}
 
 -- ----- CONFIG -----
-local ROOT = vim.fn.expand("~/.local/.src/zettlekasten")
+local ROOT = vim.fn.expand("~/.local/share/notes/zettlekasten")
 
 local ROOTS = {
   vim.fn.expand("~/.local/share/notes/zettlekasten"),
@@ -144,6 +144,7 @@ local function get_tags(filepath)
   end
 
   local in_frontmatter = false
+  local in_tags_block = false
   local line_count = 0
 
   for line in f:lines() do
@@ -153,15 +154,23 @@ local function get_tags(filepath)
     elseif in_frontmatter and line:match("^%-%-%-") then
       break
     elseif in_frontmatter then
+      -- inline: tags: [foo, bar]
       local inline = line:match("^tags:%s*%[(.-)%]")
       if inline then
+        in_tags_block = false
         for tag in inline:gmatch("[^,%s]+") do
           table.insert(tags, tag)
         end
-      end
-      local item = line:match("^%s*-%s+(.+)")
-      if item then
+      -- start of block-style tags:
+      elseif line:match("^tags:%s*$") then
+        in_tags_block = true
+      -- a list item while inside tags block
+      elseif in_tags_block and line:match("^%s*-%s+(.+)") then
+        local item = line:match("^%s*-%s+(.+)")
         table.insert(tags, item:gsub("%s+$", ""))
+      -- any non-list line exits the tags block
+      elseif in_tags_block and not line:match("^%s*$") then
+        in_tags_block = false
       end
     end
   end
