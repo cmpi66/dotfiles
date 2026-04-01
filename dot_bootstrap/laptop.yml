@@ -340,6 +340,4 @@
 
     - name: Final cleanup
       become: false
-      shell: ./cleanup
-      args:
-        chdir: "{{ playbook_dir }}"
+      ansible.builtin.command: "{{ playbook_dir }}/cleanup"
