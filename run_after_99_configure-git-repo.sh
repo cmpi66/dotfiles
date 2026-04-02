@@ -1,9 +1,18 @@
 #!/bin/bash
-{{- $ok := (output "sh" "-c" "SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket) ssh -T git@github.com -o BatchMode=yes -o ConnectTimeout=3 >/dev/null 2>&1 && echo ok || echo fail" | trim) }}
 set -euo pipefail
 
-{{ if eq $ok "ok" }}
 echo "[chezmoi] Starting git remote SSH configuration..."
+
+SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+export SSH_AUTH_SOCK
+
+SSH_OUT=$(ssh -T git@github.com -o BatchMode=yes -o ConnectTimeout=5 2>&1 || true)
+
+if ! echo "$SSH_OUT" | grep -q "successfully authenticated"; then
+    echo "[chezmoi] SSH to GitHub unavailable — probe output: $SSH_OUT" >&2
+    echo "[chezmoi] Skipping remote URL update." >&2
+    exit 0
+fi
 
 CHEZMOI_SOURCE="${CHEZMOI_SOURCE_DIR%/}"
 
@@ -22,6 +31,3 @@ elif [[ "$CURRENT_URL" == https://github.com/* ]]; then
 else
     echo "[chezmoi] Unrecognized remote URL format: $CURRENT_URL — skipping." >&2
 fi
-{{ else }}
-echo "[chezmoi] SSH to GitHub unavailable (GPG smartcard not present?), skipping remote URL update." >&2
-{{ end }}
