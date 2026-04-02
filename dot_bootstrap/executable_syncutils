@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+# ── Colors ─────────────────────────────────────────────
+RESET="\033[0m"
+BOLD="\033[1m"
+RED="\033[31m"
+GREEN="\033[32m"
+YELLOW="\033[33m"
+BLUE="\033[34m"
+
+# ── Logging ────────────────────────────────────────────
+log() { printf "${BLUE}[*]${RESET} %s\n" "$1"; }
+ok() { printf "${GREEN}[+]${RESET} %s\n" "$1"; }
+warn() { printf "${YELLOW}[!]${RESET} %s\n" "$1"; }
+fail() {
+  printf "${RED}${BOLD}[x] %s${RESET}\n" "$1" >&2
+  exit 1
+}
+
+# ── Command check helper ───────────────────────────────
+require() {
+  command -v "$1" >/dev/null || fail "$1 not found"
+}
+
+# ── Final status handling ──────────────────────────────
+__SYNC_SUCCESS=0
+
+__sync_on_exit() {
+  if [ "$__SYNC_SUCCESS" -eq 1 ]; then
+    printf "\n${GREEN}${BOLD}✔ COMPLETE${RESET}\n"
+  else
+    printf "\n${RED}${BOLD}✖ FAILED${RESET}\n"
+  fi
+}
+
+sync_init() {
+  trap __sync_on_exit EXIT
+}
+
+sync_success() {
+  __SYNC_SUCCESS=1
+}

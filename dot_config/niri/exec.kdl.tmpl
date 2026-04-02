@@ -1,7 +1,7 @@
 spawn-at-startup "dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
 spawn-at-startup "hypridle"
 spawn-at-startup "remapd"
-spawn-sh-at-startup "syncthing --no-browser"
+spawn-sh-at-startup "[ -f $HOME/.local/share/.syncthing_ready ] && syncthing --no-browser"
 spawn-at-startup "mpd"
 spawn-sh-at-startup "wl-paste --watch cliphist store"
 spawn-sh-at-startup "wl-paste --type text --watch cliphist store"

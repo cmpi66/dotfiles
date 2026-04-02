@@ -79,6 +79,10 @@ alias archlinux-fix-keys="sudo pacman-key --init && sudo pacman-key --populate a
 alias batthealth="upower -i /org/freedesktop/UPower/devices/battery_BAT1"
 {{- end }}
 
+{{- if or (eq .chezmoi.hostname "gentoobox") (eq .chezmoi.hostname "gentooframe") }}
+alias mediasync="rsync --archive --verbose --delete-after --update --checksum /home/chris/media/ chris@artixframe:/home/chris/media/"
+alias musicsync="rsync --archive --verbose --delete-after --update --checksum /home/chris/.local/share/music/ chris@artixframe:/home/chris/.local/share/music/"
+{{- end }}
 
 se() {
   choice="$(find -L "$HOME/.local/bin" -type f | sed "s|$HOME/.local/bin/||" | fzf)"
@@ -127,4 +131,12 @@ function extract {
       fi
     done
   fi
+
+}
+
+nsync() {
+  git add -A
+  git commit -m "notes sync" 2>/dev/null || true
+  git pull --rebase --autostash
+  git push
 }

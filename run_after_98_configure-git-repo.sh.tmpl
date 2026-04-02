@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SYNC_UTILS="{{ joinPath .chezmoi.sourceDir "dot_bootstrap/executable_syncutils" }}"
+source "$SYNC_UTILS"
+
+sync_init
+
+log "Starting git remote SSH configuration..."
+
+# Ensure SSH agent (smartcard)
+SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+export SSH_AUTH_SOCK
+
+# Probe GitHub SSH (non-fatal)
+log "Checking GitHub SSH access..."
+
+SSH_OUT="$(ssh -T git@github.com -o BatchMode=yes -o ConnectTimeout=5 2>&1 || true)"
+
+if ! echo "$SSH_OUT" | grep -q "successfully authenticated"; then
+  warn "SSH to GitHub unavailable — skipping remote URL update"
+  warn "Probe output: $SSH_OUT"
+  sync_success
+  exit 0
+fi
+
+ok "SSH authentication confirmed"
+
+CHEZMOI_SOURCE="${CHEZMOI_SOURCE_DIR%/}"
+
+# Configure identity
+log "Configuring git identity..."
+git -C "$CHEZMOI_SOURCE" config user.name "chris"
+git -C "$CHEZMOI_SOURCE" config user.email "munozchris@posteo.net"
+ok "Git identity configured"
+
+# Check current remote
+CURRENT_URL="$(git -C "$CHEZMOI_SOURCE" remote get-url origin)"
+
+if [[ "$CURRENT_URL" == git@github.com:* ]]; then
+  warn "Remote already using SSH ($CURRENT_URL), nothing to do"
+elif [[ "$CURRENT_URL" == https://github.com/* ]]; then
+  SSH_URL="${CURRENT_URL/https:\/\/github.com\//git@github.com:}"
+  log "Switching remote to SSH..."
+  git -C "$CHEZMOI_SOURCE" remote set-url origin "$SSH_URL"
+  ok "Remote updated to $SSH_URL"
+else
+  warn "Unrecognized remote URL format: $CURRENT_URL — skipping"
+fi
+
+ok "Git remote configuration complete"
+
+# ── Bootstrap completion signal ────────────────────────
+log "Finalizing bootstrap..."
+
+touch "$HOME/.local/share/.syncthing_ready"
+ok "Bootstrap complete — syncthing ready flag set"
+
+sync_success

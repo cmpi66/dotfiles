@@ -20,7 +20,7 @@ keybinds
 .local/bin/laptop-power-modifier
 .local/bin/laptop-archwiki
 .config/BOE_CQ_______NE135FBM_N41_03.icm
-.config/pipewire/**
+.config/pipewire
 {{- end }}
 
 {{- if and (ne .chezmoi.hostname "gentoobox") (ne .chezmoi.hostname "gentooframe") }}

@@ -6,22 +6,23 @@ source "$SYNC_UTILS"
 
 sync_init
 
-Z_DIR="$HOME/.local/share/zoxide"
-A_DIR="$HOME/.local/share/atuin"
+{{- if ne .chezmoi.hostname "gentoobox" }}
+warn "Not gentoobox — skipping media restore"
+sync_success
+exit 0
+{{- end }}
 
-log "Restoring zoxide + atuin data..."
+MEDIA_DIR="$HOME/media"
+MUSIC_DIR="$HOME/.local/share/music"
+
+MEDIA_REMOTE="IdriveEncrypt:mediasync"
+MUSIC_REMOTE="IdriveEncrypt:music"
+
+log "Restoring media + music (gentoo only)..."
 
 # Preconditions
 require rclone
 [ -f "$HOME/.config/rclone/rclone.conf" ] || fail "rclone config missing"
-
-{{- if or (eq .chezmoi.hostname "artixbox") (eq .chezmoi.hostname "artixframe") }}
-Z_REMOTE="IdriveEncrypt:zoxide-arch"
-A_REMOTE="IdriveEncrypt:atuin-arch"
-{{- else }}
-Z_REMOTE="IdriveEncrypt:zoxide-gentoo"
-A_REMOTE="IdriveEncrypt:atuin-gentoo"
-{{- end }}
 
 restore_if_missing() {
   local REMOTE="$1"
@@ -47,7 +48,9 @@ restore_if_missing() {
   ok "Restored $NAME"
 }
 
-restore_if_missing "$Z_REMOTE" "$Z_DIR" "zoxide"
-restore_if_missing "$A_REMOTE" "$A_DIR" "atuin"
+restore_if_missing "$MEDIA_REMOTE" "$MEDIA_DIR" "media"
+restore_if_missing "$MUSIC_REMOTE" "$MUSIC_DIR" "music"
+
+warn "This will take a while — over 150GB total"
 
 sync_success

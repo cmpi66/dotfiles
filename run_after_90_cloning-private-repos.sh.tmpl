@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SYNC_UTILS="{{ joinPath .chezmoi.sourceDir "dot_bootstrap/executable_syncutils" }}"
+source "$SYNC_UTILS"
+
+sync_init
+
+log "Starting private repo clone..."
+
+# Ensure SSH agent (smartcard)
+SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+export SSH_AUTH_SOCK
+
+# Probe GitHub SSH (non-fatal)
+log "Checking GitHub SSH access..."
+
+SSH_OUT="$(ssh -T git@github.com -o ConnectTimeout=5 2>&1 || true)"
+
+if ! echo "$SSH_OUT" | grep -q "successfully authenticated"; then
+  warn "SSH to GitHub unavailable — skipping private repo clone"
+  warn "Probe output: $SSH_OUT"
+  sync_success
+  exit 0
+fi
+
+ok "SSH authentication confirmed"
+
+BASE_DIR="$HOME/.local/share/notes"
+mkdir -p "$BASE_DIR"
+
+REPOS=(
+  "git@github.com:cmpi66/blueteam-hub.git"
+  "git@github.com:cmpi66/pentest-hub.git"
+  "git@github.com:cmpi66/zettlekasten.git"
+)
+
+for REPO in "${REPOS[@]}"; do
+  NAME="$(basename "$REPO" .git)"
+  TARGET="$BASE_DIR/$NAME"
+
+  if [[ -d "$TARGET" ]]; then
+    warn "$NAME already exists, skipping"
+    continue
+  fi
+
+  log "Cloning $NAME..."
+  git clone "$REPO" "$TARGET"
+  ok "$NAME cloned"
+done
+
+ok "Private repo clone complete"
+
+sync_success

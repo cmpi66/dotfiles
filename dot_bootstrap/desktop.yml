@@ -14,7 +14,7 @@
     - name: Change shell to zsh
       ansible.builtin.user:
         name: "{{ remote_regular_user }}"
-        shell: /usr/bin/zsh
+        shell: /bin/zsh # different path on gentoo, a great way to lock yourself out and also mess up SSH
 
     - name: source zdotdir system wide
       lineinfile:
