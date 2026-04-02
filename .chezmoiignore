@@ -23,6 +23,13 @@ keybinds
 .config/pipewire/**
 {{- end }}
 
+{{- if and (ne .chezmoi.hostname "gentoobox") (ne .chezmoi.hostname "gentooframe") }}
+# files to ignore on on laptop
+.local/bin/genrepo
+.local/bin/genzfs
+.local/bin/slstatus/gentoopacks.sh
+{{- end }}
+
 {{- $ok := (output "sh" "-c" "gpg --card-status >/dev/null 2>&1 && echo ok || echo fail" | trim) }}
 
 {{ if eq $ok "fail" }}
@@ -33,5 +40,5 @@ keybinds
 .config/newsboat
 .config/rclone
 .config/secrets
-.config/transmission-daemon/*
+.config/transmission-daemon
 {{ end }}

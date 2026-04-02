@@ -1,14 +1,26 @@
-#!/bin/sh
+#!/usr/bin/env sh
+set -eu
 
-## This script copies all my portage files to my gentoo repo
+GENREP="$HOME/.local/share/repos/gentoo/all"
+PORTAGE_DIR="/etc/portage"
+WORLD_FILE="/var/lib/portage/world"
 
-GENREP=/home/chris/.local/.src/repos/gentoo/all/
-# GENREP="/home/chris/test2/"
+cd "$GENREP"
 
-cd $GENREP && doas rm -rf * && doas cp -ir /etc/portage/* $GENREP && doas bat -p /var/lib/portage/world >world && doas rm $GENREP/make.profile && doas chown -R chris:chris $GENREP && git add . && git commit -m 'updates' && git push
+# Sync portage config safely (no delete explosion)
+rsync -a --delete "$PORTAGE_DIR/" "$GENREP/"
 
-# genrepo ()
-# {
-#
+# Remove unwanted files
+rm -f "$GENREP/make.profile"
 
-# }
+# Export world file
+bat -p "$WORLD_FILE" >"$GENREP/world"
+
+# Git commit only if there are changes
+if ! git diff --quiet || ! git diff --cached --quiet; then
+  git add .
+  git commit -m "portage: sync $(date +%F)"
+  git push
+else
+  echo "No changes — skipping commit"
+fi

@@ -356,6 +356,7 @@
         - /home/chris/dl
         - /home/chris/dl/git-clones
         - /home/chris/.local
+        - /home/chris/.local/share/repos
 
     - name: Remove unwanted dotfiles
       ansible.builtin.file:
@@ -370,6 +371,13 @@
         - /home/chris/.zshenv
         - /home/chris/.wget-hsts
         - /home/chris/.viminfo
+
+    - name: clone pia manual connections
+      become: false
+      ansible.builtin.git:
+        repo: 'https://github.com/pia-foss/manual-connections.git'
+        dest: "/home/chris/dl/git-clones/manual-connections/"
+        update: no
 
     - name: Move .gnupg to XDG location
       become: false
@@ -410,3 +418,150 @@
       args:
         removes: /home/chris/go
         creates: /home/chris/.local/share/go
+
+    # ---------- CORE REPOS ----------
+    - name: Define core repos
+      become: false
+      ansible.builtin.set_fact:
+        core_repos:
+          - name: cmpi66
+            path: "/home/chris/.local/share/repos/cmpi66"
+            clone_url: "https://github.com/cmpi66/cmpi66.git"
+            primary_ssh: "git@github.com:cmpi66/cmpi66.git"
+            secondary_ssh: ""
+
+          - name: devpod-devcontainer
+            path: "/home/chris/.local/share/repos/devpod-devcontainer"
+            clone_url: "https://github.com/cmpi66/devpod-devcontainer.git"
+            primary_ssh: "git@github.com:cmpi66/devpod-devcontainer.git"
+            secondary_ssh: ""
+
+          - name: devpod-dots
+            path: "/home/chris/.local/share/repos/devpod-dots"
+            clone_url: "https://github.com/cmpi66/devpod-dots.git"
+            primary_ssh: "git@github.com:cmpi66/devpod-dots.git"
+            secondary_ssh: ""
+
+          - name: gentoo
+            path: "/home/chris/.local/share/repos/gentoo"
+            clone_url: "https://github.com/cmpi66/gentoo.git"
+            primary_ssh: "git@github.com:cmpi66/gentoo.git"
+            secondary_ssh: ""
+
+          - name: netlify
+            path: "/home/chris/.local/share/repos/netlify"
+            clone_url: "https://github.com/cmpi66/netlify.git"
+            primary_ssh: "git@gitlab.com:chris-m/netlify.git"
+            secondary_ssh: "git@github.com:cmpi66/netlify.git"
+
+          - name: portfolio
+            path: "/home/chris/.local/share/repos/portfolio"
+            clone_url: "https://github.com/cmpi66/portfolio.git"
+            primary_ssh: "git@gitlab.com:chris-m/portfolio.git"
+            secondary_ssh: "git@github.com:cmpi66/portfolio.git"
+
+    - name: Clone core repos via HTTPS
+      become: false
+      ansible.builtin.git:
+        repo: "{{ item.clone_url }}"
+        dest: "{{ item.path }}"
+        update: false
+      loop: "{{ core_repos }}"
+
+    - name: Get current origin URL
+      become: false
+      ansible.builtin.command:
+        argv:
+          - git
+          - remote
+          - get-url
+          - origin
+      args:
+        chdir: "{{ item.path }}"
+      register: origin_urls
+      changed_when: false
+      failed_when: false
+      loop: "{{ core_repos }}"
+
+    - name: Set origin to primary SSH URL
+      become: false
+      ansible.builtin.command:
+        argv:
+          - git
+          - remote
+          - set-url
+          - origin
+          - "{{ item.item.primary_ssh }}"
+      args:
+        chdir: "{{ item.item.path }}"
+      when: item.stdout != item.item.primary_ssh
+      loop: "{{ origin_urls.results }}"
+
+    - name: Get current push URLs
+      become: false
+      ansible.builtin.command:
+        argv:
+          - git
+          - remote
+          - get-url
+          - --push
+          - --all
+          - origin
+      args:
+        chdir: "{{ item.path }}"
+      register: push_urls
+      changed_when: false
+      failed_when: false
+      loop: "{{ core_repos }}"
+
+    - name: Set primary push URL for mirrored repos
+      become: false
+      ansible.builtin.command:
+        argv:
+          - git
+          - remote
+          - set-url
+          - --push
+          - origin
+          - "{{ item.item.primary_ssh }}"
+      args:
+        chdir: "{{ item.item.path }}"
+      when:
+        - item.item.secondary_ssh != ""
+        - item.item.primary_ssh not in item.stdout_lines
+      loop: "{{ push_urls.results }}"
+
+    - name: Refresh push URLs after setting primary push URL
+      become: false
+      ansible.builtin.command:
+        argv:
+          - git
+          - remote
+          - get-url
+          - --push
+          - --all
+          - origin
+      args:
+        chdir: "{{ item.path }}"
+      register: push_urls_after_primary
+      changed_when: false
+      failed_when: false
+      loop: "{{ core_repos }}"
+
+    - name: Add secondary push URL for mirrored repos
+      become: false
+      ansible.builtin.command:
+        argv:
+          - git
+          - remote
+          - set-url
+          - --add
+          - --push
+          - origin
+          - "{{ item.item.secondary_ssh }}"
+      args:
+        chdir: "{{ item.item.path }}"
+      when:
+        - item.item.secondary_ssh != ""
+        - item.item.secondary_ssh not in item.stdout_lines
+      loop: "{{ push_urls_after_primary.results }}"

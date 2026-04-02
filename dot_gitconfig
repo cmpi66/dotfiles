@@ -1,3 +1,13 @@
 [user]
   email = munozchris@posteo.net
   name = chris
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
+[fetch]
+	prune = true
+[push]
+	default = simple
+[alias]
+	sync = !git add -A && git commit -m \"sync\" 2>/dev/null || true && git pull --rebase --autostash && git push
