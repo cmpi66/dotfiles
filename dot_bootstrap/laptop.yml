@@ -442,12 +442,6 @@
             primary_ssh: "git@github.com:cmpi66/devpod-dots.git"
             secondary_ssh: ""
 
-          - name: gentoo
-            path: "/home/chris/.local/share/repos/gentoo"
-            clone_url: "https://github.com/cmpi66/gentoo.git"
-            primary_ssh: "git@github.com:cmpi66/gentoo.git"
-            secondary_ssh: ""
-
           - name: netlify
             path: "/home/chris/.local/share/repos/netlify"
             clone_url: "https://github.com/cmpi66/netlify.git"
