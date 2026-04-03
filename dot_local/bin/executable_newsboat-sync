@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+source "$HOME/.local/share/chezmoi/dot_bootstrap/executable_syncutils"
+
+NEWSBOAT_DIR="$HOME/.local/share/newsboat/"
+STAGING_DIR="$HOME/.local/share/newsboat-sync-staging"
+REMOTE="IdriveEncrypt:newsboat-data"
+
+require rclone
+require rsync
+
+mkdir -p "$STAGING_DIR"
+
+# ── Ensure Newsboat not running ─────────────────────────────
+if pgrep -x newsboat >/dev/null; then
+  notify-send "newsboat is already running"
+fi
+
+# log "Pulling from remote → staging..."
+rclone sync "$REMOTE" "$STAGING_DIR"
+
+# log "Syncing staging → live..."
+rsync -a --delete "$STAGING_DIR/" "$NEWSBOAT_DIR/"
+
+# log "Launching Newsboat..."
+newsboat || true
+
+# log "Newsboat closed. Syncing live → staging..."
+rsync -a --delete "$NEWSBOAT_DIR/" "$STAGING_DIR/"
+
+# log "Pushing staging → remote..."
+rclone sync "$STAGING_DIR" "$REMOTE"
+
+# log "Done."

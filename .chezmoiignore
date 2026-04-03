@@ -36,9 +36,56 @@ keybinds
 .abook
 .config/bmks
 .config/espanso
-.config/mutt
 .config/newsboat
 .config/rclone
 .config/secrets
 .config/transmission-daemon
+{{ end }}
+
+# devpod guard
+{{ if eq .chezmoi.username "vscode" }}
+00_ansible_setup.sh
+50_restore_pass.sh
+60_restore_shell.sh
+65_restore_anki.sh
+67_restore_newsboat.sh
+70_configure-mail.sh
+90_cloning-private-repos.sh
+98_configure-git-repo.sh
+99_restore_media-and-music.sh
+bootstrap.sh
+.local/bin/laptop-battery-sound.sh
+.local/bin/laptop-calibration
+.local/bin/laptop-ifblue
+.local/bin/laptop-jabra
+.local/bin/laptop-power-modifier
+.local/bin/laptop-archwiki
+.local/bin/genrepo
+.local/bin/genzfs
+.local/bin/slstatus/gentoopacks.sh
+.config/BOE_CQ_______NE135FBM_N41_03.icm
+.config/evremap
+.config/fontconfig
+.config/foot
+.config/gammastep
+.config/hypr
+.config/kitty
+.config/mako
+.config/mpd
+.config/mpv
+.config/ncmpcpp
+.config/niri
+.config/noctalia
+.config/pipewire
+.config/presenterm
+.config/qutebrowser
+.config/rofi
+.config/satty
+.config/sc-im
+.config/stupid-web
+.config/swayimg
+.config/themes
+.config/zathura
+.config/mimeapps.list
+.config/user-dirs.dirs
 {{ end }}

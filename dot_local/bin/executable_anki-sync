@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+source "$HOME/.local/share/chezmoi/dot_bootstrap/executable_syncutils"
+
+ANKI_DIR="$HOME/.local/share/Anki2"
+STAGING_DIR="$HOME/.local/share/anki-sync-staging"
+REMOTE="IdriveEncrypt:anki-backup"
+
+require rclone
+require rsync
+
+mkdir -p "$STAGING_DIR"
+
+# ── Ensure Anki not running ─────────────────────────────
+if pgrep -x anki >/dev/null; then
+  fail "Anki is already running"
+fi
+
+log "Pulling from remote → staging..."
+rclone sync "$REMOTE" "$STAGING_DIR"
+
+log "Syncing staging → live..."
+rsync -a --delete "$STAGING_DIR/" "$ANKI_DIR/"
+
+log "Launching Anki..."
+anki || true
+
+log "Anki closed. Syncing live → staging..."
+rsync -a --delete "$ANKI_DIR/" "$STAGING_DIR/"
+
+log "Pushing staging → remote..."
+rclone sync "$STAGING_DIR" "$REMOTE"
+
+log "Done."

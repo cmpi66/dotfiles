@@ -110,6 +110,37 @@ if [ -d "$NEOMUTT_DIR" ]; then
   fi
 fi
 
+# ── Maildir bootstrap (state init) ─────────────────────
+
+MAIL_BASE="$HOME/.local/share/mail"
+
+# 👉 Define your accounts here
+MAIL_ACCOUNTS=(
+  "munozchris@posteo.net"
+  "chris@munozpi.com"
+)
+
+log "Ensuring Maildir base exists..."
+mkdir -p "$MAIL_BASE"
+
+CHANGED=0
+
+for acct in "${MAIL_ACCOUNTS[@]}"; do
+  acct_dir="$MAIL_BASE/$acct"
+
+  if [ ! -d "$acct_dir" ]; then
+    log "Creating Maildir account: $acct"
+    mkdir -p "$acct_dir"
+    CHANGED=1
+  fi
+done
+
+if [ "$CHANGED" -eq 1 ]; then
+  ok "Maildir accounts initialized"
+else
+  warn "Maildir already initialized, skipping"
+fi
+
 ok "Email configuration restore complete"
 
 sync_success

@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SYNC_UTILS="{{ joinPath .chezmoi.sourceDir "dot_bootstrap/executable_syncutils" }}"
+source "$SYNC_UTILS"
+
+sync_init
+
+ANKI_DIR="$HOME/.local/share/Anki2"
+STAGING_DIR="$HOME/.local/share/anki-sync-staging"
+REMOTE="IdriveEncrypt:anki-backup"
+
+log "Checking Anki restore..."
+
+# ── Preconditions ──────────────────────────────────────
+require rclone
+require rsync
+[ -f "$HOME/.config/rclone/rclone.conf" ] || fail "rclone config missing"
+
+# ── Detect existing profiles ───────────────────────────
+if find "$ANKI_DIR" -name collection.anki2 -size +100k 2>/dev/null | grep -q .; then
+  warn "Existing Anki profiles detected, skipping restore"
+  sync_success
+  exit 0
+fi
+
+# ── Validate remote ────────────────────────────────────
+log "Validating remote..."
+
+FILE_COUNT=$(rclone lsf "$REMOTE" | wc -l)
+
+[ "$FILE_COUNT" -lt 5 ] && fail "Remote too small ($FILE_COUNT entries)"
+
+ok "Remote valid ($FILE_COUNT entries)"
+
+# ── Prepare staging ────────────────────────────────────
+log "Preparing staging directory..."
+mkdir -p "$STAGING_DIR"
+mkdir -p "$ANKI_DIR"
+
+# ── Pull from remote → staging ─────────────────────────
+log "Pulling Anki data (remote → staging)..."
+rclone sync "$REMOTE" "$STAGING_DIR" \
+  --fast-list \
+  --transfers 16 \
+  --checkers 16 \
+  --multi-thread-streams 0 \
+  --retries 5
+
+# ── Validate DB presence ───────────────────────────────
+if ! find "$STAGING_DIR" -name collection.anki2 | grep -q .; then
+  fail "No Anki database found in remote"
+fi
+
+ok "Anki database detected"
+
+# ── Restore profiles (non-destructive) ─────────────────
+log "Restoring profiles..."
+
+for profile in "$STAGING_DIR"/*; do
+  [ -d "$profile" ] || continue
+
+  name="$(basename "$profile")"
+  target="$ANKI_DIR/$name"
+
+  if [ -d "$target" ]; then
+    warn "Profile '$name' exists, skipping"
+    continue
+  fi
+
+  log "Restoring profile: $name"
+  rsync -a "$profile/" "$target/"
+done
+
+ok "Profiles restored"
+
+sync_success

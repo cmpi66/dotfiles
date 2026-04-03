@@ -8,3 +8,11 @@ if [ ! -d "$HOME/.local/share/zap/" ]; then
 else
   echo "zap zsh already found, skipping."
 fi
+
+# devpod
+{{ if eq .chezmoi.username "vscode" }}
+# Remove default zshrc if it exists
+if [ -f "$HOME/.zshrc" ]; then
+  rm -f "$HOME/.zshrc"
+fi
+{{ end }}
