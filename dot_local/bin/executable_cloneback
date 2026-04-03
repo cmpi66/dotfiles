@@ -11,3 +11,4 @@ flock -n /tmp/android-pics.lock /usr/bin/rclone copy -v --s3-upload-cutoff=0 --t
 flock -n /tmp/anki.lock /usr/bin/rclone copy -v --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/Anki2/ IdriveEncrypt:anki-backup
 flock -n /tmp/pass.lock /usr/bin/rclone sync -v --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/pass IdriveEncrypt:pass
 flock -n /tmp/music.lock /usr/bin/rclone copy -v --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/music IdriveEncrypt:music
+flock -n /tmp/newsboat-data.lock /usr/bin/rclone copy -v --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/newsboat IdriveEncrypt:newsboat-data

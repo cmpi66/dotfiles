@@ -24,6 +24,9 @@ log "Restoring media + music (gentoo only)..."
 require rclone
 [ -f "$HOME/.config/rclone/rclone.conf" ] || fail "rclone config missing"
 
+# Track if any sync actually happens
+DID_SYNC=0
+
 restore_if_missing() {
   local REMOTE="$1"
   local TARGET="$2"
@@ -46,11 +49,16 @@ restore_if_missing() {
     --retries 5
 
   ok "Restored $NAME"
+
+  DID_SYNC=1
 }
 
 restore_if_missing "$MEDIA_REMOTE" "$MEDIA_DIR" "media"
 restore_if_missing "$MUSIC_REMOTE" "$MUSIC_DIR" "music"
 
-warn "This will take a while — over 150GB total"
+# Only warn if we actually performed a sync
+if [ "$DID_SYNC" -eq 1 ]; then
+  warn "This will take a while — over 150GB total"
+fi
 
 sync_success

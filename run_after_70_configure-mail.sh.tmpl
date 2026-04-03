@@ -1,0 +1,115 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SYNC_UTILS="{{ joinPath .chezmoi.sourceDir "dot_bootstrap/executable_syncutils" }}"
+source "$SYNC_UTILS"
+
+sync_init
+
+log "Restoring email configuration..."
+
+# Preconditions
+require rclone
+[ -f "$HOME/.config/rclone/rclone.conf" ] || fail "rclone config missing"
+
+# ── Targets ────────────────────────────────────────────
+MBSYNC_FILE="$HOME/.config/mbsync/config"
+MSMTP_LOG="$HOME/.config/msmtp/msmtp.log"
+NOTMUCH_DIR="$HOME/.config/notmuch"
+NEOMUTT_DIR="$HOME/.config/mutt"
+
+# ── Remote paths ───────────────────────────────────────
+REMOTE_BASE="IdriveEncrypt:email-conf"
+
+# ── Restore helpers ────────────────────────────────────
+
+restore_file_if_missing() {
+  local REMOTE="$1"
+  local TARGET="$2"
+  local NAME="$3"
+
+  if [ -f "$TARGET" ]; then
+    warn "$NAME exists, skipping"
+    return 0
+  fi
+
+  log "Restoring $NAME..."
+
+  mkdir -p "$(dirname "$TARGET")"
+
+  rclone copy "$REMOTE" "$(dirname "$TARGET")" \
+    --fast-list \
+    --retries 5
+
+  ok "Restored $NAME"
+}
+
+restore_dir_if_missing() {
+  local REMOTE="$1"
+  local TARGET="$2"
+  local NAME="$3"
+
+  if [ -d "$TARGET" ] && [ "$(ls -A "$TARGET")" ]; then
+    warn "$NAME exists, skipping"
+    return 0
+  fi
+
+  log "Restoring $NAME..."
+
+  mkdir -p "$TARGET"
+
+  rclone sync "$REMOTE" "$TARGET" \
+    --fast-list \
+    --transfers 8 \
+    --checkers 8 \
+    --multi-thread-streams 0 \
+    --retries 5
+
+  ok "Restored $NAME"
+}
+
+# ── Restore configs ────────────────────────────────────
+restore_file_if_missing "$REMOTE_BASE/mbsync/config" "$MBSYNC_FILE" "mbsync config"
+restore_dir_if_missing  "$REMOTE_BASE/msmtp"         "$HOME/.config/msmtp" "msmtp config"
+restore_dir_if_missing  "$REMOTE_BASE/notmuch"       "$NOTMUCH_DIR" "notmuch config"
+restore_dir_if_missing  "$REMOTE_BASE/mutt"          "$NEOMUTT_DIR" "neomutt config"
+
+# ── Permissions (only log if changed) ──────────────────
+
+# mbsync config → 600
+if [ -f "$MBSYNC_FILE" ]; then
+  current="$(stat -c '%a' "$MBSYNC_FILE")"
+  if [ "$current" != "600" ]; then
+    chmod 600 "$MBSYNC_FILE"
+    ok "Secured mbsync config (600)"
+  fi
+fi
+
+# msmtp log → 600
+if [ -f "$MSMTP_LOG" ]; then
+  current="$(stat -c '%a' "$MSMTP_LOG")"
+  if [ "$current" != "600" ]; then
+    chmod 600 "$MSMTP_LOG"
+    ok "Secured msmtp log (600)"
+  fi
+fi
+
+# neomutt → ALL FILES 600
+if [ -d "$NEOMUTT_DIR" ]; then
+  CHANGED=0
+  while IFS= read -r -d '' file; do
+    perm="$(stat -c '%a' "$file")"
+    if [ "$perm" != "600" ]; then
+      chmod 600 "$file"
+      CHANGED=1
+    fi
+  done < <(find "$NEOMUTT_DIR" -type f -print0)
+
+  if [ "$CHANGED" -eq 1 ]; then
+    ok "Secured neomutt files (600)"
+  fi
+fi
+
+ok "Email configuration restore complete"
+
+sync_success
