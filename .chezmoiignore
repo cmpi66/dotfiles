@@ -22,6 +22,7 @@ install.sh
 .local/bin/laptop-archwiki
 .config/BOE_CQ_______NE135FBM_N41_03.icm
 .config/pipewire
+.config/mise
 {{- end }}
 
 {{- if and (ne .chezmoi.hostname "gentoobox") (ne .chezmoi.hostname "gentooframe") }}
@@ -29,6 +30,7 @@ install.sh
 .local/bin/genrepo
 .local/bin/genzfs
 .local/bin/slstatus/gentoopacks.sh
+.config/mise
 {{- end }}
 
 {{- $ok := (output "sh" "-c" "gpg --card-status >/dev/null 2>&1 && echo ok || echo fail" | trim) }}
@@ -89,4 +91,5 @@ bootstrap.sh
 .config/zathura
 .config/mimeapps.list
 .config/user-dirs.dirs
+.config/nvim/lua/plugins/images.lua
 {{ end }}
