@@ -113,15 +113,15 @@ function preexec {
     print -n "\e]133;C\e\\"
 }
 
+# devpod
+{{ if eq .chezmoi.username "vscode" }}
+eval "$(uv generate-shell-completion zsh)"
+{{ end }}
 # Tool init (keep at bottom)
+eval "$(mise activate zsh)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 eval "$(fnm env --use-on-cd --shell zsh)"
 eval "$(atuin init zsh)"
 
-# devpod
-{{ if eq .chezmoi.username "vscode" }}
-eval "$(mise activate zsh)"
-eval "$(uv generate-shell-completion zsh)"
-{{ end }}
 

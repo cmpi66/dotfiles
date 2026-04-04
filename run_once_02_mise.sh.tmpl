@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Install mise
+
+SYNC_UTILS="{{ joinPath .chezmoi.sourceDir "dot_bootstrap/executable_syncutils" }}"
+
+source "$SYNC_UTILS"
+
+require curl
+
+if [ ! -f "$HOME/.local/bin/mise" ]; then
+  log "Getting mise.sh"
+  curl https://mise.run | sh
+else
+  log "mise already found, skipping."
+fi
