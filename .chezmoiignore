@@ -11,6 +11,7 @@ keybinds
 .config/qutebrowser/bookmarks/urls
 .bootstrap
 install.sh
+.local/bin/mise
 
 {{- if and (ne .chezmoi.hostname "artixbox") (ne .chezmoi.hostname "artixframe") }}
 # files to ignore on on desktop
@@ -87,7 +88,6 @@ bootstrap.sh
 .config/swayimg
 .config/themes
 .config/zathura
-.config/mimeapps.list
 .config/user-dirs.dirs
 .config/nvim/lua/plugins/images.lua
 {{ end }}
