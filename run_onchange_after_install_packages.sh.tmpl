@@ -1,0 +1,10 @@
+#!/bin/bash
+# packages hash: {{ include "dot_config/mise/config.toml" | sha256sum }}
+
+# devpod guard
+{{ if eq .chezmoi.username "vscode" }}
+/usr/local/bin/mise trust $HOME/.config/mise/config.toml && /usr/local/bin/mise install
+{{ else }}
+$HOME/.local/bin/mise trust $HOME/.config/mise/config.toml && $HOME/.local/bin/mise install
+{{ end }}
+

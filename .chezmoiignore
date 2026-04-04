@@ -47,6 +47,7 @@ install.sh
 # devpod guard
 {{ if eq .chezmoi.username "vscode" }}
 00_ansible_setup.sh
+02_mise.sh
 50_restore_pass.sh
 60_restore_shell.sh
 65_restore_anki.sh
