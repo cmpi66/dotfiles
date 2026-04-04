@@ -83,7 +83,6 @@
           - bluez-openrc
           - bluez-utils
           - brightnessctl
-          - btop
           - chafa
           - cliphist
           - cmake
