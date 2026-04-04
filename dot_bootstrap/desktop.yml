@@ -111,35 +111,6 @@
           special_time: daily
           job: "/usr/bin/newsboat -x reload"
 
-    # ---------- NEOVIM ----------
-    - name: Check if nvim exists
-      stat:
-        path: /usr/local/bin/nvim
-      register: nvim_installed
-
-    - name: clone neovim
-      become: false
-      ansible.builtin.git:
-        repo: 'https://github.com/neovim/neovim.git'
-        dest: "/home/chris/dl/git-clones/neovim"
-        update: no
-      when: not nvim_installed.stat.exists
-
-    - name: Build neovim
-      become: false
-      shell: |
-        git checkout release-0.11
-        make CMAKE_BUILD_TYPE=RelWithDebInfo -j$(nproc)
-      args:
-        chdir: /home/chris/dl/git-clones/neovim/
-      when: not nvim_installed.stat.exists
-
-    - name: Install neovim
-      shell: make install
-      args:
-        chdir: /home/chris/dl/git-clones/neovim/
-      when: not nvim_installed.stat.exists
-
 # ---------- CLEANUP ----------
     - name: Remove unwanted home directories
       ansible.builtin.file:
@@ -236,12 +207,6 @@
             path: "/home/chris/.local/share/repos/devpod-devcontainer"
             clone_url: "https://github.com/cmpi66/devpod-devcontainer.git"
             primary_ssh: "git@github.com:cmpi66/devpod-devcontainer.git"
-            secondary_ssh: ""
-
-          - name: devpod-dots
-            path: "/home/chris/.local/share/repos/devpod-dots"
-            clone_url: "https://github.com/cmpi66/devpod-dots.git"
-            primary_ssh: "git@github.com:cmpi66/devpod-dots.git"
             secondary_ssh: ""
 
           - name: gentoo
