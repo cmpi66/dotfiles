@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 #
-export PATH="$HOME/.local/share/mise/shims:$PATH"
 # Script name: dm-confedit
 # Description: Choose from a list of configuration files to edit.
 # Dependencies: dmenu, emacsclient
@@ -46,7 +45,7 @@ confedit_list[ncmpcpp]="$HOME/.config/ncmpcpp/config"
 confedit_list[hyprland]="$HOME/.config/hypr/hyprland.conf"
 confedit_list[waybar]="$HOME/.config/waybar/config.jsonc"
 confedit_list[neomutt]="$HOME/.config/mutt/muttrc"
-confedit_list[newsboat - urls]="$HOME/.config/newsboat/urls"
+confedit_list[newsboat-urls]="$HOME/.config/newsboat/urls"
 confedit_list[rofi]="$HOME/.config/rofi/config.rasi"
 confedit_list[scim]="$HOME/.config/sc-im/scimrc"
 confedit_list[starship]="$HOME/.config/starship.toml"

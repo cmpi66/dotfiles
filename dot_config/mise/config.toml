@@ -13,3 +13,10 @@ jq = "latest"
 zoxide = "0.9.8"
 java = "17"
 opencode = "latest"
+
+[settings]
+trusted_config_paths = [
+    '~/.local/share/repos',
+]
+color_theme = "catppuccin"
+jobs = 8

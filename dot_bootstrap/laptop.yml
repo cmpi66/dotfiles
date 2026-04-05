@@ -42,6 +42,54 @@
       command: pacman-key --populate archlinux
       when: not keyring_initialized.stat.exists
 
+    # ---------- CHAOTIC AUR ----------
+    - name: Check if Chaotic AUR key is already trusted
+      command: pacman-key --list-keys 3056513887B78AEB
+      register: chaotic_key_check
+      changed_when: false
+      failed_when: false
+
+    - name: Import Chaotic AUR key (if missing)
+      command: pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
+      when: chaotic_key_check.rc != 0
+
+    - name: Locally sign Chaotic AUR key (if missing)
+      command: pacman-key --lsign-key 3056513887B78AEB
+      when: chaotic_key_check.rc != 0
+
+    - name: Check if chaotic-keyring is installed
+      command: pacman -Q chaotic-keyring
+      register: chaotic_keyring_installed
+      changed_when: false
+      failed_when: false
+
+    - name: Install chaotic-keyring
+      command: pacman -U --noconfirm https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst
+      when: chaotic_keyring_installed.rc != 0
+
+    - name: Check if chaotic-mirrorlist is installed
+      command: pacman -Q chaotic-mirrorlist
+      register: chaotic_mirrorlist_installed
+      changed_when: false
+      failed_when: false
+
+    - name: Install chaotic-mirrorlist
+      command: pacman -U --noconfirm https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst
+      when: chaotic_mirrorlist_installed.rc != 0
+
+    - name: Ensure [chaotic-aur] repo exists
+      blockinfile:
+        path: /etc/pacman.conf
+        marker: "# {mark} ANSIBLE MANAGED CHAOTIC AUR"
+        block: |
+          [chaotic-aur]
+          Include = /etc/pacman.d/chaotic-mirrorlist
+
+    - name: Full system upgrade
+      pacman:
+        update_cache: true
+        upgrade: yes
+
   tasks:
     - name: Get my user
       become: false
@@ -65,10 +113,6 @@
         line: 'permit nopass :wheel'
         create: yes
 
-    - name: Full system upgrade
-      pacman:
-        update_cache: true
-        upgrade: yes
 
     - name: Install packages
       pacman:
@@ -201,6 +245,20 @@
           - zbar
         state: present
 
+    - name: Install Chaotic AUR pacakges
+      pacman:
+        name:
+          - abook
+          - brave-bin
+          - chromium-widevine
+          - downgrade
+          - espanso-wayland-git
+          - evremap-git
+          - chaotic-aur/librewolf
+          - localsend
+          - noctalia-shell
+        state: present
+
     - name: add wheel perms to build aur packs without pass prompt
       lineinfile:
         path: /etc/sudoers
@@ -274,17 +332,8 @@
         use: yay
         state: present
         name:
-          - abook
-          - brave-bin
-          - chromium-widevine
           - dotool-git
-          - downgrade
-          - espanso-wayland
-          - evremap-git
-          - librewolf-bin
-          - localsend
           - mutt-wizard-git
-          - noctalia-shell
           - opustags
           - sc-im
           - task-spooler

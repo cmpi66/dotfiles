@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-export PATH="$HOME/.local/share/mise/shims:$PATH"
-
 KITTY_CMD="foot --title tmux-session --app-id tmux-session"
 
 # ── If user passed argument ─────────────────────────────

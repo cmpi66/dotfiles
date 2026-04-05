@@ -1,8 +1,6 @@
 #!/usr/bin/env sh
 set -eu
 
-export PATH="$HOME/.local/share/mise/shims:$PATH"
-
 GENREP="$HOME/.local/share/repos/gentoo/all"
 PORTAGE_DIR="/etc/portage"
 WORLD_FILE="/var/lib/portage/world"

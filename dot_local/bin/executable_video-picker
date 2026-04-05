@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 # Video picker → play or delete
 
-export PATH="$HOME/.local/share/mise/shims:$PATH"
-
 file=$(fd -e mp4 -e mkv -e webm -e mov . "$HOME" -p -t f |
   sed "s|^$HOME/||" |
   rofi -dmenu -i -theme clipboard.rasi -p "Select video") || exit 0
