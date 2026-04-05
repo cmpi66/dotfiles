@@ -15,7 +15,7 @@ except ImportError:
 
 NEW_HIGHLIGHTS_MARKER = "<!-- koreader-highlights -->"
 OUTPUT_DIR = Path(
-    "/home/chris/.local/.src/zettlekasten/literature/highlights"
+    "/home/chris/.local/share/notes/zettlekasten/literature/highlights"
 ).expanduser()
 
 DEFAULT_TEMPLATE = """\

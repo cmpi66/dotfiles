@@ -16,7 +16,7 @@ else
   sleep 0.15
 
   tmux send-keys -t "$SESSION":1 \
-    'devpod ssh go-projects-2026' C-m
+    'devpod ssh go-hub' C-m
 
   tmux select-window -t "$SESSION":1
 fi

@@ -1,5 +1,7 @@
 #!/bin/env bash
 
+export PATH="$HOME/.local/share/mise/shims:$PATH"
+
 ##FZF pdf script
 
 # IFS=$'\n' selected_pdfs=($(find "$HOME" -maxdepth 6 ! -path "$HOME/.config/*" -name "*.pdf" | fzf --multi --exit-0))

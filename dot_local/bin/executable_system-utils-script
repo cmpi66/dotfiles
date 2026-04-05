@@ -54,7 +54,7 @@ case "$CHOICE" in
   mw -Y
   ;;
 "🔑 Show Keybinds")
-  zathura ~/.local/.src/repos/dotfiles-gentoo/keybinds/hypr-workflow.pdf
+  zathura ~/.local/share/chezmoi/keybinds/hypr-workflow.pdf
   ;;
 "🎵 Control Music Menu")
   rofi-music-control

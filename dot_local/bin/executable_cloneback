@@ -4,7 +4,6 @@
 
 flock -n /tmp/media.lock /usr/bin/rclone copy --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/media IdriveEncrypt:mediasync
 flock -n /tmp/mail.lock /usr/bin/rclone copy --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/mail IdriveEncrypt:allmail
-flock -n /tmp/src-syncthing.lock /usr/bin/rclone copy --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/.src IdriveEncrypt:srcsync
 flock -n /tmp/gen-dl.lock /usr/bin/rclone copy --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/dl IdriveEncrypt:downloadsgentoo
 flock -n /tmp/android.lock /usr/bin/rclone copy --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/android-backup-new/ IdriveEncrypt:grapheneos-backup
 flock -n /tmp/android-pics.lock /usr/bin/rclone copy --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/android-pics/ IdriveEncrypt:android-pics
