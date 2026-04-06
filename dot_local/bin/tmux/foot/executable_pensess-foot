@@ -21,21 +21,21 @@ else
 
   # Window 1 — SSH tunnel + exegol
   tmux send-keys -t "$SESSION":1 \
-    'ssh -L 55975:localhost:55975 chris@10.27.27.18' C-m
+    'ssh -L 54147:localhost:54147 chris@artixboxeth' C-m
 
   sleep 0.5
 
   tmux send-keys -t "$SESSION":1 \
-    'exegol start academy-new' C-m
+    'exegol start academy' C-m
 
   # Window 2 — second host + exegol
   tmux send-keys -t "$SESSION":2 \
-    'ssh artixframe' C-m
+    'ssh artixboxeth' C-m
 
   sleep 0.5
 
   tmux send-keys -t "$SESSION":2 \
-    'exegol start academy-new' C-m
+    'exegol start academy' C-m
 
   # Window 3 — notes
   tmux send-keys -t "$SESSION":3 \

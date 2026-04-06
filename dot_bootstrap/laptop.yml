@@ -114,6 +114,7 @@
       pacman:
         name:
           - 7zip
+          - aerc
           - arch-wiki-docs
           - argyllcms
           - artix-archlinux-support
@@ -184,6 +185,7 @@
           - pandoc-bin
           - papirus-icon-theme
           - parted
+          - pass
           - pinentry
           - pipewire
           - pipewire-alsa
@@ -220,6 +222,7 @@
           - tmux
           - traceroute
           - transmission-cli
+          - tree
           - typst
           - unzip
           - urlscan
@@ -234,6 +237,7 @@
           - wl-clipboard
           - xdg-desktop-portal
           - xdg-desktop-portal-hyprland
+          - w3m
           - yt-dlp
           - yubikey-manager
           - zathura
@@ -329,7 +333,6 @@
         state: present
         name:
           - dotool-git
-          - mutt-wizard-git
           - opustags
           - sc-im
           - task-spooler

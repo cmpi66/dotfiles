@@ -10,7 +10,6 @@ map K zoom in
 map J zoom out
 map i recolor
 map p print
-# include catppuccin
 set selection-clipboard clipboard
 map [fullscreen] u scroll half-up
 map [fullscreen] d scroll half-down
@@ -22,12 +21,35 @@ map [fullscreen] J zoom out
 map [fullscreen] i recolor
 map [fullscreen] p print
 
-# High Contrast
-# set recolor "true"
-set recolor-lightcolor "#ffffff" # Background
-set recolor-darkcolor "#000000"  # Text
-set default-bg "#ffffff"
+# mise light theme
+set recolor-lightcolor "#FDF8F3"  # --vp-c-bg (cream background)
+set recolor-darkcolor  "#2A1F1A"  # --vp-c-text-1 (dark warm text)
+set default-bg         "#FDF8F3"  # --vp-c-bg
 
-set guioptions ""             # Removes the status bar/command bar
+set statusbar-bg       "#F5EDE3"  # --vp-c-bg-soft
+set statusbar-fg       "#5A4D42"  # --vp-c-text-2
 
+set inputbar-bg        "#F0E6DA"  # --vp-c-bg-alt
+set inputbar-fg        "#2A1F1A"  # --vp-c-text-1
+
+set notification-bg    "#F5EDE3"  # --vp-c-bg-soft
+set notification-fg    "#2A1F1A"  # --vp-c-text-1
+
+set notification-error-bg    "#8B2252"  # --vp-c-brand-1
+set notification-error-fg    "#FDF8F3"  # --vp-c-bg (light on dark)
+
+set notification-warning-bg  "#C5975B"  # --vp-c-warning-1
+set notification-warning-fg  "#2A1F1A"  # --vp-c-text-1
+
+set highlight-color    "rgba(139, 34, 82, 0.4)"   # --vp-c-brand-1 (search highlight)
+set highlight-active-color "rgba(197, 151, 91, 0.6)" # --vp-c-warning-1 (active match)
+
+set completion-bg      "#E8DDD0"  # --vp-c-bg-mute
+set completion-fg      "#2A1F1A"  # --vp-c-text-1
+set completion-group-bg "#D4C8B8" # --vp-c-divider
+set completion-group-fg "#5A4D42" # --vp-c-text-2
+set completion-highlight-bg "#8B2252" # --vp-c-brand-1
+set completion-highlight-fg "#FDF8F3" # light on brand
+
+set guioptions ""
 set window-title-basename true
