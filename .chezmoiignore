@@ -42,6 +42,7 @@ install.sh
 .config/rclone
 .config/secrets
 .config/transmission-daemon
+.config/aerc
 {{ end }}
 
 # devpod guard
