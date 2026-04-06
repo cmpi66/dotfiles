@@ -69,6 +69,8 @@ ssh_only = true
 
 {{ if eq .chezmoi.hostname "artixbox" }}
 format = "[$hostname](bold red) "
+{{ else if eq .chezmoi.hostname "gentoobox" }}
+format = "[$hostname](bold mauve) "
 {{ else }}
 format = "[$hostname](bold blue) "
 {{ end }}
@@ -76,5 +78,4 @@ format = "[$hostname](bold blue) "
 [hostname.aliases]
 artixframe = "󰌢 artixframe"
 artixbox = "󰞇 penbox"
-
-
+gentoobox = "󰣨 gentoobox"
