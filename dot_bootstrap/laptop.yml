@@ -279,13 +279,6 @@
         chdir: /home/chris/dl/git-clones/yay/
         creates: /usr/bin/yay
 
-    - name: clone tpm
-      become: false
-      ansible.builtin.git:
-        repo: 'https://github.com/tmux-plugins/tpm'
-        dest: "/home/chris/.config/tmux/plugins/tpm"
-        update: no
-
     - name: Copy skel bashrc to root
       copy:
         src: /etc/skel/.bashrc

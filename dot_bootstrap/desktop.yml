@@ -81,14 +81,6 @@
         remote_src: true
       when: not evremap_installed.stat.exists
 
-    # ---------- TPM ----------
-    - name: clone tpm
-      become: false
-      ansible.builtin.git:
-        repo: 'https://github.com/tmux-plugins/tpm'
-        dest: "/home/chris/.config/tmux/plugins/tpm"
-        update: no
-
     # ---------- CRON ----------
     - name: Set user crontab
       become: false
