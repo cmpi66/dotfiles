@@ -63,10 +63,10 @@ opt.spelllang = { "en" }
 -- need to overide lazyvim winbar
 vim.g.lazyvim_winbar = false
 
--- Example colors (adjust to your palette)
-vim.api.nvim_set_hl(0, "WinBar1", { fg = "#7dc4e4", bg = "NONE" }) -- counters / misc
-vim.api.nvim_set_hl(0, "WinBar2", { fg = "#c6a0f6", bg = "NONE" }) -- buffer count
-vim.api.nvim_set_hl(0, "WinBar3", { fg = "#a6da95", bg = "NONE" }) -- filename
+-- -- Example colors (adjust to your palette)
+-- vim.api.nvim_set_hl(0, "WinBar1", { fg = "Directory", bg = "NONE" }) -- counters / misc
+-- vim.api.nvim_set_hl(0, "WinBar2", { fg = "Statement", bg = "NONE" }) -- buffer count
+-- vim.api.nvim_set_hl(0, "WinBar3", { fg = "Added", bg = "NONE" }) -- filename
 
 -- Use OSC52 clipboard only when running over SSH / in containers
 local function is_remote()
@@ -89,3 +89,26 @@ else
   -- Local machine: use native clipboard
   vim.opt.clipboard = "unnamedplus"
 end
+
+-- Helper to extract fg color from an existing highlight group
+local function hl_fg(group)
+  local ok, hl = pcall(vim.api.nvim_get_hl, 0, { name = group, link = false })
+  if ok and hl.fg then
+    return string.format("#%06x", hl.fg)
+  end
+  return "NONE"
+end
+
+-- Set winbar highlights by borrowing from your colorscheme's groups
+local function set_winbar_colors()
+  vim.api.nvim_set_hl(0, "WinBar1", { fg = hl_fg("Directory"), bg = "NONE" })
+  vim.api.nvim_set_hl(0, "WinBar2", { fg = hl_fg("Statement"), bg = "NONE" })
+  vim.api.nvim_set_hl(0, "WinBar3", { fg = hl_fg("Added"), bg = "NONE" })
+end
+
+-- Apply on startup and every time the colorscheme changes
+set_winbar_colors()
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "*",
+  callback = set_winbar_colors,
+})

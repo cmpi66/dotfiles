@@ -2,6 +2,9 @@
 
 DAYDIR="$HOME/.config/themes/catppuccin-day/"
 
+# i need to add fast syntax highlighting zsh and maybe eza ?
+# noctalia as well
+
 kitty_conf() {
   cp "$DAYDIR/kitty.conf" "$HOME/.config/kitty"
 }
@@ -20,13 +23,6 @@ btop_conf() {
 }
 
 btop_conf
-
-ghostty_config() {
-  cp "$DAYDIR/config" "$HOME/.config/ghostty" && pkill -SIGUSR1 -u "$USER" -x ghostty
-
-}
-
-ghostty_config
 
 rofi_config() {
   cp "$DAYDIR/config.rasi" "$HOME/.config/rofi/config.rasi"
@@ -79,9 +75,3 @@ scim_conf() {
 }
 
 scim_conf
-
-wall_switch() {
-  hyprctl hyprpaper preload /home/chris/.config/themes/catppuccin-day/wallpaper-1.jpg && hyprctl hyprpaper wallpaper DP-1, /home/chris/.config/themes/catppuccin-day/wallpaper-1.jpg && hyprctl hyprpaper wallpaper DP-2, /home/chris/.config/themes/catppuccin-day/wallpaper-1.jpg
-}
-
-wall_switch
