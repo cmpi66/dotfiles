@@ -31,7 +31,7 @@ DMENU="rofi -dmenu -i -theme spotlight-menu-center.rasi -p"
 # DMENU="rofi -dmenu -i -l 10 -p"
 # DMTERM="foot -e"
 # DMTERM="kitty"
-DMTERM="foot"
+DMTERM="kitty"
 
 DMEDITOR="${DMTERM} nvim"
 declare -A confedit_list

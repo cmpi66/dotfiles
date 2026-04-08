@@ -1,22 +1,22 @@
 #!/usr/bin/env bash
 
-## A script to easily opythondev jobapps with scim and nvim.
+SESSION="pythondev"
 
 has-session() {
-  tmux has-session -t pythondev 2>/dev/null
-}
-
-launch_kitty_tmux() {
-  # --title sets the window title; --class is optional if you want a distinct WM_CLASS
-  kitty --title pythondev --class pythondev tmux attach-session -t pythondev
+  tmux has-session -t "$SESSION" 2>/dev/null
 }
 
 if has-session; then
-  launch_kitty_tmux
+  exec kitty --title pythondev --class pythondev -e tmux attach-session -t "$SESSION"
 else
+  tmux new-session -s "$SESSION" -n devpod -d
 
-  tmux new-session -s pythondev -n devpod -d 'devpod ssh python-projects-2026;'
-  # tmux new-window -t pythondev:2 -n blue 'cd ~/.local/.src/projects/sec/python/python-for-cyber-defense-pluralsight/; nvim .;'
-  tmux select-window -t pythondev:1
-  launch_kitty_tmux
+  kitty --title pythondev --class pythondev -e tmux attach-session -t "$SESSION" &
+
+  sleep 0.15
+
+  tmux send-keys -t "$SESSION":1 \
+    'devpod ssh python-hub' C-m
+
+  tmux select-window -t "$SESSION":1
 fi

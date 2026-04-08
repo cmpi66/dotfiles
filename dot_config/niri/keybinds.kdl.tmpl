@@ -9,19 +9,19 @@ binds {
     // programs
     Mod+d hotkey-overlay-title="Run launcher: rofi" { spawn-sh "rofi -show run -theme spotlight-menu-center.rasi"; }
     Mod+shift+s hotkey-overlay-title="Password menu" { spawn-sh "pass-menu"; }
-    Mod+Return hotkey-overlay-title="Open terminal: foot" { spawn "foot"; }
-    Mod+Shift+Return hotkey-overlay-title="Run tmux session viewer/opener: newt" { spawn "newt-foot"; }
-    Mod+E hotkey-overlay-title="Open aerc" { spawn-sh "foot --title email --app-id email -e aerc"; }
-    Mod+Shift+E hotkey-overlay-title="Open newsboat" { spawn-sh "foot --title newsboat --app-id newsboat -e newsboat-sync"; }
+    Mod+Return hotkey-overlay-title="Open terminal: kitty" { spawn "kitty"; }
+    Mod+Shift+Return hotkey-overlay-title="Run tmux session viewer/opener: newt" { spawn "newt"; }
+    Mod+E hotkey-overlay-title="Open aerc" { spawn-sh "kitty --title email --class email -e aerc"; }
+    Mod+Shift+E hotkey-overlay-title="Open newsboat" { spawn-sh "kitty --title newsboat --class newsboat -e newsboat-sync"; }
     Mod+W hotkey-overlay-title="Open browser: qutebrowser" { spawn "qutebrowser"; }
-    Mod+Shift+W hotkey-overlay-title="Open chooses-sess: chooses-sess" { spawn "choose-sess-foot"; }
+    Mod+Shift+W hotkey-overlay-title="Open chooses-sess: chooses-sess" { spawn "choose-sess"; }
     Mod+r hotkey-overlay-title="Open current reads: current reads" { spawn "current-reads"; }
     Mod+Shift+r hotkey-overlay-title="Open pdfs: open pdfs" { spawn "openpdf"; }
-    Mod+n hotkey-overlay-title="Open btop: btop" { spawn-sh "foot --title btop --app-id btop -e btop"; }
-    Mod+a hotkey-overlay-title="Open abook: abook" { spawn-sh "foot abook"; }
-    Mod+m hotkey-overlay-title="Open music: ncmpcpp" { spawn-sh "foot --app-id Music ncmpcpp"; }
+    Mod+n hotkey-overlay-title="Open btop: btop" { spawn-sh "kitty --title btop --class btop -e btop"; }
+    Mod+a hotkey-overlay-title="Open abook: abook" { spawn-sh "kitty abook"; }
+    Mod+m hotkey-overlay-title="Open music: ncmpcpp" { spawn-sh "kitty --class Music ncmpcpp"; }
     Mod+y hotkey-overlay-title="Click mouse: click mouse" { spawn-sh "lazymouse"; }
-    Mod+Shift+y hotkey-overlay-title="Open wiremix: wiremix" { spawn-sh "foot --app-id Wiremix wiremix"; }
+    Mod+Shift+y hotkey-overlay-title="Open wiremix: wiremix" { spawn-sh "kitty --class Wiremix wiremix"; }
     Mod+t hotkey-overlay-title="Open Stig: stig" { spawn-sh "torwrap"; }
     Mod+shift+t hotkey-overlay-title="Transmission toggle: transmission toggle" { spawn-sh "td-toggle"; }
 

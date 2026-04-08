@@ -1,27 +1,45 @@
 #!/usr/bin/env bash
 
-## A script to easily open exegol container on other pc
+SESSION="pen"
 
 has-session() {
-  tmux has-session -t pen 2>/dev/null
-}
-
-launch_kitty_tmux() {
-  # --title sets the window title; --class is optional if you want a distinct WM_CLASS
-  kitty --title pen --class pen tmux attach-session -t pen
+  tmux has-session -t "$SESSION" 2>/dev/null
 }
 
 if has-session; then
-  launch_kitty_tmux
+  exec kitty --title pen --class pen -e tmux attach-session -t "$SESSION"
 else
+  tmux new-session -s "$SESSION" -n port-vnc -d
+  tmux new-window -t "$SESSION":2 -n win2
+  tmux new-window -t "$SESSION":3 -n notes
 
-  tmux new-session -s pen -n port-vnc -d 'ssh -L 55075:localhost:55075 chris@10.27.27.18'
-  sleep 1
-  tmux send-keys -t pen:1 'exegol start academy' C-m
-  tmux new-window -t pen:2 -n win2 'ssh artixframe'
-  sleep 1
-  tmux send-keys -t pen:2 'exegol start academy' C-m
-  tmux new-window -t pen:3 -n notes 'cd ~/.local/.src/pentest-hub/; nvim .; zsh -i'
-  tmux select-window -t pen:1
-  launch_kitty_tmux
+  # Launch kitty + attach
+  kitty --title pen --class pen -e tmux attach-session -t "$SESSION" &
+
+  # Wait for attach
+  sleep 0.15
+
+  # Window 1 — SSH tunnel + exegol
+  tmux send-keys -t "$SESSION":1 \
+    'ssh -L 54147:localhost:54147 chris@artixboxeth' C-m
+
+  sleep 0.5
+
+  tmux send-keys -t "$SESSION":1 \
+    'exegol start academy' C-m
+
+  # Window 2 — second host + exegol
+  tmux send-keys -t "$SESSION":2 \
+    'ssh artixboxeth' C-m
+
+  sleep 0.5
+
+  tmux send-keys -t "$SESSION":2 \
+    'exegol start academy' C-m
+
+  # Window 3 — notes
+  tmux send-keys -t "$SESSION":3 \
+    'cd ~/.local/share/notes/pentest-hub/ && nvim .' C-m
+
+  tmux select-window -t "$SESSION":1
 fi

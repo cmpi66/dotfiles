@@ -1,21 +1,29 @@
 #!/usr/bin/env bash
 
-has-session() {
-  tmux has-session -t zettle 2>/dev/null
-}
+SESSION="zettle"
 
-launch_kitty_tmux() {
-  # --title sets the window title; --class is optional if you want a distinct WM_CLASS
-  kitty --title ema --class ema tmux attach-session -t zettle
+has-session() {
+  tmux has-session -t "$SESSION" 2>/dev/null
 }
 
 if has-session; then
-  launch_kitty_tmux
+  exec kitty --title ema --class ema -e tmux attach-session -t "$SESSION"
 else
-  tmux new-session -s zettle -n notes -d 'cd ~/.local/.src/zettlekasten/; nvim index.md; zsh -i'
-  # If you later want to auto-run emanote in another tmux window:
-  # tmux new-window -t zettle:2 -n pentest 'cd ~/.local/.src/pentest-hub/; nvim .; zsh -i'
-  tmux new-window -t zettle:2 -n blue 'cd ~/.local/.src/blueteam-hub/; nvim .; zsh -i'
-  tmux select-window -t zettle:1
-  launch_kitty_tmux
+  tmux new-session -s "$SESSION" -n notes -d
+  tmux new-window -t "$SESSION":2 -n blue
+
+  # Launch kitty + attach
+  kitty --title ema --class ema -e tmux attach-session -t "$SESSION" &
+
+  # Give tmux time to attach to real terminal
+  sleep 0.15
+
+  # NOW start nvim (correct size, no corruption)
+  tmux send-keys -t "$SESSION":1 \
+    'cd ~/.local/share/notes/zettlekasten/ && nvim index.md' C-m
+
+  tmux send-keys -t "$SESSION":2 \
+    'cd ~/.local/share/notes/blueteam-hub/ && nvim .' C-m
+  tmux select-window -t "$SESSION":1
+
 fi

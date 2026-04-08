@@ -1,23 +1,30 @@
 #!/usr/bin/env bash
 
-## A script to easily obashdev jobapps with scim and nvim.
+SESSION="bashdev"
 
 has-session() {
-  tmux has-session -t bashdev 2>/dev/null
-}
-
-launch_kitty_tmux() {
-  # --title sets the window title; --class is optional if you want a distinct WM_CLASS
-  kitty --title bashdev --class bashdev tmux attach-session -t bashdev
+  tmux has-session -t "$SESSION" 2>/dev/null
 }
 
 if has-session; then
-  launch_kitty_tmux
+  exec kitty --title bashdev --class bashdev -e tmux attach-session -t "$SESSION"
 else
+  tmux new-session -s "$SESSION" -n blackhat -d
+  tmux new-window -t "$SESSION":2 -n udemy
 
-  tmux new-session -s bashdev -n blackhat -d 'cd ~/.local/.src/projects/sec/bash/blackhatbash/; nvim .;'
-  tmux new-window -t bashdev:2 -n udemy 'cd ~/.local/.src/projects/sec/bash/udemy-course/; nvim .;'
-  # tmux new-window -t bashdev:3 -n keywords 'cd ~/media/resume/; nvim it-job-keywords.md; zsh -i'
-  tmux select-window -t bashdev:1
-  launch_kitty_tmux
+  # Launch kitty + attach
+  kitty --title bashdev --class bashdev -e tmux attach-session -t "$SESSION" &
+
+  # Wait for attach (same stable pattern)
+  sleep 0.15
+
+  # Window 1 — blackhat
+  tmux send-keys -t "$SESSION":1 \
+    'cd ~/.local/share/repos/bash/blackhat/ && nvim .' C-m
+
+  # Window 2 — udemy
+  tmux send-keys -t "$SESSION":2 \
+    'cd ~/.local/share/repos/bash/udemy-course/ && nvim .' C-m
+
+  tmux select-window -t "$SESSION":1
 fi

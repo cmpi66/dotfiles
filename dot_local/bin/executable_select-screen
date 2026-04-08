@@ -9,7 +9,7 @@ case "$(printf "󰍹 screenshotregion\n save to clipboard\n󰙒 anotate-scree
 '󰍹 screenshotregion') grim -g "$(slurp)" ~/pic-region-"${output}" && "$(notify-send '📸 Screenshot Taken')" ;;
 ' save to clipboard') grim -g "$(slurp)" - | ${wlcopy_cmd} && "$(notify-send '📋 Screenshot Saved')" ;;
 '󰙒 anotate-screenshot') grim -g "$(slurp)" - | satty -f - ;;
-'󰎁 screencast') foot --title recording record-screen ;;
+'󰎁 screencast') kitty --title recording record-screen ;;
 '󰖠 mpvoverlay') mpv-overlay ;;
 ' killscreencast') kill-record ;;
 'combine-screencast') combine-audio-video.sh ;;
