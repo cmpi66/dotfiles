@@ -8,14 +8,14 @@ if ! gpg --card-status 2>/dev/null | grep -q 'Yubico'; then
 fi
 
 # === SELECT ENTRY (INCLUDE SUBFOLDERS) ===
-entry=$(fd -e .gpg . ~/.local/share/pass |
-  sed "s|$HOME/.local/share/pass/||;s/\.gpg$//" |
+entry=$(fd -e .age . /home/chris/.passage/store/ |
+  sed "s|$HOME/.passage/store/||;s/\.age$//" |
   sort |
   rofi -dmenu -i -p "🔐 Select entry")
 [ -z "$entry" ] && exit 0
 
 # === LOAD ENTRY CONTENT ===
-raw=$(pass show "$entry")
+raw=$(passage show "$entry")
 password=$(echo "$raw" | head -n1)
 fields=$(echo "$raw" | tail -n +2 | grep -E '^[A-Za-z0-9 _-]+:' || true)
 
@@ -39,3 +39,4 @@ while true; do
 
   notify-send "📋 '$field' copied to clipboard"
 done
+

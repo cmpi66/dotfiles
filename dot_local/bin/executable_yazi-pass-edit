@@ -1,0 +1,4 @@
+#!/bin/sh
+entry="${1#$HOME/.local/share/pass/}"
+entry="${entry%.gpg}"
+pass edit "$entry"
