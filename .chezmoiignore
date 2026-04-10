@@ -32,9 +32,8 @@ install.sh
 .local/bin/slstatus/gentoopacks.sh
 {{- end }}
 
-{{- $ok := (output "sh" "-c" "gpg --card-status >/dev/null 2>&1 && echo ok || echo fail" | trim) }}
-
-{{ if eq $ok "fail" }}
+{{- $ageKeyPath := joinPath .chezmoi.homeDir ".config/age/chezmoi-key.txt" -}}
+{{- if stat $ageKeyPath }}
 .abook
 .config/bmks
 .config/espanso
