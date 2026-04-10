@@ -32,8 +32,7 @@ install.sh
 .local/bin/slstatus/gentoopacks.sh
 {{- end }}
 
-{{- $ageKeyPath := joinPath .chezmoi.homeDir ".config/age/chezmoi-key.txt" -}}
-{{- if stat $ageKeyPath }}
+{{ if not (stat (joinPath .chezmoi.homeDir ".config/age/chezmoi-key.txt")) }}
 .abook
 .config/bmks
 .config/espanso
