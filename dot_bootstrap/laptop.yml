@@ -329,6 +329,7 @@
           - opustags
           - sc-im
           - task-spooler
+          - passage-git
 
     - name: Remove wheel nopasswd
       lineinfile:
