@@ -1,7 +1,6 @@
 [user]
   email = munozchris@posteo.net
   name = chris
-	signingkey = /home/chris/.ssh/id_ed25519_sk.pub
 [pull]
 	rebase = true
 [rebase]
@@ -12,7 +11,3 @@
 	default = simple
 [alias]
 	sync = !git add -A && git commit -m \"sync\" 2>/dev/null || true && git pull --rebase --autostash && git push
-[gpg]
-	format = ssh
-[commit]
-	gpgsign = true
