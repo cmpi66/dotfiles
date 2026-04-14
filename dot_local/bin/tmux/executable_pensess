@@ -21,7 +21,7 @@ else
 
   # Window 1 — SSH tunnel + exegol
   tmux send-keys -t "$SESSION":1 \
-    'ssh -L 54147:localhost:54147 chris@artixbox' C-m
+    'ssh -L 35697:localhost:35697 chris@dockerhost' C-m
 
   sleep 0.5
 
@@ -30,7 +30,7 @@ else
 
   # Window 2 — second host + exegol
   tmux send-keys -t "$SESSION":2 \
-    'ssh artixbox' C-m
+    'ssh dockerhost' C-m
 
   sleep 0.5
 

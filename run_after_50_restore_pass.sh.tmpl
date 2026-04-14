@@ -7,8 +7,8 @@ source "$SYNC_UTILS"
 
 sync_init
 
-PASS_DIR="$HOME/.local/share/pass"
-REMOTE="IdriveEncrypt:pass"
+PASS_DIR="$HOME/.passage"
+REMOTE="IdriveEncrypt:passage"
 
 log "Checking pass restore..."
 
@@ -25,7 +25,7 @@ fi
 
 # Sanity check
 log "Validating remote..."
-FILE_COUNT=$(rclone lsf "$REMOTE/Root" | wc -l)
+FILE_COUNT=$(rclone lsf "$REMOTE/store/root" | wc -l)
 
 [ "$FILE_COUNT" -lt 50 ] && fail "Remote too small ($FILE_COUNT files)"
 

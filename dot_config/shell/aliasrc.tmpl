@@ -80,6 +80,8 @@ alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 {{- if or (eq .chezmoi.hostname "artixbox") (eq .chezmoi.hostname "artixframe") }}
 alias archlinux-fix-keys="sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
 alias batthealth="upower -i /org/freedesktop/UPower/devices/battery_BAT1"
+alias pfvpup="doas wg-quick up pfwg0"
+alias pfvpdown="doas wg-quick down pfwg0"
 {{- end }}
 
 {{- if or (eq .chezmoi.hostname "gentoobox") (eq .chezmoi.hostname "gentooframe") }}

@@ -2,7 +2,7 @@
 
 # dont overegineer. Only add scripts and menus of things that i use but not often but still need to access. Things that i access everyday or frequently NEED to have their own keybindings.
 
-CHOICE=$(printf "🔎 Search Files\n📜 Search For a Man Page\n🌐 Search the Web\n📒 Search Qutebrowser History\n🔖 Search Bookmarks\n🖊️ Edit Configs\n🖼️ Set Wallpaper\n🎬 Find Video to Play\n🎶 Find Song to Play\n🚄 Toggle Espanso Completion\n🧮 Calculator\n📹 Webcam Record\n🎨 Color Picker\n🔑 Launch OTP\n⌨️ Run Keyboard Remap\n📧 Retrieve Email\n🔑 Show Keybinds\n🎵 Control Music Menu" | rofi -dmenu -i -l 18 -p "⚙️ Utils Menu" -theme spotlight-menu-center.rasi)
+CHOICE=$(printf "🔎 Search Files\n📜 Search For a Man Page\n🌐 Search the Web\n📒 Search Qutebrowser History\n🔖 Search Bookmarks\n🖊️ Edit Configs\n🖼️ Set Wallpaper\n🎬 Find Video to Play\n🎶 Find Song to Play\n🚄 Toggle Espanso Completion\n🧮 Calculator\n📹 Webcam Record\n🎨 Color Picker\n🔑 Launch OTP\n⌨️ Run Keyboard Remap\n📧 Retrieve Email\n🔑 Show Keybinds\n🎵 Control Music Menu\n🖥️ Tmux Repos Sessions" | rofi -dmenu -i -l 19 -p "⚙️ Utils Menu" -theme spotlight-menu-center.rasi)
 
 case "$CHOICE" in
 "🔎 Search Files")
@@ -58,5 +58,8 @@ case "$CHOICE" in
   ;;
 "🎵 Control Music Menu")
   rofi-music-control
+  ;;
+"🖥️ Tmux Repos Sessions")
+  repos-sessions
   ;;
 esac

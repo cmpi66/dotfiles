@@ -3,10 +3,11 @@
 ## A script to run as a cronjob backing up my data with rclone
 
 flock -n /tmp/media.lock /usr/bin/rclone copy --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/media IdriveEncrypt:mediasync
-flock -n /tmp/gen-dl.lock /usr/bin/rclone copy --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/dl IdriveEncrypt:downloadsgentoo
+# flock -n /tmp/gen-dl.lock /usr/bin/rclone copy --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/dl IdriveEncrypt:downloadsgentoo
 flock -n /tmp/android.lock /usr/bin/rclone copy --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/android-backup-new/ IdriveEncrypt:grapheneos-backup
 flock -n /tmp/android-pics.lock /usr/bin/rclone copy --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/android-pics/ IdriveEncrypt:android-pics
-flock -n /tmp/pass.lock /usr/bin/rclone sync --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/pass IdriveEncrypt:pass
+# flock -n /tmp/pass.lock /usr/bin/rclone sync --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/pass IdriveEncrypt:pass
+flock -n /tmp/passage.lock /usr/bin/rclone sync --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.passage IdriveEncrypt:passage
 flock -n /tmp/music.lock /usr/bin/rclone copy --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/music IdriveEncrypt:music
 flock -n /tmp/newsboat-data.lock /usr/bin/rclone sync --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/newsboat IdriveEncrypt:newsboat-data
 flock -n /tmp/inbox.lock /usr/bin/rclone sync --s3-upload-cutoff=0 --transfers 20 --retries 5 /home/chris/.local/share/notes/inbox IdriveEncrypt:inbox

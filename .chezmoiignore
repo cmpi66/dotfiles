@@ -12,6 +12,8 @@ keybinds
 .bootstrap
 install.sh
 .local/bin/mise
+.local/share/yubikey-age/age-yubikey-identity-passage1.txt
+.local/share/yubikey-age/age-yubikey-identity-passage2.txt
 
 {{- if and (ne .chezmoi.hostname "artixbox") (ne .chezmoi.hostname "artixframe") }}
 # files to ignore on on desktop
