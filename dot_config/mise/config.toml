@@ -13,6 +13,7 @@ jq = "latest"
 zoxide = "0.9.8"
 java = "17"
 opencode = "latest"
+node = "25.6.0"
 
 [settings]
 trusted_config_paths = [

@@ -29,8 +29,8 @@ c.content.tls.certificate_errors = "ask-block-thirdparty"
 # GENERAL
 c.downloads.location.directory = "~/dl"
 c.editor.command = ["nvim", "{}"]
-c.url.default_page = "about:blank"
-c.url.start_pages = ["about:blank"]
+c.url.default_page = "https://homer.cmlabs.xyz"
+c.url.start_pages = ["https://homer.cmlabs.xyz"]
 
 c.url.searchengines = {
     "DEFAULT": "https://search.brave.com/search?q={}",
