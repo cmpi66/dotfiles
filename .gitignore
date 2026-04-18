@@ -68,3 +68,4 @@ dot_local/bin/register-python-argcomplete
 dot_local/bin/exegol
 dot_local/share/yubikey-age/age-yubikey-identity-passage1.txt
 dot_local/share/yubikey-age/age-yubikey-identity-passage2.txt
+dot_gitignore
