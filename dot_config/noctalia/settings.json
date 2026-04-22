@@ -62,7 +62,7 @@
         "mouseWheelAction": "none",
         "mouseWheelWrap": true,
         "outerCorners": false,
-        "position": "top",
+        "position": "bottom",
         "reverseScroll": false,
         "rightClickAction": "settings",
         "rightClickCommand": "",

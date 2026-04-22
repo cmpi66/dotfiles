@@ -1,0 +1,19 @@
+- name: Machine setup
+  hosts: localhost
+  become: true
+  connection: local
+  gather_facts: true
+
+  tasks:
+    - name: clone passage
+      become: false
+      ansible.builtin.git:
+        repo: "https://github.com/FiloSottile/passage.git"
+        dest: "/home/chris/dl/git-clones/passage"
+        update: no
+
+    - name: Install passage
+      shell: make install
+      args:
+        chdir: /home/chris/dl/git-clones/passage/
+        creates: /usr/bin/passage
