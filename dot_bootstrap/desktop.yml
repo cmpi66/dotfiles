@@ -19,13 +19,13 @@
     - name: source zdotdir system wide
       lineinfile:
         path: /etc/zsh/zshenv
-        line: 'export ZDOTDIR=$HOME/.config/zsh'
+        line: "export ZDOTDIR=$HOME/.config/zsh"
         create: yes
 
     - name: Doas conf
       lineinfile:
         path: /etc/doas.conf
-        line: 'permit nopass :wheel'
+        line: "permit nopass :wheel"
         create: yes
 
     - name: Copy skel bashrc to root
@@ -40,8 +40,8 @@
         path: /root/.bashrc
         line: "{{ item }}"
       loop:
-        - 'export EDITOR=nvim'
-        - 'export VISUAL=nvim'
+        - "export EDITOR=nvim"
+        - "export VISUAL=nvim"
 
     - name: Set Aliases for root
       lineinfile:
@@ -61,7 +61,7 @@
     - name: clone evremap
       become: false
       ansible.builtin.git:
-        repo: 'https://github.com/wez/evremap.git'
+        repo: "https://github.com/wez/evremap.git"
         dest: "/home/chris/dl/git-clones/evremap"
         update: no
       when: not evremap_installed.stat.exists
@@ -77,7 +77,7 @@
       copy:
         src: /home/chris/dl/git-clones/evremap/target/release/evremap
         dest: /usr/local/bin/evremap
-        mode: '0755'
+        mode: "0755"
         remote_src: true
       when: not evremap_installed.stat.exists
 
@@ -103,25 +103,13 @@
           special_time: daily
           job: "/usr/bin/newsboat -x reload"
 
-# ---------- CLEANUP ----------
+    # ---------- CLEANUP ----------
     - name: Remove unwanted home directories
       ansible.builtin.file:
         path: "{{ item }}"
         state: absent
       loop:
         - /home/chris/.vim
-
-    - name: Create required directories
-      become: false
-      ansible.builtin.file:
-        path: "{{ item }}"
-        state: directory
-        mode: '0755'
-      loop:
-        - /home/chris/dl
-        - /home/chris/dl/git-clones
-        - /home/chris/.local
-        - /home/chris/.local/share/repos
 
     - name: Remove unwanted dotfiles
       ansible.builtin.file:
@@ -140,7 +128,7 @@
     - name: clone pia manual connections
       become: false
       ansible.builtin.git:
-        repo: 'https://github.com/pia-foss/manual-connections.git'
+        repo: "https://github.com/pia-foss/manual-connections.git"
         dest: "/home/chris/dl/git-clones/manual-connections/"
         update: no
 
