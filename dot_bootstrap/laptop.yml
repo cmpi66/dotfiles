@@ -100,15 +100,14 @@
     - name: source zdotdir system wide
       lineinfile:
         path: /etc/zsh/zshenv
-        line: 'export ZDOTDIR=$HOME/.config/zsh'
+        line: "export ZDOTDIR=$HOME/.config/zsh"
         create: yes
 
     - name: Doas conf
       lineinfile:
         path: /etc/doas.conf
-        line: 'permit nopass :wheel'
+        line: "permit nopass :wheel"
         create: yes
-
 
     - name: Install packages
       pacman:
@@ -262,13 +261,13 @@
     - name: add wheel perms to build aur packs without pass prompt
       lineinfile:
         path: /etc/sudoers
-        line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+        line: "%wheel ALL=(ALL) NOPASSWD: ALL"
         create: yes
 
     - name: clone yay
       become: false
       ansible.builtin.git:
-        repo: 'https://aur.archlinux.org/yay.git'
+        repo: "https://aur.archlinux.org/yay.git"
         dest: "/home/chris/dl/git-clones/yay"
         update: no
 
@@ -291,8 +290,8 @@
         path: /root/.bashrc
         line: "{{ item }}"
       loop:
-        - 'export EDITOR=nvim'
-        - 'export VISUAL=nvim'
+        - "export EDITOR=nvim"
+        - "export VISUAL=nvim"
 
     - name: Set user crontab
       become: false
@@ -329,16 +328,15 @@
           - opustags
           - sc-im
           - task-spooler
-          - passage-git
 
     - name: Remove wheel nopasswd
       lineinfile:
         path: /etc/sudoers
-        line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+        line: "%wheel ALL=(ALL) NOPASSWD: ALL"
         state: absent
-        validate: 'visudo -cf %s'
+        validate: "visudo -cf %s"
 
-# ---------- CLEANUP ----------
+    # ---------- CLEANUP ----------
     - name: Remove unwanted home directories
       ansible.builtin.file:
         path: "{{ item }}"
@@ -351,7 +349,7 @@
       ansible.builtin.file:
         path: "{{ item }}"
         state: directory
-        mode: '0755'
+        mode: "0755"
       loop:
         - /home/chris/dl
         - /home/chris/dl/git-clones
@@ -375,7 +373,7 @@
     - name: clone pia manual connections
       become: false
       ansible.builtin.git:
-        repo: 'https://github.com/pia-foss/manual-connections.git'
+        repo: "https://github.com/pia-foss/manual-connections.git"
         dest: "/home/chris/dl/git-clones/manual-connections/"
         update: no
 
