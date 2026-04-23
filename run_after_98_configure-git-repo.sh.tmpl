@@ -8,9 +8,13 @@ sync_init
 
 log "Starting git remote SSH configuration..."
 
-# Ensure SSH agent (smartcard)
-SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-export SSH_AUTH_SOCK
+# Respect forwarded agent if present
+if [[ -n "${SSH_AUTH_SOCK:-}" && -S "$SSH_AUTH_SOCK" ]]; then
+  log "Using existing SSH agent: $SSH_AUTH_SOCK"
+else
+  log "No valid SSH agent detected — falling back to GPG agent"
+  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+fi
 
 # Probe GitHub SSH (non-fatal)
 log "Checking GitHub SSH access..."
