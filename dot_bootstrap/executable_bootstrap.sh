@@ -14,7 +14,9 @@ require rclone
 
 [ -f "$RCLONE_CONF" ] || fail "missing rclone config at $RCLONE_CONF"
 
+"$SCRIPT_DIR/executable_bootstrap_install_passage"
 "$SCRIPT_DIR/executable_boot_pass_restore.sh"
+"$SCRIPT_DIR/executable_boot_pass_age.sh"
 
 cat <<'EOF'
 
