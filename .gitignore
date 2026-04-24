@@ -48,8 +48,8 @@ dot_config/mpd/database
 
 dot_config/tmux/plugins
 dot_config/tmux/resurrect
-dot_config/zsh/.zsh_history
-dot_config/zsh/.zcompdump
+dot_config/zsh/dot_zsh_history
+dot_config/zsh/dot_zcompdump
 dot_config/mpv/watch_later
 dot_local/bin/extras/keepmenu
 dot_local/share/applications/start-tor-browser.desktop
