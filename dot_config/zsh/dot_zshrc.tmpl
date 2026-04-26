@@ -113,6 +113,11 @@ function preexec {
     print -n "\e]133;C\e\\"
 }
 
+# launch tmux session on term laucnh
+if [[ -z "$TMUX_PANE" ]]; then
+tmux new-session -A -s "${USER}"
+fi
+
 # devpod
 {{ if eq .chezmoi.username "vscode" }}
 eval "$(uv generate-shell-completion zsh)"
@@ -122,5 +127,3 @@ eval "$(mise activate zsh)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 eval "$(atuin init zsh)"
-
-
