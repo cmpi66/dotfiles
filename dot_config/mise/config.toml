@@ -16,6 +16,7 @@ opencode = "latest"
 node = "25.6.0"
 hugo-extended = "0.147.7"
 usage = "latest"
+btop = "latest"
 
 [settings]
 trusted_config_paths = [

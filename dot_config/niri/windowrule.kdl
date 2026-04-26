@@ -39,7 +39,7 @@ window-rule {
 window-rule {
     match app-id=r#"yazi-qute$"#
     match app-id=r#"btop$"#
-    match app-id=r#"newsboat$"#
+    match app-id=r#"qutebrowser-rss$"#
     open-floating true
     default-column-width { fixed 1000; }
     default-window-height { fixed 800; }

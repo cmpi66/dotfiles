@@ -168,7 +168,6 @@
           - ncdu
           - ncmpcpp
           - net-tools
-          - newsboat
           - nfs-utils
           - niri
           - ninja
@@ -328,6 +327,7 @@
           - opustags
           - sc-im
           - task-spooler
+          - stig
 
     - name: Remove wheel nopasswd
       lineinfile:

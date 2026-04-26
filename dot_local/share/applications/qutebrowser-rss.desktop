@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Qutebrowser RSS
+StartupWMClass=qutebrowser-rss
+GenericName=Web Browser
+Comment=RSS feed reader using qutebrowser
+Icon=qutebrowser
+Icon=/home/chris/.local/share/chars/miniflux-light.svg
+Type=Application
+Categories=Network;WebBrowser;
+Exec=qutebrowser --basedir ~/.config/stupid-web-rss/ --config-py ~/.config/stupid-web/config.py --desktop-file-name qutebrowser-rss
+Terminal=false
+StartupNotify=true
