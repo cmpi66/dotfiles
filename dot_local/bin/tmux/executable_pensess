@@ -7,14 +7,14 @@ has-session() {
 }
 
 if has-session; then
-  exec kitty --title pen --class pen -e tmux attach-session -t "$SESSION"
+  exec kitty --title pen --class tmux-session -e tmux attach-session -t "$SESSION"
 else
   tmux new-session -s "$SESSION" -n port-vnc -d
   tmux new-window -t "$SESSION":2 -n win2
   tmux new-window -t "$SESSION":3 -n notes
 
   # Launch kitty + attach
-  kitty --title pen --class pen -e tmux attach-session -t "$SESSION" &
+  kitty --title pen --class tmux-session -e tmux attach-session -t "$SESSION" &
 
   # Wait for attach
   sleep 0.15

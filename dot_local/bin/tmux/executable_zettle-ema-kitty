@@ -7,13 +7,13 @@ has-session() {
 }
 
 if has-session; then
-  exec kitty --title ema --class ema -e tmux attach-session -t "$SESSION"
+  exec kitty --title ema --class tmux-session -e tmux attach-session -t "$SESSION"
 else
   tmux new-session -s "$SESSION" -n notes -d
   tmux new-window -t "$SESSION":2 -n blue
 
   # Launch kitty + attach
-  kitty --title ema --class ema -e tmux attach-session -t "$SESSION" &
+  kitty --title ema --class tmux-session -e tmux attach-session -t "$SESSION" &
 
   # Give tmux time to attach to real terminal
   sleep 0.15

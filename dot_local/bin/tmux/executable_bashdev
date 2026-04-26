@@ -7,13 +7,13 @@ has-session() {
 }
 
 if has-session; then
-  exec kitty --title bashdev --class bashdev -e tmux attach-session -t "$SESSION"
+  exec kitty --title bashdev --class tmux-session -e tmux attach-session -t "$SESSION"
 else
   tmux new-session -s "$SESSION" -n blackhat -d
   tmux new-window -t "$SESSION":2 -n udemy
 
   # Launch kitty + attach
-  kitty --title bashdev --class bashdev -e tmux attach-session -t "$SESSION" &
+  kitty --title bashdev --class tmux-session -e tmux attach-session -t "$SESSION" &
 
   # Wait for attach (same stable pattern)
   sleep 0.15

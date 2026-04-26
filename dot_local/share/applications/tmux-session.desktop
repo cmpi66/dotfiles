@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Tmux Session
+StartupWMClass=tmux-session
+GenericName=Terminal Multiplexer
+Comment=Tmux sessions in kitty
+Icon=/home/chris/.local/share/chars/tmux.svg
+Type=Application
+Exec=kitty --class tmux-session -e tmux
+Terminal=false
+StartupNotify=true

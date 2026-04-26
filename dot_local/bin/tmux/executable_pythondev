@@ -7,11 +7,11 @@ has-session() {
 }
 
 if has-session; then
-  exec kitty --title pythondev --class pythondev -e tmux attach-session -t "$SESSION"
+  exec kitty --title pythondev --class tmux-session -e tmux attach-session -t "$SESSION"
 else
   tmux new-session -s "$SESSION" -n devpod -d
 
-  kitty --title pythondev --class pythondev -e tmux attach-session -t "$SESSION" &
+  kitty --title pythondev --class tmux-session -e tmux attach-session -t "$SESSION" &
 
   sleep 0.15
 
