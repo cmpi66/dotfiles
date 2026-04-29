@@ -324,7 +324,6 @@
         state: present
         name:
           - dotool-git
-          - opustags
           - sc-im
           - task-spooler
           - stig

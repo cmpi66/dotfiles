@@ -53,3 +53,28 @@ window-rule {
 }
 
 
+
+// Enable blur behind the kitty terminal.
+window-rule {
+    match app-id="^kitty$"
+    match app-id="^tmux-session$"
+    match app-id=r#"yazi-qute$"#
+    match app-id=r#"btop$"#
+    match app-id=r#"Wiremix$"#
+    match app-id=r#"Music$"#
+
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
+// Enable blur behind the fuzzel launcher.
+layer-rule {
+    match namespace="^rofi$"
+
+    background-effect {
+        blur true
+        xray false
+    }
+}
