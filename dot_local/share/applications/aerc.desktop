@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Aerc Email
+StartupWMClass=aerc
+GenericName=Aerc Email
+Comment=Aerc in kitty
+Icon=/home/chris/.local/share/chars/email-part-2-svgrepo-com.svg
+Type=Application
+Exec=kitty --class aerc -e aerc
+Terminal=false
+StartupNotify=true

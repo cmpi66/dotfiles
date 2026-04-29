@@ -1,0 +1,108 @@
+opustags changelog
+==================
+
+1.10.1 - 2024-05-19
+-------------------
+
+Fix a build error on recent systems.
+
+1.10.0 - 2024-05-03
+-------------------
+
+- Introduce -z to delimit tags with null bytes.
+
+This option makes it possible to leverage GNU sed or GNU grep for automated tag edition with
+`opustags -z … | sed -z … | opustags -z -S …`, while also supporting multi-line tags.
+
+1.9.0 - 2023-06-07
+------------------
+
+- Introduce --vendor and --set-vendor.
+- Close the input file before finalizing the output, in order to fix --in-place on SMB drives.
+
+1.8.0 - 2023-03-07
+------------------
+
+- Introduce --set-cover and --output-cover.
+
+opustags is now able to extract and edit the cover art of Opus files. The underlying
+METADATA_BLOCK_PICTURE tag will still appear as a regular tag, but you won’t have to handle it
+manually anymore.
+
+1.7.0 - 2023-02-13
+------------------
+
+- Support arbitrary large OpusTags headers.
+- Handle multiline tags by prefixing their continuation lines with tabs.
+
+1.6.0 - 2021-01-01
+------------------
+
+- UTF-8 conversion errors are now fatal.
+- Introduce --raw for disabling encoding conversions.
+- Improve platform compatibility.
+
+This also happens to be opustags’s 8-year anniversary!
+
+1.5.1 - 2020-11-21
+------------------
+
+- Improve BSD support.
+
+1.5.0 - 2020-11-08
+------------------
+
+- Introduce --edit for interactive edition.
+
+1.4.0 - 2020-10-04
+------------------
+
+- Preserve permissions when overwriting files.
+- Support multiple files with --in-place.
+- Fix BSD support.
+
+Thanks to Reuben Thomas for contributing the pièce de résistance of this
+release!
+
+1.3.0 - 2019-02-02
+------------------
+
+- Support for non-Unicode systems. Tags are automatically converted to and from the system locale.
+- It is now possible to delete specific NAME=VALUE pairs.
+- Option `--set-all` is now stricter and aborts with an error if the input is not valid.
+- Printing tags will display a warning if the tags contain control characters.
+
+opustags is now more aware of its limitations, and will print more helpful error messages when
+trying to edit an unsupported file. It is also more cautious against corrupted streams.
+
+1.2.0 - 2018-11-25
+------------------
+
+- Preserve extra data in OpusTags past the comments.
+- Improve error reporting.
+- Fix various bugs.
+
+This is the biggest release for opustags. The whole code base was reviewed for robustness and
+clarity. The program is now built as C++14, and the code refactored without sacrificing the
+original simplicity. It is shipped with a new test suite.
+
+1.1.1 - 2018-10-24
+------------------
+
+- Mac OS X support.
+- Tolerate but truncate the data in the OpusTags packet past the comments.
+
+1.1 - 2013-01-02
+----------------
+
+- Add the --in-place option.
+- Fix a bug is --set-all where the last unterminated line was ignored.
+- Remove broken output files on failure.
+
+1.0 - 2013-01-01
+----------------
+
+This is the first release of opustags. It supports all the main feature for basic tag editing.
+
+It was written in a day, and the code is quick and dirty, though the program is simple and
+efficient.
