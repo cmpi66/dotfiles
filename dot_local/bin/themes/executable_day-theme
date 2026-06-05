@@ -21,24 +21,11 @@ btop_conf() {
 
 btop_conf
 
-ghostty_config() {
-  cp "$DAYDIR/config" "$HOME/.config/ghostty" && pkill -SIGUSR1 -u "$USER" -x ghostty
-
-}
-
-ghostty_config
-
 rofi_config() {
   cp "$DAYDIR/config.rasi" "$HOME/.config/rofi/config.rasi"
 }
 
 rofi_config
-
-mako_config() {
-  cp "$DAYDIR/mako/config" "$HOME/.config/mako" && makoctl reload
-}
-
-mako_config
 
 # fish config, this also has fzf and bat exports
 

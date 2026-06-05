@@ -102,15 +102,6 @@
             ],
             "left": [
                 {
-                    "clockColor": "none",
-                    "customFont": "",
-                    "formatHorizontal": "ddd, MMM dd h:mm:ss AP",
-                    "formatVertical": "HH mm - dd MM",
-                    "id": "Clock",
-                    "tooltipFormat": "HH:mm ddd, MMM dd",
-                    "useCustomFont": false
-                },
-                {
                     "compactMode": false,
                     "diskPath": "/",
                     "iconColor": "none",
@@ -141,6 +132,15 @@
                     "showIcon": true,
                     "textColor": "none",
                     "useFixedWidth": false
+                },
+                {
+                    "defaultSettings": {
+                        "leftButton": "next",
+                        "middleButton": "shuffle",
+                        "rightButton": "toggle",
+                        "shuffleStopsPlayback": true
+                    },
+                    "id": "plugin:mpd"
                 }
             ],
             "right": [
@@ -192,15 +192,6 @@
                 },
                 {
                     "defaultSettings": {
-                        "leftButton": "next",
-                        "middleButton": "shuffle",
-                        "rightButton": "toggle",
-                        "shuffleStopsPlayback": true
-                    },
-                    "id": "plugin:mpd"
-                },
-                {
-                    "defaultSettings": {
                         "customColor": "none",
                         "showConditionIcon": true,
                         "showTempUnit": true,
@@ -208,6 +199,15 @@
                         "tooltipOption": "everything"
                     },
                     "id": "plugin:weather-indicator"
+                },
+                {
+                    "clockColor": "none",
+                    "customFont": "",
+                    "formatHorizontal": "ddd, MMM dd h:mm:ss AP",
+                    "formatVertical": "HH mm - dd MM",
+                    "id": "Clock",
+                    "tooltipFormat": "HH:mm ddd, MMM dd",
+                    "useCustomFont": false
                 }
             ]
         }

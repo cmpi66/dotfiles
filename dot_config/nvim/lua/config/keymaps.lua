@@ -77,8 +77,8 @@ vim.keymap.set("n", "<leader>fb", function()
       layout = {
         relative = "editor",
         position = "float",
-        width = 60,
-        height = 11, -- +1 row for input
+        width = 90,
+        height = 14, -- +1 row for input
         border = "rounded",
         box = "vertical",
 
