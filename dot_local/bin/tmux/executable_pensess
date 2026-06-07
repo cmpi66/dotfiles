@@ -11,7 +11,8 @@ if has-session; then
 else
   tmux new-session -s "$SESSION" -n port-vnc -d
   tmux new-window -t "$SESSION":2 -n win2
-  tmux new-window -t "$SESSION":3 -n notes
+  tmux new-window -t "$SESSION":3 -n field-manual
+  tmux new-window -t "$SESSION":4 -n assements
 
   # Launch kitty + attach
   kitty --title pen --class tmux-session -e tmux attach-session -t "$SESSION" &
@@ -39,6 +40,10 @@ else
 
   # Window 3 — notes
   tmux send-keys -t "$SESSION":3 \
+    'cd ~/.local/share/notes/pentest-hub/ && nvim .' C-m
+
+  # Window 4 — notes
+  tmux send-keys -t "$SESSION":4 \
     'cd ~/.local/share/notes/pentest-hub/ && nvim .' C-m
 
   tmux select-window -t "$SESSION":1
