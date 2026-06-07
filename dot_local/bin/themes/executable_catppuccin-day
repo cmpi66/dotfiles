@@ -2,21 +2,11 @@
 
 DAYDIR="$HOME/.config/themes/catppuccin-day/"
 
-# i need to add fast syntax highlighting zsh and maybe eza ?
-# noctalia as well
-
 kitty_conf() {
   cp "$DAYDIR/kitty.conf" "$HOME/.config/kitty"
 }
 
-kitty_reload() {
-  pkill -SIGUSR1 -u "$USER" -x kitty
-
-}
-
 kitty_conf
-
-kitty_reload
 
 btop_conf() {
   cp "$DAYDIR/btop.conf" "$HOME/.config/btop" && pkill -SIGUSR2 btop
@@ -30,39 +20,26 @@ rofi_config() {
 
 rofi_config
 
-mako_config() {
-  cp "$DAYDIR/mako/config" "$HOME/.config/mako" && makoctl reload
+# zsh config, this also has fzf and bat exports
+
+zsh_config() {
+  cp "$DAYDIR/.zshrc" "$HOME/.config/zsh/"
 }
 
-mako_config
+zsh_config
 
-# fish config, this also has fzf and bat exports
-
-fish_config() {
-  cp "$DAYDIR/config.fish" "$HOME/.config/fish"
+niri_config() {
+  cp "$DAYDIR/config.kdl" "$HOME/.config/niri" && niri msg action load-config-file >/dev/null 2>&1
 }
 
-fish_config
-
-hypr_conf() {
-  cp "$DAYDIR/hyprland.conf" "$HOME/.config/hypr" && hyprctl reload >/dev/null 2>&1
-}
-
-hypr_conf
+niri_config
 
 # tmux alsways struggles to load at times, figure out a better way to live reload
 tmux_conf() {
-  cp "$DAYDIR/skin.conf" "$HOME/.config/tmux/conf/" && tmux source-file ~/.config/tmux/tmux.conf >/dev/null
+  cp "$DAYDIR/tmux.conf" "$HOME/.config/tmux/" && tmux source-file ~/.config/tmux/tmux.conf >/dev/null
 }
 
 tmux_conf
-
-waybar_conf() {
-  cp "$DAYDIR/style.css" "$HOME/.config/waybar" && pkill -x waybar && hyprctl dispatch exec waybar >/dev/null 2>&1
-
-}
-
-waybar_conf
 
 neovim_conf() {
   cp "$DAYDIR/colorscheme.lua" "$HOME/.config/nvim/lua/plugins"
@@ -75,3 +52,5 @@ scim_conf() {
 }
 
 scim_conf
+
+qs -c noctalia-shell ipc call darkMode setLight
