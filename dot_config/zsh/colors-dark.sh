@@ -1,5 +1,5 @@
 # Set fast-syntax-highlighting theme (only if not already set)
-[[ ! -f "${XDG_CACHE_HOME:-$HOME/.cache}/fsh/current_theme.zsh" ]] && fast-theme XDG:catppuccin-macchiato
+fast-theme XDG:catppuccin-macchiato >/dev/null
 
 # Theme / appearance
 export BAT_THEME="Catppuccin Macchiato"

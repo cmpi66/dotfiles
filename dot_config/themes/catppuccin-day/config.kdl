@@ -115,7 +115,7 @@ layout {
     focus-ring {
         width 2.5
         active-color "#1e66f5"
-        inactive-color "#24237a"
+        inactive-color "#7c7f93"
         // You can also use gradients. They take precedence over solid colors.
         // active-gradient from="#80c8ff" to="#c7ff7f" angle=45
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
@@ -134,8 +134,8 @@ layout {
         softness 10
         spread 5
         offset x=0 y=0
-        color "#24237a"
-        inactive-color "#24237a"
+        color "#7c7f93"
+        inactive-color "#7c7f93"
     }
 
     // Struts shrink the area occupied by windows, similarly to layer-shell panels.
@@ -161,7 +161,7 @@ layout {
         gaps-between-tabs 2
         corner-radius 2
         active-color "#1e66f5"
-        inactive-color "#6e738d"
+        inactive-color "#acb0be"
         urgent-color "#d20f39"
         // active-gradient from="#80c8ff" to="#bbddff" angle=45
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"

@@ -54,3 +54,4 @@ color "type=INFO_MSG fg=CRUST bg=SKY"
 color "type=ERROR_MSG fg=TEXT bg=BLACK"
 color "type=INPUT fg=SUBTEXT1 bg=MANTLE"
 color "type=HELP_HIGHLIGHT fg=ROSEWATER bg=SURFACE2"
+
