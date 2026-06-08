@@ -1,11 +1,7 @@
 #!/usr/bin/env bash
 
-case "$(printf "tokyonight-storm\ntokyonight-dawn\nrose-pine-moon\nrose-pine-dawn\ncatppuccin-night\ncatppuccin-day" | rofi -dmenu -p 'Switch Theme: ')" in
-'tokyonight-storm') night-theme ;;
-'tokyonight-dawn') day-theme ;;
-'rose-pine-moon') rosepine-moon ;;
-'rose-pine-dawn') rosepine-dawn ;;
-'catppuccin-night') catppuccin-night ;;
-'catppuccin-day') catppuccin-day ;;
+case "$(printf "dark\nlight" | rofi -dmenu -p 'Switch Theme: ')" in
+'dark') catppuccin-night ;;
+'light') catppuccin-day ;;
 *) exit 0 ;;
 esac

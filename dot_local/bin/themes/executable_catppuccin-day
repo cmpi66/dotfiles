@@ -59,4 +59,10 @@ starship_conf() {
 
 starship_conf
 
+aerc_conf() {
+  cp "$DAYDIR/aerc.conf" "$HOME/.config/aerc/"
+}
+
+aerc_conf
+
 qs -c noctalia-shell ipc call darkMode setLight
