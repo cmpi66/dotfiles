@@ -1,7 +1,7 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
 
-def setup(c, flavour, samecolorrows = False):
+def setup(c, flavour, samecolorrows=False):
     palette = {}
 
     # flavours {{{
@@ -30,7 +30,7 @@ def setup(c, flavour, samecolorrows = False):
             "surface2": "#acb0be",
             "surface1": "#bcc0cc",
             "surface0": "#ccd0da",
-            "base": "#eff1f5",
+            "base": "#FAF4ED",
             "mantle": "#e6e9ef",
             "crust": "#dce0e8",
         }

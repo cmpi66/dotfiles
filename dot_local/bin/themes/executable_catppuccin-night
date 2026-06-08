@@ -53,4 +53,10 @@ scim_conf() {
 
 scim_conf
 
+starship_conf() {
+  cp "$STORMDIR/starship.toml" "$HOME/.config/"
+}
+
+starship_conf
+
 qs -c noctalia-shell ipc call darkMode setDark
