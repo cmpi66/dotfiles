@@ -5,6 +5,8 @@ fast-theme XDG:catppuccin-latte >/dev/null
 # Theme / appearance
 export BAT_THEME="Catppuccin Latte"
 export FZF_DEFAULT_OPTS=" \
+--bind tab:down,shift-tab:up \
+--layout=reverse --height 40% \
 --color=bg+:#CCD0DA,bg:#FAF4ED,spinner:#DC8A78,hl:#D20F39 \
 --color=fg:#4C4F69,header:#D20F39,info:#8839EF,pointer:#DC8A78 \
 --color=marker:#7287FD,fg+:#4C4F69,prompt:#8839EF,hl+:#D20F39 \
