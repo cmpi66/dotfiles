@@ -65,4 +65,17 @@ aerc_conf() {
 
 aerc_conf
 
+# primitive lazy reload conf for now, not checking for running instance
+qutbrowser_conf() {
+  cp "$STORMDIR/qutebrowser/config.py" "$HOME/.config/qutebrowser/" && qutebrowser ':config-source '
+}
+
+qutbrowser_conf
+
+stupidweb_conf() {
+  cp "$STORMDIR/stupid-web/config.py" "$HOME/.config/stupid-web/" && qutebrowser --basedir ~/.config/stupid-web/ ':config-source ~/.config/stupid-web/config.py'
+}
+
+stupidweb_conf
+
 qs -c noctalia-shell ipc call darkMode setDark
