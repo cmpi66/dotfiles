@@ -22,7 +22,7 @@ else
 
   # Window 1 — SSH tunnel + exegol
   tmux send-keys -t "$SESSION":1 \
-    'ssh -L 54759:localhost:54759 chris@exegolhost' C-m
+    'ssh -L 35541:localhost:35541 chris@exegolhost' C-m
 
   sleep 0.5
 

@@ -10,7 +10,7 @@ return {
 				transparent = true,
 				-- solid = true,
 			},
-			flavour = "macchiato", -- change to latte, frappe, macchiato if desired
+			flavour = "latte", -- change to latte, frappe, macchiato if desired
 			lsp_styles = {
 				underlines = {
 					errors = { "undercurl" },
@@ -63,7 +63,7 @@ return {
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "catppuccin-macchiato",
+			colorscheme = "catppuccin-latte",
 		},
 	},
 }

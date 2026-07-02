@@ -1,6 +1,6 @@
-// @import "catppuccin-latte"
+@import "catppuccin-latte"
 // @import "catppuccin-frappe"
-@import "catppuccin-macchiato"
+// @import "catppuccin-macchiato"
 // @import "catppuccin-mocha"
 
 * {
@@ -95,7 +95,7 @@ element-icon {
 }
 window {
     padding:          5;
-    background-color: @base-alpha-80;
+    background-color: rgba(250, 244, 237, 0.80);
     border:           2;
     location:                    center;
     anchor:                      center;

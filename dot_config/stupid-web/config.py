@@ -4,8 +4,8 @@ import catppuccin
 config.load_autoconfig()
 
 # last argument (optional, default is False): enable the plain look for the menu rows
-catppuccin.setup(c, "macchiato", True)
-# catppuccin.setup(c, "latte", True)
+# catppuccin.setup(c, "macchiato", True)
+catppuccin.setup(c, "latte", True)
 
 # fonts
 c.fonts.default_family = []
