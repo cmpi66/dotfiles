@@ -10,7 +10,6 @@ if has-session; then
   exec kitty --title ema --class tmux-session -e tmux attach-session -t "$SESSION"
 else
   tmux new-session -s "$SESSION" -n notes -d
-  tmux new-window -t "$SESSION":2 -n blue
 
   # Launch kitty + attach
   kitty --title ema --class tmux-session -e tmux attach-session -t "$SESSION" &
@@ -22,8 +21,6 @@ else
   tmux send-keys -t "$SESSION":1 \
     'cd ~/.local/share/notes/zettlekasten/ && nvim index.md' C-m
 
-  tmux send-keys -t "$SESSION":2 \
-    'cd ~/.local/share/notes/blueteam-hub/ && nvim .' C-m
   tmux select-window -t "$SESSION":1
 
 fi
