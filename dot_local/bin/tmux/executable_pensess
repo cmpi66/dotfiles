@@ -9,10 +9,12 @@ has-session() {
 if has-session; then
   exec kitty --title pen --class tmux-session -e tmux attach-session -t "$SESSION"
 else
-  tmux new-session -s "$SESSION" -n port-vnc -d
-  tmux new-window -t "$SESSION":2 -n win2
+  tmux new-session -s "$SESSION" -n academy-vnc -d
+  tmux new-window -t "$SESSION":2 -n academy
   tmux new-window -t "$SESSION":3 -n field-manual
   tmux new-window -t "$SESSION":4 -n assements
+  tmux new-window -t "$SESSION":5 -n htb-labs
+  tmux new-window -t "$SESSION":6 -n htb-labs-vnc
 
   # Launch kitty + attach
   kitty --title pen --class tmux-session -e tmux attach-session -t "$SESSION" &
@@ -22,7 +24,7 @@ else
 
   # Window 1 — SSH tunnel + exegol
   tmux send-keys -t "$SESSION":1 \
-    'ssh -L 35541:localhost:35541 chris@exegolhost' C-m
+    'ssh -L 56637:localhost:56637 chris@exegolhost' C-m
 
   sleep 0.5
 
@@ -47,4 +49,22 @@ else
     'cd ~/.local/share/notes/pentest-hub/ && nvim .' C-m
 
   tmux select-window -t "$SESSION":1
+
+  # Window 5 — second host + exegol htb-labs
+  tmux send-keys -t "$SESSION":5 \
+    'ssh exegolhost' C-m
+
+  sleep 0.5
+
+  tmux send-keys -t "$SESSION":5 \
+    'exegol start htb-labs' C-m
+
+  # Window 6 — SSH tunnel + exegol htb labs
+  tmux send-keys -t "$SESSION":6 \
+    'ssh -L 42275:localhost:42275 chris@exegolhost' C-m
+
+  sleep 0.5
+
+  tmux send-keys -t "$SESSION":6 \
+    'exegol start htb-labs' C-m
 fi
