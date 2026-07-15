@@ -18,12 +18,13 @@ window-rule {
     // This app-id regular expression will work for both:
     // - host Firefox (app-id is "firefox")
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
+    match app-id=r#"xdg-desktop-portal-gtk$"#
     match app-id=r#"Wiremix$"#
     match app-id=r#"Music$"#
     match app-id=r#"Tor Browser$"#
     match app-id=r#"swayimg$"#
     match app-id=r#"com.gabm.satty$"#
-    match title="^(Open.*Files?|Open [Ff]older.*|Save.*Files?|Save.*As|Save|All Files)"
+    match title="^(Open.*Files?|Open [Ff]older.*|Save.*Files?|Save.*As|Save|All Files|File Upload)"
     match title="mpv-recording"
     match app-id="Share|localsend"
     open-floating true
