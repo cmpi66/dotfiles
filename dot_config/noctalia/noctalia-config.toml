@@ -6,7 +6,7 @@ capsule = true
 center = [ "workspaces" ]
 concave_edge_corners = false
 end = [ "bar", "weather", "tray", "notifications", "volume", "brightness", "battery", "clock" ]
-font_weight = 700
+font_weight = 400
 margin_ends = 0
 position = "bottom"
 radius = 0
@@ -149,7 +149,7 @@ title_scroll = "on_hover"
 type = "noctalia/timer:bar"
 
 [widget.clock]
-format = "{:%I:%M:%S %p} {:%a %d %b}"
+format = "{:%a %b %d} {:%I:%M:%S %p} "
 
 [widget.media]
 hide_when_no_media = true
