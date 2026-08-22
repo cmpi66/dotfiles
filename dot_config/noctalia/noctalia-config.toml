@@ -5,19 +5,7 @@ enable_overdrive = true
 capsule = true
 center = [ "workspaces" ]
 concave_edge_corners = false
-end = [
-    "bar",
-    "weather",
-    "media",
-    "tray",
-    "notifications",
-    "network",
-    "bluetooth",
-    "volume",
-    "brightness",
-    "battery",
-    "clock"
-]
+end = [ "bar", "weather", "tray", "notifications", "volume", "brightness", "battery", "clock" ]
 font_weight = 700
 margin_ends = 0
 position = "bottom"
