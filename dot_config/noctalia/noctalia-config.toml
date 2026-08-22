@@ -123,7 +123,7 @@ wallpaper_scheme = "m3-content"
 
 [wallpaper]
 directory = "/home/chris/.local/share/wallpapers"
-fill_mode = "fit"
+fill_mode = "stretch"
 
     [wallpaper.default]
     path = "/home/chris/.local/share/wallpapers/windows-xp.jpg"
