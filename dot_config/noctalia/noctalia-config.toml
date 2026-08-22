@@ -161,7 +161,7 @@ title_scroll = "on_hover"
 type = "noctalia/timer:bar"
 
 [widget.clock]
-format = "{:%H:%M:%S} {:%a %d %b}"
+format = "{:%I:%M:%S %p} {:%a %d %b}"
 
 [widget.media]
 hide_when_no_media = true
