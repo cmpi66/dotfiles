@@ -169,4 +169,5 @@ hide_when_no_media = true
 [widget.workspaces]
 empty_color = "on_surface_variant"
 focused_color = "tertiary"
+hide_when_empty = true
 scale = 1.25
