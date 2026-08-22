@@ -233,6 +233,7 @@
           - zathura
           - zathura-pdf-mupdf
           - zbar
+          - noctalia
         state: present
 
     - name: Install Chaotic AUR pacakges
@@ -246,7 +247,6 @@
           - evremap-git
           - chaotic-aur/librewolf
           - localsend
-          - noctalia-shell
         state: present
 
     - name: add wheel perms to build aur packs without pass prompt

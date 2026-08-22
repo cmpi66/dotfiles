@@ -5,11 +5,11 @@ defaults:
   terminal_font_size: 16
 
   # the theme to use by default in every presentation unless overridden.
-  theme: catppuccin-macchiato
+  theme: catppuccin-latte
 
   # the image protocol to use.
   image_protocol: kitty-local
-  max_columns: 100
+  max_columns: 125
   # Valid values: left, center, right
   max_columns_alignment: center
 

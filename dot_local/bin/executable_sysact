@@ -11,7 +11,7 @@ wmpid() { # This function is needed if there are multiple instances of the windo
 }
 
 case "$(printf "🔒 lock\n🔃 reboot\n🖥️shutdown\n❌kill" | rofi -dmenu -i -theme power-menu-center.rasi -p 'Action')" in
-'🔒 lock') qs -c noctalia-shell ipc call lockScreen lock ;;
+'🔒 lock') noctalia msg session lock ;;
 '🔃 reboot') doas sh -c "sync && openrc-shutdown -r now" ;;
 '🖥️shutdown') doas sh -c "sync && openrc-shutdown -p now" ;;
 '❌kill') dm-kill ;;

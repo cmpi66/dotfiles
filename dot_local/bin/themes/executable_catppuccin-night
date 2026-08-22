@@ -78,4 +78,4 @@ stupidweb_conf() {
 
 stupidweb_conf
 
-qs -c noctalia-shell ipc call darkMode setDark
+noctalia msg theme-mode-set dark

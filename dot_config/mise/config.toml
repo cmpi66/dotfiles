@@ -20,6 +20,7 @@ btop = "latest"
 ruby = "3.3"
 gh = "latest"
 glab = "latest"
+herdr = "latest"
 
 [settings]
 trusted_config_paths = [

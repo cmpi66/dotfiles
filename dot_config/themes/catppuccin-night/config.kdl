@@ -260,7 +260,5 @@ overview {
     backdrop-color "#777777"
 }
 switch-events {
-    lid-close { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
-    lid-open { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+    lid-close { spawn "noctalia" "msg" "session" "lock"; }
 }
-

@@ -68,25 +68,24 @@ vim.g.lazyvim_winbar = false
 -- vim.api.nvim_set_hl(0, "WinBar2", { fg = "Statement", bg = "NONE" }) -- buffer count
 -- vim.api.nvim_set_hl(0, "WinBar3", { fg = "Added", bg = "NONE" }) -- filename
 
--- Use OSC52 clipboard only when running over SSH / in containers
-local function is_remote()
-  return vim.env.SSH_CONNECTION ~= nil or vim.env.SSH_TTY ~= nil or vim.env.DEVPOD ~= nil
-end
+-- Use OSC52 inside persistent terminal multiplexers
+-- because the clipboard belongs to the terminal client attached now.
 
-if is_remote() then
-  vim.g.clipboard = {
-    name = "OSC52",
-    copy = {
-      ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
-      ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
-    },
-    paste = {
-      ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
-      ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
-    },
-  }
+vim.opt.clipboard = ""
+
+if vim.env.HERDR_ENV or vim.env.TMUX then
+  local osc52 = require("vim.ui.clipboard.osc52")
+
+  vim.api.nvim_create_autocmd("TextYankPost", {
+    callback = function()
+      if vim.v.event.operator ~= "y" then
+        return
+      end
+
+      osc52.copy("+")(vim.fn.getreg('"', 1, true), vim.fn.getregtype('"'))
+    end,
+  })
 else
-  -- Local machine: use native clipboard
   vim.opt.clipboard = "unnamedplus"
 end
 

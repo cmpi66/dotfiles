@@ -32,4 +32,4 @@ trueloc="$(readlink -f "$1")" &&
 # swaybg -i "$bgloc" &
 # disown
 
-qs -c noctalia-shell ipc call wallpaper set "$(readlink -f "$bgloc")"
+noctalia msg wallpaper-set "$(readlink -f "$bgloc")"

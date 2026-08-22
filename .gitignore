@@ -53,6 +53,12 @@ dot_config/zsh/dot_zcompdump
 dot_config/mpv/watch_later
 dot_local/bin/extras/keepmenu
 dot_local/share/applications/start-tor-browser.desktop
+dot_config/herdr/*.log
+dot_config/herdr/*.sock
+dot_config/herdr/*.lock
+dot_config/herdr/session.json
+dot_config/herdr/plugins/github
+dot_config/herdr/plugins/dot_tmp*
 
 
 ## stupid web
