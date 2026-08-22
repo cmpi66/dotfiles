@@ -123,6 +123,9 @@ font_family = "CaskaydiaMono NF"
 lang = "en"
 show_location = false
 
+    [shell.animation]
+    enabled = false
+
     [shell.panel]
     open_near_click_control_center = true
 
