@@ -55,9 +55,9 @@ auto_locate = true
 fingerprint = false
 
 [lockscreen_widgets]
-enabled = false
+enabled = true
 schema_version = 2
-widget_order = [ "lockscreen-login-box@DP-1" ]
+widget_order = [ "lockscreen-widget-0000000000000001", "lockscreen-login-box@DP-1" ]
 
     [lockscreen_widgets.grid]
     cell_size = 16
@@ -91,6 +91,21 @@ widget_order = [ "lockscreen-login-box@DP-1" ]
         show_unlock_hint = true
         show_weather = true
 
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 80.0
+    box_width = 272.0
+    cx = 1264.0
+    cy = 1040.0
+    output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background_color = "surface_variant"
+        clock_style = "digital"
+
 [notification]
 scale = 0.85000000521540642
 
@@ -101,13 +116,12 @@ enabled = false
 enabled = [ "noctalia/timer" ]
 
 [shell]
-app_icon_colorize = true
+app_icon_color = "on_primary"
+app_icon_colorize = false
 clipboard_enabled = false
+font_family = "CaskaydiaMono NF"
 lang = "en"
 show_location = false
-
-    [shell.animation]
-    enabled = false
 
     [shell.panel]
     open_near_click_control_center = true
@@ -136,6 +150,9 @@ fill_mode = "stretch"
 
 [weather]
 unit = "imperial"
+
+[widget.active_window]
+title_scroll = "on_hover"
 
 [widget.bar]
 type = "noctalia/timer:bar"
