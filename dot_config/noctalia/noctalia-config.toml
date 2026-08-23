@@ -36,7 +36,7 @@ widget_order = []
     [desktop_widgets.widget]
 
 [dock]
-enabled = true
+enabled = false
 icon_size = 24
 inactive_opacity = 0.4999999888241291
 reserve_space = false
