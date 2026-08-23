@@ -14,8 +14,9 @@ radius_bottom_left = 0
 radius_bottom_right = 0
 radius_top_left = 0
 radius_top_right = 0
+scale = 0.95000000670552254
 start = [ "cpu", "ram", "temp", "active_window" ]
-thickness = 26
+thickness = 23
 
 [config]
 
@@ -35,7 +36,12 @@ widget_order = []
     [desktop_widgets.widget]
 
 [dock]
+enabled = true
+icon_size = 24
+inactive_opacity = 0.4999999888241291
+reserve_space = false
 show_dots = true
+smart_auto_hide = true
 
 [location]
 auto_locate = true
