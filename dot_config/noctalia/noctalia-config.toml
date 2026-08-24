@@ -5,7 +5,7 @@ enable_overdrive = true
 capsule = true
 center = [ "workspaces" ]
 concave_edge_corners = false
-end = [ "bar", "weather", "tray", "notifications", "volume", "battery", "clock" ]
+end = [ "widget", "bar", "weather", "tray", "notifications", "volume", "battery", "clock" ]
 font_weight = 400
 margin_ends = 0
 position = "bottom"
@@ -107,8 +107,12 @@ scale = 0.85000000521540642
 [osd]
 enabled = false
 
+[plugin_settings."thepunkoff/pomodoro"]
+short-break-duration = 10
+work-duration = 50
+
 [plugins]
-enabled = [ "noctalia/timer" ]
+enabled = [ "thepunkoff/pomodoro" ]
 
 [shell]
 app_icon_color = "on_primary"
@@ -163,6 +167,9 @@ hide_when_no_media = true
 
 [widget.notifications]
 hide_when_no_unread = true
+
+[widget.widget]
+type = "thepunkoff/pomodoro:widget"
 
 [widget.workspaces]
 empty_color = "on_surface_variant"
