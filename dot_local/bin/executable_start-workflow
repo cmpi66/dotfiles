@@ -49,5 +49,5 @@ while ! niri msg windows | grep -iq tmux-initial; do
   sleep 0.3
 done
 
-niri msg action focus-workspace-down
+# niri msg action focus-workspace-down
 launch_browsers

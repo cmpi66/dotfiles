@@ -1,0 +1,5 @@
+# ~/.config/tmuxinator/pythondev.yml
+name: pythondev
+
+windows:
+  - devpod: devpod ssh python-hub

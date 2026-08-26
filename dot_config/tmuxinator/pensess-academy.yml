@@ -1,0 +1,20 @@
+# ~/.config/tmuxinator/pensess-desk.yml
+name: pensess-academy-desk
+root: ~/.local/share/notes/pentest-hub/
+
+windows:
+  - academy-win1:
+      layout: even-vertical
+      panes:
+        - exegol start academy
+        - exegol start academy
+
+  - academy-win2:
+      layout: even-vertical
+      panes:
+        - exegol start academy
+        - exegol start academy
+
+  - field-manual: nvim .
+
+  - assessments: nvim /home/chris/.local/share/notes/engagements/

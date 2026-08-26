@@ -148,6 +148,7 @@
           - libappindicator
           - libdbusmenu-glib
           - libdbusmenu-gtk3
+          - libzip
           - linux-zen
           - linux-zen-headers
           - lshw

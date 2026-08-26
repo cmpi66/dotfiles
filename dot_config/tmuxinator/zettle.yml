@@ -1,0 +1,5 @@
+name: zettle
+root: ~/.local/share/notes/zettlekasten
+
+windows:
+  - notes: nvim index.md

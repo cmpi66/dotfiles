@@ -1,0 +1,13 @@
+# ~/.config/tmuxinator/bashdev.yml
+name: bashdev
+
+windows:
+  - blackhat:
+      root: ~/.local/share/repos/bash/blackhat/
+      panes:
+        - nvim .
+
+  - udemy:
+      root: ~/.local/share/repos/bash/udemy-course/
+      panes:
+        - nvim .

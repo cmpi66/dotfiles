@@ -1,0 +1,17 @@
+name: ja
+root: ~/media/sec-future/resume/sec-resume/per-role-resumes/
+
+windows:
+  - scim:
+      root: ~/media/sec-future/resume/sec-resume/per-role-resumes/app-tracker/
+      panes:
+        - TERM=xterm-256color sc-im --quiet jobapps-2025-new.csv
+
+  - search:
+      root: ~/media/sec-future/resume/sec-resume/per-role-resumes/app-tracker/
+      panes:
+        - zsh -i
+
+  - copy-bullets: nvim _iteration-6-baseline-more-meaty-8-17-26.md
+
+  - keywords: nvim cybersecurity_keywords.md

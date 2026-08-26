@@ -1,0 +1,5 @@
+# ~/.config/tmuxinator/godev.yml
+name: godev
+
+windows:
+  - devpod: devpod ssh go-hub

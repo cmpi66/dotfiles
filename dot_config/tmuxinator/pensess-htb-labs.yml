@@ -1,0 +1,20 @@
+# ~/.config/tmuxinator/htb-labs-desk.yml
+name: pensess-htb-labs
+root: ~/.local/share/notes/pentest-hub/
+
+windows:
+  - htb-labs-win1:
+      layout: even-vertical
+      panes:
+        - exegol start htb-labs
+        - exegol start htb-labs
+
+  - htb-labs-win2:
+      layout: even-vertical
+      panes:
+        - exegol start htb-labs
+        - exegol start htb-labs
+
+  - field-manual: nvim .
+
+  - assessments: nvim /home/chris/.local/share/notes/engagements/
