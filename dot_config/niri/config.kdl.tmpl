@@ -262,6 +262,7 @@ overview {
 
 {{- if or (eq .chezmoi.hostname "artixbox") (eq .chezmoi.hostname "artixframe") }}
 switch-events {
-    lid-close { spawn "noctalia" "msg" "session" "lock"; }
+    //lid-close { spawn "noctalia" "msg" "session" "lock"; }
+    lid-close { spawn "hyprlock"; }
 }{{- end }}
 
