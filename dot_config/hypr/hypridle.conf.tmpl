@@ -8,13 +8,15 @@ general {
 {{- if or (eq .chezmoi.hostname "artixbox") (eq .chezmoi.hostname "artixframe") }}
 listener {
     timeout = 300
-    on-timeout = noctalia msg session lock
+    #on-timeout = noctalia msg session lock
+    on-timeout = pidof hyprlock || hyprlock
 }
 
 {{- else }}
 listener {
     timeout = 600
-    on-timeout = noctalia msg session lock
+    #on-timeout = noctalia msg session lock
+    on-timeout = pidof hyprlock || hyprlock
 }
 
 {{- end }}
