@@ -47,6 +47,7 @@ smart_auto_hide = true
 auto_locate = true
 
 [lockscreen]
+enabled = false
 fingerprint = false
 
 [lockscreen_widgets]
@@ -102,6 +103,8 @@ widget_order = [ "lockscreen-widget-0000000000000001", "lockscreen-login-box@DP-
         clock_style = "digital"
 
 [notification]
+background_opacity = 0.99999997764825821
+layer = "overlay"
 scale = 0.85000000521540642
 
 [osd]
