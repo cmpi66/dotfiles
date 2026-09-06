@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-ifinstalled yubikey-manager || exit 1
+ifinstalled ykman || exit 1
 
 if ! ykman list | grep -q .; then
   notify-send "❌ No YubiKey detected!"

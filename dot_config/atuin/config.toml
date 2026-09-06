@@ -279,3 +279,7 @@ records = true
 ## Default filter mode can be overridden with the filter_mode setting.
 # filters = [ "global", "host", "session", "workspace", "directory" ]
 
+[tmux]
+enabled = true
+width = "60%"
+height = "60%"
