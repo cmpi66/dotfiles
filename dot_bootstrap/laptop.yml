@@ -131,6 +131,7 @@
           - dmidecode
           - dosfstools
           - entr
+          - freerdp
           - ffmpeg
           - foot
           - fuse3
@@ -140,6 +141,7 @@
           - gnome-keyring
           - go
           - grim
+          - gtk-vnc
           - hypridle
           - hyprlock
           - hyprpicker
@@ -150,6 +152,7 @@
           - libdbusmenu-glib
           - libdbusmenu-gtk3
           - libzip
+          - libvncserver
           - linux-zen
           - linux-zen-headers
           - lshw
@@ -199,6 +202,7 @@
           - qt6-wayland
           - qutebrowser
           - rclone
+          - remmina
           - rofi
           - rofi-calc
           - rsync
