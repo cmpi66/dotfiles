@@ -3,7 +3,7 @@ enable_overdrive = true
 
 [bar.default]
 capsule = true
-center = [ "workspaces" ]
+center = [ "workspaces", "preview" ]
 concave_edge_corners = false
 end = [ "widget", "bar", "weather", "tray", "notifications", "volume", "battery", "clock" ]
 font_weight = 400
@@ -115,11 +115,10 @@ short-break-duration = 10
 work-duration = 50
 
 [plugins]
-enabled = [ "thepunkoff/pomodoro" ]
+enabled = [ "thepunkoff/pomodoro", "teagar/niri-workspace-preview" ]
 
 [shell]
 app_icon_color = "on_primary"
-app_icon_colorize = false
 clipboard_enabled = false
 font_family = "CaskaydiaMono NF"
 lang = "en"
@@ -170,6 +169,14 @@ hide_when_no_media = true
 
 [widget.notifications]
 hide_when_no_unread = true
+
+[widget.preview]
+fixed_height = 64
+fixed_width = 137
+max_output_length = 180
+preview_size = 48
+scale = 1.25
+type = "teagar/niri-workspace-preview:preview"
 
 [widget.widget]
 type = "thepunkoff/pomodoro:widget"
