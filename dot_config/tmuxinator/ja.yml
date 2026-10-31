@@ -12,6 +12,6 @@ windows:
       panes:
         - zsh -i
 
-  - copy-bullets: nvim _iteration-6-baseline-more-meaty-8-17-26.md
+  - copy-bullets: nvim _iteration-7-baseline-more-meaty-10-31-26.md
 
   - keywords: nvim cybersecurity_keywords.md
