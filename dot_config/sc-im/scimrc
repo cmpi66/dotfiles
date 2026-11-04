@@ -9,8 +9,7 @@ nnoremap "Y" ":ccopy<cr>"
 vnoremap "Y" ":ccopy<cr>"
 nnoremap "P" ":cpaste<cr>"
 set copy_to_clipboard_wysiwyg=0
-set default_open_file_under_cursor_cmd="/home/chris/.local/bin/scim-open"
-nnoremap "gx" "gf"
+nnoremap "gx" ":ccopy<cr>:!/home/chris/.local/bin/scim-open<cr>"
 
 # catppuccin latte
 DEFINE_COLOR   "ROSEWATER" 220 138 120
