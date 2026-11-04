@@ -14,4 +14,4 @@ windows:
 
   - copy-bullets: nvim _iteration-7-baseline-more-meaty-10-31-26.md
 
-  - keywords: nvim cybersecurity_keywords.md
+  - keywords: nvim job-search-keywords.md
