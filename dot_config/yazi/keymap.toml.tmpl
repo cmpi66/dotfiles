@@ -14,9 +14,15 @@ prepend_keymap = [
   { on = [
     "!",
   ], run = 'shell "$SHELL" --block --confirm', desc = "Maximize or restore preview" },
+  {{- if or (eq .chezmoi.hostname "artixbox") (eq .chezmoi.hostname "artixframe") }}
   { on = [
     "<A-d>",
+  ], run = 'shell -- dragon-drop -x -i -T %h', desc = "Drgon drag and drop" },
+  {{- else }}
+    { on = [
+    "<A-d>",
   ], run = 'shell -- dragon -x -i -T %h', desc = "Drgon drag and drop" },
+  {{- end }}
 
 ]
 
