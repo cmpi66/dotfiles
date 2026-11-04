@@ -252,6 +252,7 @@
           - espanso-wayland-git
           - evremap-git
           - chaotic-aur/librewolf
+          - chaotic-aur/dragon-drop-git
           - localsend
         state: present
 

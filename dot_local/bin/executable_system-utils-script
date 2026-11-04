@@ -2,7 +2,7 @@
 
 # dont overegineer. Only add scripts and menus of things that i use but not often but still need to access. Things that i access everyday or frequently NEED to have their own keybindings.
 
-CHOICE=$(printf "🔎 Search Files\n📜 Search For a Man Page\n🌐 Search the Web\n📒 Search Qutebrowser History\n🔖 Search Bookmarks\n🖊️ Edit Configs\n🖼️ Set Wallpaper\n🎬 Find Video to Play\n🎶 Find Song to Play\n🚄 Toggle Espanso Completion\n🧮 Calculator\n📹 Webcam Record\n🎨 Color Picker\n🔑 Launch OTP\n⌨️ Run Keyboard Remap\n🔑 Show Keybinds\n🎵 Control Music Menu\n🖥️ Tmux Repos Sessions" | rofi -dmenu -i -l 19 -p "⚙️ Utils Menu" -theme spotlight-menu-center.rasi)
+CHOICE=$(printf "🔎 Search Files\n📜 Search For a Man Page\n🌐 Search the Web\n📒 Search Qutebrowser History\n🔖 Search Bookmarks\n🖊️ Edit Configs\n🖼️ Set Wallpaper\n🎬 Find Video to Play\n🎶 Find Song to Play\n🚄 Toggle Espanso Completion\n🧮 Calculator\n📹 Webcam Record\n🎨 Color Picker\n🔑 Launch OTP\n⌨️ Run Keyboard Remap\n🔑 Show Keybinds\n🎵 Control Music Menu\n🖥️ Tmux Repos Sessions\n🐉 Yazi Drag and Drop" | rofi -dmenu -i -l 20 -p "⚙️ Utils Menu" -theme spotlight-menu-center.rasi)
 
 case "$CHOICE" in
 "🔎 Search Files")
@@ -51,12 +51,15 @@ case "$CHOICE" in
   remapd
   ;;
 "🔑 Show Keybinds")
-  zathura ~/.local/share/chezmoi/keybinds/hypr-workflow.pdf
+  zathura ~/.local/share/chezmoi/keybinds/niri-workflow.pdf
   ;;
 "🎵 Control Music Menu")
   rofi-music-control
   ;;
 "🖥️ Tmux Repos Sessions")
   repos-sessions
+  ;;
+"🐉 Yazi Drag and Drop")
+  kitty --class yazi-drag -e yazi
   ;;
 esac
