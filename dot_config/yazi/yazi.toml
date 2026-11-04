@@ -22,9 +22,9 @@ tab_size        = 2
 max_width       = 600
 max_height      = 900
 cache_dir       = ""
-image_delay     = 30
+image_delay     = 0
 image_filter    = "triangle"
-image_quality   = 75
+image_quality   = 60
 ueberzug_scale  = 1
 ueberzug_offset = [ 0, 0, 0, 0 ]
 
@@ -97,6 +97,14 @@ bizarre_retry    = 3
 image_alloc      = 536870912  # 512MB
 image_bound      = [ 10000, 10000 ]
 suppress_preload = false
+
+plugin.prepend_preloaders = [
+	{ url = "/mnt/**",      run = "noop", prio = "high" },
+  ]
+
+plugin.prepend_previewers = [
+	{ url = "/mnt/**",      run = "noop", prio = "high" },
+  ]
 
 [plugin]
 fetchers = [
