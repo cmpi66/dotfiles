@@ -10,6 +10,13 @@
 ##   qute://help/configuring.html
 ##   qute://help/settings.html
 
+# fix crashes when using igpu instead of gpu
+import os
+
+igpu_link = "/dev/dri/by-path/pci-0000:19:00.0-render"
+if os.path.exists(igpu_link):
+    c.qt.args.append(f"render-node-override={os.path.realpath(igpu_link)}")
+
 import catppuccin
 
 # load your autoconfig, use this, if the rest of your config is empty!
