@@ -13,6 +13,30 @@ animations {
     enabled = false
 }
 
+{{- if or (eq .chezmoi.hostname "artixbox") (eq .chezmoi.hostname "artixframe") }}
+#fingerprint
+label {
+    monitor =
+    text = $FPRINTPROMPT
+    color = $base
+    font_size = 20
+    font_family = $font
+    position = 0, -120
+    halign = center
+    valign = center
+}
+
+auth {
+    fingerprint {
+        enabled = true
+        ready_message = "Scan fingerprint to unlock"
+        present_message = "Scanning fingerprint"
+        retry_delay = 250
+    }
+}
+{{- end }}
+
+
 # BACKGROUND
 background {
   monitor =
