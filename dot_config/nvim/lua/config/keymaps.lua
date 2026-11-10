@@ -68,6 +68,9 @@ vim.keymap.set("n", "<leader>o", ":!opout <c-r>%<CR><CR>", { desc = "opout", sil
 
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "open up oil parent dir" })
 vim.keymap.set("n", "<leader>-", require("oil").toggle_float)
+vim.keymap.set("n", "<leader>fz", function()
+  Snacks.picker.zoxide()
+end, { desc = "Zoxide" })
 
 -- overriding snacks picker
 vim.keymap.set("n", "<leader>fb", function()

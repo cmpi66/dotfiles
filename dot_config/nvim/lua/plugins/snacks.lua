@@ -9,6 +9,9 @@ return {
           },
         },
       },
+      image = {
+        enabled = true,
+      },
     },
   },
 }
