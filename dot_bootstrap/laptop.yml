@@ -253,6 +253,8 @@
           - evremap-git
           - chaotic-aur/librewolf
           - chaotic-aur/dragon-drop-git
+          - chaotic-aur/ryzen_smu-dkms-git 
+          - chaotic-aur/ryzenadj-git
           - localsend
         state: present
 
