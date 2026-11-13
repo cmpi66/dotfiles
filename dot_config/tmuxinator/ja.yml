@@ -12,6 +12,6 @@ windows:
       panes:
         - zsh -i
 
-  - copy-bullets: nvim _iteration-7-baseline-more-meaty-10-31-26.md
+  - copy-bullets: nvim _itereation-8-resume-baseline-11-13-26-tune-per-job.md
 
   - keywords: nvim job-search-keywords.md
