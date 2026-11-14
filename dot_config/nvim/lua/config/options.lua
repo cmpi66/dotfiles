@@ -71,23 +71,42 @@ vim.g.lazyvim_winbar = false
 -- Use OSC52 inside persistent terminal multiplexers
 -- because the clipboard belongs to the terminal client attached now.
 
-vim.opt.clipboard = ""
+-- vim.opt.clipboard = ""
+--
+-- if vim.env.HERDR_ENV or vim.env.TMUX then
+--   local osc52 = require("vim.ui.clipboard.osc52")
+--
+--   vim.api.nvim_create_autocmd("TextYankPost", {
+--     callback = function()
+--       if vim.v.event.operator ~= "y" then
+--         return
+--       end
+--
+--       osc52.copy("+")(vim.fn.getreg('"', 1, true), vim.fn.getregtype('"'))
+--     end,
+--   })
+-- else
+--   vim.opt.clipboard = "unnamedplus"
+-- end
 
-if vim.env.HERDR_ENV or vim.env.TMUX then
+-- Clipboard: OSC52 over SSH / tmux / herdr, system clipboard otherwise (claude)
+local remote = vim.env.SSH_TTY or vim.env.SSH_CONNECTION or vim.env.TMUX or vim.env.HERDR_ENV
+
+if remote then
   local osc52 = require("vim.ui.clipboard.osc52")
-
-  vim.api.nvim_create_autocmd("TextYankPost", {
-    callback = function()
-      if vim.v.event.operator ~= "y" then
-        return
-      end
-
-      osc52.copy("+")(vim.fn.getreg('"', 1, true), vim.fn.getregtype('"'))
-    end,
-  })
-else
-  vim.opt.clipboard = "unnamedplus"
+  -- Copy goes out via OSC52; paste reads nvim's own unnamed register
+  -- (OSC52 paste is slow or blocked in most terminals)
+  local function paste()
+    return { vim.fn.split(vim.fn.getreg('"'), "\n"), vim.fn.getregtype('"') }
+  end
+  vim.g.clipboard = {
+    name = "OSC 52",
+    copy = { ["+"] = osc52.copy("+"), ["*"] = osc52.copy("*") },
+    paste = { ["+"] = paste, ["*"] = paste },
+  }
 end
+
+vim.opt.clipboard = "unnamedplus"
 
 -- Helper to extract fg color from an existing highlight group
 local function hl_fg(group)
