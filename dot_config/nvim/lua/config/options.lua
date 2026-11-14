@@ -94,14 +94,23 @@ local remote = vim.env.SSH_TTY or vim.env.SSH_CONNECTION or vim.env.TMUX or vim.
 
 if remote then
   local osc52 = require("vim.ui.clipboard.osc52")
-  -- Copy goes out via OSC52; paste reads nvim's own unnamed register
-  -- (OSC52 paste is slow or blocked in most terminals)
-  local function paste()
-    return { vim.fn.split(vim.fn.getreg('"'), "\n"), vim.fn.getregtype('"') }
+  local last = { lines = {}, regtype = "v" }
+
+  local function copy(reg)
+    local send = osc52.copy(reg)
+    return function(lines, regtype)
+      last = { lines = lines, regtype = regtype } -- remember it for p
+      send(lines, regtype) -- and push it to the terminal clipboard
+    end
   end
+
+  local function paste()
+    return { last.lines, last.regtype }
+  end
+
   vim.g.clipboard = {
     name = "OSC 52",
-    copy = { ["+"] = osc52.copy("+"), ["*"] = osc52.copy("*") },
+    copy = { ["+"] = copy("+"), ["*"] = copy("*") },
     paste = { ["+"] = paste, ["*"] = paste },
   }
 end
