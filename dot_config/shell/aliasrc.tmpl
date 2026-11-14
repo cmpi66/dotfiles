@@ -145,3 +145,12 @@ nsync() {
   git pull --rebase --autostash
   git push
 }
+
+gst-all() {
+  local r out
+  for r in ~/code/*/.git(N:h); do
+    out=$(git -C $r status -sb 2>/dev/null)
+    # header contains [ahead/behind/gone], or there's any line after the header = dirty
+    [[ $out == *'['* || $(wc -l <<<$out) -gt 1 ]] && echo "${r:t}: ${out%%$'\n'*}"
+  done
+}
