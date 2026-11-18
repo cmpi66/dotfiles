@@ -208,6 +208,7 @@
           - rsync
           - satty
           - slurp
+          - shader-slang
           - smartmontools
           - socat
           - spdlog
