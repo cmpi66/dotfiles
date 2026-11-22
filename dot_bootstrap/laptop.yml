@@ -5,38 +5,38 @@
   gather_facts: true
 
   pre_tasks:
-    # ---------- PACMAN / KEYRING BOOTSTRAP ----------
-    - name: Ensure Artix + Arch keyring packages are installed
-      pacman:
-        name:
-          - artix-keyring
-          - artix-archlinux-support
-        state: present
-
-    - name: Ensure [extra] repo block exists
-      blockinfile:
-        path: /etc/pacman.conf
-        marker: "# {mark} ANSIBLE MANAGED EXTRA REPO"
-        block: |
-          [extra]
-          Include = /etc/pacman.d/mirrorlist-arch
-
-    - name: Check if pacman keyring is initialized
-      stat:
-        path: /etc/pacman.d/gnupg/pubring.kbx
-      register: keyring_initialized
-
-    - name: Initialize pacman keyring (first-time only)
-      command: pacman-key --init
-      when: not keyring_initialized.stat.exists
-
-    - name: Populate Artix keyring
-      command: pacman-key --populate artix
-      when: not keyring_initialized.stat.exists
-
-    - name: Populate Arch keyring
-      command: pacman-key --populate archlinux
-      when: not keyring_initialized.stat.exists
+    # # ---------- PACMAN / KEYRING BOOTSTRAP ----------
+    # - name: Ensure Artix + Arch keyring packages are installed
+    #   pacman:
+    #     name:
+    #       - artix-keyring
+    #       - artix-archlinux-support
+    #     state: present
+    #
+    # - name: Ensure [extra] repo block exists
+    #   blockinfile:
+    #     path: /etc/pacman.conf
+    #     marker: "# {mark} ANSIBLE MANAGED EXTRA REPO"
+    #     block: |
+    #       [extra]
+    #       Include = /etc/pacman.d/mirrorlist-arch
+    #
+    # - name: Check if pacman keyring is initialized
+    #   stat:
+    #     path: /etc/pacman.d/gnupg/pubring.kbx
+    #   register: keyring_initialized
+    #
+    # - name: Initialize pacman keyring (first-time only)
+    #   command: pacman-key --init
+    #   when: not keyring_initialized.stat.exists
+    #
+    # - name: Populate Artix keyring
+    #   command: pacman-key --populate artix
+    #   when: not keyring_initialized.stat.exists
+    #
+    # - name: Populate Arch keyring
+    #   command: pacman-key --populate archlinux
+    #   when: not keyring_initialized.stat.exists
 
     # ---------- CHAOTIC AUR ----------
     - name: Check if Chaotic AUR key is already trusted
@@ -153,6 +153,7 @@
           - libappindicator
           - libdbusmenu-glib
           - libdbusmenu-gtk3
+          - librewolf
           - libzip
           - libvncserver
           - linux-zen
@@ -254,7 +255,6 @@
           - downgrade
           - espanso-wayland-git
           - evremap-git
-          - chaotic-aur/librewolf
           - chaotic-aur/dragon-drop-git
           - chaotic-aur/ryzen_smu-dkms-git 
           - chaotic-aur/ryzenadj-git
