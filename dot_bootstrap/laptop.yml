@@ -113,6 +113,8 @@
       pacman:
         name:
           - 7zip
+          - age
+          - age-plugin-yubikey
           - aerc
           - arch-wiki-docs
           - argyllcms
