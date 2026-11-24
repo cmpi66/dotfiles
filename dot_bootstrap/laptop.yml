@@ -125,6 +125,7 @@
           - bluez-openrc
           - bluez-utils
           - brightnessctl
+          - brave-bin
           - chafa
           - cliphist
           - cmake
@@ -136,6 +137,7 @@
           - freerdp
           - ffmpeg
           - foot
+          - fprintd
           - fuse3
           - gammastep
           - gimp
@@ -153,6 +155,7 @@
           - libappindicator
           - libdbusmenu-glib
           - libdbusmenu-gtk3
+          - libreoffice-fresh
           - librewolf
           - libzip
           - libvncserver
@@ -218,8 +221,6 @@
           - swayimg
           - syncthing
           - tcpdump
-          - tailscale
-          - tailscale-openrc
           - tealdeer
           - tk
           - tmux
@@ -258,8 +259,8 @@
           - espanso-wayland-git
           - evremap-git
           - chaotic-aur/dragon-drop-git
-          - chaotic-aur/ryzen_smu-dkms-git 
-          - chaotic-aur/ryzenadj-git
+          # - chaotic-aur/ryzen_smu-dkms-git 
+          # - chaotic-aur/ryzenadj-git
           - localsend
         state: present
 
