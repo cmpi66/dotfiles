@@ -1,0 +1,8 @@
+#!/bin/sh
+
+session=$(sesh list --icons --no-color |
+    rofi -dmenu -i -no-sort -p "Sesh sessions") || exit 0
+
+[ -n "$session" ] || exit 0
+
+exec kitty -1 -e sesh connect "$session"
